@@ -13,7 +13,7 @@
         "tags": {
             "displayName": "testaccountventoa1"
         },
-        "location": "[resourceGroup().location]",
+        "location": "north europe",
         "kind": "StorageV2",
         "sku": {
             "name": "Premium_LRS",
