@@ -1,1 +1,1 @@
-az backup protection disable --container-name zzzwsr0001 --delete-backup-data false --item-name zzzwsr0001 --backup-management-type AzureIaasVM --resource-group rg-cis-nonprod-backup-01 --vault-name rsv-nonprod-euno-lrsbackup-01 --yes
+az backup protection disable --container-name $vm --delete-backup-data false --item-name $vm --backup-management-type AzureIaasVM --resource-group $rg-vault --vault-name $vault --yes
