@@ -6,7 +6,7 @@
             "value": "southeastasia"
         },
         "networkInterfaceName": {
-            "value": "shhwsr2216159"
+            "value": "shhwsr2216_nic"
         },
         "subnetName": {
             "value": "sub-dmz2domain-01"
@@ -21,7 +21,7 @@
             "value": "shhwsr2216"
         },
         "virtualMachineRG": {
-            "value": "rg-cis-prod-server-01"
+            "value": "rg-gis-prod-webcamos-01"
         },
         "osDiskType": {
             "value": "Premium_LRS"
