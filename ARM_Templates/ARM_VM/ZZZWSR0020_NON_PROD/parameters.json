@@ -37,6 +37,21 @@
         },
         "patchMode": {
             "value": "Manual"
-        }
+        },
+        // Backup parameters
+        "resourceGroupName": {​​​​​
+            "value": "rg-shh-dev-sap-01"
+          }​​​​​,
+          "recoveryServiceVault": {​​​​​
+               "value": "rsv-nonprod-euno-lrsbackup-01"
+          }​​​​​,
+          "backupPolicy": {​​​​​
+                "value": "vm-medium-01am-01"
+          }​​​​​
+
+
+        
     }
 }
+
+
