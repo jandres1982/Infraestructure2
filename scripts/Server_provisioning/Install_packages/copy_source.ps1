@@ -1,0 +1,1 @@
+copy-item -path "x:\provision\" -destination "c:\" -recurse -force
