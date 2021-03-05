@@ -1,0 +1,1 @@
+cmd /c "c:\Provision\Microsoft\BGINFO_V4.27\install.cmd"
