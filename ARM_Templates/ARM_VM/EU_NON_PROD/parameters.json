@@ -44,7 +44,7 @@
         "dataDiskResources": {
             "value": [
                 {
-                    "name": "zzzwsr0022_DataDisk_0",
+                    "name": "zzzwsr0023_DataDisk_0",
                     "sku": "Premium_LRS",
                     "properties": {
                         "diskSizeGB": 128,
