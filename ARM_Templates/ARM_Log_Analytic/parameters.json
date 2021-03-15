@@ -3,7 +3,7 @@
     "contentVersion": "1.0.0.0",
     "parameters": {
         "name": {
-            "value": "la-gis-prod-logs365-01"
+            "value": "la-cis-prod-monitoring-01"
         },
         "location": {
             "value": "northeurope"
