@@ -6,7 +6,7 @@
             "value": "northeurope"
         },
         "networkInterfaceName": {
-            "value": "wawwsr1102_nic"
+            "value": "wawwsr1103_nic"
         },
         "subnetName": {
             "value": "sub-dmz2domain-01"
@@ -15,10 +15,10 @@
             "value": "/subscriptions/505ead1a-5a5f-4363-9b72-83eb2234a43d/resourceGroups/RG_NETWORK_PROD/providers/Microsoft.Network/virtualNetworks/EU-PROD-VNET"
         },
         "virtualMachineName": {
-            "value": "wawwsr1102"
+            "value": "wawwsr1103"
         },
         "virtualMachineComputerName": {
-            "value": "wawwsr1102"
+            "value": "wawwsr1103"
         },
         "virtualMachineRG": {
             "value": "rg-gis-test-tetame-01"
@@ -34,7 +34,7 @@
                     "caching": "None",
                     "writeAcceleratorEnabled": false,
                     "id": null,
-                    "name": "wawwsr1102_DataDisk_0",
+                    "name": "wawwsr1103_DataDisk_0",
                     "storageAccountType": null,
                     "diskSizeGB": null,
                     "diskEncryptionSet": null
@@ -56,7 +56,7 @@
             ]
         },
         "virtualMachineSize": {
-            "value": "Standard_F2s_v2"
+            "value": "Standard_D2s_v3"
         },
         "adminUsername": {
             "value": "ldmsosd"
