@@ -6,22 +6,22 @@
             "value": "northeurope"
         },
         "networkInterfaceName": {
-            "value": "zzzwsr0023_nic"
+            "value": "wawwsr1102_nic"
         },
         "subnetName": {
-            "value": "Test"
+            "value": "sub-dmz2domain-01"
         },
         "virtualNetworkId": {
-            "value": "/subscriptions/7fa3c3a2-7d0d-4987-a30c-30623e38756c/resourceGroups/rg-cis-nonprod-network-01/providers/Microsoft.Network/virtualNetworks/EU-NONPROD-VNET"
+            "value": "/subscriptions/505ead1a-5a5f-4363-9b72-83eb2234a43d/resourceGroups/RG_NETWORK_PROD/providers/Microsoft.Network/virtualNetworks/EU-PROD-VNET"
         },
         "virtualMachineName": {
-            "value": "zzzwsr0023"
+            "value": "wawwsr1102"
         },
         "virtualMachineComputerName": {
-            "value": "zzzwsr0023"
+            "value": "wawwsr1102"
         },
         "virtualMachineRG": {
-            "value": "rg-cis-test-server-01"
+            "value": "rg-gis-test-tetame-01"
         },
         "osDiskType": {
             "value": "Premium_LRS"
@@ -34,7 +34,7 @@
                     "caching": "None",
                     "writeAcceleratorEnabled": false,
                     "id": null,
-                    "name": "zzzwsr0023_DataDisk_0",
+                    "name": "wawwsr1102_DataDisk_0",
                     "storageAccountType": null,
                     "diskSizeGB": null,
                     "diskEncryptionSet": null
@@ -44,10 +44,10 @@
         "dataDiskResources": {
             "value": [
                 {
-                    "name": "zzzwsr0023_DataDisk_0",
+                    "name": "wawwsr1102_DataDisk_0",
                     "sku": "Premium_LRS",
                     "properties": {
-                        "diskSizeGB": 128,
+                        "diskSizeGB": 32,
                         "creationData": {
                             "createOption": "empty"
                         }
@@ -56,7 +56,7 @@
             ]
         },
         "virtualMachineSize": {
-            "value": "Standard_D2s_v3"
+            "value": "Standard_F2s_v2"
         },
         "adminUsername": {
             "value": "ldmsosd"
@@ -71,10 +71,13 @@
             "value": false
         },
         "diagnosticsStorageAccountName": {
-            "value": "stnonproddiagnostic0001"
+            "value": "stproddiagnostic0002"
         },
         "diagnosticsStorageAccountId": {
-            "value": "/subscriptions/7fa3c3a2-7d0d-4987-a30c-30623e38756c/resourceGroups/rg-cis-nonprod-storage-01/providers/Microsoft.Storage/storageAccounts/stnonproddiagnostic0001"
+            "value": "/subscriptions/505ead1a-5a5f-4363-9b72-83eb2234a43d/resourceGroups/rg-cis-prod-storage-01/providers/Microsoft.Storage/storageAccounts/stproddiagnostic0002"
+        },
+        "zone": {
+            "value": "1"
         }
     }
 }
