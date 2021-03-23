@@ -1,8 +1,0 @@
-$pagefile = Get-WmiObject Win32_ComputerSystem -EnableAllPrivileges
-$pagefile.AutomaticManagedPagefile = $false
-$pagefile.put() | Out-Null
-Set-WmiInstance -Class Win32_PageFileSetting -Arguments @{name="C:\pagefile.sys";InitialSize = 0; MaximumSize = 0} -EnableAllPrivileges -ErrorAction SilentlyContinue
-$pagefiles_set = Gwmi win32_pagefilesetting | where{$_.caption -like 'd:*'}
-if ($pagefile_set -eq $null)
-{Write-Host "Page file not found in d:\ drive"}
-else{$pagefile_set.Delete()}
