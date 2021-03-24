@@ -6,7 +6,7 @@
             "value": "northeurope"
         },
         "networkInterfaceName": {
-            "value": "zzzwsr0022_nic"
+            "value": "zzzwsr0026_nic"
         },
         "subnetName": {
             "value": "Test"
@@ -15,10 +15,10 @@
             "value": "/subscriptions/7fa3c3a2-7d0d-4987-a30c-30623e38756c/resourceGroups/rg-cis-nonprod-network-01/providers/Microsoft.Network/virtualNetworks/EU-NONPROD-VNET"
         },
         "virtualMachineName": {
-            "value": "zzzwsr0022"
+            "value": "zzzwsr0026"
         },
         "virtualMachineComputerName": {
-            "value": "zzzwsr0022"
+            "value": "zzzwsr0026"
         },
         "virtualMachineRG": {
             "value": "rg-cis-test-server-01"
@@ -44,7 +44,7 @@
         "dataDiskResources": {
             "value": [
                 {
-                    "name": "zzzwsr0022_DataDisk_0",
+                    "name": "zzzwsr0026_DataDisk_0",
                     "sku": "Premium_LRS",
                     "properties": {
                         "diskSizeGB": 128,
