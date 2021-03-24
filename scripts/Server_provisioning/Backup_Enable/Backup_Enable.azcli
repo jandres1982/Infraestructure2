@@ -1,0 +1,6 @@
+az account set --subscription $(sub)
+az backup protection enable-for-vm \
+--resource-group $(backuprg) \
+--vault-name $(backupvn) \
+--vm $(az vm show -g $(rg) -n $(vm) --query id | tr -d '"') \
+--policy-name $(backuppn)
