@@ -1,0 +1,35 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "location": {
+            "value": "northeurope"
+        },
+        "privateEndpointName": {
+            "value": "pe-rsv-nonprod-eu-lrsbackuptest-01"
+        },
+        "privateLinkResource": {
+            "value": "/subscriptions/7fa3c3a2-7d0d-4987-a30c-30623e38756c/resourceGroups/rg-cis-nonprod-backup-01/providers/Microsoft.RecoveryServices/vaults/rsv-nonprod-euno-lrsbackup-01"
+        },
+        "targetSubResource": {
+            "value": [
+                "AzureBackup"
+            ]
+        },
+        "requestMessage": {
+            "value": ""
+        },
+        "subnet": {
+            "value": "/subscriptions/7fa3c3a2-7d0d-4987-a30c-30623e38756c/resourceGroups/rg-cis-nonprod-network-01/providers/Microsoft.Network/virtualNetworks/EU-NONPROD-VNET/subnets/Infrastructure-IaaS-Subnet_1"
+        },
+        "virtualNetworkId": {
+            "value": "/subscriptions/7fa3c3a2-7d0d-4987-a30c-30623e38756c/resourceGroups/rg-cis-nonprod-network-01/providers/Microsoft.Network/virtualNetworks/EU-NONPROD-VNET"
+        },
+        "subnetDeploymentName": {
+            "value": "UpdateSubnetDeployment-20210325170002"
+        },
+        "virtualNetworkResourceGroup": {
+            "value": "rg-cis-nonprod-network-01"
+        }
+    }
+}
