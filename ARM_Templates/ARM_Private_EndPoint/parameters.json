@@ -26,7 +26,7 @@
             "value": "/subscriptions/7fa3c3a2-7d0d-4987-a30c-30623e38756c/resourceGroups/rg-cis-nonprod-network-01/providers/Microsoft.Network/virtualNetworks/EU-NONPROD-VNET"
         },
         "subnetDeploymentName": {
-            "value": "UpdateSubnetDeployment-20210325170002"
+            "value": "UpdateSubnetDeployment-20210325171047"
         },
         "virtualNetworkResourceGroup": {
             "value": "rg-cis-nonprod-network-01"
