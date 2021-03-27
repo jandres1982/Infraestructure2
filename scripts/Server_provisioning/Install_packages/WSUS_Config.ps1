@@ -1,7 +1,6 @@
 Function Set-WSUS
 {
-Invoke-command -ComputerName $IP -ScriptBlock {Write-Output 'Windows Registry Editor Version 5.00
-
+Write-Output 'Windows Registry Editor Version 5.00
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate]
 "ElevateNonAdmins"=dword:00000000
 "WUServer"="http://shhwsr1238.global.schindler.com:8530"
@@ -25,9 +24,7 @@ Invoke-command -ComputerName $IP -ScriptBlock {Write-Output 'Windows Registry Ed
 "NoAutoUpdate"=dword:00000000
 "AUOptions"=dword:00000004
 "ScheduledInstallDay"=dword:00000001
-"ScheduledInstallTime"=dword:00000008' >> C:\WSUS.reg
-cmd.exe /c "reg import C:\WSUS.reg"
-remove-item -path "C:\WSUS.reg"
-} -Credential $creds -ErrorAction SilentlyContinue
-
+"ScheduledInstallTime"=dword:00000008' >> C:\provision\WSUS.reg
+cmd.exe /c "reg import C:\provision\WSUS.reg"
 }
+Set-WSUS
