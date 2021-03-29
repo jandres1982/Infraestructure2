@@ -1,3 +1,3 @@
 cd "c:\provision\Microsoft\.Net_4.8"
-msiexec.exe /i /q /norestart ndp48-x86-x64-allos-enu.exe
+cmd.exe /c "ndp48-x86-x64-allos-enu.exe /q /norestart"
 start-sleep 180
