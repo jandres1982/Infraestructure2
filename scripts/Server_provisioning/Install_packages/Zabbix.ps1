@@ -1,0 +1,1 @@
+cmd.exe /c "C:\provision\Schindler\Zabbix_4.2.1_OSD\Install.cmd"
