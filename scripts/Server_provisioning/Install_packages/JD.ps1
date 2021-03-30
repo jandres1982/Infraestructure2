@@ -1,1 +1,1 @@
-cmd.exe /c "c:\provision\schindler\jdg.exe"
+cmd.exe /c "c:\provision\schindler\jd\jdg.exe"
