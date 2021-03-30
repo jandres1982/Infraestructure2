@@ -1,1 +1,1 @@
-cmd.exe /c "c:\provision\wuinstall /install /reboot"
+cmd.exe /c "c:\provision\microsoft\patching\wuinstall.exe /install /reboot"
