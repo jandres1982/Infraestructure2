@@ -14,5 +14,3 @@ $STPrin = New-ScheduledTaskPrincipal -GroupId "BUILTIN\Administrators" -RunLevel
 $Task = New-ScheduledTask -Action $Action -Trigger $Trigger -Settings $Settings -Principal $STPrin
 Register-ScheduledTask -TaskName 'Join Domain' -InputObject $Task
 schtasks /change /tn 'Join Domain' /ru "NT AUTHORITY\SYSTEM"
-start-sleep 120
-Restart-Computer -force
