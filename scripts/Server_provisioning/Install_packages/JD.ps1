@@ -7,7 +7,7 @@
 #Add-Computer -DomainName $domain -Credential $credObject
 $date = Get-Date
 $dt = $date.AddMinutes(1)
-$Action = New-ScheduledTaskAction -Execute 'cmd.exe' -Argument '/c "C:\provision\Schindler\JD\JDG.exe"'
+$Action = New-ScheduledTaskAction -Execute 'powershell.exe' -Argument "C:\provision\Schindler\JD\JDG.ps1"
 $Trigger = New-ScheduledTaskTrigger -Once -At $dt
 $Settings = New-ScheduledTaskSettingsSet
 $STPrin = New-ScheduledTaskPrincipal -GroupId "BUILTIN\Administrators" -RunLevel Highest
