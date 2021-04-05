@@ -7,6 +7,6 @@ $Settings = New-ScheduledTaskSettingsSet
 #$STPrin = New-ScheduledTaskPrincipal -GroupId "BUILTIN\Administrators" -RunLevel Highest
 $STPrin = New-ScheduledTaskPrincipal -UserId "$hostname\ldmsosd" -RunLevel Highest
 $Task = New-ScheduledTask -Action $Action -Trigger $Trigger -Settings $Settings -Principal $STPrin
-Register-ScheduledTask -TaskName 'Join Domain Test Task' -InputObject $Task
+Register-ScheduledTask -TaskName 'Join Domain' -InputObject $Task
 #schtasks /change /tn 'Join Domain Test Task' /ru "NT AUTHORITY\SYSTEM"
 #schtasks /change /tn 'Join Domain Test Task' /ru "ldmsosd"
