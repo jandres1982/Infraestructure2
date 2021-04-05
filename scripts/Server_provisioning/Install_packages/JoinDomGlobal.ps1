@@ -1,7 +1,7 @@
 $date = Get-Date
 $dt = $date.AddMinutes(1)
 $hostname = hostname
-$Action = New-ScheduledTaskAction -Execute 'powershell.exe' -Argument "-File C:\provision\Schindler\JD\JDG.ps1"
+$Action = New-ScheduledTaskAction -Execute 'powershell.exe' -Argument "-File C:\provision\Schindler\JoinDom\JoinDomGlobal.ps1"
 $Trigger = New-ScheduledTaskTrigger -Once -At $dt
 $Settings = New-ScheduledTaskSettingsSet
 #$STPrin = New-ScheduledTaskPrincipal -GroupId "BUILTIN\Administrators" -RunLevel Highest
