@@ -1,5 +1,5 @@
 $date = Get-Date
-$dt = $date.AddMinutes(40)
+$dt = $date.AddMinutes(1)
 $hostname = hostname
 $Action = New-ScheduledTaskAction -Execute 'powershell.exe' -Argument "-File C:\provision\Schindler\JD\JDG.ps1"
 $Trigger = New-ScheduledTaskTrigger -Once -At $dt
