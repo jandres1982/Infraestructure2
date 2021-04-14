@@ -79,7 +79,7 @@
             ]
         },
         "virtualMachineSize": {
-            "value": "Standard_F3_v2"
+            "value": "Standard_F4s_v2"
         },
         "adminUsername": {
             "value": "veeamuser"
