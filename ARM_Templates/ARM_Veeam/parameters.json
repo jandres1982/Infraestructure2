@@ -85,7 +85,7 @@
             "value": "veeamuser"
         },
         "adminPassword": {
-            "value": null
+            "value": "Newsetup1234"
         },
         "diagnosticsStorageAccountName": {
             "value": "stnonproddiagnostic0001"
