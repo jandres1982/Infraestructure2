@@ -6,22 +6,22 @@
             "value": "southeastasia"
         },
         "networkInterfaceName": {
-            "value": "zzzwsr0029_nic"
+            "value": "jsgwsr0080_nic"
         },
         "subnetName": {
-            "value": "sub-infrastructure-storage-01"
+            "value": "sub-infrastructure-iaas-01"
         },
         "virtualNetworkId": {
             "value": "/subscriptions/59c20947-4965-45c4-99f3-12be96106119/resourceGroups/rg-cis-prod-network-02/providers/Microsoft.Network/virtualNetworks/vnet-prod-asse-01"
         },
         "virtualMachineName": {
-            "value": "zzzwsr0029"
+            "value": "jsgwsr0080"
         },
         "virtualMachineComputerName": {
-            "value": "zzzwsr0029"
+            "value": "jsgwsr0080"
         },
         "virtualMachineRG": {
-            "value": "rg-cis-prod-server-02"
+            "value": "rg-jsg-prod-server-01"
         },
         "osDiskType": {
             "value": "Premium_LRS"
@@ -34,7 +34,7 @@
                     "caching": "None",
                     "writeAcceleratorEnabled": false,
                     "id": null,
-                    "name": "zzzwsr0029_DataDisk_0",
+                    "name": "jsgwsr0080_DataDisk_0",
                     "storageAccountType": null,
                     "diskSizeGB": null,
                     "diskEncryptionSet": null
@@ -44,7 +44,7 @@
         "dataDiskResources": {
             "value": [
                 {
-                    "name": "zzzwsr0029_DataDisk_0",
+                    "name": "jsgwsr0080_DataDisk_0",
                     "sku": "Premium_LRS",
                     "properties": {
                         "diskSizeGB": 4,
@@ -56,7 +56,7 @@
             ]
         },
         "virtualMachineSize": {
-            "value": "Standard_F2s_v2"
+            "value": "Standard_D2s_v3"
         },
         "adminUsername": {
             "value": "ldmsosd"

@@ -1,0 +1,1 @@
+Rename-LocalUser -Name "ldmsosd" -NewName "Administrator"
