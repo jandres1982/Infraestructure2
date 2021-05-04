@@ -6,7 +6,7 @@
             "value": "northeurope"
         },
         "networkInterfaceName": {
-            "value": "zzzwsr0030_nic"
+            "value": "zzzwsr0030_01"
         },
         "subnetName": {
             "value": "Test"
