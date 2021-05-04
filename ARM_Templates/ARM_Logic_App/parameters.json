@@ -6,7 +6,7 @@
             "value": "2016-10-01"
         },
         "workflowName": {
-            "value": "la-prod-fmcnotifcation-01"
+            "value": "log-prod-ondemand-01"
         },
         "workflowLocation": {
             "value": "northeurope"
