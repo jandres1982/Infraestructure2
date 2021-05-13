@@ -1,4 +1,3 @@
-rg-cis-prod-mig-02
 rg-cis-prod-mig-03
 rg-cis-prod-network-02
 rg-cis-prod-network-03
