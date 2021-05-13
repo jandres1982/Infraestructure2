@@ -1,4 +1,10 @@
-rg-cis-prod-server-02
-rg-cis-prod-soclogcol-01
-rg-cis-prod-sql-02
-rg-cis-prod-storage-02
+rg-gis-prod-qualys-01
+rg-gis-prod-webcamos-01
+rg-jkt-prod-server-01
+rg-jpn-prod-server-01
+rg-jpn-prod-storage-01
+rg-jsb-prod-server-01
+rg-jsg-prod-application-01
+rg-jsg-prod-fileserver-01
+rg-jsg-prod-itf-01
+rg-jsg-prod-notes-01
