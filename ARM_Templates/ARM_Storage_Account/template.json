@@ -1900,7 +1900,7 @@
             "subscriptionId": "505ead1a-5a5f-4363-9b72-83eb2234a43d",
             "resourceGroup": "rg-gis-prod-sentinel-01",
             "dependsOn": [
-                "Microsoft.Storage/storageAccounts/stprodsentinel"
+                "Microsoft.Storage/storageAccounts/stprodsentinel0001"
             ],
             "resources": [],
             "properties": {
@@ -1922,7 +1922,7 @@
                         "value": "2020-03-01"
                     },
                     "privateLinkServiceId": {
-                        "value": "/subscriptions/505ead1a-5a5f-4363-9b72-83eb2234a43d/resourcegroups/rg-gis-prod-sentinel-01/providers/Microsoft.Storage/storageAccounts/stprodsentinel"
+                        "value": "/subscriptions/505ead1a-5a5f-4363-9b72-83eb2234a43d/resourcegroups/rg-gis-prod-sentinel-01/providers/Microsoft.Storage/storageAccounts/stprodsentinel0001"
                     },
                     "groupId": {
                         "value": "blob"
