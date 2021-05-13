@@ -1,1 +1,4 @@
-rg-asm-prod-server-01
+rg-cam-prod-server-01
+rg-cis-prod-ad-02
+rg-cis-prod-backup-01
+rg-cis-prod-defender-01
