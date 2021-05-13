@@ -1,3 +1,4 @@
+rg-cis-prod-server-02
 rg-cis-prod-soclogcol-01
 rg-cis-prod-sql-02
 rg-cis-prod-storage-02
