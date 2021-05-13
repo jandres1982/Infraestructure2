@@ -1,12 +1,1 @@
-rg-jsg-prod-solarwindsql-01
-rg-jsp-prod-fileserver-01
-rg-jst-prod-fileserver-01
-rg-jtp-prod-fileserver-01
-rg-map-prod-server-01
-rg-myn-prod-server-01
-rg-nzc-prod-fileserver-01
-rg-scn-prod-applicationweb-01
-rg-sis-qual-commvault-01
-rg-sko-prod-fileserver-01
-rg-sls-prod-server-01
-rg-vnm-prod-server-01
+AzureBackupRG_southeastasia_1
