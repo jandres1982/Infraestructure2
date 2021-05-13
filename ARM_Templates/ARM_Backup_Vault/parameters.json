@@ -3,7 +3,7 @@
     "contentVersion": "1.0.0.0",
     "parameters": {
         "name": {
-            "value": "rsv-prod-use2-lrsbackup-01"
+            "value": "rsv-prod-use2-grsbackup-01"
         },
         "location": {
             "value": "eastus2"
