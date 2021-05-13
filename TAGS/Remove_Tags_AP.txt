@@ -1,4 +1,4 @@
-rg-cam-prod-server-01
-rg-cis-prod-ad-02
-rg-cis-prod-backup-01
-rg-cis-prod-defender-01
+rg-cis-prod-mig-02
+rg-cis-prod-mig-03
+rg-cis-prod-network-02
+rg-cis-prod-network-03
