@@ -3,7 +3,7 @@
     "contentVersion": "1.0.0.0",
     "parameters": {
         "name": {
-            "value": "rsv-nonprod-use2-grsbackupsql-01"
+            "value": "rsv-nonprod-use2-grsbackupfiles-01"
         },
         "location": {
             "value": "eastus2"
