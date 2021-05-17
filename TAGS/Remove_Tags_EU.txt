@@ -1,7 +1,8 @@
-rg-cis-prod-rds-01
 rg-cis-prod-soclogcol-01
-rg-cis-prod-solarwinds-01
-rg-cis-prod-sql-01
-rg-cis-prod-storage-01
-rg-cis-prod-subslogs-01
-rg-crd-prod-migration-01
+rg-cto-prod-sensingdiagnostic-01
+rg-gis-prod-integrationplatform
+rg-gis-prod-keyvault-01
+rg-gis-prod-kmsserver-01
+rg-gis-prod-landeskcore-01
+rg-gis-prod-myengineering-01
+rg-gis-prod-scriptingserver-01
