@@ -1,5 +1,5 @@
-AzureBackupRG_northeurope_1
-cloud-shell-storage-northeurope
-rg-cai-prod-fileserver-01
-rg-cis-prod-ad-01
-rg-cis-prod-backup-01
+rg-cis-prod-domaincontroller-01
+rg-cis-prod-landeskdistribution-01
+rg-cis-prod-mdb-01
+rg-cis-prod-mig-01
+rg-cis-prod-monitoring-01
