@@ -1,8 +1,8 @@
-rg-cis-prod-soclogcol-01
-rg-cto-prod-sensingdiagnostic-01
-rg-gis-prod-integrationplatform
-rg-gis-prod-keyvault-01
-rg-gis-prod-kmsserver-01
-rg-gis-prod-landeskcore-01
-rg-gis-prod-myengineering-01
-rg-gis-prod-scriptingserver-01
+rg-gis-prod-sentinel-01
+rg-gis-prod-ssot
+rg-jnb-prod-webfacing-01
+rg-sch-prod-ukasolutions-01
+rg-shh-prod-mcafeeepo-01
+rg-uae-prod-fileserver-01
+rg-waw-prod-tetame-01
+RG_NETWORK_PROD
