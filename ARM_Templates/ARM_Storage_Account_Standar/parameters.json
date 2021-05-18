@@ -6,7 +6,7 @@
             "value": "eastus2"
         },
         "storageAccountName": {
-            "value": "stproddiagnostic0004"
+            "value": "stprodgeneric0002"
         },
         "accountType": {
             "value": "Standard_LRS"
