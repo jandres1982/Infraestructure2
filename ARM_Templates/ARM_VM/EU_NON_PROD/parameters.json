@@ -6,22 +6,22 @@
             "value": "northeurope"
         },
         "networkInterfaceName": {
-            "value": "schwsr0099_01"
+            "value": "shhwsr2253_01"
         },
         "subnetName": {
-            "value": "sub-backend-paas-01"
+            "value": "sub-frontend-iaas-01"
         },
         "virtualNetworkId": {
             "value": "/subscriptions/7fa3c3a2-7d0d-4987-a30c-30623e38756c/resourceGroups/rg-cis-nonprod-network-01/providers/Microsoft.Network/virtualNetworks/EU-NONPROD-VNET"
         },
         "virtualMachineName": {
-            "value": "schwsr0099"
+            "value": "shhwsr2253"
         },
         "virtualMachineComputerName": {
-            "value": "schwsr0099"
+            "value": "shhwsr2253"
         },
         "virtualMachineRG": {
-            "value": "rg-sch-qual-ukasolutions-01"
+            "value": "rg-shh-test-liftdesigner-01"
         },
         "osDiskType": {
             "value": "Premium_LRS"
@@ -34,7 +34,7 @@
                     "caching": "None",
                     "writeAcceleratorEnabled": false,
                     "id": null,
-                    "name": "schwsr0099_DataDisk_0",
+                    "name": "shhwsr2253_DataDisk_0",
                     "storageAccountType": null,
                     "diskSizeGB": null,
                     "diskEncryptionSet": null
@@ -44,10 +44,10 @@
         "dataDiskResources": {
             "value": [
                 {
-                    "name": "schwsr0099_DataDisk_0",
+                    "name": "shhwsr2253_DataDisk_0",
                     "sku": "Premium_LRS",
                     "properties": {
-                        "diskSizeGB": 64,
+                        "diskSizeGB": 32,
                         "creationData": {
                             "createOption": "empty"
                         }
@@ -56,7 +56,7 @@
             ]
         },
         "virtualMachineSize": {
-            "value": "Standard_D2s_v3"
+            "value": "Standard_F2s_v2"
         },
         "adminUsername": {
             "value": "ldmsosd"
