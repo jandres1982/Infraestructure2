@@ -1,5 +1,5 @@
 ﻿$source = "d:\provision"
-$target = "x:\provision"
+$target = "n:\provision"
 $log = "c:\temp\provision_sync_EU.txt"
 $connectTestResult = Test-NetConnection -ComputerName 10.38.14.7 -Port 445
 if ($connectTestResult.TcpTestSucceeded) {
