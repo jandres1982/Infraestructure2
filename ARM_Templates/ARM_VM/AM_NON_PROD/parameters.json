@@ -6,7 +6,7 @@
             "value": "eastus2"
         },
         "networkInterfaceName": {
-            "value": "shhwsr2280_01"
+            "value": "shhwsr2245_01"
         },
         "subnetName": {
             "value": "sub-infrastructure-iaas-01"
@@ -15,10 +15,10 @@
             "value": "/subscriptions/8528129a-0394-4057-ac4e-0fec3da2246d/resourceGroups/rg-cis-nonprod-network-01/providers/Microsoft.Network/virtualNetworks/vnet-nonprod-use2-01"
         },
         "virtualMachineName": {
-            "value": "shhwsr2280"
+            "value": "shhwsr2245"
         },
         "virtualMachineComputerName": {
-            "value": "shhwsr2280"
+            "value": "shhwsr2245"
         },
         "virtualMachineRG": {
             "value": "rg-cis-nonprod-network-01"
@@ -34,7 +34,7 @@
                     "caching": "None",
                     "writeAcceleratorEnabled": false,
                     "id": null,
-                    "name": "shhwsr2280_DataDisk_0",
+                    "name": "shhwsr2245_DataDisk_0",
                     "storageAccountType": null,
                     "diskSizeGB": null,
                     "diskEncryptionSet": null
@@ -44,7 +44,7 @@
         "dataDiskResources": {
             "value": [
                 {
-                    "name": "shhwsr2280_DataDisk_0",
+                    "name": "shhwsr2245_DataDisk_0",
                     "sku": "Premium_LRS",
                     "properties": {
                         "diskSizeGB": 32,
@@ -56,7 +56,7 @@
             ]
         },
         "virtualMachineSize": {
-            "value": "Standard_D2s_v3"
+            "value": "Standard_F4s_v2"
         },
         "adminUsername": {
             "value": "ldmsosd"
