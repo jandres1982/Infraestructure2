@@ -1,1 +1,1 @@
-RG_NETWORK_PROD
+rg-cis-prod-server-01
