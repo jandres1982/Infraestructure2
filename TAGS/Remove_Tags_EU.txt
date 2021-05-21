@@ -1,8 +1,1 @@
-rg-gis-prod-sentinel-01
-rg-gis-prod-ssot
-rg-jnb-prod-webfacing-01
-rg-sch-prod-ukasolutions-01
-rg-shh-prod-mcafeeepo-01
-rg-uae-prod-fileserver-01
-rg-waw-prod-tetame-01
 RG_NETWORK_PROD
