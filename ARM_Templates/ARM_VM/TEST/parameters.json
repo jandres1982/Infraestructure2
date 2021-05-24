@@ -6,22 +6,22 @@
             "value": "northeurope"
         },
         "networkInterfaceName": {
-            "value": "shhwsr2299_01"
+            "value": "zzzwsr9998_01"
         },
         "subnetName": {
-            "value": "sub-frontend-iaas-01"
+            "value": "Test"
         },
         "virtualNetworkId": {
-            "value": "/subscriptions/505ead1a-5a5f-4363-9b72-83eb2234a43d/resourceGroups/RG_NETWORK_PROD/providers/Microsoft.Network/virtualNetworks/EU-PROD-VNET"
+            "value": "/subscriptions/7fa3c3a2-7d0d-4987-a30c-30623e38756c/resourceGroups/rg-cis-nonprod-network-01/providers/Microsoft.Network/virtualNetworks/EU-NONPROD-VNET"
         },
         "virtualMachineName": {
-            "value": "shhwsr2299"
+            "value": "zzzwsr9998"
         },
         "virtualMachineComputerName": {
-            "value": "shhwsr2299"
+            "value": "zzzwsr9998"
         },
         "virtualMachineRG": {
-            "value": "rg-shh-prod-liftdesigner-01"
+            "value": "rg-cis-test-server-01"
         },
         "osDiskType": {
             "value": "Premium_LRS"
@@ -34,7 +34,7 @@
                     "caching": "None",
                     "writeAcceleratorEnabled": false,
                     "id": null,
-                    "name": "shhwsr2299_DataDisk_0",
+                    "name": "zzzwsr9998_DataDisk_0",
                     "storageAccountType": null,
                     "diskSizeGB": null,
                     "diskEncryptionSet": null
@@ -44,7 +44,7 @@
         "dataDiskResources": {
             "value": [
                 {
-                    "name": "shhwsr2299_DataDisk_0",
+                    "name": "zzzwsr9998_DataDisk_0",
                     "sku": "Premium_LRS",
                     "properties": {
                         "diskSizeGB": 32,
@@ -71,13 +71,10 @@
             "value": false
         },
         "diagnosticsStorageAccountName": {
-            "value": "stproddiagnostic0002"
+            "value": "stnonproddiagnostic0001"
         },
         "diagnosticsStorageAccountId": {
-            "value": "/subscriptions/505ead1a-5a5f-4363-9b72-83eb2234a43d/resourceGroups/rg-cis-prod-storage-01/providers/Microsoft.Storage/storageAccounts/stproddiagnostic0002"
-        },
-        "zone": {
-            "value": "3"
+            "value": "/subscriptions/7fa3c3a2-7d0d-4987-a30c-30623e38756c/resourceGroups/rg-cis-nonprod-storage-01/providers/Microsoft.Storage/storageAccounts/stnonproddiagnostic0001"
         }
     }
 }
