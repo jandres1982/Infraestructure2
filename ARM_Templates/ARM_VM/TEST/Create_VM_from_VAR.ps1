@@ -8,11 +8,13 @@ $Template_2019 = "$(System.DefaultWorkingDirectory)/_Infraestructure/ARM_Templat
 
 ##########################################################################
 $Parameters = Get-Content $Parameters_Base | out-string | ConvertFrom-Json
-$Parameters
+
 #foreach ($server in $server_list)
 #{
 $Parameters.parameters.virtualMachineName.value = "$server"
 $Parameters.parameters.networkInterfaceName.value = "$server`_01"
+
+New-AzureRmResourceGroupDeployment -ResourceGroupName $(rg) -TemplateFile $Template_2019 -TemplateParameterFile $Parameters
 
 #command to create a VM
 #}
