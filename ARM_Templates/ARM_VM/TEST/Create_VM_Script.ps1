@@ -14,10 +14,10 @@ $Parameters = Get-Content $Parameters_Base | out-string | ConvertFrom-Json
 #foreach ($server in $server_list)
 #{
 
-#$Parameters.parameters.virtualMachineName.value = "$vm"
-#$Parameters.parameters.networkInterfaceName.value = "$vm`_01"
+$Parameters.parameters.virtualMachineName.value = "$vm"
+$Parameters.parameters.networkInterfaceName.value = "$vm`_01"
 
-#New-AzResourceGroupDeployment -ResourceGroupName $rg -TemplateFile $Template_2019 -TemplateParameterFile $Parameters
+New-AzResourceGroupDeployment -ResourceGroupName $rg -TemplateFile $Template_2019 -TemplateParameterFile $Parameters
 
 #command to create a VM
 #}
