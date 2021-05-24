@@ -2,9 +2,9 @@
 $vm = $args[0]
 $rg = $args[1]
 #$server_list = gc $(System.DefaultWorkingDirectory)/_Infraestructure/ARM_Templates/ARM_VM/TEST/server_list.txt
-$Parameters_Base = "./parameters.json"
+$Parameters_Base = "parameters.json"
 
-$Template_2019 = "./template_2019.json"
+$Template_2019 = "template_2019.json"
 
 ##########################################################################
 $Parameters = Get-Content $Parameters_Base | out-string | ConvertFrom-Json
