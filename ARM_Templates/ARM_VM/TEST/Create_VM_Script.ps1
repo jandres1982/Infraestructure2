@@ -2,13 +2,14 @@
 $vm = $args[0]
 $rg = $args[1]
 #$server_list = gc $(System.DefaultWorkingDirectory)/_Infraestructure/ARM_Templates/ARM_VM/TEST/server_list.txt
-$Parameters_Base = "parameters.json"
-$Template_2019 = "template_2019.json"
+$Parameters_Base = ".\parameters.json"
+$Template_2019 = ".\template_2019.json"
 
-Write-Output $vm
-$Parameters_Base
+#Write-Output $vm
+
+#Write-host $Parameters_Base
 ##########################################################################
-#$Parameters = Get-Content $Parameters_Base | out-string | ConvertFrom-Json
+$Parameters = Get-Content $Parameters_Base | out-string | ConvertFrom-Json
 
 #foreach ($server in $server_list)
 #{
