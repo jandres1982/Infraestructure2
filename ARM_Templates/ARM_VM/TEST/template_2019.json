@@ -1,5 +1,5 @@
 {
-    "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
     "contentVersion": "1.0.0.0",
     "parameters": {
         "location": {
@@ -52,9 +52,6 @@
         },
         "diagnosticsStorageAccountId": {
             "type": "string"
-        },
-        "zone": {
-            "type": "string"
         }
     },
     "variables": {
@@ -94,15 +91,12 @@
             "copy": {
                 "name": "managedDiskResources",
                 "count": "[length(parameters('dataDiskResources'))]"
-            },
-            "zones": [
-                "[parameters('zone')]"
-            ]
+            }
         },
         {
             "name": "[parameters('virtualMachineName')]",
             "type": "Microsoft.Compute/virtualMachines",
-            "apiVersion": "2021-03-01",
+            "apiVersion": "2020-12-01",
             "location": "[parameters('location')]",
             "dependsOn": [
                 "managedDiskResources",
@@ -120,7 +114,7 @@
                         }
                     },
                     "imageReference": {
-                        "id": "/subscriptions/505ead1a-5a5f-4363-9b72-83eb2234a43d/resourceGroups/rg-gis-prod-imagegallery-01/providers/Microsoft.Compute/galleries/ig_gis_win_prod/images/img-prod-2019datacenter-19052021-01/versions/0.0.1"
+                        "id": "/subscriptions/7fa3c3a2-7d0d-4987-a30c-30623e38756c/resourceGroups/rg-cis-qual-server-01/providers/Microsoft.Compute/images/img-prodwin2019-1835-14102020-01"
                     },
                     "copy": [
                         {
@@ -147,6 +141,7 @@
                         }
                     ]
                 },
+                "securityProfile": {},
                 "osProfile": {
                     "computerName": "[parameters('virtualMachineComputerName')]",
                     "adminUsername": "[parameters('adminUsername')]",
@@ -166,10 +161,7 @@
                         "storageUri": "[concat('https://', parameters('diagnosticsStorageAccountName'), '.blob.core.windows.net/')]"
                     }
                 }
-            },
-            "zones": [
-                "[parameters('zone')]"
-            ]
+            }
         }
     ],
     "outputs": {
