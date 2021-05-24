@@ -6,6 +6,7 @@ $Parameters_Base = "parameters.json"
 $Template_2019 = "template_2019.json"
 
 Write-Output $vm
+$Parameters_Base
 ##########################################################################
 #$Parameters = Get-Content $Parameters_Base | out-string | ConvertFrom-Json
 
