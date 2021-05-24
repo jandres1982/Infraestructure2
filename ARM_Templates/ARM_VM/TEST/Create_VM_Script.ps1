@@ -13,7 +13,7 @@ $Parameters = Get-Content $Parameters_Base | out-string | ConvertFrom-Json
 $Parameters.parameters.virtualMachineName.value = "$vm"
 $Parameters.parameters.networkInterfaceName.value = "$vm`_01"
 
-New-AzureRmResourceGroupDeployment -ResourceGroupName $rg -TemplateFile $Template_2019 -TemplateParameterFile $Parameters
+New-AzResourceGroupDeployment -ResourceGroupName $rg -TemplateFile $Template_2019 -TemplateParameterFile $Parameters
 
 #command to create a VM
 #}
