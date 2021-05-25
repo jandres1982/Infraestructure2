@@ -6,7 +6,7 @@
             "value": "northeurope"
         },
         "networkInterfaceName": {
-            "value": "shhwsr2283_01"
+            "value": "shhwsr2284_01"
         },
         "subnetName": {
             "value": "sub-middleware-iaas-01"
@@ -15,10 +15,10 @@
             "value": "/subscriptions/505ead1a-5a5f-4363-9b72-83eb2234a43d/resourceGroups/RG_NETWORK_PROD/providers/Microsoft.Network/virtualNetworks/EU-PROD-VNET"
         },
         "virtualMachineName": {
-            "value": "shhwsr2283"
+            "value": "shhwsr2284"
         },
         "virtualMachineComputerName": {
-            "value": "shhwsr2283"
+            "value": "shhwsr2284"
         },
         "virtualMachineRG": {
             "value": "rg-shh-prod-liftdesigner-01"
@@ -34,7 +34,7 @@
                     "caching": "None",
                     "writeAcceleratorEnabled": false,
                     "id": null,
-                    "name": "shhwsr2283_DataDisk_0",
+                    "name": "shhwsr2284_DataDisk_0",
                     "storageAccountType": null,
                     "diskSizeGB": null,
                     "diskEncryptionSet": null
@@ -44,7 +44,7 @@
         "dataDiskResources": {
             "value": [
                 {
-                    "name": "shhwsr2283_DataDisk_0",
+                    "name": "shhwsr2284_DataDisk_0",
                     "sku": "Premium_LRS",
                     "properties": {
                         "diskSizeGB": 32,
