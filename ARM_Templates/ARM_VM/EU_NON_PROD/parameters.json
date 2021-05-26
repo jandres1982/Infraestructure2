@@ -21,7 +21,7 @@
             "value": "zzzwsr0031"
         },
         "virtualMachineRG": {
-            "value": "rg-cis-test-server-01"
+            "value": "rg-shh-test-devops-01"
         },
         "osDiskType": {
             "value": "Premium_LRS"
