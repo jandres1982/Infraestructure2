@@ -6,7 +6,7 @@
             "value": "North Europe"
         },
         "storageAccountName": {
-            "value": "stbackupreport01"
+            "value": "stprodbackupreport01"
         },
         "accountType": {
             "value": "Standard_LRS"
