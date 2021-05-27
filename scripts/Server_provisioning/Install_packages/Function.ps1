@@ -1,4 +1,4 @@
-$function = $arg(0)
+$function = $args[0]
 $hostname = hostname
 $hostname = $hostname.Toupper()
 $KG = $hostname.Substring(0,3)
