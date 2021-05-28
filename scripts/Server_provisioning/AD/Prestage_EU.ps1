@@ -6,5 +6,7 @@ $password = $PW | ConvertTo-SecureString -key $key
 $domain = "global.schindler.com"
 $cred = New-Object System.Management.Automation.PSCredential -ArgumentList ($User, $password)
 $vm = $vm.ToUpper()
+$KG = $vm.Substring(0,3)
+$function = "$KG Windows Server $function"
 New-ADComputer -Name $vm -Path "OU=EU,OU=Servers,OU=NBI12,DC=global,DC=schindler,DC=com" -PasswordNotRequired $false -Description $Function -ErrorAction SilentlyContinue -Credential $cred
 write-host "$vm and $Function"
