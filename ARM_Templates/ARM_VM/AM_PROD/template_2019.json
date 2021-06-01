@@ -44,6 +44,9 @@
         "patchMode": {
             "type": "string"
         },
+        "enableHotpatching": {
+            "type": "bool"
+        },
         "diagnosticsStorageAccountName": {
             "type": "string"
         },
@@ -99,7 +102,7 @@
         {
             "name": "[parameters('virtualMachineName')]",
             "type": "Microsoft.Compute/virtualMachines",
-            "apiVersion": "2020-12-01",
+            "apiVersion": "2021-03-01",
             "location": "[parameters('location')]",
             "dependsOn": [
                 "managedDiskResources",
@@ -117,7 +120,7 @@
                         }
                     },
                     "imageReference": {
-                        "id": "/subscriptions/59c20947-4965-45c4-99f3-12be96106119/resourceGroups/rg-cis-prod-server-02/providers/Microsoft.Compute/images/img-prodwin2019-1835-14102020-01"
+                        "id": "/subscriptions/505ead1a-5a5f-4363-9b72-83eb2234a43d/resourceGroups/rg-gis-prod-imagegallery-01/providers/Microsoft.Compute/galleries/ig_gis_win_prod/images/img-prod-2019datacenter-19052021-01"
                     },
                     "copy": [
                         {
@@ -144,7 +147,6 @@
                         }
                     ]
                 },
-                "securityProfile": {},
                 "osProfile": {
                     "computerName": "[parameters('virtualMachineComputerName')]",
                     "adminUsername": "[parameters('adminUsername')]",
@@ -153,6 +155,7 @@
                         "enableAutomaticUpdates": false,
                         "provisionVmAgent": true,
                         "patchSettings": {
+                            "enableHotpatching": "[parameters('enableHotpatching')]",
                             "patchMode": "[parameters('patchMode')]"
                         }
                     }

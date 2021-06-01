@@ -6,22 +6,22 @@
             "value": "northeurope"
         },
         "networkInterfaceName": {
-            "value": "wawwsr1103_nic"
+            "value": "shhwsr2297_01"
         },
         "subnetName": {
-            "value": "sub-dmz2domain-01"
+            "value": "sub-middleware-iaas-01"
         },
         "virtualNetworkId": {
             "value": "/subscriptions/505ead1a-5a5f-4363-9b72-83eb2234a43d/resourceGroups/RG_NETWORK_PROD/providers/Microsoft.Network/virtualNetworks/EU-PROD-VNET"
         },
         "virtualMachineName": {
-            "value": "wawwsr1103"
+            "value": "shhwsr2297"
         },
         "virtualMachineComputerName": {
-            "value": "wawwsr1103"
+            "value": "shhwsr2297"
         },
         "virtualMachineRG": {
-            "value": "rg-gis-test-tetame-01"
+            "value": "rg-shh-prod-liftdesigner-01"
         },
         "osDiskType": {
             "value": "Premium_LRS"
@@ -34,7 +34,7 @@
                     "caching": "None",
                     "writeAcceleratorEnabled": false,
                     "id": null,
-                    "name": "wawwsr1103_DataDisk_0",
+                    "name": "shhwsr2297_DataDisk_0",
                     "storageAccountType": null,
                     "diskSizeGB": null,
                     "diskEncryptionSet": null
@@ -44,7 +44,7 @@
         "dataDiskResources": {
             "value": [
                 {
-                    "name": "wawwsr1103_DataDisk_0",
+                    "name": "shhwsr2297_DataDisk_0",
                     "sku": "Premium_LRS",
                     "properties": {
                         "diskSizeGB": 32,
@@ -56,7 +56,7 @@
             ]
         },
         "virtualMachineSize": {
-            "value": "Standard_D2s_v3"
+            "value": "Standard_F2s_v2"
         },
         "adminUsername": {
             "value": "ldmsosd"
@@ -77,7 +77,7 @@
             "value": "/subscriptions/505ead1a-5a5f-4363-9b72-83eb2234a43d/resourceGroups/rg-cis-prod-storage-01/providers/Microsoft.Storage/storageAccounts/stproddiagnostic0002"
         },
         "zone": {
-            "value": "1"
+            "value": "3"
         }
     }
 }

@@ -114,7 +114,7 @@
                         }
                     },
                     "imageReference": {
-                        "id": "/subscriptions/7fa3c3a2-7d0d-4987-a30c-30623e38756c/resourceGroups/rg-cis-qual-server-01/providers/Microsoft.Compute/images/img-prodwin2016-1835-14102020-01"
+                        "id": "/subscriptions/505ead1a-5a5f-4363-9b72-83eb2234a43d/resourceGroups/rg-gis-prod-imagegallery-01/providers/Microsoft.Compute/galleries/ig_gis_win_prod/images/img-prod-2016datacenter-19052021-01"
                     },
                     "copy": [
                         {
