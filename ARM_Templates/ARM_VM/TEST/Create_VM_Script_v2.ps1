@@ -16,7 +16,7 @@ $json.parameters.virtualMachineComputerName.value = $vm
 $json.parameters.virtualMachineRG.value = $rg
 $json.parameters.networkInterfaceName.value = "$vm`_01"
 
-$param = $json | ConvertTo-Json -Depth 32- | 
+$param = $json | ConvertTo-Json -Depth 32
 write-host "$param"
 
 
