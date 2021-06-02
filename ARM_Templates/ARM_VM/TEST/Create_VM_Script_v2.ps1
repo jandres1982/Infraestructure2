@@ -15,7 +15,7 @@ $json.parameters.virtualMachineComputerName.value = $Vm
 $json.parameters.virtualMachineRG.value = $rg
 $json.parameters.networkInterfaceName.value = "$vm`_01"
 
-$param = $json | ConvertTo-Json -Depth 32
+$param = $json | ConvertTo-Json -Depth 32- -AsArray
 write-host "$param"
 New-AzResourceGroupDeployment -ResourceGroupName $rg -TemplateParameterFile $param -TemplateFile $Template
 
