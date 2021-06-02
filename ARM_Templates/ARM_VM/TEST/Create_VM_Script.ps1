@@ -9,7 +9,15 @@ $Template_2019 = ".\template_2019.json"
 
 #Write-host $Parameters_Base
 ##########################################################################
-$Parameters = Get-Content $Parameters_Base | out-string | ConvertFrom-Json
+$json = gc $Parameters_Base
+$json = $Parameters_Base | convertfrom-json
+$json.parameters.virtualMachineName.value = $Vm
+$json.parameters.virtualMachineComputerName.value = $Vm
+$json.parameters.virtualMachineRG.value = $rg
+
+$json.parameters
+
+
 
 #foreach ($server in $server_list)
 #{
