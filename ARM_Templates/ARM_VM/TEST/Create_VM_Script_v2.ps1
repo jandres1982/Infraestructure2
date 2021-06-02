@@ -17,7 +17,7 @@ $json.parameters.networkInterfaceName.value = "$vm`_01"
 
 $param = $json | ConvertTo-Json -Depth 32
 write-host "$param"
-New-AzResourceGroupDeployment -ResourceGroupName $rg -TemplateParameterFile $param -TemplateFile $Template
+New-AzResourceGroupDeployment -ResourceGroupName $rg -TemplateParameterFile $Parameters_Base -TemplateFile $Template
 
 #foreach ($server in $server_list)
 #{
