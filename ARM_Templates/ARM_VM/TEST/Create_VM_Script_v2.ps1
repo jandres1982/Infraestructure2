@@ -10,15 +10,13 @@ $Template = ".\template_2019.json"
 #Write-host $Parameters_Base
 ##########################################################################
 $json = Get-Content $Parameters_Base -raw | convertfrom-json
-$json.parameters
 $json.parameters.virtualMachineName.value = $Vm
 $json.parameters.virtualMachineComputerName.value = $Vm
 $json.parameters.virtualMachineRG.value = $rg
 $json.parameters.networkInterfaceName.value = "$vm`_01"
-$json.parameters
 
 $param = $json | ConvertTo-Json -Depth 32
-
+write-host "$param"
 #New-AzResourceGroupDeployment -ResourceGroupName $rg -TemplateParameterFile $param -TemplateFile $Template
 
 #foreach ($server in $server_list)
