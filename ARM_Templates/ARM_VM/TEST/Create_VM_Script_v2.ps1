@@ -1,7 +1,6 @@
 # Write your PowerShell commands here.
 $vm = $args[0]
 $rg = $args[1]
-echo "hello" > ".\hello.txt"
 #$server_list = gc $(System.DefaultWorkingDirectory)/_Infraestructure/ARM_Templates/ARM_VM/TEST/server_list.txt
 $Parameters_Base = ".\parameters.json"
 $Template = ".\template_2019.json"
@@ -15,13 +14,9 @@ $json.parameters.virtualMachineName.value = $vm
 $json.parameters.virtualMachineComputerName.value = $vm
 $json.parameters.virtualMachineRG.value = $rg
 $json.parameters.networkInterfaceName.value = "$vm`_01"
+$json | ConvertTo-Json -Depth 32 | Out-File -encoding "UTF8" -FilePath ".\$vm.json"
 
-$param = $json | ConvertTo-Json -Depth 32
-write-host "$param"
-
-
-
-#New-AzResourceGroupDeployment -ResourceGroupName $rg -TemplateParameterFile $param -TemplateFile $Template
+New-AzResourceGroupDeployment -ResourceGroupName $rg -TemplateParameterFile ".\$vm.json" -TemplateFile $Template
 
 #foreach ($server in $server_list)
 #{
