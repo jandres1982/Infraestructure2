@@ -11,12 +11,12 @@ $Template = ".\template_2019.json"
 ##########################################################################
 $json = Get-Content $Parameters_Base -raw | convertfrom-json
 $json.parameters
-#$json = $Parameters_Base | convertfrom-json
-#$json.parameters.virtualMachineName.value = $Vm
-#$json.parameters.virtualMachineComputerName.value = $Vm
-#$json.parameters.virtualMachineRG.value = $rg
-#$json.parameters.networkInterfaceName.value = "$vm`_01"
-#$json.parameters
+$json = $Parameters_Base | convertfrom-json
+$json.parameters.virtualMachineName.value = $Vm
+$json.parameters.virtualMachineComputerName.value = $Vm
+$json.parameters.virtualMachineRG.value = $rg
+$json.parameters.networkInterfaceName.value = "$vm`_01"
+$json.parameters
 
 
 
