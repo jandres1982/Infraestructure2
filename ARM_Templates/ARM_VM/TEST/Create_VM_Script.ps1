@@ -14,7 +14,7 @@ $json = $Parameters_Base | convertfrom-json
 $json.parameters.virtualMachineName.value = $Vm
 $json.parameters.virtualMachineComputerName.value = $Vm
 $json.parameters.virtualMachineRG.value = $rg
-
+$json.parameters.networkInterfaceName.value = "$vm`_01"
 $json.parameters
 
 
@@ -22,12 +22,12 @@ $json.parameters
 #foreach ($server in $server_list)
 #{
 
-$Parameters.parameters.virtualMachineName.value = "$vm"
-$Parameters.parameters.networkInterfaceName.value = "$vm`_01"
+#$Parameters.parameters.virtualMachineName.value = "$vm"
+#$Parameters.parameters.networkInterfaceName.value = "$vm`_01"
 
-$Parameters | ConvertTo-Json | Out-File -FilePath ".\Parameters.json" -Encoding utf8 -Force
+#$Parameters | ConvertTo-Json | Out-File -FilePath ".\Parameters.json" -Encoding utf8 -Force
 
-New-AzResourceGroupDeployment -ResourceGroupName $rg -TemplateFile $Template_2019 -TemplateParameterFile ".\parameters.json"
+#New-AzResourceGroupDeployment -ResourceGroupName $rg -TemplateFile $Template_2019 -TemplateParameterFile ".\parameters.json"
 
 #command to create a VM
 #}
