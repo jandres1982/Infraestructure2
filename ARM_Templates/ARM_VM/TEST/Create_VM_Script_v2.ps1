@@ -17,7 +17,8 @@ $json.parameters.virtualMachineRG.value = $rg
 $json.parameters.networkInterfaceName.value = "$vm`_01"
 $json.parameters
 
-New-AzResourceGroupDeployment -ResourceGroupName $rg -TemplateParameterFile $json -TemplateFile $Template
+$json | ConvertTo-Json -Depth 32 | Set-Content '.\zzzwsr9999.json'
+#New-AzResourceGroupDeployment -ResourceGroupName $rg -TemplateParameterFile $json -TemplateFile $Template
 
 #foreach ($server in $server_list)
 #{
