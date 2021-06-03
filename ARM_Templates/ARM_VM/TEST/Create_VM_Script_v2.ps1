@@ -14,6 +14,7 @@ $json.parameters.virtualMachineName.value = $vm
 $json.parameters.virtualMachineComputerName.value = $vm
 $json.parameters.virtualMachineRG.value = $rg
 $json.parameters.networkInterfaceName.value = "$vm`_01"
+
 $json | ConvertTo-Json -Depth 32 | Out-File -encoding "UTF8" -FilePath ".\$vm.json"
 
 New-AzResourceGroupDeployment -ResourceGroupName $rg -TemplateParameterFile ".\$vm.json" -TemplateFile $Template
