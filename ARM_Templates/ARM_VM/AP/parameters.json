@@ -6,7 +6,7 @@
             "value": "southeastasia"
         },
         "networkInterfaceName": {
-            "value": "scnwsr4102_nic"
+            "value": "scnwsr4102_01"
         },
         "subnetName": {
             "value": "sub-dmz2domain-01"
