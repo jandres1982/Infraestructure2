@@ -6,22 +6,22 @@
             "value": "southeastasia"
         },
         "networkInterfaceName": {
-            "value": "jsgwsr0080_nic"
+            "value": "scnwsr4102_nic"
         },
         "subnetName": {
-            "value": "sub-infrastructure-iaas-01"
+            "value": "sub-dmz2domain-01"
         },
         "virtualNetworkId": {
             "value": "/subscriptions/59c20947-4965-45c4-99f3-12be96106119/resourceGroups/rg-cis-prod-network-02/providers/Microsoft.Network/virtualNetworks/vnet-prod-asse-01"
         },
         "virtualMachineName": {
-            "value": "jsgwsr0080"
+            "value": "scnwsr4102"
         },
         "virtualMachineComputerName": {
-            "value": "jsgwsr0080"
+            "value": "scnwsr4102"
         },
         "virtualMachineRG": {
-            "value": "rg-jsg-prod-server-01"
+            "value": "rg-scn-prod-scfesignapplication-01"
         },
         "osDiskType": {
             "value": "Premium_LRS"
@@ -34,7 +34,7 @@
                     "caching": "None",
                     "writeAcceleratorEnabled": false,
                     "id": null,
-                    "name": "jsgwsr0080_DataDisk_0",
+                    "name": "scnwsr4102_DataDisk_0",
                     "storageAccountType": null,
                     "diskSizeGB": null,
                     "diskEncryptionSet": null
@@ -44,10 +44,10 @@
         "dataDiskResources": {
             "value": [
                 {
-                    "name": "jsgwsr0080_DataDisk_0",
+                    "name": "scnwsr4102_DataDisk_0",
                     "sku": "Premium_LRS",
                     "properties": {
-                        "diskSizeGB": 4,
+                        "diskSizeGB": 32,
                         "creationData": {
                             "createOption": "empty"
                         }
@@ -56,7 +56,7 @@
             ]
         },
         "virtualMachineSize": {
-            "value": "Standard_D2s_v3"
+            "value": "Standard_F4s_v2"
         },
         "adminUsername": {
             "value": "ldmsosd"
