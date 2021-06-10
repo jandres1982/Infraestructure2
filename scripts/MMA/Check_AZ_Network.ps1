@@ -8,9 +8,7 @@ $Interface_Az_Eu_prod = $ip | where {$_.IPAddress.StartsWith($Azure_Eu_Prod) -or
 if ($Interface_Az_Eu_prod)
 {Write-host "This is an Azure EU prod Server"
 
-
 ###### Isert config for Az EU prod Servers
-
 
 }
 
@@ -74,6 +72,14 @@ if ($Interface_Az_AM)
 
 if ($Interface_Az_Eu_nonProd -or $Interface_Az_Eu_prod -or $Interface_Az_AP -or $Interface_Az_AM)
 {Write-Host "This is an Azure Server"
+
+#Config for all servers in Azure
+
+
+
 }else
 {Write-Host "This is not an Azure Server"
+
+#Config for on-prem server
+
 }
