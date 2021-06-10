@@ -1,4 +1,4 @@
-﻿###########################################################################################
+###########################################################################################
 ######################### Defining Azure EU prod Servers ##################################
 $Azure_Eu_Prod = '10.38'
 $Azure_Eu_Prod_1 = '10.39'
@@ -22,9 +22,9 @@ if ($Interface_Az_Eu_prod)
 $Azure_Eu_nonProd = '10.37'
 
 $ip = Get-NetIPAddress
-$Interface_Az_EU_nonProd = $ip | where {$_.IPAddress.StartsWith($Azure_Eu_nonProd)}
+$Interface_Az_Eu_nonProd = $ip | where {$_.IPAddress.StartsWith($Azure_Eu_nonProd)}
 
-if ($Interface_Az_EU_nonProd)
+if ($Interface_Az_Eu_nonProd)
 {Write-host "This is an Azure EU non prod Server"
 
 
@@ -72,3 +72,8 @@ if ($Interface_Az_AM)
 
 #**********************************************************************************************
 
+if ($Interface_Az_Eu_nonProd -or $Interface_Az_Eu_prod -or $Interface_Az_AP -or $Interface_Az_AM)
+{Write-Host "This is an Azure Server"
+}else
+{Write-Host "This is not an Azure Server"
+}
