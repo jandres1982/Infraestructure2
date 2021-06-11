@@ -26,6 +26,7 @@
       "metadata": {
         "description": "Primary or secondary workspace key."
       }
+    },
       "workspaceId-SOC": {
       "type": "string",
       "metadata": {
@@ -37,7 +38,7 @@
       "metadata": {
         "description": "Primary or secondary workspace key."
       }
-    }
+    },
   },
   "resources": [
     {
