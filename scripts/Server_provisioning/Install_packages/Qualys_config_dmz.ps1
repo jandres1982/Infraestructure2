@@ -5,5 +5,9 @@
 
 $Get_proxy = [System.Net.WebProxy]::GetDefaultProxy()
 $Proxy = $Get_proxy.Address.OriginalString
-cd "C:\Program Files\Qualys\QualysAgent"
-.\QualysProxy.exe /u $Proxy
+$registryPath = "HKLM:\Software\qualys\Proxy"
+$Name = "URL"
+$value = $Proxy
+New-Item -Path $registryPath -Force
+New-ItemProperty -Path $registryPath -Name $name -Value $value -Force
+Restart-Service -Name QualysAgent -Force
