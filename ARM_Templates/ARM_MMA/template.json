@@ -15,13 +15,24 @@
         "description": "Location of the virtual machine"
       }
     },
-    "workspaceId": {
+    "workspaceId-SG-Azure": {
       "type": "string",
       "metadata": {
         "description": "Id of the workspace."
       }
     },
-    "workspaceKey": {
+    "workspaceKeySG-Azure": {
+      "type": "string",
+      "metadata": {
+        "description": "Primary or secondary workspace key."
+      }
+      "workspaceId-SOC": {
+      "type": "string",
+      "metadata": {
+        "description": "Id of the workspace."
+      }
+    },
+    "workspaceKey-SOC": {
       "type": "string",
       "metadata": {
         "description": "Primary or secondary workspace key."
@@ -49,10 +60,12 @@
                 "typeHandlerVersion": "1.0",
                 "autoUpgradeMinorVersion": true,
                 "settings": {
-                    "workspaceId": "[parameters('workspaceId')]"
+                    "workspaceId-SG-Azure": "[parameters('workspaceId-SG-Azure')]"
+                    "workspaceId-SG-SOC": "[parameters('workspaceId-SOC')]"
                 },
                 "protectedSettings": {
-                    "workspaceKey": "[parameters('workspaceKey')]"
+                    "workspaceKey-SG-Azure": "[parameters('workspaceKey-SG-Azure')]"
+                    "workspaceKey-SOC": "[parameters('workspaceKey-SOC')]"
                 }
             }
         }
