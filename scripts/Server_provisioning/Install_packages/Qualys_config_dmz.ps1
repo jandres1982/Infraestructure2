@@ -4,6 +4,6 @@
 #Restart-Service -Name QualysAgent -Force
 
 $Get_proxy = [System.Net.WebProxy]::GetDefaultProxy()
-$Proxy = $Get_proxy.Address.Authority
+$Proxy = $Get_proxy.Address.OriginalString
 cd "C:\Program Files\Qualys\QualysAgent"
 .\QualysProxy.exe /u $Proxy
