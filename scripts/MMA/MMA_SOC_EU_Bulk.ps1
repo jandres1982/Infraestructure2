@@ -9,4 +9,5 @@ $json.parameters.vmName[0].value = "$server"
 $json | ConvertTo-Json -Depth 32 | Out-File -encoding "UTF8" -FilePath ".\MMA_Json_SOC\$server.json"
 $rg = $(Get-AzVM -Name $server).ResourceGroupName
 New-AzResourceGroupDeployment -ResourceGroupName $rg -TemplateParameterFile ".\MMA_Json_SOC\$server.json" -TemplateFile $Template
+
 }
