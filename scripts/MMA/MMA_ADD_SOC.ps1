@@ -6,3 +6,4 @@ function addWorkID_SoC
     $mma1.AddCloudWorkspace($workspaceId, $workspaceKey)
     $mma1.ReloadConfiguration()
 }
+addWorkID_SoC
