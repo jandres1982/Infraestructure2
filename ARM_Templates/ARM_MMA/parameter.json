@@ -3,16 +3,22 @@
   "contentVersion": "1.0.0.0",
   "parameters": {
       "vmName": {
-        "value": "shhwsr2237"
+        "value": "shhwsr2247"
       },
       "location": {
         "value": "northeurope"
       },
-      "workspaceId": {
+      "workspaceId-SG-Azure": {
         "value": "fa488d5a-d8e4-4437-9ccc-2ef59e9eb669"
       },
-      "workspaceKey": {
+      "workspaceKey-SG-Azure": {
         "value": "1DxbXeHBAM3QLWl4GcE9SF0eTCEYuyr5pAt5k3wGG+bASH/ug9XGmVUyHKGvi/nmVIAYLLvfemwkuhM0yxGWCA=="
+      }
+      "workspaceId-SOC": {
+        "value": "b615f112-4439-41fa-aa80-424be76d309e"
+      },
+      "workspaceKey-SOC": {
+        "value": "xO/JqiWFSYxGY7uIe1XgeFE3LjWFq8jvxoYyLcSGiHNkR/GnDG7eDd1WijUwMD7fW2y8rUnyLeVM8U1s9sDoqQ=="
       }
   }
 }
