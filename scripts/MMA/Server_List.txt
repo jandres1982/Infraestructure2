@@ -1,2 +1,5 @@
-shhwsrdc1015
-vm-prod-global-domain-controller-shhwsrdc1019
+vm-prod-SolarWindsSQLserver-jsgwsr0073
+vm-prod-TestServerLotusNotes-jsgwsr0079
+vm-prod-WEB-IIS-shhwsr2161
+vm-prod-web-portal-jsgwsr0075
+vm-prod-webservice-jsgwsr0068
