@@ -1,1 +1,0 @@
-Set-AzVMExtension -Name AMAWindows -ExtensionType AzureMonitorWindowsAgent -Publisher Microsoft.Azure.Monitor -ResourceGroupName $(rg) -VMName $(vm) -Location northeurope -TypeHandlerVersion 1.0.18053.0
