@@ -11,3 +11,7 @@ $value = $Proxy
 New-Item -Path $registryPath -Force
 New-ItemProperty -Path $registryPath -Name $name -Value $value -Force
 Restart-Service -Name QualysAgent -Force
+
+#netsh winhttp reset proxy
+
+#netsh winhttp show proxy
