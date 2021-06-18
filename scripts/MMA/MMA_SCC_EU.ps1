@@ -1,4 +1,4 @@
-$Parameters_Base = ".\parameters.json"
+$Parameters_Base = ".\parameters-eu.json"
 $Template = ".\template.json"
 $servers = Get-Content ".\Server_List.txt"
 New-Item -ItemType directory -Path ".\MMA_Json" -ErrorAction SilentlyContinue
