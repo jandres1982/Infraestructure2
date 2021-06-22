@@ -6,22 +6,22 @@
             "value": "northeurope"
         },
         "networkInterfaceName": {
-            "value": "wiiwsr0027_01"
+            "value": "shhwsr2298_01"
         },
         "subnetName": {
-            "value": "sub-frontendfile-01"
+            "value": "sub-dmz2domain-01"
         },
         "virtualNetworkId": {
             "value": "/subscriptions/505ead1a-5a5f-4363-9b72-83eb2234a43d/resourceGroups/RG_NETWORK_PROD/providers/Microsoft.Network/virtualNetworks/EU-PROD-VNET"
         },
         "virtualMachineName": {
-            "value": "wiiwsr0027"
+            "value": "shhwsr2298"
         },
         "virtualMachineComputerName": {
-            "value": "wiiwsr0027"
+            "value": "shhwsr2298"
         },
         "virtualMachineRG": {
-            "value": "rg-wii-prod-fileserver-01"
+            "value": "rg-cis-prod-unispool-01"
         },
         "osDiskType": {
             "value": "Premium_LRS"
@@ -34,7 +34,7 @@
                     "caching": "None",
                     "writeAcceleratorEnabled": false,
                     "id": null,
-                    "name": "wiiwsr0027_DataDisk_0",
+                    "name": "shhwsr2298_DataDisk_0",
                     "storageAccountType": null,
                     "diskSizeGB": null,
                     "diskEncryptionSet": null
@@ -44,7 +44,7 @@
         "dataDiskResources": {
             "value": [
                 {
-                    "name": "wiiwsr0027_DataDisk_0",
+                    "name": "shhwsr2298_DataDisk_0",
                     "sku": "Premium_LRS",
                     "properties": {
                         "diskSizeGB": 32,

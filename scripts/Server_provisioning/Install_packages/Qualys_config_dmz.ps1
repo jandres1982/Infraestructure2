@@ -15,3 +15,4 @@ Restart-Service -Name QualysAgent -Force
 #netsh winhttp reset proxy
 
 #netsh winhttp show proxy
+
