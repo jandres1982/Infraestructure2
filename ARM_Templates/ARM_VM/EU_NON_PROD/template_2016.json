@@ -1,5 +1,5 @@
 {
-    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+    "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
     "contentVersion": "1.0.0.0",
     "parameters": {
         "location": {
@@ -96,7 +96,7 @@
         {
             "name": "[parameters('virtualMachineName')]",
             "type": "Microsoft.Compute/virtualMachines",
-            "apiVersion": "2020-12-01",
+            "apiVersion": "2021-03-01",
             "location": "[parameters('location')]",
             "dependsOn": [
                 "managedDiskResources",
@@ -141,7 +141,6 @@
                         }
                     ]
                 },
-                "securityProfile": {},
                 "osProfile": {
                     "computerName": "[parameters('virtualMachineComputerName')]",
                     "adminUsername": "[parameters('adminUsername')]",
