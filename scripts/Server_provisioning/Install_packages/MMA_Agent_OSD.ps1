@@ -1,5 +1,6 @@
 New-Item -Path ".\MMA_Json" -ItemType "Directory" -Force
 $vm = $args[0]
+$rg = $args[1]
 $Parameters_Base = ".\parameters-eu.json"
 $Template = ".\template.json"
 $json = Get-Content $Parameters_Base -raw | convertfrom-json
