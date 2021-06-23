@@ -1,6 +1,6 @@
 $vm = $args[0]
 $PSEmailServer = "smtp.eu.schindler.com"
-$From = "antoniovicente.vento@schindler.com"
+$From = "david.sanchoiguaz@schindler.com"
 $To = "0034691022611@sms.schindler.com"
 $Date = Get-Date -format d
 $Subject = "Server $vm is completed from Devops Script at $Date "
