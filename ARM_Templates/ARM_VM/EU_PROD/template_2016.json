@@ -102,7 +102,7 @@
         {
             "name": "[parameters('virtualMachineName')]",
             "type": "Microsoft.Compute/virtualMachines",
-            "apiVersion": "2020-12-01",
+            "apiVersion": "2021-03-01",
             "location": "[parameters('location')]",
             "dependsOn": [
                 "managedDiskResources",
@@ -120,7 +120,7 @@
                         }
                     },
                     "imageReference": {
-                        "id": "/subscriptions/505ead1a-5a5f-4363-9b72-83eb2234a43d/resourceGroups/rg-cis-prod-server-01/providers/Microsoft.Compute/images/img-prodwin2016-1835-14102020-01"
+                        "id": "/subscriptions/505ead1a-5a5f-4363-9b72-83eb2234a43d/resourceGroups/rg-gis-prod-imagegallery-01/providers/Microsoft.Compute/galleries/ig_gis_win_prod/images/img-prod-2016datacenter-19052021-01/versions/0.0.1"
                     },
                     "copy": [
                         {
