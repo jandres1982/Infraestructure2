@@ -18,31 +18,31 @@ If ($re_email -eq "nahum.sancho@schindler.com")
 {
 $phone = $phone_NS
 }
-If ($re_email -contains "david")
+If ($re_email -eq "david.sanchoiguaz@schindler.com")
 {
 $phone = $phone_DS
 }
-If ($re_email -contains "alberto")
+If ($re_email -eq "alberto.delgado@schindler.com")
 {
 $phone = $phone_AD
 }
-If ($re_email -contains "luis")
+If ($re_email -eq "luis.javier.labodia@schindler.com")
 {
 $phone = $phone_LJ
 }
-If ($re_email -contains "fernando")
+If ($re_email -eq "fernando.camps@schindler.com")
 {
 $phone = $phone_FC
 }
-If ($re_email -contains "alfonso")
+If ($re_email -eq "alfonso.marques@schindler.com")
 {
 $phone = $phone_AM
 }
 
 Write-host "$phone"
 
-#$From = "scc-support-zar.es@schindler.com"
-$From = "david.sanchoiguaz@schindler.com"
+$From = "scc-support-zar.es@schindler.com"
+#$From = "david.sanchoiguaz@schindler.com"
 $To = $phone,"$re_email"
 $Subject = "Server $vm was completed with Schindler Devops Script on $rg"
 #$Path = "D:\Repository\Working\Antonio\PS_Email\Test_attachments\"
