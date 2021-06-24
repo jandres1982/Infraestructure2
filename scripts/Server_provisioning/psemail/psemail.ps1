@@ -3,7 +3,7 @@ $rg = $args[1]
 $re_email = $args[2]
 $PSEmailServer = "smtp.eu.schindler.com"
 $phone_AV = "0034691022611@sms.schindler.com"
-$phone_NS = ""
+$phone_NS = "0034699559798@sms.schindler.com"
 $phone_DS = ""
 $phone_AD = ""
 $phone_LJ = ""
@@ -14,7 +14,7 @@ If ($re_email -eq "antoniovicente.vento@schindler.com")
 {
 $phone = $phone_AV
 }
-If ($re_email -contains "nahum")
+If ($re_email -eq "nahum.sancho@schindler.com")
 {
 $phone = $phone_NS
 }
@@ -41,8 +41,8 @@ $phone = $phone_AM
 
 Write-host "$phone"
 
-
-$From = "scc-support-zar.es@schindler.com"
+#$From = "scc-support-zar.es@schindler.com"
+$From = "david.sanchoiguaz@schindler.com"
 $To = $phone,"$re_email"
 $Subject = "Server $vm was completed with Schindler Devops Script on $rg"
 #$Path = "D:\Repository\Working\Antonio\PS_Email\Test_attachments\"
