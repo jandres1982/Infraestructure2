@@ -52,6 +52,8 @@ Server $vm has been provisioned in $rg.
 - Check SIM local admin group is added.
 - Check Updates were Installed.
 - Check MMA agent is connected to workspaces.
+
+Thanks for using Devops for Schindler Servers
 "@
 #Send-MailMessage -From $From -To $To -Subject $Subject -Body $Body -Attachments $Attachment
 
