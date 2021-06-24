@@ -2,8 +2,48 @@ $vm = $args[0]
 $rg = $args[1]
 $re_email = $args[2]
 $PSEmailServer = "smtp.eu.schindler.com"
+$phone_AV = "0034691022611@sms.schindler.com"
+$phone_NS = ""
+$phone_DS = ""
+$phone_AD = ""
+$phone_LJ = ""
+$phone_FC = ""
+$phone_AM = ""
+
+If ($re_email -contains "antonio")
+{
+$phone = $phone_AV
+}
+If ($re_email -contains "nahum")
+{
+$phone = $phone_NS
+}
+If ($re_email -contains "david")
+{
+$phone = $phone_DS
+}
+If ($re_email -contains "alberto")
+{
+$phone = $phone_AD
+}
+If ($re_email -contains "luis")
+{
+$phone = $phone_LJ
+}
+If ($re_email -contains "fernando")
+{
+$phone = $phone_FC
+}
+If ($re_email -contains "alfonso")
+{
+$phone = $phone_AM
+}
+
+Write-host "$phone"
+
+
 $From = "scc-support-zar.es@schindler.com"
-$To = "0034691022611@sms.schindler.com","$re_email"
+$To = $phone,"$re_email"
 $Subject = "Server $vm was completed with Schindler Devops Script on $rg"
 #$Path = "D:\Repository\Working\Antonio\PS_Email\Test_attachments\"
 #$Filename = Get-ChildItem $Path -Name "Att*" | select -Last 1
