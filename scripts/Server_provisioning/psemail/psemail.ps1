@@ -39,8 +39,6 @@ If ($re_email -eq "alfonso.marques@schindler.com")
 $phone = $phone_AM
 }
 
-Write-host "$phone"
-
 $From = "scc-support-zar.es@schindler.com"
 #$From = "david.sanchoiguaz@schindler.com"
 $To = $phone,"$re_email"
