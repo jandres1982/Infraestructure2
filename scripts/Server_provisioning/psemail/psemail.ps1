@@ -7,7 +7,7 @@ $phone_NS = "0034699559798@sms.schindler.com"
 $phone_DS = ""
 $phone_AD = "0034669236270@sms.schindler.com"
 $phone_LJ = ""
-$phone_FC = ""
+$phone_FC = "0034655177690@sms.schindler.com"
 $phone_AM = ""
 
 If ($re_email -eq "antoniovicente.vento@schindler.com")
