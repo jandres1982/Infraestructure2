@@ -2,7 +2,7 @@ $vm = $args[0]
 $rg = $args[1]
 $PSEmailServer = "smtp.eu.schindler.com"
 $From = "david.sanchoiguaz@schindler.com"
-$Release_email = $(Release.Deployment.RequestedForEmail)
+Write-host "$(Release.Deployment.RequestedForEmail)" >> $Release_email
 $To = "0034691022611@sms.schindler.com","$Release_email "
 $Subject = "Server $vm was completed with Schindler Devops Script on $rg"
 #$Path = "D:\Repository\Working\Antonio\PS_Email\Test_attachments\"
