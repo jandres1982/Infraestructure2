@@ -62,7 +62,7 @@ $Subject = "Server $vm was completed with Schindler Devops Script on $rg"
 #$Attachment = "$Path$Filename"
 $Body = @"
 
-Server $vm has been provisioned in $rg:
+Server $vm has been provisioned in $rg
 
 - Check Backup is Enabled.
 - Check SIM local admin group is added.
