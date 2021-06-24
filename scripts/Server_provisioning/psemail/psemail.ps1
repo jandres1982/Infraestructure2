@@ -10,7 +10,7 @@ $phone_LJ = ""
 $phone_FC = ""
 $phone_AM = ""
 
-If ($re_email -contains "antonio")
+If ($re_email -eq "antoniovicente.vento@schindler.com")
 {
 $phone = $phone_AV
 }
