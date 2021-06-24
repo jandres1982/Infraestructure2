@@ -7,7 +7,7 @@ $PSEmailServer = "smtp.eu.schindler.com"
 $From = "scc-support-zar.es@schindler.com"
 
 
-if ($sms -eq "true" )
+if ($sms -eq "yes" )
 {
 $phone_AV = "0034691022611@sms.schindler.com"
 $phone_NS = "0034699559798@sms.schindler.com"
