@@ -9,7 +9,7 @@
             "value": "zzzwsr8888500"
         },
         "networkSecurityGroupName": {
-            "value": "zzzwsr8888-nsg"
+            "value": ""
         },
         "networkSecurityGroupRules": {
             "value": []
