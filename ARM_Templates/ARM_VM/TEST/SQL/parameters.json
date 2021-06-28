@@ -1,0 +1,149 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "location": {
+            "value": "northeurope"
+        },
+        "networkInterfaceName": {
+            "value": "zzzwsr8888500"
+        },
+        "networkSecurityGroupName": {
+            "value": "zzzwsr8888-nsg"
+        },
+        "networkSecurityGroupRules": {
+            "value": []
+        },
+        "subnetName": {
+            "value": "Test"
+        },
+        "virtualNetworkId": {
+            "value": "/subscriptions/7fa3c3a2-7d0d-4987-a30c-30623e38756c/resourceGroups/rg-cis-nonprod-network-01/providers/Microsoft.Network/virtualNetworks/EU-NONPROD-VNET"
+        },
+        "virtualMachineName": {
+            "value": "zzzwsr8888"
+        },
+        "virtualMachineComputerName": {
+            "value": "zzzwsr8888"
+        },
+        "virtualMachineRG": {
+            "value": "rg-cis-test-server-01"
+        },
+        "osDiskType": {
+            "value": "Premium_LRS"
+        },
+        "dataDisks": {
+            "value": [
+                {
+                    "lun": 0,
+                    "createOption": "attach",
+                    "caching": "ReadOnly",
+                    "writeAcceleratorEnabled": false,
+                    "id": null,
+                    "name": "zzzwsr8888_sysdb_00",
+                    "storageAccountType": null,
+                    "diskSizeGB": null,
+                    "diskEncryptionSet": null
+                },
+                {
+                    "lun": 1,
+                    "createOption": "attach",
+                    "caching": "ReadOnly",
+                    "writeAcceleratorEnabled": false,
+                    "id": null,
+                    "name": "zzzwsr8888_userdb_01",
+                    "storageAccountType": null,
+                    "diskSizeGB": null,
+                    "diskEncryptionSet": null
+                },
+                {
+                    "lun": 2,
+                    "createOption": "attach",
+                    "caching": "None",
+                    "writeAcceleratorEnabled": false,
+                    "id": null,
+                    "name": "zzzwsr8888_logdb_02",
+                    "storageAccountType": null,
+                    "diskSizeGB": null,
+                    "diskEncryptionSet": null
+                },
+                {
+                    "lun": 3,
+                    "createOption": "attach",
+                    "caching": "ReadOnly",
+                    "writeAcceleratorEnabled": false,
+                    "id": null,
+                    "name": "zzzwsr8888_tempdb_03",
+                    "storageAccountType": null,
+                    "diskSizeGB": null,
+                    "diskEncryptionSet": null
+                }
+            ]
+        },
+        "dataDiskResources": {
+            "value": [
+                {
+                    "name": "zzzwsr8888_sysdb_00",
+                    "sku": "Premium_LRS",
+                    "properties": {
+                        "diskSizeGB": 1024,
+                        "creationData": {
+                            "createOption": "empty"
+                        }
+                    }
+                },
+                {
+                    "name": "zzzwsr8888_userdb_01",
+                    "sku": "Premium_LRS",
+                    "properties": {
+                        "diskSizeGB": 1024,
+                        "creationData": {
+                            "createOption": "empty"
+                        }
+                    }
+                },
+                {
+                    "name": "zzzwsr8888_logdb_02",
+                    "sku": "Premium_LRS",
+                    "properties": {
+                        "diskSizeGB": 1024,
+                        "creationData": {
+                            "createOption": "empty"
+                        }
+                    }
+                },
+                {
+                    "name": "zzzwsr8888_tempdb_03",
+                    "sku": "Premium_LRS",
+                    "properties": {
+                        "diskSizeGB": 1024,
+                        "creationData": {
+                            "createOption": "empty"
+                        }
+                    }
+                }
+            ]
+        },
+        "virtualMachineSize": {
+            "value": "Standard_D2s_v3"
+        },
+        "adminUsername": {
+            "value": "ldmsosd"
+        },
+        "adminPassword": {
+            "value": null
+        },
+        "patchMode": {
+            "value": "AutomaticByOS"
+        },
+        "enableHotpatching": {
+            "value": false
+        },
+        "diagnosticsStorageAccountName": {
+            "value": "stnonproddiagnostic0001"
+        },
+        "diagnosticsStorageAccountId": {
+            "value": "/subscriptions/7fa3c3a2-7d0d-4987-a30c-30623e38756c/resourceGroups/rg-cis-nonprod-storage-01/providers/Microsoft.Storage/storageAccounts/stnonproddiagnostic0001"
+        }
+    }
+}
