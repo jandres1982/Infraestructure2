@@ -8,12 +8,6 @@
         "networkInterfaceName": {
             "value": "zzzwsr8888500"
         },
-        "networkSecurityGroupName": {
-            "value": ""
-        },
-        "networkSecurityGroupRules": {
-            "value": []
-        },
         "subnetName": {
             "value": "Test"
         },
@@ -131,10 +125,10 @@
             "value": "ldmsosd"
         },
         "adminPassword": {
-            "value": null
+            "value": "Newsetup1234"
         },
         "patchMode": {
-            "value": "AutomaticByOS"
+            "value": "Manual"
         },
         "enableHotpatching": {
             "value": false
