@@ -9,9 +9,9 @@ $userdb_1 = $args[5]
 $logdb_2 = $args[6]
 $tempdb_3 = $args[7]
 
-$Parameters_Base = ".\parameters.json"
-$Template_2019 = ".\template.json"
-$Template = ".\template_2021.json"
+$Parameters_Base = "/ARM_Templates/ARM_VM/TEST/SQL/parameters.json"
+$Template_2019 = "/ARM_Templates/ARM_VM/TEST/SQL/template.json"
+$Template = "./template_2021.json"
 New-Item -ItemType directory -Path ".\server_json" -ErrorAction SilentlyContinue
 ##########################################################################
 $Parameters = Get-Content $Parameters_Base | out-string | ConvertFrom-Json
@@ -40,15 +40,15 @@ $json.parameters.dataDiskResources.value[3].properties[0].diskSizeGB = "$tempdb_
 
 $json.parameters.virtualMachineSize.value = $vm_size
 
-$json | ConvertTo-Json -Depth 32 | Out-File -encoding "UTF8" -FilePath ".\server_json\$vm.json"
+$json | ConvertTo-Json -Depth 32 | Out-File -encoding "UTF8" -FilePath "/ARM_Templates/ARM_VM/TEST/SQL/server_json/$vm.json"
 
 # New paremeters file with modifications in code
-New-AzResourceGroupDeployment -ResourceGroupName $rg -TemplateParameterFile ".\server_json\$vm.json" -TemplateFile $Template
+New-AzResourceGroupDeployment -ResourceGroupName $rg -TemplateParameterFile "/ARM_Templates/ARM_VM/TEST/SQL/server_json/$vm.json" -TemplateFile $Template
 
 
 $Parameters.parameters.virtualMachineName.value = "$vm"
 $Parameters.parameters.networkInterfaceName.value = "$vm`_01"
 
-$Parameters | ConvertTo-Json | Out-File -FilePath ".\Parameters.json" -Encoding utf8 -Force
+$Parameters | ConvertTo-Json | Out-File -FilePath "/ARM_Templates/ARM_VM/TEST/SQL/Parameters.json" -Encoding utf8 -Force
 #command to create a Vm
-New-AzResourceGroupDeployment -ResourceGroupName $rg -TemplateFile $Template_2019 -TemplateParameterFile ".\parameters.json"
+New-AzResourceGroupDeployment -ResourceGroupName $rg -TemplateFile $Template_2019 -TemplateParameterFile "/ARM_Templates/ARM_VM/TEST/SQL/parameters.json"
