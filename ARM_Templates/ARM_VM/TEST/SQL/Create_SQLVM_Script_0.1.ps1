@@ -9,10 +9,10 @@ $userdb_1 = $args[5]
 $logdb_2 = $args[6]
 $tempdb_3 = $args[7]
 
-$parameters_base = "./ARM_Templates/ARM_VM/TEST/SQL/parameters.json"
-$template_2019 = "./ARM_Templates/ARM_VM/TEST/SQL/template.json"
-$template = "./template_2021.json"
-write-host $(Pipeline.Workspace)
+$parameters_base = ".\ARM_Templates\ARM_VM\TEST\SQL\parameters.json"
+$template_2019 = ".\ARM_Templates\ARM_VM\TEST\SQL\template.json"
+$template = "/template_2021.json"
+
 write-host $parameters_base
 write-host $template_2019
 write-host $template
@@ -54,6 +54,6 @@ New-AzResourceGroupDeployment -ResourceGroupName $rg -TemplateParameterFile "./s
 $parameters.parameters.virtualMachineName.value = "$vm"
 $parameters.parameters.networkInterfaceName.value = "$vm`_01"
 
-$parameters | ConvertTo-Json | Out-File -FilePath "/ARM_Templates/ARM_VM/TEST/SQL/parameters.json" -Encoding utf8 -Force
+$parameters | ConvertTo-Json | Out-File -FilePath ".\ARM_Templates\ARM_VM\TEST\SQL\parameters.json" -Encoding utf8 -Force
 #command to create a Vm
-New-AzResourceGroupDeployment -ResourceGroupName $rg -TemplateFile $template_2019 -TemplateParameterFile "/ARM_Templates/ARM_VM/TEST/SQL/parameters.json"
+New-AzResourceGroupDeployment -ResourceGroupName $rg -TemplateFile $template_2019 -TemplateParameterFile ".\ARM_Templates\ARM_VM\TEST\SQL\parameters.json"
