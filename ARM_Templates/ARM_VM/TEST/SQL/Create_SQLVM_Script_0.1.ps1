@@ -9,8 +9,8 @@ $userdb_1 = $args[5]
 $logdb_2 = $args[6]
 $tempdb_3 = $args[7]
 
-$parameters_base = "/ARM_Templates/ARM_VM/TEST/SQL/parameters.json"
-$template_2019 = "/ARM_Templates/ARM_VM/TEST/SQL/template.json"
+$parameters_base = "./ARM_Templates/ARM_VM/TEST/SQL/parameters.json"
+$template_2019 = "./ARM_Templates/ARM_VM/TEST/SQL/template.json"
 $template = "./template_2021.json"
 write-host $parameters_base
 write-host $template_2019
@@ -44,10 +44,10 @@ $json.parameters.dataDiskResources.value[3].properties[0].diskSizeGB = "$tempdb_
 
 $json.parameters.virtualMachineSize.value = $vm_size
 
-$json | ConvertTo-Json -Depth 32 | Out-File -encoding "UTF8" -FilePath "/ARM_Templates/ARM_VM/TEST/SQL/server_json/$vm.json"
+$json | ConvertTo-Json -Depth 32 | Out-File -encoding "UTF8" -FilePath "./server_json/$vm.json"
 
 # New paremeters file with modifications in code
-New-AzResourceGroupDeployment -ResourceGroupName $rg -TemplateParameterFile "/ARM_Templates/ARM_VM/TEST/SQL/server_json/$vm.json" -TemplateFile $template
+New-AzResourceGroupDeployment -ResourceGroupName $rg -TemplateParameterFile "./server_json/$vm.json" -TemplateFile $template
 
 
 $parameters.parameters.virtualMachineName.value = "$vm"
