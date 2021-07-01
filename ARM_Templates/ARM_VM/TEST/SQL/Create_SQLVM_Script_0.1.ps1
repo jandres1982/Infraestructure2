@@ -11,12 +11,10 @@ $tempdb_3 = $args[7]
 
 $Parameters_Base = ".\parameters.json"
 $Template_2019 = ".\template.json"
-=======
 $Template = ".\template_2021.json"
 New-Item -ItemType directory -Path ".\server_json" -ErrorAction SilentlyContinue
 ##########################################################################
 $Parameters = Get-Content $Parameters_Base | out-string | ConvertFrom-Json
-=======
 $json = Get-Content $Parameters_Base -raw | convertfrom-json
 $json.parameters.networkInterfaceName.value = "$vm`_01"
 $json.parameters.subnetName.value = $subnet
