@@ -9,13 +9,13 @@ $userdb_1 = $args[5]
 $logdb_2 = $args[6]
 $tempdb_3 = $args[7]
 
-$Parameters_Base = "/ARM_Templates/ARM_VM/TEST/SQL/parameters.json"
-$Template_2019 = "/ARM_Templates/ARM_VM/TEST/SQL/template.json"
-$Template = "./template_2021.json"
+$parameters_base = "/ARM_Templates/ARM_VM/TEST/SQL/parameters.json"
+$template_2019 = "/ARM_Templates/ARM_VM/TEST/SQL/template.json"
+$template = "./template_2021.json"
 New-Item -ItemType directory -Path ".\server_json" -ErrorAction SilentlyContinue
 ##########################################################################
-$Parameters = Get-Content $Parameters_Base | out-string | ConvertFrom-Json
-$json = Get-Content $Parameters_Base -raw | convertfrom-json
+$parameters = Get-Content $parameters_base | out-string | ConvertFrom-Json
+$json = Get-Content $parameters_base -raw | convertfrom-json
 $json.parameters.networkInterfaceName.value = "$vm`_01"
 $json.parameters.subnetName.value = $subnet
 $json.parameters.virtualMachineName.value = $vm
@@ -43,12 +43,12 @@ $json.parameters.virtualMachineSize.value = $vm_size
 $json | ConvertTo-Json -Depth 32 | Out-File -encoding "UTF8" -FilePath "/ARM_Templates/ARM_VM/TEST/SQL/server_json/$vm.json"
 
 # New paremeters file with modifications in code
-New-AzResourceGroupDeployment -ResourceGroupName $rg -TemplateParameterFile "/ARM_Templates/ARM_VM/TEST/SQL/server_json/$vm.json" -TemplateFile $Template
+New-AzResourceGroupDeployment -ResourceGroupName $rg -TemplateParameterFile "/ARM_Templates/ARM_VM/TEST/SQL/server_json/$vm.json" -TemplateFile $template
 
 
-$Parameters.parameters.virtualMachineName.value = "$vm"
-$Parameters.parameters.networkInterfaceName.value = "$vm`_01"
+$parameters.parameters.virtualMachineName.value = "$vm"
+$parameters.parameters.networkInterfaceName.value = "$vm`_01"
 
-$Parameters | ConvertTo-Json | Out-File -FilePath "/ARM_Templates/ARM_VM/TEST/SQL/parameters.json" -Encoding utf8 -Force
+$parameters | ConvertTo-Json | Out-File -FilePath "/ARM_Templates/ARM_VM/TEST/SQL/parameters.json" -Encoding utf8 -Force
 #command to create a Vm
-New-AzResourceGroupDeployment -ResourceGroupName $rg -TemplateFile $Template_2019 -TemplateParameterFile "/ARM_Templates/ARM_VM/TEST/SQL/parameters.json"
+New-AzResourceGroupDeployment -ResourceGroupName $rg -TemplateFile $template_2019 -TemplateParameterFile "/ARM_Templates/ARM_VM/TEST/SQL/parameters.json"
