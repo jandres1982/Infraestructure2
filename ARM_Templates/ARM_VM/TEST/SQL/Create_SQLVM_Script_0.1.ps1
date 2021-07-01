@@ -12,6 +12,10 @@ $tempdb_3 = $args[7]
 $parameters_base = "/ARM_Templates/ARM_VM/TEST/SQL/parameters.json"
 $template_2019 = "/ARM_Templates/ARM_VM/TEST/SQL/template.json"
 $template = "./template_2021.json"
+write-host $parameters_base
+write-host $template_2019
+write-host $template
+
 New-Item -ItemType directory -Path ".\server_json" -ErrorAction SilentlyContinue
 ##########################################################################
 $parameters = Get-Content $parameters_base | out-string | ConvertFrom-Json
