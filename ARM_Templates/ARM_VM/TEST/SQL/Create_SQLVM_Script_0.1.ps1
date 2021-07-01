@@ -49,6 +49,6 @@ New-AzResourceGroupDeployment -ResourceGroupName $rg -TemplateParameterFile "/AR
 $Parameters.parameters.virtualMachineName.value = "$vm"
 $Parameters.parameters.networkInterfaceName.value = "$vm`_01"
 
-$Parameters | ConvertTo-Json | Out-File -FilePath "/ARM_Templates/ARM_VM/TEST/SQL/Parameters.json" -Encoding utf8 -Force
+$Parameters | ConvertTo-Json | Out-File -FilePath "/ARM_Templates/ARM_VM/TEST/SQL/parameters.json" -Encoding utf8 -Force
 #command to create a Vm
 New-AzResourceGroupDeployment -ResourceGroupName $rg -TemplateFile $Template_2019 -TemplateParameterFile "/ARM_Templates/ARM_VM/TEST/SQL/parameters.json"
