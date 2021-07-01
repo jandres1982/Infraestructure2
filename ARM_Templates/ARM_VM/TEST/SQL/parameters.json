@@ -83,7 +83,7 @@
         "dataDiskResources": {
             "value": [
                 {
-                    "name": "zzzwsr8888_sysdb_00",
+                    "name": "zzzwsr8888_sysdb_0",
                     "sku": "Premium_LRS",
                     "properties": {
                         "diskSizeGB": 1024,
@@ -93,7 +93,7 @@
                     }
                 },
                 {
-                    "name": "zzzwsr8888_userdb_01",
+                    "name": "zzzwsr8888_userdb_1",
                     "sku": "Premium_LRS",
                     "properties": {
                         "diskSizeGB": 1024,
@@ -103,7 +103,7 @@
                     }
                 },
                 {
-                    "name": "zzzwsr8888_logdb_02",
+                    "name": "zzzwsr8888_logdb_2",
                     "sku": "Premium_LRS",
                     "properties": {
                         "diskSizeGB": 1024,
@@ -113,7 +113,7 @@
                     }
                 },
                 {
-                    "name": "zzzwsr8888_tempdb_03",
+                    "name": "zzzwsr8888_tempdb_3",
                     "sku": "Premium_LRS",
                     "properties": {
                         "diskSizeGB": 1024,
