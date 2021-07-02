@@ -14,6 +14,7 @@ $tempdb_3 = $args[7]
 $parameters_base = ".\_Infraestructure\ARM_Templates\ARM_VM\TEST\SQL\parameters.json"
 $template = ".\_Infraestructure\ARM_Templates\ARM_VM\TEST\SQL\template.json"
 
+# Main
 New-Item -ItemType directory -Path ".\server_json" -ErrorAction SilentlyContinue
 $json = Get-Content $parameters_base -raw | convertfrom-json
 $json.parameters.virtualMachineName.value = $vm 
@@ -38,13 +39,3 @@ $json | ConvertTo-Json -Depth 32 | Out-File -encoding "UTF8" -FilePath ".\server
 
 # Create Vm
 New-AzResourceGroupDeployment -ResourceGroupName $rg  -TemplateFile $template -TemplateParameterFile ".\server_json\$vm.json"
-
-
-# test
-#$template_2019 = ".\_Infraestructure\ARM_Templates\ARM_VM\TEST\SQL\template_2019.json"
-#$json = Get-Content $parameters_base -raw | convertfrom-json
-#$parameters = Get-Content $parameters_base | out-string | ConvertFrom-Json
-#$parameters.parameters.virtualMachineName.value = "$vm"
-#$parameters.parameters.networkInterfaceName.value = "$vm`_01"
-#$parameters | ConvertTo-Json | Out-File -FilePath ".\_Infraestructure\ARM_Templates\ARM_VM\TEST\SQL\parameters.json" -Encoding utf8 -Force
-#New-AzResourceGroupDeployment -ResourceGroupName $rg -TemplateFile $template_2019 -TemplateParameterFile ".\_Infraestructure\ARM_Templates\ARM_VM\TEST\SQL\parameters.json"
