@@ -128,7 +128,7 @@
             "value": "Newsetup1234"
         },
         "patchMode": {
-            "value": "Manual"
+            "value": "manual"
         },
         "enableHotpatching": {
             "value": false
