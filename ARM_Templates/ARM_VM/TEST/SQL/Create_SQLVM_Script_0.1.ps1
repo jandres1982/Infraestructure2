@@ -9,10 +9,11 @@ $userdb_1 = $args[5]
 $logdb_2 = $args[6]
 $tempdb_3 = $args[7]
 
-$parameters_base = "./_Infraestructure/ARM_Templates/ARM_VM/TEST/SQL/parameters.json"
-$template_2019 = "/_Infraestructure/ARM_Templates/ARM_VM/TEST/SQL/template.json"
-$template = "/_Infraestructure/ARM_Templates/ARM_VM/TEST/SQL/template_2021.json"
+$parameters_base = ".\_Infraestructure\ARM_Templates\ARM_VM\TEST\SQL\parameters.json"
+$template_2019 = ".\_Infraestructure\ARM_Templates\ARM_VM\TEST\SQL\template.json"
+$template = ".\_Infraestructure\ARM_Templates\ARM_VM\TEST\SQL\template_2021.json"
 
+# 
 New-Item -ItemType directory -Path ".\server_json" -ErrorAction SilentlyContinue
 $parameters = Get-Content $parameters_base | out-string | ConvertFrom-Json
 $json = Get-Content $parameters_base -raw | convertfrom-json
@@ -34,13 +35,13 @@ $json.parameters.dataDisks.value[3].name = "$vm`_tempdb_3"
 $json.parameters.dataDiskResources.value[3].name = "$vm`_tempdb_3"
 $json.parameters.dataDiskResources.value[3].properties[0].diskSizeGB = "$tempdb_3"
 $json.parameters.virtualMachineSize.value = $vm_size
-$json | ConvertTo-Json -Depth 32 | Out-File -encoding "UTF8" -FilePath "./server_json/$vm.json"
+$json | ConvertTo-Json -Depth 32 | Out-File -encoding "UTF8" -FilePath ".\server_json\$vm.json"
 
 # New paremeters file with modifications in code
-New-AzResourceGroupDeployment -ResourceGroupName $rg -TemplateParameterFile "./server_json/$vm.json" -TemplateFile $template
+New-AzResourceGroupDeployment -ResourceGroupName $rg -TemplateParameterFile ".\server_json\$vm.json" -TemplateFile $template
 $parameters.parameters.virtualMachineName.value = "$vm"
 $parameters.parameters.networkInterfaceName.value = "$vm`_01"
-$parameters | ConvertTo-Json | Out-File -FilePath "/_Infraestructure/ARM_Templates/ARM_VM/TEST/SQL/parameters.json" -Encoding utf8 -Force
+$parameters | ConvertTo-Json | Out-File -FilePath ".\_Infraestructure\ARM_Templates\ARM_VM\TEST\SQL\parameters.json" -Encoding utf8 -Force
 
 # Create a Vm
-New-AzResourceGroupDeployment -ResourceGroupName $rg -TemplateFile $template_2019 -TemplateParameterFile "/_Infraestructure/ARM_Templates/ARM_VM/TEST/SQL/parameters.json"
+New-AzResourceGroupDeployment -ResourceGroupName $rg -TemplateFile $template_2019 -TemplateParameterFile ".\_Infraestructure\ARM_Templates\ARM_VM\TEST\SQL\parameters.json"
