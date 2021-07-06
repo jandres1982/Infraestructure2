@@ -1,0 +1,1 @@
+cmd.exe /c "c:\provision\microsoft\patching\wuinstall.exe /install /reboot"

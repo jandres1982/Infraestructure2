@@ -1,0 +1,1 @@
+cmd.exe /c "C:\provision\Microsoft\KMS_Force\KMS_Force.cmd"

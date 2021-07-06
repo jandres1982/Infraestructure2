@@ -1,0 +1,1 @@
+cmd.exe /c "c:\provision\schindler\QualysCloudAgent\install.cmd"

@@ -1,0 +1,1 @@
+cmd.exe /c "msiexec.exe /i c:\provision\symantec\SEP_14.3.558.0000\Sep64.msi" /qn SYMREBOOT=ReallySuppress
