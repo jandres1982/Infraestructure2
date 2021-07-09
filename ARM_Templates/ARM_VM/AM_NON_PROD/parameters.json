@@ -24,7 +24,7 @@
             "value": "rg-cis-nonprod-network-01"
         },
         "osDiskType": {
-            "value": "Premium_LRS"
+            "value": "Standard_LRS"
         },
         "dataDisks": {
             "value": [
@@ -45,7 +45,7 @@
             "value": [
                 {
                     "name": "shhwsr2245_DataDisk_0",
-                    "sku": "Premium_LRS",
+                    "sku": "Standard_LRS",
                     "properties": {
                         "diskSizeGB": 32,
                         "creationData": {

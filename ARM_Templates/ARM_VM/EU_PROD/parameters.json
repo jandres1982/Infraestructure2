@@ -24,7 +24,7 @@
             "value": "rg-gis-prod-scriptingserver-01"
         },
         "osDiskType": {
-            "value": "Premium_LRS"
+            "value": "StandardSSD_LRS"
         },
         "dataDisks": {
             "value": [
@@ -45,7 +45,7 @@
             "value": [
                 {
                     "name": "shhwsr2306_DataDisk_0",
-                    "sku": "Premium_LRS",
+                    "sku": "StandardSSD_LRS",
                     "properties": {
                         "diskSizeGB": 64,
                         "creationData": {
