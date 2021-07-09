@@ -24,7 +24,7 @@
             "value": "rg-cis-qual-partnumbergenerator-01"
         },
         "osDiskType": {
-            "value": "Standard_LRS"
+            "value": "StandardSSD_LRS"
         },
         "dataDisks": {
             "value": [
@@ -45,7 +45,7 @@
             "value": [
                 {
                     "name": "shhwsr2305_DataDisk_0",
-                    "sku": "Standard_LRS",
+                    "sku": "StandardSSD_LRS",
                     "properties": {
                         "diskSizeGB": 32,
                         "creationData": {
