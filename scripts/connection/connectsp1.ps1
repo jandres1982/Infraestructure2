@@ -1,6 +1,6 @@
 # check
 
-New-AzureRmAutomationConnection -ResourceGroupName "rg-cis-prod-monitoring-01"-AutomationAccountName "aa-prod-monitoring-01" -Name "spcnx1" -ConnectionTypeName AzureServicePrincipal -ConnectionFieldValues @{"CertificateThumbprint"="TestAzureAuto";"SubscriptionID"="00000000-0000-0000-0000-000000000000";"ApplicationId" = "00000000-0000-0000-0000-000000000000"; "TenantId" = "00000000-0000-0000-0000-000000000000" }
+New-AzureRmAutomationConnection -ResourceGroupName "rg-cis-prod-monitoring-01"-AutomationAccountName "aa-prod-monitoring-01" -Name "spcnx1" -ConnectionTypeName AzureServicePrincipal -ConnectionFieldValues @{"CertificateThumbprint"="91987337A6EC26A168EF069F62D366DEF6704640";"SubscriptionID"="505ead1a-5a5f-4363-9b72-83eb2234a43d";"ApplicationId" = "9973532f-746d-4249-8eef-aabbeafa4a68";"TenantId" = "aa06dce7-99d7-403b-8a08-0c5f50471e64" }
 
 
 
