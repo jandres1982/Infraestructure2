@@ -23,6 +23,7 @@ function inidisk
 
 # Main
 
+set-azcontext -subscripction $(subs)
 Write-host "Change CD drive letter"
 chkcddrive
 Write-host "Format Drives"

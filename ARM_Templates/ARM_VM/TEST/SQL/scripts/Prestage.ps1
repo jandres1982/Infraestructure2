@@ -11,6 +11,7 @@ $pw = "76492d1116743f0423413b16050a5345MgB8AFUASQAwAFQASQBlAFkAVQBwAEEAcQA0AFQAV
 $key = (3, 4, 2, 3, 56, 34, 254, 222, 1, 1, 2, 23, 42, 54, 33, 233, 1, 34, 2, 7, 6, 5, 35, 43)
 
 # Main
+set-azcontext -subscripction $(subs)
 switch ($subs)
 {
     "s-sis-eu-prod-01" {$ou = "OU=EU"}

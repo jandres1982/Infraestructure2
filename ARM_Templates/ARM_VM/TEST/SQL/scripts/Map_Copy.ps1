@@ -93,7 +93,7 @@ function amnonprod
 
 
 # Main
-
+set-azcontext -subscripction $(subs)
 switch ($subs)
 {
     "s-sis-eu-prod-01" {euprod}
