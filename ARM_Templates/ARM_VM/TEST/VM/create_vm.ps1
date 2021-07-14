@@ -34,8 +34,8 @@ $json.parameters.virtualMachineRG.value = $rg
 $json.parameters.virtualMachineSize.value = $vm_size
 if ($sql -eq "no")
 {
-    $json.parameters.dataDisks.value[0].name = "$vm`_datdisk_0"
-    $json.parameters.dataDiskResources.value[0].name = "$vm`_datdisk_0"
+    $json.parameters.dataDisks.value[0].name = "$vm`_datadisk_0"
+    $json.parameters.dataDiskResources.value[0].name = "$vm`_datadisk_0"
     $json.parameters.dataDiskResources.value[0].properties[0].diskSizeGB = "$datadisk"
 }
 else
