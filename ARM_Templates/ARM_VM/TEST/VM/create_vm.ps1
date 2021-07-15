@@ -19,8 +19,6 @@ $parameters_base = ".\_Infraestructure\ARM_Templates\ARM_VM\TEST\VM\parameters_p
 $template_base = ".\_Infraestructure\ARM_Templates\ARM_VM\TEST\VM\template_prod.json"
 
 # Main
-set-azcontext -subscripction $subs
-
 New-Item -ItemType directory -Path ".\server_json" -ErrorAction SilentlyContinue
 $tjson = Get-Content $template_base -raw | convertfrom-json
 $json = Get-Content $parameters_base -raw | convertfrom-json
