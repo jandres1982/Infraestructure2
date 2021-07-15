@@ -18,6 +18,7 @@ $parameters_base = ".\_Infraestructure\ARM_Templates\ARM_VM\TEST\VM\parameters_p
 $template_base = ".\_Infraestructure\ARM_Templates\ARM_VM\TEST\VM\template_prod.json"
 
 # Main
+set-azcontext -subscripction $subs
 if($subs -eq "s-sis-eu-nonprod-01" -or $subs -eq "s-sis-am-nonprod-01")
 {
     $parameters_base = ".\_Infraestructure\ARM_Templates\ARM_VM\TEST\VM\parameters_nonprod.json"
@@ -57,5 +58,5 @@ else
 $json | ConvertTo-Json -Depth 32 | Out-File -encoding "UTF8" -FilePath ".\server_json\$vm.json"
 
 # Create Vm
-set-azcontext -subscripction $subs
+
 New-AzResourceGroupDeployment -ResourceGroupName $rg  -TemplateFile $template_base -TemplateParameterFile ".\server_json\$vm.json"
