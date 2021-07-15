@@ -11,8 +11,8 @@ $logdb_2 = $args[6]
 $tempdb_3 = $args[7]
 $subs = $args[8]
 $datadisk = $args[9]
-$sql = $arg[10]
-$so = $arg[11]
+$sql = $args[10]
+$so = $args[11]
 
 # Variables
 $parameters_base = ".\_Infraestructure\ARM_Templates\ARM_VM\TEST\VM\parameters_prod.json"
