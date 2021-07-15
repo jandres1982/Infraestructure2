@@ -20,11 +20,7 @@ $template_base = ".\_Infraestructure\ARM_Templates\ARM_VM\TEST\VM\template_prod.
 
 # Main
 set-azcontext -subscripction $subs
-if($subs -eq "s-sis-eu-nonprod-01" -or $subs -eq "s-sis-am-nonprod-01")
-{
-    $parameters_base = ".\_Infraestructure\ARM_Templates\ARM_VM\TEST\VM\parameters_nonprod.json"
-    $template_base = ".\_Infraestructure\ARM_Templates\ARM_VM\TEST\VM\template_nonprod.json"
-}
+
 New-Item -ItemType directory -Path ".\server_json" -ErrorAction SilentlyContinue
 $tjson = Get-Content $template_base -raw | convertfrom-json
 $json = Get-Content $parameters_base -raw | convertfrom-json
