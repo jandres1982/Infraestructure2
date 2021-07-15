@@ -85,13 +85,13 @@ switch ($subs)
         $json.parameters.virtualNetworkId.value = "/subscriptions/7fa3c3a2-7d0d-4987-a30c-30623e38756c/resourceGroups/rg-cis-nonprod-network-01/providers/Microsoft.Network/virtualNetworks/EU-NONPROD-VNET"
         $json.parameters.diagnosticsStorageAccountName.value = "stnonproddiagnostic0001"
         $json.parameters.diagnosticsStorageAccountId.value = "/subscriptions/7fa3c3a2-7d0d-4987-a30c-30623e38756c/resourceGroups/rg-cis-nonprod-storage-01/providers/Microsoft.Storage/storageAccounts/stnonproddiagnostic0001"
-        if ($so -eq "2019")
+        if ($so -eq "2016")
         {
-            $tjson.resources.virtualMachineName.value.properties.imageReference.id = "/subscriptions/505ead1a-5a5f-4363-9b72-83eb2234a43d/resourceGroups/rg-gis-prod-imagegallery-01/providers/Microsoft.Compute/galleries/ig_gis_win_prod/images/img-prod-2019datacenter-19052021-01/versions/0.0.1"
+            $tjson.resources.virtualMachineName.value.properties.imageReference.id = "/subscriptions/505ead1a-5a5f-4363-9b72-83eb2234a43d/resourceGroups/rg-cis-prod-server-01/providers/Microsoft.Compute/images/img-prodwin2016-1835-14102020-01"
         }
         else
         {
-            $tjson.resources.virtualMachineName.value.properties.imageReference.id = "/subscriptions/505ead1a-5a5f-4363-9b72-83eb2234a43d/resourceGroups/rg-cis-prod-server-01/providers/Microsoft.Compute/images/img-prodwin2016-1835-14102020-01"
+            $tjson.resources.virtualMachineName.value.properties.imageReference.id = "/subscriptions/505ead1a-5a5f-4363-9b72-83eb2234a43d/resourceGroups/rg-gis-prod-imagegallery-01/providers/Microsoft.Compute/galleries/ig_gis_win_prod/images/img-prod-2019datacenter-19052021-01/versions/0.0.1"
         }
     }
     "s-sis-ap-prod-01" 
@@ -117,13 +117,13 @@ switch ($subs)
         $json.parameters.virtualNetworkId.value = "/subscriptions/8528129a-0394-4057-ac4e-0fec3da2246d/resourceGroups/rg-cis-nonprod-network-01/providers/Microsoft.Network/virtualNetworks/vnet-nonprod-use2-01"
         $json.parameters.diagnosticsStorageAccountName.value = "stproddiagnostic0002"
         $json.parameters.diagnosticsStorageAccountId.value = "/subscriptions/8528129a-0394-4057-ac4e-0fec3da2246d/resourceGroups/rg-cis-nonprod-storage-01/providers/Microsoft.Storage/storageAccounts/stnonproddiagnostic0002"
-        if ($so -eq "2019")
+        if ($so -eq "2016")
         {
-            $tjson.resources.virtualMachineName.value.properties.imageReference.id = "/subscriptions/505ead1a-5a5f-4363-9b72-83eb2234a43d/resourceGroups/rg-gis-prod-imagegallery-01/providers/Microsoft.Compute/galleries/ig_gis_win_prod/images/img-prod-2019datacenter-19052021-01"
+            $tjson.resources.virtualMachineName.value.properties.imageReference.id = "/subscriptions/7fa3c3a2-7d0d-4987-a30c-30623e38756c/resourceGroups/rg-cis-qual-server-01/providers/Microsoft.Compute/images/img-prodwin2016-1835-14102020-01"
         }
         else
         {
-            $tjson.resources.virtualMachineName.value.properties.imageReference.id = "/subscriptions/7fa3c3a2-7d0d-4987-a30c-30623e38756c/resourceGroups/rg-cis-qual-server-01/providers/Microsoft.Compute/images/img-prodwin2016-1835-14102020-01"
+            $tjson.resources.virtualMachineName.value.properties.imageReference.id = "/subscriptions/505ead1a-5a5f-4363-9b72-83eb2234a43d/resourceGroups/rg-gis-prod-imagegallery-01/providers/Microsoft.Compute/galleries/ig_gis_win_prod/images/img-prod-2019datacenter-19052021-01"
         }
     }
 }
