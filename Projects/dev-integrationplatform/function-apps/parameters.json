@@ -1,0 +1,48 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "subscriptionId": {
+            "value": "7fa3c3a2-7d0d-4987-a30c-30623e38756c"
+        },
+        "name": {
+            "value": "developer-portal-redis-cache-cleaner-api"
+        },
+        "location": {
+            "value": "North Europe"
+        },
+        "hostingPlanName": {
+            "value": "asp-gis-dev-integrationplatform-01"
+        },
+        "serverFarmResourceGroup": {
+            "value": "rg-gis-dev-integrationplatform-01"
+        },
+        "alwaysOn": {
+            "value": true
+        },
+        "storageAccountName": {
+            "value": "stdevintegrationplat01"
+        },
+        "sku": {
+            "value": "Basic"
+        },
+        "skuCode": {
+            "value": "B1"
+        },
+        "workerSize": {
+            "value": "0"
+        },
+        "workerSizeId": {
+            "value": "0"
+        },
+        "numberOfWorkers": {
+            "value": "1"
+        },
+        "use32BitWorkerProcess": {
+            "value": false
+        },
+        "linuxFxVersion": {
+            "value": "dotnet|3.1"
+        }
+    }
+}
