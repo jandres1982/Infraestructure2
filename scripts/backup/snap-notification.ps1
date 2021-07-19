@@ -12,5 +12,4 @@ The snap will be removed on $(retentiondate)
 Thanks for using Devops for Schindler Servers!
 "@
 
-
 Send-MailMessage -From $From -To $(To) -Subject $Subject -Body $Body
