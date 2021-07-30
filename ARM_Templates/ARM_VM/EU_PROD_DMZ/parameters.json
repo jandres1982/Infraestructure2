@@ -75,6 +75,6 @@
         },
         "diagnosticsStorageAccountId": {
             "value": "/subscriptions/505ead1a-5a5f-4363-9b72-83eb2234a43d/resourceGroups/rg-cis-prod-storage-01/providers/Microsoft.Storage/storageAccounts/stproddiagnostic0002"
-        },
+        }
     }
 }
