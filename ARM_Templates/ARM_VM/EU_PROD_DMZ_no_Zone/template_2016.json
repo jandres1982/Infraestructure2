@@ -52,9 +52,6 @@
         },
         "diagnosticsStorageAccountId": {
             "type": "string"
-        },
-        "zone": {
-            "type": "string"
         }
     },
     "variables": {
@@ -85,7 +82,7 @@
         {
             "name": "[parameters('dataDiskResources')[copyIndex()].name]",
             "type": "Microsoft.Compute/disks",
-            "apiVersion": "2020-09-30",
+            "apiVersion": "2020-12-01",
             "location": "[parameters('location')]",
             "properties": "[parameters('dataDiskResources')[copyIndex()].properties]",
             "sku": {
@@ -94,10 +91,7 @@
             "copy": {
                 "name": "managedDiskResources",
                 "count": "[length(parameters('dataDiskResources'))]"
-            },
-            "zones": [
-                "[parameters('zone')]"
-            ]
+            }
         },
         {
             "name": "[parameters('virtualMachineName')]",
@@ -120,7 +114,7 @@
                         }
                     },
                     "imageReference": {
-                        "id": "/subscriptions/505ead1a-5a5f-4363-9b72-83eb2234a43d/resourceGroups/rg-gis-prod-imagegallery-01/providers/Microsoft.Compute/galleries/ig_gis_win_prod/images/img-prod-2016datacenter-19052021-01/versions/0.0.1"
+                        "id": "/subscriptions/505ead1a-5a5f-4363-9b72-83eb2234a43d/resourceGroups/rg-gis-prod-imagegallery-01/providers/Microsoft.Compute/galleries/ig_gis_win_prod/images/img-prod-2016datacenter-19052021-01"
                     },
                     "copy": [
                         {
