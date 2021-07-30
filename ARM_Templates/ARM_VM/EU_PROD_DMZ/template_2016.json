@@ -166,10 +166,7 @@
                         "storageUri": "[concat('https://', parameters('diagnosticsStorageAccountName'), '.blob.core.windows.net/')]"
                     }
                 }
-            },
-            "zones": [
-                "[parameters('zone')]"
-            ]
+            }
         }
     ],
     "outputs": {
