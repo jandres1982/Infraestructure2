@@ -31,7 +31,7 @@
                 {
                     "lun": 0,
                     "createOption": "attach",
-                    "caching": "ReadOnly",
+                    "caching": "None",
                     "writeAcceleratorEnabled": false,
                     "id": null,
                     "name": "shhwsr2308_DataDisk_0",
