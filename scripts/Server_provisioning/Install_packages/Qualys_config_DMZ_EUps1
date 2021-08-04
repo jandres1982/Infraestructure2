@@ -3,8 +3,7 @@
 #.\QualysProxy.exe /h
 #Restart-Service -Name QualysAgent -Force
 
-$Get_proxy = [System.Net.WebProxy]::GetDefaultProxy()
-$Proxy = $Get_proxy.Address.OriginalString
+$Proxy = "http://shhnwg1000.global.schindler.com:3128"
 $registryPath = "HKLM:\Software\qualys\Proxy"
 $Name = "URL"
 $value = $Proxy
