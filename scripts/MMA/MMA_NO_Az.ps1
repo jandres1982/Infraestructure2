@@ -124,12 +124,12 @@ switch ($version)
     "NO Installed"
     {
         InstallNewMMA_MIG
-
+        dependency_agent
     }
     "Greater"
     {
         addWorkID_Migration
-
+        dependency_agent
     }
     "Smaller"
     {
@@ -138,13 +138,13 @@ switch ($version)
         sleep 10
         addWorkID_Migration
         add_proxy
-
+        dependency_agent
         
     }
     "Same"
     {
         addWorkID_Migration
-
+        dependency_agent
     }
 }
  
