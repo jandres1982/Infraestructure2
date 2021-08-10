@@ -5,6 +5,13 @@
 ###
 
 # Check MMA Version
+
+function dependency_agent
+{
+cmd.exe /c 'c:\temp\azure\InstallDependencyAgent-Windows.exe /S /RebootMode=Manual'
+}
+
+
 function add_proxy
 {
 param($ProxyDomainName="webgateway-eu.schindler.com:3128")
@@ -117,10 +124,12 @@ switch ($version)
     "NO Installed"
     {
         InstallNewMMA_MIG
+
     }
     "Greater"
     {
         addWorkID_Migration
+
     }
     "Smaller"
     {
@@ -129,11 +138,13 @@ switch ($version)
         sleep 10
         addWorkID_Migration
         add_proxy
+
         
     }
     "Same"
     {
         addWorkID_Migration
+
     }
 }
  
