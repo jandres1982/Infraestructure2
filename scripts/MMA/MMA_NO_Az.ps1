@@ -144,6 +144,7 @@ switch ($version)
     "Same"
     {
         addWorkID_Migration
+        add_proxy
         #dependency_agent
     }
 }
