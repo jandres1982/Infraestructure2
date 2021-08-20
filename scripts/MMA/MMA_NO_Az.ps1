@@ -10,7 +10,7 @@ If (Test-Path -Path "C:\temp\azure\InstallDependencyAgent-Windows.exe" -ErrorAct
             }
             else
             {
-                Write-host "$Server, Dependency Agent Installed" -ForegroundColor Yellow
+                Write-host "$Server, Dependency Agent Failed" -ForegroundColor Yellow
             }
 }else
 {
@@ -110,12 +110,12 @@ switch ($version)
     "NO Installed"
     {
         InstallNewMMA_MIG
-	install_dependency_agent
+    	install_dependency_agent
     }
     "Greater"
     {
         addWorkID_Migration
-	install_dependency_agent
+	    install_dependency_agent
     }
     "Smaller"
     {
@@ -124,13 +124,13 @@ switch ($version)
         sleep 10
         addWorkID_Migration
         add_proxy
-	install_dependency_agent
+	    install_dependency_agent
         
     }
     "Same"
     {
         addWorkID_Migration
         add_proxy
-	install_dependency_agent
+	    install_dependency_agent
     }
 }
