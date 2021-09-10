@@ -21,7 +21,7 @@
             "value": "shhwsr2321"
         },
         "virtualMachineRG": {
-            "value": "rg-shh-sidbmiddleware-01"
+            "value": "rg-shh-qual-sidbmiddleware-01"
         },
         "osDiskType": {
             "value": "StandardSSD_LRS"
