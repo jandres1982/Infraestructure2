@@ -1,7 +1,7 @@
 function addWorkID_SCC
 {
-    $workspaceId = "fa488d5a-d8e4-4437-9ccc-2ef59e9eb669"
-    $workspaceKey = "1DxbXeHBAM3QLWl4GcE9SF0eTCEYuyr5pAt5k3wGG+bASH/ug9XGmVUyHKGvi/nmVIAYLLvfemwkuhM0yxGWCA=="
+    $workspaceId = "434c56f6-348e-429d-aede-00bb26860a0b"
+    $workspaceKey = "dM1GnR5cYcmnCa77mAhAxkFT+7LcMshBDWonxpY3l14UCYYVBHDpz7yc4cUHZnmMKc9JN4p/7SQqY6f5cnVOUg=="
     $mma1 = New-Object -ComObject 'AgentConfigManager.MgmtSvcCfg'
     $mma1.AddCloudWorkspace($workspaceId, $workspaceKey)
     $mma1.ReloadConfiguration()
