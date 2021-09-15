@@ -16,6 +16,7 @@ $phone_AD = "0034669236270@sms.schindler.com"
 $phone_LJ = ""
 $phone_FC = "0034655177690@sms.schindler.com"
 $phone_AM = ""
+$phone_JR = "0034657138014@sms.schindler.com"
 
 If ($re_email -eq "antoniovicente.vento@schindler.com")
     {
@@ -44,6 +45,10 @@ If ($re_email -eq "fernando.camps@schindler.com")
 If ($re_email -eq "alfonso.marques@schindler.com")
     {
     $phone = $phone_AM
+    }
+    If ($re_email -eq "javier.roy@schindler.com")
+    {
+    $phone = $phone_JR
     }
 
 $To = $phone,$re_email
