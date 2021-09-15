@@ -21,7 +21,7 @@
             "value": "shhwsr2318"
         },
         "virtualMachineRG": {
-            "value": "rg-cis-prod-server-01"
+            "value": "rg-shh-prod-jumphost-01"
         },
         "osDiskType": {
             "value": "StandardSSD_LRS"
