@@ -15,5 +15,5 @@ write-host "$vm and $Function"
 
 $Admin_Head = $KG+"_RES_SY_"
 $Admin_Tail="_ADMIN"
-$Admin_Group = "$Admin_Head$Server_UP$Admin_Tail"
+$Admin_Group = "$Admin_Head$vm$Admin_Tail"
 New-ADGroup -Name $Admin_Group -GroupCategory Security -GroupScope Universal -DisplayName "$vm Administrators" -Path "OU=RES,OU=Groups,OU=Admin_Global,OU=NBI12,DC=dmz2,DC=schindler,DC=com" -Description "$vm Administrators"
