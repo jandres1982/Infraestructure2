@@ -1,0 +1,33 @@
+{
+    "type": "Microsoft.Compute/virtualMachines/extensions",
+    "name": "[concat(parameters('vmName'),'/', parameters('vmExtensionName'))]",
+    "apiVersion": "2019-07-01",
+    "location": "[resourceGroup().location]",
+    "dependsOn": [
+      "[concat('Microsoft.Compute/virtualMachines/', parameters('shhwsr0579'))]"
+    ],
+
+    "properties": {
+      "publisher": "Microsoft.Azure.Security",
+      "type": "IaaSAntimalware",
+      "typeHandlerVersion": "1.3",
+      "autoUpgradeMinorVersion": true,
+      "settings": {
+        "AntimalwareEnabled": "true",
+        "Exclusions": {
+          "Extensions": ".ext1;.ext2",
+          "Paths": "c:\excluded-path-1;c:\excluded-path-2",
+          "Processes": "excludedproc1.exe;excludedproc2.exe"
+        },
+
+        "RealtimeProtectionEnabled": "true",
+        "ScheduledScanSettings": {
+          "isEnabled": "true",
+          "scanType": "Quick",
+          "day": "7",
+          "time": "120"
+        }
+      },
+      "protectedSettings": null
+    }
+}
