@@ -21,7 +21,7 @@
             "value": "shhwsr2325"
         },
         "virtualMachineRG": {
-            "value": "rg-shh-qual-bcmiccsdb-01"
+            "value": "rg-shh-qual-bcmiccsapp-01"
         },
         "osDiskType": {
             "value": "StandardSSD_LRS"
