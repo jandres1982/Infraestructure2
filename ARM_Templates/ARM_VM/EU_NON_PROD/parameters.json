@@ -9,7 +9,7 @@
             "value": "shhwsr2326_01"
         },
         "subnetName": {
-            "value": "sub-backend-iaas-01"
+            "value": "sub-frontend-iaas-01"
         },
         "virtualNetworkId": {
             "value": "/subscriptions/7fa3c3a2-7d0d-4987-a30c-30623e38756c/resourceGroups/rg-cis-nonprod-network-01/providers/Microsoft.Network/virtualNetworks/EU-NONPROD-VNET"
@@ -21,7 +21,7 @@
             "value": "shhwsr2326"
         },
         "virtualMachineRG": {
-            "value": "rg-shh-qual-bcmiccsapp-01"
+            "value": "rg-sch-qual-visitormanagement-01"
         },
         "osDiskType": {
             "value": "StandardSSD_LRS"
@@ -47,7 +47,7 @@
                     "name": "shhwsr2326_DataDisk_0",
                     "sku": "StandardSSD_LRS",
                     "properties": {
-                        "diskSizeGB": 150,
+                        "diskSizeGB": 30,
                         "creationData": {
                             "createOption": "empty"
                         }
@@ -56,7 +56,7 @@
             ]
         },
         "virtualMachineSize": {
-            "value": "Standard_F2s_v2"
+            "value": "Standard_Ds3_v2"
         },
         "adminUsername": {
             "value": "ldmsosd"
