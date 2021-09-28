@@ -6,22 +6,22 @@
             "value": "northeurope"
         },
         "networkInterfaceName": {
-            "value": "wiiwsr0028_01"
+            "value": "shhwsr2319_01"
         },
         "subnetName": {
-            "value": "sub-remediation-iaas-01"
+            "value": "sub-backend-iaas-01"
         },
         "virtualNetworkId": {
             "value": "/subscriptions/505ead1a-5a5f-4363-9b72-83eb2234a43d/resourceGroups/RG_NETWORK_PROD/providers/Microsoft.Network/virtualNetworks/EU-PROD-VNET"
         },
         "virtualMachineName": {
-            "value": "wiiwsr0028"
+            "value": "shhwsr2319"
         },
         "virtualMachineComputerName": {
-            "value": "wiiwsr0028"
+            "value": "shhwsr2319"
         },
         "virtualMachineRG": {
-            "value": "rg-wii-prod-application-01"
+            "value": "rg-shh-prod-landeskclientsql"
         },
         "osDiskType": {
             "value": "StandardSSD_LRS"
@@ -34,7 +34,7 @@
                     "caching": "None",
                     "writeAcceleratorEnabled": false,
                     "id": null,
-                    "name": "wiiwsr0028_DataDisk_0",
+                    "name": "shhwsr2319_DataDisk_0",
                     "storageAccountType": null,
                     "diskSizeGB": null,
                     "diskEncryptionSet": null
@@ -44,10 +44,10 @@
         "dataDiskResources": {
             "value": [
                 {
-                    "name": "wiiwsr0028_DataDisk_0",
+                    "name": "shhwsr2319_DataDisk_0",
                     "sku": "StandardSSD_LRS",
                     "properties": {
-                        "diskSizeGB": 500,
+                        "diskSizeGB": 64,
                         "creationData": {
                             "createOption": "empty"
                         }
@@ -56,7 +56,7 @@
             ]
         },
         "virtualMachineSize": {
-            "value": "Standard_E4DS_v4"
+            "value": "Standard_E8-4DS_v4"
         },
         "adminUsername": {
             "value": "ldmsosd"
