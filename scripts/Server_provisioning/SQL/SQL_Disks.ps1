@@ -1,4 +1,5 @@
-Get-Disk | Where partitionstyle -eq ‘raw’ | Initialize-Disk -PartitionStyle GPT -PassThru
+Get-Disk | Where partitionstyle -eq ‘raw’
+# Initialize-Disk -PartitionStyle GPT -PassThru
 
 #Function SQL_Disk
 #{
