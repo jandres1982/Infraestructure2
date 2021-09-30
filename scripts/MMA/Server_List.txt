@@ -1,5 +1,3 @@
-parwsr0110
-shhwsr2241
 shhwsr2174
 shhwsr1238
 khwwsr0007
@@ -11,8 +9,6 @@ shhwsr0886
 shhwsr1847
 espwsr0112
 shhwsr2298
-shhwsr1242
-shhwsr2242
 shhwsr2327
 shhwsr1604
 trdwsr0029
