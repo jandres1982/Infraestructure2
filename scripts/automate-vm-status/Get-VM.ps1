@@ -61,4 +61,5 @@ $VM_AM_Prod = $(get-azvm).name | where-object {$_ -like '*wsr*'} > .\servers_lis
 Select-AzSubscription -Subscription "s-sis-am-nonprod-01"
 $VM_AM_NonProd = $(get-azvm).name | where-object {$_ -like '*wsr*'} > .\servers_list_am_nonProd.txt
 
-Get-Content .\servers_list_eu_nonProd.txt
+$file = Get-Content .\servers_list_eu_nonProd.txt
+Write-Output $file 
