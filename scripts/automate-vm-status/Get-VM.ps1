@@ -23,7 +23,7 @@ $VM_EU_NonProd = $(get-azvm).name | where-object {$_ -like '*wsr*'} > .\servers_
 
 foreach ($vm in $VM_EU_NonProd)
 {
-
+write-host "$vm and $rg"
 $rg = (get-azvm -Name $vm).ResourceGroupName
 az vm run-command invoke  --command-id RunPowerShellScript --name $vm -g $rg --scripts "
 
