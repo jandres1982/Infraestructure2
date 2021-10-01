@@ -21,14 +21,14 @@ Select-AzSubscription -Subscription "s-sis-eu-nonprod-01"
 $VM_EU_NonProd = $(get-azvm).name | where-object {$_ -like '*wsr*'} > .\servers_list_eu_nonProd.txt
 
 
-
 foreach ($vm in $VM_EU_NonProd)
 {
 
 
+$rg = (get-azvm -Name $vm).ResourceGroupName
 az vm run-command invoke  --command-id RunPowerShellScript --name $vm -g $rg --scripts "
 
-write-host "this is server "$vm""
+write-host "this is server $vm and $rg"
 
 "
 
