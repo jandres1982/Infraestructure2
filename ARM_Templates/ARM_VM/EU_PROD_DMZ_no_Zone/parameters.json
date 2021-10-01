@@ -6,22 +6,22 @@
             "value": "northeurope"
         },
         "networkInterfaceName": {
-            "value": "shhwsr2309_01"
+            "value": "shhwsr2335_01"
         },
         "subnetName": {
-            "value": "DMZ-Subnet_1"
+            "value": "sub-dmz2domain-01"
         },
         "virtualNetworkId": {
             "value": "/subscriptions/505ead1a-5a5f-4363-9b72-83eb2234a43d/resourceGroups/RG_NETWORK_PROD/providers/Microsoft.Network/virtualNetworks/EU-PROD-VNET"
         },
         "virtualMachineName": {
-            "value": "shhwsr2309"
+            "value": "shhwsr2335"
         },
         "virtualMachineComputerName": {
-            "value": "shhwsr2309"
+            "value": "shhwsr2335"
         },
         "virtualMachineRG": {
-            "value": "rg-shh-prod-smtpexchangetst-01"
+            "value": "rg-shh-prod-adobeusersync-01"
         },
         "osDiskType": {
             "value": "StandardSSD_LRS"
@@ -34,7 +34,7 @@
                     "caching": "None",
                     "writeAcceleratorEnabled": false,
                     "id": null,
-                    "name": "shhwsr2309_DataDisk_0",
+                    "name": "shhwsr2335_DataDisk_0",
                     "storageAccountType": null,
                     "diskSizeGB": null,
                     "diskEncryptionSet": null
@@ -44,10 +44,10 @@
         "dataDiskResources": {
             "value": [
                 {
-                    "name": "shhwsr2309_DataDisk_0",
+                    "name": "shhwsr2335_DataDisk_0",
                     "sku": "StandardSSD_LRS",
                     "properties": {
-                        "diskSizeGB": 32,
+                        "diskSizeGB": 30,
                         "creationData": {
                             "createOption": "empty"
                         }
@@ -56,7 +56,7 @@
             ]
         },
         "virtualMachineSize": {
-            "value": "Standard_F4s_v2"
+            "value": "Standard_D2s_v3"
         },
         "adminUsername": {
             "value": "ldmsosd"
