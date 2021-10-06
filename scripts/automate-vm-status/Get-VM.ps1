@@ -26,5 +26,5 @@ foreach ($vm in $VM_EU_NonProd)
 {
 $rg = (get-azvm -Name $vm).ResourceGroupName
 write-host "$vm and $rg"
-az vm run-command invoke --command-id RunPowerShellScript --name $vm -g $rg --scripts "Write-host 'my name is :' hostname"
+az vm run-command invoke --command-id RunPowerShellScript --name $vm -g $rg --scripts "hostname"
 }
