@@ -18,9 +18,9 @@
 ####################################################################
 
 Select-AzSubscription -Subscription "s-sis-eu-nonprod-01"
-$VM_EU_NonProd = $(get-azvm).name | where-object {$_ -like '*wsr*'} > servers_list_eu_nonProd.txt
+$VM_EU_NonProd = $(get-azvm).name | where-object {$_ -like '*wsr*'} > .\servers_list_eu_nonProd.txt
 
-$VM_EU_NonProd = servers_list_eu_nonProd
+$VM_EU_NonProd = servers_list_eu_nonProd.txt
 
 foreach ($vm in $VM_EU_NonProd)
 {
