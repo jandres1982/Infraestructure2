@@ -26,5 +26,10 @@ foreach ($vm in $VM_EU_NonProd)
 {
 $rg = (get-azvm -Name $vm).ResourceGroupName
 write-host "$vm and $rg"
-az vm run-command invoke --command-id RunPowerShellScript --name "$vm" -g $rg --scripts "hostname" --subscription "s-sis-eu-nonprod-01"
+
+$app_id = "70eacc9c-bde8-4b40-9e16-02620fc4e65b"
+$tenant_id = "aa06dce7-99d7-403b-8a08-0c5f50471e64"
+$se_id = "e48bf748-b756-4b9a-ab72-1a2ee2bceb98"
+az login --service-principal --username $app_id --password $se_id --tenant $tenant_id
+az vm run-command invoke --command-id RunPowerShellScript --name "$vm" -g $rg --scripts "hostname"
 }
