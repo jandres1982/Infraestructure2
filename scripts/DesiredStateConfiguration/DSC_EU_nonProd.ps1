@@ -8,5 +8,5 @@ foreach ($vm in $VM_EU_NonProd)
 {
 $rg = (get-azvm -Name $vm).ResourceGroupName
 write-host "$vm and $rg"
-az vm run-command invoke --command-id RunPowerShellScript --name "$vm" -g $rg --scripts "@Remove_MMA_SOC.ps1"
+az vm run-command invoke --command-id RunPowerShellScript --name "$vm" -g $rg --scripts "@DSC_MMA.ps1"
 }
