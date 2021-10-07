@@ -10,13 +10,11 @@ $rg = (get-azvm -Name $vm).ResourceGroupName
 write-host "$vm and $rg"
 
 az vm run-command invoke --command-id RunPowerShellScript --name "$vm" -g $rg --scripts "
-function RemoveWorkID_SOC
-{
+Write-Output "Working on Server"
+hostname
 $workspaceId = "b615f112-4439-41fa-aa80-424be76d309e"
 $mma = New-Object -ComObject 'AgentConfigManager.MgmtSvcCfg'
 $mma.RemoveCloudWorkspace($workspaceId)
 $mma.ReloadConfiguration()
-}
-RemoveWorkID_SOC
 "
 }
