@@ -31,7 +31,7 @@ write-host "$vm and $rg"
 #$tenant_id = "aa06dce7-99d7-403b-8a08-0c5f50471e64"
 #$se_id = "e48bf748-b756-4b9a-ab72-1a2ee2bceb98"
 #az login --service-principal --username $app_id --password $se_id --tenant $tenant_id
-az login -u $(user) -p $(pw)
-Select-AzSubscription -Subscription "s-sis-eu-nonprod-01"
+#az login -u $(user) -p $(pw)
+#Select-AzSubscription -Subscription "s-sis-eu-nonprod-01"
 az vm run-command invoke --command-id RunPowerShellScript --name "$vm" -g $rg --scripts "hostname"
 }
