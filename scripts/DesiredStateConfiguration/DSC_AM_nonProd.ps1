@@ -25,12 +25,8 @@ $mma.ReloadConfiguration()
 
 function Remove_proxy
 {
-param($ProxyDomainName="")
-
-# First we get the Health Service configuration object.  We need to determine if we
-# have the right update rollup with the API we need.  If not, no need to run the rest of the script.
+param($ProxyDomainName="webgateway-eu.schindler.com:3128")
 $healthServiceSettings = New-Object -ComObject 'AgentConfigManager.MgmtSvcCfg'
-
 $proxyMethod = $healthServiceSettings | Get-Member -Name 'SetProxyInfo'
 
 if (!$proxyMethod)
@@ -38,10 +34,10 @@ if (!$proxyMethod)
     Write-Output 'Health Service proxy API not present, will not update settings.'
     return
 }
-
 Write-Output "Clearing proxy settings."
 $healthServiceSettings.SetProxyInfo('', '', '')
-
+#Write-Output "Setting proxy to $ProxyDomainName"
+$healthServiceSettings.SetProxyInfo("", "","")
 }
 
 function addWorkID_SoC
