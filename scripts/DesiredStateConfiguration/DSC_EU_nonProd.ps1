@@ -19,6 +19,4 @@ $mma.ReloadConfiguration()
 }
 RemoveWorkID_MIG
 "
-
-
 }
