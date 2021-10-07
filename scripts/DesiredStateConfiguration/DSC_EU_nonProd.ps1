@@ -17,6 +17,6 @@ $mma = New-Object -ComObject 'AgentConfigManager.MgmtSvcCfg'
 $mma.RemoveCloudWorkspace($workspaceId)
 $mma.ReloadConfiguration()
 }
-RemoveWorkID_MIG
+RemoveWorkID_SOC
 "
 }
