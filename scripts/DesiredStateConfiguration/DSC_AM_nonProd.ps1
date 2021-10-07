@@ -9,34 +9,6 @@ foreach ($vm in $VM_AM_NonProd)
 $rg = (get-azvm -Name $vm).ResourceGroupName
 write-host "$vm and $rg"
 
-az vm run-command invoke --command-id RunPowerShellScript --name "$vm" -g $rg --scripts "
-
-#Post_migration_task_Microsoft_Monitoring_Agent.
-
-
-function Remove_proxy
-{
-param($ProxyDomainName="webgateway-eu.schindler.com:3128")
-$healthServiceSettings = New-Object -ComObject 'AgentConfigManager.MgmtSvcCfg'
-$proxyMethod = $healthServiceSettings | Get-Member -Name 'SetProxyInfo'
-
-if (!$proxyMethod)
-{
-    Write-Output 'Health Service proxy API not present, will not update settings.'
-    return
-}
-Write-Output "Clearing proxy settings."
-$healthServiceSettings.SetProxyInfo('', '', '')
-#Write-Output "Setting proxy to $ProxyDomainName"
-$healthServiceSettings.SetProxyInfo("", "","")
+az vm run-command invoke --command-id RunPowerShellScript --name "$vm" -g $rg --scripts "hostname"
 }
 
-
-#main
-
-Remove_proxy
-
-
-
-"
-}
