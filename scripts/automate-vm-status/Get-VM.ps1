@@ -17,7 +17,7 @@
 
 ####################################################################
 
-#Select-AzSubscription -Subscription "s-sis-eu-nonprod-01"
+Select-AzSubscription -Subscription "s-sis-eu-nonprod-01"
 $VM_EU_NonProd = $(get-azvm).name | where-object {$_ -like '*wsr*'} > .\servers_list_eu_nonProd.txt
 
 $VM_EU_NonProd = Get-Content "servers_list_eu_nonProd.txt"
@@ -30,6 +30,8 @@ write-host "$vm and $rg"
 $app_id = "70eacc9c-bde8-4b40-9e16-02620fc4e65b"
 $tenant_id = "aa06dce7-99d7-403b-8a08-0c5f50471e64"
 $se_id = "e48bf748-b756-4b9a-ab72-1a2ee2bceb98"
-az login --service-principal --username $app_id --password $se_id --tenant $tenant_id
+#az login --service-principal --username $app_id --password $se_id --tenant $tenant_id
+az login -u $(user) -p $(pw)
+Select-AzSubscription -Subscription "s-sis-eu-nonprod-01"
 az vm run-command invoke --command-id RunPowerShellScript --name "$vm" -g $rg --scripts "hostname"
 }
