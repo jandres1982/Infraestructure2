@@ -33,16 +33,15 @@ $healthServiceSettings.SetProxyInfo('', '', '')
 }
 
 
-
-function addWorkID_SoC
+function RemWorkID_SOC
 {
-    $workspaceId = "b615f112-4439-41fa-aa80-424be76d309e"
-    $workspaceKey = "xO/JqiWFSYxGY7uIe1XgeFE3LjWFq8jvxoYyLcSGiHNkR/GnDG7eDd1WijUwMD7fW2y8rUnyLeVM8U1s9sDoqQ=="
-    $mma1 = New-Object -ComObject 'AgentConfigManager.MgmtSvcCfg'
-    $mma1.AddCloudWorkspace($workspaceId, $workspaceKey)
-    $mma1.ReloadConfiguration()
+Write-Output "Working on Server"
+hostname
+$workspaceId = "b615f112-4439-41fa-aa80-424be76d309e"
+$mma = New-Object -ComObject 'AgentConfigManager.MgmtSvcCfg'
+$mma.RemoveCloudWorkspace($workspaceId)
+$mma.ReloadConfiguration()
 }
-
 
 function addWorkID_SCC
 {
@@ -69,6 +68,6 @@ Remove_proxy
 
 addWorkID_SoC
 
-addWorkID_SCC
+RemWorkID_SOC
 
 Check_WID_Provided
