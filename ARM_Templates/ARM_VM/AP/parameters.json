@@ -6,22 +6,22 @@
             "value": "southeastasia"
         },
         "networkInterfaceName": {
-            "value": "vnmwsr0134_01"
+            "value": "shhwsr2336_01"
         },
         "subnetName": {
-            "value": "sub-frontendfile-01"
+            "value": "sub-infrastructure-01"
         },
         "virtualNetworkId": {
-            "value": "/subscriptions/59c20947-4965-45c4-99f3-12be96106119/resourceGroups/rg-cis-prod-network-02/providers/Microsoft.Network/virtualNetworks/vnet-prod-asse-01"
+            "value": "/subscriptions/59c20947-4965-45c4-99f3-12be96106119/resourceGroups/rg-cis-prod-network-02/providers/Microsoft.Network/virtualNetworks/vnet-prod-asse-test"
         },
         "virtualMachineName": {
-            "value": "vnmwsr0134"
+            "value": "shhwsr2336"
         },
         "virtualMachineComputerName": {
-            "value": "vnmwsr0134"
+            "value": "shhwsr2336"
         },
         "virtualMachineRG": {
-            "value": "rg-vnm-prod-server-01"
+            "value": "rg-cis-prod-soclogcol-01"
         },
         "osDiskType": {
             "value": "StandardSSD_LRS"
@@ -34,7 +34,7 @@
                     "caching": "None",
                     "writeAcceleratorEnabled": false,
                     "id": null,
-                    "name": "vnmwsr0134_DataDisk_0",
+                    "name": "shhwsr2336_DataDisk_0",
                     "storageAccountType": null,
                     "diskSizeGB": null,
                     "diskEncryptionSet": null
@@ -44,10 +44,10 @@
         "dataDiskResources": {
             "value": [
                 {
-                    "name": "vnmwsr0134_DataDisk_0",
+                    "name": "shhwsr2336_DataDisk_0",
                     "sku": "StandardSSD_LRS",
                     "properties": {
-                        "diskSizeGB": 5120,
+                        "diskSizeGB": 255,
                         "creationData": {
                             "createOption": "empty"
                         }
@@ -56,7 +56,7 @@
             ]
         },
         "virtualMachineSize": {
-            "value": "Standard_D2s_v3"
+            "value": "Standard_D4s_v3"
         },
         "adminUsername": {
             "value": "ldmsosd"
