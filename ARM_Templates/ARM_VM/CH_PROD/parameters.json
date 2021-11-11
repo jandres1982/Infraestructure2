@@ -1,0 +1,60 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "location": {
+            "value": "switzerlandnorth"
+        },
+        "networkInterfaceName": {
+            "value": "crdwsr0002197"
+        },
+        "subnetName": {
+            "value": "sub-frontend-iaas-01"
+        },
+        "virtualNetworkId": {
+            "value": "/subscriptions/4ecf3830-c880-4410-9c3b-21919c807bad/resourceGroups/rg-cis-prod-network-01/providers/Microsoft.Network/virtualNetworks/vnet-prod-sn-01"
+        },
+        "virtualMachineName": {
+            "value": "crdwsr0002"
+        },
+        "virtualMachineComputerName": {
+            "value": "crdwsr0002"
+        },
+        "virtualMachineRG": {
+            "value": "rg-cis-prod-network-01"
+        },
+        "osDiskType": {
+            "value": "StandardSSD_LRS"
+        },
+        "virtualMachineSize": {
+            "value": "Standard_D4s_v3"
+        },
+        "adminUsername": {
+            "value": "ldmsosd"
+        },
+        "adminPassword": {
+            "value": "Newsetup1234"
+        },
+        "patchMode": {
+            "value": "AutomaticByOS"
+        },
+        "enableHotpatching": {
+            "value": false
+        },
+        "diagnosticsStorageAccountName": {
+            "value": "stproddiagnostic0001"
+        },
+        "diagnosticsStorageAccountId": {
+            "value": "/subscriptions/4ecf3830-c880-4410-9c3b-21919c807bad/resourceGroups/rg-cis-prod-storage-01/providers/Microsoft.Storage/storageAccounts/stproddiagnostic0001"
+        },
+        "availabilitySetName": {
+            "value": "avail-prod-crd-01"
+        },
+        "availabilitySetPlatformFaultDomainCount": {
+            "value": 2
+        },
+        "availabilitySetPlatformUpdateDomainCount": {
+            "value": 5
+        }
+    }
+}
