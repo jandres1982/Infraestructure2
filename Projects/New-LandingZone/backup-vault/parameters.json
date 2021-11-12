@@ -3,7 +3,7 @@
     "contentVersion": "1.0.0.0",
     "parameters": {
         "name": {
-            "value": "rsv-nonprod-ch-lrsbackup-01"
+            "value": "rsv-nonprod-chno-lrsbackup-01"
         },
         "location": {
             "value": "switzerlandnorth"
