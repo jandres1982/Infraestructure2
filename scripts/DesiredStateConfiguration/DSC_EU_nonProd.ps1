@@ -27,7 +27,7 @@ if ($per -eq $per_1)
 Write-host "Servers checked $per%"
 }
 $per_1 = $per
-}
+
 
 ##########################  Check $per
 
