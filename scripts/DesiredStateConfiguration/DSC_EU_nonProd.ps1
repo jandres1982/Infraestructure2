@@ -7,15 +7,22 @@ Select-AzSubscription -Subscription "s-sis-eu-nonprod-01"
 $VM_EU_NonProd = $(get-azvm).name | where-object {$_ -like '*wsr*'} > .\servers_list_eu_nonprod.txt
 $VM_EU_NonProd = Get-Content "servers_list_eu_nonprod.txt"
 
+
+
+
+[int]$num_T = $VM_EU_NonProd.Count
+[int]$num_R = $num_T
+[int]$Per = $null
+[int]$Per_1 = $null
+
 foreach ($vm in $VM_EU_NonProd)
 {
 
 
 ##########################  Check $per
-[int]$num_T = $VM_EU_NonProd.Count
-[int]$num_R = $num_T
-[int]$Per = $null
-[int]$Per_1 = $null
+
+
+
 $num_R = $num_R - 1
 $Per = 100 - (($num_R * 100) / $num_T)
 
