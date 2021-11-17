@@ -10,10 +10,10 @@ $VM_EU_NonProd = Get-Content "servers_list_eu_nonprod.txt"
 
 
 
-[int]$num_T = $VM_EU_NonProd.Count
-[int]$num_R = $num_T
-[int]$Per = $null
-[int]$Per_1 = $null
+[int]$num_T = $VM_EU_NonProd.Count #Per_variables
+[int]$num_R = $num_T #Per_variables
+[int]$Per = $null #Per_variables
+[int]$Per_1 = $null #Per_variables
 
 foreach ($vm in $VM_EU_NonProd)
 {
@@ -22,7 +22,7 @@ foreach ($vm in $VM_EU_NonProd)
 ##########################  Check $per
 
 
-
+write-host "Remaining Servers $num_R"
 $num_R = $num_R - 1
 $Per = 100 - (($num_R * 100) / $num_T)
 
