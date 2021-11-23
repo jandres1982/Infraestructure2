@@ -6,22 +6,22 @@
             "value": "northeurope"
         },
         "networkInterfaceName": {
-            "value": "tlvwsr0017_01"
+            "value": "shhwsr2355_01"
         },
         "subnetName": {
-            "value": "sub-frontendfile-01"
+            "value": "sub-middleware-iaas-01"
         },
         "virtualNetworkId": {
             "value": "/subscriptions/505ead1a-5a5f-4363-9b72-83eb2234a43d/resourceGroups/RG_NETWORK_PROD/providers/Microsoft.Network/virtualNetworks/EU-PROD-VNET"
         },
         "virtualMachineName": {
-            "value": "tlvwsr0017"
+            "value": "shhwsr2355"
         },
         "virtualMachineComputerName": {
-            "value": "tlvwsr0017"
+            "value": "shhwsr2355"
         },
         "virtualMachineRG": {
-            "value": "rg-tlv-prod-testfileserver-01"
+            "value": "rg-shh-prod-caddigiparaliftdesigner-01"
         },
         "osDiskType": {
             "value": "StandardSSD_LRS"
@@ -34,7 +34,7 @@
                     "caching": "None",
                     "writeAcceleratorEnabled": false,
                     "id": null,
-                    "name": "tlvwsr0017_DataDisk_0",
+                    "name": "shhwsr2355_DataDisk_0",
                     "storageAccountType": null,
                     "diskSizeGB": null,
                     "diskEncryptionSet": null
@@ -44,7 +44,7 @@
         "dataDiskResources": {
             "value": [
                 {
-                    "name": "tlvwsr0017_DataDisk_0",
+                    "name": "shhwsr2355_DataDisk_0",
                     "sku": "StandardSSD_LRS",
                     "properties": {
                         "diskSizeGB": 30,
