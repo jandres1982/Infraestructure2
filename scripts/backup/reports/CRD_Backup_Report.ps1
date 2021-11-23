@@ -1,3 +1,4 @@
+Select-AzSubscription -Subscription "s-sis-eu-prod-01"
 $date = $(get-date -format yyyy-MM-ddTHH-mm)
 $Vault_List = (Get-AzRecoveryServicesVault).Name 
 foreach ($vault in $Vault_List) 
@@ -14,7 +15,7 @@ $Jobs | Export-Csv -Path "Backup_Report_CRD_Prod_$date.csv" -Append -Force
 
 $PSEmailServer = "smtp.eu.schindler.com"
 $From = "scc-support-zar.es@schindler.com"
-$to = "antoniovicente.vento@schindler.com", "alfonso.marques@schindler.com"
+$to = "antoniovicente.vento@schindler.com"
 
 $Subject = "Backup Report CRD Prod Subscription"
 #$Filename = Get-ChildItem $Path -Name "Att*" | select -Last 1
