@@ -26,7 +26,6 @@ $From = "scc-support-zar.es@schindler.com"
 $to = "antoniovicente.vento@schindler.com", "alfonso.marques@schindler.com", "nahum.sancho@schindler.com"
 
 $Subject = "Unattached Disks"
-#$Filename = Get-ChildItem $Path -Name "Att*" | select -Last 1
 $Attachment = "Unattached_Disk_Report_$date.txt"
 $Body = @"
 Dear team,
