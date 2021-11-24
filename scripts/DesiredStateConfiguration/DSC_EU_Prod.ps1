@@ -16,3 +16,5 @@ write-host "$vm and $rg"
 az vm run-command invoke --command-id RunPowerShellScript --name "$vm" -g $rg --scripts "@DSC_MMA.ps1"
 }
 }
+
+DSC
