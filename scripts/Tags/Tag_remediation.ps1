@@ -8,5 +8,4 @@ foreach ($rg in $Resource_group) {
             Update-AzTag -ResourceId $rid -Tag $Tags -Operation Merge
         }
 }
-
 #$tags_resource = $(Get-AzResource -id $resources_id).Tags
