@@ -13,7 +13,7 @@ foreach -parallel ($vm in $VM_EU_Prod)
 $rg = (get-azvm -Name $vm).ResourceGroupName
 write-output "$vm and $rg"
 
-az vm run-command invoke --command-id RunPowerShellScript --name "$vm" -g $rg --scripts "@DSC_MMA.ps1"
+az vm run-command invoke --command-id RunPowerShellScript --name "$vm" -g $rg --scripts "hostname"
 }
 }
 
