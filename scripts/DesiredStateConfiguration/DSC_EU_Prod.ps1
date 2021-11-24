@@ -11,7 +11,7 @@ $VM_EU_Prod = $(get-azvm).name | where-object {$_ -like '*wsr*'}
 foreach -parallel ($vm in $VM_EU_Prod)
 {
 $rg = (get-azvm -Name $vm).ResourceGroupName
-write-host "$vm and $rg"
+write-output "$vm and $rg"
 
 az vm run-command invoke --command-id RunPowerShellScript --name "$vm" -g $rg --scripts "@DSC_MMA.ps1"
 }
