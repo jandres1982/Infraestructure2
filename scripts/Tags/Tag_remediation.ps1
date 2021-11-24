@@ -9,6 +9,4 @@ foreach ($rg in $Resource_group) {
         }
 }
 
-#/subscriptions/7fa3c3a2-7d0d-4987-a30c-30623e38756c/resourceGroups/RG-GIS-TEST-SAPHANAPOC-01/providers/Microsoft.Compute/disks/shhlsr4012_disk_os
-
 #$tags_resource = $(Get-AzResource -id $resources_id).Tags
