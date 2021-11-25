@@ -6,19 +6,19 @@
             "value": "northeurope"
         },
         "networkInterfaceName": {
-            "value": "milwsr4151_01"
+            "value": "milwsr4152_01"
         },
         "subnetName": {
-            "value": "sub-middleware-iaas-01"
+            "value": "sub-frontend-iaas-01"
         },
         "virtualNetworkId": {
             "value": "/subscriptions/7fa3c3a2-7d0d-4987-a30c-30623e38756c/resourceGroups/rg-cis-nonprod-network-01/providers/Microsoft.Network/virtualNetworks/EU-NONPROD-VNET"
         },
         "virtualMachineName": {
-            "value": "milwsr4151"
+            "value": "milwsr4152"
         },
         "virtualMachineComputerName": {
-            "value": "milwsr4151"
+            "value": "milwsr4152"
         },
         "virtualMachineRG": {
             "value": "rg-mil-qual-dynamics-01"
@@ -34,7 +34,7 @@
                     "caching": "None",
                     "writeAcceleratorEnabled": false,
                     "id": null,
-                    "name": "milwsr4151_DataDisk_0",
+                    "name": "milwsr4152_DataDisk_0",
                     "storageAccountType": null,
                     "diskSizeGB": null,
                     "diskEncryptionSet": null
@@ -44,10 +44,10 @@
         "dataDiskResources": {
             "value": [
                 {
-                    "name": "milwsr4151_DataDisk_0",
+                    "name": "milwsr4152_DataDisk_0",
                     "sku": "StandardSSD_LRS",
                     "properties": {
-                        "diskSizeGB": 50,
+                        "diskSizeGB": 60,
                         "creationData": {
                             "createOption": "empty"
                         }
