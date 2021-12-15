@@ -64,7 +64,7 @@ Set-Item Env:\SuppressAzurePowerShellBreakingChangeWarnings "true"
 
 $resourceGroupName = "rg-shh-prod-beyondtrustremotesupport-01" 
 
-$storageAccountName = "stprodgeneric0001" 
+$storageAccountName = "stprodbeyondtrust" 
 
 $vnetName = "EU-PROD-VNET" 
 
