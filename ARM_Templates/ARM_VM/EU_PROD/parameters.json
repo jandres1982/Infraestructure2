@@ -56,7 +56,7 @@
             ]
         },
         "virtualMachineSize": {
-            "value": "Standard_F2s_v2"
+            "value": "Standard_D4s_v3"
         },
         "adminUsername": {
             "value": "ldmsosd"
