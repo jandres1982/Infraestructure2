@@ -17,11 +17,14 @@ if ($extension -eq "MicrosoftMonitoringAgent")
 {
 write-output "MicrosoftMonitoringAgent extension found in the server"
 }else
-{
-    write-output "MicrosoftMonitoringAgent Agent not found"
-    
+    {
+    $extension2 = $(Get-AzVM -ResourceGroupName "$rg" -Name "$vm" -DisplayHint expand).extensions.name | Where-Object {$_ -eq "Microsoft.Insights.LogAnalyticsAgent"}
+    if ($extension2 -eq "Microsoft.Insights.LogAnalyticsAgent")
+    write-output "Microsoft.Insights.LogAnalyticsAgent extension found in the server"
+    }else 
+    {        
+    write-output "MMA Agent not found"
     write-output "We will try to install the agent"
-
 
     $PublicSettings = @{"workspaceId" = "fa488d5a-d8e4-4437-9ccc-2ef59e9eb669"}
     $ProtectedSettings = @{"workspaceKey" = "1DxbXeHBAM3QLWl4GcE9SF0eTCEYuyr5pAt5k3wGG+bASH/ug9XGmVUyHKGvi/nmVIAYLLvfemwkuhM0yxGWCA=="}
@@ -36,7 +39,7 @@ write-output "MicrosoftMonitoringAgent extension found in the server"
     -ProtectedSettings $ProtectedSettings `
     -Location NorthEurope
 
-}
+         }
 #az account set --subscription <subscription-id>
 ################################################################################################
 
