@@ -19,7 +19,7 @@ write-output "MicrosoftMonitoringAgent extension found in the server"
 }else
 {
     write-output "MicrosoftMonitoringAgent Agent not found"
-    az vm extension set -n MicrosoftMonitoringAgent --publisher Microsoft.EnterpriseCloud.Monitoring --version 1.0 --vm-name "$vm" --resource-group "rg"
+    az vm extension set -n MicrosoftMonitoringAgent --publisher Microsoft.EnterpriseCloud.Monitoring --version 1.0 --vm-name "$vm" --resource-group "$rg"
 }
 #az account set --subscription <subscription-id>
 ################################################################################################
