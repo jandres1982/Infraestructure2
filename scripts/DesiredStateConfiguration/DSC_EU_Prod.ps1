@@ -20,6 +20,7 @@ write-output "MicrosoftMonitoringAgent extension found in the server"
     {
     $extension2 = $(Get-AzVM -ResourceGroupName "$rg" -Name "$vm" -DisplayHint expand).extensions.name | Where-Object {$_ -eq "Microsoft.Insights.LogAnalyticsAgent"}
     if ($extension2 -eq "Microsoft.Insights.LogAnalyticsAgent")
+    {
     write-output "Microsoft.Insights.LogAnalyticsAgent extension found in the server"
     }else 
     {        
