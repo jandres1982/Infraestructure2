@@ -10,6 +10,33 @@ foreach ($vm in $VM_EU_Prod)
 $rg = (get-azvm -Name $vm).ResourceGroupName
 write-host "$vm and $rg"
 
+
+#####################
+
+
+
+
+
+
+
+
+#Check if the VM is running or not
+
+
+
+
+
+
+
+############
+
+
+
+
+
+
+
+
 ######################### Check MicrosoftMonitoringAgent extension is enable in the VM 
 $extension = $(Get-AzVM -ResourceGroupName "$rg" -Name "$vm" -DisplayHint expand).extensions.name | Where-Object {$_ -eq "MicrosoftMonitoringAgent"}
 if ($extension -eq "MicrosoftMonitoringAgent")
