@@ -32,9 +32,6 @@ az vm run-command invoke --command-id RunPowerShellScript --name "$vm" -g $rg --
 
 
 
-az vm extension set -n Microsoft.Insights.LogAnalyticsAgent --publisher Microsoft.EnterpriseCloud.Monitoring --version 1.0 --vm-name "zzzwsr0010" --resource-group MyResourceGroup "rg-cis-test-server-01"
-
-
 #PS /home/antonio> az vm extension list -g "rg-cis-test-server-01" --vm-name "zzzwsr0010"
 #[
 #  {
