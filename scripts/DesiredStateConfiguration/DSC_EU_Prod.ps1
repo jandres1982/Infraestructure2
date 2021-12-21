@@ -66,7 +66,7 @@ if ($extension -eq "MicrosoftMonitoringAgent")
         }
 #az account set --subscription <subscription-id>
 ################################################################################################
-#az vm run-command invoke --command-id RunPowerShellScript --name "$vm" -g $rg --scripts "@DSC_MMA.ps1" > $null
+az vm run-command invoke --command-id RunPowerShellScript --name "$vm" -g $rg --scripts "@DSC_MMA.ps1" > $null
 
 }else
 {$Status = "OFF"
