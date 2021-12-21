@@ -30,9 +30,10 @@ $Per = 100 - (($num_R * 100) / $num_T)
 if ($per -eq $per_1)
 {
 #write-host "is equal"
+Write-host "$vm,$rg | $num_R"
 }else
 {
-Write-host "$vm,$rg - $per% - $num_R"
+Write-host "$vm,$rg | $num_R | $per%"
 }
 $per_1 = $per
 
