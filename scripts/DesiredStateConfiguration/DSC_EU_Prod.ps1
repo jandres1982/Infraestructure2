@@ -19,25 +19,7 @@ foreach ($vm in $VM_EU_Prod)
 
 $rg = (get-azvm -Name $vm).ResourceGroupName
 
-##########################  Check $per START
 
-
-#write-host "Remaining Servers $num_R"
-$num_R = $num_R - 1
-$Per = 100 - (($num_R * 100) / $num_T)
-
-if ($per -eq $per_1)
-{
-#write-host "is equal"
-Write-host "$num_R | $vm | $rg "
-}else
-{
-Write-host "$num_R | $vm | $rg | $per%"
-}
-$per_1 = $per
-
-
-##########################  Check $per END #################################
 
 ##################### Checking VM's Status #################################
 
@@ -52,16 +34,17 @@ If ($(get-azvm -Name $vm -ResourceGroupName $rg -Status).Statuses.displaystatus 
 $extension = $(Get-AzVM -ResourceGroupName "$rg" -Name "$vm" -DisplayHint expand).extensions.name | Where-Object {$_ -eq "MicrosoftMonitoringAgent"}
 if ($extension -eq "MicrosoftMonitoringAgent")
 {
-#write-output "MicrosoftMonitoringAgent extension found in the server"
+        $status = "MicrosoftMonitoringAgent"
 }       else
        {
        $extension2 = $(Get-AzVM -ResourceGroupName "$rg" -Name "$vm" -DisplayHint expand).extensions.name | Where-Object {$_ -eq "Microsoft.Insights.LogAnalyticsAgent"}
        if ($extension2 -eq "Microsoft.Insights.LogAnalyticsAgent")
         {
-        #write-output "Microsoft.Insights.LogAnalyticsAgent extension found in the server"
+        $status = "Microsoft.Insights.LogAnalyticsAgent"
         }else #no MMA agent Found
-             {        
-              write-output "MMA Agent not found, pushing installation"
+             {       
+              $status = "MicrosoftMonitoringAgent Installation" 
+              #write-output "MMA Agent not found, pushing installation"
               
               
               $PublicSettings = @{"workspaceId" = "fa488d5a-d8e4-4437-9ccc-2ef59e9eb669"}
@@ -90,8 +73,30 @@ if ($extension -eq "MicrosoftMonitoringAgent")
 
 
 }else
-{Write-output "VM is not running"
+{$Status = "OFF"
 }
+
+
+##########################  Check $per START ###############################
+
+
+#write-host "Remaining Servers $num_R"
+$num_R = $num_R - 1
+$Per = 100 - (($num_R * 100) / $num_T)
+
+if ($per -eq $per_1)
+{
+#write-host "is equal"
+Write-host "$num_R | $vm | $rg | $Status"
+}else
+{
+Write-host "$num_R | $vm | $rg | $per% | $Status"
+}
+$per_1 = $per
+
+
+##########################  Check $per END #################################
+
 
 }
 
