@@ -16,7 +16,6 @@ $VM_EU_Prod  = $VM_EU_Prod | Sort-Object
 
 foreach ($vm in $VM_EU_Prod)
 {
-Write-Output ""
 
 $rg = (get-azvm -Name $vm).ResourceGroupName
 
