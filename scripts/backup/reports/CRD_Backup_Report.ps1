@@ -17,8 +17,9 @@ $Vault_ID = Get-AzRecoveryServicesVault -ResourceGroupName "$Vault_ResourecGroup
 $Jobs = Get-AzRecoveryServicesBackupJob -VaultId $Vault_ID.Id | where-object {$_.WorkLoadname -like "*crdwsr*"}
 #$JobDetails = Get-AzRecoveryServicesBackupJobDetail -Job $Jobs[0] -VaultId $vault_ID.ID | Export-Csv -Path "Backup_Report_CRD_Prod_$date.csv"  -Append 
 $Jobs | Export-Csv -Path "Backup_Report_CRD_$date.csv" -Append -Force 
-} 
+}
 
+}
 
 $PSEmailServer = "smtp.eu.schindler.com"
 $From = "scc-support-zar.es@schindler.com"
@@ -40,4 +41,3 @@ Send-MailMessage -From $From -To $To -Subject $Subject -Body $Body -Attachments 
 
 Copy-Item -Path $Attachment -Destination \\shhwsr1849\Backup_Report_Azure -Force
 
-}
