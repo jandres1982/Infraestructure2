@@ -62,7 +62,7 @@ if ($extension -eq "MicrosoftMonitoringAgent")
 
 
 
-#az vm run-command invoke --command-id RunPowerShellScript --name "$vm" -g $rg --scripts "@DSC_MMA.ps1"
+az vm run-command invoke --command-id RunPowerShellScript --name "$vm" -g $rg --scripts "@DSC_MMA.ps1" > $null
 
 
 }else
