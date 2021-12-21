@@ -58,29 +58,21 @@ if ($extension -eq "MicrosoftMonitoringAgent")
               
               $PublicSettings = @{"workspaceId" = "fa488d5a-d8e4-4437-9ccc-2ef59e9eb669"}
               $ProtectedSettings = @{"workspaceKey" = "1DxbXeHBAM3QLWl4GcE9SF0eTCEYuyr5pAt5k3wGG+bASH/ug9XGmVUyHKGvi/nmVIAYLLvfemwkuhM0yxGWCA=="}
-              
-              Set-AzVMExtension -ExtensionName "MicrosoftMonitoringAgent" -ResourceGroupName "$rg" -VMName "$vm" -Publisher "Microsoft.EnterpriseCloud.Monitoring" -ExtensionType "MicrosoftMonitoringAgent" -TypeHandlerVersion 1.0 -Settings $PublicSettings -ProtectedSettings $ProtectedSettings -Location NorthEurope > $null
+              $location = $(Get-AzVM -Name $vm).Location
+              Set-AzVMExtension -ExtensionName "MicrosoftMonitoringAgent" -ResourceGroupName "$rg" -VMName "$vm" -Publisher "Microsoft.EnterpriseCloud.Monitoring" -ExtensionType "MicrosoftMonitoringAgent" -TypeHandlerVersion 1.0 -Settings $PublicSettings -ProtectedSettings $ProtectedSettings -Location "$location" > $null
               
               }
 
         }
-
-
 #az account set --subscription <subscription-id>
 ################################################################################################
-
-
-
-az vm run-command invoke --command-id RunPowerShellScript --name "$vm" -g $rg --scripts "@DSC_MMA.ps1" > $null
-
+#az vm run-command invoke --command-id RunPowerShellScript --name "$vm" -g $rg --scripts "@DSC_MMA.ps1" > $null
 
 }else
 {$Status = "OFF"
 }
 
-
 ##########################  Check $per START ###############################
-
 
 #write-host "Remaining Servers $num_R"
 $num_R = $num_R - 1
@@ -98,15 +90,9 @@ Write-host "$num_R | $vm | $rg | $Status | $per%"
 }
 $per_1 = $per
 
-
 ##########################  Check $per END #################################
-
-
 }
-
 }
-
-
 
 #PS /home/antonio> az vm extension list -g "rg-cis-test-server-01" --vm-name "zzzwsr0010"
 #[
