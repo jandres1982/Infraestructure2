@@ -84,13 +84,15 @@ if ($extension -eq "MicrosoftMonitoringAgent")
 $num_R = $num_R - 1
 $Per = 100 - (($num_R * 100) / $num_T)
 
+
 if ($per -eq $per_1)
 {
 #write-host "is equal"
 Write-host "$num_R | $vm | $rg | $Status"
 }else
 {
-Write-host "$num_R | $vm | $rg | $per% | $Status"
+Write-host "$num_R | $vm | $rg | $Status | $per%"
+#Show Percentage
 }
 $per_1 = $per
 
