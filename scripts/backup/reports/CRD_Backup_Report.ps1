@@ -1,4 +1,5 @@
 $subs = @("s-sis-eu-nonprod-01","s-sis-eu-prod-01","s-sis-am-prod-01","s-sis-am-nonprod-01","s-sis-ap-prod-01")
+$date = $(get-date -format yyyy-MM-ddTHH-mm)
 
 ###################################################################
 
@@ -6,7 +7,7 @@ foreach ($sub in $subs)
 {
 
 Select-AzSubscription -Subscription "$sub"
-$date = $(get-date -format yyyy-MM-ddTHH-mm)
+
 $Vault_List = (Get-AzRecoveryServicesVault).Name 
 foreach ($vault in $Vault_List) 
 { 
