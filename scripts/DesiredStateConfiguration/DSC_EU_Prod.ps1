@@ -4,13 +4,45 @@ Select-AzSubscription -Subscription "s-sis-eu-prod-01"
 $(get-azvm).name | where-object {$_ -like '*wsr*'} > .\servers_list_eu_prod.txt
 
 $VM_EU_Prod  = Get-Content "servers_list_eu_prod.txt"
+$VM_EU_Prod  = $VM_EU_Prod | Sort-Object
+
+
+[int]$num_T = $VM_EU_Prod.Count #Per_variables
+[int]$num_R = $num_T #Per_variables
+[int]$Per = $null #Per_variables
+[int]$Per_1 = $null #Per_variables
+
+
+
 foreach ($vm in $VM_EU_Prod)
 {
+
+##########################  Check $per START
+
+
+write-host "Remaining Servers $num_R"
+$num_R = $num_R - 1
+$Per = 100 - (($num_R * 100) / $num_T)
+
+if ($per -eq $per_1)
+{
+#write-host "is equal"
+}else
+{
+Write-host "Servers checked $per%"
+}
+$per_1 = $per
+
+
+##########################  Check $per END
+
+######################### Start Script
+
 $rg = (get-azvm -Name $vm).ResourceGroupName
 write-host "$vm and $rg"
 
 
-#####################
+##################### Checking VM's
 
 
 If ($(get-azvm -Name $vm -ResourceGroupName $rg -Status).Statuses.displaystatus | where-object {$_ -eq "VM running"})
