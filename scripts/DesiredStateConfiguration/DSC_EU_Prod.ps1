@@ -34,15 +34,15 @@ Write-host "Servers checked $per%"
 $per_1 = $per
 
 
-##########################  Check $per END
+##########################  Check $per END #################################
 
-######################### Start Script
+######################### Start Script #################################
 
 $rg = (get-azvm -Name $vm).ResourceGroupName
 write-host "$vm and $rg"
 
 
-##################### Checking VM's
+##################### Checking VM's Status #################################
 
 
 If ($(get-azvm -Name $vm -ResourceGroupName $rg -Status).Statuses.displaystatus | where-object {$_ -eq "VM running"})
