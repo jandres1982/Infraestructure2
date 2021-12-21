@@ -3,7 +3,6 @@ Select-AzSubscription -Subscription "s-sis-eu-prod-01"
 
 $(get-azvm).name | where-object {$_ -like '*wsr*'} > .\servers_list_eu_prod.txt
 
-
 $VM_EU_Prod  = Get-Content "servers_list_eu_prod.txt"
 foreach ($vm in $VM_EU_Prod)
 {
@@ -14,27 +13,10 @@ write-host "$vm and $rg"
 #####################
 
 
+If ($(get-azvm -Name $vm -ResourceGroupName $rg -Status).Statuses.displaystatus | where-object {$_ -eq "VM running"})
+{
 
-
-
-
-
-
-#Check if the VM is running or not
-
-
-
-
-
-
-
-############
-
-
-
-
-
-
+Write-output "VM is Running"
 
 
 ######################### Check MicrosoftMonitoringAgent extension is enable in the VM 
@@ -77,6 +59,10 @@ write-output "MicrosoftMonitoringAgent extension found in the server"
 
 az vm run-command invoke --command-id RunPowerShellScript --name "$vm" -g $rg --scripts "@DSC_MMA.ps1"
 
+
+}else
+{Write-output "VM is not running"
+}
 
 }
 
