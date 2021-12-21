@@ -9,6 +9,8 @@ foreach ($sub in $subs)
 
 
 Select-AzSubscription -Subscription "$sub"
+az account set --subscription "$sub"
+
 
 #$(get-azvm).name | where-object {$_ -like '*wsr*'} > .\servers_list_$sub.txt
 $(Get-AzVM | Select -Property Name, @{Name='OSType'; Expression={$_.StorageProfile.OSDisk.OSType}} | where-object {$_.OsType -eq "Windows"}).name > .\servers_list_$sub.txt
