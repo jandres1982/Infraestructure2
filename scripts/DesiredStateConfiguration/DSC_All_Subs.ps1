@@ -67,7 +67,7 @@ if ($extension -eq "MicrosoftMonitoringAgent")
               }
 
         }
-#az account set --subscription <subscription-id>
+
 ################################################################################################
 az vm run-command invoke --command-id RunPowerShellScript --name "$vm" -g $rg --scripts "@DSC_MMA.ps1" > $null
 
@@ -96,6 +96,14 @@ $per_1 = $per
 ##########################  Check $per END #################################
 }
 }
+
+
+
+
+
+#az account set --subscription <subscription-id>
+
+
 
 #PS /home/antonio> az vm extension list -g "rg-cis-test-server-01" --vm-name "zzzwsr0010"
 #[
