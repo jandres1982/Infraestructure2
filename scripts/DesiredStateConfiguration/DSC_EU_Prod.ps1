@@ -16,11 +16,11 @@ $VM_EU_Prod  = $VM_EU_Prod | Sort-Object
 
 foreach ($vm in $VM_EU_Prod)
 {
-
+Write-Output ""
 ##########################  Check $per START
 
 
-write-host "Remaining Servers $num_R"
+#write-host "Remaining Servers $num_R"
 $num_R = $num_R - 1
 $Per = 100 - (($num_R * 100) / $num_T)
 
@@ -29,7 +29,7 @@ if ($per -eq $per_1)
 #write-host "is equal"
 }else
 {
-Write-host "Servers checked $per%"
+Write-host "Servers checked $per% and Remaining Servers $num_R"
 }
 $per_1 = $per
 
@@ -48,7 +48,7 @@ write-host "$vm and $rg"
 If ($(get-azvm -Name $vm -ResourceGroupName $rg -Status).Statuses.displaystatus | where-object {$_ -eq "VM running"})
 {
 
-Write-output "VM is Running"
+#Write-output "VM is Running"
 
 
 ######################### Check MicrosoftMonitoringAgent extension is enable in the VM 
@@ -64,8 +64,8 @@ write-output "MicrosoftMonitoringAgent extension found in the server"
         write-output "Microsoft.Insights.LogAnalyticsAgent extension found in the server"
         }else #no MMA agent Found
              {        
-              write-output "MMA Agent not found"
-              write-output "We will try to install the agent"
+              write-output "MMA Agent not found, pushing installation"
+              
               
               $PublicSettings = @{"workspaceId" = "fa488d5a-d8e4-4437-9ccc-2ef59e9eb669"}
               $ProtectedSettings = @{"workspaceKey" = "1DxbXeHBAM3QLWl4GcE9SF0eTCEYuyr5pAt5k3wGG+bASH/ug9XGmVUyHKGvi/nmVIAYLLvfemwkuhM0yxGWCA=="}
