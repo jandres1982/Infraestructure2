@@ -17,6 +17,9 @@ $VM_EU_Prod  = $VM_EU_Prod | Sort-Object
 foreach ($vm in $VM_EU_Prod)
 {
 Write-Output ""
+
+$rg = (get-azvm -Name $vm).ResourceGroupName
+
 ##########################  Check $per START
 
 
@@ -29,18 +32,12 @@ if ($per -eq $per_1)
 #write-host "is equal"
 }else
 {
-Write-host "Servers checked $per% and Remaining Servers $num_R"
+Write-host "$vm,$rg - $per% - $num_R"
 }
 $per_1 = $per
 
 
 ##########################  Check $per END #################################
-
-######################### Start Script #################################
-
-$rg = (get-azvm -Name $vm).ResourceGroupName
-write-host "$vm and $rg"
-
 
 ##################### Checking VM's Status #################################
 
@@ -55,13 +52,13 @@ If ($(get-azvm -Name $vm -ResourceGroupName $rg -Status).Statuses.displaystatus 
 $extension = $(Get-AzVM -ResourceGroupName "$rg" -Name "$vm" -DisplayHint expand).extensions.name | Where-Object {$_ -eq "MicrosoftMonitoringAgent"}
 if ($extension -eq "MicrosoftMonitoringAgent")
 {
-write-output "MicrosoftMonitoringAgent extension found in the server"
+#write-output "MicrosoftMonitoringAgent extension found in the server"
 }       else
        {
        $extension2 = $(Get-AzVM -ResourceGroupName "$rg" -Name "$vm" -DisplayHint expand).extensions.name | Where-Object {$_ -eq "Microsoft.Insights.LogAnalyticsAgent"}
        if ($extension2 -eq "Microsoft.Insights.LogAnalyticsAgent")
         {
-        write-output "Microsoft.Insights.LogAnalyticsAgent extension found in the server"
+        #write-output "Microsoft.Insights.LogAnalyticsAgent extension found in the server"
         }else #no MMA agent Found
              {        
               write-output "MMA Agent not found, pushing installation"
