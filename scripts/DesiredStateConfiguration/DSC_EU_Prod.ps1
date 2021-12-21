@@ -57,7 +57,7 @@ write-output "MicrosoftMonitoringAgent extension found in the server"
 
 
 
-az vm run-command invoke --command-id RunPowerShellScript --name "$vm" -g $rg --scripts "@DSC_MMA.ps1"
+#az vm run-command invoke --command-id RunPowerShellScript --name "$vm" -g $rg --scripts "@DSC_MMA.ps1"
 
 
 }else
