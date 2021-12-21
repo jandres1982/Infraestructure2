@@ -1,20 +1,29 @@
-#################################################################### Ap
-Select-AzSubscription -Subscription "s-sis-eu-prod-01"
+#################################################################### 
 
-$(get-azvm).name | where-object {$_ -like '*wsr*'} > .\servers_list_eu_prod.txt
+$subs = @("s-sis-eu-nonprod-01","s-sis-eu-prod-01","s-sis-am-prod-01","s-sis-am-nonprod-01","s-sis-ap-prod-01")
 
-$VM_EU_Prod  = Get-Content "servers_list_eu_prod.txt"
-$VM_EU_Prod  = $VM_EU_Prod | Sort-Object
+###################################################################
+
+foreach ($sub in $subs)
+{
 
 
-[int]$num_T = $VM_EU_Prod.Count #Per_variables
+Select-AzSubscription -Subscription "$sub"
+
+$(get-azvm).name | where-object {$_ -like '*wsr*'} > .\servers_list_$sub.txt
+
+$Servers  = Get-Content "servers_list_$sub.txt"
+$Servers  = $Servers | Sort-Object
+
+
+[int]$num_T = $Servers.Count #Per_variables
 [int]$num_R = $num_T #Per_variables
 [int]$Per = $null #Per_variables
 [int]$Per_1 = $null #Per_variables
 
 
 
-foreach ($vm in $VM_EU_Prod)
+foreach ($vm in $Servers)
 {
 
 $rg = (get-azvm -Name $vm).ResourceGroupName
@@ -92,6 +101,8 @@ $per_1 = $per
 
 ##########################  Check $per END #################################
 
+
+}
 
 }
 
