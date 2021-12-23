@@ -21,6 +21,9 @@ $Jobs = Get-AzRecoveryServicesBackupJob -VaultId $Vault_ID.Id | where-object {$_
 $Jobs | Export-Csv -Path "Backup_Report_WSR_$date.csv" -Append -Force 
 }
 
+$Jobs_failed = Get-AzRecoveryServicesBackupJob -From (Get-Date).AddDays(-7).ToUniversalTime() -Status Failed -VaultId $Vault_ID
+$Jobs_failed | Export-Csv -Path "Backup_Report_WSR_$date_FAILED.csv" -Append -Force 
+
 }
 
 $PSEmailServer = "smtp.eu.schindler.com"
@@ -29,7 +32,7 @@ $to = "antoniovicente.vento@schindler.com","alfonso.marques@schindler.com"
 
 $Subject = "Backup Report for All WSR named Servers"
 #$Filename = Get-ChildItem $Path -Name "Att*" | select -Last 1
-$Attachment = "Backup_Report_WSR_$date.csv"
+$Attachment = (get-childitem "*.csv")
 $Body = @"
 Dear team,
 
