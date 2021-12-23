@@ -18,10 +18,10 @@ $Vault_ResourecGroup = (Get-AzRecoveryServicesVault -Name $vault).ResourceGroupN
 $Vault_ID = Get-AzRecoveryServicesVault -ResourceGroupName "$Vault_ResourecGroup" -Name $vault
 $Jobs = Get-AzRecoveryServicesBackupJob -VaultId $Vault_ID.Id -BackupManagementType AzureVM | where-object {$_.WorkLoadname -like "*wsr*"}
 #$JobDetails = Get-AzRecoveryServicesBackupJobDetail -Job $Jobs[0] -VaultId $vault_ID.ID | Export-Csv -Path "Backup_Report_CRD_Prod_$date.csv"  -Append 
-$Jobs | Export-Csv -Path "Backup_Report_WSR_$date.csv" -Append -Force 
+$Jobs | Export-Csv -Path "Backup_Report_WSR_____$date.csv" -Append -Force 
 
 $Jobs_failed = Get-AzRecoveryServicesBackupJob -From (Get-Date).AddDays(-7).ToUniversalTime() -Status Failed -VaultId $Vault_ID.id
-$Jobs_failed | Export-Csv -Path "Backup_Report_WSR_FAILED_$date.csv" -Append -Force
+$Jobs_failed | Export-Csv -Path "Backup_Report_WSR_FAILED_____$date.csv" -Append -Force
 
 }
 
