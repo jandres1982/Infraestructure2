@@ -31,7 +31,7 @@ $Jobs_failed | Export-Csv -Path "Backup_Report_WSR_FAILED_____$date.csv" -Append
 
 $PSEmailServer = "smtp.eu.schindler.com"
 $From = "scc-support-zar.es@schindler.com"
-$to = "antoniovicente.vento@schindler.com","alfonso.marques@schindler.com","alberto.delgado@schindler.com"
+$to = "antoniovicente.vento@schindler.com","alfonso.marques@schindler.com","alberto.delgado@schindler.com","fernando.camps@schindler.com"
 
 $Subject = "Backup Report for All WSR named Servers"
 #$Filename = Get-ChildItem $Path -Name "Att*" | select -Last 1
