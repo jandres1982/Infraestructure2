@@ -21,7 +21,7 @@ $Jobs = Get-AzRecoveryServicesBackupJob -VaultId $Vault_ID.Id -BackupManagementT
 $Jobs | Export-Csv -Path "Backup_Report_WSR_$date.csv" -Append -Force 
 
 $Jobs_failed = Get-AzRecoveryServicesBackupJob -From (Get-Date).AddDays(-7).ToUniversalTime() -Status Failed -VaultId $Vault_ID.id
-$Jobs_failed | Export-Csv -Path "Backup_Report_WSR_$date_FAILED.csv" -Append -Force
+$Jobs_failed | Export-Csv -Path "Backup_Report_WSR_FAILED_$date.csv" -Append -Force
 
 }
 
