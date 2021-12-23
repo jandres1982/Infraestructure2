@@ -49,3 +49,11 @@ Send-MailMessage -From $From -To $To -Subject $Subject -Body $Body -Attachments 
 
 Copy-Item -Path $Attachment -Destination \\shhwsr1849\Backup_Report_Azure -Force
 
+
+
+#if (Get-AzRecoveryServicesBackupStatus -Name $vm.Name -ResourceGroupName $vm.ResourceGroupName -Type 'AzureVM' -Verbose)
+#{Write-Host "VM is included in a VAULT"
+#}else
+#{Write-Host "Check the $VM"
+#}
+
