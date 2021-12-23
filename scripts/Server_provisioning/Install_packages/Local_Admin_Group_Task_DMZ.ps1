@@ -8,7 +8,7 @@ $taskname = 'Local Admin Group'
 Register-ScheduledTask -TaskName $taskname `
                        -TaskPath "\" `
                        -Action $Action `
-                       -User 'ldmsosd' `
+                       -User 'Boss_MSRV' `
                        -Password 'Newsetup1234' `
                        -Trigger $trigger `
                        -Settings $Settings `
