@@ -34,11 +34,10 @@ Dear team,
 
 Please find attached the Report for CRD Backup Jobs.
 
-Report saved in the Server Team Scripting Server
 
 "@
 
 Send-MailMessage -From $From -To $To -Subject $Subject -Body $Body -Attachments $Attachment
 
-Copy-Item -Path $Attachment -Destination \\shhwsr1849\Backup_Report_Azure -Force
+#Copy-Item -Path $Attachment -Destination \\shhwsr1849\Backup_Report_Azure -Force
 
