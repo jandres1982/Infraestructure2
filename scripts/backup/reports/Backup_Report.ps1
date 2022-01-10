@@ -41,13 +41,12 @@ Dear team,
 
 Please find attached the Report for Backup Jobs for Azure Servers.
 
-Report saved in the Server Team Scripting Server
 
 "@
 
 Send-MailMessage -From $From -To $To -Subject $Subject -Body $Body -Attachments $Attachment
 
-Copy-Item -Path $Attachment -Destination \\shhwsr1849\Backup_Report_Azure -Force
+#Copy-Item -Path $Attachment -Destination \\shhwsr1849\Backup_Report_Azure -Force
 
 
 
