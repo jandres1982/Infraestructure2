@@ -6,19 +6,19 @@
             "value": "southeastasia"
         },
         "networkInterfaceName": {
-            "value": "jsgwsr0081_01"
+            "value": "jsgwsr0082_01"
         },
         "subnetName": {
-            "value": "sub-frontend-iaas-01"
+            "value": "sub-infrastructure-iaas-01"
         },
         "virtualNetworkId": {
             "value": "/subscriptions/59c20947-4965-45c4-99f3-12be96106119/resourceGroups/rg-cis-prod-network-02/providers/Microsoft.Network/virtualNetworks/vnet-prod-asse-01"
         },
         "virtualMachineName": {
-            "value": "jsgwsr0081"
+            "value": "jsgwsr0082"
         },
         "virtualMachineComputerName": {
-            "value": "jsgwsr0081"
+            "value": "jsgwsr0082"
         },
         "virtualMachineRG": {
             "value": "rg-jsg-prod-application-01"
@@ -34,7 +34,7 @@
                     "caching": "None",
                     "writeAcceleratorEnabled": false,
                     "id": null,
-                    "name": "jsgwsr0081_DataDisk_0",
+                    "name": "jsgwsr0082_DataDisk_0",
                     "storageAccountType": null,
                     "diskSizeGB": null,
                     "diskEncryptionSet": null
@@ -44,10 +44,10 @@
         "dataDiskResources": {
             "value": [
                 {
-                    "name": "jsgwsr0081_DataDisk_0",
+                    "name": "jsgwsr0082_DataDisk_0",
                     "sku": "StandardSSD_LRS",
                     "properties": {
-                        "diskSizeGB": 500,
+                        "diskSizeGB": 300,
                         "creationData": {
                             "createOption": "empty"
                         }
