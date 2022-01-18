@@ -47,7 +47,7 @@
                     "name": "shhwsr2361_DataDisk_0",
                     "sku": "StandardSSD_LRS",
                     "properties": {
-                        "diskSizeGB": 64,
+                        "diskSizeGB": 30,
                         "creationData": {
                             "createOption": "empty"
                         }
