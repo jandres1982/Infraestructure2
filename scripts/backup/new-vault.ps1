@@ -14,7 +14,7 @@ Set-AzRecoveryServicesBackupProperty -Vault $vault -BackupStorageRedundancy Loca
 ### Enable identity for the vault ###
 Update-AzRecoveryServicesVault -ResourceGroupName $vault.ResourceGroupName -Name $vault.Name -IdentityType SystemAssigned
 ### Store managed identity id ###
-$managedidentity= Get-AzADServicePrincipal -DisplayName $vaultname
+$managedidentity=Get-AzADServicePrincipal -DisplayName $vaultname
 ### Grant Contributor Role over RG for Vault Identity ###
 New-AzRoleAssignment -ObjectId $managedidentity.id -RoleDefinitionName "Contributor" -ResourceGroupName $rg
 #New-AzRoleAssignment -ObjectId $managedidentity.id -RoleDefinitionName "Contributor" -ResourceName Devices-Engineering-ProjectRND -ResourceType Microsoft.Network/virtualNetworks/subnets -ParentResource virtualNetworks/VNET-EASTUS-01 -ResourceGroupName Network
