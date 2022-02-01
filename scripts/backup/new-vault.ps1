@@ -3,6 +3,7 @@ $vaultname="rsv-nonprod-use2-lrsbackupsql-01"
 $rg="rg-cis-nonprod-backup-01"
 $location="eastus2"
 $sub="s-sis-am-nonprod-01"
+$pe="pe-sql-prod-0005"
 ### Select the subscription ###
 Set-AzContext -Subscription $sub
 ### Creating recovery service vault ###
@@ -18,8 +19,12 @@ start-sleep -seconds 60
 $managedidentity=Get-AzADServicePrincipal -DisplayName $vaultname
 ### Grant Contributor Role over RG for Vault Identity ###
 New-AzRoleAssignment -ObjectId $managedidentity.id -RoleDefinitionName "Contributor" -ResourceGroupName $rg
-### Get vnet Name and Resource Group ###
+### Get vnet and subnet info ###
 $vnet=Get-AzVirtualNetwork
+$subnet=$vnet.Subnets | Where-Object {$_.Name -eq "sub-infrastructure-iaas-01"}
 ### Grant Contributor Role over vNet for Vault Identity ###
 New-AzRoleAssignment -ObjectId $managedidentity.id -RoleDefinitionName "Contributor" -ResourceGroupName $vnet.ResourceGroupName -ResourceType Microsoft.Network/virtualNetworks -ResourceName $vnet.Name
 echo "Recovery Service Vault $vaultname has been created"
+### Private endpoint ###
+$plsConnection= New-AzPrivateLinkServiceConnection -Name $vaultname -GroupId "AzureBackup" -PrivateLinkServiceId $vault.id 
+New-AzPrivateEndpoint -Name $pe -ResourceGroup $vault.ResourceGroupName -Location $location -PrivateLinkServiceConnection $plsConnection -Subnet $subnet
