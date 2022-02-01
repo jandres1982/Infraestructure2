@@ -25,7 +25,8 @@ $subnet=$vnet.Subnets | Where-Object {$_.Name -eq "sub-infrastructure-iaas-01"}
 ### Grant Contributor Role over vNet for Vault Identity ###
 New-AzRoleAssignment -ObjectId $managedidentity.id -RoleDefinitionName "Contributor" -ResourceGroupName $vnet.ResourceGroupName -ResourceType Microsoft.Network/virtualNetworks -ResourceName $vnet.Name
 echo "Recovery Service Vault $vaultname has been created"
-### Private endpoint ###
-$plsConnection= New-AzPrivateLinkServiceConnection -Name $vaultname -GroupId "AzureBackup" -PrivateLinkServiceId $vault.id 
+### Create Private Link Service ###
+$plsConnection= New-AzPrivateLinkServiceConnection -Name $vaultname -GroupId "AzureBackup" -PrivateLinkServiceId $vault.id
+### Create Private Endpoint ###
 New-AzPrivateEndpoint -Name $pe -ResourceGroup $vault.ResourceGroupName -Location $location -PrivateLinkServiceConnection $plsConnection -Subnet $subnet
 echo "Private Endpoint $pe has been created"
