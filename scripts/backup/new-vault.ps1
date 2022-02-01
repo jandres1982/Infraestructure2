@@ -13,9 +13,11 @@ $vault=Get-AzRecoveryServicesVault -Name $vaultname
 Set-AzRecoveryServicesBackupProperty -Vault $vault -BackupStorageRedundancy LocallyRedundant
 ### Enable identity for the vault ###
 Update-AzRecoveryServicesVault -ResourceGroupName $vault.ResourceGroupName -Name $vault.Name -IdentityType SystemAssigned
-start-sleep -seconds 30
+start-sleep -seconds 60
 ### Store managed identity id ###
 $managedidentity=Get-AzADServicePrincipal -DisplayName $vaultname
 ### Grant Contributor Role over RG for Vault Identity ###
 New-AzRoleAssignment -ObjectId $managedidentity.id -RoleDefinitionName "Contributor" -ResourceGroupName $rg
-#New-AzRoleAssignment -ObjectId $managedidentity.id -RoleDefinitionName "Contributor" -ResourceName Devices-Engineering-ProjectRND -ResourceType Microsoft.Network/virtualNetworks/subnets -ParentResource virtualNetworks/VNET-EASTUS-01 -ResourceGroupName Network
+### Grant Contributor Role over vNet for Vault Identity ###
+New-AzRoleAssignment -ObjectId $managedidentity.id -RoleDefinitionName "Contributor" -ResourceGroupName $vnet.ResourceGroupName -ResourceType Microsoft.Network/virtualNetworks -ResourceName $vnet.Name
+echo "Recovery Service Vault $vaultname has been created"
