@@ -1,4 +1,4 @@
-$Temp_Disk = Get-volume | Where-Object -Property FileSystemLabel  -eq -Value "Temporary Storage"
+$Temp_Disk = Get-volume | Where-Object -Property FileSystemLabel -eq -Value "Temporary Storage"
 if ($Temp_Disk)
 {
 $Letter = $Temp_Disk.DriveLetter

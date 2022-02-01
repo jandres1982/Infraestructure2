@@ -29,11 +29,29 @@
         "allowSharedKeyAccess": {
             "type": "bool"
         },
+        "allowCrossTenantReplication": {
+            "type": "bool"
+        },
+        "defaultOAuth": {
+            "type": "bool"
+        },
         "networkAclsBypass": {
             "type": "string"
         },
         "networkAclsDefaultAction": {
             "type": "string"
+        },
+        "keySource": {
+            "type": "string"
+        },
+        "encryptionEnabled": {
+            "type": "bool"
+        },
+        "keyTypeForTableAndQueueEncryption": {
+            "type": "string"
+        },
+        "infrastructureEncryptionEnabled": {
+            "type": "bool"
         },
         "isContainerRestoreEnabled": {
             "type": "bool"
@@ -42,6 +60,12 @@
             "type": "bool"
         },
         "blobSoftDeleteRetentionDays": {
+            "type": "int"
+        },
+        "isContainerSoftDeleteEnabled": {
+            "type": "bool"
+        },
+        "containerSoftDeleteRetentionDays": {
             "type": "int"
         },
         "changeFeed": {
@@ -62,7 +86,7 @@
         {
             "name": "[parameters('storageAccountName')]",
             "type": "Microsoft.Storage/storageAccounts",
-            "apiVersion": "2019-06-01",
+            "apiVersion": "2021-08-01",
             "location": "[parameters('location')]",
             "properties": {
                 "accessTier": "[parameters('accessTier')]",
@@ -70,10 +94,32 @@
                 "supportsHttpsTrafficOnly": "[parameters('supportsHttpsTrafficOnly')]",
                 "allowBlobPublicAccess": "[parameters('allowBlobPublicAccess')]",
                 "allowSharedKeyAccess": "[parameters('allowSharedKeyAccess')]",
+                "allowCrossTenantReplication": "[parameters('allowCrossTenantReplication')]",
+                "defaultToOAuthAuthentication": "[parameters('defaultOAuth')]",
                 "networkAcls": {
                     "bypass": "[parameters('networkAclsBypass')]",
                     "defaultAction": "[parameters('networkAclsDefaultAction')]",
                     "ipRules": []
+                },
+                "encryption": {
+                    "keySource": "[parameters('keySource')]",
+                    "services": {
+                        "blob": {
+                            "enabled": "[parameters('encryptionEnabled')]"
+                        },
+                        "file": {
+                            "enabled": "[parameters('encryptionEnabled')]"
+                        },
+                        "table": {
+                            "enabled": "[parameters('encryptionEnabled')]",
+                            "keyType": "[parameters('keyTypeForTableAndQueueEncryption')]"
+                        },
+                        "queue": {
+                            "enabled": "[parameters('encryptionEnabled')]",
+                            "keyType": "[parameters('keyTypeForTableAndQueueEncryption')]"
+                        }
+                    },
+                    "requireInfrastructureEncryption": "[parameters('infrastructureEncryptionEnabled')]"
                 }
             },
             "dependsOn": [],
@@ -86,7 +132,7 @@
         {
             "name": "[concat(parameters('storageAccountName'), '/default')]",
             "type": "Microsoft.Storage/storageAccounts/blobServices",
-            "apiVersion": "2019-06-01",
+            "apiVersion": "2021-08-01",
             "properties": {
                 "restorePolicy": {
                     "enabled": "[parameters('isContainerRestoreEnabled')]"
@@ -94,6 +140,10 @@
                 "deleteRetentionPolicy": {
                     "enabled": "[parameters('isBlobSoftDeleteEnabled')]",
                     "days": "[parameters('blobSoftDeleteRetentionDays')]"
+                },
+                "containerDeleteRetentionPolicy": {
+                    "enabled": "[parameters('isContainerSoftDeleteEnabled')]",
+                    "days": "[parameters('containerSoftDeleteRetentionDays')]"
                 },
                 "changeFeed": {
                     "enabled": "[parameters('changeFeed')]"
@@ -107,7 +157,7 @@
         {
             "name": "[concat(parameters('storageAccountName'), '/default')]",
             "type": "Microsoft.Storage/storageAccounts/fileservices",
-            "apiVersion": "2019-06-01",
+            "apiVersion": "2021-08-01",
             "properties": {
                 "shareDeleteRetentionPolicy": {
                     "enabled": "[parameters('isShareSoftDeleteEnabled')]",
@@ -118,6 +168,56 @@
                 "[concat('Microsoft.Storage/storageAccounts/', parameters('storageAccountName'))]",
                 "[concat(concat('Microsoft.Storage/storageAccounts/', parameters('storageAccountName')), '/blobServices/default')]"
             ]
+        },
+        {
+            "apiVersion": "2018-05-01",
+            "type": "Microsoft.Resources/deployments",
+            "name": "privateEndpoints_0.40475117647073655",
+            "subscriptionId": "7fa3c3a2-7d0d-4987-a30c-30623e38756c",
+            "resourceGroup": "rg-cis-test-server-01",
+            "dependsOn": [
+                "Microsoft.Storage/storageAccounts/sttestdevops01"
+            ],
+            "resources": [],
+            "properties": {
+                "mode": "Incremental",
+                "parameters": {
+                    "privateEndpointName": {
+                        "value": "pe-sttestdevops-01"
+                    },
+                    "privateEndpointConnectionId": {
+                        "value": "/subscriptions/7fa3c3a2-7d0d-4987-a30c-30623e38756c/resourceGroups/rg-cis-test-server-01/providers/Microsoft.Network/privateEndpoints/privateLinkServiceConnections/pe-sttestdevops-01_0dd3b6c1-29d6-4738-a3c2-889a080b501e"
+                    },
+                    "privateEndpointConnectionName": {
+                        "value": "pe-sttestdevops-01_0dd3b6c1-29d6-4738-a3c2-889a080b501e"
+                    },
+                    "privateEndpointId": {
+                        "value": "/subscriptions/7fa3c3a2-7d0d-4987-a30c-30623e38756c/resourceGroups/rg-cis-test-server-01/providers/Microsoft.Network/privateEndpoints/pe-sttestdevops-01"
+                    },
+                    "privateEndpointApiVersion": {
+                        "value": "2020-03-01"
+                    },
+                    "privateLinkServiceId": {
+                        "value": "/subscriptions/7fa3c3a2-7d0d-4987-a30c-30623e38756c/resourcegroups/rg-cis-test-server-01/providers/Microsoft.Storage/storageAccounts/sttestdevops01"
+                    },
+                    "groupId": {
+                        "value": "blob"
+                    },
+                    "subnetId": {
+                        "value": "/subscriptions/7fa3c3a2-7d0d-4987-a30c-30623e38756c/resourceGroups/rg-cis-nonprod-network-01/providers/Microsoft.Network/virtualNetworks/EU-NONPROD-VNET/subnets/sub-generic-privateendpoints-01"
+                    },
+                    "location": {
+                        "value": "northeurope"
+                    },
+                    "tags": {
+                        "value": {}
+                    }
+                },
+                "templatelink": {
+                    "contentVersion": "1.0.0.0",
+                    "uri": "https://storage.hosting.portal.azure.net/storage/Content/4.13.393.402/DeploymentTemplates/PrivateEndpointForStorage.json"
+                }
+            }
         }
     ],
     "outputs": {}

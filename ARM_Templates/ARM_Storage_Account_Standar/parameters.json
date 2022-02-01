@@ -3,10 +3,10 @@
     "contentVersion": "1.0.0.0",
     "parameters": {
         "location": {
-            "value": "North Europe"
+            "value": "northeurope"
         },
         "storageAccountName": {
-            "value": "stprodbackupreport01"
+            "value": "sttestdevops01"
         },
         "accountType": {
             "value": "Standard_LRS"
@@ -29,11 +29,29 @@
         "allowSharedKeyAccess": {
             "value": true
         },
+        "allowCrossTenantReplication": {
+            "value": true
+        },
+        "defaultOAuth": {
+            "value": false
+        },
         "networkAclsBypass": {
             "value": "AzureServices"
         },
         "networkAclsDefaultAction": {
-            "value": "Allow"
+            "value": "Deny"
+        },
+        "keySource": {
+            "value": "Microsoft.Storage"
+        },
+        "encryptionEnabled": {
+            "value": true
+        },
+        "keyTypeForTableAndQueueEncryption": {
+            "value": "Account"
+        },
+        "infrastructureEncryptionEnabled": {
+            "value": false
         },
         "isContainerRestoreEnabled": {
             "value": false
@@ -42,6 +60,12 @@
             "value": true
         },
         "blobSoftDeleteRetentionDays": {
+            "value": 7
+        },
+        "isContainerSoftDeleteEnabled": {
+            "value": true
+        },
+        "containerSoftDeleteRetentionDays": {
             "value": 7
         },
         "changeFeed": {

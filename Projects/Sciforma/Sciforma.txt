@@ -1,0 +1,8 @@
+- Start the vm in our hyper-v
+- Make changes in the menu
+- Convert to vhd
+Convert-VHD -Path C:\Users\sanchona\Downloads\sva-2.4.00-20210413.vhdx -DestinationPath C:\Users\sanchona\Downloads\sva-2.4.00-20210413.vhd -VHDType Fixed
+- Make the resize of the disk
+- Upload to Azure
+- Create managed disk
+- Deploy the vm
