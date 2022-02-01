@@ -13,6 +13,7 @@ $vault=Get-AzRecoveryServicesVault -Name $vaultname
 Set-AzRecoveryServicesBackupProperty -Vault $vault -BackupStorageRedundancy LocallyRedundant
 ### Enable identity for the vault ###
 Update-AzRecoveryServicesVault -ResourceGroupName $vault.ResourceGroupName -Name $vault.Name -IdentityType SystemAssigned
+start-sleep -seconds 30
 ### Store managed identity id ###
 $managedidentity=Get-AzADServicePrincipal -DisplayName $vaultname
 ### Grant Contributor Role over RG for Vault Identity ###
