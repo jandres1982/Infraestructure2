@@ -28,3 +28,4 @@ echo "Recovery Service Vault $vaultname has been created"
 ### Private endpoint ###
 $plsConnection= New-AzPrivateLinkServiceConnection -Name $vaultname -GroupId "AzureBackup" -PrivateLinkServiceId $vault.id 
 New-AzPrivateEndpoint -Name $pe -ResourceGroup $vault.ResourceGroupName -Location $location -PrivateLinkServiceConnection $plsConnection -Subnet $subnet
+echo "Private Endpoint $pe has been created"
