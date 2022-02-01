@@ -18,6 +18,8 @@ start-sleep -seconds 60
 $managedidentity=Get-AzADServicePrincipal -DisplayName $vaultname
 ### Grant Contributor Role over RG for Vault Identity ###
 New-AzRoleAssignment -ObjectId $managedidentity.id -RoleDefinitionName "Contributor" -ResourceGroupName $rg
+### Get vnet Name and Resource Group ###
+$vnet=Get-AzVirtualNetwork
 ### Grant Contributor Role over vNet for Vault Identity ###
 New-AzRoleAssignment -ObjectId $managedidentity.id -RoleDefinitionName "Contributor" -ResourceGroupName $vnet.ResourceGroupName -ResourceType Microsoft.Network/virtualNetworks -ResourceName $vnet.Name
 echo "Recovery Service Vault $vaultname has been created"
