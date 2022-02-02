@@ -2,7 +2,7 @@
 "rescan" | diskpart
 
 # Variable specifying the drive you want to extend
-$letter="0"
+$letter="C"
 
 # Script to get the partition sizes and then resize the volume
 $MaxSize = (Get-PartitionSupportedSize -DriveLetter $letter).sizeMax
