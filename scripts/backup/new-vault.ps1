@@ -3,7 +3,7 @@ $vaultname="rsv-nonprod-use2-lrsbackupsql-01"
 $rg="rg-cis-nonprod-backup-01"
 $location="eastus2"
 $sub="s-sis-am-nonprod-01"
-$pe="pe-sql-prod-0005"
+$pe="pe-sql-nonprod-0002"
 ### Select the subscription ###
 Set-AzContext -Subscription $sub
 ### Creating recovery service vault ###
