@@ -1,7 +1,7 @@
 #Variables to modify
 
-$SubscriptionName = 's-sis-eu-nonprod-01'
-$RSVaultName = 'rsv-nonprod-euno-lrsbackupsql-01'
+$SubscriptionName = 's-sis-am-prod-01'
+$RSVaultName = 'rsv-prod-use2-zrsbackup-01'
 
 #Fixed variables
 
@@ -13,12 +13,14 @@ $DailyRetention = '30'
 $WeeklyRetention = '12'
 $MonthlyRetention = '12'
 
-Write-Verbose "Connecting to Azure Cloud..."
-Connect-AzAccount -ErrorAction Stop -WarningAction SilentlyContinue | Out-Null
+#Write-Verbose "Connecting to Azure Cloud..."
+#Connect-AzAccount -ErrorAction Stop -WarningAction SilentlyContinue | Out-Null
 
-Write-Verbose "Setting Azure Context - Subscription Name: $SubscriptionName..."
-$azSub = Get-AzSubscription -SubscriptionName $SubscriptionName
-Set-AzContext $azSub.id | Out-Null
+#Write-Verbose "Setting Azure Context - Subscription Name: $SubscriptionName..."
+#$azSub = Get-AzSubscription -SubscriptionName $SubscriptionName
+#Set-AzContext $azSub.id | Out-Null
+
+Set-AzContext -Subscription $SubscriptionName
 
 #daily
 
