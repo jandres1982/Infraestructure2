@@ -37,7 +37,7 @@ If ($(get-azvm -Name $vm -ResourceGroupName $rg -Status).Statuses.displaystatus 
 {
 
 $result = az vm run-command invoke  --command-id RunPowerShellScript --name $vm -g $rg --scripts "c_space_check.ps1"
-if ($result)
+if ($result -eq $true)
 {
 Write-output "$vm,$rg,$sub" >> servers_c_drive_alert.csv
 }
