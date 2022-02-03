@@ -43,7 +43,7 @@ Write-output "$vm,$rg,$sub" >> servers_c_drive_alert.csv
 }
 else
 {
-Write-host "Keep working"
+Write-host "$vm has more than 20GB free on Volume C; Keep working"
 }#end invoke result
 
 }#end if for vm running
