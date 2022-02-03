@@ -1,9 +1,10 @@
 $free_mb = $(Get-WmiObject Win32_Volume | Where-Object {$_.DriveLetter -eq "c:" }).FreeSpace 
 $free_gb = [math]::round($free_mb/1Gb,0)
-if ($free_gb -lt "20")
+if ($free_gb -lt "200")
 {write-host "Warning C:\ drive near to get full, extend or check asap"
-exit 20
-}else
-{write-host "All Ok"
-exit 0
+RETURN $true
+}
+else
+{
+RETURN $false
 }
