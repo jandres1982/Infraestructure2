@@ -1,5 +1,5 @@
 # Variable defined in release
-param([string]$letter)
+$letter="C"
 # Refresh available space
 "rescan" | diskpart
 # Script to get the partition sizes and then resize the volume
