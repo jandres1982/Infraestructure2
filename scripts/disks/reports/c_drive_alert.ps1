@@ -1,10 +1,54 @@
-$free_mb = $(Get-WmiObject Win32_Volume | Where-Object {$_.DriveLetter -eq "c:" }).FreeSpace 
-$free_gb = [math]::round($free_mb/1Gb,0)
-if ($free_gb -lt "200")
-{write-host "Warning C:\ drive near to get full, extend or check asap"
-RETURN $true
+#################################################################### 
+
+$subs = @("s-sis-eu-nonprod-01","s-sis-eu-prod-01","s-sis-am-prod-01","s-sis-am-nonprod-01","s-sis-ap-prod-01")
+
+###################################################################
+
+foreach ($sub in $subs)
+{
+
+Select-AzSubscription -Subscription "$sub"
+az account set --subscription "$sub"
+
+$(Get-AzVM | Select -Property Name, @{Name='OSType'; Expression={$_.StorageProfile.OSDisk.OSType}} | where-object {$_.OsType -eq "Windows"}).name > .\servers_list_$sub.txt
+
+$Servers  = Get-Content "servers_list_$sub.txt"
+$Servers  = $Servers | Sort-Object
+
+
+[int]$num_T = $Servers.Count #Per_variables
+[int]$num_R = $num_T #Per_variables
+[int]$Per = $null #Per_variables
+[int]$Per_1 = $null #Per_variables
+
+
+
+foreach ($vm in $Servers)
+{
+
+$rg = (get-azvm -Name $vm).ResourceGroupName
+
+
+
+##################### Checking VM's Status #################################
+
+
+If ($(get-azvm -Name $vm -ResourceGroupName $rg -Status).Statuses.displaystatus | where-object {$_ -eq "VM running"})
+{
+
+$result = az vm run-command invoke  --command-id RunPowerShellScript --name $(vm) -g $(rg) --scripts "c_space_check.ps1"
+if ($result)
+{
+Write-output "$vm,$rg,$sub" >> servers_c_drive_alert.csv
 }
 else
 {
-RETURN $false
-}
+Write-host "Keep working"
+}#end invoke result
+
+}#end if for vm running
+
+}#end for each vm
+
+}#end for each sub
+
