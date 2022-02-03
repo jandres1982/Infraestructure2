@@ -18,10 +18,10 @@ $Vault_ResourecGroup = (Get-AzRecoveryServicesVault -Name $vault).ResourceGroupN
 $Vault_ID = Get-AzRecoveryServicesVault -ResourceGroupName "$Vault_ResourecGroup" -Name $vault
 $Jobs = Get-AzRecoveryServicesBackupJob -VaultId $Vault_ID.Id -BackupManagementType AzureVM
 #$JobDetails = Get-AzRecoveryServicesBackupJobDetail -Job $Jobs[0] -VaultId $vault_ID.ID | Export-Csv -Path "Backup_Report_CRD_Prod_$date.csv"  -Append 
-$Jobs | Export-Csv -Path "Backup_Report_All_$date.csv" -Append -Force 
+$Jobs | Export-Csv -Path "vm_backup_report_all.csv" -Append -Force 
 
 $Jobs_failed = Get-AzRecoveryServicesBackupJob -From (Get-Date).AddDays(-3).ToUniversalTime() -Status Failed -VaultId $Vault_ID.id |  Sort-Object -Property @{Expression={$_.WorkloadName}} -Unique
-$Jobs_failed | Export-Csv -Path "Backup_Report_FAILED_$date.csv" -Append -Force
+$Jobs_failed | Export-Csv -Path "vm_backup_failed.csv" -Append -Force
 
 }
 
@@ -32,7 +32,7 @@ $rg = (get-azvm -Name $vm).ResourceGroupName
 $backup = $(Get-AzRecoveryServicesBackupStatus -Name $vm -ResourceGroupName $rg -Type AzureVM).BackedUp
 if ($backup -eq $false)
 {
-    Write-Output "$vm,$rg,$sub" >> "vm_without_backup.csv"
+    Write-Output "$vm,$rg,$sub" >> "vm_no_backup.csv"
 }else {
     Write-Host "$vm Backup should be ok"
 }
