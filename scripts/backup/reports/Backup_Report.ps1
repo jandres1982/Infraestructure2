@@ -25,8 +25,18 @@ $Jobs_failed | Export-Csv -Path "Backup_Report_FAILED_$date.csv" -Append -Force
 
 }
 
-
-
+$vms = $(Get-AzVM).name
+foreach ($vm in $vms)
+{
+$rg = (get-azvm -Name $vm).ResourceGroupName
+$backup = $(Get-AzRecoveryServicesBackupStatus -Name $vm -ResourceGroupName $rg -Type AzureVM).BackedUp
+if ($backup -eq $false)
+{
+    Write-Output "$vm,$rg,$sub" >> "vm_without_backup.csv"
+}else {
+    Write-Host "$vm Backup should be ok"
+}
+}
 }
 
 $PSEmailServer = "smtp.eu.schindler.com"
