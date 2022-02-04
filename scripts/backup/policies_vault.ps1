@@ -1,10 +1,4 @@
-#Variables to modify
-
-$SubscriptionName = 's-sis-am-prod-01'
-$RSVaultName = 'rsv-prod-use2-zrsbackup-01'
-
 #Fixed variables
-
 $WorkloadType = 'AzureVM'
 $BackupPolicyNameShort = 'vm-short-01am-01'
 $BackupPolicyNameMedium = 'vm-medium-01am-01'
@@ -13,14 +7,7 @@ $DailyRetention = '30'
 $WeeklyRetention = '12'
 $MonthlyRetention = '12'
 
-#Write-Verbose "Connecting to Azure Cloud..."
-#Connect-AzAccount -ErrorAction Stop -WarningAction SilentlyContinue | Out-Null
-
-#Write-Verbose "Setting Azure Context - Subscription Name: $SubscriptionName..."
-#$azSub = Get-AzSubscription -SubscriptionName $SubscriptionName
-#Set-AzContext $azSub.id | Out-Null
-
-Set-AzContext -Subscription $SubscriptionName
+Set-AzContext -Subscription $(SubscriptionName)
 
 #daily
 
@@ -47,7 +34,7 @@ $RetPol.IsYearlyScheduleEnabled= $false
 
 
 Write-Verbose "Getting the existing Azure Recovery Services Vault..."
-$vault = Get-AzRecoveryServicesVault -Name $RSVaultName
+$vault = Get-AzRecoveryServicesVault -Name $(RSVaultName)
 Write-Verbose "Setting Azure Recovery Services Vault Context..."
 Set-AzRecoveryServicesVaultContext -Vault $vault -ErrorAction Stop -WarningAction SilentlyContinue
 
@@ -84,7 +71,7 @@ $RetPol.IsYearlyScheduleEnabled= $false
 
 
 Write-Verbose "Getting the existing Azure Recovery Services Vault..."
-$vault = Get-AzRecoveryServicesVault -Name $RSVaultName
+$vault = Get-AzRecoveryServicesVault -Name $(RSVaultName)
 Write-Verbose "Setting Azure Recovery Services Vault Context..."
 Set-AzRecoveryServicesVaultContext -Vault $vault -ErrorAction Stop -WarningAction SilentlyContinue
 
@@ -127,7 +114,7 @@ $RetPol.IsYearlyScheduleEnabled= $false
 
 
 Write-Verbose "Getting the existing Azure Recovery Services Vault..."
-$vault = Get-AzRecoveryServicesVault -Name $RSVaultName
+$vault = Get-AzRecoveryServicesVault -Name $(RSVaultName)
 Write-Verbose "Setting Azure Recovery Services Vault Context..."
 Set-AzRecoveryServicesVaultContext -Vault $vault -ErrorAction Stop -WarningAction SilentlyContinue
 
