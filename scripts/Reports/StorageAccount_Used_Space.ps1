@@ -6,7 +6,8 @@ $storages=Get-AzStorageAccount
 foreach ($storage in $storages)
 {
 $capacity=Get-AzMetric -ResourceId $storage.id -MetricName "UsedCapacity" -AggregationType Average
-$storage.StorageAccountName | Export-Csv -Path .\storage_used_space.csv
-$capacity.data | Export-Csv -Path .\storage_used_space.csv
+$storatagename=$storage.StorageAccountName
+$storagename=$storagename + " " + $capacity.data
+write-host $storagename
 }
 }
