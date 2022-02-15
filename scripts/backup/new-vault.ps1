@@ -1,9 +1,11 @@
 ### Variables ###
-$vaultname="rsv-prod-use2-lrsbackupsql-01"
-$rg="rg-cis-prod-backup-01"
+$vaultname="rsv-nonprod-use2-lrsbackup-01"
+$rg="rg-cis-nonprod-backup-01"
 $location="eastus2"
-$sub="s-sis-am-prod-01"
-$pe="pe-sql-prod-0005"
+$sub="s-sis-am-nonprod-01"
+$pe="pe-backup-nonprod-0002"
+$subnet="sub-infrastructure-iaas-01"
+$redundancy="LocallyRedundant"
 ### Select the subscription ###
 Set-AzContext -Subscription $sub
 ### Creating recovery service vault ###
@@ -11,7 +13,7 @@ New-AzRecoveryServicesVault -Name $vaultname -ResourceGroupName $rg -Location $l
 ### Store vault properties in a new variable ##
 $vault=Get-AzRecoveryServicesVault -Name $vaultname
 ### Configuring vault redundancy ###
-Set-AzRecoveryServicesBackupProperty -Vault $vault -BackupStorageRedundancy LocallyRedundant
+Set-AzRecoveryServicesBackupProperty -Vault $vault -BackupStorageRedundancy $redundancy
 ### Enable identity for the vault ###
 Update-AzRecoveryServicesVault -ResourceGroupName $vault.ResourceGroupName -Name $vault.Name -IdentityType SystemAssigned
 start-sleep -seconds 60
@@ -21,7 +23,7 @@ $managedidentity=Get-AzADServicePrincipal -DisplayName $vaultname
 New-AzRoleAssignment -ObjectId $managedidentity.id -RoleDefinitionName "Contributor" -ResourceGroupName $rg
 ### Get vnet and subnet info ###
 $vnet=Get-AzVirtualNetwork
-$subnet=$vnet.Subnets | Where-Object {$_.Name -eq "sub-infrastructure-iaas-01"}
+$subnet=$vnet.Subnets | Where-Object {$_.Name -eq "$subnet"}
 ### Grant Contributor Role over vNet for Vault Identity ###
 New-AzRoleAssignment -ObjectId $managedidentity.id -RoleDefinitionName "Contributor" -ResourceGroupName $vnet.ResourceGroupName -ResourceType Microsoft.Network/virtualNetworks -ResourceName $vnet.Name
 echo "Recovery Service Vault $vaultname has been created"
