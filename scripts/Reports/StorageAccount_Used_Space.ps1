@@ -1,4 +1,5 @@
-$subs=Get-AzSubscription | Where-Object {$_.Name -match "s-sis-*"}
+$subs=Get-AzSubscription 
+#| Where-Object {$_.Name -match "s-sis-*"}
 foreach ($sub in $subs)
 {
 set-azcontext -Subscription $sub.Name
@@ -10,6 +11,6 @@ $St_name = $storage.StorageAccountName
 [int64]$value = $capacity.Data.average / 1024
 $value = $value /1024
 $Subscription = $sub.name
-Write-output "$Subscription,$St_name,$value" >> Storage_account_Size.txtls
+Write-output "$Subscription,$St_name,$value" >> Storage_account_Size.txt
 }
 }
