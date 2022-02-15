@@ -25,7 +25,7 @@ $Jobs | Export-Csv -Path "Backup_Report_$kg_$date.csv" -Append -Force
 
 $PSEmailServer = "smtp.eu.schindler.com"
 $From = "scc-support-zar.es@schindler.com"
-$to = "antoniovicente.vento@schindler.com","alfonso.marques@schindler.com"
+$to = "darrel.beaven@schindler.com","alfonso.marques@schindler.com","antoniovicente.vento@schindler.com"
 
 $Subject = "Backup Report $kg Servers"
 #$Filename = Get-ChildItem $Path -Name "Att*" | select -Last 1
@@ -41,4 +41,3 @@ Please find attached the Report for $kg Backup Jobs.
 Send-MailMessage -From $From -To $To -Subject $Subject -Body $Body -Attachments $Attachment
 
 #Copy-Item -Path $Attachment -Destination \\shhwsr1849\Backup_Report_Azure -Force
-
