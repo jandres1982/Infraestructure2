@@ -1,4 +1,5 @@
-$subs=Get-AzSubscription | Where-Object {$_.Name -match "s-sis-*"}
+$subs=Get-AzSubscription 
+#| Where-Object {$_.Name -match "s-sis-*"}
 foreach ($sub in $subs)
 {
 set-azcontext -Subscription $sub.Name
