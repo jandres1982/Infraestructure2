@@ -9,7 +9,7 @@
             "value": "tstshhwsr2226_01"
         },
         "subnetName": {
-            "value": ""
+            "value": "sub-tstglobal-01"
         },
         "virtualNetworkId": {
             "value": "/subscriptions/7fa3c3a2-7d0d-4987-a30c-30623e38756c/resourceGroups/rg-cis-nonprod-network-01/providers/Microsoft.Network/virtualNetworks/EU-NONPROD-VNET"
