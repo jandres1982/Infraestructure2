@@ -1,9 +1,9 @@
 ### Variables ###
-$vaultname="rsv-nonprod-chno-lrsbackup-01"
-$rg="rg-cis-nonprod-backup-01"
+$vaultname="rsv-prod-chno-lrsbackup-01"
+$rg="rg-cis-prod-backup-01"
 $location="switzerlandnorth"
-$sub="s-sis-ch-nonprod-01"
-$pe="pe-backup-nonprod-0003"
+$sub="s-sis-ch-prod-01"
+$pe="pe-backup-prod-0005"
 $subnet="sub-middleware-01"
 $redundancy="LocallyRedundant"
 ### Select the subscription ###
