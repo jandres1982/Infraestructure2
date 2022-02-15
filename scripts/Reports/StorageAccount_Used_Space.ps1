@@ -11,6 +11,6 @@ $St_name = $storage.StorageAccountName
 [int64]$value = $capacity.Data.average / 1024
 $value = $value /1024
 $Subscription = $sub.name
-Write-output "$Subscription,$St_name,$value" >> Storage_account_Size.txtls
+Write-output "$Subscription,$St_name,$value" >> Storage_account_Size.txt
 }
 }
