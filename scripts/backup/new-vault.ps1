@@ -1,10 +1,10 @@
 ### Variables ###
-$vaultname="rsv-nonprod-use2-lrsbackup-01"
+$vaultname="rsv-nonprod-chno-lrsbackup-01"
 $rg="rg-cis-nonprod-backup-01"
-$location="eastus2"
-$sub="s-sis-am-nonprod-01"
-$pe="pe-backup-nonprod-0002"
-$subnet="sub-infrastructure-iaas-01"
+$location="switzerlandnorth"
+$sub="s-sis-ch-nonprod-01"
+$pe="pe-backup-nonprod-0003"
+$subnet="sub-middleware-01"
 $redundancy="LocallyRedundant"
 ### Select the subscription ###
 Set-AzContext -Subscription $sub
