@@ -6,22 +6,22 @@
             "value": "northeurope"
         },
         "networkInterfaceName": {
-            "value": "dswwsr0011_01"
+            "value": "tstshhwsr2226_01"
         },
         "subnetName": {
-            "value": ""
+            "value": "sub-tstglobal-01"
         },
         "virtualNetworkId": {
             "value": "/subscriptions/7fa3c3a2-7d0d-4987-a30c-30623e38756c/resourceGroups/rg-cis-nonprod-network-01/providers/Microsoft.Network/virtualNetworks/EU-NONPROD-VNET"
         },
         "virtualMachineName": {
-            "value": "dswwsr0011"
+            "value": "tstshhwsr2226"
         },
         "virtualMachineComputerName": {
-            "value": "dswwsr0011"
+            "value": "tstshhwsr2226"
         },
         "virtualMachineRG": {
-            "value": "rg-dsw-dev-ncgen-01"
+            "value": "rg-shh-qual-changeauditor-01"
         },
         "osDiskType": {
             "value": "StandardSSD_LRS"
@@ -34,7 +34,7 @@
                     "caching": "None",
                     "writeAcceleratorEnabled": false,
                     "id": null,
-                    "name": "dswwsr0011_DataDisk_0",
+                    "name": "tstshhwsr2226_DataDisk_0",
                     "storageAccountType": null,
                     "diskSizeGB": null,
                     "diskEncryptionSet": null
@@ -44,10 +44,10 @@
         "dataDiskResources": {
             "value": [
                 {
-                    "name": "dswwsr0011_DataDisk_0",
+                    "name": "tstshhwsr2226_DataDisk_0",
                     "sku": "StandardSSD_LRS",
                     "properties": {
-                        "diskSizeGB": 50,
+                        "diskSizeGB": 10,
                         "creationData": {
                             "createOption": "empty"
                         }
@@ -56,7 +56,7 @@
             ]
         },
         "virtualMachineSize": {
-            "value": "Standard_D8s_v3"
+            "value": "Standard_D2s_v3"
         },
         "adminUsername": {
             "value": "ldmsosd"
