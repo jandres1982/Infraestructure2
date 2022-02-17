@@ -1,5 +1,5 @@
 ### Variables ###
-$vaultname="rsv-prod-chno-zrsbackup-01"
+$vaultname="rsv-prod-euno-zrsbackup-01"
 $rg="rg-cis-prod-backup-01"
 $location="northeurope"
 $sub="s-sis-eu-prod-01"
