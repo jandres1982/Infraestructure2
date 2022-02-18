@@ -9,10 +9,10 @@
             "value": "shhwsr2368_01"
         },
         "subnetName": {
-            "value": "Test"
+            "value": "sub-infrastructure-iaas-01"
         },
         "virtualNetworkId": {
-            "value": "/subscriptions/e03c610e-a71c-4518-a4a3-8ce128fca34d/resourceGroups/rg-cis-prod-network-01/providers/Microsoft.Network/virtualNetworks/vnet-prod-use2-01"
+            "value": "/subscriptions/e03c610e-a71c-4518-a4a3-8ce128fca34d/resourceGroups/-network-01/providers/Microsoft.Network/virtualNetworks/vnet-prod-use2-01"
         },
         "virtualMachineName": {
             "value": "shhwsr2368"
@@ -21,7 +21,7 @@
             "value": "shhwsr2368"
         },
         "virtualMachineRG": {
-            "value": "rg-cis-prod-server-01"
+            "value": "rg-cis-prod-servicenow-01"
         },
         "osDiskType": {
             "value": "StandardSSD_LRS"
