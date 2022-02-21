@@ -1,4 +1,6 @@
 param([string]$vm)
+
+
 $check = Get-ADComputer -Filter 'Name -like $vm'
 if ($check.Name -eq $vm)
 {
