@@ -1,11 +1,70 @@
 param([string]$vm)
 
+########## Check Azure Hostname #####################
+
+$subs=Get-AzSubscription | Where-Object {$_.Name -match "s-sis-[aec][upmh]*"}
+
+foreach ($sub in $subs)
+{
+Select-AzSubscription -Subscription "$sub"
+$Az_check = get-azvm -Name $vm
+if ($Az_check -eq $null)
+{
+#write-host "$vm is not in Azure $sub"
+}else
+{
+write-host "$vm exist in Azure, cannot be used"
+Write-Error "$vm exist in Azure, cannot be used"
+break
+}
+}
+
+
+########## Check AD Hostname #####################
+
 
 $check = Get-ADComputer -Filter 'Name -like $vm'
 if ($check.Name -eq $vm)
 {
-write-host "$vm exist, cannot be used"
-Write-Error "$vm cannot be used"
+write-host "$vm exist in the AD, cannot be used"
+Write-Error "$vm exist in the AD, cannot be used"
+break
 }else
-{write-host "$vm can be used"
+{write-host "$vm is not in the AD"
 }
+
+
+########## Check Ping Hostname #####################
+
+
+if (test-connection -ComputerName $vm -Count 1 -Quiet)
+{
+Write-error "$vm, ping works on global domain"
+break
+
+}
+else
+{
+    $vm_dmz2 = $vm + ".dmz2.schindler.com"
+    if (test-connection -ComputerName $vm_dmz2 -Count 1 -Quiet)
+    {
+    Write-error "$vm_dmz2, ping works on dmz2 domain"
+    break
+    }
+      else
+      {
+      $vm_tstglobal = $vm + ".tstglobal.schindler.com"
+      if (test-connection -ComputerName $vm_tstglobal -Count 1 -Quiet)
+      {
+      Write-error "$vm_tstglobal, ping works on tstglobal domain"
+      break
+      } 
+
+                  else {
+                        
+                        Write-host "$vm, is not pingable" -ForegroundColor green
+                        
+                        }
+               }
+      }
+
