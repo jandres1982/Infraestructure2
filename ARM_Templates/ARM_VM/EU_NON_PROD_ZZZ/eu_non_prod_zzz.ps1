@@ -5,7 +5,9 @@ $nic = $vm+"_01"
 $subnetName = $(subnetName)
 $size = $(size)
 $Os_disK_type =$(Os_disK_type)
+$sub = $(sub)
 
+Select-AzSubscription -Subscription $sub
 
 New-AzResourceGroupDeployment `
 -ResourceGroupName $rg `
