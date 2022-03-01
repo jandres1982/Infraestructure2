@@ -6,7 +6,7 @@
             "value": "northeurope"
         },
         "networkInterfaceName": {
-            "value": "shhwsr2371_01"
+            "value": "shhwsrdc3011_01"
         },
         "subnetName": {
             "value": "Infrastructure-IaaS-Subnet_1"
@@ -15,13 +15,13 @@
             "value": "/subscriptions/505ead1a-5a5f-4363-9b72-83eb2234a43d/resourceGroups/RG_NETWORK_PROD/providers/Microsoft.Network/virtualNetworks/EU-PROD-VNET"
         },
         "virtualMachineName": {
-            "value": "shhwsr2371"
+            "value": "shhwsrdc3011"
         },
         "virtualMachineComputerName": {
-            "value": "shhwsr2371"
+            "value": "shhwsrdc3011"
         },
         "virtualMachineRG": {
-            "value": "rg-shh-prod-devopsvdi-01"
+            "value": "rg-cis-prod-domaincontroller-01"
         },
         "osDiskType": {
             "value": "StandardSSD_LRS"
@@ -34,7 +34,7 @@
                     "caching": "None",
                     "writeAcceleratorEnabled": false,
                     "id": null,
-                    "name": "shhwsr2371_DataDisk_0",
+                    "name": "shhwsrdc3011_DataDisk_0",
                     "storageAccountType": null,
                     "diskSizeGB": null,
                     "diskEncryptionSet": null
@@ -44,7 +44,7 @@
         "dataDiskResources": {
             "value": [
                 {
-                    "name": "shhwsr2371_DataDisk_0",
+                    "name": "shhwsrdc3011_DataDisk_0",
                     "sku": "StandardSSD_LRS",
                     "properties": {
                         "diskSizeGB": 30,
@@ -56,7 +56,7 @@
             ]
         },
         "virtualMachineSize": {
-            "value": "Standard_D4s_v3"
+            "value": "Standard_D4ds_v5"
         },
         "adminUsername": {
             "value": "ldmsosd"
