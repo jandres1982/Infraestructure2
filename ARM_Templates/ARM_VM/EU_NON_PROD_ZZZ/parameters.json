@@ -6,19 +6,19 @@
             "value": "northeurope"
         },
         "networkInterfaceName": {
-            "value": "zzzwsr0099_01"
+            "value": "zzzwsr0100_01"
         },
         "subnetName": {
-            "value": "Test"
+            "value": "test"
         },
         "virtualNetworkId": {
             "value": "/subscriptions/7fa3c3a2-7d0d-4987-a30c-30623e38756c/resourceGroups/rg-cis-nonprod-network-01/providers/Microsoft.Network/virtualNetworks/EU-NONPROD-VNET"
         },
         "virtualMachineName": {
-            "value": "zzzwsr0099"
+            "value": "zzzwsr0100"
         },
         "virtualMachineComputerName": {
-            "value": "zzzwsr0099"
+            "value": "zzzwsr0100"
         },
         "virtualMachineRG": {
             "value": "rg-cis-test-server-01"
@@ -26,14 +26,37 @@
         "osDiskType": {
             "value": "StandardSSD_LRS"
         },
-        "osDiskDeleteOption": {
-            "value": "Detach"
+        "dataDisks": {
+            "value": [
+                {
+                    "lun": 0,
+                    "createOption": "attach",
+                    "caching": "None",
+                    "writeAcceleratorEnabled": false,
+                    "id": null,
+                    "name": "zzzwsr0099_DataDisk_0",
+                    "storageAccountType": null,
+                    "diskSizeGB": null,
+                    "diskEncryptionSet": null
+                }
+            ]
+        },
+        "dataDiskResources": {
+            "value": [
+                {
+                    "name": "zzzwsr0099_DataDisk_0",
+                    "sku": "StandardSSD_LRS",
+                    "properties": {
+                        "diskSizeGB": 30,
+                        "creationData": {
+                            "createOption": "empty"
+                        }
+                    }
+                }
+            ]
         },
         "virtualMachineSize": {
-            "value": "Standard_F2s_v2"
-        },
-        "nicDeleteOption": {
-            "value": "Detach"
+            "value": "Standard_D4ds_v5"
         },
         "adminUsername": {
             "value": "ldmsosd"
