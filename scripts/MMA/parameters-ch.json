@@ -1,0 +1,18 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+      "vmName": {
+        "value": "shhwsr2237"
+      },
+      "location": {
+        "value": "switzerlandnorth"
+      },
+      "workspaceId": {
+        "value": "fa488d5a-d8e4-4437-9ccc-2ef59e9eb669"
+      },
+      "workspaceKey": {
+        "value": "1DxbXeHBAM3QLWl4GcE9SF0eTCEYuyr5pAt5k3wGG+bASH/ug9XGmVUyHKGvi/nmVIAYLLvfemwkuhM0yxGWCA=="
+      }
+  }
+}
