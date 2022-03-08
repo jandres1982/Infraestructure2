@@ -6,7 +6,7 @@
             "value": "switzerlandnorth"
         },
         "networkInterfaceName": {
-            "value": "shhwsr2383_01"
+            "value": "shhwsr2382_01"
         },
         "subnetName": {
             "value": "sub-frontend-iaas-01"
@@ -15,10 +15,10 @@
             "value": "/subscriptions/4ecf3830-c880-4410-9c3b-21919c807bad/resourceGroups/rg-cis-prod-network-01/providers/Microsoft.Network/virtualNetworks/vnet-prod-sn-01"
         },
         "virtualMachineName": {
-            "value": "shhwsr2383"
+            "value": "shhwsr2382"
         },
         "virtualMachineComputerName": {
-            "value": "shhwsr2383"
+            "value": "shhwsr2382"
         },
         "virtualMachineRG": {
             "value": "rg-shh-prod-sciforma-01"
