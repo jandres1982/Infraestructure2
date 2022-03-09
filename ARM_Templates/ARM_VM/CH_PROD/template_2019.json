@@ -136,9 +136,6 @@
                         "storageUri": "[concat('https://', parameters('diagnosticsStorageAccountName'), '.blob.core.windows.net/')]"
                     }
                 },
-                "availabilitySet": {
-                    "id": "[resourceId('/subscriptions/4ecf3830-c880-4410-9c3b-21919c807bad/resourceGroups/rg-cis-prod-server-01/providers/Microsoft.Compute/availabilitySets/avail-prod-ch-01')]"
-                }
             }
         }
     ],
