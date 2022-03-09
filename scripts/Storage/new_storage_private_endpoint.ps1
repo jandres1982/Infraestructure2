@@ -11,10 +11,6 @@ set-azcontext -subscription $sub
 ### Create Storage Account ###
 New-AzStorageAccount -ResourceGroupName $rg -AccountName $storagename -Location $location -SkuName Standard_LRS -AllowBlobPublicAccess $false -PublicNetworkAccess Disabled
 
-#New-AzStorageAccount -ResourceGroupName MyResourceGroup -AccountName mystorageaccount -Location westus -Type Standard_LRS -NetworkRuleSet (@{bypass="Logging,Metrics";
-#virtualNetworkRules=(@{VirtualNetworkResourceId="/subscriptions/s1/resourceGroups/g1/providers/Microsoft.Network/virtualNetworks/vnet1/subnets/subnet1";Action="allow"},
-#                     @{VirtualNetworkResourceId="/subscriptions/s1/resourceGroups/g1/providers/Microsoft.Network/virtualNetworks/vnet2/subnets/subnet2";Action="allow"});
-#                    defaultAction="Deny"})
 echo "Storage Account $storagename has been created"
 ### Get vnet and subnet info ###
 $vnet=Get-AzVirtualNetwork
