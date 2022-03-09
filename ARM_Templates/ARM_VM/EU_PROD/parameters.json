@@ -6,22 +6,22 @@
             "value": "northeurope"
         },
         "networkInterfaceName": {
-            "value": "crdwsr0204_01"
+            "value": "shhwsrdc3011_01"
         },
         "subnetName": {
-            "value": "Infrastructure-IaaS-Subnet_1"
+            "value": "sub-domaincontroller-01"
         },
         "virtualNetworkId": {
             "value": "/subscriptions/505ead1a-5a5f-4363-9b72-83eb2234a43d/resourceGroups/RG_NETWORK_PROD/providers/Microsoft.Network/virtualNetworks/EU-PROD-VNET"
         },
         "virtualMachineName": {
-            "value": "crdwsr0204"
+            "value": "shhwsrdc3011"
         },
         "virtualMachineComputerName": {
-            "value": "crdwsr0204"
+            "value": "shhwsrdc3011"
         },
         "virtualMachineRG": {
-            "value": "rg-crd-prod-visualgc-01"
+            "value": "rg-cis-prod-domaincontroller-01"
         },
         "osDiskType": {
             "value": "StandardSSD_LRS"
@@ -34,7 +34,7 @@
                     "caching": "None",
                     "writeAcceleratorEnabled": false,
                     "id": null,
-                    "name": "crdwsr0204_DataDisk_0",
+                    "name": "shhwsrdc3011_DataDisk_0",
                     "storageAccountType": null,
                     "diskSizeGB": null,
                     "diskEncryptionSet": null
@@ -44,10 +44,10 @@
         "dataDiskResources": {
             "value": [
                 {
-                    "name": "crdwsr0204_DataDisk_0",
+                    "name": "shhwsrdc3011_DataDisk_0",
                     "sku": "StandardSSD_LRS",
                     "properties": {
-                        "diskSizeGB": 100,
+                        "diskSizeGB": 30,
                         "creationData": {
                             "createOption": "empty"
                         }
@@ -56,7 +56,7 @@
             ]
         },
         "virtualMachineSize": {
-            "value": "Standard_F8s_v2"
+            "value": "Standard_D4ds_v5"
         },
         "adminUsername": {
             "value": "ldmsosd"

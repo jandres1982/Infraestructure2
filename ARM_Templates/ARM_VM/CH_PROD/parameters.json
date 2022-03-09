@@ -6,7 +6,7 @@
             "value": "switzerlandnorth"
         },
         "networkInterfaceName": {
-            "value": "crdwsr0002197"
+            "value": "shhwsr2382_01"
         },
         "subnetName": {
             "value": "sub-frontend-iaas-01"
@@ -15,19 +15,25 @@
             "value": "/subscriptions/4ecf3830-c880-4410-9c3b-21919c807bad/resourceGroups/rg-cis-prod-network-01/providers/Microsoft.Network/virtualNetworks/vnet-prod-sn-01"
         },
         "virtualMachineName": {
-            "value": "crdwsr0002"
+            "value": "shhwsr2382"
         },
         "virtualMachineComputerName": {
-            "value": "crdwsr0002"
+            "value": "shhwsr2382"
         },
         "virtualMachineRG": {
-            "value": "rg-cis-prod-network-01"
+            "value": "rg-shh-prod-sciforma-01"
         },
         "osDiskType": {
             "value": "StandardSSD_LRS"
         },
+        "osDiskDeleteOption": {
+            "value": "Detach"
+        },
         "virtualMachineSize": {
-            "value": "Standard_D4s_v3"
+            "value": "Standard_D8s_v3"
+        },
+        "nicDeleteOption": {
+            "value": "Detach"
         },
         "adminUsername": {
             "value": "ldmsosd"
@@ -36,7 +42,7 @@
             "value": "Newsetup1234"
         },
         "patchMode": {
-            "value": "AutomaticByOS"
+            "value": "Manual"
         },
         "enableHotpatching": {
             "value": false
@@ -46,15 +52,6 @@
         },
         "diagnosticsStorageAccountId": {
             "value": "/subscriptions/4ecf3830-c880-4410-9c3b-21919c807bad/resourceGroups/rg-cis-prod-storage-01/providers/Microsoft.Storage/storageAccounts/stproddiagnostic0001"
-        },
-        "availabilitySetName": {
-            "value": "avail-prod-crd-01"
-        },
-        "availabilitySetPlatformFaultDomainCount": {
-            "value": 2
-        },
-        "availabilitySetPlatformUpdateDomainCount": {
-            "value": 5
         }
     }
 }

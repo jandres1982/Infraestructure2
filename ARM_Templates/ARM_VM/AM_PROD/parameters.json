@@ -6,22 +6,22 @@
             "value": "eastus2"
         },
         "networkInterfaceName": {
-            "value": "zzzwsr0035_01"
+            "value": "shhwsr2368_01"
         },
         "subnetName": {
-            "value": "Test"
+            "value": "sub-infrastructure-iaas-01"
         },
         "virtualNetworkId": {
             "value": "/subscriptions/e03c610e-a71c-4518-a4a3-8ce128fca34d/resourceGroups/rg-cis-prod-network-01/providers/Microsoft.Network/virtualNetworks/vnet-prod-use2-01"
         },
         "virtualMachineName": {
-            "value": "zzzwsr0035"
+            "value": "shhwsr2368"
         },
         "virtualMachineComputerName": {
-            "value": "zzzwsr0035"
+            "value": "shhwsr2368"
         },
         "virtualMachineRG": {
-            "value": "rg-cis-prod-server-01"
+            "value": "rg-cis-prod-servicenow-01"
         },
         "osDiskType": {
             "value": "StandardSSD_LRS"
@@ -34,7 +34,7 @@
                     "caching": "None",
                     "writeAcceleratorEnabled": false,
                     "id": null,
-                    "name": "zzzwsr0035_DataDisk_0",
+                    "name": "shhwsr2368_DataDisk_0",
                     "storageAccountType": null,
                     "diskSizeGB": null,
                     "diskEncryptionSet": null
@@ -44,10 +44,10 @@
         "dataDiskResources": {
             "value": [
                 {
-                    "name": "zzzwsr0035_DataDisk_0",
+                    "name": "shhwsr2368_DataDisk_0",
                     "sku": "StandardSSD_LRS",
                     "properties": {
-                        "diskSizeGB": 32,
+                        "diskSizeGB": 30,
                         "creationData": {
                             "createOption": "empty"
                         }
