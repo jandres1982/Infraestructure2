@@ -137,7 +137,7 @@
                     }
                 },
                 "availabilitySet": {
-                    "id": "[resourceId('Microsoft.Compute/availabilitySets', parameters('availabilitySetName'))]"
+                    "id": "[resourceId('/subscriptions/4ecf3830-c880-4410-9c3b-21919c807bad/resourceGroups/rg-cis-prod-server-01/providers/Microsoft.Compute/availabilitySets/avail-prod-ch-01')]"
                 }
             }
         }
