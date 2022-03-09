@@ -53,8 +53,5 @@
         "diagnosticsStorageAccountId": {
             "value": "/subscriptions/4ecf3830-c880-4410-9c3b-21919c807bad/resourceGroups/rg-cis-prod-storage-01/providers/Microsoft.Storage/storageAccounts/stproddiagnostic0001"
         },
-        "availabilitySetName": {
-            "value": "avail-prod-ch-01"
-        }
     }
 }
