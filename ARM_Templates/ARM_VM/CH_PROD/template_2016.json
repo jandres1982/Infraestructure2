@@ -52,6 +52,9 @@
         },
         "diagnosticsStorageAccountId": {
             "type": "string"
+        },
+        "availabilitySetName": {
+            "type": "string"
         }
     },
     "variables": {
@@ -132,6 +135,9 @@
                         "enabled": true,
                         "storageUri": "[concat('https://', parameters('diagnosticsStorageAccountName'), '.blob.core.windows.net/')]"
                     }
+                },
+                "availabilitySet": {
+                    "id": "[resourceId('Microsoft.Compute/availabilitySets', parameters('availabilitySetName'))]"
                 }
             }
         }
