@@ -23,7 +23,7 @@ $vms = get-azvm
  $vmBackupReport = [System.Collections.ArrayList]::new()
  foreach ($vm in $vms) 
  {
-     $recoveryVaultInfo = Get-AzRecoveryServicesBackupStatus -Name $vm.Name -ResourceGroupName $vm.ResourceGroupName -Type 'AzureVM'
+     $recoveryVaultInfo = Get-AzRecoveryServicesBackupStatus -Name $vm.Name -ResourceGroupName $vm.ResourceGroupName -Type 'AzureVM' -WarningAction SilentlyContinue
      if ($recoveryVaultInfo.BackedUp -eq $true)
      {
          Write-Host "$($vm.Name) - BackedUp : Yes"
