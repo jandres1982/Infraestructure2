@@ -32,7 +32,7 @@ $vms = get-azvm
 
          #Backup recovery Vault policy Information
          $container = Get-AzRecoveryServicesBackupContainer -ContainerType AzureVM -VaultId $vmBackupVault.ID -FriendlyName $vm.Name -ErrorAction SilentlyContinue #-Status "Registered"
-         if !($container)
+         if (!$container)
          {
              $vm_check = "$vm.name"
              Write-host "Check $vm_check"
