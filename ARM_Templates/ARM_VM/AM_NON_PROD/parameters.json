@@ -5,8 +5,8 @@
         "location": {
             "value": "eastus2"
         },
-        "networkInterfaceName3": {
-            "value": "secwsrxxxx341_z3"
+        "networkInterfaceName": {
+            "value": "secwsrxxxx334"
         },
         "subnetName": {
             "value": "sub-infrastructure-iaas-01"
@@ -15,9 +15,6 @@
             "value": "/subscriptions/8528129a-0394-4057-ac4e-0fec3da2246d/resourceGroups/rg-cis-nonprod-network-01/providers/Microsoft.Network/virtualNetworks/vnet-nonprod-use2-01"
         },
         "virtualMachineName": {
-            "value": "secwsrxxxx"
-        },
-        "virtualMachineName3": {
             "value": "secwsrxxxx"
         },
         "virtualMachineComputerName": {
@@ -55,9 +52,6 @@
         },
         "diagnosticsStorageAccountId": {
             "value": "/subscriptions/8528129a-0394-4057-ac4e-0fec3da2246d/resourceGroups/rg-cis-nonprod-storage-01/providers/Microsoft.Storage/storageAccounts/stnonproddiagnostic0002"
-        },
-        "zone": {
-            "value": "3"
         }
     }
 }
