@@ -5,7 +5,7 @@
         "location": {
             "type": "string"
         },
-        "networkInterfaceName3": {
+        "networkInterfaceName": {
             "type": "string"
         },
         "subnetName": {
@@ -15,9 +15,6 @@
             "type": "string"
         },
         "virtualMachineName": {
-            "type": "string"
-        },
-        "virtualMachineName3": {
             "type": "string"
         },
         "virtualMachineComputerName": {
@@ -55,9 +52,6 @@
         },
         "diagnosticsStorageAccountId": {
             "type": "string"
-        },
-        "zone": {
-            "type": "string"
         }
     },
     "variables": {
@@ -67,7 +61,7 @@
     },
     "resources": [
         {
-            "name": "[parameters('networkInterfaceName3')]",
+            "name": "[parameters('networkInterfaceName')]",
             "type": "Microsoft.Network/networkInterfaces",
             "apiVersion": "2021-03-01",
             "location": "[parameters('location')]",
@@ -87,12 +81,12 @@
             }
         },
         {
-            "name": "[parameters('virtualMachineName3')]",
+            "name": "[parameters('virtualMachineName')]",
             "type": "Microsoft.Compute/virtualMachines",
             "apiVersion": "2021-07-01",
             "location": "[parameters('location')]",
             "dependsOn": [
-                "[concat('Microsoft.Network/networkInterfaces/', parameters('networkInterfaceName3'))]"
+                "[concat('Microsoft.Network/networkInterfaces/', parameters('networkInterfaceName'))]"
             ],
             "properties": {
                 "hardwareProfile": {
@@ -113,7 +107,7 @@
                 "networkProfile": {
                     "networkInterfaces": [
                         {
-                            "id": "[resourceId('Microsoft.Network/networkInterfaces', parameters('networkInterfaceName3'))]",
+                            "id": "[resourceId('Microsoft.Network/networkInterfaces', parameters('networkInterfaceName'))]",
                             "properties": {
                                 "deleteOption": "[parameters('nicDeleteOption')]"
                             }
@@ -139,10 +133,7 @@
                         "storageUri": "[concat('https://', parameters('diagnosticsStorageAccountName'), '.blob.core.windows.net/')]"
                     }
                 }
-            },
-            "zones": [
-                "3"
-            ]
+            }
         }
     ],
     "outputs": {
