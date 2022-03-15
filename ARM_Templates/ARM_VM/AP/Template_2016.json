@@ -17,9 +17,6 @@
         "virtualMachineName": {
             "type": "string"
         },
-        "virtualMachineName3": {
-            "type": "string"
-        },
         "virtualMachineComputerName": {
             "type": "string"
         },
