@@ -4,22 +4,23 @@ $date = $(get-date -format yyyy-MM-ddTHH-mm)
 
 ###################################################################
 
+
+
 foreach ($sub in $subs)
 {
+
+    Write-Host "Collecting all Backup Recovery Vault information in $sub" -BackgroundColor DarkGreen
 
 Select-AzSubscription -Subscription "$sub"
 az account set --subscription "$sub"
 
-$Vault_List = (Get-AzRecoveryServicesVault).Name 
-foreach ($vault in $Vault_List) 
-{ 
+#$Vault_List = (Get-AzRecoveryServicesVault).Name
+#foreach ($vault in $Vault_List) 
+#{ 
 #$subs = @("s-sis-eu-nonprod-01","s-sis-eu-prod-01","s-sis-am-prod-01","s-sis-am-nonprod-01","s-sis-ap-prod-01")
 $date = $(get-date -format yyyy-MM-ddTHH-mm)
-
-Write-Host "Collecting all Backup Recovery Vault information" -BackgroundColor DarkGreen
-
 $backupVaults = Get-AzRecoveryServicesVault
-$vms = get-azvm
+$vms = get-azvm | where-object {$_.Name -like "*wsr*"}
  $vmBackupReport = [System.Collections.ArrayList]::new()
  foreach ($vm in $vms) 
  {
@@ -35,8 +36,6 @@ $vms = get-azvm
                 $container = Get-AzRecoveryServicesBackupContainer -ContainerType AzureVM -VaultId $vmBackupVault.ID -FriendlyName $vm.Name -WarningAction SilentlyContinue -Status "Registered"
                 $backupItem = Get-AzRecoveryServicesBackupItem -Container $container -WorkloadType AzureVM -VaultId $vmBackupVault.ID -WarningAction SilentlyContinue
 
-
-         $backupItem = Get-AzRecoveryServicesBackupItem -Container $container -WorkloadType AzureVM -VaultId $vmBackupVault.ID -WarningAction SilentlyContinue
      } #if ($recoveryVaultInfo.BackedUp -eq $true)
      else 
      {
@@ -67,7 +66,7 @@ $vms = get-azvm
      }) #[void]$vmBackupReport.Add([PSCustomObject]@{
  } #foreach ($vm in $vms) 
 }
-}
+#}
 $vmBackupReport | Export-Csv Backup_All_Report_test.csv
 
 $PSEmailServer = "smtp.eu.schindler.com"
@@ -83,6 +82,8 @@ Dear team,
 Please find attached the Report for $kg Backup Jobs.
 
 Best regards,
+
+Schindler Server Team - DevOps Automated Report
 "@
 
 Send-MailMessage -From $From -To $To -Subject $Subject -Body $Body -Attachments $Attachment

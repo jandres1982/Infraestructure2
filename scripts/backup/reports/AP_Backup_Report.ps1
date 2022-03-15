@@ -1,8 +1,8 @@
-$subs=Get-AzSubscription | Where-Object {$_.Name -match "s-sis-[aec][upmh]*"}
-#$subs = @("s-sis-eu-nonprod-01","s-sis-eu-prod-01","s-sis-am-prod-01","s-sis-am-nonprod-01","s-sis-ap-prod-01")
+#$subs=Get-AzSubscription | Where-Object {$_.Name -match "s-sis-ap-prod-01"}
+$subs = @("s-sis-ap-prod-01")
 $date = $(get-date -format yyyy-MM-ddTHH-mm)
-$kg = "UKC"
-$sum = "*$kg" + "wsr*"
+$kg = "AP"
+#$sum = ""
 ###################################################################
 
 foreach ($sub in $subs)
@@ -17,7 +17,7 @@ $Vault_ResourecGroup = (Get-AzRecoveryServicesVault -Name $vault).ResourceGroupN
 #$Vault_ResourecGroup = "rg-cis-prod-backup-01" 
 #$vault = "rsv-prod-euno-lrsbackup-01" 
 $Vault_ID = Get-AzRecoveryServicesVault -ResourceGroupName "$Vault_ResourecGroup" -Name $vault 
-$Jobs = Get-AzRecoveryServicesBackupJob -VaultId $Vault_ID.Id -WarningAction SilentlyContinue | where-object {$_.WorkLoadname -like "$sum"}
+$Jobs = Get-AzRecoveryServicesBackupJob -VaultId $Vault_ID.Id -WarningAction SilentlyContinue
 #$JobDetails = Get-AzRecoveryServicesBackupJobDetail -Job $Jobs[0] -VaultId $vault_ID.ID | Export-Csv -Path "Backup_Report_CRD_Prod_$date.csv"  -Append 
 $Jobs | Export-Csv -Path "Backup_Report_$kg_$date.csv" -Append -Force 
 }
@@ -26,7 +26,7 @@ $Jobs | Export-Csv -Path "Backup_Report_$kg_$date.csv" -Append -Force
 
 $PSEmailServer = "smtp.eu.schindler.com"
 $From = "scc-support-zar.es@schindler.com"
-$to = "darrel.beaven@schindler.com","alfonso.marques@schindler.com","antoniovicente.vento@schindler.com"
+$to = "antoniovicente.vento@schindler.com","carman.leung@schindler.com","calvin.siu@schindler.com","alfonso.marques@schindler.com"
 
 $Subject = "Backup Report $kg Servers"
 #$Filename = Get-ChildItem $Path -Name "Att*" | select -Last 1

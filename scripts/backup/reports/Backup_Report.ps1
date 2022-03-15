@@ -16,7 +16,7 @@ $Vault_ResourecGroup = (Get-AzRecoveryServicesVault -Name $vault).ResourceGroupN
 #$Vault_ResourecGroup = "rg-cis-prod-backup-01" 
 #$vault = "rsv-prod-euno-lrsbackup-01" 
 $Vault_ID = Get-AzRecoveryServicesVault -ResourceGroupName "$Vault_ResourecGroup" -Name $vault
-$Jobs = Get-AzRecoveryServicesBackupJob -VaultId $Vault_ID.Id -BackupManagementType AzureVM
+$Jobs = Get-AzRecoveryServicesBackupJob -VaultId $Vault_ID.Id -BackupManagementType AzureVM -WarningAction SilentlyContinue
 #$JobDetails = Get-AzRecoveryServicesBackupJobDetail -Job $Jobs[0] -VaultId $vault_ID.ID | Export-Csv -Path "Backup_Report_CRD_Prod_$date.csv"  -Append 
 $Jobs | Export-Csv -Path "vm_backup_report_all.csv" -Append -Force 
 
@@ -52,6 +52,8 @@ Dear team,
 Please find attached the Report for Backup Jobs for Azure Servers.
 
 Best regards,
+
+Schindler Server Team - Devops Automated Report
 "@
 
 Send-MailMessage -From $From -To $To -Subject $Subject -Body $Body -Attachments $Attachment
