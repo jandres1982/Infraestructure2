@@ -82,7 +82,7 @@ Dear team,
 
 Please find attached the Report for $kg Backup Jobs.
 
-
+Best regards,
 "@
 
 Send-MailMessage -From $From -To $To -Subject $Subject -Body $Body -Attachments $Attachment
