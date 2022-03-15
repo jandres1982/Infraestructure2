@@ -5,58 +5,38 @@
         "location": {
             "value": "southeastasia"
         },
-        "networkInterfaceName": {
-            "value": "indwsr0096_01"
+        "networkInterfaceName3": {
+            "value": "shhwsrxxxx70_z3"
         },
         "subnetName": {
-            "value": "sub-frontendfile-01"
+            "value": "sub-frontend-iaas-01"
         },
         "virtualNetworkId": {
             "value": "/subscriptions/59c20947-4965-45c4-99f3-12be96106119/resourceGroups/rg-cis-prod-network-02/providers/Microsoft.Network/virtualNetworks/vnet-prod-asse-01"
         },
         "virtualMachineName": {
-            "value": "indwsr0096"
+            "value": "shhwsrxxxx"
+        },
+        "virtualMachineName3": {
+            "value": "shhwsrxxxx"
         },
         "virtualMachineComputerName": {
-            "value": "indwsr0096"
+            "value": "shhwsrxxxx"
         },
         "virtualMachineRG": {
-            "value": "rg-ind-prod-fileserver-01"
+            "value": "rg-cis-prod-ad-02"
         },
         "osDiskType": {
             "value": "StandardSSD_LRS"
         },
-        "dataDisks": {
-            "value": [
-                {
-                    "lun": 0,
-                    "createOption": "attach",
-                    "caching": "None",
-                    "writeAcceleratorEnabled": false,
-                    "id": null,
-                    "name": "indwsr0096_DataDisk_0",
-                    "storageAccountType": null,
-                    "diskSizeGB": null,
-                    "diskEncryptionSet": null
-                }
-            ]
-        },
-        "dataDiskResources": {
-            "value": [
-                {
-                    "name": "indwsr0096_DataDisk_0",
-                    "sku": "StandardSSD_LRS",
-                    "properties": {
-                        "diskSizeGB": 14200,
-                        "creationData": {
-                            "createOption": "empty"
-                        }
-                    }
-                }
-            ]
+        "osDiskDeleteOption": {
+            "value": "Detach"
         },
         "virtualMachineSize": {
-            "value": "Standard_F8s_v2"
+            "value": "Standard_D4s_v3"
+        },
+        "nicDeleteOption": {
+            "value": "Detach"
         },
         "adminUsername": {
             "value": "ldmsosd"
