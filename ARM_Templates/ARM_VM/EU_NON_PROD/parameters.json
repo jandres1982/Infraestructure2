@@ -6,57 +6,34 @@
             "value": "northeurope"
         },
         "networkInterfaceName": {
-            "value": "tstshhwsr0330_01"
+            "value": "shhwsrxxxx602"
         },
         "subnetName": {
-            "value": "sub-backend-paas-01"
+            "value": "Infrastructure-IaaS-Subnet_1"
         },
         "virtualNetworkId": {
             "value": "/subscriptions/7fa3c3a2-7d0d-4987-a30c-30623e38756c/resourceGroups/rg-cis-nonprod-network-01/providers/Microsoft.Network/virtualNetworks/EU-NONPROD-VNET"
         },
         "virtualMachineName": {
-            "value": "tstshhwsr0330"
+            "value": "shhwsrxxxx"
         },
         "virtualMachineComputerName": {
-            "value": "tstshhwsr0330"
+            "value": "shhwsrxxxx"
         },
         "virtualMachineRG": {
-            "value": "rg-shh-qual-sharedsql-01"
+            "value": "rg-cis-test-server-01"
         },
         "osDiskType": {
             "value": "StandardSSD_LRS"
         },
-        "dataDisks": {
-            "value": [
-                {
-                    "lun": 0,
-                    "createOption": "attach",
-                    "caching": "None",
-                    "writeAcceleratorEnabled": false,
-                    "id": null,
-                    "name": "tstshhwsr0330_DataDisk_0",
-                    "storageAccountType": null,
-                    "diskSizeGB": null,
-                    "diskEncryptionSet": null
-                }
-            ]
-        },
-        "dataDiskResources": {
-            "value": [
-                {
-                    "name": "tstshhwsr0330_DataDisk_0",
-                    "sku": "StandardSSD_LRS",
-                    "properties": {
-                        "diskSizeGB": 50,
-                        "creationData": {
-                            "createOption": "empty"
-                        }
-                    }
-                }
-            ]
+        "osDiskDeleteOption": {
+            "value": "Detach"
         },
         "virtualMachineSize": {
-            "value": "Standard_D4ds_v5"
+            "value": "Standard_D4s_v3"
+        },
+        "nicDeleteOption": {
+            "value": "Detach"
         },
         "adminUsername": {
             "value": "ldmsosd"

@@ -6,7 +6,7 @@
             "value": "eastus2"
         },
         "networkInterfaceName": {
-            "value": "shhwsr2245_01"
+            "value": "secwsrxxxx334"
         },
         "subnetName": {
             "value": "sub-infrastructure-iaas-01"
@@ -15,48 +15,25 @@
             "value": "/subscriptions/8528129a-0394-4057-ac4e-0fec3da2246d/resourceGroups/rg-cis-nonprod-network-01/providers/Microsoft.Network/virtualNetworks/vnet-nonprod-use2-01"
         },
         "virtualMachineName": {
-            "value": "shhwsr2245"
+            "value": "secwsrxxxx"
         },
         "virtualMachineComputerName": {
-            "value": "shhwsr2245"
+            "value": "secwsrxxxx"
         },
         "virtualMachineRG": {
-            "value": "rg-cis-nonprod-network-01"
+            "value": "rg-cis-nonprod-server-01"
         },
         "osDiskType": {
             "value": "StandardSSD_LRS"
         },
-        "dataDisks": {
-            "value": [
-                {
-                    "lun": 0,
-                    "createOption": "attach",
-                    "caching": "None",
-                    "writeAcceleratorEnabled": false,
-                    "id": null,
-                    "name": "shhwsr2245_DataDisk_0",
-                    "storageAccountType": null,
-                    "diskSizeGB": null,
-                    "diskEncryptionSet": null
-                }
-            ]
-        },
-        "dataDiskResources": {
-            "value": [
-                {
-                    "name": "shhwsr2245_DataDisk_0",
-                    "sku": "StandardSSD_LRS",
-                    "properties": {
-                        "diskSizeGB": 32,
-                        "creationData": {
-                            "createOption": "empty"
-                        }
-                    }
-                }
-            ]
+        "osDiskDeleteOption": {
+            "value": "Detach"
         },
         "virtualMachineSize": {
-            "value": "Standard_F4s_v2"
+            "value": "Standard_D4s_v3"
+        },
+        "nicDeleteOption": {
+            "value": "Detach"
         },
         "adminUsername": {
             "value": "ldmsosd"
