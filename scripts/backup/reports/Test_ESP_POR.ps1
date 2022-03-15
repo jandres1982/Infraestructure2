@@ -1,5 +1,5 @@
-#$subs=Get-AzSubscription | Where-Object {$_.Name -match "s-sis-[aec][upmh]*"}
-$subs= "s-sis-eu-nonprod-01"
+$subs=Get-AzSubscription | Where-Object {$_.Name -match "s-sis-[e][u]*"}
+#$subs= "s-sis-eu-nonprod-01"
 $date = $(get-date -format yyyy-MM-ddTHH-mm)
 
 ###################################################################
