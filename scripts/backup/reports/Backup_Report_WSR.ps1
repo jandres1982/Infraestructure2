@@ -44,6 +44,8 @@ Please find attached the Report for Backup Jobs in Azure for WSR named Servers.
 Report saved in the Server Team Scripting Server
 
 Best regards,
+
+Schindler Server Team - Devops Automated Report
 "@
 
 Send-MailMessage -From $From -To $To -Subject $Subject -Body $Body -Attachments $Attachment

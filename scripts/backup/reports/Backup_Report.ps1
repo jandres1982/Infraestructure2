@@ -52,6 +52,8 @@ Dear team,
 Please find attached the Report for Backup Jobs for Azure Servers.
 
 Best regards,
+
+Schindler Server Team - Devops Automated Report
 "@
 
 Send-MailMessage -From $From -To $To -Subject $Subject -Body $Body -Attachments $Attachment
