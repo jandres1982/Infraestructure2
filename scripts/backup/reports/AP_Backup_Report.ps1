@@ -1,7 +1,7 @@
 #$subs=Get-AzSubscription | Where-Object {$_.Name -match "s-sis-ap-prod-01"}
 $subs = @("s-sis-ap-prod-01")
 $date = $(get-date -format yyyy-MM-ddTHH-mm)
-#$kg = "AP"
+$kg = "AP"
 #$sum = ""
 ###################################################################
 
