@@ -6,10 +6,10 @@
             "value": "southeastasia"
         },
         "networkInterfaceName3": {
-            "value": "shhwsrxxxx70_z3"
+            "value": "shhwsrxxxx251_z3"
         },
         "subnetName": {
-            "value": "sub-frontend-iaas-01"
+            "value": "sub-backend-iaas-01"
         },
         "virtualNetworkId": {
             "value": "/subscriptions/59c20947-4965-45c4-99f3-12be96106119/resourceGroups/rg-cis-prod-network-02/providers/Microsoft.Network/virtualNetworks/vnet-prod-asse-01"
@@ -17,11 +17,14 @@
         "virtualMachineName": {
             "value": "shhwsrxxxx"
         },
+        "virtualMachineName3": {
+            "value": "shhwsrxxxx"
+        },
         "virtualMachineComputerName": {
             "value": "shhwsrxxxx"
         },
         "virtualMachineRG": {
-            "value": "rg-cis-prod-ad-02"
+            "value": "rg-cis-prod-storage-02"
         },
         "osDiskType": {
             "value": "StandardSSD_LRS"
