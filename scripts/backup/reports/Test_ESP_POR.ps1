@@ -1,10 +1,10 @@
-$subs=Get-AzSubscription | Where-Object {$_.Name -match "s-sis-[e][u]*"}
+$subs = Get-AzSubscription | Where-Object {($_.Name -match "s-sis-eu-prod-01") -or ($_.Name -match "s-sis-eu-nonprod-01")}
 #$subs= "s-sis-eu-nonprod-01"
 $date = $(get-date -format yyyy-MM-ddTHH-mm)
 
 ###################################################################
 
-
+$vmBackupReport = [System.Collections.ArrayList]::new()
 
 foreach ($sub in $subs)
 {
@@ -20,8 +20,8 @@ az account set --subscription "$sub"
 #$subs = @("s-sis-eu-nonprod-01","s-sis-eu-prod-01","s-sis-am-prod-01","s-sis-am-nonprod-01","s-sis-ap-prod-01")
 $date = $(get-date -format yyyy-MM-ddTHH-mm)
 $backupVaults = Get-AzRecoveryServicesVault
-$vms = get-azvm | where-object {$_.Name -like "[ep][os][rp]*"}
- $vmBackupReport = [System.Collections.ArrayList]::new()
+$vms = get-azvm | where-object {$_.Name -like "[ep][os][rp]wsr*"}
+
  foreach ($vm in $vms) 
  {
      $recoveryVaultInfo = Get-AzRecoveryServicesBackupStatus -Name $vm.Name -ResourceGroupName $vm.ResourceGroupName -Type 'AzureVM' -WarningAction SilentlyContinue
@@ -67,15 +67,15 @@ $vms = get-azvm | where-object {$_.Name -like "[ep][os][rp]*"}
  } #foreach ($vm in $vms) 
 }
 #}
-$vmBackupReport | Export-Csv Backup_All_Report_test.csv
+$vmBackupReport | Export-Csv Backup_ESP_POR_Report_$date.csv
 
 $PSEmailServer = "smtp.eu.schindler.com"
 $From = "scc-support-zar.es@schindler.com"
-$to = "alfonso.marques@schindler.com","antoniovicente.vento@schindler.com"
+$to = "antoniovicente.vento@schindler.com"
 
-$Subject = "Backup Report All Servers"
+$Subject = "Backup Report ESP/POR Servers"
 #$Filename = Get-ChildItem $Path -Name "Att*" | select -Last 1
-$Attachment = "Backup_All_Report_test.csv"
+$Attachment = "Backup_ESP_POR_Report_$date.csv"
 $Body = @"
 Dear team,
 
