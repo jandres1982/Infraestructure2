@@ -1,11 +1,11 @@
 ### Variables ###
-$vaultname="rsv-prod-euno-zrsbackup-01"
+$vaultname="rsv-prod-vdi-euno-lrsbackup-01"
 $rg="rg-cis-prod-backup-01"
 $location="northeurope"
-$sub="s-sis-eu-prod-01"
-$pe="pe-backup-prod-0006"
-$subnet="Infrastructure-IaaS-Subnet_1"
-$redundancy="ZoneRedundant"
+$sub="s-sis-eu-prod-vdi-01"
+$pe="pe-backup-prod-0008"
+$subnetname="sub-standard-01"
+$redundancy="LocallyRedundant"
 ### Select the subscription ###
 Set-AzContext -Subscription $sub
 ### Creating recovery service vault ###
@@ -23,10 +23,11 @@ $managedidentity=Get-AzADServicePrincipal -DisplayName $vaultname
 New-AzRoleAssignment -ObjectId $managedidentity.id -RoleDefinitionName "Contributor" -ResourceGroupName $rg
 ### Get vnet and subnet info ###
 $vnet=Get-AzVirtualNetwork
-$subnet=$vnet.Subnets | Where-Object {$_.Name -eq "$subnet"}
+$subnet=$vnet.Subnets | Where-Object {$_.Name -eq "$subnetname"}
 ### Grant Contributor Role over vNet for Vault Identity ###
 New-AzRoleAssignment -ObjectId $managedidentity.id -RoleDefinitionName "Contributor" -ResourceGroupName $vnet.ResourceGroupName -ResourceType Microsoft.Network/virtualNetworks -ResourceName $vnet.Name
 echo "Recovery Service Vault $vaultname has been created"
+start-sleep -seconds 60
 ### Create Private Link Service ###
 $plsConnection= New-AzPrivateLinkServiceConnection -Name $vaultname -GroupId "AzureBackup" -PrivateLinkServiceId $vault.id
 ### Create Private Endpoint ###
