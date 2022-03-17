@@ -12,7 +12,7 @@ foreach ($sub in $subs)
             write-host "$vm is not in Azure $sub"
             }else
                 {
-                az account set --subscription $(sub)
+                az account set --subscription $sub
                 $rg = $vm.resourcegroupname
                 az vm stop --resource-group $rg --name $vm
                 az vm deallocate -g $rg -n $vm
