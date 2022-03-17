@@ -13,7 +13,7 @@ foreach ($sub in $subs)
             }else
                 {
                 az account set --subscription $sub
-                $rg = $vm.resourcegroupname
+                $rg = $vm.ResourceGroupName
                 az vm stop --resource-group $rg --name $vm
                 az vm deallocate -g $rg -n $vm
                 $osdisk = $vm.StorageProfile.OSDisk.Name
