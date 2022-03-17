@@ -17,6 +17,7 @@ foreach ($sub in $subs)
                 Write-Host "Working in $vm"
                 $vm = get-azvm -Name $vm
                 $rg = $vm.ResourceGroupName
+                Write-Host "Working in $rg"
                 az vm stop --resource-group $rg --name $vm
                 az vm deallocate -g $rg -n $vm
                 $osdisk = $vm.StorageProfile.OSDisk.Name
