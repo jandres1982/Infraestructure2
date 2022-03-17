@@ -9,11 +9,11 @@ $subs = @("s-sis-am-prod-01","s-sis-am-nonprod-01")
 
 foreach ($sub in $subs)
 {
-    Select-AzSubscription -Subscription "$sub"
+    Select-AzSubscription -Subscription $sub
+    az account set --subscription $sub
     #$vm = get-azvm -Name $vm
         if (get-azvm -Name $vm)
             {
-                az account set --subscription $sub
                 Write-Host "Working in $vm"
                 $vm = get-azvm -Name $vm
                 $rg = $vm.ResourceGroupName
