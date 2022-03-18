@@ -1,7 +1,7 @@
 param([string]$vmName)
 #$subs = @("s-sis-eu-nonprod-01","s-sis-ap-prod-01","s-sis-eu-prod-01","s-sis-am-prod-01","s-sis-am-nonprod-01")
 #param([string]$vm)
-#$vm = "shhwsr2242"
+$vm = "shhwsr2242"
 $subs = @("s-sis-am-nonprod-01","s-sis-am-nonprod-01")
 
 foreach ($sub in $subs)
