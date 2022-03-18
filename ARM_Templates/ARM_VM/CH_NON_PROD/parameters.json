@@ -6,10 +6,10 @@
             "value": "switzerlandnorth"
         },
         "networkInterfaceName": {
-            "value": "shhwsrxxxx628"
+            "value": "shhwsrxxxx321"
         },
         "subnetName": {
-            "value": "sub-frontend-iaas-01"
+            "value": "Test"
         },
         "virtualNetworkId": {
             "value": "/subscriptions/fc986840-4602-40b6-be2f-69cd5c3ea428/resourceGroups/rg-cis-prod-network-01/providers/Microsoft.Network/virtualNetworks/vnet-nonprod-sn-01"
@@ -21,7 +21,7 @@
             "value": "shhwsrxxxx"
         },
         "virtualMachineRG": {
-            "value": "rg-cis-test-asr-01"
+            "value": "rg-shh-test-sciforma-01"
         },
         "osDiskType": {
             "value": "StandardSSD_LRS"
@@ -30,7 +30,7 @@
             "value": "Detach"
         },
         "virtualMachineSize": {
-            "value": "Standard_D4s_v3"
+            "value": "Standard_D4ds_v4"
         },
         "nicDeleteOption": {
             "value": "Detach"
@@ -39,7 +39,7 @@
             "value": "ldmsosd"
         },
         "adminPassword": {
-            "value": null
+            "value": "Newsetup1234"
         },
         "patchMode": {
             "value": "Manual"
