@@ -8,8 +8,8 @@ $Servers = Get-Content -Path "Server_List_Hybrid_Benefit.txt"
 foreach ($vmName in $Servers)
 {
     
-#$subs = @("s-sis-eu-nonprod-01","s-sis-ap-prod-01","s-sis-eu-prod-01","s-sis-am-prod-01","s-sis-am-nonprod-01")
-$subs = @("s-sis-eu-nonprod-01")
+$subs = @("s-sis-eu-nonprod-01","s-sis-ap-prod-01","s-sis-eu-prod-01","s-sis-am-prod-01","s-sis-am-nonprod-01")
+#$subs = @("s-sis-eu-nonprod-01")
 foreach ($sub in $subs)
 {
     Select-AzSubscription -Subscription $sub
