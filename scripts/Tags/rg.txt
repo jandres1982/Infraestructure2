@@ -1,11 +1,1 @@
-rg-shh-prod-ansible-01
-rg-cis-prod-pkiapplication-01
-rg-shh-prod-rhrepo-01
-rg-gis-prod-gtsdokuwik-01
-rg-cis-prod-depositserver-01
-rg-shh-prod-logreceiver-01
-rg-shh-prod-atlassian-01
-rg-shh-prod-jenkins-01
-rg-shh-prod-zabbix-01
-rg-shh-prod-sap-01
-rg-gis-prod-sapmanagement-01
+rg-cis-nonprod-landeskdepot-01

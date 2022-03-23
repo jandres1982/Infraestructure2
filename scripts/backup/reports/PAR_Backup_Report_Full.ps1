@@ -1,7 +1,7 @@
 $subs = Get-AzSubscription | Where-Object {($_.Name -match "s-sis-eu-prod-01") -or ($_.Name -match "s-sis-eu-nonprod-01")}
 #$subs= "s-sis-eu-nonprod-01"
 $date = $(get-date -format yyyy-MM-ddTHH-mm)
-$kg = "ESP"
+$kg = "PAR"
 ###################################################################
 
 $vmBackupReport = [System.Collections.ArrayList]::new()
@@ -81,43 +81,34 @@ $Subject = "Backup Report $kg Servers"
 #$Filename = Get-ChildItem $Path -Name "Att*" | select -Last 1
 $Attachment = $report
 $Body = @"
-
-
-
-<html>
-  <head>
-    <title>Backup Policies Resumed Information</title>
-  </head>
-  <body>
-    <p>
-Dear team,
-Please find attached the Report for $kg Backup VM's
-Best regards,
-Schindler Server Team - DevOps Automated Report
-    Short - vm snapshot daily at 1:00AM and 30 days retention
-    Medium - same as short plus weekly Sunday at 1:00AM and 12 weeks retention
-    Long - same as medium plus monthly 1st day of the month at 1:00AM and 12 months retention</p>
-  </body>
-</html>
-
-
-
-Dear team,
-
-Please find attached the Report for $kg Backup VM's
-
-Best regards,
-
-Schindler Server Team - DevOps Automated Report
-
-------------------------------------------------------------------------------------------
-Backup Policies Resumed Information
-------------------------------------------------------------------------------------------
-Short - vm snapshot daily at 1:00AM and 30 days retention
-Medium - same as short plus weekly Sunday at 1:00AM and 12 weeks retention
-Long - same as medium plus monthly 1st day of the month at 1:00AM and 12 months retention
--------------------------------------------------------------------------------------------
-
+<div><span style="font-size: medium; font-family: arial, helvetica, sans-serif;">Dear team,</span></div>
+<div>&nbsp;</div>
+<div><span style="font-size: medium; font-family: arial, helvetica, sans-serif;">Please find attached the Report for $kg Backup Jobs.</span></div>
+<div>&nbsp;</div>
+<div><span style="font-size: medium; font-family: arial, helvetica, sans-serif;">Best regards,</span></div>
+<div>&nbsp;</div>
+<div>&nbsp;</div>
+<div><span>&nbsp; &nbsp; </span></div>
+<div><span style="font-size: small; font-family: arial, helvetica, sans-serif;"><strong>Backup Policies Resumed Information</strong></span></div>
+<div>
+<ul>
+<li><span style="font-size: small; font-family: arial, helvetica, sans-serif;">Short - vm snapshot daily at 1:00AM and 30 days retention</span></li>
+</ul>
+</div>
+<div>
+<ul>
+<li><span style="font-size: small; font-family: arial, helvetica, sans-serif;">Medium - same as short plus weekly Sunday at 1:00AM and 12 weeks retention</span></li>
+</ul>
+</div>
+<div>
+<ul>
+<li><span style="font-size: small; font-family: arial, helvetica, sans-serif;">Long - same as medium plus monthly 1st day of the month at 1:00AM and 12 months retention</span></li>
+</ul>
+<p>&nbsp;</p>
+<p><span style="font-size: medium; font-family: arial, helvetica, sans-serif; color: #ff0000;">Schindler Server Team - Devops Automated Report</span></p>
+<p>&nbsp;</p>
+</div>
+<div>&nbsp;</div>
 "@
 
 Send-MailMessage -From $From -To $To -Subject $Subject -Body $Body -Attachments $Attachment -BodyAsHtml
