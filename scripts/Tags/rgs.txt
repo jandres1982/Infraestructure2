@@ -1,0 +1,3 @@
+rg-cis-nonprod-landeskdepot-01
+RG-CIS-NONPROD-SERVER-01
+rg-cis-nonprod-storage-02
