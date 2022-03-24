@@ -15,8 +15,8 @@ foreach ($rg in $rgs)
             {#check if the RG exist in the subscription, and work on it. 
             #Working in the RG
                 Write-host "working in $rg"
-                $cc = $cc_new[$i]
-                $mergedTags = @{"kg"="$cc"}
+                $kg = $kg_new[$i]
+                $mergedTags = @{"kg"="$kg"}
                 $rg_name = Get-AzResourceGroup -Name $rg
                 Update-AzTag -ResourceId $rg_name.ResourceId -Tag $mergedTags -Operation Merge   
             #Working in the resources inside the RG
