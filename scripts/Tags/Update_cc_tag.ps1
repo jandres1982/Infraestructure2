@@ -6,52 +6,33 @@ $rgs = get-content "rgs.txt"
 $cc_new = get-content "tag_cc_new.txt"
 [int]$i = "0"
 foreach ($rg in $rgs)
-    {
+    {#for every RG
         foreach ($sub in $subs)
-        {
+        {#in every subscription
         Select-AzSubscription -Subscription "$sub"
 
             if (Get-AzResourceGroup -Name $rg -ErrorAction SilentlyContinue)
-            {
-            Write-host "working in $rg"
-            $cc = $cc_new[$i]
-            $mergedTags = @{"costcenter"="$cc"}
-            $rg_name = Get-AzResourceGroup -Name $rg
-            Update-AzTag -ResourceId $rg_name.ResourceId -Tag $mergedTags -Operation Merge    
+            {#check if the RG exist in the subscription, and work on it. 
+            #Working in the RG
+                Write-host "working in $rg"
+                $cc = $cc_new[$i]
+                $mergedTags = @{"costcenter"="$cc"}
+                $rg_name = Get-AzResourceGroup -Name $rg
+                Update-AzTag -ResourceId $rg_name.ResourceId -Tag $mergedTags -Operation Merge   
+            #Working in the resources inside the RG
+                $resources = Get-AzResource -ResourceGroupName $rg
+                $rid = $resources.ResourceId
+                    foreach ($resource_id in $rid)
+                        {
+                        Update-AzTag -ResourceId $resource_id -Tag $mergedTags -Operation Merge
+                        }
             }else
                     {          
                 #write-host "can't find this $rg"
                     }
         }
         $i = $i +1
-        Write-host "$cc and $i and $rg"
-}
-
------works
-############# updating tags for resource group itself ######################
-$Rid = Get-AzResourceGroup -Tag @{'kg'="shh"}
-$Rid = $rid.ResourceId
-$Rg_name = Get-AzResourceGroup -Tag @{'kg'="shh"}
-$Rg_name = $Rg_name.ResourceGroupName
-
-foreach ($resource_group_id in $rid)
-{
-Update-AzTag -ResourceId $resource_group_id -Tag $mergedTags -Operation Merge
-}
-#######################################
-
-
-foreach ($rg in $rg_name)
-     {
-     $resources = Get-AzResource -ResourceGroupName $rg
-     $rid = $resources.ResourceId
-
-          foreach ($resource_id in $rid)
-          {
-          Update-AzTag -ResourceId $resource_id -Tag $mergedTags -Operation Merge
-          }
-      }
-
-
-
+        Write-host ""
+        Write-host "$cc was applied to $rg and we are in the iteration $i"
+        Write-host ""
 }
