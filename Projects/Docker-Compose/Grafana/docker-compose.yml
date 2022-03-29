@@ -1,0 +1,14 @@
+version: '3'
+
+services:
+  grafana:
+    image: grafana/grafana:latest
+    container_name: grafana
+    ports:
+      - "3000:3000"
+    user: "0"
+    volumes:
+      #Data persistency
+      - "grafana-data:/var/lib/grafana"
+      - "grafana-config:/etc/grafana"
+    restart: always
