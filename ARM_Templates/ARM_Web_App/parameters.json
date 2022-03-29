@@ -6,37 +6,43 @@
             "value": "7fa3c3a2-7d0d-4987-a30c-30623e38756c"
         },
         "name": {
-            "value": "esm-virtual-agent-app"
+            "value": "test-najum"
         },
         "location": {
             "value": "North Europe"
         },
         "hostingPlanName": {
-            "value": "asp-man-nonprod-dev-esmvirtualagent-01"
+            "value": "asp-test-najum-01"
         },
         "serverFarmResourceGroup": {
-            "value": "rg-man-dev-esmvirtualagent-01"
+            "value": "rg-cis-test-server-01"
         },
         "alwaysOn": {
             "value": false
         },
         "sku": {
-            "value": "Basic"
+            "value": "Free"
         },
         "skuCode": {
-            "value": "B3"
+            "value": "F1"
         },
         "workerSize": {
-            "value": "2"
+            "value": "0"
         },
         "workerSizeId": {
-            "value": "2"
+            "value": "0"
         },
         "numberOfWorkers": {
             "value": "1"
         },
-        "linuxFxVersion": {
-            "value": "PYTHON|3.8"
+        "currentStack": {
+            "value": "dotnet"
+        },
+        "phpVersion": {
+            "value": "OFF"
+        },
+        "netFrameworkVersion": {
+            "value": "v6.0"
         }
     }
 }

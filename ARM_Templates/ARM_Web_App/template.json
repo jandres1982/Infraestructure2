@@ -35,10 +35,17 @@
         "numberOfWorkers": {
             "type": "string"
         },
-        "linuxFxVersion": {
+        "currentStack": {
+            "type": "string"
+        },
+        "phpVersion": {
+            "type": "string"
+        },
+        "netFrameworkVersion": {
             "type": "string"
         }
     },
+    "variables": {},
     "resources": [
         {
             "apiVersion": "2018-11-01",
@@ -53,11 +60,18 @@
                 "name": "[parameters('name')]",
                 "siteConfig": {
                     "appSettings": [],
-                    "linuxFxVersion": "[parameters('linuxFxVersion')]",
+                    "metadata": [
+                        {
+                            "name": "CURRENT_STACK",
+                            "value": "[parameters('currentStack')]"
+                        }
+                    ],
+                    "phpVersion": "[parameters('phpVersion')]",
+                    "netFrameworkVersion": "[parameters('netFrameworkVersion')]",
                     "alwaysOn": "[parameters('alwaysOn')]"
                 },
                 "serverFarmId": "[concat('/subscriptions/', parameters('subscriptionId'),'/resourcegroups/', parameters('serverFarmResourceGroup'), '/providers/Microsoft.Web/serverfarms/', parameters('hostingPlanName'))]",
-                "clientAffinityEnabled": false
+                "clientAffinityEnabled": true
             }
         },
         {
@@ -65,7 +79,7 @@
             "name": "[parameters('hostingPlanName')]",
             "type": "Microsoft.Web/serverfarms",
             "location": "[parameters('location')]",
-            "kind": "linux",
+            "kind": "",
             "tags": {},
             "dependsOn": [],
             "properties": {
@@ -73,7 +87,7 @@
                 "workerSize": "[parameters('workerSize')]",
                 "workerSizeId": "[parameters('workerSizeId')]",
                 "numberOfWorkers": "[parameters('numberOfWorkers')]",
-                "reserved": true
+                "zoneRedundant": false
             },
             "sku": {
                 "Tier": "[parameters('sku')]",
