@@ -1,8 +1,8 @@
 #$subs = Get-AzSubscription | Where-Object {($_.Name -match "s-sis-eu-prod-01") -or ($_.Name -match "s-sis-eu-nonprod-01")}
-$subs=Get-AzSubscription | Where-Object {$_.Name -match "s-sis-[aec][upmh]*"}
 #$subs= "s-sis-eu-nonprod-01"
+$subs=Get-AzSubscription | Where-Object {$_.Name -match "s-sis-[aec][upmh]*"}
 $date = $(get-date -format yyyy-MM-ddTHH-mm)
-$kg = "ESP_POR"
+
 ###################################################################
 
 $vmBackupReport = [System.Collections.ArrayList]::new()
@@ -68,48 +68,23 @@ $vms = get-azvm | where-object {$_.Name -like "[ep][os][rp]wsr*"}
  } #foreach ($vm in $vms) 
 }
 #}
-
-$report = 'Backup_'+"$kg"+'_Report_'+"$date"+'.csv'
-
-$vmBackupReport | Export-Csv $report
+$vmBackupReport | Export-Csv Backup_ESP_POR_Report_$date.csv
 
 $PSEmailServer = "smtp.eu.schindler.com"
 $From = "scc-support-zar.es@schindler.com"
 $to = "antoniovicente.vento@schindler.com"
 
-
-$Subject = "Backup Report $kg Servers"
+$Subject = "Backup Report ESP/POR Servers"
 #$Filename = Get-ChildItem $Path -Name "Att*" | select -Last 1
-$Attachment = $report
+$Attachment = "Backup_ESP_POR_Report_$date.csv"
 $Body = @"
-<div><span style="font-size: medium; font-family: arial, helvetica, sans-serif;">Dear team,</span></div>
-<div>&nbsp;</div>
-<div><span style="font-size: medium; font-family: arial, helvetica, sans-serif;">Please find attached the Report for $kg Backup VM's.</span></div>
-<div>&nbsp;</div>
-<div><span style="font-size: medium; font-family: arial, helvetica, sans-serif;">Best regards,</span></div>
-<div>&nbsp;</div>
-<div>&nbsp;</div>
-<div><span>&nbsp; &nbsp; </span></div>
-<div><span style="font-size: small; font-family: arial, helvetica, sans-serif;"><strong>Backup Policies Resumed Information</strong></span></div>
-<div>
-<ul>
-<li><span style="font-size: small; font-family: arial, helvetica, sans-serif;">Short - vm snapshot daily at 1:00AM and 30 days retention</span></li>
-</ul>
-</div>
-<div>
-<ul>
-<li><span style="font-size: small; font-family: arial, helvetica, sans-serif;">Medium - same as short plus weekly Sunday at 1:00AM and 12 weeks retention</span></li>
-</ul>
-</div>
-<div>
-<ul>
-<li><span style="font-size: small; font-family: arial, helvetica, sans-serif;">Long - same as medium plus monthly 1st day of the month at 1:00AM and 12 months retention</span></li>
-</ul>
-<p>&nbsp;</p>
-<p><span style="font-size: medium; font-family: arial, helvetica, sans-serif; color: #ff0000;">Schindler Server Team - DevOps Automated Report</span></p>
-<p>&nbsp;</p>
-</div>
-<div>&nbsp;</div>
+Dear team,
+
+Please find attached the Report for $kg Backup Jobs.
+
+Best regards,
+
+Schindler Server Team - DevOps Automated Report
 "@
 
-Send-MailMessage -From $From -To $To -Subject $Subject -Body $Body -Attachments $Attachment -BodyAsHtml
+Send-MailMessage -From $From -To $To -Subject $Subject -Body $Body -Attachments $Attachment

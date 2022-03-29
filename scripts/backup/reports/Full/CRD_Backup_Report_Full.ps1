@@ -2,7 +2,7 @@
 $subs=Get-AzSubscription | Where-Object {$_.Name -match "s-sis-[aec][upmh]*"}
 #$subs= "s-sis-eu-nonprod-01"
 $date = $(get-date -format yyyy-MM-ddTHH-mm)
-$kg = "ESP_POR"
+$kg = "CRD"
 ###################################################################
 
 $vmBackupReport = [System.Collections.ArrayList]::new()
@@ -21,7 +21,7 @@ az account set --subscription "$sub"
 #$subs = @("s-sis-eu-nonprod-01","s-sis-eu-prod-01","s-sis-am-prod-01","s-sis-am-nonprod-01","s-sis-ap-prod-01")
 $date = $(get-date -format yyyy-MM-ddTHH-mm)
 $backupVaults = Get-AzRecoveryServicesVault
-$vms = get-azvm | where-object {$_.Name -like "[ep][os][rp]wsr*"}
+$vms = get-azvm | where-object {$_.Name -like "$kg*"}
 
  foreach ($vm in $vms) 
  {
