@@ -5,26 +5,23 @@
         "location": {
             "value": "eastus2"
         },
-        "networkInterfaceName3": {
-            "value": "secwsrxxxx796_z3"
+        "networkInterfaceName": {
+            "value": "shhwsrxxxx634"
         },
         "subnetName": {
-            "value": "sub-frontend-iaas-01"
+            "value": "sub-backend-iaas-01"
         },
         "virtualNetworkId": {
-            "value": "/subscriptions/e03c610e-a71c-4518-a4a3-8ce128fca34d/resourceGroups/rg-cis-prod-network-01/providers/Microsoft.Network/virtualNetworks/vnet-prod-use2-01"
+            "value": "/subscriptions/8528129a-0394-4057-ac4e-0fec3da2246d/resourceGroups/rg-cis-nonprod-network-01/providers/Microsoft.Network/virtualNetworks/vnet-nonprod-use2-01"
         },
         "virtualMachineName": {
-            "value": "secwsrxxxx"
-        },
-        "virtualMachineName3": {
-            "value": "secwsrxxxx"
+            "value": "shhwsrxxxx"
         },
         "virtualMachineComputerName": {
-            "value": "secwsrxxxx"
+            "value": "shhwsrxxxx"
         },
         "virtualMachineRG": {
-            "value": "rg-cis-prod-server-01"
+            "value": "rg-cis-nonprod-server-01"
         },
         "osDiskType": {
             "value": "StandardSSD_LRS"
@@ -51,13 +48,10 @@
             "value": false
         },
         "diagnosticsStorageAccountName": {
-            "value": "stproddiagnostic0004"
+            "value": "stnonproddiagnostic0002"
         },
         "diagnosticsStorageAccountId": {
-            "value": "/subscriptions/e03c610e-a71c-4518-a4a3-8ce128fca34d/resourceGroups/rg-cis-prod-storage-01/providers/Microsoft.Storage/storageAccounts/stproddiagnostic0004"
-        },
-        "zone": {
-            "value": "3"
+            "value": "/subscriptions/8528129a-0394-4057-ac4e-0fec3da2246d/resourceGroups/rg-cis-nonprod-storage-01/providers/Microsoft.Storage/storageAccounts/stnonproddiagnostic0002"
         }
     }
 }

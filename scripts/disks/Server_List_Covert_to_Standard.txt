@@ -1,0 +1,14 @@
+uaewsr1008
+vm-prod-filemaker-jsgwsr0078
+vm-prod-FileServer-jktwsr1004
+vm-prod-FileServer-jpnwsr0013
+vm-prod-FileServer-jsbwsr0001
+vm-prod-FileServer-jsgwsr0070
+vm-prod-FileServer-jsgwsr0071
+vm-prod-FileServer-jsgwsr0074
+vm-prod-FileServer-jspwsr0112
+vm-prod-FileServer-jstwsr0004
+vm-prod-FileServer-jtpwsr0006
+vm-prod-File-Server-mynwsr0001
+vm-prod-FileServer-nzcwsr0011
+vm-prod-FileServer-skowsr0016

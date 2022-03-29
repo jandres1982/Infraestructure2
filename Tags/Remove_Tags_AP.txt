@@ -1,1 +1,0 @@
-AzureBackupRG_southeastasia_1
