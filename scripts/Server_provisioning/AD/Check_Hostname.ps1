@@ -3,7 +3,7 @@ param([string]$vm)
 ########## Check Azure Hostname #####################
 
 $subs=Get-AzSubscription | Where-Object {$_.Name -match "s-sis-[aec][upmh]*"}
-
+Write-host "$vm"
 foreach ($sub in $subs)
 {
 Select-AzSubscription -Subscription "$sub"
