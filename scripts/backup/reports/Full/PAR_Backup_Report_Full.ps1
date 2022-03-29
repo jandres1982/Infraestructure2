@@ -75,7 +75,7 @@ $vmBackupReport | Export-Csv $report
 
 $PSEmailServer = "smtp.eu.schindler.com"
 $From = "scc-support-zar.es@schindler.com"
-$to = "antoniovicente.vento@schindler.com"
+$to = "alfonso.marques@schindler.com","antoniovicente.vento@schindler.com","xavier.hernandez@schindler.com","serge.rollin@schindler.com"
 
 
 $Subject = "Backup Report $kg Servers"
