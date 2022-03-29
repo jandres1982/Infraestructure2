@@ -9,6 +9,6 @@ services:
     user: "0"
     volumes:
       #Data persistency
-      - "grafana-data:/var/lib/grafana"
+#      - "grafana-data:/var/lib/grafana"
 #      - "grafana-config:/etc/grafana"
     restart: always
