@@ -21,7 +21,7 @@ az account set --subscription "$sub"
 #$subs = @("s-sis-eu-nonprod-01","s-sis-eu-prod-01","s-sis-am-prod-01","s-sis-am-nonprod-01","s-sis-ap-prod-01")
 $date = $(get-date -format yyyy-MM-ddTHH-mm)
 $backupVaults = Get-AzRecoveryServicesVault
-$vms = get-azvm | where-object {$_.Name -like "*wsr*"}
+$vms = get-azvm
 
  foreach ($vm in $vms) 
  {
@@ -35,7 +35,12 @@ $vms = get-azvm | where-object {$_.Name -like "*wsr*"}
          #Backup recovery Vault policy Information
 
                 $container = Get-AzRecoveryServicesBackupContainer -ContainerType AzureVM -VaultId $vmBackupVault.ID -FriendlyName $vm.Name -WarningAction SilentlyContinue -Status "Registered"
+                if ($container.Count -gt 1)
+                {$backupItem = Get-AzRecoveryServicesBackupItem -Container $container[1] -WorkloadType AzureVM -VaultId $vmBackupVault.ID -WarningAction SilentlyContinue}
+                else
+                {
                 $backupItem = Get-AzRecoveryServicesBackupItem -Container $container -WorkloadType AzureVM -VaultId $vmBackupVault.ID -WarningAction SilentlyContinue
+                }
 
      } #if ($recoveryVaultInfo.BackedUp -eq $true)
      else 
