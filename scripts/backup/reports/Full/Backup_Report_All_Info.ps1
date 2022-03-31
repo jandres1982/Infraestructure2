@@ -32,10 +32,13 @@ $vms = get-azvm
          $vmBackupVault = $backupVaults | Where-Object {$_.ID -eq $recoveryVaultInfo.VaultId}
 
          #Backup recovery Vault policy Information
-
-                $container = Get-AzRecoveryServicesBackupContainer -ContainerType AzureVM -VaultId $vmBackupVault.ID -FriendlyName $vm.Name -WarningAction SilentlyContinue -Status "Registered"
-                $backupItem = Get-AzRecoveryServicesBackupItem -Container $container -WorkloadType AzureVM -VaultId $vmBackupVault.ID -WarningAction SilentlyContinue
-
+         $container = Get-AzRecoveryServicesBackupContainer -ContainerType AzureVM -VaultId $vmBackupVault.ID -FriendlyName $vm.Name -WarningAction SilentlyContinue -Status "Registered"
+         if ($container.Count -gt 1)
+         {$backupItem = Get-AzRecoveryServicesBackupItem -Container $container[1] -WorkloadType AzureVM -VaultId $vmBackupVault.ID -WarningAction SilentlyContinue}
+         else
+         {
+         $backupItem = Get-AzRecoveryServicesBackupItem -Container $container -WorkloadType AzureVM -VaultId $vmBackupVault.ID -WarningAction SilentlyContinue
+         }
      } #if ($recoveryVaultInfo.BackedUp -eq $true)
      else 
      {
