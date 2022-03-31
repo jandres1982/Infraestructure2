@@ -79,7 +79,7 @@ $to = "antoniovicente.vento@schindler.com","nahum.sancho@schindler.com"
 
 $Subject = "Backup Report $kg Servers"
 #$Filename = Get-ChildItem $Path -Name "Att*" | select -Last 1
-$Attachment = "Backup_Report_All_Info_$date.csv"
+$Attachment = $report
 $Body = @"
 <div><span style="font-size: medium; font-family: arial, helvetica, sans-serif;">Dear team,</span></div>
 <div>&nbsp;</div>
