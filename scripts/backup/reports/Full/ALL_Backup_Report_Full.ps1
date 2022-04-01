@@ -111,4 +111,4 @@ $Body = @"
 <div>&nbsp;</div>
 "@
 
-Send-MailMessage -From $From -To $To -Subject $Subject -Body $Body -Attachments $Attachment
+Send-MailMessage -From $From -To $To -Subject $Subject -Body $Body -Attachments $Attachment -BodyAsHtml
