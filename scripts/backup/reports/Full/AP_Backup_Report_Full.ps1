@@ -80,8 +80,7 @@ $vmBackupReport | Export-Csv $report
 
 $PSEmailServer = "smtp.eu.schindler.com"
 $From = "scc-support-zar.es@schindler.com"
-$to = "alfonso.marques@schindler.com","antoniovicente.vento@schindler.com"
-
+$to = "alfonso.marques@schindler.com","antoniovicente.vento@schindler.com","carman.leung@schindler.com","calvin.siu@schindler.com"
 
 $Subject = "Backup Report $kg Servers"
 #$Filename = Get-ChildItem $Path -Name "Att*" | select -Last 1
