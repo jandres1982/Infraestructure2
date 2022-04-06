@@ -1,7 +1,7 @@
 param([string]$name,[string]$applicationowner,[string]$costcenter,[string]$infrastructureservice,[string]$kg,[string]$serviceowner,[string]$technicalcontact)
 $PSEmailServer = "smtp.eu.schindler.com"
 $From = "scc-support-zar.es@schindler.com"
-$to = "eusebio.rodriguez@schindler.com"
+$to = "nahum.sancho@schindler.com"
 
 $Subject = "New Resource Group $name"
 $Body = @"
