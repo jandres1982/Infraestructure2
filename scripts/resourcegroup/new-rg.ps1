@@ -1,0 +1,2 @@
+param([string]$location,[string]$name,[string]$applicationowner,[string]$costcenter,[string]$infrastructureservice,[string]$kg,[string]$serviceowner,[string]$technicalcontact)
+az group create -l $location -n $name --tags applicationowner=$applicationowner costcenter=$costcenter infrastructureservice=$infrastructureservice kg=$kg serviceowner=$serviceowner technicalcontact=$technicalcontact
