@@ -1,5 +1,5 @@
 # AzSpeedTest
-
+# Functions
 function Get-AzRegion
 {
     <#
@@ -210,6 +210,8 @@ function Test-AzRegionLatency
     }
 }
 
+#Main
+Get-AzRegion
 $results = Test-AzRegionLatency -Region northeurope,eastus2,southeastasia -Iterations 25
 $results | Sort-Object Average | Format-Table -GroupBy -Region
 
