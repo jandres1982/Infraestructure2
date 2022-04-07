@@ -6,7 +6,7 @@
 # Install Zabbix agent 2
 
 cmd.exe /c "C:\tmp\Zabbix_agent2\bin\zabbix_agent2.exe --install"
-start-sleep 60
+start-sleep 30
 
 # Start Zabbix agent 2
 
