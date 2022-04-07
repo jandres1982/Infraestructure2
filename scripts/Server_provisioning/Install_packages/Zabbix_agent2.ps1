@@ -9,6 +9,7 @@ cmd.exe /c "C:\tmp\Zabbix_agent2\bin\zabbix_agent2.exe --install"
 start-sleep 30
 
 # Set Hostname
+echo $vm
 
 (Get-Content -Path 'C:\tmp\Zabbix_agent2\bin\zabbix_agent2.win.conf') -replace 'vm',$vm | Set-Content -Path C:\tmp\Zabbix_agent2\bin\zabbix_agent2.win.conf
 
