@@ -10,7 +10,7 @@ start-sleep 30
 
 # Set Hostname
 
-#(Get-Content -Path 'C:\tmp\Zabbix_agent2\bin\zabbix_agent2.win.conf') -replace 'vm',$vm | Set-Content -Path C:\tmp\Zabbix_agent2\bin\zabbix_agent2.win.conf
+(Get-Content -Path 'C:\tmp\Zabbix_agent2\bin\zabbix_agent2.win.conf') -replace 'vm',$vm | Set-Content -Path C:\tmp\Zabbix_agent2\bin\zabbix_agent2.win.conf
 
 # Start Zabbix agent 2
 
