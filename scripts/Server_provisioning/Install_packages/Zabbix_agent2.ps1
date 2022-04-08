@@ -3,6 +3,11 @@
 #cmd.exe /c "C:\Program Files\Zabbix\bin>zabbix_agentd.exe -c "C:\Program Files\Zabbix\conf\zabbix_agentd.win.conf" -d"
 #start-sleep 60
 
+# Copy Zabbix folder from provision temporary folder to the server
+
+Copy-Item -Path C:\provision\Zabbix_6.0_Agent_v2 -Destination "C:\Program Files"
+start-sleep 20
+
 # Set Hostname
 
 $vm = hostname
