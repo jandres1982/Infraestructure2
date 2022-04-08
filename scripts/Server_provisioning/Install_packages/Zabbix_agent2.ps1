@@ -13,15 +13,15 @@ start-sleep 20
 
 $vm = hostname
 
-(Get-Content -Path 'C:\tmp\Zabbix_agent2\bin\zabbix_agent2.win.conf') -replace 'vm',$vm | Set-Content -Path C:\tmp\Zabbix_agent2\bin\zabbix_agent2.win.conf
+(Get-Content -Path 'C:\Program Files\Zabbix_6.0_Agent_v2\bin\zabbix_agent2.win.conf') -replace 'vm',$vm | Set-Content -Path "C:\Program Files\Zabbix_6.0_Agent_v2\bin\zabbix_agent2.win.conf"
 
 # Install Zabbix agent 2
 
-cmd.exe /c "C:\tmp\Zabbix_agent2\bin\zabbix_agent2.exe --install"
+cmd.exe /c "C:\Program Files\Zabbix_6.0_Agent_v2\bin\zabbix_agent2.exe --install"
 
 start-sleep 30
 
 
 # Start Zabbix agent 2
 
-cmd.exe /c "C:\tmp\Zabbix_agent2\bin\zabbix_agent2.exe --start"
+cmd.exe /c "C:\Program Files\Zabbix_6.0_Agent_v2\bin\zabbix_agent2.exe --start"
