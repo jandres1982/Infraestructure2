@@ -1,6 +1,6 @@
 $source = "d:\provision"
 $target = "\\10.44.17.4\servers\provision"
-$log = "c:\temp\provision_sync_CH.txt"
+$log = "c:\temp\provision_sync_CH_nonProd.txt"
 $connectTestResult = Test-NetConnection -ComputerName 10.44.17.4 -Port 445
 if ($connectTestResult.TcpTestSucceeded) {
     # Save the password so the drive will persist on reboot
