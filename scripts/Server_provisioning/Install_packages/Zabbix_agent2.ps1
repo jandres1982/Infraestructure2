@@ -5,7 +5,7 @@
 
 # Copy Zabbix folder from provision temporary folder to the server
 
-Copy-Item -Path C:\provision\Zabbix_6.0_Agent_v2 -Destination "C:\Program Files"
+Copy-Item -Path C:\provision\Zabbix_6.0_Agent_v2 -Destination "C:\Program Files" -recurse -force
 start-sleep 20
 
 # Set Hostname
