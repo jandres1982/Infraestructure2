@@ -2,7 +2,7 @@
 $subs=Get-AzSubscription | Where-Object {$_.Name -match "s-sis-[aec][upmh]*"}
 #$subs= "s-sis-eu-nonprod-01"
 $date = $(get-date -format yyyy-MM-ddTHH-mm)
-$kg = "PAR"
+$kg = "WII"
 ###################################################################
 
 $vmBackupReport = [System.Collections.ArrayList]::new()
@@ -75,7 +75,7 @@ $vmBackupReport | Export-Csv $report -NoTypeInformation | Select-Object -Skip 1 
 
 $PSEmailServer = "smtp.eu.schindler.com"
 $From = "scc-support-zar.es@schindler.com"
-$to = "alfonso.marques@schindler.com","antoniovicente.vento@schindler.com","xavier.hernandez@schindler.com","serge.rollin@schindler.com"
+$to = "florian.slechta@schindler.com","alfonso.marques@schindler.com","antoniovicente.vento@schindler.com"
 
 
 $Subject = "Backup Report $kg Servers"

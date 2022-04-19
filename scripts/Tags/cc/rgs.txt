@@ -1,1 +1,6 @@
-rg-gis-qual-ssot-01
+rg-crd-prod-sharedsql-02
+rg-crd-prod-ptc-01
+rg-crd-prod-creo-01
+rg-crd-prod-visualgc-01
+rg-shh-prod-sciforma-01
+rg-shh-test-sciforma-01

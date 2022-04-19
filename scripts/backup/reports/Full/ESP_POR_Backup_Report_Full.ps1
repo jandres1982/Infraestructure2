@@ -71,7 +71,7 @@ $vms = get-azvm | where-object {$_.Name -like "[ep][os][rp]wsr*"}
 
 $report = 'Backup_'+"$kg"+'_Report_'+"$date"+'.csv'
 
-$vmBackupReport | Export-Csv $report
+$vmBackupReport | Export-Csv $report -NoTypeInformation | Select-Object -Skip 1 | Set-Content $Report
 
 $PSEmailServer = "smtp.eu.schindler.com"
 $From = "scc-support-zar.es@schindler.com"

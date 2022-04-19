@@ -1,7 +1,7 @@
 $subs=Get-AzSubscription | Where-Object {$_.Name -match "s-sis-[aec][upmh]*"}
 #$subs= "s-sis-eu-nonprod-01"
 $date = $(get-date -format yyyy-MM-ddTHH-mm)
-
+$kg = "ALL"
 ###################################################################
 
 $vmBackupReport = [System.Collections.ArrayList]::new()
@@ -32,10 +32,13 @@ $vms = get-azvm
          $vmBackupVault = $backupVaults | Where-Object {$_.ID -eq $recoveryVaultInfo.VaultId}
 
          #Backup recovery Vault policy Information
-
-                $container = Get-AzRecoveryServicesBackupContainer -ContainerType AzureVM -VaultId $vmBackupVault.ID -FriendlyName $vm.Name -WarningAction SilentlyContinue -Status "Registered"
-                $backupItem = Get-AzRecoveryServicesBackupItem -Container $container -WorkloadType AzureVM -VaultId $vmBackupVault.ID -WarningAction SilentlyContinue
-
+         $container = Get-AzRecoveryServicesBackupContainer -ContainerType AzureVM -VaultId $vmBackupVault.ID -FriendlyName $vm.Name -WarningAction SilentlyContinue -Status "Registered"
+         if ($container.Count -gt 1)
+         {$backupItem = Get-AzRecoveryServicesBackupItem -Container $container[1] -WorkloadType AzureVM -VaultId $vmBackupVault.ID -WarningAction SilentlyContinue}
+         else
+         {
+         $backupItem = Get-AzRecoveryServicesBackupItem -Container $container -WorkloadType AzureVM -VaultId $vmBackupVault.ID -WarningAction SilentlyContinue
+         }
      } #if ($recoveryVaultInfo.BackedUp -eq $true)
      else 
      {
@@ -67,23 +70,46 @@ $vms = get-azvm
  } #foreach ($vm in $vms) 
 }
 #}
-$vmBackupReport | Export-Csv Backup_ESP_POR_Report_$date.csv
+$report = 'Backup_'+"$kg"+'_Report_'+"$date"+'.csv'
+$vmBackupReport | Export-Csv $report -NoTypeInformation | Select-Object -Skip 1 | Set-Content $Report
 
 $PSEmailServer = "smtp.eu.schindler.com"
 $From = "scc-support-zar.es@schindler.com"
-$to = "antoniovicente.vento@schindler.com","nahum.sancho@schindler.com"
+$to = "gda_usr_dcff050b-8326-48c9-8bf9-61f8de7e89f0@schindler.com","gdl_usr_7aabcc1e-97e6-4283-9271-c04245556940@cloud.schindler.com"
 
-$Subject = "Backup_Report_All_Info"
+$Subject = "Backup Report $kg Servers"
 #$Filename = Get-ChildItem $Path -Name "Att*" | select -Last 1
-$Attachment = "Backup_Report_All_Info_$date.csv"
+$Attachment = $report
 $Body = @"
-Dear team,
-
-Please find attached the Report for Backup for all VMs in Azure.
-
-Best regards,
-
-Schindler Server Team - DevOps Automated Report
+<div><span style="font-size: medium; font-family: arial, helvetica, sans-serif;">Dear team,</span></div>
+<div>&nbsp;</div>
+<div><span style="font-size: medium; font-family: arial, helvetica, sans-serif;">Please find attached the Report for $kg Backup VM's.</span></div>
+<div>&nbsp;</div>
+<div><span style="font-size: medium; font-family: arial, helvetica, sans-serif;">Best regards,</span></div>
+<div>&nbsp;</div>
+<div>&nbsp;</div>
+<div><span>&nbsp; &nbsp; </span></div>
+<div><span style="font-size: small; font-family: arial, helvetica, sans-serif;"><strong>Backup Policies Resumed Information</strong></span></div>
+<div>
+<ul>
+<li><span style="font-size: small; font-family: arial, helvetica, sans-serif;">Short - vm snapshot daily at 1:00AM and 30 days retention</span></li>
+</ul>
+</div>
+<div>
+<ul>
+<li><span style="font-size: small; font-family: arial, helvetica, sans-serif;">Medium - same as short plus weekly Sunday at 1:00AM and 12 weeks retention</span></li>
+</ul>
+</div>
+<div>
+<ul>
+<li><span style="font-size: small; font-family: arial, helvetica, sans-serif;">Long - same as medium plus monthly 1st day of the month at 1:00AM and 12 months retention</span></li>
+</ul>
+<p>&nbsp;</p>
+<p><span style="font-size: medium; font-family: arial, helvetica, sans-serif; color: #ff0000;">Schindler Server Team - DevOps Automated Report</span></p>
+<p>&nbsp;</p>
+</div>
+<div>&nbsp;</div>
 "@
+#https://htmled.it/
 
-Send-MailMessage -From $From -To $To -Subject $Subject -Body $Body -Attachments $Attachment
+Send-MailMessage -From $From -To $To -Subject $Subject -Body $Body -Attachments $Attachment -BodyAsHtml
