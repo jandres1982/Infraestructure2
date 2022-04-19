@@ -16,7 +16,7 @@ Write-Host ($writeEmptyLine + " # Soft delete disabled for Recovery Service vaul
 $Container = Get-AzRecoveryServicesBackupContainer -ContainerType AzureVM -Status Registered -FriendlyName $(vm) -VaultId $vault.ID
 $BackupItem = Get-AzRecoveryServicesBackupItem -Container $Container -WorkloadType AzureVM -VaultId $vault.ID
 Disable-AzRecoveryServicesBackupProtection -Item $BackupItem -VaultId $vault.ID -RemoveRecoveryPoints -Force -Verbose
-Write-Host ($writeEmptyLine + "# Deleted backup date for $vm in Recovery Services vault ")
+Write-Host ($writeEmptyLine + "# Deleted backup date for $(vm) in Recovery Services vault ")
 
 ## ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 ## Enable soft delete for the Azure Backup Recovery Services vault
@@ -32,4 +32,10 @@ $policyname = Get-AzRecoveryServicesBackupProtectionPolicy -VaultId $destination
 $virtualmachine = Get-AzVM -Name $(vm)
 Enable-AzRecoveryServicesBackupProtection -VaultId $destination_vault.ID -Policy $policyname -name $virtualmachine.Name -ResourceGroupName $virtualmachine.ResourceGroupName
 
-Write-Host ($writeEmptyLine + " # Backup enable for $vm in Recovery Service vault" + $destination_vault.Name)
+Write-Host ($writeEmptyLine + " # Backup enable for $(vm) in Recovery Service vault" + $destination_vault.Name)
+
+## ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+## Start Backup Job VM
+
+Backup-AzRecoveryServicesBackupItem -Item $item
+Write-Host ($writeEmptyLine + " # Backup job start for $(vm) ")
