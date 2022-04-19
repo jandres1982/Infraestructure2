@@ -1,12 +1,3 @@
-## Variables
-#$sub = "s-sis-eu-nonprod-01"
-#$vm = "zzzwsr0010"
-#$rgvault = "rg-cis-nonprod-backup-01" 
-#$vaultName = "rsv-nonprod-euno-lrsbackup-01" 
-#$new_vault = "rsv-nonprod-euno-lrsbackup-02"
-#$new_rg_vault = "rg-cis-nonprod-backup-01"
-#$policy = "vm-short-01am-01"
-
 ## ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 ## Select subscription and Backup Vault
 
@@ -36,9 +27,9 @@ Write-Host ($writeEmptyLine + " # Soft delete enabled for Recovery Service vault
 ## ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 ## Start protection VM on a different Backup Vault
 
-$new_vault = Get-AzRecoveryServicesVault -ResourceGroupName $(new_rg_vault) -Name $(new_vault)
-$policy = Get-AzRecoveryServicesBackupProtectionPolicy -VaultId $new_vault.ID -Name $(policy)
-$virtualmachine = Get-AzVM -Name $vm
-Enable-AzRecoveryServicesBackupProtection -VaultId $new_vault.ID -Policy $policy -name $virtualmachine.Name -ResourceGroupName $virtualmachine.ResourceGroupName
+$destination_vault = Get-AzRecoveryServicesVault -ResourceGroupName $(new_rg_vault) -Name $(new_vault)
+$policyname = Get-AzRecoveryServicesBackupProtectionPolicy -VaultId $destination_vault.ID -Name $(policy)
+$virtualmachine = Get-AzVM -Name $(vm)
+Enable-AzRecoveryServicesBackupProtection -VaultId $destination_vault.ID -Policy $policyname -name $virtualmachine.Name -ResourceGroupName $virtualmachine.ResourceGroupName
 
-Write-Host ($writeEmptyLine + " # Backup enable for $vm in Recovery Service vault" + $new_vault.Name)
+Write-Host ($writeEmptyLine + " # Backup enable for $vm in Recovery Service vault" + $destination_vault.Name)
