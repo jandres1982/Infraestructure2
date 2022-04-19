@@ -37,5 +37,5 @@ Write-Host ($writeEmptyLine + " # Backup enable for $(vm) in Recovery Service va
 ## ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 ## Start Backup Job VM
 
-Backup-AzRecoveryServicesBackupItem -Item $item
+Backup-AzRecoveryServicesBackupItem -Item $BackupItem
 Write-Host ($writeEmptyLine + " # Backup job start for $(vm) ")
