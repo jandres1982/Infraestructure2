@@ -1,0 +1,24 @@
+{
+    "properties": {
+        "roleName": "Schindler - VDI Robots ",
+        "description": "Start and Stop virtual clients, configure Autoshutdown and check Boot diagnostics",
+        "assignableScopes": [
+			"/providers/Microsoft.Management/managementGroups/mgmtgr-sis-global"
+		],
+        "permissions": [
+            {
+                "actions": [
+                    "*/read",
+					"Microsoft.Compute/*/read",
+        			"Microsoft.Compute/virtualMachines/start/action",
+        			"Microsoft.Compute/virtualMachines/restart/action",
+        			"Microsoft.Compute/virtualMachines/deallocate/action",
+					"Microsoft.Compute/Auto-shutdown/*"
+                ],
+                "notActions": [],
+                "dataActions": [],
+                "notDataActions": []
+            }
+        ]
+    }
+}
