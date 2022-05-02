@@ -20,7 +20,7 @@
         "virtualMachineName3": {
             "type": "string"
         },
-        "virtualMachineComputerName": {
+        "virtualMachineComputerName3": {
             "type": "string"
         },
         "virtualMachineRG": {
@@ -121,7 +121,7 @@
                     ]
                 },
                 "osProfile": {
-                    "computerName": "[parameters('virtualMachineComputerName')]",
+                    "computerName": "[parameters('virtualMachineComputerName3')]",
                     "adminUsername": "[parameters('adminUsername')]",
                     "adminPassword": "[parameters('adminPassword')]",
                     "windowsConfiguration": {
