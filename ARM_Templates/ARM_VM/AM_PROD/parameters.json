@@ -52,6 +52,9 @@
         },
         "diagnosticsStorageAccountId": {
             "value": "/subscriptions/8528129a-0394-4057-ac4e-0fec3da2246d/resourceGroups/rg-cis-nonprod-storage-01/providers/Microsoft.Storage/storageAccounts/stnonproddiagnostic0002"
+        },
+        "zone": {
+            "value": "3"
         }
     }
 }
