@@ -12,8 +12,11 @@
 # Set Hostname
 
 $vm = hostname
-
 (Get-Content -Path "C:\Program Files\Zabbix_6.0_Agent_v2\bin\zabbix_agent2.win.conf") -replace 'vm',$vm | Set-Content -Path "C:\Program Files\Zabbix_6.0_Agent_v2\bin\zabbix_agent2.win.conf"
+
+$myFQDN=(Get-WmiObject win32_computersystem).DNSHostName+"."+(Get-WmiObject win32_computersystem).Domain ; Write-Host $myFQDN
+(Get-Content -Path "C:\Program Files\Zabbix_6.0_Agent_v2\bin\zabbix_agent2.win.conf") -replace 'myFQDN',$myFQDN | Set-Content -Path "C:\Program Files\Zabbix_6.0_Agent_v2\bin\zabbix_agent2.win.conf"
+
 
 # Install Zabbix agent 2
 cd 'C:\Program Files\Zabbix_6.0_Agent_v2\bin\'
