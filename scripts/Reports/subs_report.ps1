@@ -5,7 +5,7 @@ Get-AzSubscription | Export-Excel -Path schindler_subs_$date.xls
 
 $PSEmailServer = "smtp.eu.schindler.com"
 $From = "scc-support-zar.es@schindler.com"
-$to = "nahum.sancho@schindler.com"
+$to = "nahum.sancho@schindler.com","alfonso.marques@schindler.com"
 
 $Subject = "Schindler Subscrtiptions Report"
 #$Filename = Get-ChildItem $Path -Name "Att*" | select -Last 1
