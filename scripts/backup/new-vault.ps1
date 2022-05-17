@@ -1,11 +1,11 @@
 ### Variables ###
-$vaultname="rsv-prod-vdi-euno-lrsbackup-01"
+$vaultname="rsv-prod-chno-zrsbackupsql-01"
 $rg="rg-cis-prod-backup-01"
-$location="northeurope"
-$sub="s-sis-eu-prod-vdi-01"
-$pe="pe-backup-prod-0008"
-$subnetname="sub-standard-01"
-$redundancy="LocallyRedundant"
+$location="switzerlandnorth"
+$sub="s-sis-ch-prod-01"
+$pe="pe-sql-prod-0005"
+$subnetname="sub-backend-01"
+$redundancy="ZoneRedundant"
 ### Select the subscription ###
 Set-AzContext -Subscription $sub
 ### Creating recovery service vault ###
