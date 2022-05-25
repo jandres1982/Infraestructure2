@@ -4,7 +4,7 @@ $rg="rg-cis-prod-backup-01"
 $location="switzerlandnorth"
 $sub="s-sis-ch-prod-01"
 $pe="pe-sql-prod-0005"
-$subnetname="sub-backend-01"
+$subnetname="sub-generic-privateendpoints-01"
 $redundancy="ZoneRedundant"
 ### Select the subscription ###
 Set-AzContext -Subscription $sub
