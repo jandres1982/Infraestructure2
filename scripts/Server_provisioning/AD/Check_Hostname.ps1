@@ -1,5 +1,5 @@
 
-
+param([string]$vm)
 ############################### Account with no access to create the object #########################
 $KG = $vm.Substring(0,3)
 $head = "_RES_SY_"
