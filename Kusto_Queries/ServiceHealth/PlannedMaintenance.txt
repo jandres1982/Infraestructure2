@@ -1,0 +1,10 @@
+servicehealthresources
+| where type == "microsoft.resourcehealth/events"
+| where properties.EventType =="PlannedMaintenance"
+| extend EventType = properties.EventType
+| extend Impact= properties.Impact
+| extend Title = properties.Title
+| extend Level = properties.Level
+| extend Summary = properties.Summary
+| extend Sub = properties.SubscriptionId
+| project EventType,Impact,Title,Level,Summary,Sub
