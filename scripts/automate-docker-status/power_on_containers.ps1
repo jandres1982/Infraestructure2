@@ -3,6 +3,8 @@ ForEach ($container in $containers)
 {
     $name = $container.Name
     $rg = $container.ResourceGroupName
-    Stop-AzContainerGroup -Name $name -ResourceGroupName $rg
-    "$name is stopped"
+    Start-AzContainerGroup -Name $name -ResourceGroupName $rg
+    "$name is running"
 }
+
+
