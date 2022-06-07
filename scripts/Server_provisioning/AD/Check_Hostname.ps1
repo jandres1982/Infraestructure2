@@ -1,4 +1,23 @@
+
 param([string]$vm)
+############################### Account with no access to create the object #########################
+$KG = $vm.Substring(0,3)
+$head = "_RES_SY_"
+$Admin_Tail="_ADMIN"
+$Admin_Group = "$KG"+"$head"+"$vm"+"$Admin_Tail"
+#New-ADGroup -Name $Admin_Group -GroupCategory Security -GroupScope Universal -DisplayName "$hostname Administrators" -Path "OU=RES,OU=Groups,OU=Admin_Global,OU=NBI12,DC=global,DC=schindler,DC=com" -Description "$Hostname Administrators
+
+$check = Get-ADGroup -Identity $Admin_Group
+if ($check.Name -ne $Admin_Group)
+{
+write-host "$vm Admin group doesn't exist, please create the admin group before deploying"
+Write-Error "$vm Admin group doesn't exist, please create the admin group before deploying"
+break
+}else
+{write-host "$VM Admin Group is $admin_group, ok passed"
+}
+
+##################################################################################################
 
 ########## Check Azure Hostname #####################
 

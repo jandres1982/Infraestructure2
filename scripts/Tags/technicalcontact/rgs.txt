@@ -1,0 +1,4 @@
+rg-gis-dev-materialid-01
+rg-gis-dev-powerplatformgovernance-01
+rg-gis-prod-materialid-01
+rg-gis-prod-powerplatformgovernance-01
