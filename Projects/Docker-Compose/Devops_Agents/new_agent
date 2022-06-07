@@ -1,5 +1,5 @@
 
-$url='https://dev.azure.com/devsdb/SIS-IOC-Azure'
+$url='https://dev.azure.com/devsdb'
 
 $token='v2gy4wi2w3ytal757d5gmx2wyjp3vvhgpraoj3bxpj7sluybgj4q'
 
