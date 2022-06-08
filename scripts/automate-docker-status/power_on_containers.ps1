@@ -1,4 +1,4 @@
-$containers=Get-AzContainerGroup | where {$_.Tags.Keys -contains "auto-power-off" -and $_.Tags.Values -contains "yes"}
+$containers=Get-AzContainerGroup | where {$_.Tag.Keys -contains "auto-power-off" -and $_.Tag.Values -contains "yes"}
 ForEach ($container in $containers)
 {
     $name = $container.Name
