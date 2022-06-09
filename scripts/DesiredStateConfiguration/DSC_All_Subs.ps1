@@ -8,7 +8,8 @@ foreach ($sub in $subs)
 {
 
 
-Select-AzSubscription -Subscription "$sub"
+#Select-AzSubscription -Subscription "$sub"
+Set-AzContext -Subscription "$sub"
 az account set --subscription "$sub"
 
 
