@@ -1,11 +1,3 @@
-FROM mcr.microsoft.com/windows/servercore:ltsc2019
-
-WORKDIR /azp
-
-COPY start.ps1 .
-
-CMD powershell .\start.ps1
-PS /home/antonio/dockeragent> cat ./start.ps1
 if (-not (Test-Path Env:AZP_URL)) {
   Write-Error "error: missing AZP_URL environment variable"
   exit 1
