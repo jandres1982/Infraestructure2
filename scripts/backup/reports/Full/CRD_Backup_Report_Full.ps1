@@ -90,7 +90,7 @@ $Body = @"
 <div><span>Best regards,</span></div>
 <div aria-hidden="true">&nbsp;</div>
 </div>
-<div>Useful information related to backup policy:</div>
+<div><span style="text-decoration: underline;">Useful information related to backup policy</span>:</div>
 <div><span style="font-size: large;"><b></b></span></div>
 <div><span style="font-size: large;"><b>Short term Backup:</b></span></div>
 <div>
@@ -193,7 +193,22 @@ $Body = @"
 <div data-bind="text: monthlyLTRLabel">Retention of monthly backup point</div>
 <div data-bind="text: monthlyLTRText">Retain backup taken every month on 1 at 12:00 AM for 12 Month(s)</div>
 <div data-bind="text: monthlyLTRText"></div>
+<div data-bind="text: monthlyLTRText"></div>
+<div data-bind="text: monthlyLTRText"></div>
 <span data-bind="text: monthlyLTRText" style="color: #0000ff;"><span>Schindler SCC - Automated Azure Report</span></span></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
 </div>
 "@
 
