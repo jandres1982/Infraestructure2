@@ -28,7 +28,7 @@ foreach ($sub in $subs)
 
 $PSEmailServer = "smtp.eu.schindler.com"
 $From = "scc-support-zar.es@schindler.com"
-$to = "nahum.sancho@schindler.com"
+$to = "hanspeter.gut@schindler.com"
 
 $Subject = "VMs Report"
 $Attachment = $report
