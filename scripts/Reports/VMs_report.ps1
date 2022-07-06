@@ -21,25 +21,30 @@ foreach ($sub in $subs)
         $vmObject | Add-Member -MemberType NoteProperty -Name KG -Value $vm.Tags.kg
         $vmObject | Add-Member -MemberType NoteProperty -Name CostCenter -Value $vm.Tags.costcenter
         $vmObject | Add-Member -MemberType NoteProperty -Name InfrastructureService -Value $vm.Tags.infrastructureservice
-        
-        $vmObject  | Export-Csv "vms_report_$date.csv" -NoTypeInformation | Select-Object -Skip 1 | Set-Content "vms_report_$date.csv" 
+        $report = 'VMS_'+'_Report_'+"$date"+'.csv'
+        $vmObject  | Export-Csv $report -NoTypeInformation | Select-Object -Skip 1 | Set-Content $report
     } 
 }
 
 $PSEmailServer = "smtp.eu.schindler.com"
 $From = "scc-support-zar.es@schindler.com"
-$to = "nahum.sancho@schindler.com"
+$to = "nahum.sancho@schindler"
 
-$Subject = "VMs Report $kg Servers"
-$Attachment = "vms_report_$date.csv"
+$Subject = "VMs Report"
+$Attachment = $report
 $Body = @"
-Dear Hanspeter,
-
-Please find attached the Report of VMs in SIS Subscriptions.
-
-Best regards,
-
-Schindler Server Team - Devops Automated Report
+<div><span style="font-size: medium; font-family: arial, helvetica, sans-serif;">Dear Hanspeter,</span></div>
+<div>&nbsp;</div>
+<div><span style="font-size: medium; font-family: arial, helvetica, sans-serif;">Please find attached the Report of SIS VMs.</span></div>
+<div>&nbsp;</div>
+<div><span style="font-size: medium; font-family: arial, helvetica, sans-serif;">Best regards,</span></div>
+<div>&nbsp;</div>
+<div>&nbsp;</div>
+<p><span style="font-size: medium; font-family: arial, helvetica, sans-serif; color: #ff0000;">Schindler Server Team - DevOps Automated Report</span></p>
+<p>&nbsp;</p>
+</div>
+<div>&nbsp;</div>
 "@
+#https://htmled.it/
 
-Send-MailMessage -From $From -To $To -Subject $Subject -Body $Body -Attachments $Attachment
+Send-MailMessage -From $From -To $To -Subject $Subject -Body $Body -Attachments $Attachment -BodyAsHtml
