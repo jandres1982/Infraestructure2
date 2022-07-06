@@ -82,34 +82,134 @@ $Subject = "Backup Report $kg Servers"
 #$Filename = Get-ChildItem $Path -Name "Att*" | select -Last 1
 $Attachment = $report
 $Body = @"
-<div><span style="font-size: medium; font-family: arial, helvetica, sans-serif;">Dear team,</span></div>
-<div>&nbsp;</div>
-<div><span style="font-size: medium; font-family: arial, helvetica, sans-serif;">Please find attached the Report for $kg Backup VM's.</span></div>
-<div>&nbsp;</div>
-<div><span style="font-size: medium; font-family: arial, helvetica, sans-serif;">Best regards,</span></div>
-<div>&nbsp;</div>
-<div>&nbsp;</div>
-<div><span>&nbsp; &nbsp; </span></div>
-<div><span style="font-size: small; font-family: arial, helvetica, sans-serif;"><strong>Backup Policies Resumed Information</strong></span></div>
+<div>Dear team,</div>
 <div>
-<ul>
-<li><span style="font-size: small; font-family: arial, helvetica, sans-serif;">Short - vm snapshot daily at 1:00AM and 30 days retention</span></li>
-</ul>
+<div aria-hidden="true">&nbsp;</div>
+<div><span>Please find attached the Backup Report for $kg</span></div>
+<div aria-hidden="true">&nbsp;</div>
+<div><span>Best regards,</span></div>
+<div aria-hidden="true">&nbsp;</div>
 </div>
+<div><span style="text-decoration: underline;">Useful information related to backup policy</span>:</div>
+<div><span style="font-size: large;"><b></b></span></div>
+<div><span style="font-size: large;"><b>Short term Backup:</b></span></div>
 <div>
-<ul>
-<li><span style="font-size: small; font-family: arial, helvetica, sans-serif;">Medium - same as short plus weekly Sunday at 1:00AM and 12 weeks retention</span></li>
-</ul>
-</div>
+<div class="fxc-weave-pccontrol fxc-section-control fxc-base msportalfx-customHtml msportalfx-form-formelement" data-bind="pcControl: __control_vm__" id="_weave_e_1550" data-formelement="pcControl: __control_vm__">
+<div class="azc-formElementSubLabelContainer">
+<div class="azc-formElementContainer" data-bind="untrustedHtml: { html: htmlTemplate, data: innerViewModel, isolated: isolated }">
 <div>
-<ul>
-<li><span style="font-size: small; font-family: arial, helvetica, sans-serif;">Long - same as medium plus monthly 1st day of the month at 1:00AM and 12 months retention</span></li>
-</ul>
-<p>&nbsp;</p>
-<p><span style="font-size: medium; font-family: arial, helvetica, sans-serif; color: #ff0000;">Schindler Server Team - DevOps Automated Report</span></p>
-<p>&nbsp;</p>
+<div data-bind="text: backupFrequencyLabel">Backup Frequency</div>
+<div data-bind="text: backupFrequencyText">Daily at 12:00 AM UTC</div>
 </div>
-<div>&nbsp;</div>
+</div>
+<label class="azc-text-sublabel msportalfx-tooltip-overflow" data-bind="untrustedContentDeprecated: $data" aria-hidden="true"></label></div>
+</div>
+<div class="fxc-weave-pccontrol fxc-section-control fxc-base msportalfx-customHtml msportalfx-form-formelement" data-bind="pcControl: __control_vm__" id="_weave_e_1551" data-formelement="pcControl: __control_vm__">
+<div class="azc-formElementSubLabelContainer">
+<div class="azc-formElementContainer" data-bind="untrustedHtml: { html: htmlTemplate, data: innerViewModel, isolated: isolated }">
+<div>
+<div data-bind="text: instantRestoreLabel">Instant Restore</div>
+<div data-bind="text: instantRestoreText">Retain instant recovery snapshot(s) for 5 day(s)</div>
+</div>
+</div>
+<label class="azc-text-sublabel msportalfx-tooltip-overflow" data-bind="untrustedContentDeprecated: $data" aria-hidden="true"></label></div>
+</div>
+<div class="fxc-weave-pccontrol fxc-section-control fxc-base msportalfx-customHtml msportalfx-form-formelement" data-bind="pcControl: __control_vm__" id="_weave_e_1552" data-formelement="pcControl: __control_vm__">
+<div class="azc-formElementSubLabelContainer">
+<div class="azc-formElementContainer" data-bind="untrustedHtml: { html: htmlTemplate, data: innerViewModel, isolated: isolated }">
+<div data-bind="visible: isDailyLTREnabled">
+<div data-bind="text: dailyLTRLabel">Retention of daily backup point</div>
+<div data-bind="text: dailyLTRText">Retain backup taken every day at 12:00 AM for 30 Day(s)<span style="font-size: xx-large;"></span></div>
+<div data-bind="text: dailyLTRText"></div>
+<div data-bind="text: dailyLTRText"><span style="font-size: large;"><b>Medium term Backup:</b></span></div>
+<div data-bind="text: dailyLTRText">
+<div class="fxc-weave-pccontrol fxc-section-control fxc-base msportalfx-customHtml msportalfx-form-formelement" data-bind="pcControl: __control_vm__" id="_weave_e_1555" data-formelement="pcControl: __control_vm__">
+<div class="azc-formElementSubLabelContainer">
+<div class="azc-formElementContainer" data-bind="untrustedHtml: { html: htmlTemplate, data: innerViewModel, isolated: isolated }">
+<div>
+<div data-bind="text: backupFrequencyLabel">Backup Frequency</div>
+<div data-bind="text: backupFrequencyText">Daily at 12:00 AM UTC</div>
+</div>
+</div>
+<label class="azc-text-sublabel msportalfx-tooltip-overflow" data-bind="untrustedContentDeprecated: $data" aria-hidden="true"></label></div>
+</div>
+<div class="fxc-weave-pccontrol fxc-section-control fxc-base msportalfx-customHtml msportalfx-form-formelement" data-bind="pcControl: __control_vm__" id="_weave_e_1556" data-formelement="pcControl: __control_vm__">
+<div class="azc-formElementSubLabelContainer">
+<div class="azc-formElementContainer" data-bind="untrustedHtml: { html: htmlTemplate, data: innerViewModel, isolated: isolated }">
+<div>
+<div data-bind="text: instantRestoreLabel">Instant Restore</div>
+<div data-bind="text: instantRestoreText">Retain instant recovery snapshot(s) for 5 day(s)</div>
+</div>
+</div>
+<label class="azc-text-sublabel msportalfx-tooltip-overflow" data-bind="untrustedContentDeprecated: $data" aria-hidden="true"></label></div>
+</div>
+<div class="fxc-weave-pccontrol fxc-section-control fxc-base msportalfx-customHtml msportalfx-form-formelement" data-bind="pcControl: __control_vm__" id="_weave_e_1557" data-formelement="pcControl: __control_vm__">
+<div class="azc-formElementSubLabelContainer">
+<div class="azc-formElementContainer" data-bind="untrustedHtml: { html: htmlTemplate, data: innerViewModel, isolated: isolated }">
+<div data-bind="visible: isDailyLTREnabled">
+<div data-bind="text: dailyLTRLabel">Retention of daily backup point</div>
+<div data-bind="text: dailyLTRText">Retain backup taken every day at 12:00 AM for 30 Day(s)</div>
+</div>
+<div data-bind="visible: isWeeklyLTREnabled">
+<div data-bind="text: weeklyLTRLabel">Retention of weekly backup point</div>
+<div data-bind="text: weeklyLTRLabel"></div>
+<div data-bind="text: weeklyLTRText">Retain backup taken every week on Sunday at 12:00 AM for 12 Week(s)</div>
+<div data-bind="text: weeklyLTRText"></div>
+<div data-bind="text: weeklyLTRText"><b><span style="font-size: large;">Long Term Backup:</span></b></div>
+<div data-bind="text: weeklyLTRText">
+<div class="fxc-weave-pccontrol fxc-section-control fxc-base msportalfx-customHtml msportalfx-form-formelement" data-bind="pcControl: __control_vm__" id="_weave_e_1565" data-formelement="pcControl: __control_vm__">
+<div class="azc-formElementSubLabelContainer">
+<div class="azc-formElementContainer" data-bind="untrustedHtml: { html: htmlTemplate, data: innerViewModel, isolated: isolated }">
+<div>
+<div data-bind="text: backupFrequencyLabel">Backup Frequency</div>
+<div data-bind="text: backupFrequencyText">Daily at 12:00 AM UTC</div>
+</div>
+</div>
+<label class="azc-text-sublabel msportalfx-tooltip-overflow" data-bind="untrustedContentDeprecated: $data" aria-hidden="true"></label></div>
+</div>
+<div class="fxc-weave-pccontrol fxc-section-control fxc-base msportalfx-customHtml msportalfx-form-formelement" data-bind="pcControl: __control_vm__" id="_weave_e_1566" data-formelement="pcControl: __control_vm__">
+<div class="azc-formElementSubLabelContainer">
+<div class="azc-formElementContainer" data-bind="untrustedHtml: { html: htmlTemplate, data: innerViewModel, isolated: isolated }">
+<div>
+<div data-bind="text: instantRestoreLabel">Instant Restore</div>
+<div data-bind="text: instantRestoreText">Retain instant recovery snapshot(s) for 5 day(s)</div>
+</div>
+</div>
+<label class="azc-text-sublabel msportalfx-tooltip-overflow" data-bind="untrustedContentDeprecated: $data" aria-hidden="true"></label></div>
+</div>
+<div class="fxc-weave-pccontrol fxc-section-control fxc-base msportalfx-customHtml msportalfx-form-formelement" data-bind="pcControl: __control_vm__" id="_weave_e_1567" data-formelement="pcControl: __control_vm__">
+<div class="azc-formElementSubLabelContainer">
+<div class="azc-formElementContainer" data-bind="untrustedHtml: { html: htmlTemplate, data: innerViewModel, isolated: isolated }">
+<div data-bind="visible: isDailyLTREnabled">
+<div data-bind="text: dailyLTRLabel">Retention of daily backup point</div>
+<div data-bind="text: dailyLTRText">Retain backup taken every day at 12:00 AM for 30 Day(s)</div>
+</div>
+<div data-bind="visible: isWeeklyLTREnabled">
+<div data-bind="text: weeklyLTRLabel">Retention of weekly backup point</div>
+<div data-bind="text: weeklyLTRText">Retain backup taken every week on Sunday at 12:00 AM for 12 Week(s)</div>
+<div data-bind="text: weeklyLTRText"></div>
+</div>
+<div data-bind="visible: isMonthlyLTREnabled">
+<div data-bind="text: monthlyLTRLabel">Retention of monthly backup point</div>
+<div data-bind="text: monthlyLTRText">Retain backup taken every month on 1 at 12:00 AM for 12 Month(s)</div>
+<div data-bind="text: monthlyLTRText"></div>
+<div data-bind="text: monthlyLTRText"></div>
+<div data-bind="text: monthlyLTRText"></div>
+<span data-bind="text: monthlyLTRText" style="color: #0000ff;"><span>Schindler SCC - Automated Azure Report</span></span></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
 "@
 
 Send-MailMessage -From $From -To $To -Subject $Subject -Body $Body -Attachments $Attachment -BodyAsHtml
