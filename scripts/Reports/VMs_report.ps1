@@ -22,7 +22,7 @@ foreach ($sub in $subs)
         $vmObject | Add-Member -MemberType NoteProperty -Name CostCenter -Value $vm.Tags.costcenter
         $vmObject | Add-Member -MemberType NoteProperty -Name InfrastructureService -Value $vm.Tags.infrastructureservice
         
-        $vmObject  | Export-Csv -Path "vms_report_$date.csv" -Append -Force 
+        $vmObject  | Export-Csv "vms_report_$date.csv" -NoTypeInformation | Select-Object -Skip 1 | Set-Content "vms_report_$date.csv" 
     } 
 }
 
@@ -43,3 +43,5 @@ Schindler Server Team - Devops Automated Report
 "@
 
 Send-MailMessage -From $From -To $To -Subject $Subject -Body $Body -Attachments $Attachment
+
+$vmBackupReport | 
