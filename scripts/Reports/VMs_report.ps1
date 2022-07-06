@@ -43,5 +43,3 @@ Schindler Server Team - Devops Automated Report
 "@
 
 Send-MailMessage -From $From -To $To -Subject $Subject -Body $Body -Attachments $Attachment
-
-$vmBackupReport | 
