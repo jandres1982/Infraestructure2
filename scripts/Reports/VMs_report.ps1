@@ -22,7 +22,24 @@ foreach ($sub in $subs)
         $vmObject | Add-Member -MemberType NoteProperty -Name CostCenter -Value $vm.Tags.costcenter
         $vmObject | Add-Member -MemberType NoteProperty -Name InfrastructureService -Value $vm.Tags.infrastructureservice
         
-        $vmObject  | Export-Csv -Path vm_report_$date.csv
+        $vmObject  | Export-Csv -Path "vms_report_$date.csv" -Append -Force 
     } 
 }
 
+$PSEmailServer = "smtp.eu.schindler.com"
+$From = "scc-support-zar.es@schindler.com"
+$to = "nahum.sancho@schindler.com"
+
+$Subject = "VMs Report $kg Servers"
+$Attachment = "vms_report_$date.csv"
+$Body = @"
+Dear Hanspeter,
+
+Please find attached the Report of VMs in SIS Subscriptions.
+
+Best regards,
+
+Schindler Server Team - Devops Automated Report
+"@
+
+Send-MailMessage -From $From -To $To -Subject $Subject -Body $Body -Attachments $Attachment
