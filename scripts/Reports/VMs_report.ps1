@@ -1,30 +1,41 @@
-$subs=get-azsubscription
+$subs ="s-sis-am-nonprod-01" #added ventoa1
+$subs = get-azsubscription -SubscriptionName "$subs" #added ventoa1
+#$subs=get-azsubscription
 $date = $(get-date -format yyyy-MM-ddTHH-mm)
+
+$vmObject = [System.Collections.ArrayList]::new() #added ventoa1
+
 foreach ($sub in $subs)
 {
     set-azcontext -Subscription $sub.Name
+    Select-AzSubscription -Subscription "$sub"
+
     $vms=get-azvm
     foreach ($vm in $vms)
     {
-        
-        $vmObject = New-Object -TypeName psobject 
-
-        $vmObject | Add-Member -MemberType NoteProperty -Name Subscription -Value $sub
-        $vmObject | Add-Member -MemberType NoteProperty -Name Name -Value $vm.Name
-        $vmObject | Add-Member -MemberType NoteProperty -Name ResourceGroupName -Value $vm.ResourceGroupName
-        $vmObject | Add-Member -MemberType NoteProperty -Name Location-Value $vm.Location
-        $vmObject | Add-Member -MemberType NoteProperty -Name Size -Value $vm.HardwareProfile.VmSize
-        $vmObject | Add-Member -MemberType NoteProperty -Name OsType -Value $vm.StorageProfile.OsDisk.OsType
-        $vmObject | Add-Member -MemberType NoteProperty -Name ServiceOwner -Value $vm.Tags.serviceowner
-        $vmObject | Add-Member -MemberType NoteProperty -Name ApplicationOwner -Value $vm.Tags.applicationowner
-        $vmObject | Add-Member -MemberType NoteProperty -Name TechnicalContact -Value $vm.Tags.technicalcontact
-        $vmObject | Add-Member -MemberType NoteProperty -Name KG -Value $vm.Tags.kg
-        $vmObject | Add-Member -MemberType NoteProperty -Name CostCenter -Value $vm.Tags.costcenter
-        $vmObject | Add-Member -MemberType NoteProperty -Name InfrastructureService -Value $vm.Tags.infrastructureservice
-        $report = 'VMS_'+'_Report_'+"$date"+'.csv'
-        $vmObject  | Export-Csv $report -NoTypeInformation | Select-Object -Skip 1 | Set-Content $report
+        #$Status_vm = get-azvm -Name "$vm" -ResourceGroupName $vm.ResourceGroupName -Status
+        #$vmObject = New-Object -TypeName psobject 
+        [void]$vmObject.add([PSCustomObject]@{
+        Subscription = $subs.name
+        Name = $vm.Name
+        Resource_Group = $vm.ResourceGroupName
+        Location = $vm.Location
+        #Status = $Status_vm.powerstate
+        Operating_System = $vm.StorageProfile.OsDisk.OsType
+        Size = $vm.HardwareProfile.VmSize 
+        #Disk = $vm.StorageProfile.DataDisks.name
+        Tag_serviceowner = $vm.Tags.serviceowner
+        Tag_applicationowner = $vm.Tags.applicationowner
+        Tag_technicalcontact = $vm.Tags.technicalcontact
+        Tag_kg = $vm.Tags.kg
+        Tag_costcenter = $vm.Tags.costcenter
+        Tag_infrastructureservice = $vm.Tags.infrastructureservice
+        })
     } 
 }
+$report = 'VMS_'+'_Report_'+"$date"+'.csv'
+$vmObject  | Export-Csv $report -NoTypeInformation | Select-Object -Skip 1 | Set-Content $report
+
 
 $PSEmailServer = "smtp.eu.schindler.com"
 $From = "scc-support-zar.es@schindler.com"
