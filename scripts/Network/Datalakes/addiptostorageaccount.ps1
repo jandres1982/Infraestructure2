@@ -1,5 +1,5 @@
 ## /*----------------------------------------------------------------
-##   Add ip ranges to STORAGE Account
+##   Add ip ranges to STORAGE Account please fill ipranges.txt, before running the script, thanks 
 ## ----------------------------------------------------------------*/
 
 $myvault = "dlsprodssot04"
