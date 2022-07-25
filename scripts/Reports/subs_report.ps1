@@ -1,28 +1,4 @@
-#$date = $(get-date -format yyyy-MM-ddTHH-mm)
-#Get-AzSubscription | Export-Csv -Path schindler_subs_$date.csv
-
-###################################################################
-
-#$PSEmailServer = "smtp.eu.schindler.com"
-#$From = "scc-support-zar.es@schindler.com"
-#$to = "nahum.sancho@schindler.com","alfonso.marques@schindler.com"
-
-#$Subject = "Schindler Subscrtiptions Report"
-#$Filename = Get-ChildItem $Path -Name "Att*" | select -Last 1
-#$Attachment = "schindler_subs_$date.csv"
-#$Body = @"
-#Dear Priska,
-
-#Please find attached the Report of Schindler´s subscriptions.
-
-#Best regards
-
-#Schindler Server Team - Devops Automated Report
-#"@
-
-#Send-MailMessage -From $From -To $To -Subject $Subject -Body $Body -Attachments $Attachment
-
-
+#Sub Report for Microsoft
 ##################################################################
 $date = $(get-date -format yyyy-MM-ddTHH-mm)
 $SubObject = [System.Collections.ArrayList]::new() 
@@ -41,12 +17,12 @@ $report = 'Subs_'+'_Report_'+"$date"+'.csv'
 $SubObject  | Export-Csv $report -NoTypeInformation | Select-Object -Skip 1 | Set-Content $report
 $PSEmailServer = "smtp.eu.schindler.com"
 $From = "scc-support-zar.es@schindler.com"
-$to = "alfonso.marques@schindler.com","nahum.sancho@schindler.com"
+$to = "johannes.gappmaier@microsoft.com","priska.jaeggi@microsoft.com","alfonso.marques@schindler.com","nahum.sancho@schindler.com"
 
 $Subject = "Schindler Subscriptions Report"
 $Attachment = $report
 $Body = @"
-<div><span style="font-size: medium; font-family: arial, helvetica, sans-serif;">Dear Priska,</span></div>
+<div><span style="font-size: medium; font-family: arial, helvetica, sans-serif;">Dear Priska and Johannes ,</span></div>
 <div>&nbsp;</div>
 <div><span style="font-size: medium; font-family: arial, helvetica, sans-serif;">Please find attached the Report of Schindler Subs.</span></div>
 <div>&nbsp;</div>
