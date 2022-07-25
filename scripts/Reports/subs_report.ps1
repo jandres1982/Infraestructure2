@@ -1,5 +1,5 @@
 $date = $(get-date -format yyyy-MM-ddTHH-mm)
-Get-AzSubscription | Export-Excel -Path schindler_subs_$date.xls 
+Get-AzSubscription | Export-Csv -Path schindler_subs_$date.csv
 
 ###################################################################
 
@@ -9,7 +9,7 @@ $to = "nahum.sancho@schindler.com","alfonso.marques@schindler.com"
 
 $Subject = "Schindler Subscrtiptions Report"
 #$Filename = Get-ChildItem $Path -Name "Att*" | select -Last 1
-$Attachment = "schindler_subs_$date.xls"
+$Attachment = "schindler_subs_$date.csv"
 $Body = @"
 Dear Priska,
 
