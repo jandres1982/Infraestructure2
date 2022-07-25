@@ -33,7 +33,7 @@ foreach ($sub in $subs)
     [void]$SubObject.add([PSCustomObject]@{
     Subscription = $sub.name
     ID = $sub.id
-    State = $sub.name
+    State = $sub.state
     })
      
 }
