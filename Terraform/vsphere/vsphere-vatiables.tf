@@ -7,7 +7,7 @@ variable "vsphere_user" {
 }
 
 variable "vsphere_password" {
-  default = "J@gg3rs.2023!"
+  default = "xxxxxx"
 }
 
 variable "vsphere_vcenter" {
