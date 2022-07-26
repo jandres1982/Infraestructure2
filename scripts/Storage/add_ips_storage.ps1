@@ -1,6 +1,6 @@
 
 ###Set subscription
-set-azcontext -subscription $(sub)
+set-azcontext -subscription "$(sub)"
 ###Set the keyvault
 $st=Get-AzStorageAccount | where {$_.StorageAccountName -eq "$(storageaccount)"}
 
