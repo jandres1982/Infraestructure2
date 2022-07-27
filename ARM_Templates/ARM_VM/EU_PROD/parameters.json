@@ -6,7 +6,7 @@
             "value": "northeurope"
         },
         "networkInterfaceName3": {
-            "value": "shhwsr2494_01"
+            "value": "shhwsr2493_01"
         },
         "subnetName": {
             "value": "DMZ-Subnet_1"
@@ -15,13 +15,13 @@
             "value": "/subscriptions/505ead1a-5a5f-4363-9b72-83eb2234a43d/resourceGroups/RG_NETWORK_PROD/providers/Microsoft.Network/virtualNetworks/EU-PROD-VNET"
         },
         "virtualMachineName": {
-            "value": "shhwsr2494"
+            "value": "shhwsr2493"
         },
         "virtualMachineName3": {
-            "value": "shhwsr2494"
+            "value": "shhwsr2493"
         },
         "virtualMachineComputerName": {
-            "value": "shhwsr2494"
+            "value": "shhwsr2493"
         },
         "virtualMachineRG": {
             "value": "rg-shh-prod-pdt-01"
@@ -33,7 +33,7 @@
             "value": "Detach"
         },
         "virtualMachineSize": {
-            "value": "Standard_D4ds_v4"
+            "value": "Standard_D2DS_v4"
         },
         "nicDeleteOption": {
             "value": "Detach"
