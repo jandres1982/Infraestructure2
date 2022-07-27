@@ -6,25 +6,25 @@
             "value": "northeurope"
         },
         "networkInterfaceName3": {
-            "value": "shhwsrxxxx95_z3"
+            "value": "shhwsr2493_01"
         },
         "subnetName": {
-            "value": "Infrastructure-IaaS-Subnet_1"
+            "value": "DMZ-Subnet_1"
         },
         "virtualNetworkId": {
             "value": "/subscriptions/505ead1a-5a5f-4363-9b72-83eb2234a43d/resourceGroups/RG_NETWORK_PROD/providers/Microsoft.Network/virtualNetworks/EU-PROD-VNET"
         },
         "virtualMachineName": {
-            "value": "shhwsrxxxx"
+            "value": "shhwsr2493"
         },
         "virtualMachineName3": {
-            "value": "shhwsrxxxx"
+            "value": "shhwsr2493"
         },
         "virtualMachineComputerName": {
-            "value": "shhwsrxxxx"
+            "value": "shhwsr2493"
         },
         "virtualMachineRG": {
-            "value": "rg-cis-prod-server-01"
+            "value": "rg-shh-prod-pdt-01"
         },
         "osDiskType": {
             "value": "StandardSSD_LRS"
@@ -33,7 +33,7 @@
             "value": "Detach"
         },
         "virtualMachineSize": {
-            "value": "Standard_D4s_v3"
+            "value": "Standard_D2DS_v5"
         },
         "nicDeleteOption": {
             "value": "Detach"
