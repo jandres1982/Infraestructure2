@@ -33,7 +33,7 @@
             "value": "Detach"
         },
         "virtualMachineSize": {
-            "value": "Standard_D2DS_v5"
+            "value": "Standard_D2DS_v4"
         },
         "nicDeleteOption": {
             "value": "Detach"
