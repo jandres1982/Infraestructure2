@@ -1,0 +1,63 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "location": {
+            "value": "southeastasia"
+        },
+        "networkInterfaceName3": {
+            "value": "scnwsr4105"
+        },
+        "subnetName": {
+            "value": "sub-dmz2domain-01"
+        },
+        "virtualNetworkId": {
+            "value": "/subscriptions/59c20947-4965-45c4-99f3-12be96106119/resourceGroups/rg-cis-prod-network-02/providers/Microsoft.Network/virtualNetworks/vnet-prod-asse-01"
+        },
+        "virtualMachineName": {
+            "value": "scnwsr4105"
+        },
+        "virtualMachineName3": {
+            "value": "scnwsr4105"
+        },
+        "virtualMachineComputerName": {
+            "value": "scnwsr4105"
+        },
+        "virtualMachineRG": {
+            "value": "rg-scn-prod-scfesignapplication-01"
+        },
+        "osDiskType": {
+            "value": "StandardSSD_LRS"
+        },
+        "osDiskDeleteOption": {
+            "value": "Detach"
+        },
+        "virtualMachineSize": {
+            "value": "Standard_F4s_v2"
+        },
+        "nicDeleteOption": {
+            "value": "Detach"
+        },
+        "adminUsername": {
+            "value": "ldmsosd"
+        },
+        "adminPassword": {
+            "value": "Newsetup1234"
+        },
+        "patchMode": {
+            "value": "Manual"
+        },
+        "enableHotpatching": {
+            "value": false
+        },
+        "diagnosticsStorageAccountName": {
+            "value": "stproddiagnostic0003"
+        },
+        "diagnosticsStorageAccountId": {
+            "value": "/subscriptions/59c20947-4965-45c4-99f3-12be96106119/resourceGroups/rg-cis-prod-storage-02/providers/Microsoft.Storage/storageAccounts/stproddiagnostic0003"
+        },
+        "zone": {
+            "value": "3"
+        }
+    }
+}
