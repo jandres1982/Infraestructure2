@@ -1,12 +1,16 @@
-$sub="s-sis-eu-prod-01"
-$virtualmachine="shhwsr1848"
-$retentiondate="24-08-2022"
+$sub="s-sis-eu-nonprod-01"
+$virtualmachine="zzzwsr0010"
+$retentiondate="30-08-2022"
+
 
 ###Set Subsciption###
 set-azcontext -subscription $sub
+az account set --subscription $sub
 
 ###VM Variables###
-$vm = Get-AzVM -name $virtualmachine
+$vms=Get-AzVM
+$vm=$vms | where-object {$_.Name -eq "$virtualmachine"}
+
 
 
 ###Backup Variables###
