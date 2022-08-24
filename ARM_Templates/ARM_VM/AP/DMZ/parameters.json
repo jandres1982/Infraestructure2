@@ -3,28 +3,28 @@
     "contentVersion": "1.0.0.0",
     "parameters": {
         "location": {
-            "value": "northeurope"
+            "value": "southeastasia"
         },
         "networkInterfaceName3": {
-            "value": "shhwsr2494_01"
+            "value": "scnwsr4105"
         },
         "subnetName": {
-            "value": "DMZ-Subnet_1"
+            "value": "sub-dmz2domain-01"
         },
         "virtualNetworkId": {
-            "value": "/subscriptions/505ead1a-5a5f-4363-9b72-83eb2234a43d/resourceGroups/RG_NETWORK_PROD/providers/Microsoft.Network/virtualNetworks/EU-PROD-VNET"
+            "value": "/subscriptions/59c20947-4965-45c4-99f3-12be96106119/resourceGroups/rg-cis-prod-network-02/providers/Microsoft.Network/virtualNetworks/vnet-prod-asse-01"
         },
         "virtualMachineName": {
-            "value": "shhwsr2494"
+            "value": "scnwsr4105"
         },
         "virtualMachineName3": {
-            "value": "shhwsr2494"
+            "value": "scnwsr4105"
         },
         "virtualMachineComputerName": {
-            "value": "shhwsr2494"
+            "value": "scnwsr4105"
         },
         "virtualMachineRG": {
-            "value": "rg-shh-prod-pdt-01"
+            "value": "rg-scn-prod-scfesignapplication-01"
         },
         "osDiskType": {
             "value": "StandardSSD_LRS"
@@ -33,7 +33,7 @@
             "value": "Detach"
         },
         "virtualMachineSize": {
-            "value": "Standard_D4s_v3"
+            "value": "Standard_F4s_v2"
         },
         "nicDeleteOption": {
             "value": "Detach"
@@ -51,10 +51,10 @@
             "value": false
         },
         "diagnosticsStorageAccountName": {
-            "value": "stproddiagnostic0002"
+            "value": "stproddiagnostic0003"
         },
         "diagnosticsStorageAccountId": {
-            "value": "/subscriptions/505ead1a-5a5f-4363-9b72-83eb2234a43d/resourceGroups/rg-cis-prod-storage-01/providers/Microsoft.Storage/storageAccounts/stproddiagnostic0002"
+            "value": "/subscriptions/59c20947-4965-45c4-99f3-12be96106119/resourceGroups/rg-cis-prod-storage-02/providers/Microsoft.Storage/storageAccounts/stproddiagnostic0003"
         },
         "zone": {
             "value": "3"
