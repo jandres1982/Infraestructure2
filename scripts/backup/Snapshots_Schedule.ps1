@@ -35,24 +35,14 @@ New-AzureRMAutomationSchedule –AutomationAccountName AzureAutomationAccount �
 ######################################################################
 $automationAccountName = "aa-prod-monitoring-01"
 $ResourceGroupName = "rg-cis-prod-monitoring-01"
-New-AzAutomationSchedule -AutomationAccountName $automationAccountName -Name "Schedule Snapshot" -StartTime "13/9/2022 11:00:00 PM +00:00" -ResourceGroupName $ResourceGroupName -OneTime
+New-AzAutomationSchedule -AutomationAccountName $automationAccountName -Name "Schedule" -StartTime "13/9/2022 11:00:00 PM +00:00" -ResourceGroupName $ResourceGroupName -OneTime
+
+$Schedule = Get-AzAutomationSchedule -ResourceGroupName $ResourceGroupName -AutomationAccountName $automationAccountName -Name "Schedule"
 #@{"vm"="shhwsr1849";"sub"="s-sis-eu-nonprod-01"}
 $vm = "shhwsr1849"
-$parameters = @{"sub"="s-sis-eu-prod-01";"vm"="shhwsr1849";"retain"="20/02/2022"}
+$sub = "s-sis-eu-nonprod-01"
+$runbookName = "Snapshots_Schedule"
+$data = @{"vm"="shhwsr1849";"sub"="s-sis-eu-nonprod-01"}
 $automationAccountName = "aa-prod-monitoring-01"
 $ResourceGroupName = "rg-cis-prod-monitoring-01"
-Register-AzAutomationScheduledRunbook `
-    –AutomationAccountName $AutomationAccountName `
-    –RunbookName "Snapshots_Schedule" `
-    –ScheduleName "Schedule Snapshot $vm" `
-    –Parameters $parameters `
-    -ResourceGroupName $ResourceGroupName
-
-##################################################################################
-$automationAccountName = "aa-prod-monitoring-01"
-$runbookName = "Snapshots_Schedule"
-$scheduleName = "Schedule Snapshot"
-$params = @{"vm"="shhwsr1849";"sub"="s-sis-eu-nonprod-01"}
-Register-AzAutomationScheduledRunbook -AutomationAccountName $automationAccountName `
--Name $runbookName -ScheduleName $scheduleName -Parameters $params `
--ResourceGroupName "rg-cis-prod-monitoring-01"
+Register-AzAutomationScheduledRunbook –AutomationAccountName $AutomationAccountName –RunbookName $runbookName –ScheduleName $Schedule –Parameters $data -ResourceGroupName $ResourceGroupName
