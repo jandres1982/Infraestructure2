@@ -11,11 +11,11 @@ if ($sms -eq "yes" )
 {
 $phone_AV = "0034691022611@sms.schindler.com"
 $phone_NS = "0034699559798@sms.schindler.com"
-$phone_DS = ""
+$phone_DS = "0034613056260@sms.schindler.com"
 $phone_AD = "0034669236270@sms.schindler.com"
-$phone_LJ = ""
+$phone_LJ = "0034637892033@sms.schindler.com"
 $phone_FC = "0034655177690@sms.schindler.com"
-$phone_AM = ""
+$phone_AM = "0034691022611@sms.schindler.com"
 $phone_JR = "0034657138014@sms.schindler.com"
 
 If ($re_email -eq "antoniovicente.vento@schindler.com")
