@@ -1,4 +1,4 @@
 az account set --subscription s-sis-eu-prod-0
 $STORAGE_KEY=(az storage account keys list --resource-group "rg-shh-prod-devopsagents-01" --account-name "stproddevopsagent01" --query "[0].value" --output tsv)
 echo $STORAGE_KEY
-az container create --resource-group "rg-shh-prod-devopsagents-01" --name grafana --image "grafana/grafana:latest" --dns-name-label "grafana-test" --ports 3000 --azure-file-volume-account-name "stproddevopsagent01" --azure-file-volume-account-key $STORAGE_KEY --azure-file-volume-share-name "grafana-content" --azure-file-volume-mount-path "/var/lib/grafana"
+az container create --resource-group "rg-shh-prod-devopsagents-01" --name grafana --image "grafana/grafana:9.1.2" --dns-name-label "grafana-test-01" --ports 3000 --azure-file-volume-account-name "stproddevopsagent01" --azure-file-volume-account-key $STORAGE_KEY --azure-file-volume-share-name "grafana-db" --azure-file-volume-mount-path "/var/lib/grafana"
