@@ -1,4 +1,4 @@
-$subs = get-azsubscription
+$subs=Get-AzSubscription | Where-Object {$_.Name -match "s-sis-[aec][upmh]*"}
 $date = $(get-date -format yyyy-MM-ddTHH-mm)
 
 $vmObject = [System.Collections.ArrayList]::new() 
