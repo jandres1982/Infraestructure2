@@ -3,15 +3,15 @@
 #====================#
 
 variable "vsphere_user" {
-  default = "admsanchona@global.schindler.com"
+  default = "SA-PF01-vCSchiRO@itoper.local"
 }
 
 variable "vsphere_password" {
-  default = "xxxxxx"
+  default = "jsN8pnjFcY8c"
 }
 
 variable "vsphere_vcenter" {
-  default = "shhxap0308.global.schindler.com"
+  default = "ss013598.itoper.local"
 }
 
 variable "vsphere_unverified_ssl" {
@@ -19,7 +19,7 @@ variable "vsphere_unverified_ssl" {
 }
 
 variable "vsphere_datacenter" {
-  default = "SCC"
+  default = "Prod-SCH-01"
 }
 
 variable "vsphere_cluster" {
