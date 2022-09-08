@@ -24,7 +24,7 @@ data "vsphere_virtual_machine" "proxyveeam" {
 }
 
 resource "vsphere_virtual_machine_snapshot" "proxyveeam" {
-    vsphere_virtual_machine_uuid = data.vsphere_virtual_machine.proxyveeam.id
+    vsphere_virtual_machine_uuid = "${data.vsphere_virtual_machine.proxyveeam.id}"
     snapshot_name = "Snapshot Name"
     desctiption = "This is Demo Snapshot"
     memory = "false"
