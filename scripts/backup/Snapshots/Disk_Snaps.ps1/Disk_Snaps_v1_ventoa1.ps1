@@ -1,7 +1,10 @@
-$resourceGroup = "RG-CIS-TEST-SERVER-01"
+$resourceGroup = "RG-MIL-QUAL-DYNAMICS-01"
 $location= "North Europe"
-$vmName = "zzzwsr0013"
-$snapshotName = 'Test_Ventoa1_Snap'
+$vmName = "milwsr4153"
+$snapshotName = "Snapshot_$vmName"
+
+#$date = get-date
+#Get-Date -Format "dddd MM/dd/yyyy HH:mm K"
 
 $vmDetails = Get-AzVM -Name $vmName -ResourceGroupName $resourceGroup
 
