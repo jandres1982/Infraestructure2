@@ -1,5 +1,8 @@
+
+
 ##Variables
 $sub = "s-sis-eu-nonprod-01"
+connect-AzAccount -Subscription $sub
 $vm = "zzzwsr0010"
 $RSV = "rsv-nonprod-euno-lrsbackup-02"
 $RSV_RG = "rg-cis-nonprod-backup-01"
@@ -7,12 +10,12 @@ $location = "northeurope"
 $Virtual_Machine =  get-azvm -name $vm
 
 ##
-Select-AzSubscription -Subscription $SUB
+Select-AzSubscription -Subscription $sub
 ##
 #Stop_Backup_Protection
 $vault = Get-AzRecoveryServicesVault -ResourceGroupName $RSV_RG -Name $RSV
 Set-AzRecoveryServicesVaultContext -Vault $vault
-$Cont = Get-AzRecoveryServicesBackupContainer -ContainerType AzureVM -Status Registered | Where-Object {$_.FriendlyName -eq $VM}
+$Cont = Get-AzRecoveryServicesBackupContainer -ContainerType AzureVM -Status Registered | Where-Object {$_.FriendlyName -eq $vm}
 $PI = Get-AzRecoveryServicesBackupItem -Container $Cont[0] -WorkloadType AzureVM
 Disable-AzRecoveryServicesBackupProtection -Item $PI[0] -force
 
@@ -28,9 +31,7 @@ $New_rg = $($old_rg.ResourceGroupName.Remove($old_rg.ResourceGroupName.Length-2)
 New-AzResourceGroup -Name $New_rg -Tag $tags $location
 
 #Move_to_a_new_rg
-
 #Get-AzResource -ResourceGroupName $Virtual_Machine.ResourceGroupName | Format-table -wrap -Property ResourceId
-
 $Sub = Get-AzSubscription | Where-Object {$_.Name -match "s-sis-eu-nonprod-01"}
 
 $Virtual_Machine = Get-AzResource -ResourceName $vm
@@ -44,7 +45,6 @@ $nic_id = $(Get-Azvm -Name $Virtual_Machine.name | select-object -Property *).Ne
 Move-AzResource -ResourceId $nic_id -DestinationResourceGroupName $New_rg -force
 #moving Data Disk
 $Data_disk = $(Get-Azvm -Name $Virtual_Machine.name | select-object -Property *).StorageProfile.DataDisks.Name
-$i = 0
 Foreach ($disk in $Data_disk)
     {
     if ($disk -ne $null)
