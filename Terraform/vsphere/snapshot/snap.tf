@@ -1,11 +1,11 @@
-terraform {
-    required_providers {
-        vsphere = {
-            source = "hasicorp/vsphere"
-            version = "2.2.0"
-        }
-    }
-}
+#terraform {
+#    required_providers {
+#        vsphere = {
+#            source = "hasicorp/vsphere"
+#            version = "2.2.0"
+#        }
+#    }
+#}
 
 provider "vsphere" {
     user = "terraform@vsphere.local"
