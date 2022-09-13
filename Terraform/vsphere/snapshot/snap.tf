@@ -1,7 +1,7 @@
 terraform {
     required_providers {
         vsphere = {
-            source = "hasicopr/vsphere"
+            source = "hasicorp/vsphere"
             version = "2.2.0"
         }
     }
@@ -24,9 +24,9 @@ data "vsphere_virtual_machine" "proxyveeam" {
 }
 
 resource "vsphere_virtual_machine_snapshot" "proxyveeam" {
-    vsphere_virtual_machine_uuid = data.vsphere_virtual_machine.proxyveeam.id
+    vsphere_virtual_machine_uuid = "${data.vsphere_virtual_machine.proxyveeam.id}"
     snapshot_name = "Snapshot Name"
-    desctiption = "This is Demo Snapshot"
+    description = "This is Demo Snapshot"
     memory = "false"
     quiesce = "true"
     remove_children = "false"

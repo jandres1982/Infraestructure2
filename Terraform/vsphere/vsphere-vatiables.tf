@@ -11,7 +11,7 @@ variable "vsphere_password" {
 }
 
 variable "vsphere_vcenter" {
-  default = "ss013598.itoper.local"
+  default = "vcenternubes4.global.schindler.com"
 }
 
 variable "vsphere_unverified_ssl" {
