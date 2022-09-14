@@ -1,8 +1,16 @@
 terraform {
+<<<<<<< HEAD
   required_providers {
     vsphere = {
       source = "hashicorp/vsphere"
       version = "2.2.0"
+=======
+    required_providers {
+        vsphere = {
+            source = "hasicorp/vsphere"
+            version = "2.2.0"
+        }
+>>>>>>> b6938937e7b543499106b995a3451cf9dd3a2453
     }
   }
 }
@@ -28,6 +36,7 @@ data "vsphere_virtual_machine" "proxyveeam" {
 }
 
 resource "vsphere_virtual_machine_snapshot" "proxyveeam" {
+<<<<<<< HEAD
   virtual_machine_uuid =  "${data.vsphere_virtual_machine.proxyveeam.id}"
   snapshot_name        = "Snapshot Name"
   description          = "This is Demo Snapshot"
@@ -35,4 +44,13 @@ resource "vsphere_virtual_machine_snapshot" "proxyveeam" {
   quiesce              = "true"
   remove_children      = "false"
   consolidate          = "true"
+=======
+    vsphere_virtual_machine_uuid = "${data.vsphere_virtual_machine.proxyveeam.id}"
+    snapshot_name = "Snapshot Name"
+    description = "This is Demo Snapshot"
+    memory = "false"
+    quiesce = "true"
+    remove_children = "false"
+    consolidate = "true"
+>>>>>>> b6938937e7b543499106b995a3451cf9dd3a2453
 }

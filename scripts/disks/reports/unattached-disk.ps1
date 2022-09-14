@@ -1,25 +1,10 @@
 $date = $(get-date -format yyyy-MM-ddTHH-mm)
+$subs = Get-AzSubscription 
 
-Set-AzContext -Subscription s-sis-eu-prod-01
+foreach ($sub in $subs) {
+Set-AzContext -Subscription $sub
 $(Get-AzDisk | Where-Object {$_.Diskstate -eq "Unattached"}).Name >> "Unattached_Disk_Report_$date.txt"
-
-Set-AzContext -Subscription s-sis-eu-nonprod-01
-$(Get-AzDisk | Where-Object {$_.Diskstate -eq "Unattached"}).Name >> "Unattached_Disk_Report_$date.txt"
-
-Set-AzContext -Subscription s-sis-am-nonprod-01
-$(Get-AzDisk | Where-Object {$_.Diskstate -eq "Unattached"}).Name >> "Unattached_Disk_Report_$date.txt"
-
-Set-AzContext -Subscription s-sis-am-prod-01
-$(Get-AzDisk | Where-Object {$_.Diskstate -eq "Unattached"}).Name >> "Unattached_Disk_Report_$date.txt"
-
-Set-AzContext -Subscription s-sis-ap-prod-01
-$(Get-AzDisk | Where-Object {$_.Diskstate -eq "Unattached"}).Name >> "Unattached_Disk_Report_$date.txt"
-
-Set-AzContext -Subscription s-sis-ch-prod-01
-$(Get-AzDisk | Where-Object {$_.Diskstate -eq "Unattached"}).Name >> "Unattached_Disk_Report_$date.txt"
-
-Set-AzContext -Subscription s-sis-ch-nonprod-01
-$(Get-AzDisk | Where-Object {$_.Diskstate -eq "Unattached"}).Name >> "Unattached_Disk_Report_$date.txt"
+}
 
 $PSEmailServer = "smtp.eu.schindler.com"
 $From = "scc-support-zar.es@schindler.com"
