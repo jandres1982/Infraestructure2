@@ -1,26 +1,32 @@
 param (
 [Parameter(Mandatory = $false)]
-[string]$vm,
+[string]$vmName,
 [Parameter(Mandatory = $false)]
 [string]$sub,
 [Parameter(Mandatory = $false)]
-[int]$Retention,
+[string]$location,
 [Parameter(Mandatory = $false)]
-[datetime]$Schedule_Time
+[string]$resourceGroup
 )
 
 $automationAccountName = "aa-prod-monitoring-01"
 $ResourceGroupName = "rg-cis-prod-monitoring-01"
-$vm = "shhwsr1848"
-$sub = "s-sis-eu-prod-01"
-$runbookName = "Snapshots_Schedule"
-$Retention = "7"
-$Schedule_Time =  (Get-date).AddMinutes(6)
+$runbookName = "Disk_Snapshots"
 
-New-AzAutomationSchedule -AutomationAccountName $automationAccountName -Name "Schedule $vm" -StartTime $Schedule_Time -ResourceGroupName $ResourceGroupName -OneTime
+######################### From Devops ########################
+$vmName = "tstshhwsr0343"
+$sub = "s-sis-eu-nonprod-01"
+$date = "15/09/2022 17:06"
+$ResourceGroup = "rg-shh-test-sharepoint-01"
+$location = "North Europe"
+##############################################################
 
-$Schedule = Get-AzAutomationSchedule -ResourceGroupName $ResourceGroupName -AutomationAccountName $automationAccountName -Name "Schedule $vm"
-#@{"vm"="shhwsr1849";"sub"="s-sis-eu-nonprod-01"}
+$Schedule_Time = $date -as [datetime]
 
-$data = @{"vm"="$vm";"sub"="$sub";"Retention"="$Retention";"Schedule_Time"="$Schedule_Time"}
+$Snapshot_name = $vmName+"_Snapshot"
+New-AzAutomationSchedule -AutomationAccountName $automationAccountName -Name $Snapshot_name -StartTime $Schedule_Time -ResourceGroupName $ResourceGroupName -OneTime
+
+$Schedule = Get-AzAutomationSchedule -ResourceGroupName $ResourceGroupName -AutomationAccountName $automationAccountName -Name $Snapshot_name
+
+$data = @{"vmName"="$vmName";"sub"="$sub";"location"="$location";"resourceGroup"="$resourceGroup"}
 Register-AzAutomationScheduledRunbook –AutomationAccountName $AutomationAccountName –RunbookName $runbookName –ScheduleName $Schedule.Name –Parameters $data -ResourceGroupName $ResourceGroupName
