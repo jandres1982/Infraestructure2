@@ -31,7 +31,7 @@ $to = "alfonso.marques@schindler.com","nahum.sancho@schindler.com"
 $Subject = "VMs Zone Report"
 $Attachment = $report
 $Body = @"
-<div><span style="font-size: medium; font-family: arial, helvetica, sans-serif;">Dear Hanspeter,</span></div>
+<div><span style="font-size: medium; font-family: arial, helvetica, sans-serif;">Dear all,</span></div>
 <div>&nbsp;</div>
 <div><span style="font-size: medium; font-family: arial, helvetica, sans-serif;">Please find attached the Zone Report of SIS VMs.</span></div>
 <div>&nbsp;</div>
