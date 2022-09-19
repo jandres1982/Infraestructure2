@@ -1,0 +1,11 @@
+INFW0125.inf.schindler.com
+INFW0169.inf.schindler.com
+INFW0385.inf.schindler.com
+INFW0508.inf.schindler.com
+SCHWEBI006.sch.schindler.com
+SHHWSR0007.global.schindler.com
+SHHWSR0073.global.schindler.com
+SHHWSR0069.global.schindler.com
+SHHWSR0057.global.schindler.com
+SHHWSR0113.global.schindler.com
+SHHWSR0050.global.schindler.com

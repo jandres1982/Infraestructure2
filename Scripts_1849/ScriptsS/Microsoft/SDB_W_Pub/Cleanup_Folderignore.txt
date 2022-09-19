@@ -1,0 +1,2 @@
+infv0001.global.schindler.com\world$\Public\myaccess_VDI
+infv0001.global.schindler.com\world$\Public\restore_instructions

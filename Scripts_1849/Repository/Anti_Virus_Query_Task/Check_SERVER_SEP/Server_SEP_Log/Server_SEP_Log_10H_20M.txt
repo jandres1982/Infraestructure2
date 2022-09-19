@@ -1,0 +1,102 @@
+﻿**********************
+Windows PowerShell transcript start
+Start time: 20191127102023
+Username: GLOBAL\admventoa1
+RunAs User: GLOBAL\admventoa1
+Machine: SHHWSR0958 (Microsoft Windows NT 6.3.9600.0)
+Host Application: C:\Windows\System32\WindowsPowerShell\v1.0\powershell_ise.exe
+Process ID: 5968
+PSVersion: 5.1.14407.1003
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.14407.1003
+BuildVersion: 10.0.14407.1003
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+Transcript started, output file is D:\Repository\Working\Antonio\Anti_Virus_Query_Task\Check_SERVER_SEP\Server_SEP_Log\Server_SEP_Log_10H_20M.txt
+##############################  secwsr9996 ###############################################
+
+
+secwsr9996 is not pingable
+##############################  secwsr9997 ###############################################
+
+
+secwsr9997 is not pingable
+##############################  secwsr1025 ###############################################
+
+
+secwsr1025 is not pingable
+##############################  deuwsr7002 ###############################################
+
+
+deuwsr7002 ping is good!
+deuwsr7002 SepMasterService found
+SEP version
+14.0.3876.1100
+WARNING: SEP needs to be updated check
+WARNING: Pending reboot needed, probably waiting to apply the new version
+deuwsr7002 RDP OK
+
+
+##############################  secwsr7010 ###############################################
+
+
+secwsr7010 is not pingable
+##############################  indwsr0018 ###############################################
+
+
+indwsr0018 is not pingable
+##############################  schwsr0078 ###############################################
+
+
+schwsr0078 is not pingable
+##############################  schwsr0044 ###############################################
+
+
+schwsr0044 is not pingable
+##############################  jsgwsr0008 ###############################################
+
+
+jsgwsr0008 is not pingable
+##############################  milwsr0105 ###############################################
+
+
+milwsr0105 is not pingable
+##############################  jnbwsr0033 ###############################################
+
+
+jnbwsr0033 ping is good!
+jnbwsr0033 SepMasterService found
+SEP version
+14.2.4814.1101
+ALL RIGHT! Version: 14.2.4814.1101
+jnbwsr0033 RDP OK
+
+
+##############################  indwsr0020 ###############################################
+
+
+indwsr0020 ping is good!
+indwsr0020 SepMasterService found
+SEP version
+14.2.4814.1101
+ALL RIGHT! Version: 14.2.4814.1101
+indwsr0020 RDP OK
+
+
+##############################  indwsr0024 ###############################################
+
+
+indwsr0024 ping is good!
+indwsr0024 SepMasterService found
+SEP version
+14.0.3876.1100
+WARNING: SEP needs to be updated check
+PS C:\Windows\system32> TerminatingError(): "The pipeline has been stopped."
+>> TerminatingError(): "The pipeline has been stopped."
+**********************
+Windows PowerShell transcript end
+End time: 20191127102239
+**********************

@@ -1,0 +1,203 @@
+' H VERGE AUG 2010
+
+' ---------------------------------------------------------------------------
+' Search all local Hard Drives on computer for and EFS Folders or Files.
+'
+' Writes to registry at HKLM\Software\EFS-Find. So other scripts can test the 
+' PassedChecks value for reporting.
+'
+' PassedChecks will be one of the following:
+'	UNKNOWN		(script in progress or failed)
+'	YES		(passed EFS Checks, no EFS found)
+'	NO		(failed EFS Checks, EFS Folder and/or Files found)
+'
+' If PassedChecks is "NO" after running, then other scripts can copy the log
+' file that is specified in the LogFile registry value (if needed).
+' ---------------------------------------------------------------------------
+On Error Resume Next
+
+
+
+
+' ---------------------------------------------------------------------------
+' Must run as a local Administrator:
+' ---------------------------------------------------------------------------
+Set objShell = Wscript.CreateObject("WScript.Shell")
+objShell.RegWrite "HKCU\Software\Policies\LocalAdminTest",Now(),"REG_SZ"
+If Err Then 
+   Wscript.Echo "You must run this as an Administrator." & vbcrlf & vbCrLf &_
+		"If running Vista or Win7, this needs to be run with elevated privileges."  & vbcrlf & vbcrlf & _
+		"In Vista or Win7, open a command prompt as administrator, and "  & vbcrlf & _
+		"then run it again from there."
+   Wscript.Quit(10)
+Else
+   objShell.RegDelete "HKCU\Software\Policies\LocalAdminTest"
+End If
+
+
+
+
+' ----------------------------------------------------------------------
+' Force VBS to use Cscript instead of Wscript if not using it already:
+' ----------------------------------------------------------------------
+If Instr(1, WScript.FullName, "CScript", vbTextCompare) = 0 Then
+   objShell.Run "cscript //nologo """ & WScript.ScriptFullName & """", 1, False
+   WScript.Quit
+End If
+
+
+
+
+' ---------------------------------------------------------------------------
+' Still here? Let's get started:
+' ---------------------------------------------------------------------------
+Const TITLE = "EFS-Find"
+
+Const REG_ROOT = "HKLM\Software\EFS-Find\"
+
+Dim objShell, objFSO, objWMIService
+Dim strMessage, strPassedChecks, Drive, flgFound
+
+Set objFSO = CreateObject("Scripting.FileSystemObject")
+Set objWMIService = GetObject("winmgmts:\\.\root\CIMV2")
+
+
+
+
+' ---------------------------------------------------------------------------
+' Tag Registry to indicate script-in-progress:
+' ---------------------------------------------------------------------------
+strMessage = "Script in progress."
+strPassedChecks = "UNKNOWN"
+WriteReg
+
+
+
+
+' ---------------------------------------------------------------------------
+' Open output file and write report header:
+' ---------------------------------------------------------------------------
+strLogFileName = objShell.ExpandEnvironmentStrings("%TEMP%") & "\" & _
+		 TITLE & "-" & objShell.ExpandEnvironmentStrings("%COMPUTERNAME%") & ".txt"
+Set objLogFile = objFSO.CreateTextFile(strLogFileName, True)
+objLogFile.WriteLine(TITLE & " " & Now())
+objLogFile.WriteLine(String(31,"-"))
+
+
+
+
+' ---------------------------------------------------------------------------
+' Search each of the local drives. Some computers have more than 1 drive:
+' ---------------------------------------------------------------------------
+Wscript.Echo vbcrlf & "Searching all local Hard Drives for EFS Folders or Files" & vbcrlf
+For Each Drive In objFSO.Drives
+   If Drive.IsReady And Drive.DriveType = 2 Then
+      Call FindEFS(Drive)
+   End If
+Next 'Drive
+
+
+
+
+' ---------------------------------------------------------------------------
+' Cleanup/close file:
+' ---------------------------------------------------------------------------
+objLogFile.WriteLine(" ")
+objLogFile.WriteLine(String(31,"-"))
+objLogFile.WriteLine(TITLE & " " & Now())
+objLogFile.Close
+
+
+
+
+' ---------------------------------------------------------------------------
+' Show results file (disable this if not running interactively):
+' ---------------------------------------------------------------------------
+objShell.Run """" & strLogFileName & """"
+
+
+
+
+' ---------------------------------------------------------------------------
+' At least one EFS Folder or File found:
+' ---------------------------------------------------------------------------
+If strPassedChecks = "NO" Then
+   strMessage = "At least one EFS Folder/File detected. See LogFile for details."
+   strPassedChecks = "NO"
+   WriteReg
+   Wscript.Echo vbcrlf & "EFS Folder/File detected, for details see:" &_
+		vbcrlf & strLogFileName
+   Wscript.Quit(999)
+End If
+
+
+
+
+' ---------------------------------------------------------------------------
+' If still here, then no EFS found:
+' ---------------------------------------------------------------------------
+strMessage = "No EFS Folders/Files detected."
+strPassedChecks = "YES"
+WriteReg
+Wscript.Echo vbcrlf & strMessage
+Wscript.Quit(0)
+
+
+
+
+' ---------------------------------------------------------------------------
+' For each drive called, find EFS folders then any EFS files:
+' ---------------------------------------------------------------------------
+Sub FindEFS(strDrive)
+   WScript.Echo vbcrlf & "Searching " & strDrive & " for EFS Folders ..."
+   objLogFile.WriteLine(vbcrlf & "Searching " & strDrive & " for EFS Folders ...")
+   flgFound = False
+   Set colFolderItems = objWMIService.ExecQuery("SELECT CSName, Name, Encrypted FROM Win32_Directory " & _
+						"where Drive = '" & strDrive & "'")
+   For Each objFolderItem In colFolderItems
+      If objFolderItem.Encrypted Then
+	 flgFound = True
+	 objLogFile.WriteLine("Searching " & strDrive & " for EFS Folders ... Found:" & vbtab & objFolderItem.Name)
+         strPassedChecks = "NO"
+         WriteReg
+      End If
+   Next
+   If flgFound Then
+      WScript.Echo "Searching " & strDrive & " for EFS Folders ... At least one found."
+   Else
+      WScript.Echo "Searching " & strDrive & " for EFS Folders ... None found."
+      objLogFile.WriteLine("Searching " & strDrive & " for EFS Folders ... None found.")
+   End If
+   WScript.Echo "Searching " & strDrive & " for EFS Files   ..."
+   objLogFile.WriteLine(vbcrlf & "Searching " & strDrive & " for EFS Files   ...")
+   flgFound = False
+   Set colFileItems = objWMIService.ExecQuery("SELECT CSName, Name, Encrypted FROM CIM_DataFile where " & _
+					      "Drive = '" & strDrive & "' and Encrypted = True")
+   For Each objFileItem In colFileItems
+      If objFileItem.Encrypted Then
+	 flgFound = True
+         objLogFile.WriteLine("Searching " & strDrive & " for EFS Files   ... Found:" & vbtab & objFileItem.Name)
+         strPassedChecks = "NO"
+         WriteReg
+      End If
+   Next
+   If flgFound Then
+      WScript.Echo "Searching " & strDrive & " for EFS Files   ... At least one found."
+   Else
+      WScript.Echo "Searching " & strDrive & " for EFS Files   ... None found."
+      objLogFile.WriteLine("Searching " & strDrive & " for EFS Files   ... None found.")
+   End If
+End Sub
+
+
+
+
+' ---------------------------------------------------------------------------
+' Write script progress/results to registry:
+' ---------------------------------------------------------------------------
+Sub WriteReg()
+   objShell.RegWrite REG_ROOT & "DateRun",Date
+   objShell.RegWrite REG_ROOT & "Message",strMessage
+   objShell.RegWrite REG_ROOT & "PassedChecks",strPassedChecks
+   objShell.RegWrite REG_ROOT & "LogFile",strLogFileName
+End Sub

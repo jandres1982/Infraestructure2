@@ -1,0 +1,1 @@
+robocopy \\deuwsr3001\data$\groups \\Shhdna0010\deu$\NWE\data\groups /MIR /ZB /COPYALL /MT:100 /R:1 /W:0 /V /log:D:\Alb\Logs\Copy\Rob_G_3001.log /TEE

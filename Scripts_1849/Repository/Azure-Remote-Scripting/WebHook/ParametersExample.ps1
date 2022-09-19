@@ -1,0 +1,2 @@
+﻿param([string]$VM)
+$VM

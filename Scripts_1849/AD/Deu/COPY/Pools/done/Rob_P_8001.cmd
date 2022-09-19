@@ -1,0 +1,1 @@
+robocopy \\deuwsr8001\data$\pools \\shhdna0010\DEU$\SUO\data\pools /MIR /ZB /COPYALL /MT:100 /R:1 /W:0 /V /log:D:\Alb\Logs\Copy\Rob_P_8001.log /TEE

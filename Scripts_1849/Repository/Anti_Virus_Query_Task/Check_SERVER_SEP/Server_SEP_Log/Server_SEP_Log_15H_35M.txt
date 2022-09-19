@@ -1,0 +1,306 @@
+﻿**********************
+Windows PowerShell transcript start
+Start time: 20191120153532
+Username: GLOBAL\admventoa1
+RunAs User: GLOBAL\admventoa1
+Machine: SHHWSR0958 (Microsoft Windows NT 6.3.9600.0)
+Host Application: C:\Windows\System32\WindowsPowerShell\v1.0\powershell_ise.exe
+Process ID: 6676
+PSVersion: 5.1.14407.1003
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.14407.1003
+BuildVersion: 10.0.14407.1003
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+Transcript started, output file is D:\Repository\Working\Antonio\Anti_Virus_Query_Task\Check_SERVER_SEP\Server_SEP_Log\Server_SEP_Log_15H_35M.txt
+##############################  NZCWSR0001 ###############################################
+
+
+NZCWSR0001 ping is good!
+Server NZCWSR0001 have SEP Installed
+PS>TerminatingError(): "The pipeline has been stopped."
+>> TerminatingError(): "The pipeline has been stopped."
+PS C:\Windows\system32> D:\Repository\Working\Antonio\Anti_Virus_Query_Task\SEP_Install\Install_SEP_v1.ps1
+At D:\Repository\Working\Antonio\Anti_Virus_Query_Task\SEP_Install\Install_SEP_v1.ps1:32 char:1
++ {
++ ~
+Missing closing '}' in statement block or type definition.
+    + CategoryInfo          : ParserError: (:) [], ParentContainsErrorRecordException
+    + FullyQualifiedErrorId : MissingEndCurlyBrace
+
+
+--------------- Running on Server shhwsr9999 --------------------
+
+WARNING: Warning server shhwsr9999 is not reachable
+
+--------------- Running on Server shhwsr1636 --------------------
+
+C$\temp\ folder is reachable shhwsr1636
+PS C:\Windows\system32> TerminatingError(Invoke-Command): "Missing an argument for parameter 'ScriptBlock'. Specify a parameter of type 'System.Management.Automation.ScriptBlock' and try again."
+Invoke-Command : Missing an argument for parameter 'ScriptBlock'. Specify a parameter of type 
+'System.Management.Automation.ScriptBlock' and try again.
+At D:\Repository\Working\Antonio\Anti_Virus_Query_Task\SEP_Install\Install_SEP_v1.ps1:47 char:61
++ ...      $Get_version = Invoke-Command -ComputerName $Server -ScriptBlock
++                                                              ~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (:) [Invoke-Command], ParameterBindingException
+    + FullyQualifiedErrorId : MissingArgument,Microsoft.PowerShell.Commands.InvokeCommandCommand
+Invoke-Command : Missing an argument for parameter 'ScriptBlock'. Specify a parameter of type 'System.Management.Automation.ScriptBlock' and try again.
+At D:\Repository\Working\Antonio\Anti_Virus_Query_Task\SEP_Install\Install_SEP_v1.ps1:47 char:61
++ ...      $Get_version = Invoke-Command -ComputerName $Server -ScriptBlock
++                                                              ~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (:) [Invoke-Command], ParameterBindingException
+    + FullyQualifiedErrorId : MissingArgument,Microsoft.PowerShell.Commands.InvokeCommandCommand
+
+
+        Get-ItemProperty -path "HKLM:\SOFTWARE\Symantec\Symantec Endpoint Protection\CurrentVersion" | Select-Object "Productversion"
+
+SEP files are being copied in server shhwsr1636
+PS C:\Windows\system32> TerminatingError(): "The pipeline has been stopped."
+>> TerminatingError(): "The pipeline has been stopped."
+PS C:\Windows\system32> Get-ItemProperty -path "HKLM:\SOFTWARE\Symantec\Symantec Endpoint Protection\CurrentVersion" | Select-Object "Productversion"
+
+PRODUCTVERSION
+--------------
+14.2.4814.1101
+
+
+PS C:\Windows\system32>        $Server =  "shhwsr1636"
+        $Get_version = Invoke-Command -ComputerName $Server -ScriptBlock
+        {
+        Get-ItemProperty -path "HKLM:\SOFTWARE\Symantec\Symantec Endpoint Protection\CurrentVersion" | Select-Object "Productversion"
+        }
+>> TerminatingError(Invoke-Command): "Missing an argument for parameter 'ScriptBlock'. Specify a parameter of type 'System.Management.Automation.ScriptBlock' and try again."
+Invoke-Command : Missing an argument for parameter 'ScriptBlock'. Specify a parameter of type 
+'System.Management.Automation.ScriptBlock' and try again.
+At line:2 char:61
++ ...      $Get_version = Invoke-Command -ComputerName $Server -ScriptBlock
++                                                              ~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (:) [Invoke-Command], ParameterBindingException
+    + FullyQualifiedErrorId : MissingArgument,Microsoft.PowerShell.Commands.InvokeCommandCommand
+Invoke-Command : Missing an argument for parameter 'ScriptBlock'. Specify a parameter of type 'System.Management.Automation.ScriptBlock' and try again.
+At line:2 char:61
++ ...      $Get_version = Invoke-Command -ComputerName $Server -ScriptBlock
++                                                              ~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (:) [Invoke-Command], ParameterBindingException
+    + FullyQualifiedErrorId : MissingArgument,Microsoft.PowerShell.Commands.InvokeCommandCommand
+
+
+        Get-ItemProperty -path "HKLM:\SOFTWARE\Symantec\Symantec Endpoint Protection\CurrentVersion" | Select-Object "Productversion"
+
+PS C:\Windows\system32>        $Server =  "shhwsr1636"
+       Invoke-Command -ComputerName $Server -ScriptBlock
+        {
+        Get-ItemProperty -path "HKLM:\SOFTWARE\Symantec\Symantec Endpoint Protection\CurrentVersion" | Select-Object "Productversion"
+        }
+>> TerminatingError(Invoke-Command): "Missing an argument for parameter 'ScriptBlock'. Specify a parameter of type 'System.Management.Automation.ScriptBlock' and try again."
+Invoke-Command : Missing an argument for parameter 'ScriptBlock'. Specify a parameter of type 
+'System.Management.Automation.ScriptBlock' and try again.
+At line:2 char:45
++        Invoke-Command -ComputerName $Server -ScriptBlock
++                                             ~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (:) [Invoke-Command], ParameterBindingException
+    + FullyQualifiedErrorId : MissingArgument,Microsoft.PowerShell.Commands.InvokeCommandCommand
+Invoke-Command : Missing an argument for parameter 'ScriptBlock'. Specify a parameter of type 'System.Management.Automation.ScriptBlock' and try again.
+At line:2 char:45
++        Invoke-Command -ComputerName $Server -ScriptBlock
++                                             ~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (:) [Invoke-Command], ParameterBindingException
+    + FullyQualifiedErrorId : MissingArgument,Microsoft.PowerShell.Commands.InvokeCommandCommand
+
+
+        Get-ItemProperty -path "HKLM:\SOFTWARE\Symantec\Symantec Endpoint Protection\CurrentVersion" | Select-Object "Productversion"
+
+PS C:\Windows\system32>        $Server =  "shhwsr1636"
+       $Get_version = Invoke-Command -ComputerName $Server -ScriptBlock {
+        Get-ItemProperty -path "HKLM:\SOFTWARE\Symantec\Symantec Endpoint Protection\CurrentVersion" | Select-Object "Productversion"
+       }
+
+--------------- Running on Server shhwsr9999 --------------------
+
+WARNING: Warning server shhwsr9999 is not reachable
+
+--------------- Running on Server shhwsr1636 --------------------
+
+C$\temp\ folder is reachable shhwsr1636
+WARNING: Server has the right Version
+14.2.4814.1101
+
+--------------- Running on Server shhwsr0239 --------------------
+
+C$\temp\ folder is reachable shhwsr0239
+WARNING: Server has the right Version
+14.2.4814.1101
+
+--------------- Running on Server shhwsr9999 --------------------
+
+WARNING: Warning server shhwsr9999 is not reachable
+
+--------------- Running on Server shhwsr1636 --------------------
+
+C$\temp\ folder is reachable shhwsr1636
+WARNING: Server has the right Version
+14.2.4814.1101
+
+--------------- Running on Server shhwsr0239 --------------------
+
+C$\temp\ folder is reachable shhwsr0239
+WARNING: Server has the right Version
+14.2.4814.1101
+
+Send Logs By Email
+
+--------------- Running on Server shhwsr9999 --------------------
+
+WARNING: Warning server shhwsr9999 is not reachable
+
+--------------- Running on Server shhwsr1636 --------------------
+
+C$\temp\ folder is reachable shhwsr1636
+WARNING: Server has the right Version
+14.2.4814.1101
+
+--------------- Running on Server shhwsr0239 --------------------
+
+C$\temp\ folder is reachable shhwsr0239
+WARNING: Server has the right Version
+14.2.4814.1101
+
+Send Logs By Email
+This user is not added to the User DB, please check with the System Administrator
+
+--------------- Running on Server shhwsr9999 --------------------
+
+WARNING: Warning server shhwsr9999 is not reachable
+
+--------------- Running on Server shhwsr1636 --------------------
+
+C$\temp\ folder is reachable shhwsr1636
+WARNING: Server has the right Version
+14.2.4814.1101
+
+--------------- Running on Server shhwsr0239 --------------------
+
+C$\temp\ folder is reachable shhwsr0239
+WARNING: Server has the right Version
+14.2.4814.1101
+
+Send Logs By Email
+
+--------------- Running on Server shhwsr9999 --------------------
+
+WARNING: Warning server shhwsr9999 is not reachable
+
+--------------- Running on Server shhwsr1636 --------------------
+
+C$\temp\ folder is reachable shhwsr1636
+WARNING: Server has the right Version
+14.2.4814.1101
+
+--------------- Running on Server shhwsr0239 --------------------
+
+C$\temp\ folder is reachable shhwsr0239
+WARNING: Server has the right Version
+14.2.4814.1101
+
+Send Logs By Email
+PS C:\Windows\system32> TerminatingError(): "The pipeline has been stopped."
+>> TerminatingError(): "The pipeline has been stopped."
+
+--------------- Running on Server shhwsr9999 --------------------
+
+WARNING: Warning server shhwsr9999 is not reachable
+
+--------------- Running on Server shhwsr1636 --------------------
+
+C$\temp\ folder is reachable shhwsr1636
+WARNING: Server has the right Version
+14.2.4814.1101
+
+--------------- Running on Server shhwsr0239 --------------------
+
+C$\temp\ folder is reachable shhwsr0239
+WARNING: Server has the right Version
+14.2.4814.1101
+
+Send Logs By Email
+
+--------------- Running on Server shhwsr9999 --------------------
+
+WARNING: Warning server shhwsr9999 is not reachable
+
+--------------- Running on Server shhwsr1636 --------------------
+
+C$\temp\ folder is reachable shhwsr1636
+WARNING: Server has the right Version
+14.2.4814.1101
+
+--------------- Running on Server shhwsr0239 --------------------
+
+C$\temp\ folder is reachable shhwsr0239
+WARNING: Server has the right Version
+14.2.4814.1101
+
+Send Logs By Email
+
+--------------- Running on Server shhwsr9999 --------------------
+
+WARNING: Warning server shhwsr9999 is not reachable
+
+--------------- Running on Server shhwsr1636 --------------------
+
+C$\temp\ folder is reachable shhwsr1636
+WARNING: Server has the right Version
+14.2.4814.1101
+
+--------------- Running on Server shhwsr0239 --------------------
+
+C$\temp\ folder is reachable shhwsr0239
+WARNING: Server has the right Version
+14.2.4814.1101
+
+Send Logs By Email
+
+--------------- Running on Server shhwsr9999 --------------------
+
+WARNING: Warning server shhwsr9999 is not reachable
+
+--------------- Running on Server shhwsr1636 --------------------
+
+C$\temp\ folder is reachable shhwsr1636
+WARNING: Server has the right Version
+14.2.4814.1101
+
+--------------- Running on Server shhwsr0239 --------------------
+
+C$\temp\ folder is reachable shhwsr0239
+WARNING: Server has the right Version
+14.2.4814.1101
+
+Send Logs By Email
+
+--------------- Running on Server shhwsr9999 --------------------
+
+WARNING: Warning server shhwsr9999 is not reachable
+
+--------------- Running on Server shhwsr1636 --------------------
+
+C$\temp\ folder is reachable shhwsr1636
+WARNING: Server has the right Version
+14.2.4814.1101
+
+--------------- Running on Server shhwsr0239 --------------------
+
+C$\temp\ folder is reachable shhwsr0239
+WARNING: Server has the right Version
+14.2.4814.1101
+
+Send Logs By Email
+PS C:\Windows\system32> TerminatingError(): "The pipeline has been stopped."
+>> TerminatingError(): "The pipeline has been stopped."
+**********************
+Windows PowerShell transcript end
+End time: 20191120155912
+**********************

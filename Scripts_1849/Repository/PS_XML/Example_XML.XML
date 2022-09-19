@@ -1,0 +1,128 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Order Action="new">
+	<Server>
+		<FQDN>shhlsr0210.dmz2.schindler.com</FQDN>
+		<Hostname>shhlsr0210</Hostname>
+		<OS>RHEL 7</OS>
+		<Owner>Marcelo Leister</Owner>
+		<OwnerID>LEISTEMA</OwnerID>
+		<OwnerPhone>n/a</OwnerPhone>
+		<Function>iCCS TA-Hub-Edge</Function>
+		<Location>Zollikofen</Location>
+		<CPU>1</CPU>
+		<RAM>4</RAM>
+		<StorageType>Standard Storage</StorageType>
+		<Backup>02.1 - Agent-based OS Backup, short term</Backup>
+		<BackupRetention>30 days</BackupRetention>
+		<Domain>DMZ2</Domain>
+		<ServiceLevel>Silver</ServiceLevel>
+		<ManagedOS>office</ManagedOS>
+		<ITBC>false</ITBC>
+		<Timezone>CET</Timezone>
+		<AlertGroup>SG-BE-SCC-ZAR</AlertGroup>
+	</Server>
+	<Users>
+		<User Action="add">
+			<Username>7101</Username>
+		</User>
+		<User Action="add">
+			<Username>6680</Username>
+		</User>
+		<User Action="add">
+			<Username>6685</Username>
+		</User>
+		<User Action="add">
+			<Username>8054</Username>
+		</User>
+		<User Action="add"/>
+		<User Action="add">
+			<Username>6716</Username>
+		</User>
+		<User Action="add">
+			<Username>1712</Username>
+		</User>
+		<User Action="add">
+			<Username>7201</Username>
+		</User>
+		<User Action="add">
+			<Username>1711</Username>
+		</User>
+		<User Action="add">
+			<Username>11112</Username>
+		</User>
+	</Users>
+	<Network>
+		<Interface>
+			<NIC>nic1</NIC>
+			<VLAN>3101</VLAN>
+			<IP>10.23.1.55</IP>
+			<Subnetmask>255.255.255.0</Subnetmask>
+			<DefaultGateway>10.23.1.1</DefaultGateway>
+			<DNS1>10.10.28.51</DNS1>
+			<DNS2>10.10.28.53</DNS2>
+		</Interface>
+		<Interface>
+			<NIC>nic2</NIC>
+			<VLAN>3201</VLAN>
+			<IP>10.24.2.55</IP>
+			<Subnetmask>255.255.255.0</Subnetmask>
+			<DefaultGateway>10.24.2.1</DefaultGateway>
+			<DNS1>10.10.28.51</DNS1>
+			<DNS2>10.10.28.53</DNS2>
+		</Interface>
+		<Interface>
+			<NIC>nic2</NIC>
+			<VLAN>3201</VLAN>
+			<IP>10.24.2.56</IP>
+			<Subnetmask>255.255.255.0</Subnetmask>
+			<DefaultGateway>10.24.2.1</DefaultGateway>
+			<DNS1>10.10.28.51</DNS1>
+			<DNS2>10.10.28.53</DNS2>
+		</Interface>
+		<Interface/>
+		<Interface/>
+	</Network>
+	<Disks>
+		<Disk>
+			<Mointpoint>/ta-hub</Mointpoint>
+			<Size>50</Size>
+			<BlockSize>4</BlockSize>
+		</Disk>
+		<Disk/>
+		<Disk/>
+		<Disk/>
+		<Disk/>
+		<Disk/>
+		<Disk/>
+		<Disk/>
+		<Disk/>
+		<Disk/>
+		<Disk/>
+		<Disk/>
+		<Disk/>
+		<Disk/>
+		<Disk/>
+		<Disk/>
+		<Disk/>
+		<Disk/>
+		<Disk/>
+		<Disk/>
+		<Disk/>
+		<Disk/>
+		<Disk/>
+		<Disk/>
+		<Disk/>
+		<Disk/>
+		<Disk/>
+		<Disk/>
+	</Disks>
+	<SAP>
+		<SAPSID>n/a</SAPSID>
+	</SAP>
+	<Contact>
+		<Name>Sancho Iguaz</Name>
+		<Firstname>David</Firstname>
+		<Email>david.sanchoiguaz@schindler.com</Email>
+		<Phone>true</Phone>
+	</Contact>
+</Order>

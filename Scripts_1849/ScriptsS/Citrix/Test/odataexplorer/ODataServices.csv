@@ -1,0 +1,6 @@
+Name, uri
+CTXDEV, "http://shhwsrcx0001.global.schindler.com/Citrix/Monitor/OData/v1/Data"
+CTXQUAL, "http://shhwsrcx0011.global.schindler.com/Citrix/Monitor/OData/v1/Data"
+CTXPROD, "http://shhwsrcx0021.global.schindler.com/Citrix/Monitor/OData/v1/Data"
+CTXPRODMethods, "http://shhwsrcx0021.global.schindler.com/Citrix/Monitor/OData/v1/Methods"
+CTXPRODMethods2, "http://shhwsrcx0011.global.schindler.com/Citrix/Monitor/OData/v1/Methods/GetConcurrentSessionsTrend?startDate=datetime'2014-06-01T12:26:00'&endDate=datetime'2014-06-03T13:26:00'&intervalLength=1"

@@ -1,0 +1,286 @@
+			---------------------------------------------------------
+			---------------------------------------------------------
+			MasterCheck.ps1 	(MasterScript for server checks)
+			Version: 			1.3
+			Script started on:	22.01.2016 14:32:43 from admbarmetmi
+			RootFolder:		C:\Admin
+			---------------------------------------------------------
+			---------------------------------------------------------
+			
+22.01.2016 14:32:48  	PowerShell version: 	3
+22.01.2016 14:32:48  	Parameter which this script has been started:
+22.01.2016 14:32:48  	Param ::: CheckTyp: 		precheck
+22.01.2016 14:32:48  	Param ::: Products: 		Full
+			
+22.01.2016 14:32:48  	Check C:\Admin\CheckScripts\
+22.01.2016 14:32:48  	ScriptFolder exist --> OK
+22.01.2016 14:32:48  	Get the CheckScripts...
+22.01.2016 14:32:48  	Collect Informations...
+			
+22.01.2016 14:32:48  	CheckAdminAccess.ps1 Collected: True
+22.01.2016 14:32:48  	CheckAutologAdmin.ps1 Collected: True
+22.01.2016 14:32:48  	CheckBitLockerDriveEncryption.ps1 Collected: True
+22.01.2016 14:32:48  	CheckBITSService.ps1 Collected: True
+22.01.2016 14:32:48  	CheckBuitInAdminAccount.ps1 Collected: True
+22.01.2016 14:32:48  	CheckDeviceManager.ps1 Collected: True
+22.01.2016 14:32:48  	CheckDomJoin.ps1 Collected: True
+22.01.2016 14:32:48  	CheckExistingMalwareProtection.ps1 Collected: True
+22.01.2016 14:32:48  	CheckIISLogLocation.ps1 is corrupt!!!! Error: You cannot call a method on a null-valued expression..Exception.Message; 
+22.01.2016 14:32:48  	CheckIISTaskScheduler.ps1 Collected: True
+22.01.2016 14:32:48  	CheckLizState.ps1 Collected: True
+22.01.2016 14:32:48  	CheckLocalAdminActive.ps1 Collected: True
+22.01.2016 14:32:48  	CheckMalwareProtectionInstalled.ps1 Collected: True
+22.01.2016 14:32:48  	CheckMonitoringInstalled.ps1 Collected: True
+22.01.2016 14:32:48  	CheckOSLanguage.ps1 Collected: True
+22.01.2016 14:32:48  	CheckPatchLevel.ps1 Collected: True
+22.01.2016 14:32:48  	CheckPuppetAgent.ps1 Collected: True
+22.01.2016 14:32:48  	CheckRDP.ps1 Collected: True
+22.01.2016 14:32:48  	CheckServices.ps1 Collected: True
+22.01.2016 14:32:48  	CheckSystemDrive.ps1 is corrupt!!!! Error: You cannot call a method on a null-valued expression..Exception.Message; 
+22.01.2016 14:32:48  	CheckWUService.ps1 Collected: True
+22.01.2016 14:32:48  	CheckWUServicePolicy.ps1 Collected: True
+22.01.2016 14:32:48  	MonAgentCheck.ps1 Collected: True
+22.01.2016 14:32:48  	OS-Version.ps1 Collected: True
+22.01.2016 14:32:48  	VmToolsCheck.ps1 Collected: True
+22.01.2016 14:32:48  	WindowsFirewall.ps1 Collected: True
+22.01.2016 14:32:48  	WindowsFirewallSMB.ps1 Collected: True
+			
+22.01.2016 14:32:48  	VmToolsCheck not executed --> wrong checktyp or wrong products assigned...
+22.01.2016 14:32:48  	CheckIISTaskScheduler not executed --> wrong checktyp or wrong products assigned...
+22.01.2016 14:32:48  	Execute:	CheckPuppetAgent
+22.01.2016 14:32:49  			ID: CheckPuppetAgent
+22.01.2016 14:32:49  			Status: True 
+22.01.2016 14:32:49  			Area: Cloud Managed Services
+22.01.2016 14:32:49  			Short: Check Puppet Agent
+22.01.2016 14:32:49  			Check if Puppet Agent is not running and not installed
+22.01.2016 14:32:49  			Info: Puppet Agent service not found.
+22.01.2016 14:32:49  			Error:  --- 
+22.01.2016 14:32:49  	Done:	CheckPuppetAgent
+			
+22.01.2016 14:32:49  	Execute:	CheckExistingMalwareProtection
+22.01.2016 14:32:54  			ID: CheckExistingMalwareProtection
+22.01.2016 14:32:54  			Status: False 
+22.01.2016 14:32:54  			Area: Malware
+22.01.2016 14:32:54  			Short: Anti-Virus
+22.01.2016 14:32:54  			Search installed AntiVirus software
+22.01.2016 14:32:54  			Info:  --- 
+22.01.2016 14:32:54  			Error: <p><b>Found in Registry HKLM:\Software\Microsoft\Windows\CurrentVersion\Uninstall\*</b></p>
+<table class="infotable">
+<thead><tr><th>Vendor:</th><th>Name:</th><th>Version:</th><th>Install date:</th></tr></thead>
+<tbody>
+<tr><td>Symantec Corporation</td><td>Symantec Endpoint Protection</td><td>12.1.4013.4013</td><td>12.06.2014</td></tr>
+</tbody></table></br>
+<p><b>Found in installed software</b></p>
+<table class="infotable">
+<thead><tr><th>Vendor:</th><th>Name:</th><th>Version:</th><th>Install date:</th></tr></thead>
+<tbody>
+<tr><td>Symantec Corporation</td><td>Symantec Endpoint Protection</td><td>12.1.4013.4013</td><td>12.06.2014</td></tr>
+</tbody></table></br>
+
+22.01.2016 14:32:54  	Done:	CheckExistingMalwareProtection
+			
+22.01.2016 14:32:54  	CheckMalwareProtectionInstalled not executed --> wrong checktyp or wrong products assigned...
+22.01.2016 14:32:54  	Execute:	CheckMonitoringInstalled
+22.01.2016 14:32:54  			ID: CheckMonitoringInstalled
+22.01.2016 14:32:54  			Status: True 
+22.01.2016 14:32:54  			Area: Monitoring
+22.01.2016 14:32:54  			Short: Check Monitoring Agent
+22.01.2016 14:32:54  			Check if service does not exist
+22.01.2016 14:32:54  			Info: 
+22.01.2016 14:32:54  			Error: ""Nxlog"" and ""NSClient++ (x64)"" services have not been found!
+22.01.2016 14:32:54  	Done:	CheckMonitoringInstalled
+			
+22.01.2016 14:32:54  	MonAgentCheck not executed --> wrong checktyp or wrong products assigned...
+22.01.2016 14:32:54  	Execute:	OS-Version
+22.01.2016 14:32:54  			ID: OS-Version
+22.01.2016 14:32:54  			Status: True 
+22.01.2016 14:32:54  			Area: Monitoring
+22.01.2016 14:32:54  			Short: Check the OS Version
+22.01.2016 14:32:54  			Check if the OS Version is Windows Server 2012R2 (6.3*) or 2008R2 (6.1*)
+22.01.2016 14:32:54  			Info: Current Operating System version is allowed: "Microsoft Windows Server 2008 R2 Datacenter "
+22.01.2016 14:32:54  			Error: 
+22.01.2016 14:32:54  	Done:	OS-Version
+			
+22.01.2016 14:32:54  	Execute:	WindowsFirewall
+22.01.2016 14:32:54  			ID: WindowsFirewall
+22.01.2016 14:32:54  			Status: False 
+22.01.2016 14:32:54  			Area: Netzwerk
+22.01.2016 14:32:54  			Short: Check if Windows Firewall is enabled
+22.01.2016 14:32:54  			Check if firwall is enabled on private/public/domain profile
+22.01.2016 14:32:54  			Info: 
+22.01.2016 14:32:54  			Error: Windows Firewall is not enabled on one or more profiles (0 = disabled / 1 = enabled):<table class="errortable"><thead><tr><th>Firewall Profile</th><th>Status</th></thead><tbody>		 <tr>
+		 <td>Domain Profile</td><td>0</td>
+		 </tr>
+		 <tr>
+		 <td>Private Profile</td><td>0</td>
+		 </tr>
+		 <tr>
+		 <td>Public Profile</td><td>0</td>
+		 </tr></tbody></table></br>
+22.01.2016 14:32:54  	Done:	WindowsFirewall
+			
+22.01.2016 14:32:54  	Execute:	WindowsFirewallSMB
+22.01.2016 14:32:54  			ID: WindowsFirewallSMB
+22.01.2016 14:32:54  			Status: True 
+22.01.2016 14:32:54  			Area: Netzwerk
+22.01.2016 14:32:54  			Short: Check SMB Firewall Rule
+22.01.2016 14:32:54  			Check if the firewall rule ""File and Printer Sharing (SMB-In)"" is enabled
+22.01.2016 14:32:54  			Info: Firewall Rule ""File and Printer Sharing (SMB-In)"" already enabled!
+22.01.2016 14:32:54  			Error: 
+22.01.2016 14:32:54  	Done:	WindowsFirewallSMB
+			
+22.01.2016 14:32:54  	Execute:	CheckBuitInAdminAccount
+22.01.2016 14:32:54  			ID: CheckBuitInAdminAccount
+22.01.2016 14:32:54  			Status: False 
+22.01.2016 14:32:54  			Area: OS/Credentials
+22.01.2016 14:32:54  			Short: Check Built-In Admin Account
+22.01.2016 14:32:54  			Checks if the Current Account under which the Script is Executed if it is the Original Microsoft Built-In Administrator Account
+22.01.2016 14:32:54  			Info: 
+22.01.2016 14:32:54  			Error: Current User: "admbarmetmi" is not the Original Microsoft Built-In Administrator Account '
+    Please use the the Built-In Administrator Account for further Actions
+22.01.2016 14:32:54  	Done:	CheckBuitInAdminAccount
+			
+22.01.2016 14:32:54  	Execute:	CheckLocalAdminActive
+22.01.2016 14:32:55  			ID: CheckLocalAdminActive
+22.01.2016 14:32:55  			Status: True 
+22.01.2016 14:32:55  			Area: OS/Credentials
+22.01.2016 14:32:55  			Short: Check if Local Admin is active
+22.01.2016 14:32:55  			Check if Built-In Local Admin Account is activ
+22.01.2016 14:32:55  			Info: <table class="infotable">
+<thead><tr><th>Propertie:</th><th>Value:</th></tr></thead>
+<tbody>
+<tr><td>Name:</td><td>Administrator</td></tr>
+<tr><td>SID:</td><td>S-1-5-21-2615165703-2411179504-1090506699-500</td></tr>
+<tr><td>State:</td><td>OK</td></tr>
+<tr><td>Disabled:</td><td>False</td></tr>
+<tr><td>Lockout:</td><td>False</td></tr>
+<tr><td>PasswordRequired:</td><td>True</td></tr>
+<tr><td>PasswordChangeable:</td><td>True</td></tr>
+</tbody></table></br>
+
+22.01.2016 14:32:55  			Error:  --- 
+22.01.2016 14:32:55  	Done:	CheckLocalAdminActive
+			
+22.01.2016 14:32:55  	Execute:	CheckAdminAccess
+22.01.2016 14:32:55  	!!! Failed to run Check !!! :	The term '.\CheckScripts\Tools\Carbon\Import-Carbon.ps1' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of the name, or if a path was included, verify that the path is correct and try again..Exception.Message;
+			
+22.01.2016 14:32:55  	Execute:	CheckAutologAdmin
+22.01.2016 14:32:55  			ID: CheckAutologAdmin
+22.01.2016 14:32:55  			Status: True 
+22.01.2016 14:32:55  			Area: OS/System
+22.01.2016 14:32:55  			Short: Check if AutoAdminLogon is disabled
+22.01.2016 14:32:55  			Check if the registry Key AutoAdminLogon is disabled
+22.01.2016 14:32:55  			Info: AutoAdminLogon key not found in registry, assuming that it is disabled!
+22.01.2016 14:32:55  			Error: 
+22.01.2016 14:32:55  	Done:	CheckAutologAdmin
+			
+22.01.2016 14:32:55  	Execute:	CheckBitLockerDriveEncryption
+22.01.2016 14:32:55  	!!! Failed to run Check !!! :	The term '.\CheckScripts\Tools\Carbon\Import-Carbon.ps1' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of the name, or if a path was included, verify that the path is correct and try again..Exception.Message;
+			
+22.01.2016 14:32:55  	Execute:	CheckDeviceManager
+22.01.2016 14:32:55  			ID: CheckDeviceManager
+22.01.2016 14:32:55  			Status: True 
+22.01.2016 14:32:55  			Area: OS/System
+22.01.2016 14:32:55  			Short: Check devicemanager for errors
+22.01.2016 14:32:55  			Check if there are any unknown devices or devices with the status ""Error"" in the devicemanager.
+22.01.2016 14:32:55  			Info: All devices seem to be OK
+22.01.2016 14:32:55  			Error: 
+22.01.2016 14:32:55  	Done:	CheckDeviceManager
+			
+22.01.2016 14:32:55  	CheckDomJoin not executed --> wrong checktyp or wrong products assigned...
+22.01.2016 14:32:55  	Execute:	CheckLizState
+22.01.2016 14:32:55  			ID: CheckLizState
+22.01.2016 14:32:55  			Status: False 
+22.01.2016 14:32:55  			Area: OS/System
+22.01.2016 14:32:55  			Short: Check license status of the machine
+22.01.2016 14:32:55  			Check wether the machine is activated or not.
+22.01.2016 14:32:55  			Info: Licensed
+22.01.2016 14:32:55  			Error: Windows is not activated! Unlicensed
+22.01.2016 14:32:55  	Done:	CheckLizState
+			
+22.01.2016 14:32:55  	Execute:	CheckOSLanguage
+22.01.2016 14:32:55  			ID: CheckOSLanguage
+22.01.2016 14:32:55  			Status: True 
+22.01.2016 14:32:55  			Area: OS/System
+22.01.2016 14:32:55  			Short: Check OS Language
+22.01.2016 14:32:55  			Check if OS Language is English_United_States (Locale ID 1033)
+22.01.2016 14:32:55  			Info: Current OS Language is English_United_States (1033)
+22.01.2016 14:32:55  			Error: 
+22.01.2016 14:32:55  	Done:	CheckOSLanguage
+			
+22.01.2016 14:32:55  	Execute:	CheckRDP
+22.01.2016 14:32:55  			ID: CheckRDP
+22.01.2016 14:32:55  			Status: True 
+22.01.2016 14:32:55  			Area: OS/System
+22.01.2016 14:32:55  			Short: Check if RDP is activated
+22.01.2016 14:32:55  			Check if RDP is set to ""Allow remote connections to this computer""
+22.01.2016 14:32:55  			Info: All Connections allowed
+22.01.2016 14:32:55  			Error: 
+22.01.2016 14:32:55  	Done:	CheckRDP
+			
+22.01.2016 14:32:55  	Execute:	CheckServices
+22.01.2016 14:33:00  			ID: CheckServices
+22.01.2016 14:33:00  			Status: False 
+22.01.2016 14:33:00  			Area: OS/System/Server Hardening
+22.01.2016 14:33:00  			Short: Checks if Server Hardening has been applied
+22.01.2016 14:33:00  			Server Hardening, Checks if Windows Services which are not required are Configured to be ""Disabled""
+22.01.2016 14:33:00  			Info: 
+22.01.2016 14:33:00  			Error: <table class="errortable"><thead><tr><th>Windows Service Display Name</th><th>Service Name</th><th>Expected Result</th><th>Current Configuration</th></tr></thead><tbody><tr><td>Windows Audio Endpoint Builder</td><td>AudioEndpointBuilder</td><td>Disabled</td><td>Manual</td></tr><tr><td>Windows Audio</td><td>Audiosrv</td><td>Disabled</td><td>Manual</td></tr><tr><td>Computer Browser</td><td>Browser</td><td>Disabled</td><td>Disabled</td></tr><tr><td>Windows Font Cache Service</td><td>FontCache</td><td>Disabled</td><td>Auto</td></tr><tr><td>IP Helper</td><td>iphlpsvc</td><td>Disabled</td><td>Auto</td></tr><tr><td>Net.Tcp Port Sharing Service</td><td>NetTcpPortSharing</td><td>Disabled</td><td>Manual</td></tr><tr><td>Routing and Remote Access</td><td>RemoteAccess</td><td>Disabled</td><td>Disabled</td></tr><tr><td>Smart Card</td><td>SCardSvr</td><td>Disabled</td><td>Manual</td></tr><tr><td>Secondary Logon</td><td>seclogon</td><td>Disabled</td><td>Manual</td></tr><tr><td>Internet Connection Sharing (ICS)</td><td>SharedAccess</td><td>Disabled</td><td>Disabled</td></tr><tr><td>Shell Hardware Detection</td><td>ShellHWDetection</td><td>Disabled</td><td>Auto</td></tr><tr><td>SSDP Discovery</td><td>SSDPSRV</td><td>Disabled</td><td>Disabled</td></tr><tr><td>Distributed Link Tracking Client</td><td>TrkWks</td><td>Disabled</td><td>Auto</td></tr><tr><td>UPnP Device Host</td><td>upnphost</td><td>Disabled</td><td>Disabled</td></tr><tr><td>Windows Color System</td><td>WcsPlugInService</td><td>Disabled</td><td>Manual</td></tr></tbody></table>Not all services are disabled!
+22.01.2016 14:33:00  	Done:	CheckServices
+			
+22.01.2016 14:33:00  	Execute:	CheckBITSService
+22.01.2016 14:33:00  			ID: CheckBITSService
+22.01.2016 14:33:00  			Status: True 
+22.01.2016 14:33:00  			Area: Patching
+22.01.2016 14:33:00  			Short: Check if BITS Service is not disabled
+22.01.2016 14:33:00  			Check if Background Intelligent Transfer Service is not disabled
+22.01.2016 14:33:00  			Info: Background Intelligent Transfer Service is NOT disabled.
+22.01.2016 14:33:00  			Error: 
+22.01.2016 14:33:00  	Done:	CheckBITSService
+			
+22.01.2016 14:33:00  	Execute:	CheckPatchLevel
+22.01.2016 14:33:12  			ID: CheckPatchLevel
+22.01.2016 14:33:12  			Status: True 
+22.01.2016 14:33:12  			Area: Patching
+22.01.2016 14:33:12  			Short: Check Patch Level of the machine
+22.01.2016 14:33:12  			Check when the last Patch has been applied and if this is within the Supported Time Range
+22.01.2016 14:33:12  			Info: <p>The last Hotfix has to be installed after:23. Dezember 2015</p><br><p>Patchlevel OK. Last Installdate is:Sonntag 17.01.2016<br>Total 733 installed Updates found</p>
+22.01.2016 14:33:12  			Error:  --- 
+22.01.2016 14:33:12  	Done:	CheckPatchLevel
+			
+22.01.2016 14:33:12  	Execute:	CheckWUService
+22.01.2016 14:33:12  			ID: CheckWUService
+22.01.2016 14:33:12  			Status: True 
+22.01.2016 14:33:12  			Area: Patching
+22.01.2016 14:33:12  			Short: Check Windows Update Service
+22.01.2016 14:33:12  			Check if Windows Update Service is not disabled
+22.01.2016 14:33:12  			Info: Windows Update Service is NOT disabled.
+22.01.2016 14:33:12  			Error: 
+22.01.2016 14:33:12  	Done:	CheckWUService
+			
+22.01.2016 14:33:12  	Execute:	CheckWUServicePolicy
+22.01.2016 14:33:12  			ID: CheckWUServicePolicy
+22.01.2016 14:33:12  			Status: False 
+22.01.2016 14:33:12  			Area: Patching
+22.01.2016 14:33:12  			Short: Check Automatic Updates
+22.01.2016 14:33:12  			Check WSUS Policies via GPO 
+22.01.2016 14:33:12  			Info:  --- 
+22.01.2016 14:33:12  			Error: <p>GPO is configured to a different Windows Update Server.</br>Please move this Server to the defined OU for Onboarding.</br>Actual configured Server: http://shhscpwsusinternal.global.schindler.com:8530</p>
+22.01.2016 14:33:12  	Done:	CheckWUServicePolicy
+			
+			 ---------------------------------------------------------
+22.01.2016 14:33:12  	Finish, all check-scripts executed...
+22.01.2016 14:33:12  	Totally 20 CheckScript(s) executed
+22.01.2016 14:33:12  	6 check(s) failed
+			
+22.01.2016 14:33:12  	Write Html Header....
+22.01.2016 14:33:12  	Write Html CSS....
+22.01.2016 14:33:12  	Write Html TopInfos....
+22.01.2016 14:33:12  	Write Html checkresults....
+22.01.2016 14:33:12  	Write Html Footer....
+22.01.2016 14:33:12  	Create Html Report: C:\Admin\Logs\Report_PRECHECK_22012016143243_INFWSR0008.GLOBAL.SCHINDLER.COM.html
+22.01.2016 14:33:12  	Html Report created
+			 ---------------------------------------------------------
+22.01.2016 14:33:12  	Run MasterCheck.ps1 Done...
+			 ---------------------------------------------------------
+			

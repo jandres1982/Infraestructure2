@@ -1,0 +1,6 @@
+ASZWSR0017.global.schindler.com
+ASZWSR0023.global.schindler.com
+ASZWSR0024.global.schindler.com
+ASZWSR0025.global.schindler.com
+ASZWSR0026.global.schindler.com
+crdwsr0001.global.schindler.com
