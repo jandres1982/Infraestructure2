@@ -16,8 +16,9 @@ foreach ($sub in $subs)
         Name = $vm.Name
         Resource_Group = $vm.ResourceGroupName
         Location = $vm.Location
-        AvailabilityZone = $vm.Zones
+        AvailabilityZone = $vm.zones[0]
         })
+        echo $vmObject
     } 
 }
 $report = 'VMS_'+'_Report_'+"$date"+'.csv'
@@ -27,12 +28,12 @@ $PSEmailServer = "smtp.eu.schindler.com"
 $From = "scc-support-zar.es@schindler.com"
 $to = "alfonso.marques@schindler.com","nahum.sancho@schindler.com"
 
-$Subject = "VMs Availability Zone Report"
+$Subject = "VMs Zone Report"
 $Attachment = $report
 $Body = @"
-<div><span style="font-size: medium; font-family: arial, helvetica, sans-serif;">Dear all,</span></div>
+<div><span style="font-size: medium; font-family: arial, helvetica, sans-serif;">Dear Hanspeter,</span></div>
 <div>&nbsp;</div>
-<div><span style="font-size: medium; font-family: arial, helvetica, sans-serif;">Please find attached the Availability Zones of SIS VMs.</span></div>
+<div><span style="font-size: medium; font-family: arial, helvetica, sans-serif;">Please find attached the Zone Report of SIS VMs.</span></div>
 <div>&nbsp;</div>
 <div><span style="font-size: medium; font-family: arial, helvetica, sans-serif;">Best regards,</span></div>
 <div>&nbsp;</div>
