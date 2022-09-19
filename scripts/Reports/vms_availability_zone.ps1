@@ -21,7 +21,7 @@ foreach ($sub in $subs)
         echo $vmObject
     } 
 }
-$report = 'VMS_'+'_Report_'+"$date"+'.csv'
+$report = 'VMS_'+'Zone_'+'Report_'+"$date"+'.csv'
 $vmObject  | Export-Csv $report -NoTypeInformation | Select-Object -Skip 1 | Set-Content $report
 
 $PSEmailServer = "smtp.eu.schindler.com"
