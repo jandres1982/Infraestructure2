@@ -20,13 +20,13 @@ data "vsphere_datacenter" "SCC" {
 }
 
 
-data "vsphere_virtual_machine" "proxyveeam" {
-	name = "proxyveeam"
+data "vsphere_virtual_machine" "snapvm" {
+	name = "snapvm"
 	datacenter_id = data.vsphere_datacenter.SCC.id
 }
 
-resource "vsphere_virtual_machine_snapshot" "proxyveeam" {
-  virtual_machine_uuid =  "${data.vsphere_virtual_machine.proxyveeam.id}"
+resource "vsphere_virtual_machine_snapshot" "snapvm" {
+  virtual_machine_uuid =  "${data.vsphere_virtual_machine.snapvm.id}"
   snapshot_name        = "Snapshot Name"
   description          = "This is Demo Snapshot"
   memory               = "false"
