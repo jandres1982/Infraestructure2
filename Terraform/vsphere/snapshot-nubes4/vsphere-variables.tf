@@ -21,3 +21,4 @@ variable "vsphere_datacenter" {
 variable "vm_name" {
   description = "vSphere vm"
   default     = "zzzwsr0001"
+}
