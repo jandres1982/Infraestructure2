@@ -21,7 +21,7 @@ data "vsphere_datacenter" "SCC" {
 
 
 data "vsphere_virtual_machine" "snapvm" {
-	name = "snapvm"
+	name = "${var.vm}"
 	datacenter_id = data.vsphere_datacenter.SCC.id
 }
 
