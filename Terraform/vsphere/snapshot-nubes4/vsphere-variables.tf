@@ -1,37 +1,23 @@
-terraform {
-  required_providers {
-    vsphere = {
-      source = "hashicorp/vsphere"
-      version = "2.2.0"
-    }
-  }
+variable "vsphere_user" {
+  default = "SA-PF01-vCSchiRO@itoper.local"
 }
 
-provider "vsphere" {
-  vsphere_server = "${var.vsphere_vcenter}"
-  user           = "${var.vsphere_user}"
-  password       = "${var.vsphere_password}"
-
-  allow_unverified_ssl = "${var.vsphere_unverified_ssl}"
+variable "vsphere_password" {
+  default = "jsN8pnjFcY8c"
 }
 
-
-
-data "vsphere_datacenter" "datacenter" {
-  name = "Prod-SCH-01"
+variable "vsphere_vcenter" {
+  default = "vcenterscs.global.schindler.com"
 }
 
-data "vsphere_virtual_machine" "snapvm" {
-	name = "${var.vm_name}"
-	datacenter_id = data.vsphere_datacenter.datacenter.id
+variable "vsphere_unverified_ssl" {
+  default = "true"
 }
 
-resource "vsphere_virtual_machine_snapshot" "snapvm" {
-  virtual_machine_uuid =  "${data.vsphere_virtual_machine.snapvm.id}"
-  snapshot_name        = "Snapshot Name"
-  description          = "This is Demo Snapshot"
-  memory               = "false"
-  quiesce              = "true"
-  remove_children      = "false"
-  consolidate          = "true"
+variable "vsphere_datacenter" {
+  default = "Prod-SCH-01"
 }
+
+variable "vm_name" {
+  description = "vSphere vm"
+  default     = "zzzwsr0001"
