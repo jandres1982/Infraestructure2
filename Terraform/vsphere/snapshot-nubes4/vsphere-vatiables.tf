@@ -1,28 +1,37 @@
-#====================#
-# vCenter connection #
-#====================#
-
-variable "vsphere_user" {
-  default = "SA-PF01-vCSchiRO@itoper.local"
+terraform {
+  required_providers {
+    vsphere = {
+      source = "hashicorp/vsphere"
+      version = "2.2.0"
+    }
+  }
 }
 
-variable "vsphere_password" {
-  default = "jsN8pnjFcY8c"
+provider "vsphere" {
+  vsphere_server = "${var.vsphere_vcenter}"
+  user           = "${var.vsphere_user}"
+  password       = "${var.vsphere_password}"
+
+  allow_unverified_ssl = "${var.vsphere_unverified_ssl}"
 }
 
-variable "vsphere_vcenter" {
-  default = "vcenternubes4.global.schindler.com"
+
+
+data "vsphere_datacenter" "datacenter" {
+  name = "Prod-SCH-01"
 }
 
-variable "vsphere_unverified_ssl" {
-  default = "true"
+data "vsphere_virtual_machine" "snapvm" {
+	name = "${var.vm_name}"
+	datacenter_id = data.vsphere_datacenter.datacenter.id
 }
 
-variable "vsphere_datacenter" {
-  default = "Prod-SCH-01"
-}
-
-variable "vsphere_cluster" {
-  description = "vSphere cluster"
-  default     = "Cluster"
+resource "vsphere_virtual_machine_snapshot" "snapvm" {
+  virtual_machine_uuid =  "${data.vsphere_virtual_machine.snapvm.id}"
+  snapshot_name        = "Snapshot Name"
+  description          = "This is Demo Snapshot"
+  memory               = "false"
+  quiesce              = "true"
+  remove_children      = "false"
+  consolidate          = "true"
 }
