@@ -14,13 +14,12 @@ provider "azurerm" {
 
 data "azurerm_resource_group" "resourcegroup" {
   name     = "${var.rg}"
-  location = "North Europe"
 }
 
 resource "azurerm_storage_account" "storageaccount" {
   name                     = "${var.storageaccount}"
-  resource_group_name      = azurerm_resource_group.resourcegroup.name
-  location                 = azurerm_resource_group.resourcegroup.location
+  resource_group_name      = "${data.azurerm_resource_group.storageaccount.name}"
+  location                 = "${dataazurerm_resource_group.resourcegroup.location}"
   account_tier             = "Standard"
   account_replication_type = "LRS"
 }
