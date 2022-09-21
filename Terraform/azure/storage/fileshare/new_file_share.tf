@@ -22,6 +22,7 @@ resource "azurerm_storage_account" "storageaccount" {
   location                 = "${data.azurerm_resource_group.resourcegroup.location}"
   account_tier             = "Standard"
   account_replication_type = "LRS"
+  allow_nested_items_to_be_public = "false"
 }
 
 resource "azurerm_storage_share" "fileshare" {
