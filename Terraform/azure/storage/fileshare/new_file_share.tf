@@ -30,9 +30,3 @@ resource "azurerm_storage_share" "fileshare" {
   storage_account_name = azurerm_storage_account.storageaccount.name
   quota                = 50
 }
-
-resource "azurerm_storage_share_file" "file" {
-  name             = "local.txt"
-  storage_share_id = azurerm_storage_share.fileshare.id
-  source           = "welcome.txt"
-}
