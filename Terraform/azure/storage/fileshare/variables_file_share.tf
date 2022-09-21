@@ -13,7 +13,7 @@ variable "location" {
 variable "storageaccount" {
   description = "Storage Account"
   default     = "xxxxxx"
-
+}
 variable "sharename" {
   description = "File Share Name"
   default     = "xxxxxx"
