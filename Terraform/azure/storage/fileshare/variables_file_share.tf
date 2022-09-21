@@ -4,7 +4,7 @@ variable "azure_subscription_id" {
 }
 variable "rg" {
   description = "Resource Group"
-  default     = "xxxxxx"
+  default     = "rg-shh-test-sqlfileshare-01"
 }
 variable "location" {
   description = "Location"
@@ -12,9 +12,9 @@ variable "location" {
 }
 variable "storageaccount" {
   description = "Storage Account"
-  default     = "xxxxxx"
+  default     = "sttestsqlfileshare01"
 }
 variable "sharename" {
   description = "File Share Name"
-  default     = "xxxxxx"
+  default     = "sql-backup"
 }
