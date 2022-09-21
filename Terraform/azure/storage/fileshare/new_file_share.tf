@@ -12,10 +12,9 @@ provider "azurerm" {
   subscription_id = "${var.azure_subscription_id}"
 }
 
-
 data "azurerm_resource_group" "resourcegroup" {
   name     = "${var.rg}"
-  location = "${var.location}"
+  location = "North Europe"
 }
 
 resource "azurerm_storage_account" "storageaccount" {
