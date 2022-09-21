@@ -13,7 +13,7 @@ provider "azurerm" {
 }
 
 
-resource "azurerm_resource_group" "resourcegroup" {
+data "azurerm_resource_group" "resourcegroup" {
   name     = "${var.rg}"
   location = "${var.location}"
 }
