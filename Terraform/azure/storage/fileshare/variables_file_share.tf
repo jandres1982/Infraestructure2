@@ -6,7 +6,7 @@ variable "rg" {
   description = "Resource Group"
   default     = "rg-shh-test-sqlfileshare-01"
 }
-variable "storageaccount" {
+variable "storageaccountname" {
   description = "Storage Account"
   default     = "sttestsqlfileshare01"
 }

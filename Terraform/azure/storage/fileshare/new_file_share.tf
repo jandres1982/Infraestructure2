@@ -17,8 +17,8 @@ data "azurerm_resource_group" "resourcegroup" {
 }
 
 resource "azurerm_storage_account" "storageaccount" {
-  name                     = "${var.storageaccount}"
-  resource_group_name      = "${data.azurerm_resource_group.storageaccount.name}"
+  name                     = "${var.storageaccountname}"
+  resource_group_name      = "${data.azurerm_resource_group.resourcegroup.name}"
   location                 = "${dataazurerm_resource_group.resourcegroup.location}"
   account_tier             = "Standard"
   account_replication_type = "LRS"
