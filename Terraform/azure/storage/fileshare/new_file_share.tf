@@ -13,15 +13,15 @@ provider "azurerm" {
 }
 
 
-resource "azurerm_resource_group" "rg" {
+resource "azurerm_resource_group" "resourcegroup" {
   name     = "${var.rg}"
   location = "${var.location}"
 }
 
 resource "azurerm_storage_account" "storageaccount" {
   name                     = "${var.storageaccount}"
-  resource_group_name      = azurerm_resource_group.rg.name
-  location                 = azurerm_resource_group.rg.location
+  resource_group_name      = azurerm_resource_group.resourcegroup.name
+  location                 = azurerm_resource_group.resourcegroup.location
   account_tier             = "Standard"
   account_replication_type = "LRS"
 }
