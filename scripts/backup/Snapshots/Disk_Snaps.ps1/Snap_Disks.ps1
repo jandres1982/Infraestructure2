@@ -3,7 +3,7 @@ set-azcontext -subscription $(sub)
 $snapshotName = "Snapshot_$(vm)"
 
 
-$resourceGroup = get-azresourcegroup | Where-Object {$_.ResourceGroupName -match "rg-cis-*-snapshot*"}
+$resourceGroup = get-azresourcegroup | Where-Object {$_.ResourceGroupName -match "rg-cis-nonprod-snapshot-01"}
 $vmDetails = Get-AzVM | Where-Object {$_.Name -eq "$(vm)"}
 
 #OS DISK SNAPSHOT
