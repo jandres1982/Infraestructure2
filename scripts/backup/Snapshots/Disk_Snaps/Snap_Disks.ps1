@@ -1,8 +1,9 @@
-param(
-    [string]$sub
-    [string]$vm
+param (
+[Parameter(Mandatory = $false)]
+[string]$sub,
+[Parameter(Mandatory = $false)]
+[string]$vm
 )
-
 ##Set Subscription##
 set-azcontext -subscription $sub
 
