@@ -1,10 +1,10 @@
 ##Set Subscription##
-set-azcontext -subscription $(sub)
+set-azcontext -subscription $sub
 
 ##Set Variables##
-$snapshotName = "Snapshot_$(vm)"
+$snapshotName = "Snapshot_$vm"
 $resourceGroup = Get-AzResourceGroup | Where-Object {$_.Tags.infrastructureservice -eq "snapshots"}
-$vmDetails = Get-AzVM | Where-Object {$_.Name -eq "$(vm)"}
+$vmDetails = Get-AzVM | Where-Object {$_.Name -eq "$vm"}
 
 ##OS Disk Snapshot
 $snapshot =  New-AzSnapshotConfig -SourceUri $vmDetails.StorageProfile.OsDisk.ManagedDisk.Id -Location $location -CreateOption copy
