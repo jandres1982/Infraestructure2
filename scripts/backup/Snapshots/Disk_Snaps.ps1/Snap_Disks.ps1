@@ -2,7 +2,7 @@
 set-azcontext -subscription $(sub)
 
 ##Set Variables##
-$snapshotName = "Snapshot_$vm"
+$snapshotName = "Snapshot_$(vm)"
 $resourceGroup = Get-AzResourceGroup | Where-Object {$_.Tags.infrastructureservice -eq "snapshots"}
 $vmDetails = Get-AzVM | Where-Object {$_.Name -eq "$(vm)"}
 
@@ -25,4 +25,3 @@ Foreach ($disk in $Data_disk)
     }else
         {Write-Output "Disk name empty"}
     }
-    
