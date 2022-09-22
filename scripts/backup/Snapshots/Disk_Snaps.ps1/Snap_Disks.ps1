@@ -1,9 +1,7 @@
-select-azsubscription -subscription $(sub)
 set-azcontext -subscription $(sub)
 
 $snapshotName = "Snapshot_$(vm)"
-#$date = get-date
-#Get-Date -Format "dddd MM/dd/yyyy HH:mm K"
+
 
 $resourceGroup = get-azresourcegroup | Where-Object {$_.ResourceGroupName -match "rg-cis-*-snapshot*"}
 $vmDetails = Get-AzVM | Where-Object {$_.Name -eq "$(vm)"}
