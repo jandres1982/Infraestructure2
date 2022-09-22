@@ -1,3 +1,6 @@
+param([string]$sub)
+param([string]$vm)
+
 ##Set Subscription##
 set-azcontext -subscription $sub
 
