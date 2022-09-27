@@ -1,29 +1,30 @@
-$subs ="s-sis-am-nonprod-01" #added ventoa1
-$subs = get-azsubscription -SubscriptionName "$subs" #added ventoa1
-#$subs=get-azsubscription
+$subs=Get-AzSubscription | Where-Object {$_.Name -match "s-sis-[aec][upmh]*"}
 $date = $(get-date -format yyyy-MM-ddTHH-mm)
 
-$vmObject = [System.Collections.ArrayList]::new() #added ventoa1
+$vmObject = [System.Collections.ArrayList]::new()
 
 foreach ($sub in $subs)
 {
     set-azcontext -Subscription $sub.Name
     Select-AzSubscription -Subscription "$sub"
 
-    $vms=get-azvm
+    $vms=get-azvm -Status
+   
     foreach ($vm in $vms)
     {
-        #$Status_vm = get-azvm -Name "$vm" -ResourceGroupName $vm.ResourceGroupName -Status
-        #$vmObject = New-Object -TypeName psobject 
+        $Data_disk = $($vm | select-object -Property *).StorageProfile.DataDisks.Name
+
         [void]$vmObject.add([PSCustomObject]@{
-        Subscription = $subs.name
+        Subscription = $sub.name
         Name = $vm.Name
         Resource_Group = $vm.ResourceGroupName
         Location = $vm.Location
-        #Status = $Status_vm.powerstate
+        ProvisioningState = $vm.ProvisioningState
         Operating_System = $vm.StorageProfile.OsDisk.OsType
+        PowerState = $vm.PowerState
         Size = $vm.HardwareProfile.VmSize 
-        #Disk = $vm.StorageProfile.DataDisks.name
+        OsDisk =$vm.StorageProfile.OsDisk.Count
+        DataDisks = $Data_disk.Count
         Tag_serviceowner = $vm.Tags.serviceowner
         Tag_applicationowner = $vm.Tags.applicationowner
         Tag_technicalcontact = $vm.Tags.technicalcontact
