@@ -5,7 +5,7 @@
         "location": {
             "type": "string"
         },
-        "networkInterfaceName": {
+        "networkInterfaceName3": {
             "type": "string"
         },
         "subnetName": {
@@ -17,7 +17,10 @@
         "virtualMachineName": {
             "type": "string"
         },
-        "virtualMachineComputerName": {
+        "virtualMachineName3": {
+            "type": "string"
+        },
+        "virtualMachineComputerName3": {
             "type": "string"
         },
         "virtualMachineRG": {
@@ -52,6 +55,9 @@
         },
         "diagnosticsStorageAccountId": {
             "type": "string"
+        },
+        "zone": {
+            "type": "string"
         }
     },
     "variables": {
@@ -61,7 +67,7 @@
     },
     "resources": [
         {
-            "name": "[parameters('networkInterfaceName')]",
+            "name": "[parameters('networkInterfaceName3')]",
             "type": "Microsoft.Network/networkInterfaces",
             "apiVersion": "2021-03-01",
             "location": "[parameters('location')]",
@@ -81,12 +87,12 @@
             }
         },
         {
-            "name": "[parameters('virtualMachineName')]",
+            "name": "[parameters('virtualMachineName3')]",
             "type": "Microsoft.Compute/virtualMachines",
-            "apiVersion": "2021-07-01",
+            "apiVersion": "2022-03-01",
             "location": "[parameters('location')]",
             "dependsOn": [
-                "[concat('Microsoft.Network/networkInterfaces/', parameters('networkInterfaceName'))]"
+                "[concat('Microsoft.Network/networkInterfaces/', parameters('networkInterfaceName3'))]"
             ],
             "properties": {
                 "hardwareProfile": {
@@ -101,13 +107,13 @@
                         "deleteOption": "[parameters('osDiskDeleteOption')]"
                     },
                     "imageReference": {
-                        "id": "/subscriptions/505ead1a-5a5f-4363-9b72-83eb2234a43d/resourceGroups/rg-gis-prod-imagegallery-01/providers/Microsoft.Compute/galleries/ig_gis_win_prod/images/img-prod-2016datacenter-19052021-01/versions/0.0.1"
+                        "id": "/subscriptions/505ead1a-5a5f-4363-9b72-83eb2234a43d/resourceGroups/rg-gis-prod-imagegallery-01/providers/Microsoft.Compute/galleries/ig_gis_win_prod/images/img-prod-2016datacenter-19052021-01"
                     }
                 },
                 "networkProfile": {
                     "networkInterfaces": [
                         {
-                            "id": "[resourceId('Microsoft.Network/networkInterfaces', parameters('networkInterfaceName'))]",
+                            "id": "[resourceId('Microsoft.Network/networkInterfaces', parameters('networkInterfaceName3'))]",
                             "properties": {
                                 "deleteOption": "[parameters('nicDeleteOption')]"
                             }
@@ -115,7 +121,7 @@
                     ]
                 },
                 "osProfile": {
-                    "computerName": "[parameters('virtualMachineComputerName')]",
+                    "computerName": "[parameters('virtualMachineComputerName3')]",
                     "adminUsername": "[parameters('adminUsername')]",
                     "adminPassword": "[parameters('adminPassword')]",
                     "windowsConfiguration": {
@@ -133,7 +139,10 @@
                         "storageUri": "[concat('https://', parameters('diagnosticsStorageAccountName'), '.blob.core.windows.net/')]"
                     }
                 }
-            }
+            },
+            "zones": [
+                "3"
+            ]
         }
     ],
     "outputs": {
