@@ -42,7 +42,12 @@
             "value": "ldmsosd"
         },
         "adminPassword": {
-            "value": "Newsetup1234"
+            "reference": {
+                "keyVault": {
+                    "id": "/subscriptions/505ead1a-5a5f-4363-9b72-83eb2234a43d/resourceGroups/rg-shh-prod-devopsagents-01/providers/Microsoft.KeyVault/vaults/kv-prod-devopsagents-01"
+                },
+                "secretName": "localpw"
+            }
         },
         "patchMode": {
             "value": "Manual"
