@@ -33,10 +33,9 @@ resource "azurerm_private_endpoint" "pe" {
   resource_group_name = data.azurerm_resource_group.network-rg.name
   subnet_id           = data.azurerm_subnet.subnet.id
 
-  private_service_connection {
-    name                              = "${var.pe}"
- ##   private_connection_resource_alias = "example-privatelinkservice.d20286c8-4ea5-11eb-9584-8f53157226c6.centralus.azure.privatelinkservice"
-    is_manual_connection              = true
-    request_message                   = "PL"
-  }
+    private_service_connection {
+    name                           = "${var.pe}"
+    private_connection_resource_id = azurerm_private_link_service.pe.id
+    is_manual_connection           = false
+    }
 }
