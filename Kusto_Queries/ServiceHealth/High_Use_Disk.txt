@@ -1,0 +1,5 @@
+Perf
+| where TimeGenerated > ago(1d)
+| where ObjectName == "LogicalDisk" and CounterName == "% Free Space"
+| summarize (TimeGenerated, Free_Space_Percent)=arg_max(TimeGenerated, CounterValue) by Computer, InstanceName
+| where strlen(InstanceName) ==2 and InstanceName contains ":"
