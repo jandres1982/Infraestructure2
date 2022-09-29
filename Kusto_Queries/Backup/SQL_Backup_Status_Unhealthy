@@ -1,3 +1,4 @@
+## Get Azure SQL Backup with Unhealthy Status
 recoveryservicesresources
 | where properties.protectedItemType == "AzureVmWorkloadSQLDatabase"
 | where properties.lastBackupStatus == "Unhealthy"
@@ -5,3 +6,9 @@ recoveryservicesresources
 | extend database = properties.friendlyName
 | extend status = properties.lastBackupStatus
 | project serverName,database,status
+
+## Get count number of Unhealthy Backup
+recoveryservicesresources
+| where properties.protectedItemType == "AzureVmWorkloadSQLDatabase"
+| where properties.lastBackupStatus == "Unhealthy"
+| summarize count(name)
