@@ -31,15 +31,21 @@ data "azurerm_subnet" "subnet" {
   resource_group_name  = data.azurerm_resource_group.network-rg.name
 }
 
+resource "azurerm_private_link_service" "private-link" {
+  name                = "${var.private-link}"
+  location            = data.azurerm_resource_group.pe-rg.location
+  resource_group_name = data.azurerm_resource_group.pe-rg.name
+}
+
 resource "azurerm_private_endpoint" "pe" {
   name                = "${var.pe}"
   location            = data.azurerm_resource_group.pe-rg.location
   resource_group_name = data.azurerm_resource_group.pe-rg.name
   subnet_id           = data.azurerm_subnet.subnet.id
 
-#    private_service_connection {
-#    name                           = "${var.pe}"
-#    private_connection_resource_id = azurerm_private_link_service.pe.id
-#    is_manual_connection           = false
-#  }
+    private_service_connection {
+    name                           = "${var.private-link}"
+    private_connection_resource_id = azurerm_private_link_service.private-link.id
+    is_manual_connection           = false
+  }
 }

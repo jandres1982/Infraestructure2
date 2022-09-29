@@ -9,7 +9,7 @@ variable "network-rg" {
 
 variable "pe-rg" {
   description = "Resource Group"
-  default     = "rg-cis-nonprod-backup-01"
+  default     = "rg-cis-nonprod-storage-01"
 }
 
 variable "network" {
@@ -21,6 +21,12 @@ variable "subnet" {
   description = "Subnet Name"
   default     = "sub-generic-privateendpoints-01"
 }
+
+variable "private-link" {
+  description = "Private Link Name"
+  default     = "stnonproddiagnostic0002"
+}
+
 variable "pe" {
   description = "Private Endpoint Name"
   default     = "pe-test-terraform-01"
