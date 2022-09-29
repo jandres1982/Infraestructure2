@@ -1,4 +1,0 @@
-stprodveeam0001.privatelink.blob.core.windows.net 	 10.38.46.46
-
-
-stprodveeam0001.blob.core.windows.net 10.38.46.46
