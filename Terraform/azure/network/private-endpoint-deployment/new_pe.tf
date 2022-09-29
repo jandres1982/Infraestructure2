@@ -13,7 +13,7 @@ provider "azurerm" {
 }
 
 data "azurerm_resource_group" "network-rg" {
-  name = "${var.rg-network}"
+  name = "${var.network-rg}"
 }
 
 data "azurerm_resource_group" "pe-rg"{
