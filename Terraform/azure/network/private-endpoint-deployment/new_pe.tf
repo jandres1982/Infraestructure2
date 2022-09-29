@@ -13,7 +13,7 @@ provider "azurerm" {
 }
 
 data "azurerm_resource_group" "network-rg" {
-  name = "${var.rg}"
+  name = "${var.rg-network}"
 }
 
 data "azurerm_virtual_network" "vnet" {
@@ -27,10 +27,14 @@ data "azurerm_subnet" "subnet" {
   resource_group_name  = data.azurerm_resource_group.network-rg.name
 }
 
+data "azurerm_resource_group" "pe-rg"{
+  name = "${var.rg-pe}"
+}
+
 #resource "azurerm_private_endpoint" "pe" {
 #  name                = "${var.pe}"
-#  location            = data.azurerm_resource_group.network-rg.location
-#  resource_group_name = data.azurerm_resource_group.network-rg.name
+#  location            = data.azurerm_resource_group.pe-rg.location
+#  resource_group_name = data.azurerm_resource_group.pe-rg.name
 #  subnet_id           = data.azurerm_subnet.subnet.id
 #
 #    private_service_connection {

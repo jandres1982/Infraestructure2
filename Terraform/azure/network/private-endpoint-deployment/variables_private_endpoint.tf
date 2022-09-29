@@ -2,7 +2,12 @@ variable "azure_subscription_id" {
   description = "Sub"
   default     = "8528129a-0394-4057-ac4e-0fec3da2246d"
 }
-variable "rg" {
+variable "network-rg" {
+  description = "Resource Group"
+  default     = "rg-cis-nonprod-network-01"
+}
+
+variable "pe-rg" {
   description = "Resource Group"
   default     = "rg-cis-nonprod-backup-01"
 }
