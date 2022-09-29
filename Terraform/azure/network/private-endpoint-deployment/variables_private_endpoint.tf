@@ -1,22 +1,22 @@
 variable "azure_subscription_id" {
   description = "Sub"
-  default     = "7fa3c3a2-7d0d-4987-a30c-30623e38756c"
+  default     = "8528129a-0394-4057-ac4e-0fec3da2246d"
 }
 variable "rg" {
   description = "Resource Group"
-  default     = "rg-shh-test-sqlfileshare-01"
+  default     = "rg-cis-nonprod-backup-01"
 }
 
 variable "network" {
   description = "VNET Name"
-  default     = "test"
+  default     = "vnet-nonprod-use2-01"
 }
 
 variable "subnet" {
   description = "Subnet Name"
-  default     = "sttestsqlfileshare02"
+  default     = "sub-generic-privateendpoints-01"
 }
 variable "pe" {
   description = "Private Endpoint Name"
-  default     = "test"
+  default     = "pe-test-terraform-01"
 }
