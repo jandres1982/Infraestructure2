@@ -2,7 +2,7 @@
 # Copyright (c) Microsoft Corporation.  All rights reserved.
 # -----------------------------------------------------------------------
 #./PrivateIP.ps1 -Subscription "<VaultPrivateEndpointSubscriptionId>" -VaultPrivateEndpointName "<vaultPrivateEndpointName>" -VaultPrivateEndpointRGName <vaultPrivateEndpointRGName> -DNSRecordListFile dnsentries.txt
-
+#.\Script_to_generate_backup_dns.ps1 -Subscription "s-sis-eu-prod-01" -VaultPrivateEndpointName "pe-veeam-eu-prod-0001" -VaultPrivateEndpointRGName "rg-shh-prod-veeam-01" -DNSRecordListFile result.txt
 Param(
 
     [parameter(position=0,Mandatory=$true)]
