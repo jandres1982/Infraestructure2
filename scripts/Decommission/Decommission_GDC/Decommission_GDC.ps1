@@ -18,8 +18,8 @@ $SHH_WSUS = "shhwsr1238"
 $SHH_WSUS_KG = "shhwsr1242"
 #$servers = gc "D:\Repository\Working\Antonio\Decommission_GDC\Servers.txt"
 
-Foreach ($Server in $Servers)
-{
+#Foreach ($Server in $Servers)
+#{
 
 Function Remove_WSUS
 {
@@ -66,4 +66,4 @@ Remove_Zabbix
 
 #"OU=RES,OU=Groups,OU=Admin_Global,OU=NBI12,DC=global,DC=schindler,DC=com" 
 #(Get-ADGroup -filter * -searchbase "OU=Groups,OU=NBI12,DC=global,DC=schindler,DC=com" | Where-Object {$_.SamAccountName -like "*RES_SY_"+$server+"_ADMIN"}).SamAccountName
-}
+#}
