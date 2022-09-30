@@ -1,4 +1,18 @@
-$s = New-ZbxApiSession "https://zabbix.global.schindler.com/zabbix/api_jsonrpc.php" (Get-Credential admventoa1)
+param (
+    [Parameter(Mandatory = $false)]
+    [string]$user,
+    [Parameter(Mandatory = $false)]
+    [string]$pw,
+    [Parameter(Mandatory = $false)]
+    [string]$server
+)
+
+$secureString = ConvertTo-SecureString -AsPlainText -Force -String $pw
+$credential = New-Object `
+	-TypeName System.Management.Automation.PSCredential `
+	-ArgumentList "$user",$secureString
+
+$s = New-ZbxApiSession "https://zabbix.global.schindler.com/zabbix/api_jsonrpc.php" $credential
 #GDC Decommission Script
 $SHH_WSUS = "shhwsr1238"
 $SHH_WSUS_KG = "shhwsr1242"
