@@ -11,7 +11,7 @@ $secureString = ConvertTo-SecureString -AsPlainText -Force -String $pw
 $credential = New-Object `
 	-TypeName System.Management.Automation.PSCredential `
 	-ArgumentList "$user",$secureString
-
+Import-Module PSZabbix
 $s = New-ZbxApiSession "https://zabbix.global.schindler.com/zabbix/api_jsonrpc.php" $credential
 #GDC Decommission Script
 $SHH_WSUS = "shhwsr1238"
@@ -47,7 +47,6 @@ If ($Result_1 -eq $null -and $Result_2 -eq $null)
 
 Function Remove_Zabbix
 {
-Import-Module PSZabbix
 $Remove_Zabbix = Get-ZbxHost $server | Remove-ZbxHost
 if ($Remove_Zabbix)
     {Write-Output "$Server Zabbix Host Removed"}
