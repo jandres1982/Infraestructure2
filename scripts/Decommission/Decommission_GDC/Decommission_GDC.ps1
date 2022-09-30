@@ -21,6 +21,20 @@ $SHH_WSUS_KG = "shhwsr1242"
 #Foreach ($Server in $Servers)
 #{
 
+    Write-Host "Working on Server $Server" -ForegroundColor Yellow
+
+Function Remove_Zabbix
+{
+$Remove_Zabbix = Get-ZbxHost $server | Remove-ZbxHost
+if ($Remove_Zabbix)
+    {Write-Output "$Server Zabbix Host Removed"}
+    else
+        {Write-host "Zabbix host for $server cannot be found" -ForegroundColor Gray
+        }
+}
+Write-Output "---- Zabbix -----"
+Remove_Zabbix
+
 Function Remove_WSUS
 {
 Import-Module -Name PoshWSUS
@@ -45,23 +59,9 @@ If ($Result_1 -eq $null -and $Result_2 -eq $null)
 
 }
 
-Function Remove_Zabbix
-{
-$Remove_Zabbix = Get-ZbxHost $server | Remove-ZbxHost
-if ($Remove_Zabbix)
-    {Write-Output "$Server Zabbix Host Removed"}
-    else
-        {Write-host "Zabbix host for $server cannot be found" -ForegroundColor Gray
-        }
-
-}
-
-Write-Host "---------"
-Write-Host "Working on Server $Server" -ForegroundColor Yellow
-Write-Output "----- WSUS -----" -InformationAction Continue
+Write-Output "----- WSUS -----"
 Remove_WSUS
-Write-Output "---- Zabbix -----" -InformationAction Continue
-Remove_Zabbix
+
 
 #"OU=RES,OU=Groups,OU=Admin_Global,OU=NBI12,DC=global,DC=schindler,DC=com" 
 #(Get-ADGroup -filter * -searchbase "OU=Groups,OU=NBI12,DC=global,DC=schindler,DC=com" | Where-Object {$_.SamAccountName -like "*RES_SY_"+$server+"_ADMIN"}).SamAccountName
