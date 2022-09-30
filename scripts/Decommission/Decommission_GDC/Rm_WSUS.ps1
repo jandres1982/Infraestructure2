@@ -15,13 +15,13 @@ Function Remove_WSUS
     $Wsus = [Microsoft.UpdateServices.Administration.AdminProxy]::GetUpdateServer($WSUS_server,$UseSSL,$Port)
     $client = $wsus.SearchComputerTargets($server)
     $client[0]
-    $client[0].Delete()
+    #$client[0].Delete()
     #shhwsr1242
     [reflection.assembly]::LoadWithPartialName("Microsoft.UpdateServices.Administration") | Out-Null
     $Wsus = [Microsoft.UpdateServices.Administration.AdminProxy]::GetUpdateServer($WSUS_KG_server,$UseSSL,$Port)
     $client = $wsus.SearchComputerTargets($server)
     $client[0]
-    $client[0].Delete() 
+    #$client[0].Delete() 
 }
 
 Remove_WSUS
