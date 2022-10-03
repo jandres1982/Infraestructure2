@@ -1,0 +1,6 @@
+Perf
+| where TimeGenerated > ago(7d)
+| where (ObjectName == "Logical Disk" or ObjectName == "LogicalDisk") and CounterName contains "%" and InstanceName != "_Total" and InstanceName != "HarddiskVolume1"
+| project TimeGenerated, Computer, ObjectName, CounterName, InstanceName, CounterValue 
+| summarize arg_max(TimeGenerated, *) by Computer
+| top 10 by CounterValue desc
