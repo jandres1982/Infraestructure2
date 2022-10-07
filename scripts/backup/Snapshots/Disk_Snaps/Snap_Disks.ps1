@@ -8,6 +8,7 @@ param (
 set-azcontext -subscription $sub
 
 ##Set Variables##
+Write-Output "Working on $vm"
 $snapshotName = "Snapshot_$vm"
 $resourceGroup = Get-AzResourceGroup | Where-Object {$_.Tags.infrastructureservice -eq "snapshots"}
 $vmDetails = Get-AzVM | Where-Object {$_.Name -eq "$vm"}
