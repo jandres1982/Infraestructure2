@@ -1,16 +1,16 @@
 variable "azure_subscription_id" {
   description = "Sub"
-  default     = "7fa3c3a2-7d0d-4987-a30c-30623e38756c"
+  default     = "505ead1a-5a5f-4363-9b72-83eb2234a43d"
 }
 variable "rg" {
   description = "Resource Group"
-  default     = "rg-shh-test-sqlfileshare-01"
+  default     = "rg-shh-prod-rmp-01"
 }
 variable "storageaccountname" {
   description = "Storage Account"
-  default     = "sttestsqlfileshare02"
+  default     = "stprodsqlfileshare01"
 }
 variable "sharename" {
   description = "File Share Name"
-  default     = "test"
+  default     = "backup"
 }
