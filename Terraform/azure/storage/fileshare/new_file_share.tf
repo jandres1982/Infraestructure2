@@ -20,13 +20,13 @@ resource "azurerm_storage_account" "storageaccount" {
   name                     = "${var.storageaccountname}"
   resource_group_name      = "${data.azurerm_resource_group.resourcegroup.name}"
   location                 = "${data.azurerm_resource_group.resourcegroup.location}"
-  account_tier             = "Standard"
-  account_replication_type = "LRS"
+  account_tier             = "Premium"
+  account_replication_type = "ZRS"
   allow_nested_items_to_be_public = "false"
 }
 
 resource "azurerm_storage_share" "fileshare" {
   name                 = "${var.sharename}"
   storage_account_name = azurerm_storage_account.storageaccount.name
-  quota                = 50
+  quota                = 5000
 }
