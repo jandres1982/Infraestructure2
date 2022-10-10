@@ -21,7 +21,7 @@ resource "azurerm_storage_account" "storageaccount" {
   resource_group_name      = "${data.azurerm_resource_group.resourcegroup.name}"
   location                 = "${data.azurerm_resource_group.resourcegroup.location}"
   account_tier             = "Premium"
-  account_kind             = "StorageV2"
+  account_kind             = "FileStorage"
   account_replication_type = "ZRS"
   access_tier              = "Hot"
   allow_nested_items_to_be_public = "false"
