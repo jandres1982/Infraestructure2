@@ -8,9 +8,9 @@ variable "rg" {
 }
 variable "storageaccountname" {
   description = "Storage Account"
-  default     = "stprodsqlfileshare03"
+  default     = "stprodsqlfileshare04"
 }
 variable "sharename" {
   description = "File Share Name"
-  default     = "shhwsr2526differential"
+  default     = "shhwsr2526log"
 }
