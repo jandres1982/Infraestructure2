@@ -30,5 +30,5 @@ resource "azurerm_storage_account" "storageaccount" {
 resource "azurerm_storage_share" "fileshare" {
   name                 = "${var.sharename}"
   storage_account_name = azurerm_storage_account.storageaccount.name
-  quota                = 5000
+  quota                = 102400
 }
