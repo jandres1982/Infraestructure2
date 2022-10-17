@@ -27,7 +27,7 @@
         "value": "PYTHON|3.7"
       },
       "StorageAccountName": {
-        "value": "stprodfinops0001"
+        "value": "stprodfinops0002"
       },
       "blobName": {
         "value": "finops"
