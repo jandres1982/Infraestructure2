@@ -2,17 +2,11 @@
     "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentParameters.json#",
     "contentVersion": "1.0.0.0",
     "parameters": {
-      "environment": {
-        "value": "prod"
-      },
-      "hostingPlanName": {
-        "value": "asp-shh-prod-lqc-01"
+      "logAnalyticsName": {
+        "value": "log-prod-lqc-01"
       },
       "applicationInsightsName": {
         "value": "appi-prod-lqc-01"
-      },
-      "functionAppName": {
-        "value": "lqc-prod"
       },
       "storageAccountName": {
         "value": "stprodlqc0001"
