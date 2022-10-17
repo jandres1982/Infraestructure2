@@ -1,45 +1,44 @@
-@description('Parameter for App Service Plan')
+@description('Location')
 param location string = resourceGroup().location
-param hostingPlanName string
-
-
-@description('Parameters for Web App')
-param functionAppName string
 
 @description('The name of ApplicationInsights')
 param applicationInsightsName string
+param logAnalyticsName string
 
 @description('Storage Account name')
 param storageAccountName string
 param storageAccountType string
 
-@description('Select the configuration of service plan based on environment')
-@allowed([
-  'prod'
-  'nonprod'
-])
-param environment string
-var sku = (environment == 'prod') ? 'S1' : 'Free'
-var tier = (environment == 'prod') ? 'Standard' : 'Free'
+resource loganalytics 'Microsoft.OperationalInsights/workspaces@2022-10-01' = {
+  name: logAnalyticsName
+  location: location
+  properties: {
+    sku: {
+      name: 'PerGB2018'
+    }
+    }
+  }
 
-module functionapp 'modules/functionapp.bicep' = {
-  name: 'functionApp'
-  params: {
-    location: location
-    hostingPlanName: hostingPlanName
-    sku: sku
-    tier: tier
-    functionAppName: functionAppName
-    applicationInsightsName: applicationInsightsName
-    storageAccountName: storageAccountName
+
+resource applicationInsights 'Microsoft.Insights/components@2020-02-02' = {
+  name: applicationInsightsName
+  location: location
+  kind: 'web'
+  properties: {
+    Application_Type: 'web'
+    Request_Source: 'rest'
+    WorkspaceResourceId: loganalytics.id
   }
 }
 
-module storageAccount 'modules/storageaccount.bicep' = {
-  name: 'storageaccount'
-  params: {
-    location: location
-    storageAccountName: storageAccountName
-    storageAccountType: storageAccountType
+resource storageAccount 'Microsoft.Storage/storageAccounts@2021-08-01' = {
+  name: storageAccountName
+  location: location
+  sku: {
+    name: storageAccountType
+  }
+  kind: 'Storage'
+  properties: {
+    allowBlobPublicAccess: false 
   }
 }
