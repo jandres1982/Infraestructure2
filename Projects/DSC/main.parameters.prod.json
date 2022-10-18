@@ -1,0 +1,24 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+      "environment": {
+        "value": "prod"
+      },
+      "logAnalyticsName": {
+        "value": "log-prod-dsc-01"
+      },
+      "applicationInsightsName": {
+        "value": "appi-prod-dsc-01"
+      },
+      "appServicePlanName": {
+        "value": "asp-prod-dsc-01"
+      },
+      "appName": {
+        "value": "dsc-prod"
+      },
+      "version": {
+        "value": "6"
+      }
+    }
+}
