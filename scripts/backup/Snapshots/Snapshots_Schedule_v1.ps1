@@ -12,7 +12,7 @@ param (
 )
 
 [datetime]$date
-$date = "$(date)"
+$date = $(date)
 Write-Output "$date"
 $automationAccountName = "aa-prod-monitoring-01"
 $resourceGroupName = "rg-cis-prod-monitoring-01"
