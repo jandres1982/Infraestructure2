@@ -11,7 +11,7 @@ param (
 #[datetime]$date
 )
 
-$date = "10-25-2022 17:00:00"
+$date = $(date)
 $Schedule_Time = $date -as [datetime]
 
 Write-Output "$date"
