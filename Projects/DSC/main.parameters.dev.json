@@ -1,0 +1,24 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+      "environment": {
+        "value": "nonprod"
+      },
+      "logAnalyticsName": {
+        "value": "log-dev-dsc-01"
+      },
+      "applicationInsightsName": {
+        "value": "appi-dev-dsc-01"
+      },
+      "appServicePlanName": {
+        "value": "asp-dev-dsc-01"
+      },
+      "appName": {
+        "value": "app-shh-dev-dsc-01"
+      },
+      "version": {
+        "value": "6"
+      }
+    }
+}

@@ -15,13 +15,13 @@
         "value": "linux"
       },
       "appFrontendName": {
-        "value": "finopsfrontend01"
+        "value": "app-shh-prod-finopsfrontend-01"
       },
       "versionFrontend": {
         "value": "PYTHON|3.7"
       },
       "appBackendName": {
-        "value": "finopsbackend01"
+        "value": "app-shh-prod-finopsbackend-01"
       },
       "versionBackend": {
         "value": "PYTHON|3.7"
