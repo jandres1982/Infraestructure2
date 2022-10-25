@@ -7,11 +7,10 @@ param (
 [string]$location,
 [Parameter(Mandatory = $false)]
 [string]$resourceGroup
-#[Parameter(Mandatory = $false)]
-#[datetime]$date
+[Parameter(Mandatory = $false)]
+[datetime]$date
 )
 
-$date = $(date)
 $Schedule_Time = $date -as [datetime]
 
 Write-Output "$date"
