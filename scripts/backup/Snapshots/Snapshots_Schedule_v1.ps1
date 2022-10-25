@@ -46,20 +46,3 @@ Register-AzAutomationScheduledRunbook –AutomationAccountName $AutomationAccoun
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
