@@ -18,8 +18,8 @@ $automationAccountName = "aa-prod-monitoring-01"
 $resourceGroupName = "rg-cis-prod-monitoring-01"
 $runbookName = "Disk_Snapshots"
 
-Select-AzSubscription -Subscription "s-sis-eu-prod-01"
-Set-azContext -Subscription "s-sis-eu-prod-01"
+#Select-AzSubscription -Subscription "s-sis-eu-prod-01"
+#Set-azContext -Subscription "s-sis-eu-prod-01"
 
 
 ######################### From Devops ########################
