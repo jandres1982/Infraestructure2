@@ -6,7 +6,7 @@ param (
 [Parameter(Mandatory = $false)]
 [string]$location,
 [Parameter(Mandatory = $false)]
-[string]$resourceGroup
+[string]$resourceGroup,
 [Parameter(Mandatory = $false)]
 [datetime]$date
 )
