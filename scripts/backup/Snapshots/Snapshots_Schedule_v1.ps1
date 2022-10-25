@@ -18,6 +18,10 @@ $automationAccountName = "aa-prod-monitoring-01"
 $resourceGroupName = "rg-cis-prod-monitoring-01"
 $runbookName = "Disk_Snapshots"
 
+Select-AzSubscription -Subscription "s-sis-eu-prod-01"
+set-azContext -Subscription "s-sis-eu-prod-01"
+
+
 ######################### From Devops ########################
 #$vmName = "tstshhwsr0343"
 #$sub = "s-sis-eu-nonprod-01"
@@ -34,3 +38,28 @@ $Schedule = Get-AzAutomationSchedule -ResourceGroupName $resourceGroupName -Auto
 
 $data = @{"vmName"="$vmName";"sub"="$sub";"location"="$location";"resourceGroup"="$resourceGroup";"date"="$date"}
 Register-AzAutomationScheduledRunbook –AutomationAccountName $AutomationAccountName –RunbookName $runbookName –ScheduleName $Schedule.Name –Parameters $data -ResourceGroupName $resourceGroupName
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
