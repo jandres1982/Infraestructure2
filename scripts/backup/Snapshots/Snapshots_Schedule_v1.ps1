@@ -11,8 +11,8 @@ param (
 [datetime]$date
 )
 
-$Schedule_Time = $date -as [datetime]
-
+#$Schedule_Time = $date -as [datetime]
+$Schedule_Time = $(get-date).adddays(+1)
 Write-Output "$date"
 $automationAccountName = "aa-prod-monitoring-01"
 $resourceGroupName = "rg-cis-prod-monitoring-01"
