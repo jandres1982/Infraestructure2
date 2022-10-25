@@ -23,6 +23,7 @@ $runbookName = "Disk_Snapshots"
 #$location = "North Europe"
 ##############################################################
 
+
 $Schedule_Time = $date -as [datetime]
 
 $Snapshot_name = $vmName+"_Snapshot"
