@@ -30,11 +30,14 @@ $runbookName = "Disk_Snapshots"
 #$location = "North Europe"
 ##############################################################
 
-
 $Snapshot_name = $vmName+"_Snapshot"
 New-AzAutomationSchedule -AutomationAccountName $automationAccountName -Name $Snapshot_name -StartTime $Schedule_Time -ResourceGroupName $resourceGroupName -OneTime
-
 $Schedule = Get-AzAutomationSchedule -ResourceGroupName $resourceGroupName -AutomationAccountName $automationAccountName -Name $Snapshot_name
-
 $data = @{"vmName"="$vmName";"sub"="$sub";"location"="$location";"resourceGroup"="$resourceGroup";"date"="$date"}
+
 Register-AzAutomationScheduledRunbook –AutomationAccountName $AutomationAccountName –Name $runbookName –ScheduleName $Schedule.Name –Parameters $data -ResourceGroupName $resourceGroupName
+
+
+
+
+
