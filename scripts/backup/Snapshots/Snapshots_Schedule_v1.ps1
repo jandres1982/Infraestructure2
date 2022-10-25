@@ -38,11 +38,3 @@ $Schedule = Get-AzAutomationSchedule -ResourceGroupName $resourceGroupName -Auto
 
 $data = @{"vmName"="$vmName";"sub"="$sub";"location"="$location";"resourceGroup"="$resourceGroup";"date"="$date"}
 Register-AzAutomationScheduledRunbook –AutomationAccountName $AutomationAccountName –RunbookName $runbookName –ScheduleName $Schedule.Name –Parameters $data -ResourceGroupName $resourceGroupName
-
-
-
-
-
-
-
-
