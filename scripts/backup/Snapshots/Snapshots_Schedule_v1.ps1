@@ -12,7 +12,9 @@ param (
 )
 
 [datetime]$date
-$date = $(date)
+$date = "10-25-2022 17:00:00"
+$Schedule_Time = $date -as [datetime]
+
 Write-Output "$date"
 $automationAccountName = "aa-prod-monitoring-01"
 $resourceGroupName = "rg-cis-prod-monitoring-01"
@@ -26,8 +28,6 @@ $runbookName = "Disk_Snapshots"
 #$location = "North Europe"
 ##############################################################
 
-
-$Schedule_Time = $date -as [datetime]
 
 $Snapshot_name = $vmName+"_Snapshot"
 New-AzAutomationSchedule -AutomationAccountName $automationAccountName -Name $Snapshot_name -StartTime $Schedule_Time -ResourceGroupName $resourceGroupName -OneTime
