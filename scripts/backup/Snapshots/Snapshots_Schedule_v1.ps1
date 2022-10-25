@@ -11,7 +11,6 @@ param (
 #[datetime]$date
 )
 
-[datetime]$date
 $date = "10-25-2022 17:00:00"
 $Schedule_Time = $date -as [datetime]
 
