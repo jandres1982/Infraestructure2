@@ -39,7 +39,3 @@ Write-Output "$data"
 Register-AzAutomationScheduledRunbook -AutomationAccountName $automationAccountName `
 -Name $runbookName -ScheduleName $schedule.Name -Parameters $data `
 -ResourceGroupName "$resourceGroupName"
-
-
-
-
