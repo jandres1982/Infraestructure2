@@ -6,10 +6,12 @@ param (
 [Parameter(Mandatory = $false)]
 [string]$location,
 [Parameter(Mandatory = $false)]
-[string]$resourceGroup,
-[Parameter(Mandatory = $false)]
-[datetime]$date
+[string]$resourceGroup
+#[Parameter(Mandatory = $false)]
+#[datetime]$date
 )
+
+[datetime]$date = $(date)
 Write-Output "$date"
 $automationAccountName = "aa-prod-monitoring-01"
 $resourceGroupName = "rg-cis-prod-monitoring-01"
