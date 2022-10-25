@@ -32,5 +32,5 @@ New-AzAutomationSchedule -AutomationAccountName $automationAccountName -Name $Sn
 
 $Schedule = Get-AzAutomationSchedule -ResourceGroupName $resourceGroupName -AutomationAccountName $automationAccountName -Name $Snapshot_name
 
-$data = @{"vmName"="$vmName";"sub"="$sub";"location"="$location";"resourceGroup"="$resourceGroup"}
+$data = @{"vmName"="$vmName";"sub"="$sub";"location"="$location";"resourceGroup"="$resourceGroup";"date"="$date"}
 Register-AzAutomationScheduledRunbook –AutomationAccountName $AutomationAccountName –RunbookName $runbookName –ScheduleName $Schedule.Name –Parameters $data -ResourceGroupName $resourceGroupName
