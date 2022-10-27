@@ -14,7 +14,7 @@ param (
 
 #Write-Output "$secretvalue_Acc $secretvalue_Pw" 
 #SecureString
-$dt = (get-date).AddMinutes(5)
+$dt = $date
 $Action = New-ScheduledTaskAction -Execute 'powershell.exe' -Argument "-File D:\Snapshots\Scripts\Snapshots_v1.ps1"
 $taskname = "Snapshots_DevOps_$vm"
 $Trigger = New-ScheduledTaskTrigger -Once -At $dt
@@ -22,8 +22,8 @@ $Settings = New-ScheduledTaskSettingsSet
 Register-ScheduledTask -TaskName $taskname `
                        -TaskPath "\Snapshots" `
                        -Action $Action `
-                       -User $secretvalue_Acc `
-                       -Password $secretvalue_Pw `
+                       -User $(AzServAcc) `
+                       -Password $(AzServPw) `
                        -Trigger $trigger `
                        -Settings $Settings `
                        -RunLevel Highest -Force
