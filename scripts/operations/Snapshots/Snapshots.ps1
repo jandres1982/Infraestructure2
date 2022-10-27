@@ -9,8 +9,8 @@ param (
 [string]$sub
 )
 
-$Service_account = $(AzServAcc)
-$Service_pw = $(AzServPw)
+$Service_account = "$(AzServAcc)"
+$Service_pw = "$(AzServPw)"
 
 $date = Get-Date
 $dt = $date.AddMinutes(5)
