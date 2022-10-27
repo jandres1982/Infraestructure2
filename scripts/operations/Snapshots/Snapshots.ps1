@@ -12,7 +12,7 @@ param (
 $secretvalue_Acc = Get-AzKeyVaultSecret -VaultName "kv-prod-devopsagents-01" -Name "AzServAcc" -AsPlainText
 $secretvalue_Pw = Get-AzKeyVaultSecret -VaultName "kv-prod-devopsagents-01" -Name "AzServPw" -AsPlainText
 
-Write-Output "$secretvalue_Acc $secretvalue_Pw" 
+#Write-Output "$secretvalue_Acc $secretvalue_Pw" 
 #SecureString
 $date = Get-Date
 $dt = $date.AddMinutes(5)
