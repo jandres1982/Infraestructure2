@@ -6,11 +6,12 @@ param (
 [Parameter(Mandatory = $false)]
 [string]$email,
 [Parameter(Mandatory = $false)]
-[string]$sub
+[string]$sub,
+[Parameter(Mandatory = $false)]
+[string]$AzServAcc,
+[Parameter(Mandatory = $false)]
+[string]$AzServPw
 )
-
-$Service_account = "$(AzServAcc)"
-$Service_pw = "$(AzServPw)"
 
 $date = Get-Date
 $dt = $date.AddMinutes(5)
