@@ -8,11 +8,10 @@ param (
 [Parameter(Mandatory = $false)]
 [string]$sub,
 [Parameter(Mandatory = $false)]
-[string]$AzServAcc,
-[Parameter(Mandatory = $false)]
-[string]$AzServPw
+[string]$AzServAcc
 )
-
+Write-Output "$AzServAcc"
+#SecureString
 $date = Get-Date
 $dt = $date.AddMinutes(5)
 $Action = New-ScheduledTaskAction -Execute 'powershell.exe' -Argument "-File D:\Snapshots\Scripts\Snapshots_v1.ps1"
@@ -23,7 +22,7 @@ Register-ScheduledTask -TaskName $taskname `
                        -TaskPath "\Snapshots" `
                        -Action $Action `
                        -User $AzServAcc `
-                       -Password $AzServPw `
+                       -Password $(AzServPw) `
                        -Trigger $trigger `
                        -Settings $Settings `
                        -RunLevel Highest -Force
