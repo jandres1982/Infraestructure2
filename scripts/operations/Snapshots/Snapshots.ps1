@@ -9,8 +9,8 @@ param (
 [string]$sub
 )
 
-$secretvalue_Acc = Get-AzKeyVaultSecret -VaultName "kv-prod-devopsagents-01" -Name "AzServAcc" -AsPlainText
-$secretvalue_Pw = Get-AzKeyVaultSecret -VaultName "kv-prod-devopsagents-01" -Name "AzServPw" -AsPlainText
+#$secretvalue_Acc = Get-AzKeyVaultSecret -VaultName "kv-prod-devopsagents-01" -Name "AzServAcc" -AsPlainText
+#$secretvalue_Pw = Get-AzKeyVaultSecret -VaultName "kv-prod-devopsagents-01" -Name "AzServPw" -AsPlainText
 
 #Write-Output "$secretvalue_Acc $secretvalue_Pw" 
 #SecureString
