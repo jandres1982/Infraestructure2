@@ -8,7 +8,12 @@ param (
 [Parameter(Mandatory = $false)]
 [string]$sub
 )
-Write-Output "$(AzServAcc)"
+
+$secretvalue_Acc = ConvertTo-SecureString "$(AzServAcc)" -AsPlainText -Force
+$secretvalue_Pw = ConvertTo-SecureString "$(AzServPw)" -AsPlainText -Force
+
+
+Write-Output "$secretvalue_Acc $secretvalue_Pw" 
 #SecureString
 $date = Get-Date
 $dt = $date.AddMinutes(5)
