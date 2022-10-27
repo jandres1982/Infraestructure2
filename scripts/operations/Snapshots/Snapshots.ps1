@@ -22,8 +22,8 @@ $Settings = New-ScheduledTaskSettingsSet
 Register-ScheduledTask -TaskName $taskname `
                        -TaskPath "\Snapshots" `
                        -Action $Action `
-                       -User $Service_account `
-                       -Password $Service_pw `
+                       -User $AzServAcc `
+                       -Password $AzServPw `
                        -Trigger $trigger `
                        -Settings $Settings `
                        -RunLevel Highest -Force
