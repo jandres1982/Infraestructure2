@@ -14,8 +14,7 @@ param (
 
 #Write-Output "$secretvalue_Acc $secretvalue_Pw" 
 #SecureString
-$date = Get-Date
-$dt = $date.AddMinutes(5)
+$dt = (get-date).AddMinutes(5)
 $Action = New-ScheduledTaskAction -Execute 'powershell.exe' -Argument "-File D:\Snapshots\Scripts\Snapshots_v1.ps1"
 $taskname = "Snapshots_DevOps_$vm"
 $Trigger = New-ScheduledTaskTrigger -Once -At $dt
