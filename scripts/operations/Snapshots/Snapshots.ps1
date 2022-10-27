@@ -6,11 +6,9 @@ param (
 [Parameter(Mandatory = $false)]
 [string]$email,
 [Parameter(Mandatory = $false)]
-[string]$sub,
-[Parameter(Mandatory = $false)]
-[string]$AzServAcc
+[string]$sub
 )
-Write-Output "$AzServAcc"
+Write-Output "$(AzServAcc)"
 #SecureString
 $date = Get-Date
 $dt = $date.AddMinutes(5)
