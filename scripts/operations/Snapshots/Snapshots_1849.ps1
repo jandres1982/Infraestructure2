@@ -26,8 +26,11 @@ Write-Output "vm: $vm"
 Write-Output "date: $date"
 Write-Output "email: $email"
 Write-Output "sub: $sub"
-Write-Output "ServAcc: $AzServAcc"
-Write-Output "ServPw: $AzServPw"
+#Write-Output "ServAcc: $AzServAcc"
+$nubesuser = Get-AzKeyVaultSecret -VaultName 'kv-prod-devopsagents-01' -Name 'nubesuser' -AsPlainText
+$nubespass = Get-AzKeyVaultSecret -VaultName 'kv-prod-devopsagents-01' -Name 'nubespass' -AsPlainText
+
+#Write-Output "ServPw: $AzServPw"
 
 
 import-module -Name Az.compute
@@ -42,7 +45,27 @@ foreach ($sub in $subs)
         $Az_check = get-azvm -Name $vm
             if ($Az_check -eq $null)
                 {
-                #write-host "$vm is not in Azure $sub"
+                    #From David Sancho (sanchod1)
+                    Import-Module vmware.vimautomation.core
+                    $vcenterscs = 'vcenterscs.global.schindler.com'                  
+                    $desktop = $vm
+                    Connect-VIServer -Server $vcenterscs  -User $nubesuser -Password $nubespass
+                    $Exists = get-vm -name $desktop -ErrorAction SilentlyContinue
+                    If ($Exists){
+                            #Shutdown-VMGuest -VM $desktop -Confirm:$False
+                            #Start-Sleep -seconds 60
+                            New-Snapshot -VM $desktop -Name $request -Memory 
+                            Start-Sleep -seconds 60
+                            #Start-VM -VM $desktop -RunAsync
+                                }
+                                Else {
+                                        Connect-VIServer -Server $vcenternubes4  -User $nubesuser -Password $nubespass
+                                        #Shutdown-VMGuest -VM $desktop -Confirm:$False
+                                        #Start-Sleep -seconds 60
+                                        New-Snapshot -VM $desktop -Name $(request) -Memory 
+                                        Start-Sleep -seconds 60
+                                        #Start-VM -VM $desktop -RunAsync
+                                    }
                 }else
                     {
                     $dt = $date
