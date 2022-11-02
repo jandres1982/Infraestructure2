@@ -44,7 +44,7 @@ foreach ($sub in $subs)
                 }else
                     {
                     $dt = $date
-                    $Action = New-ScheduledTaskAction -Execute 'powershell.exe' -Argument "-File D:\Snapshots\Scripts\Snapshots_v1.ps1 -vm $vm -sub $sub -email $email -date "$date""
+                    $Action = New-ScheduledTaskAction -Execute 'powershell.exe' -Argument "-File D:\Snapshots\Scripts\Snapshots_v1.ps1 -vm $vm -sub $sub -email $email"
                     $taskname = "Snapshots_DevOps_$vm"
                     $Trigger = New-ScheduledTaskTrigger -Once -At $dt
                     $Settings = New-ScheduledTaskSettingsSet
