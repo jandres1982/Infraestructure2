@@ -1,4 +1,3 @@
-
 [string]$vm
 [datetime]$date
 [string]$email
