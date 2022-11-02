@@ -4,6 +4,10 @@
 [string]$sub = "$(sub)"
 [System.String]$AzServPw = "$(AzServPw)"
 
+import-module -Name Az.compute
+import-module -Name Az.Storage
+import-module -Name Az.Accounts
+
 Write-Output "vm: $vm"
 Write-Output "date: $date"
 Write-Output "email: $email"
