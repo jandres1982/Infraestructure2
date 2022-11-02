@@ -49,8 +49,7 @@ foreach ($sub in $subs)
                        -User $AzServAcc `
                        -Password $AzServPw `
                        -Trigger $trigger `
-                       -Settings $Settings `
-                       -RunLevel Highest -Force
-
+                       -Settings $Settings
                     }
         }
+        #                       -RunLevel Highest -Force
