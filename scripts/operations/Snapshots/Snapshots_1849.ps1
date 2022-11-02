@@ -1,14 +1,15 @@
 param([string]$vm,
 [string]$date,
 [string]$email,
-[string]$sub,
-$AzServAcc,
-$AzServPw)
+[string]$sub)
 #[System.String]$AzServPw = "$(AzServPw)"
 
 $date = $date -as [datetime]
-$AzServAcc = $AzServAcc -as [System.String]
-$AzServPw = $AzServPw -as [System.String]
+#$AzServAcc = $AzServAcc -as [System.String]
+#$AzServPw = $AzServPw -as [System.String]
+
+$AzServAcc = Get-AzKeyVaultSecret -VaultName 'kv-prod-devopsagents-01' -Name 'AzServAcc' -AsPlainText
+$AzServPw = Get-AzKeyVaultSecret -VaultName 'kv-prod-devopsagents-01' -Name 'AzServPw' -AsPlainText
 #[string]$vm = "$(vm)"
 #[datetime]$date = "$(date)"
 #[string]$email = "$(email)"
