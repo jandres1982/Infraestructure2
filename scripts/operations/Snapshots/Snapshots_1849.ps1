@@ -19,8 +19,8 @@ Write-Output "vm: $vm"
 Write-Output "date: $date"
 Write-Output "email: $email"
 Write-Output "sub: $sub"
-Write-Output "ServAcc: $AzServAcc"
-Write-Output "ServPw: $AzServPw"
+#Write-Output "ServAcc: $AzServAcc"
+#Write-Output "ServPw: $AzServPw"
 
 
 import-module -Name Az.compute
@@ -39,7 +39,7 @@ foreach ($sub in $subs)
                 }else
                     {
                     $dt = $date
-                    $Action = New-ScheduledTaskAction -Execute 'powershell.exe' -Argument "-File D:\Snapshots\Scripts\Snapshots_v1.ps1 -vm $vm -sub $sub"
+                    $Action = New-ScheduledTaskAction -Execute 'powershell.exe' -Argument "-File D:\Snapshots\Scripts\Snapshots_v1.ps1 -vm $vm -sub $sub -email $email -date $date"
                     $taskname = "Snapshots_DevOps_$vm"
                     $Trigger = New-ScheduledTaskTrigger -Once -At $dt
                     $Settings = New-ScheduledTaskSettingsSet
