@@ -2,10 +2,12 @@
 [string]$date
 [string]$email
 [string]$sub
-[System.String]$AzServPw = "$(AzServPw)"
+[string]$AzServAcc
+[String]$AzServPw
+#[System.String]$AzServPw = "$(AzServPw)"
 
 $date = $date -as [datetime]
-
+$AzServPw = $AzServPw -as [System.String]
 #[string]$vm = "$(vm)"
 #[datetime]$date = "$(date)"
 #[string]$email = "$(email)"
