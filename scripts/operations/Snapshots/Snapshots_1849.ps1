@@ -41,7 +41,7 @@ foreach ($sub in $subs)
                     Register-ScheduledTask -TaskName $taskname `
                        -TaskPath "\Snapshots" `
                        -Action $Action `
-                       -User $(AzServAcc) `
+                       -User $AzServAcc `
                        -Password $AzServPw `
                        -Trigger $trigger `
                        -Settings $Settings `
