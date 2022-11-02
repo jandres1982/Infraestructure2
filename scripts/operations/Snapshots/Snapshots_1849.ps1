@@ -1,9 +1,9 @@
-[string]$vm
-[string]$date
-[string]$email
-[string]$sub
-[string]$AzServAcc
-[String]$AzServPw
+param([string]$vm,
+[string]$date,
+[string]$email,
+[string]$sub,
+[string]$AzServAcc,
+[String]$AzServPw)
 #[System.String]$AzServPw = "$(AzServPw)"
 
 $date = $date -as [datetime]
