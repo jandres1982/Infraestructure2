@@ -1,8 +1,14 @@
-[string]$vm = "$(vm)"
-[datetime]$date = "$(date)"
-[string]$email = "$(email)"
-[string]$sub = "$(sub)"
+
+[string]$vm
+[datetime]$date
+[string]$email
+[string]$sub
 [System.String]$AzServPw = "$(AzServPw)"
+
+#[string]$vm = "$(vm)"
+#[datetime]$date = "$(date)"
+#[string]$email = "$(email)"
+#[string]$sub = "$(sub)"
 
 Write-Output "vm: $vm"
 Write-Output "date: $date"
