@@ -12,8 +12,8 @@ $date = $date -as [datetime]
 #Check access for the account:
 #$AzServAcc = Get-AzKeyVaultSecret -VaultName 'kv-prod-devopsagents-01' -Name 'AzServAcc' -AsPlainText
 #$AzServPw = Get-AzKeyVaultSecret -VaultName 'kv-prod-devopsagents-01' -Name 'AzServPw' -AsPlainText
-$AzServAcc = "intshhazuredevops"
-$AzServPw = "uX7V,p-#-890Ia"
+#$AzServAcc = "intshhazuredevops"
+#$AzServPw = "uX7V,p-#-890Ia"
 
 #[string]$vm = "$(vm)"
 #[datetime]$date = "$(date)"
