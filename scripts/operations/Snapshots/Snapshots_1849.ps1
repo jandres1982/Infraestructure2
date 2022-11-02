@@ -7,6 +7,7 @@ param([string]$vm,
 #[System.String]$AzServPw = "$(AzServPw)"
 
 $date = $date -as [datetime]
+$AzServAcc = $AzServAcc -as [System.String]
 $AzServPw = $AzServPw -as [System.String]
 #[string]$vm = "$(vm)"
 #[datetime]$date = "$(date)"
@@ -19,10 +20,6 @@ Write-Output "email: $email"
 Write-Output "sub: $sub"
 Write-Output "vm: $AzServAcc"
 Write-Output "vm: $AzServPw"
-Write-Output "With ()"
-Write-Output "vm: $(AzServAcc)"
-Write-Output "vm: $(AzServPw)"
-
 
 
 import-module -Name Az.compute
