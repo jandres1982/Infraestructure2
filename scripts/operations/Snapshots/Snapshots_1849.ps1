@@ -1,7 +1,13 @@
 [string]$vm = "$(vm)"
-[string]$sub = "$(sub)"
 [datetime]$date = "$(date)"
+[string]$email = "$(email)"
+[string]$sub = "$(sub)"
 [System.String]$AzServPw = "$(AzServPw)"
+
+Write-Output "vm: $vm"
+Write-Output "date: $date"
+Write-Output "email: $email"
+Write-Output "sub: $sub"
 
 $subs=Get-AzSubscription | Where-Object {$_.Name -match "s-sis-[aec][upmh]*"}
 Write-host "$vm"
