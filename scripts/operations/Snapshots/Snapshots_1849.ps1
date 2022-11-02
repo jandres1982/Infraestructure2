@@ -17,6 +17,13 @@ Write-Output "vm: $vm"
 Write-Output "date: $date"
 Write-Output "email: $email"
 Write-Output "sub: $sub"
+Write-Output "vm: $AzServAcc"
+Write-Output "vm: $AzServPw"
+Write-Output "With ()"
+Write-Output "vm: $(AzServAcc)"
+Write-Output "vm: $(AzServPw)"
+
+
 
 import-module -Name Az.compute
 import-module -Name Az.Storage
