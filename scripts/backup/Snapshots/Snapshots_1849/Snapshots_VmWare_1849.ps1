@@ -6,6 +6,7 @@ param([string]$vm,
 [string]$NubesRoAcc,
 [string]$NubesRoPw)
 
+
 $date = $date -as [datetime]
 
 Write-Output "vm: $vm"
@@ -20,7 +21,7 @@ Import-Module vmware.vimautomation.core
 
 Function Check_VM ($VCenter,$vm)
 {
-    Connect-VIServer -Server $VCenter -User $NubesRoAcc -Password $NubesRoPw
+    Connect-VIServer -Server $VCenter -User $NubesRoAcc -Password $NubesRoPw -force
     $VM_Exist = get-vm -name $VM -ErrorAction SilentlyContinue
     If ($VM_Exist)
        {Return $True}
@@ -31,7 +32,7 @@ Function Check_VM ($VCenter,$vm)
 
 Function Snapshot_VmWare ($vm,$date,$email,$Request,$vcenter)
 {
-    Connect-VIServer -Server $Vcenter -User $NubesRoAcc -Password $NubesRoPw
+    Connect-VIServer -Server $Vcenter -User $NubesRoAcc -Password $NubesRoPw -force
     $snapMemory = $true
     $snapQuiesce = $false
     $VmProfile = Get-VM -Name $vm
@@ -63,6 +64,7 @@ Function Snapshot_VmWare ($vm,$date,$email,$Request,$vcenter)
 
 Function Power_Off ($vm,$date,$email,$Request,$vcenter)
 {
+    Connect-VIServer -Server $Vcenter -User $NubesRoAcc -Password $NubesRoPw -force
     $VmProfile = Get-VM -Name $vm
     $date = $date -as [datetime]
     $snapName = "PowerOff Server $vm for the $request"
@@ -87,6 +89,7 @@ Function Power_Off ($vm,$date,$email,$Request,$vcenter)
 
 Function Power_On ($vm,$date,$email,$Request,$vcenter)
 {
+    Connect-VIServer -Server $Vcenter -User $NubesRoAcc -Password $NubesRoPw -force
     $VmProfile = Get-VM -Name $vm
     $date = $date -as [datetime]
     $snapName = "PowerOn Server $vm for the $request"
@@ -148,8 +151,9 @@ Function Power_On ($vm,$date,$email,$Request,$vcenter)
 #Main
 
 Set-PowerCLIConfiguration -Scope User -ParticipateInCEIP $false -Confirm:$false
-Connect-VIServer -Server $Vcenter -User $NubesRoAcc -Password $NubesRoPw -force
+#Connect-VIServer -Server $Vcenter -User $NubesRoAcc -Password $NubesRoPw -force
 $Check_Nubes1 = Check_VM -VCenter $nubes1 -vm $vm | Select-String "True"
+
 
 If ($Check_Nubes1)
     {$VCenter = $Nubes1}
@@ -158,7 +162,6 @@ If ($Check_Nubes1)
             $VCenter = $Nubes4
             write-host "VM located in another VCenter" > "D:\Snapshots\logs\VmWare_Snap_error_$VM.txt"
             }
-
 
 
 if ($Type -eq "Offline")
