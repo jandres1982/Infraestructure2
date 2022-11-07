@@ -1,5 +1,5 @@
 param([string]$vm,
-[string]$date,
+[datetime]$date,
 [string]$email,
 [string]$Request,
 [string]$Type,
@@ -166,12 +166,11 @@ If ($Check_Nubes1)
 
 if ($Type -eq "Offline")
     {
-    [datetime]$date
     Power_off -vm $vm -date $date -email $email -Request $Request -vcenter $vcenter
-    [datetime]$date_Snap = $date.addminutes(5)
-    Snapshot_VmWare -vm $vm -date $date_Snap -email $email -Request $Request -vcenter $vcenter
-    [datetime]$date_PowerOn = $date.addminutes(8)
-    Power_on -vm $vm -date $date_PowerOn -email $email -Request $Request -vcenter $vcenter
+    
+    Snapshot_VmWare -vm $vm -date $date.AddMinutes(5) -email $email -Request $Request -vcenter $vcenter
+   
+    Power_on -vm $vm -date $date.AddMinutes(8) -email $email -Request $Request -vcenter $vcenter
     }else
         {
         Snapshot_VmWare -vm $vm -date $date -email $email -Request $Request -vcenter $vcenter
