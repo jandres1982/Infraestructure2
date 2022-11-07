@@ -124,7 +124,7 @@ If ($Check_Nubes1)
         else
             {
             $VCenter = $Nubes4
-            write-host "VM located in another VCenter" > "D:\Snapshots\logs\VmWare_Snap_error_$VM.txt"
+            write-host "VM cannot be located in VCenter Nubes1, changing to Nubes4" > "D:\Snapshots\logs\VmWare_Snap_Check_$VM.txt"
             }
 
 
