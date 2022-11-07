@@ -112,6 +112,40 @@ Function Power_On ($vm,[datetime]$date,$email,$Request,$vcenter)
 }
 
 
+#Main
+
+Set-PowerCLIConfiguration -Scope User -ParticipateInCEIP $false -Confirm:$false
+#Connect-VIServer -Server $Vcenter -User $NubesRoAcc -Password $NubesRoPw -force
+$Check_Nubes1 = Check_VM -VCenter $nubes1 -vm $vm | Select-String "True"
+
+
+If ($Check_Nubes1)
+    {$VCenter = $Nubes1}
+        else
+            {
+            $VCenter = $Nubes4
+            write-host "VM located in another VCenter" > "D:\Snapshots\logs\VmWare_Snap_error_$VM.txt"
+            }
+
+
+if ($Type -eq "Offline")
+    {
+    Power_off -vm $vm -date $date -email $email -Request $Request -vcenter $vcenter
+    
+    Snapshot_VmWare -vm $vm -date $date.AddMinutes(5) -email $email -Request $Request -vcenter $vcenter
+   
+    Power_on -vm $vm -date $date.AddMinutes(8) -email $email -Request $Request -vcenter $vcenter
+    }else
+        {
+        Snapshot_VmWare -vm $vm -date $date -email $email -Request $Request -vcenter $vcenter
+        }
+
+
+
+Disconnect-VIServer -server $VCenter -confirm:$false
+
+
+
 #$Check_Nubes4 = Check_VM -VCenter $nubes4 -vm $vm | Select-String "True"
 #
 #$VCenter = ""
@@ -147,36 +181,6 @@ Function Power_On ($vm,[datetime]$date,$email,$Request,$vcenter)
 #        }
 #
 
-
-#Main
-
-Set-PowerCLIConfiguration -Scope User -ParticipateInCEIP $false -Confirm:$false
-#Connect-VIServer -Server $Vcenter -User $NubesRoAcc -Password $NubesRoPw -force
-$Check_Nubes1 = Check_VM -VCenter $nubes1 -vm $vm | Select-String "True"
-
-
-If ($Check_Nubes1)
-    {$VCenter = $Nubes1}
-        else
-            {
-            $VCenter = $Nubes4
-            write-host "VM located in another VCenter" > "D:\Snapshots\logs\VmWare_Snap_error_$VM.txt"
-            }
-
-
-if ($Type -eq "Offline")
-    {
-    Power_off -vm $vm -date $date -email $email -Request $Request -vcenter $vcenter
-    
-    Snapshot_VmWare -vm $vm -date $date.AddMinutes(5) -email $email -Request $Request -vcenter $vcenter
-   
-    Power_on -vm $vm -date $date.AddMinutes(8) -email $email -Request $Request -vcenter $vcenter
-    }else
-        {
-        Snapshot_VmWare -vm $vm -date $date -email $email -Request $Request -vcenter $vcenter
-        }
-
-
 #If ($Result_Nubes1)
 #    {
 #    Write-Output "VM Found we will schedule the snapshot"
@@ -186,4 +190,3 @@ if ($Type -eq "Offline")
 #
 #
 #
-Disconnect-VIServer -server $VCenter -confirm:$false
