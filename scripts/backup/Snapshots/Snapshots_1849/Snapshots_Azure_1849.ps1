@@ -64,16 +64,3 @@ If ($rg -ne $null)
         {
         Write-Output "Server $vm was not found in Azure"
         }
-
-#Commented
-#$AzServAcc = $AzServAcc -as [System.String]
-#$AzServPw = $AzServPw -as [System.String]
-#Check access for the account:
-#$AzServAcc = Get-AzKeyVaultSecret -VaultName 'kv-prod-devopsagents-01' -Name 'AzServAcc' -AsPlainText
-#$AzServPw = Get-AzKeyVaultSecret -VaultName 'kv-prod-devopsagents-01' -Name 'AzServPw' -AsPlainText
-#$AzServAcc = "intshhazuredevops"
-#$AzServPw = "uX7V,p-#-890Ia"
-#[string]$vm = "$(vm)"
-#[datetime]$date = "$(date)"
-#[string]$email = "$(email)"
-#[string]$sub = "$(sub)"
