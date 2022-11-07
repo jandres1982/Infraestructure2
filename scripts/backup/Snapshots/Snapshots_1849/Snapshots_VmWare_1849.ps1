@@ -147,6 +147,8 @@ Function Power_On ($vm,$date,$email,$Request,$vcenter)
 
 #Main
 
+Set-PowerCLIConfiguration -Scope Users -ParticipateInCEIP $false -Confirm:$false
+Connect-VIServer -Server $Vcenter -User $NubesRoAcc -Password $NubesRoPw -force
 $Check_Nubes1 = Check_VM -VCenter $nubes1 -vm $vm | Select-String "True"
 
 If ($Check_Nubes1)
@@ -156,6 +158,7 @@ If ($Check_Nubes1)
             $VCenter = $Nubes4
             write-host "VM located in another VCenter" > "D:\Snapshots\logs\VmWare_Snap_error_$VM.txt"
             }
+
 
 
 if ($Type -eq "Offline")
