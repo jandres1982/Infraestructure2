@@ -8,7 +8,7 @@ foreach ($sub in $subs)
 
     $disks=Get-AzDisk | Where-Object {$_.Diskstate -eq "Unattached"}
    
-    foreach ($disk in $diks)
+    foreach ($disk in $disks)
     {
         [void]$vmObject.add([PSCustomObject]@{
         Subscription = $sub.name
