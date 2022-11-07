@@ -30,7 +30,7 @@ Function Check_VM ($VCenter,$vm)
 }
 
 
-Function Snapshot_VmWare ($vm,$date,$email,$Request,$vcenter)
+Function Snapshot_VmWare ($vm,[datetime]$date,$email,$Request,$vcenter)
 {
     Connect-VIServer -Server $Vcenter -User $NubesRoAcc -Password $NubesRoPw -force
     $snapMemory = $true
@@ -62,7 +62,7 @@ Function Snapshot_VmWare ($vm,$date,$email,$Request,$vcenter)
 }
 
 
-Function Power_Off ($vm,$date,$email,$Request,$vcenter)
+Function Power_Off ($vm,[datetime]$date,$email,$Request,$vcenter)
 {
     Connect-VIServer -Server $Vcenter -User $NubesRoAcc -Password $NubesRoPw -force
     $VmProfile = Get-VM -Name $vm
@@ -87,7 +87,7 @@ Function Power_Off ($vm,$date,$email,$Request,$vcenter)
 }
 
 
-Function Power_On ($vm,$date,$email,$Request,$vcenter)
+Function Power_On ($vm,[datetime]$date,$email,$Request,$vcenter)
 {
     Connect-VIServer -Server $Vcenter -User $NubesRoAcc -Password $NubesRoPw -force
     $VmProfile = Get-VM -Name $vm
