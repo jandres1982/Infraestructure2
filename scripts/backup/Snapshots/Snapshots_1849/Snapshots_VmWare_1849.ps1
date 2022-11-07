@@ -166,10 +166,11 @@ If ($Check_Nubes1)
 
 if ($Type -eq "Offline")
     {
+    [datetime]$date
     Power_off -vm $vm -date $date -email $email -Request $Request -vcenter $vcenter
-    $date_Snap = $date.addminutes(5)
+    [datetime]$date_Snap = $date.addminutes(5)
     Snapshot_VmWare -vm $vm -date $date_Snap -email $email -Request $Request -vcenter $vcenter
-    $date_PowerOn = $date.addminutes(8)
+    [datetime]$date_PowerOn = $date.addminutes(8)
     Power_on -vm $vm -date $date_PowerOn -email $email -Request $Request -vcenter $vcenter
     }else
         {
