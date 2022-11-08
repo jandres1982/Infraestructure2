@@ -33,6 +33,9 @@ resource storageAccount 'Microsoft.Storage/storageAccounts@2021-08-01' = {
     name: storageAccountType
   }
   kind: 'Storage'
+  properties: {
+    allowBlobPublicAccess: false
+  }
 }
 
 resource hostingPlan 'Microsoft.Web/serverfarms@2021-03-01' = {
