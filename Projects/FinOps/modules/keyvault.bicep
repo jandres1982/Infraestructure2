@@ -23,6 +23,12 @@ param objectId string = 'bf3a5bbb-20ef-4048-9b94-60652ebf645c'
 @description('Specifies the permissions to keys in the vault. Valid values are: all, encrypt, decrypt, wrapKey, unwrapKey, sign, verify, get, list, create, update, import, delete, backup, restore, recover, and purge.')
 param keysPermissions array = [
   'list'
+  'get'
+  'set'
+  'delete'
+  'restore'
+  'backup'
+  'recover'
 ]
 
 @description('Specifies the permissions to secrets in the vault. Valid values are: all, get, list, set, delete, backup, restore, recover, and purge.')
