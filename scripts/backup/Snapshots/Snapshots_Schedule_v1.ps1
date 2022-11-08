@@ -10,10 +10,16 @@ param (
 [Parameter(Mandatory = $false)]
 [datetime]$date
 )
-Write-Output "$date"
+
+$Schedule_Time = $date -as [datetime]
+Write-Output "$Schedule_Time"
 $automationAccountName = "aa-prod-monitoring-01"
 $resourceGroupName = "rg-cis-prod-monitoring-01"
 $runbookName = "Disk_Snapshots"
+
+#Select-AzSubscription -Subscription "s-sis-eu-prod-01"
+#Set-azContext -Subscription "s-sis-eu-prod-01"
+
 
 ######################### From Devops ########################
 #$vmName = "tstshhwsr0343"
@@ -23,13 +29,13 @@ $runbookName = "Disk_Snapshots"
 #$location = "North Europe"
 ##############################################################
 
-
-$Schedule_Time = $date -as [datetime]
-
 $Snapshot_name = $vmName+"_Snapshot"
 New-AzAutomationSchedule -AutomationAccountName $automationAccountName -Name $Snapshot_name -StartTime $Schedule_Time -ResourceGroupName $resourceGroupName -OneTime
-
 $Schedule = Get-AzAutomationSchedule -ResourceGroupName $resourceGroupName -AutomationAccountName $automationAccountName -Name $Snapshot_name
+$data = @{"vmName"="$vmName";"sub"="$sub";"location"="$location";"resourceGroup"="$resourceGroup";"date"="$date"}
 
-$data = @{"vmName"="$vmName";"sub"="$sub";"location"="$location";"resourceGroup"="$resourceGroup"}
-Register-AzAutomationScheduledRunbook –AutomationAccountName $AutomationAccountName –RunbookName $runbookName –ScheduleName $Schedule.Name –Parameters $data -ResourceGroupName $resourceGroupName
+Write-Output "$data"
+
+Register-AzAutomationScheduledRunbook -AutomationAccountName $automationAccountName `
+-Name $runbookName -ScheduleName $schedule.Name -Parameters $data `
+-ResourceGroupName "$resourceGroupName"
