@@ -18,7 +18,6 @@ $Nubes4 = "vcenternubes4"
 
 Import-Module vmware.vimautomation.core
 
-
 Function Check_VM ($VCenter,$vm)
 {
     Connect-VIServer -Server $VCenter -User $NubesRoAcc -Password $NubesRoPw -force
@@ -59,6 +58,7 @@ Function Snapshot_VmWare ($vm,[datetime]$date,$email,$Request,$vcenter)
         $spec.Action.Argument += $arg}
 
     $scheduledTaskManager.CreateObjectScheduledTask($VmProfile.ExtensionData.MoRef, $spec)
+    Disconnect-VIServer -Server $vcenter -confirm:$false
 }
 
 
@@ -84,6 +84,7 @@ Function Power_Off ($vm,[datetime]$date,$email,$Request,$vcenter)
     $spec.Action = New-Object VMware.Vim.MethodAction
     $spec.Action.Name = "ShutdownGuest"
     $scheduledTaskManager.CreateScheduledTask($VmProfile.ExtensionData.MoRef, $spec)
+    Disconnect-VIServer -Server $vcenter -confirm:$false
 }
 
 
@@ -109,6 +110,7 @@ Function Power_On ($vm,[datetime]$date,$email,$Request,$vcenter)
     $spec.Action = New-Object VMware.Vim.MethodAction
     $spec.Action.Name = "PowerOnVM_Task"
     $scheduledTaskManager.CreateScheduledTask($VmProfile.ExtensionData.MoRef, $spec)
+    Disconnect-VIServer -Server $vcenter -confirm:$false
 }
 
 
@@ -117,14 +119,14 @@ Function Power_On ($vm,[datetime]$date,$email,$Request,$vcenter)
 Set-PowerCLIConfiguration -Scope User -ParticipateInCEIP $false -Confirm:$false
 #Connect-VIServer -Server $Vcenter -User $NubesRoAcc -Password $NubesRoPw -force
 $Check_Nubes1 = Check_VM -VCenter $nubes1 -vm $vm | Select-String "True"
-
+Disconnect-VIServer -Server $vcenter -confirm:$false
 
 If ($Check_Nubes1)
     {$VCenter = $Nubes1}
         else
             {
             $VCenter = $Nubes4
-            write-host "VM cannot be located in VCenter Nubes1, changing to Nubes4" > "D:\Snapshots\logs\VmWare_Snap_Check_$VM.txt"
+            write-output "VM cannot be located in VCenter Nubes1, changing to Nubes4" > "D:\Snapshots\logs\VmWare_Snap_Check_$VM.txt"
             }
 
 
