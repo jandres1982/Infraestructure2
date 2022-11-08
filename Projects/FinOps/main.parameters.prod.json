@@ -1,42 +1,30 @@
 {
-    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentParameters.json#",
-    "contentVersion": "1.0.0.0",
-    "parameters": {
-      "appServicePlanName": {
-        "value": "asp-shh-prod-finos-01"
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentParameters.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+      "environment": {
+          "value": "qual"
+      },
+      "project": {
+          "value": "gisfinops"
+      },
+      "version": {
+          "value": "PYTHON|3.7"
       },
       "sku": {
-        "value": "S1"
+          "value": "S1"
       },
       "tier": {
-        "value": "Standard"
+          "value": "Standard"
       },
       "kind": {
-        "value": "linux"
-      },
-      "appFrontendName": {
-        "value": "app-shh-prod-finopsfrontend-01"
-      },
-      "versionFrontend": {
-        "value": "PYTHON|3.7"
-      },
-      "appBackendName": {
-        "value": "app-shh-prod-finopsbackend-01"
-      },
-      "versionBackend": {
-        "value": "PYTHON|3.7"
-      },
-      "StorageAccountName": {
-        "value": "stprodfinops0002"
+          "value": "linux"
       },
       "blobName": {
-        "value": "finops"
+          "value": "gisfinops"
       },
-      "environment": {
-        "value": "prod"
-      },
-      "keyvaultname": {
-        "value": "kv-prod-finops-01"
+      "objectId": {
+          "value": "b9d5fa40-ff32-4bc4-ab7a-73b08b36125b"
       }
-    }
   }
+}
