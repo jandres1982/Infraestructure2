@@ -119,7 +119,7 @@ Function Power_On ($vm,[datetime]$date,$email,$Request,$vcenter)
 Set-PowerCLIConfiguration -Scope User -ParticipateInCEIP $false -Confirm:$false
 #Connect-VIServer -Server $Vcenter -User $NubesRoAcc -Password $NubesRoPw -force
 $Check_Nubes1 = Check_VM -VCenter $nubes1 -vm $vm | Select-String "True"
-Disconnect-VIServer -Server $vcenter -confirm:$false
+Disconnect-VIServer -Server $Nubes1 -confirm:$false
 
 If ($Check_Nubes1)
     {$VCenter = $Nubes1}
