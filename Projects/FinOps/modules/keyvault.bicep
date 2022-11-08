@@ -5,6 +5,9 @@ param keyvaultname string
 @description('Specifies whether Azure Virtual Machines are permitted to retrieve certificates stored as secrets from the key vault.')
 param enabledForDeployment bool = false
 
+@description('Specifies whether Azure Virtual Machines are permitted to retrieve certificates stored as secrets from the key vault.')
+param enablePurgeProtection bool = true
+
 @description('Specifies whether Azure Disk Encryption is permitted to retrieve secrets from the vault and unwrap keys.')
 param enabledForDiskEncryption bool = false
 
@@ -20,11 +23,23 @@ param objectId string = 'bf3a5bbb-20ef-4048-9b94-60652ebf645c'
 @description('Specifies the permissions to keys in the vault. Valid values are: all, encrypt, decrypt, wrapKey, unwrapKey, sign, verify, get, list, create, update, import, delete, backup, restore, recover, and purge.')
 param keysPermissions array = [
   'list'
+  'get'
+  'set'
+  'delete'
+  'restore'
+  'backup'
+  'recover'
 ]
 
 @description('Specifies the permissions to secrets in the vault. Valid values are: all, get, list, set, delete, backup, restore, recover, and purge.')
 param secretsPermissions array = [
   'list'
+  'get'
+  'set'
+  'delete'
+  'restore'
+  'backup'
+  'recover'
 ]
 
 
@@ -36,6 +51,7 @@ resource keyvault 'Microsoft.KeyVault/vaults@2022-07-01' = {
     enabledForDeployment: enabledForDeployment
     enabledForDiskEncryption: enabledForDiskEncryption
     enabledForTemplateDeployment: enabledForTemplateDeployment
+    enablePurgeProtection: enablePurgeProtection
     accessPolicies: [
       {
         objectId: objectId

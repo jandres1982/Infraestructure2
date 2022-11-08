@@ -1,45 +1,34 @@
-@description('Location.')
 param location string = resourceGroup().location
 
-@description('Parameters for App Serviceplan.')
-param appServicePlanName string
+@description('App Param')
+param project string
+param version string 
 param sku string 
 param tier string
 param kind string
 
-@description('Parameters for Frontend Web App')
-param appFrontendName string
-param versionFrontend string 
+@description('Schindler Naming variabls for Web Service')
+var appServicePlanName  = 'asp-${environment}-${project}-01'
+var appServiceAppName01 = 'app-${environment}-${project}-01'
+var appServiceAppName02 = 'app-${environment}-${project}-02'
 
-@description('Parameters for Backend Web App')
-param appBackendName string
-param versionBackend string 
+@description('Schindler Naming variables for KeyVault')
+param objectId string
+var keyvaultname = 'kv-${environment}-${project}-01'
 
-module appServices 'modules/appservices.bicep' = {
-  name: 'appServices'
-  params: {
-    location: location
-    appServicePlanName: appServicePlanName
-    sku: sku
-    tier: tier
-    kind: kind
-    appFrontendName: appFrontendName
-    versionFrontend: versionFrontend
-    appBackendName: appBackendName
-    versionBackend: versionBackend
-  }
-}
-
-@description('Parameters for StorageAccount.')
-param StorageAccountName string 
+@description('Storage Account Param')
+var StorageAccountName = 'st${environment}${project}0001'
 param blobName string 
 
 @allowed([
   'prod'
-  'nonprod'
+  'test'
+  'dev'
+  'qual'
 ])
 param environment string
 var storageAccountSkuName = (environment == 'prod') ? 'Standard_ZRS' : 'Standard_LRS'
+
 module storageaccount 'modules/storageaccount.bicep' = {
   name: 'storageaccount'
   params: {
@@ -50,12 +39,25 @@ module storageaccount 'modules/storageaccount.bicep' = {
   }
 }
 
-@description('Parameters for KeyVault')
-param keyvaultname string
+module appService 'modules/appservice.bicep' = {
+    name: 'appService'
+    params: {
+      location: location
+      appServiceAppName01: appServiceAppName01
+      appServiceAppName02: appServiceAppName02
+      appServicePlanName: appServicePlanName
+      sku: sku
+      tier: tier
+      version: version
+      kind: kind
+    }
+}
+
 module keyvault 'modules/keyvault.bicep' = {
   name: 'keyvault'
-  params:{
-    keyvaultname: keyvaultname
+  params: {
     location: location
-  }  
+    keyvaultname: keyvaultname
+    objectId: objectId
+  }
 }
