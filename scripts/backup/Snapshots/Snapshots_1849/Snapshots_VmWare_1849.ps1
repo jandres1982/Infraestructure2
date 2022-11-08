@@ -18,7 +18,6 @@ $Nubes4 = "vcenternubes4"
 
 Import-Module vmware.vimautomation.core
 
-
 Function Check_VM ($VCenter,$vm)
 {
     Connect-VIServer -Server $VCenter -User $NubesRoAcc -Password $NubesRoPw -force
@@ -59,6 +58,7 @@ Function Snapshot_VmWare ($vm,[datetime]$date,$email,$Request,$vcenter)
         $spec.Action.Argument += $arg}
 
     $scheduledTaskManager.CreateObjectScheduledTask($VmProfile.ExtensionData.MoRef, $spec)
+    Disconnect-VIServer -Server $vcenter -confirm:$false
 }
 
 
@@ -84,6 +84,7 @@ Function Power_Off ($vm,[datetime]$date,$email,$Request,$vcenter)
     $spec.Action = New-Object VMware.Vim.MethodAction
     $spec.Action.Name = "ShutdownGuest"
     $scheduledTaskManager.CreateScheduledTask($VmProfile.ExtensionData.MoRef, $spec)
+    Disconnect-VIServer -Server $vcenter -confirm:$false
 }
 
 
@@ -109,6 +110,7 @@ Function Power_On ($vm,[datetime]$date,$email,$Request,$vcenter)
     $spec.Action = New-Object VMware.Vim.MethodAction
     $spec.Action.Name = "PowerOnVM_Task"
     $scheduledTaskManager.CreateScheduledTask($VmProfile.ExtensionData.MoRef, $spec)
+    Disconnect-VIServer -Server $vcenter -confirm:$false
 }
 
 
@@ -117,14 +119,14 @@ Function Power_On ($vm,[datetime]$date,$email,$Request,$vcenter)
 Set-PowerCLIConfiguration -Scope User -ParticipateInCEIP $false -Confirm:$false
 #Connect-VIServer -Server $Vcenter -User $NubesRoAcc -Password $NubesRoPw -force
 $Check_Nubes1 = Check_VM -VCenter $nubes1 -vm $vm | Select-String "True"
-
+Disconnect-VIServer -Server $Nubes1 -confirm:$false
 
 If ($Check_Nubes1)
     {$VCenter = $Nubes1}
         else
             {
             $VCenter = $Nubes4
-            write-host "VM cannot be located in VCenter Nubes1, changing to Nubes4" > "D:\Snapshots\logs\VmWare_Snap_Check_$VM.txt"
+            write-output "VM cannot be located in VCenter Nubes1, changing to Nubes4" > "D:\Snapshots\logs\VmWare_Snap_Check_$VM.txt"
             }
 
 
@@ -139,54 +141,3 @@ if ($Type -eq "Offline")
         {
         Snapshot_VmWare -vm $vm -date $date -email $email -Request $Request -vcenter $vcenter
         }
-
-
-
-Disconnect-VIServer -server $VCenter -confirm:$false
-
-
-
-#$Check_Nubes4 = Check_VM -VCenter $nubes4 -vm $vm | Select-String "True"
-#
-#$VCenter = ""
-#If ($Check_Nubes1)
-#    {
-#      if ($Check_Nubes4)
-#        {
-#        Write-Output "Error $VM is located in both VCenters" > "D:\Snapshots\logs\VmWare_Snap_error_$VM.txt"
-#        }else
-#            {$VCenter = $Nubes1
-#            }
-#     }else
-#          {
-#          if ($Check_Nubes4)
-#            {
-#            $VCenter = $Nubes4
-#            }else
-#                {
-#                Write-Output "Error $VM is located in both VCenters" > "D:\Snapshots\logs\VmWare_Snap_error_$VM.txt"
-#                }
-#          }
-#
-
-
-#If ($Check_Nubes1)
-#    {$VCenter = $Nubes1
-#    $Nubes_Check = Check_VM -VCenter $nubes1 -vm $vm | Select-String "True"
-#    Write-Output "$VCenter"
-#
-#    }else
-#        {
-#        $VCenter = $Nubes4
-#        }
-#
-
-#If ($Result_Nubes1)
-#    {
-#    Write-Output "VM Found we will schedule the snapshot"
-#    Snapshot_VmWare -vm $vm -date $date.addminutes(5) -email $email -Request $Request -vcenter $Nubes1
-#    }else
-#        {Write-Output "VM was not found can't schedule the snapshot"}
-#
-#
-#
