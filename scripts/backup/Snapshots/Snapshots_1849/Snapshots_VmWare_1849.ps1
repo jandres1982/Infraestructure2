@@ -144,7 +144,7 @@ if ($Type -eq "Offline")
 
 
 
-Disconnect-VIServer -server $VCenter -confirm:$false
+#Disconnect-VIServer -server $VCenter -confirm:$false
 
 
 
