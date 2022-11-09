@@ -16,6 +16,12 @@ var appServiceAppName02 = 'app-${environment}-${project}-02'
 param objectId string
 var keyvaultname = 'kv-${environment}-${project}-01'
 
+@description('Schindler Naming variables for Function App Service')
+var storageAccountFunctionName = 'st${environment}${project}0002'
+var appServiceFunctionPlanName = 'asp-${environment}-${project}-02'
+var functionAppName = 'fa-${environment}-${project}-01'
+
+
 @description('Storage Account Param')
 var StorageAccountName = 'st${environment}${project}0001'
 param blobName string 
@@ -59,5 +65,15 @@ module keyvault 'modules/keyvault.bicep' = {
     location: location
     keyvaultname: keyvaultname
     objectId: objectId
+  }
+}
+
+module funtionapp 'modules/functionapp.bicep' = {
+  name: 'functionApp'
+  params: {
+    location: location
+    storageAccountFunctionName: storageAccountFunctionName
+    appServiceFunctionPlanName: appServiceFunctionPlanName
+    functionAppName: functionAppName
   }
 }
