@@ -16,7 +16,6 @@ RG-MAN-PROD-REDIS-01
 RG-MAN-QUAL-CONGREE-01
 RG-SHH-PROD-SAPPRINTSERVER-01
 rg-sao-prod-ncgen-01
-rg-sch-prod-mastercam-01
 rg-shh-qual-seeburger-01
 rg-shh-prod-seeburger-01
 rg-crd-prod-dcm-01

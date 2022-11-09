@@ -16,7 +16,6 @@ man
 man
 sis
 sao
-sch
 sis
 sis
 sch-beh
