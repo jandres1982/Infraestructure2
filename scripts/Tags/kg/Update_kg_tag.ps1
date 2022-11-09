@@ -33,6 +33,6 @@ foreach ($rg in $rgs)
         }
         $i = $i +1
         Write-host ""
-        Write-host "$cc was applied to $rg and we are in the iteration $i"
+        Write-host "$kg was applied to $rg and we are in the iteration $i"
         Write-host ""
 }
