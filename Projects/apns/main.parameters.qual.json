@@ -12,6 +12,14 @@
             "value": "apns_admin"
         },
         "administratorLoginPassword": {
-            "value": "apns2022RV10$"
+            "value": "bnmt2022RV10$"
+        },
+        "sku": {
+            "value": "S1"
+        },
+        "tier": {
+            "value": "Standard"
         }
-  }
+        
+    }
+}

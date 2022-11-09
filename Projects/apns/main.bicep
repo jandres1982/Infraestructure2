@@ -22,3 +22,31 @@ module postgressql 'modules/postgressql.bicep' = {
     administratorLoginPassword: administratorLoginPassword
   }
 }
+
+@description('Schindler naming App Service Plan')
+param sku string 
+param tier string
+param kind string
+var appServicePlanName = 'asp-${environment}-${project}-01'
+
+module appserviceplan 'modules/apserviceplan.bicep' = {
+  name: 'appserviceplan'
+  params: {
+    location: location
+    sku: sku
+    tier: tier
+    kind: kind
+    appServicePlanName: appServicePlanName
+  }
+}
+
+@description('Schindler naming Container Registry')
+var containerregistryname = 'cr${environment}${project}01'
+
+module containerregistry 'modules/containerregistry.bicep' = {
+  name: containerregistryname
+  params: {
+    location: location
+    containerregistryname: containerregistryname
+  }
+}
