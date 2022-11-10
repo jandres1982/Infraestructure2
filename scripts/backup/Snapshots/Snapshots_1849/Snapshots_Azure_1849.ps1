@@ -53,6 +53,7 @@ Register-ScheduledTask -TaskName $taskname `
 
 
 #Main
+Select-AzSubscription -Subscription "$sub"
 $Data = Check_Server_Azure -vm $vm
 $rg = $Data.VmProfile.ResourceGroupName
 $sub = $Data.Sub.Name
