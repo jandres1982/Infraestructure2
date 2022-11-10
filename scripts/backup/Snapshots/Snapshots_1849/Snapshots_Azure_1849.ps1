@@ -3,6 +3,7 @@ param([string]$vm,
 [string]$email,
 [string]$Request,
 [string]$Type,
+[string]$Sub,
 [string]$AzServAcc,
 [string]$AzServPw)
 
