@@ -3,7 +3,7 @@ $subs = (Get-AzSubscription).name
 ###################################################################
 
 $rgs = get-content "rgs.txt"
-$kg_new = get-content "tag_kg_new.txt"
+$kg_new = get-content "tag_kg.txt"
 [int]$i = "0"
 foreach ($rg in $rgs)
     {#for every RG
@@ -14,11 +14,11 @@ foreach ($rg in $rgs)
             if (Get-AzResourceGroup -Name $rg -ErrorAction SilentlyContinue)
             {#check if the RG exist in the subscription, and work on it. 
             #Working in the RG
-            Get-AzResourceGroup -Name $rg | Where-Object {$_.Tags.Keys -match "CC"}    
+            Get-AzResourceGroup -Name $rg | Where-Object {$_.Tags.Keys -match "KG"}    
             
             Write-host "working in $rg"
                 $kg = $kg_new[$i]
-                $mergedTags = @{"costcenter"="$kg"}
+                $mergedTags = @{"kg"="$kg"}
                 $rg_name = Get-AzResourceGroup -Name $rg
                 Update-AzTag -ResourceId $rg_name.ResourceId -Tag $mergedTags -Operation Merge   
             #Working in the resources inside the RG
