@@ -1,5 +1,7 @@
 databricks-rg-databricks-sd-dev-5t4fc2ryuggc2
 databricks-rg-dw_advanced_analytics_prod-i7qcdqxdp5qwi
 DATABRICKS-RG-DW_ADVANCED_ANALYTICS_QUAL-4HAZW7VTMH3K6
+databricks-rg-dw-advancedanalytics-dev-b2eu4x5u5sv26
+managed-rg-ApvPocDev
 RG_NT_ARCO_DEV
 RG_NT_EXG_DEV
