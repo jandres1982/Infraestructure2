@@ -3,6 +3,7 @@ param([string]$vm,
 [string]$email,
 [string]$Request,
 [string]$Type,
+[string]$Sub,
 [string]$AzServAcc,
 [string]$AzServPw)
 
@@ -53,6 +54,7 @@ Register-ScheduledTask -TaskName $taskname `
 
 
 #Main
+Select-AzSubscription -Subscription "$sub"
 $Data = Check_Server_Azure -vm $vm
 $rg = $Data.VmProfile.ResourceGroupName
 $sub = $Data.Sub.Name

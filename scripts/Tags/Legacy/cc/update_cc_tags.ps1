@@ -3,7 +3,7 @@ $subs = (Get-AzSubscription).name
 ###################################################################
 
 $rgs = get-content "rgs.txt"
-$cc_new = get-content "tag_cc_new.txt"
+$cc_new = get-content "tag_cc.txt"
 [int]$i = "0"
 foreach ($rg in $rgs)
     {#for every RG
