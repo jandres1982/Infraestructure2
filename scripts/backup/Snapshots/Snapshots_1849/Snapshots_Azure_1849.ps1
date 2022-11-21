@@ -7,10 +7,15 @@ param([string]$vm,
 [string]$AzServAcc,
 [string]$AzServPw)
 
-$User = "intshhazuredevops@global.schindler.com"
-$PWord = ConvertTo-SecureString -String $AzServPw -AsPlainText -Force
-$Credential = New-Object -TypeName "System.Management.Automation.PSCredential" -ArgumentList $User,$PWord
-Connect-AzAccount -Credential $Credential
+#$User = "intshhazuredevops@global.schindler.com"
+#$PWord = ConvertTo-SecureString -String $AzServPw -AsPlainText -Force
+#$Credential = New-Object -TypeName "System.Management.Automation.PSCredential" -ArgumentList $User,$PWord
+#Connect-AzAccount -Credential $Credential
+
+$response = Invoke-WebRequest -Uri 'http://169.254.169.254/metadata/identity/oauth2/token?api-version=2018-02-01&client_id=2f9eefbb-eb19-486e-9bda-60c11cae3c08&resource=https://management.azure.com/' -Method GET -Headers @{Metadata="true"}
+$content = $response.Content | ConvertFrom-Json
+$ArmToken = $content.access_token
+Connect-AzAccount -AccessToken $ArmToken -Subscription $sub -AccountId $content.client_id
 
 $date = $date -as [datetime]
 Connect-AzAccount
