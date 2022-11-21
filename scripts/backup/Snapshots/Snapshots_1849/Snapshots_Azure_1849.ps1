@@ -7,8 +7,13 @@ param([string]$vm,
 [string]$AzServAcc,
 [string]$AzServPw)
 
-$date = $date -as [datetime]
+$User = $AzServAcc
+$PWord = ConvertTo-SecureString -String $AzServPw -AsPlainText -Force
+$Credential = New-Object -TypeName "System.Management.Automation.PSCredential" -ArgumentList $User,$PWord
+Connect-AzAccount -Credential $Credential
 
+$date = $date -as [datetime]
+Connect-AzAccount
 Write-Output "vm: $vm"
 Write-Output "date: $date"
 Write-Output "email: $email"
