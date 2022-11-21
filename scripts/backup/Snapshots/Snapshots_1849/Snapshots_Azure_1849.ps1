@@ -20,7 +20,7 @@ $subs=Get-AzSubscription | Where-Object {$_.Name -match "s-sis-[aec][upmh]*"}
 Write-Output "Check if the $vm is in Azure"
 foreach ($sub in $subs)
     {
-    Select-AzSubscription -Subscription "$sub"
+    Set-AzContext -Subscription "$sub"
         $VmProfile = get-azvm -Name $vm
             if ($VmProfile -eq $null)
                 {
