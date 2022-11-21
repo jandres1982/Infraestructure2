@@ -7,7 +7,8 @@ param([string]$vm,
 [string]$AzServAcc,
 [string]$AzServPw)
 
-$User = $AzServAcc
+
+$User = "intshhazuredevops@global.schindler.com"
 $PWord = ConvertTo-SecureString -String $AzServPw -AsPlainText -Force
 $Credential = New-Object -TypeName "System.Management.Automation.PSCredential" -ArgumentList $User,$PWord
 Connect-AzAccount -Credential $Credential
