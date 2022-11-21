@@ -12,13 +12,11 @@ param([string]$vm,
 #$Credential = New-Object -TypeName "System.Management.Automation.PSCredential" -ArgumentList $User,$PWord
 #Connect-AzAccount -Credential $Credential
 
-$response = Invoke-WebRequest -Uri 'http://169.254.169.254/metadata/identity/oauth2/token?api-version=2018-02-01&client_id=2f9eefbb-eb19-486e-9bda-60c11cae3c08&resource=https://management.azure.com/' -Method GET -Headers @{Metadata="true"}
-$content = $response.Content | ConvertFrom-Json
-$ArmToken = $content.access_token
-Connect-AzAccount -AccessToken $ArmToken -Subscription $sub -AccountId $content.client_id
+#$identity = Get-AzUserAssignedIdentity -ResourceGroupName '' -Name 'shhwsr1849'
+#Get-AzVM -ResourceGroupName contoso -Name testvm | Update-AzVM -IdentityType UserAssigned -IdentityId $identity.Id
+#Connect-AzAccount -Identity -AccountId $identity.ClientId # Run on the virtual machine
 
 $date = $date -as [datetime]
-Connect-AzAccount
 Write-Output "vm: $vm"
 Write-Output "date: $date"
 Write-Output "email: $email"
