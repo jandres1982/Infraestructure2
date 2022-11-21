@@ -10,7 +10,7 @@ foreach ($sub in $subs)
    
     foreach ($disk in $disks)
     {
-        [void]$vmObject.add([PSCustomObject]@{
+        [void]$diskObject.add([PSCustomObject]@{
         Subscription = $sub.name
         Name = $disk.Name
         Resource_Group = $disk.ResourceGroupName
