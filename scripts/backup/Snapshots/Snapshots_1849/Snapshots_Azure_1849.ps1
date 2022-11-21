@@ -7,8 +7,17 @@ param([string]$vm,
 [string]$AzServAcc,
 [string]$AzServPw)
 
-$date = $date -as [datetime]
 
+$User = "intshhazuredevops@global.schindler.com"
+$PWord = ConvertTo-SecureString -String $AzServPw -AsPlainText -Force
+$Credential = New-Object -TypeName "System.Management.Automation.PSCredential" -ArgumentList $User,$PWord
+Connect-AzAccount -Credential $Credential
+
+#$identity = Get-AzUserAssignedIdentity -ResourceGroupName '' -Name 'shhwsr1849'
+#Get-AzVM -ResourceGroupName contoso -Name testvm | Update-AzVM -IdentityType UserAssigned -IdentityId $identity.Id
+#Connect-AzAccount -Identity -AccountId $identity.ClientId # Run on the virtual machine
+
+$date = $date -as [datetime]
 Write-Output "vm: $vm"
 Write-Output "date: $date"
 Write-Output "email: $email"
@@ -20,7 +29,7 @@ $subs=Get-AzSubscription | Where-Object {$_.Name -match "s-sis-[aec][upmh]*"}
 Write-Output "Check if the $vm is in Azure"
 foreach ($sub in $subs)
     {
-    Select-AzSubscription -Subscription "$sub"
+    Set-AzContext -Subscription "$sub"
         $VmProfile = get-azvm -Name $vm
             if ($VmProfile -eq $null)
                 {
