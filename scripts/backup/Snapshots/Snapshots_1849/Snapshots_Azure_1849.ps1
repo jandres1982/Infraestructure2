@@ -7,10 +7,10 @@ param([string]$vm,
 [string]$AzServAcc,
 [string]$AzServPw)
 
-#$User = "intshhazuredevops@global.schindler.com"
-#$PWord = ConvertTo-SecureString -String $AzServPw -AsPlainText -Force
-#$Credential = New-Object -TypeName "System.Management.Automation.PSCredential" -ArgumentList $User,$PWord
-#Connect-AzAccount -Credential $Credential
+$User = $AzServAcc
+$PWord = ConvertTo-SecureString -String $AzServPw -AsPlainText -Force
+$Credential = New-Object -TypeName "System.Management.Automation.PSCredential" -ArgumentList $User,$PWord
+Connect-AzAccount -Credential $Credential
 
 #$identity = Get-AzUserAssignedIdentity -ResourceGroupName '' -Name 'shhwsr1849'
 #Get-AzVM -ResourceGroupName contoso -Name testvm | Update-AzVM -IdentityType UserAssigned -IdentityId $identity.Id
