@@ -16,6 +16,9 @@ foreach ($sub in $subs)
         Resource_Group = $disk.ResourceGroupName
         Location = $disk.Location
         State = $disk.Diskstate
+        Serviceowner = $disk.Tags.serviceowner
+        Applicationowner = $disk.Tags.applicationowner
+        Technicalcontact = $disk.Tags.technicalcontact
         })
     } 
 }
