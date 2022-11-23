@@ -1,5 +1,5 @@
-$subs=Get-AzSubscription | Where-Object {$_.Name -match "s-sis-[aec][upmh]*"}
-#$subs= "s-sis-eu-nonprod-01"
+#$subs=Get-AzSubscription | Where-Object {$_.Name -match "s-sis-[aec][upmh]*"}
+$subs = @("s-sis-eu-nonprod-01","s-sis-eu-prod-01","s-sis-am-prod-01","s-sis-am-nonprod-01","s-sis-ap-prod-01","s-sis-ch-prod-01","s-sis-ch-nonprod-01")
 $date = $(get-date -format yyyy-MM-ddTHH-mm)
 $kg = "ALL"
 ###################################################################
