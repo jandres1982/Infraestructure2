@@ -1,6 +1,6 @@
 param location string 
 param StorageAccountName string 
-param storageAccountSkuName string
+param storageAccountSkuName string = 'Standard_LRS'
 param blobName string 
 param kind string = 'BlockBlobStorage'
 param accessTier string = 'Hot' 

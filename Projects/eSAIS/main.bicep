@@ -28,7 +28,7 @@ param blobName string = 'eSAIS'
   'qual'
 ])
 param environment string
-param storageAccountSkuName string = 'Standard_LRS'
+param storageAccountSkuName string
 
 module appService 'modules/appservice.bicep' = {
   name: 'appService'
