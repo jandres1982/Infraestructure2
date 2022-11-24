@@ -3,7 +3,7 @@ jobs:
   displayName: deploy bicep file
   pool:
     name: SIS-IOC-Azure
-    demands: Agent.Name -equals dockeragent01
+    demands: Agent.environment -equals global
   environment: 'dev'
   strategy: 
     runOnce:
