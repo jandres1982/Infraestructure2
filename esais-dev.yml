@@ -3,7 +3,7 @@ jobs:
   displayName: deploy bicep file
   pool:
     name: SIS-IOC-Azure
-    demands: Agent.environment -equals global
+    demands: Agent.Name -equals SHHWSR1849-agent4
   environment: 'dev'
   strategy: 
     runOnce:
