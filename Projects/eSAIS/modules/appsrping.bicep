@@ -9,6 +9,16 @@ param loganalytics string
 
 param location string
 
+resource logAnalytics 'Microsoft.OperationalInsights/workspaces@2022-10-01' = {
+  name: loganalytics
+  location: location
+  properties: {
+    sku: {
+      name: 'PerGB2018'
+    }
+    }
+  }
+
 resource appInsights 'Microsoft.Insights/components@2020-02-02-preview' = {
   name: appInsightsName
   location: location
@@ -17,7 +27,7 @@ resource appInsights 'Microsoft.Insights/components@2020-02-02-preview' = {
     Application_Type: 'web'
     Flow_Type: 'Bluefield'
     Request_Source: 'rest'
-    WorkspaceResourceId: loganalytics
+    WorkspaceResourceId: logAnalytics.id
   }
 }
 
@@ -43,7 +53,7 @@ resource springCloudDiagnostics 'microsoft.insights/diagnosticSettings@2017-05-0
   name: 'monitoring'
   scope: springCloudInstance
   properties: {
-    workspaceId: loganalytics
+    workspaceId: logAnalytics.id
     logs: [
       {
         category: 'ApplicationConsole'
