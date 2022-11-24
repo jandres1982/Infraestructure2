@@ -19,7 +19,7 @@ var appInsightsName = 'appi${environment}-${project}-01'
 
 @description('Storage Account Param')
 var StorageAccountName = 'st${environment}${project}0001'
-param blobName string = 'eSAIS'
+
 
 @allowed([
   'prod'
@@ -47,7 +47,6 @@ module storageaccount 'modules/storageaccount.bicep' = {
   params: {
     location: location
     StorageAccountName: StorageAccountName
-    blobName: blobName
   }
 }
 

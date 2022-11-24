@@ -1,6 +1,6 @@
 param location string 
 param StorageAccountName string 
-param blobName string 
+
 
 resource storageaccount 'Microsoft.Storage/storageAccounts@2022-05-01' = {
   name: StorageAccountName
@@ -15,14 +15,4 @@ resource storageaccount 'Microsoft.Storage/storageAccounts@2022-05-01' = {
     isHnsEnabled: true
     publicNetworkAccess: 'Disabled'
   }
-}
-
-resource blobservice 'Microsoft.Storage/storageAccounts/blobServices@2022-05-01' = {
-  name: 'default'
-  parent: storageaccount
-}
-
-resource blob 'Microsoft.Storage/storageAccounts/blobServices/containers@2022-05-01' = {
-  name: blobName
-  parent: blobservice
 }
