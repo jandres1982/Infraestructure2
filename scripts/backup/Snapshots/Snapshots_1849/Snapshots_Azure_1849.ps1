@@ -5,8 +5,8 @@ param([string]$vm,
 [string]$Type,
 [string]$Sub,
 [string]$AzServAcc,
-[string]$AzServPw)
-
+[string]$AzServPw,
+[string]$Requester)
 
 $User = "intshhazuredevops@global.schindler.com"
 $PWord = ConvertTo-SecureString -String $AzServPw -AsPlainText -Force
@@ -47,7 +47,7 @@ foreach ($sub in $subs)
 Function Azure_Snap_Task
 {
 $dt = $date
-$Action = New-ScheduledTaskAction -Execute 'powershell.exe' -Argument "-File D:\Snapshots\Scripts\Snapshots_v1.ps1 -vm $vm -sub $sub -email $email -type $type"
+$Action = New-ScheduledTaskAction -Execute 'powershell.exe' -Argument "-File D:\Snapshots\Scripts\Snapshots_v1.ps1 -vm $vm -sub $sub -email $email -type $type -requester $requester"
 $taskname = "Snapshots_DevOps_$vm"
 $Trigger = New-ScheduledTaskTrigger -Once -At $dt
 $Settings = New-ScheduledTaskSettingsSet
