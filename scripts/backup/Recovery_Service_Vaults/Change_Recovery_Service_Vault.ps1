@@ -1,5 +1,3 @@
-
-
 ##Variables
 $sub = "s-sis-eu-nonprod-01"
 connect-AzAccount -Subscription $sub
