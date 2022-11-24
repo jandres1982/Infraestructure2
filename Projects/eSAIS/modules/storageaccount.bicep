@@ -1,19 +1,16 @@
 param location string 
 param StorageAccountName string 
-param storageAccountSkuName string = 'Standard_LRS'
 param blobName string 
-param kind string = 'BlockBlobStorage'
-param accessTier string = 'Hot' 
 
 resource storageaccount 'Microsoft.Storage/storageAccounts@2022-05-01' = {
   name: StorageAccountName
   location: location
   sku: {
-    name: storageAccountSkuName
+    name: 'Standard_LRS'
   }
-  kind: kind
+  kind: 'BlockBlobStorage'
   properties: {
-    accessTier: accessTier
+    accessTier: 'Hot'
     allowBlobPublicAccess: false
     isHnsEnabled: true
     publicNetworkAccess: 'Disabled'

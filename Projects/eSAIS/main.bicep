@@ -28,7 +28,6 @@ param blobName string = 'eSAIS'
   'qual'
 ])
 param environment string
-param storageAccountSkuName string
 
 module appService 'modules/appservice.bicep' = {
   name: 'appService'
@@ -48,7 +47,6 @@ module storageaccount 'modules/storageaccount.bicep' = {
   params: {
     location: location
     StorageAccountName: StorageAccountName
-    storageAccountSkuName: storageAccountSkuName
     blobName: blobName
   }
 }
