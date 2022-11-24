@@ -1,0 +1,24 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "environment": {
+            "value": "dev"
+        },
+        "project": {
+            "value": "esais"
+        },
+        "version": {
+            "value": "NODE|16"
+        },
+        "sku": {
+            "value": "P1V3"
+        },
+        "tier": {
+            "value": "Premium"
+        },
+        "kind": {
+            "value": "linux"
+        }
+    }
+  }
