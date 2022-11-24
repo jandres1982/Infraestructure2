@@ -1,3 +1,4 @@
+@description('The kind BlockBlobStorage must used Premium_LRS or Premium_ZRS')
 param location string 
 param StorageAccountName string 
 
