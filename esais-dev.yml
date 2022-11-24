@@ -1,0 +1,19 @@
+jobs:
+- deployment: DeployBicep
+  displayName: deploy bicep file
+  pool:
+    name: SIS-IOC-Azure
+    demands: Agent.Name -equals dockeragent01
+  environment: 'dev'
+  strategy: 
+    runOnce:
+      deploy:
+        steps:
+        - checkout: self
+        - task: AzureCLI@2
+          displayName: 'Deploying Dev eSAIS Environment'
+          inputs:
+            azureSubscription: 's-sis-eu-nonprod-01'
+            scriptType: ps
+            scriptLocation: inlineScript
+            inlineScript: 'az deployment group create --resource-group rg-test-bicep --template-file "$env:BUILD_SOURCESDIRECTORY\Projects\eSAIS\main.bicep" --parameters "$env:BUILD_SOURCESDIRECTORY\Projects\eSAIS\main.parameters.dev.json"'
