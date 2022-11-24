@@ -1,7 +1,8 @@
-#$subs=Get-AzSubscription | Where-Object {$_.Name -match "s-sis-[aec][upmh]*"}
-$subs = @("s-sis-eu-nonprod-01","s-sis-eu-prod-01","s-sis-am-prod-01","s-sis-am-nonprod-01","s-sis-ap-prod-01","s-sis-ch-prod-01","s-sis-ch-nonprod-01")
+#$subs = Get-AzSubscription | Where-Object {($_.Name -match "s-sis-eu-prod-01") -or ($_.Name -match "s-sis-eu-nonprod-01")}
+$subs=Get-AzSubscription | Where-Object {$_.Name -match "s-sis-[aec][upmh]*"}
+#$subs= "s-sis-eu-nonprod-01"
 $date = $(get-date -format yyyy-MM-ddTHH-mm)
-$kg = "ALL"
+$kg = "HEL"
 ###################################################################
 
 $vmBackupReport = [System.Collections.ArrayList]::new()
@@ -20,7 +21,7 @@ az account set --subscription "$sub"
 #$subs = @("s-sis-eu-nonprod-01","s-sis-eu-prod-01","s-sis-am-prod-01","s-sis-am-nonprod-01","s-sis-ap-prod-01")
 $date = $(get-date -format yyyy-MM-ddTHH-mm)
 $backupVaults = Get-AzRecoveryServicesVault
-$vms = get-azvm
+$vms = get-azvm | where-object {$_.Name -like "$kg*"}
 
  foreach ($vm in $vms) 
  {
@@ -32,13 +33,10 @@ $vms = get-azvm
          $vmBackupVault = $backupVaults | Where-Object {$_.ID -eq $recoveryVaultInfo.VaultId}
 
          #Backup recovery Vault policy Information
-         $container = Get-AzRecoveryServicesBackupContainer -ContainerType AzureVM -VaultId $vmBackupVault.ID -FriendlyName $vm.Name -WarningAction SilentlyContinue
-         if ($container.Count -gt 1)
-         {$backupItem = Get-AzRecoveryServicesBackupItem -Container $container[1] -WorkloadType AzureVM -VaultId $vmBackupVault.ID -WarningAction SilentlyContinue}
-         else
-         {
-         $backupItem = Get-AzRecoveryServicesBackupItem -Container $container -WorkloadType AzureVM -VaultId $vmBackupVault.ID -WarningAction SilentlyContinue
-         }
+
+                $container = Get-AzRecoveryServicesBackupContainer -ContainerType AzureVM -VaultId $vmBackupVault.ID -FriendlyName $vm.Name -WarningAction SilentlyContinue
+                $backupItem = Get-AzRecoveryServicesBackupItem -Container $container -WorkloadType AzureVM -VaultId $vmBackupVault.ID -WarningAction SilentlyContinue
+
      } #if ($recoveryVaultInfo.BackedUp -eq $true)
      else 
      {
@@ -70,12 +68,15 @@ $vms = get-azvm
  } #foreach ($vm in $vms) 
 }
 #}
+
 $report = 'Backup_'+"$kg"+'_Report_'+"$date"+'.csv'
+
 $vmBackupReport | Export-Csv $report -NoTypeInformation | Select-Object -Skip 1 | Set-Content $Report
 
 $PSEmailServer = "smtp.eu.schindler.com"
 $From = "scc-support-zar.es@schindler.com"
-$to = "gda_usr_dcff050b-8326-48c9-8bf9-61f8de7e89f0@schindler.com","gdl_usr_7aabcc1e-97e6-4283-9271-c04245556940@cloud.schindler.com"
+$to = "henri.luukka@schindler.com","alfonso.marques@schindler.com","antoniovicente.vento@schindler.com","javier.roy@schindler.com"
+
 
 $Subject = "Backup Report $kg Servers"
 #$Filename = Get-ChildItem $Path -Name "Att*" | select -Last 1
@@ -110,6 +111,5 @@ $Body = @"
 </div>
 <div>&nbsp;</div>
 "@
-#https://htmled.it/
 
 Send-MailMessage -From $From -To $To -Subject $Subject -Body $Body -Attachments $Attachment -BodyAsHtml
