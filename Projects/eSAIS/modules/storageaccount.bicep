@@ -6,7 +6,7 @@ resource storageaccount 'Microsoft.Storage/storageAccounts@2022-05-01' = {
   name: StorageAccountName
   location: location
   sku: {
-    name: 'Standard_LRS'
+    name: 'Premium_LRS'
   }
   kind: 'BlockBlobStorage'
   properties: {
