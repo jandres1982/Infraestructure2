@@ -6,9 +6,11 @@ $reservationObject = [System.Collections.ArrayList]::new()
     
     foreach ($reservation in $reservations)
     {
-        [string]$sub=$reservation.AppliedScopes
+        $subid = $reservation.AppliedScopes
+        $subid = $subid.split("/")[2]
+        $sub= get-azsubscription -SubscriptionId "$subid"
         [void]$reservationObject.add([PSCustomObject]@{
-        Subscription = $sub
+        Subscription = $sub.Name
         Location = $reservation.Location
         ReservationName = $reservation.DisplayName
         Status = $reservation.DisplayProvisioningState
