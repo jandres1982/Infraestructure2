@@ -2,10 +2,12 @@ $date = $(get-date -format yyyy-MM-ddTHH-mm)
 
 $reservationObject = [System.Collections.ArrayList]::new()
 
-    $sub= "s-sis-eu-prod-01"
+    $subs= get-azsubscription
+    foreach ($sub in $subs)
+    {
     set-azcontext -Subscription $sub
     $reservations=Get-Azreservation
-   
+    
     foreach ($reservation in $reservations)
     {
         [void]$reservationObject.add([PSCustomObject]@{
@@ -17,6 +19,7 @@ $reservationObject = [System.Collections.ArrayList]::new()
         Quantity = $reservation.Quantity
         ExpiryDate = $reservation.ExpiryDate
         })
+    }
     } 
 
 $report = 'Reservations_'+'_Report_'+"$date"+'.csv'
