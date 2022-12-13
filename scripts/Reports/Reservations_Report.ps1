@@ -11,7 +11,7 @@ $reservationObject = [System.Collections.ArrayList]::new()
     foreach ($reservation in $reservations)
     {
         [void]$reservationObject.add([PSCustomObject]@{
-        Subscription = $sub
+        Subscription = $sub.Name
         Location = $reservation.Location
         ReservationName = $reservation.DisplayName
         Status = $reservation.DisplayProvisioningState
@@ -28,7 +28,7 @@ $reservationObject  | Export-Csv $report -NoTypeInformation | Select-Object -Ski
 
 $PSEmailServer = "smtp.eu.schindler.com"
 $From = "scc-support-zar.es@schindler.com"
-$to = "nahum.sancho@schindler.com"
+$to = "nahum.sancho@schindler.com","alfonso.marques@schindler.com"
 
 $Subject = "Reservations Report"
 $Attachment = $report
