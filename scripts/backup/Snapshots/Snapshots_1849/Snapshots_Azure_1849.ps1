@@ -23,6 +23,22 @@ Write-Output "date: $date"
 Write-Output "email: $email"
 Write-Output "Type: $Type"
 
+Function Send_Email
+{
+$PSEmailServer = "smtp.eu.schindler.com"
+$From = "scc-support-zar.es@schindler.com"
+$to = "$Requester"
+$Subject = "Snapshot should be scheduled for $vm"
+$Body = @"
+Please check shhwsr1849 to verify the task is created.
+Machine: $vm
+Subscription_ID: $sub
+eMAIL:$email
+"@
+Send-MailMessage -From $From -To $To -Subject $Subject -Body $Body
+}
+
+
 Function Check_Server_Azure ([string]$vm)
 {
 $subs=Get-AzSubscription | Where-Object {$_.Name -match "s-sis-[aec][upmh]*"}
@@ -68,10 +84,14 @@ $Data = Check_Server_Azure -vm $vm
 $rg = $Data.VmProfile.ResourceGroupName
 $sub = $Data.Sub.Name
 
+
+
 If ($rg -ne $null)
     {
         Azure_Snap_Task
+        Send_Email
     }else
         {
         Write-Output "Server $vm was not found in Azure"
+        Write-Error "$vm was not found in Azure"
         }
