@@ -2,16 +2,13 @@ $date = $(get-date -format yyyy-MM-ddTHH-mm)
 
 $reservationObject = [System.Collections.ArrayList]::new()
 
-    $subs=Get-AzSubscription | Where-Object {$_.Name -match "s-sis-[aec][upmh]*"}
-    foreach ($sub in $subs)
-    {
-    set-azcontext -Subscription $sub
     $reservations=Get-Azreservation
     
     foreach ($reservation in $reservations)
     {
+        [string]$sub=$reservation.AppliedScopes
         [void]$reservationObject.add([PSCustomObject]@{
-        Subscription = $sub.Name
+        Subscription = $sub
         Location = $reservation.Location
         ReservationName = $reservation.DisplayName
         Status = $reservation.DisplayProvisioningState
@@ -20,8 +17,7 @@ $reservationObject = [System.Collections.ArrayList]::new()
         ExpiryDate = $reservation.ExpiryDate
         })
     }
-    } 
-
+ 
 $report = 'Reservations_'+'_Report_'+"$date"+'.csv'
 $reservationObject  | Export-Csv $report -NoTypeInformation | Select-Object -Skip 1 | Set-Content $report
 
