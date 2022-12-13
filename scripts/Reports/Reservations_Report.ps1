@@ -2,7 +2,7 @@ $date = $(get-date -format yyyy-MM-ddTHH-mm)
 
 $reservationObject = [System.Collections.ArrayList]::new()
 
-    $subs= get-azsubscription
+    $subs=Get-AzSubscription | Where-Object {$_.Name -match "s-sis-[aec][upmh]*"}
     foreach ($sub in $subs)
     {
     set-azcontext -Subscription $sub
