@@ -1,0 +1,30 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "environment": {
+            "value": "qual"
+        },
+        "project": {
+            "value": "qualbicepnajum"
+        },
+        "version": {
+            "value": "PYTHON|3.7"
+        },
+        "sku": {
+            "value": "S1"
+        },
+        "tier": {
+            "value": "Standard"
+        },
+        "kind": {
+            "value": "linux"
+        },
+        "blobName": {
+            "value": "gisfinops"
+        },
+        "objectId": {
+            "value": "bf3a5bbb-20ef-4048-9b94-60652ebf645c"
+        }
+    }
+  }

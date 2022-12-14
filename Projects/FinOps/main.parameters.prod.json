@@ -3,7 +3,7 @@
   "contentVersion": "1.0.0.0",
   "parameters": {
       "environment": {
-          "value": "qual"
+          "value": "prod"
       },
       "project": {
           "value": "gisfinops"
@@ -24,7 +24,16 @@
           "value": "gisfinops"
       },
       "objectId": {
-          "value": "b9d5fa40-ff32-4bc4-ab7a-73b08b36125b"
+          "value": "bf3a5bbb-20ef-4048-9b94-60652ebf645c"
+      },
+      "networkresourcegroup": {
+          "value": "RG_NETWORK_PROD"
+      },
+      "vnetName": {
+          "value": "EU-PROD-VNET"
+      },
+      "subnetName": {
+          "value": "sub-sunshine-finops-01"
       }
   }
 }
