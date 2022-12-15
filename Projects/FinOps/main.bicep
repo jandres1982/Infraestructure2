@@ -1,5 +1,10 @@
 param location string = resourceGroup().location
 
+@description('Network Params')
+param networkresourcegroup string
+param vnetName string
+param subnetName string
+
 @description('App Param')
 param project string
 param version string 
@@ -7,7 +12,7 @@ param sku string
 param tier string
 param kind string
 
-@description('Schindler Naming variabls for Web Service')
+@description('Schindler Naming variables for Web Service')
 var appServicePlanName  = 'asp-${environment}-${project}-01'
 var appServiceAppName01 = 'app-${environment}-${project}-01'
 var appServiceAppName02 = 'app-${environment}-${project}-02'
@@ -21,8 +26,10 @@ var storageAccountFunctionName = 'st${environment}${project}0002'
 var appServiceFunctionPlanName = 'asp-${environment}-${project}-02'
 var functionAppName = 'fa-${environment}-${project}-01'
 
+@description('Schindler Naming variables for Data Factory')
+var datafactoryname = 'adf-${environment}-${project}-01'
 
-@description('Storage Account Param')
+@description('Storage Account Param Data Lake')
 var StorageAccountName = 'st${environment}${project}0001'
 param blobName string 
 
@@ -36,12 +43,16 @@ param environment string
 var storageAccountSkuName = (environment == 'prod') ? 'Standard_ZRS' : 'Standard_LRS'
 
 module storageaccount 'modules/storageaccount.bicep' = {
+  
   name: 'storageaccount'
   params: {
     location: location
     StorageAccountName: StorageAccountName
     storageAccountSkuName: storageAccountSkuName
     blobName: blobName
+    networkresourcegroup: networkresourcegroup
+    vnetName: vnetName
+    subnetName: subnetName
   }
 }
 
@@ -56,6 +67,9 @@ module appService 'modules/appservice.bicep' = {
       tier: tier
       version: version
       kind: kind
+      networkresourcegroup: networkresourcegroup
+      vnetName: vnetName
+      subnetName: subnetName
     }
 }
 
@@ -65,6 +79,9 @@ module keyvault 'modules/keyvault.bicep' = {
     location: location
     keyvaultname: keyvaultname
     objectId: objectId
+    networkresourcegroup: networkresourcegroup
+    vnetName: vnetName
+    subnetName: subnetName
   }
 }
 
@@ -75,5 +92,13 @@ module funtionapp 'modules/functionapp.bicep' = {
     storageAccountFunctionName: storageAccountFunctionName
     appServiceFunctionPlanName: appServiceFunctionPlanName
     functionAppName: functionAppName
+  }
+}
+
+module datafactory 'modules/datafactory.bicep' = {
+  name: 'datafactory'
+  params: {
+    location: location
+    datafactoryname: datafactoryname
   }
 }

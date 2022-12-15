@@ -7,6 +7,21 @@ param appServicePlanName  string
 param appServiceAppName01 string
 param appServiceAppName02 string
 
+@description('Network integration parameters')
+param networkresourcegroup string
+param vnetName string
+param subnetName string
+
+resource vnet 'Microsoft.Network/virtualNetworks@2020-06-01' existing = {
+  name: vnetName
+  scope: resourceGroup(networkresourcegroup)
+}
+
+resource subnet 'Microsoft.Network/virtualNetworks/subnets@2022-05-01' existing = {
+  name: subnetName
+  parent: vnet
+}
+
 resource appServicePlan 'Microsoft.Web/serverfarms@2020-06-01' = {
   name: appServicePlanName
   location: location
@@ -25,8 +40,9 @@ resource appServiceApp01 'Microsoft.Web/sites@2022-03-01' = {
   location: location
   properties: {
     serverFarmId: appServicePlan.id
-    
+    virtualNetworkSubnetId: subnet.id
     siteConfig: {
+      vnetRouteAllEnabled: true
       linuxFxVersion: version
     }
     httpsOnly: true
@@ -38,8 +54,9 @@ resource appServiceApp02 'Microsoft.Web/sites@2022-03-01' = {
   location: location
   properties: {
     serverFarmId: appServicePlan.id
-    
+    virtualNetworkSubnetId: subnet.id
     siteConfig: {
+      vnetRouteAllEnabled: true
       linuxFxVersion: version
     }
     httpsOnly: true

@@ -18,30 +18,34 @@ param enabledForTemplateDeployment bool = false
 param tenantId string = subscription().tenantId
 
 @description('Specifies the object ID of a user, service principal or security group in the Azure Active Directory tenant for the vault. The object ID must be unique for the list of access policies. Get it by using Get-AzADUser or Get-AzADServicePrincipal cmdlets.')
-param objectId string = 'bf3a5bbb-20ef-4048-9b94-60652ebf645c'
+param objectId string 
 
 @description('Specifies the permissions to keys in the vault. Valid values are: all, encrypt, decrypt, wrapKey, unwrapKey, sign, verify, get, list, create, update, import, delete, backup, restore, recover, and purge.')
 param keysPermissions array = [
-  'list'
-  'get'
-  'set'
-  'delete'
-  'restore'
-  'backup'
-  'recover'
+'all'
 ]
 
 @description('Specifies the permissions to secrets in the vault. Valid values are: all, get, list, set, delete, backup, restore, recover, and purge.')
 param secretsPermissions array = [
-  'list'
-  'get'
-  'set'
-  'delete'
-  'restore'
-  'backup'
-  'recover'
+'all'
 ]
 
+@description('Network Parameters')
+param privateEndpointName string = 'pe-${keyvaultname}-01'
+param privateLinkGroupId string = 'vault'
+param vnetName string
+param networkresourcegroup string
+param subnetName string
+
+resource vnet 'Microsoft.Network/virtualNetworks@2020-06-01' existing = {
+  name: vnetName
+  scope: resourceGroup(networkresourcegroup)
+}
+
+resource subnet 'Microsoft.Network/virtualNetworks/subnets@2022-05-01' existing = {
+  name: subnetName
+  parent: vnet
+}
 
 resource keyvault 'Microsoft.KeyVault/vaults@2022-07-01' = {
   location: location
@@ -71,4 +75,25 @@ resource keyvault 'Microsoft.KeyVault/vaults@2022-07-01' = {
       bypass: 'AzureServices'
     }
   } 
+}
+
+resource privateEndpoint 'Microsoft.Network/privateEndpoints@2021-05-01' = {
+  name: privateEndpointName
+  location: location
+  properties: {
+    subnet: {
+      id: subnet.id
+    }
+    privateLinkServiceConnections: [
+      {
+        name: privateEndpointName
+        properties: {
+          privateLinkServiceId: keyvault.id
+          groupIds: [
+            privateLinkGroupId
+          ]
+        }
+      }
+    ]
+  }
 }
