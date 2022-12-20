@@ -1,5 +1,5 @@
 Import-Module -Name AzFilesHybrid
-$Storage_account = "stqualsqlfileshare01"
+$Storage_account = "stqualsqlfileshare02"
 $Domain = "global.schindler.com"
 $OU = "OU=zzz,OU=servers,OU=NBI12,DC=global,DC=schindler,DC=com"
 $ResourceGroupName = "rg-shh-qual-rmp-01"
