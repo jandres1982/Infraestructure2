@@ -23,6 +23,9 @@
       "blobName": {
           "value": "gisfinops"
       },
+      "objectId": {
+          "value": "bf3a5bbb-20ef-4048-9b94-60652ebf645c"
+      },
       "networkresourcegroup": {
           "value": "RG_NETWORK_PROD"
       },
@@ -34,6 +37,9 @@
       },
       "subnetNameStorage": {
         "value": "sub-generic-privateendpoints-01"
+    },
+    "subnetNameKeyvault": {
+        "value": "sub-generic-privateendpoints-01"
     }
-  }
+    }
 }
