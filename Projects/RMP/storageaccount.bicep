@@ -1,5 +1,5 @@
-param location string 
-
+@description('Location')
+param location string = resourceGroup().location
 
 @allowed([
   'file'
