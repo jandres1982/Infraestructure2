@@ -3,7 +3,8 @@ param location string = resourceGroup().location
 @description('Network Params')
 param networkresourcegroup string
 param vnetName string
-param subnetName string
+param subnetNameStorage string
+param subnetNameApp string
 
 @description('App Param')
 param project string
@@ -17,9 +18,6 @@ var appServicePlanName  = 'asp-${environment}-${project}-01'
 var appServiceAppName01 = 'app-${environment}-${project}-01'
 var appServiceAppName02 = 'app-${environment}-${project}-02'
 
-@description('Schindler Naming variables for KeyVault')
-param objectId string
-var keyvaultname = 'kv-${environment}-${project}-01'
 
 @description('Schindler Naming variables for Function App Service')
 var storageAccountFunctionName = 'st${environment}${project}0002'
@@ -52,7 +50,7 @@ module storageaccount 'modules/storageaccount.bicep' = {
     blobName: blobName
     networkresourcegroup: networkresourcegroup
     vnetName: vnetName
-    subnetName: subnetName
+    subnetNameStorage: subnetNameStorage
   }
 }
 
@@ -69,20 +67,8 @@ module appService 'modules/appservice.bicep' = {
       kind: kind
       networkresourcegroup: networkresourcegroup
       vnetName: vnetName
-      subnetName: subnetName
+      subnetNameApp: subnetNameApp
     }
-}
-
-module keyvault 'modules/keyvault.bicep' = {
-  name: 'keyvault'
-  params: {
-    location: location
-    keyvaultname: keyvaultname
-    objectId: objectId
-    networkresourcegroup: networkresourcegroup
-    vnetName: vnetName
-    subnetName: subnetName
-  }
 }
 
 module funtionapp 'modules/functionapp.bicep' = {

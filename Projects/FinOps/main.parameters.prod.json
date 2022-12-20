@@ -32,8 +32,11 @@
       "vnetName": {
           "value": "EU-PROD-VNET"
       },
-      "subnetName": {
+      "subnetNameApp": {
           "value": "sub-sunshine-finops-01"
-      }
+      },
+      "subnetNameStorage": {
+        "value": "sub-generic-privateendpoints-01"
+    }
   }
 }

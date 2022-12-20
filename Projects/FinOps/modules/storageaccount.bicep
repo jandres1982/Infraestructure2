@@ -13,7 +13,7 @@ param privateLinkGroupId string = 'blob'
 
 param vnetName string
 param networkresourcegroup string
-param subnetName string
+param subnetNameStorage string
 param privateEndpointName string = 'pe-${StorageAccountName}-01'
 
 resource vnet 'Microsoft.Network/virtualNetworks@2020-06-01' existing = {
@@ -22,7 +22,7 @@ resource vnet 'Microsoft.Network/virtualNetworks@2020-06-01' existing = {
 }
 
 resource subnet 'Microsoft.Network/virtualNetworks/subnets@2022-05-01' existing = {
-  name: subnetName
+  name: subnetNameStorage
   parent: vnet
 }
 
