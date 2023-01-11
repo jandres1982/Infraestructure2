@@ -1,7 +1,5 @@
-param location string 
-param StorageAccountName string 
-param storageAccountSkuName string
-param blobName string 
+@description('Location')
+param location string = resourceGroup().location
 
 @allowed([
   'file'
@@ -9,12 +7,17 @@ param blobName string
   'table'
   'queue'
 ])
-param privateLinkGroupId string = 'blob'
+param privateLinkGroupId string = 'file'
 
-param vnetName string
-param networkresourcegroup string
-param subnetNameStorage string
-param privateEndpointName string = 'pe-${StorageAccountName}-01'
+@description('Storage Account Params')
+var StorageAccountName = 'stprodsqlfileshare02'
+param storageAccountSkuName string = 'Standard_LRS'
+
+@description('Network params')
+param vnetName string = 'EU-PROD-VNET'
+param networkresourcegroup string = 'RG_NETWORK_PROD'
+param subnetNameStorage string = 'sub-generic-privateendpoints-01'
+param privateEndpointName string = 'pe-stprodsqlfileshare02-01'
 
 resource vnet 'Microsoft.Network/virtualNetworks@2020-06-01' existing = {
   name: vnetName
@@ -36,20 +39,10 @@ resource storageaccount 'Microsoft.Storage/storageAccounts@2022-05-01' = {
   properties: {
     accessTier: 'Hot'
     allowBlobPublicAccess: false
-    isHnsEnabled: true
     publicNetworkAccess: 'Disabled'
   }
 }
 
-resource blobservice 'Microsoft.Storage/storageAccounts/blobServices@2022-05-01' = {
-  name: 'default'
-  parent: storageaccount
-}
-
-resource blob 'Microsoft.Storage/storageAccounts/blobServices/containers@2022-05-01' = {
-  name: blobName
-  parent: blobservice
-}
 
 resource privateEndpoint 'Microsoft.Network/privateEndpoints@2021-05-01' = {
   name: privateEndpointName

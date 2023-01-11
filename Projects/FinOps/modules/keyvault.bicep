@@ -35,7 +35,7 @@ param privateEndpointName string = 'pe-${keyvaultname}-01'
 param privateLinkGroupId string = 'vault'
 param vnetName string
 param networkresourcegroup string
-param subnetName string
+param subnetNameKeyvault string
 
 resource vnet 'Microsoft.Network/virtualNetworks@2020-06-01' existing = {
   name: vnetName
@@ -43,7 +43,7 @@ resource vnet 'Microsoft.Network/virtualNetworks@2020-06-01' existing = {
 }
 
 resource subnet 'Microsoft.Network/virtualNetworks/subnets@2022-05-01' existing = {
-  name: subnetName
+  name: subnetNameKeyvault
   parent: vnet
 }
 

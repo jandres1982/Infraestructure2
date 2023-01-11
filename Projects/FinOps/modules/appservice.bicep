@@ -10,7 +10,7 @@ param appServiceAppName02 string
 @description('Network integration parameters')
 param networkresourcegroup string
 param vnetName string
-param subnetName string
+param subnetNameApp string
 
 resource vnet 'Microsoft.Network/virtualNetworks@2020-06-01' existing = {
   name: vnetName
@@ -18,7 +18,7 @@ resource vnet 'Microsoft.Network/virtualNetworks@2020-06-01' existing = {
 }
 
 resource subnet 'Microsoft.Network/virtualNetworks/subnets@2022-05-01' existing = {
-  name: subnetName
+  name: subnetNameApp
   parent: vnet
 }
 
