@@ -1,11 +1,16 @@
 param([string]$vm,
-[string]$date,
 [string]$email,
 [string]$Request,
 [string]$Type,
 [string]$JsgRoAcc,
 [string]$JsgRoPw)
 
+
+########### Param test ###################
+
+#######################################
+$date = $(Get-date).AddMinutes(10)
+$date = $date.ToString("dd MMMM yyyy HH:mm")
 $date = $date -as [datetime]
 
 Write-Output "vm: $vm"
@@ -169,4 +174,3 @@ If ($Check_jsgvm)
 
 
 Disconnect-VIServer -server $JsgVcenter -confirm:$false
-
