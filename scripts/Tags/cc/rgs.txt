@@ -1,5 +1,3 @@
-rg-shh-prod-juribasql-02
-rg-shh-prod-uniflow-02
 rg-shh-qual-artifactory-01
 rg-shh-test-jfrogxray-01
 rg-asz-prod-fileserver-01
