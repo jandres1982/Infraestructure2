@@ -7,7 +7,6 @@ sis
 sis
 sis
 sis
-sis
 loc
 man
 sis
