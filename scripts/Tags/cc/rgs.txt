@@ -1,8 +1,3 @@
-rg-loc-prod-licenseserversceu-01
-rg-man-dev-esmvirtualagent-01
-rg-mil-prod-dynamics-01
-rg-mil-qual-dynamics-01
-rg-sch-prod-ncgen-01
 rg-shh-prod-juribasql-02
 rg-shh-prod-uniflow-02
 rg-shh-qual-artifactory-01
