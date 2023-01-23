@@ -1,4 +1,3 @@
-rg-cis-nonprod-server-01
 rg-cis-prod-backup-01
 rg-cis-prod-landeskdistribution-01
 rg-cis-prod-network-01
