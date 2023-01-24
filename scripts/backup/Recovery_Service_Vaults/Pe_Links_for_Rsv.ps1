@@ -29,6 +29,7 @@ Function Check_Folder_Sctructure
    Foreach ($sub in $Subscription)
    {
    New-Item -ItemType Directory -Path "$Script_Path\Subscriptions" -Name $sub -ErrorAction SilentlyContinue
+   Write-host "working on the folder structure for $sub"
    }
 }
 
