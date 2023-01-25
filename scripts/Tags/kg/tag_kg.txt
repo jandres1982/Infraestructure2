@@ -2,9 +2,7 @@ loc
 man
 sis
 sis
-ind
 sis
-sre
 sch-beh
 sch-beh
 asz
@@ -34,7 +32,6 @@ sch-beh
 sch-beh
 sis
 sre
-sis
 sis
 sis
 sis
