@@ -1,10 +1,16 @@
+rg-cis-prod-backup-01
+rg-cis-prod-landeskdistribution-01
+rg-cis-prod-network-01
+rg-cis-prod-printserver-03
+rg-cis-prod-server-01
+rg-cis-prod-soclogcol-01
+rg-cis-prod-storage-01
+rg-cis-qual-pkiapplicationsql-01
 rg-loc-prod-licenseserversceu-01
 rg-man-dev-esmvirtualagent-01
 rg-mil-prod-dynamics-01
 rg-mil-qual-dynamics-01
-rg-sch-prod-ncgen-01
 rg-shh-prod-juribasql-02
-rg-shh-prod-uniflow-02
 rg-shh-qual-artifactory-01
 rg-shh-test-jfrogxray-01
 rg-asz-prod-fileserver-01
@@ -35,7 +41,6 @@ rg-crd-test-jira-01
 rg-inv-prod-aemform-01
 rg-shh-prod-uniflow-01
 rg-shh-prod-vulnerabilityscans-01
-rg-shh-qual-datasrclongvw-01
 rg-shh-prod-schindlercom-01
 rg-shh-prod-epo-01
 rg-hag-prod-fileserver-01
