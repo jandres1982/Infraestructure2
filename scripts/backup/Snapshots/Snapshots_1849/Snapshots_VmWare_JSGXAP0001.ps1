@@ -9,7 +9,7 @@ param([string]$vm,
 ########### Param test ###################
 
 #######################################
-$date = $(Get-date).AddMinutes(7)
+$date = $(Get-date).AddMinutes(10)
 $date = $date.ToString("dd MMMM yyyy HH:mm")
 $date = $date -as [datetime]
 
