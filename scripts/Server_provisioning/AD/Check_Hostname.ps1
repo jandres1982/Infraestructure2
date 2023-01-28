@@ -27,7 +27,7 @@ $plainPassword = "4fL8Q~d5LzFVuC.g~KGC7Z1EVJU8O0c9GPx4La2E"
 $securedPassword = $plainPassword | ConvertTo-SecureString -AsPlainText -Force
 $TenantId = "aa06dce7-99d7-403b-8a08-0c5f50471e64"
 $Credential = New-Object -TypeName System.Management.Automation.PSCredential -ArgumentList $ApplicationId, $SecuredPassword 
-Connect-AzAccount -ServicePrincipal -TenantId $TenantId -Credential $Credential 
+Connect-AzAccount -ServicePrincipal -TenantId $TenantId -Credential $Credential
 
 $subs=Get-AzSubscription | Where-Object {$_.Name -match "s-sis-[aec][upmh]*"}
 Write-host "$vm"
