@@ -23,7 +23,7 @@ break
 
 
 $ApplicationId = "70eacc9c-bde8-4b40-9e16-02620fc4e65b"
-$plainPassword_new = "4fL8Q~d5LzFVuC.g~KGC7Z1EVJU8O0c9GPx4La2E"
+$plainPassword = "4fL8Q~d5LzFVuC.g~KGC7Z1EVJU8O0c9GPx4La2E"
 $securedPassword = $plainPassword | ConvertTo-SecureString -AsPlainText -Force
 $TenantId = "aa06dce7-99d7-403b-8a08-0c5f50471e64"
 $Credential = New-Object -TypeName System.Management.Automation.PSCredential -ArgumentList $ApplicationId, $SecuredPassword 
