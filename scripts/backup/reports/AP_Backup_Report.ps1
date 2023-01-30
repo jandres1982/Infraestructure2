@@ -8,7 +8,7 @@ $kg = "AP"
 foreach ($sub in $subs)
 {
 
-Select-AzSubscription -Subscription "$sub"
+Select-AzContext -Subscription "$sub"
 
 $Vault_List = (Get-AzRecoveryServicesVault).Name 
 foreach ($vault in $Vault_List) 
