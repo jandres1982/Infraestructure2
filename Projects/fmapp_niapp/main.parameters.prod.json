@@ -1,0 +1,24 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentParameters.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+      "environment": {
+          "value": "prod"
+      },
+      "project": {
+          "value": "fmapp"
+      },
+      "version": {
+          "value": "NODE|18-lts"
+      },
+      "sku": {
+          "value": "S1"
+      },
+      "tier": {
+          "value": "Standard"
+      },
+      "kind": {
+          "value": "linux"
+      }      
+    }
+}
