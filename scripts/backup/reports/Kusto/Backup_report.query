@@ -1,0 +1,16 @@
+RecoveryServicesResources
+| where type in~ ('Microsoft.RecoveryServices/vaults/backupFabrics/protectionContainers/protectedItems')
+| extend  VM = properties.friendlyName
+| extend oldestRecoveryPoint = properties.extendedInfo.oldestRecoveryPoint
+| extend lastBackupTime = properties.lastBackupTime
+| extend policyName = properties.policyName
+| extend resourceLocation = properties.resourceLocation
+| extend recoveryPointCount = properties.extendedInfo.recoveryPointCount
+| extend healthStatus = properties.healthStatus
+| extend workloadType = properties.workloadType
+| extend protectionState = properties.protectionState
+| extend protectionStatus = properties.protectionStatus
+| extend lastBackupStatus = properties.lastBackupStatus
+| extend resourceLocation = properties.dataSourceInfo.resourceLocation
+| extend VM_ID = properties.virtualMachineId
+| project VM,oldestRecoveryPoint,lastBackupTime,policyName,resourceLocation,healthStatus,recoveryPointCount,workloadType,protectionState,lastBackupStatus,VM_ID
