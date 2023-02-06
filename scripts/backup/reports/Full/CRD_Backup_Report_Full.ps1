@@ -2,8 +2,8 @@ $response = Invoke-WebRequest -Uri 'http://169.254.169.254/metadata/identity/oau
 $content = $response.Content | ConvertFrom-Json
 $ArmToken = $content.access_token
 #LogWrite "$Current_time : $response"
-$Login = Connect-AzAccount -AccessToken $ArmToken -Subscription $sub -AccountId $content.client_id
-
+$s= "s-sis-eu-nonprod-01"
+$Login = Connect-AzAccount -AccessToken $ArmToken -Subscription $s -AccountId $content.client_id
 
 #$subs = Get-AzSubscription | Where-Object {($_.Name -match "s-sis-eu-prod-01") -or ($_.Name -match "s-sis-eu-nonprod-01")}
 
