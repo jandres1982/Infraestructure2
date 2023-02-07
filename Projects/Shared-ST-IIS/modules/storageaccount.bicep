@@ -40,8 +40,14 @@ resource storageaccount 'Microsoft.Storage/storageAccounts@2022-05-01' = {
   }
 }
 
+resource fileservice 'Microsoft.Storage/storageAccounts/fileServices@2022-09-01' = {
+  name: 'default'
+  parent: storageaccount
+}
+
 resource fileShare 'Microsoft.Storage/storageAccounts/fileServices/shares@2021-04-01' = {
   name: fileshare
+  parent: fileservice
 }
 
 resource privateEndpoint 'Microsoft.Network/privateEndpoints@2021-05-01' = {
