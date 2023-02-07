@@ -3,22 +3,22 @@
     "contentVersion": "1.0.0.0",
     "parameters": {
         "environment": {
-            "value": "dev"
+            "value": "nonprod"
         },
         "project": {
             "value": "esais"
         },
-        "version": {
-            "value": "NODE|16"
+        "networkresourcegroup":{
+            "value": "RG_NETWORK_PROD"
         },
-        "sku": {
-            "value": "P1V3"
+        "vnetName":{
+            "value": "EU-PROD-VNET1"
         },
-        "tier": {
-            "value": "Premium"
+        "subnetName01":{
+            "value": "sub-nonprod-esais-springapp-01"
         },
-        "kind": {
-            "value": "linux"
-        }
+        "subnetName02":{
+            "value": "sub-nonprod-esais-springapp-runtime-01"
+        }        
     }
   }

@@ -1,24 +1,20 @@
 @description('Deployment Location')
 param location string = resourceGroup().location
 
-@description('App Param')
-param project string
-param version string 
-param sku string 
-param tier string
-param kind string
+@description('Network parametets for Azure Spring App')
+param networkresourcegroup string
+param vnetName string
+param subnetName01 string
+param subnetName02 string
 
-@description('Schindler Naming variabls for Web Service')
-var appServicePlanName  = 'asp-${environment}-${project}-01'
-var appServiceAppName01 = 'app-${environment}-${project}-01'
+@description('Project Param')
+param project string
+
 
 @description('Schindler Spring App Service Schinler Naming Variables')
 var springCloudInstanceName = 'asa-${environment}-${project}-01'
 var loganalytics = 'log-${environment}-${project}-01'
 var appInsightsName = 'appi${environment}-${project}-01'
-
-@description('Storage Account Param')
-var StorageAccountName = 'st${environment}${project}0001'
 
 
 @allowed([
@@ -26,29 +22,9 @@ var StorageAccountName = 'st${environment}${project}0001'
   'test'
   'dev'
   'qual'
+  'nonprod'
 ])
 param environment string
-
-module appService 'modules/appservice.bicep' = {
-  name: 'appService'
-  params: {
-    location: location
-    appServiceAppName01: appServiceAppName01
-    appServicePlanName: appServicePlanName
-    kind: kind
-    sku: sku
-    tier: tier
-    version: version
-  }
-}
-
-module storageaccount 'modules/storageaccount.bicep' = {
-  name: 'storageaccount'
-  params: {
-    location: location
-    StorageAccountName: StorageAccountName
-  }
-}
 
 module springapp 'modules/appsrping.bicep' = {
   name: 'springapp'
@@ -57,5 +33,9 @@ module springapp 'modules/appsrping.bicep' = {
     appInsightsName: appInsightsName
     loganalytics: loganalytics
     springCloudInstanceName: springCloudInstanceName
+    networkresourcegroup: networkresourcegroup
+    vnetName: vnetName
+    subnetName01: subnetName01
+    subnetName02: subnetName02
   }
 }

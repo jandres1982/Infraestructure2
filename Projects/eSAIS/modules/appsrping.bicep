@@ -1,5 +1,9 @@
 @description('The instance name of the Azure Spring Cloud resource')
 param springCloudInstanceName string
+param vnetName string
+param subnetName01 string
+param subnetName02 string
+param networkresourcegroup string
 
 @description('The name of the Application Insights instance for Azure Spring Cloud')
 param appInsightsName string
@@ -31,6 +35,21 @@ resource appInsights 'Microsoft.Insights/components@2020-02-02-preview' = {
   }
 }
 
+resource vnet 'Microsoft.Network/virtualNetworks@2020-06-01' existing = {
+  name: vnetName
+  scope: resourceGroup(networkresourcegroup)
+}
+
+resource subnet01 'Microsoft.Network/virtualNetworks/subnets@2022-05-01' existing = {
+  name: subnetName01
+  parent: vnet
+}
+
+resource subnet02 'Microsoft.Network/virtualNetworks/subnets@2022-05-01' existing = {
+  name: subnetName02
+  parent: vnet
+}
+
 resource springCloudInstance 'Microsoft.AppPlatform/Spring@2022-03-01-preview' = {
   name: springCloudInstanceName
   location: location
@@ -38,9 +57,15 @@ resource springCloudInstance 'Microsoft.AppPlatform/Spring@2022-03-01-preview' =
     name: 'S0'
     tier: 'Standard'
   }
+  properties: {
+    networkProfile: {
+      appSubnetId: subnet01.id
+      serviceRuntimeSubnetId: subnet02.id
+      serviceCidr: '10.0.0.0/16,10.1.0.0/16,10.2.0.1/16'
+    }
+  }
 }
   
-
 resource springCloudMonitoringSettings 'Microsoft.AppPlatform/Spring/monitoringSettings@2020-07-01' = {
   name: '${springCloudInstance.name}/default' // The only supported value is 'default'
   properties: {
