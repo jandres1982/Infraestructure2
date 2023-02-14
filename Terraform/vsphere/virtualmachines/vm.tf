@@ -81,13 +81,7 @@ resource "vsphere_virtual_machine" "standalone" {
         domain_admin_password = "${var.os_domainpassword}"
       }
 
-      network_interface {
-        ipv4_address = "${var.vm_ip}"
-        ipv4_netmask = "${var.vm_netmask}"
-      }
-
-      ipv4_gateway    = "${var.vm_gateway}"
-      dns_server_list = ["${var.vm_dns}"]
+      network_interface {}
     }
   }
 }
