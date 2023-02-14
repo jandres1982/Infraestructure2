@@ -3,15 +3,15 @@
 #====================#
 
 variable "vsphere_user" {
-  default = "xxxxx@vsphere.local"
+  default = "terraform@vsphere.local"
 }
 
 variable "vsphere_password" {
-  default = "Newsetup.1234567890"
+  default = "Newsetup.123"
 }
 
 variable "vsphere_vcenter" {
-  default = "vcenter_fqdn"
+  default = "shhxap0249.global.schindler.com"
 }
 
 variable "vsphere_unverified_ssl" {
@@ -19,12 +19,12 @@ variable "vsphere_unverified_ssl" {
 }
 
 variable "vsphere_datacenter" {
-  default = "datacenter"
+  default = "WCS"
 }
 
 variable "vsphere_cluster" {
   description = "vSphere cluster"
-  default     = "Cluster"
+  default     = "offline"
 }
 
 #=========================#
@@ -32,15 +32,15 @@ variable "vsphere_cluster" {
 #=========================#
 
 variable "vm_datastore" {
-  default = "datastore"
+  default = "vol_fs_nfs_schindler_008"
 }
 
 variable "vm_network" {
-  default = "VM Network"
+  default = "server-vlan-vl102"
 }
 
 variable "vm_template" {
-  default = "w2k16-v1"
+  default = "Template_OS2016_Master_June_2019"
 }
 
 variable "vm_linked_clone" {
@@ -48,24 +48,8 @@ variable "vm_linked_clone" {
   default = "true"
 }
 
-variable "vm_ip" {
-  default = "vm_ip"
-}
-
-variable "vm_netmask" {
-  default = "24"
-}
-
-variable "vm_gateway" {
-  default = "vm_gateway"
-}
-
-variable "vm_dns" {
-  default = "vm_dns"
-}
-
 variable "vm_domain" {
-  default = "domain"
+  default = "global.schindler.com"
 }
 
 variable "vm_cpu" {
@@ -77,17 +61,17 @@ variable "vm_ram" {
 }
 
 variable "vm_name" {
-  default = "test-v5"
+  default = "zzzwsr02001"
 }
 
 variable "os_domain" {
-  default = "domain"
+  default = "global.schindler.com"
 }
 
 variable "os_userdomain" {
-  default = "user"
+  default = "svcshhazurevmware"
 }
 
 variable "os_domainpassword" {
-  default = "user_pass"
+  default = "Newsetup123456"
 }
