@@ -8,9 +8,14 @@ variable "network" {
   default     = "EU-NONPROD-VNET"
 }
 
+#variable "subnet" {
+#  description = "Subnet Name"
+#  default     = "sub-frontend-iaas-01"
+#}
+
 variable "subnet" {
-  description = "Subnet Name"
-  default     = "sub-frontend-iaas-01"
+ type = string
+ description = "subnet "
 }
 
 variable "location" {
@@ -18,9 +23,14 @@ variable "location" {
   default     = "northeurope"
 }
 
+#variable "rg" {
+#  description = "Resource Group"
+#  default     = "rg-cis-test-server-01"
+#}
+
 variable "rg" {
-  description = "Resource Group"
-  default     = "rg-cis-test-server-01"
+ type = string
+ description = "rg"
 }
 
 
@@ -35,20 +45,37 @@ variable "os_2019" {
 }
 
 
+#variable "vm" {
+#  description = "VM Name"
+#  default     = "zzzwsr0203"
+#}
+
+
 variable "vm" {
-  description = "VM Name"
-  default     = "zzzwsr0203"
+ type = string
+ description = "vm"
 }
+
+#variable "sku" {
+#  description = "VM SKU"
+#  default     = "Standard_DS1_v2"
+#}
 
 variable "sku" {
-  description = "VM SKU"
-  default     = "Standard_DS1_v2"
+ type = string
+ description = "sku"
 }
 
+#variable "zone" {
+#  description = "Availability Zone"
+#  default     = "2"
+#}
+
 variable "zone" {
-  description = "Availability Zone"
-  default     = "2"
+ type = string
+ description = "zone"
 }
+
 
 variable "boot_diagnostics_sa" {
   description = "Boot Diagnostic SA"
