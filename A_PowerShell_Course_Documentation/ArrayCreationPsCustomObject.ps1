@@ -17,3 +17,8 @@ foreach ($object in $csvtest) {
     <# $currentItemName is the current item #>
 }
 
+$info = Get-Content .\structure.json | Out-String | ConvertFrom-Json
+$($info | Where-Object {$_.topping.id -eq "5002"}).id
+
+$var = $info[2].batters.batter
+$ps = [PSCustomObject]@{"id" = "1500";"type" = "Chocolatina"}
