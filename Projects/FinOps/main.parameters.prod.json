@@ -1,42 +1,45 @@
 {
-    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentParameters.json#",
-    "contentVersion": "1.0.0.0",
-    "parameters": {
-      "appServicePlanName": {
-        "value": "asp-shh-prod-finos-01"
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentParameters.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+      "environment": {
+          "value": "prod"
+      },
+      "project": {
+          "value": "gisfinops"
+      },
+      "version": {
+          "value": "PYTHON|3.7"
       },
       "sku": {
-        "value": "S1"
+          "value": "S1"
       },
       "tier": {
-        "value": "Standard"
+          "value": "Standard"
       },
       "kind": {
-        "value": "linux"
-      },
-      "appFrontendName": {
-        "value": "finopsfrontend01"
-      },
-      "versionFrontend": {
-        "value": "PYTHON|3.7"
-      },
-      "appBackendName": {
-        "value": "finopsbackend01"
-      },
-      "versionBackend": {
-        "value": "PYTHON|3.7"
-      },
-      "StorageAccountName": {
-        "value": "stprodfinops0002"
+          "value": "linux"
       },
       "blobName": {
-        "value": "finops"
+          "value": "gisfinops"
       },
-      "environment": {
-        "value": "prod"
+      "objectId": {
+          "value": "bf3a5bbb-20ef-4048-9b94-60652ebf645c"
       },
-      "keyvaultname": {
-        "value": "kv-prod-finops-01"
-      }
+      "networkresourcegroup": {
+          "value": "RG_NETWORK_PROD"
+      },
+      "vnetName": {
+          "value": "EU-PROD-VNET"
+      },
+      "subnetNameApp": {
+          "value": "sub-sunshine-finops-01"
+      },
+      "subnetNameStorage": {
+        "value": "sub-generic-privateendpoints-01"
+    },
+    "subnetNameKeyvault": {
+        "value": "sub-generic-privateendpoints-01"
     }
-  }
+    }
+}

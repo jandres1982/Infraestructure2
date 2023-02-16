@@ -1,3 +1,9 @@
+#### Check T:\ volume already exist write-error ""##########################
+If (Get-Volume -DriveLetter T -ErrorAction SilentlyContinue)
+{Write-Error "T letter is already being used, please do it manually"
+Break}
+#############################################################################
+
 $Temp_Disk = Get-volume | Where-Object -Property FileSystemLabel -eq -Value "Temporary Storage"
 if ($Temp_Disk)
 {

@@ -17,7 +17,7 @@ $report = 'Subs_'+'_Report_'+"$date"+'.csv'
 $SubObject  | Export-Csv $report -NoTypeInformation | Select-Object -Skip 1 | Set-Content $report
 $PSEmailServer = "smtp.eu.schindler.com"
 $From = "scc-support-zar.es@schindler.com"
-$to = "johannes.gappmaier@microsoft.com","priska.jaeggi@microsoft.com","alfonso.marques@schindler.com","nahum.sancho@schindler.com"
+$to = "johannes.gappmaier@microsoft.com","priska.jaeggi@microsoft.com","alfonso.marques@schindler.com","nahum.sancho@schindler.com","alberto.mischi@schindler.com"
 
 $Subject = "Schindler Subscriptions Report"
 $Attachment = $report

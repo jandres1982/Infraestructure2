@@ -1,0 +1,24 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "environment": {
+            "value": "nonprod"
+        },
+        "project": {
+            "value": "esais"
+        },
+        "networkresourcegroup":{
+            "value": "RG_NETWORK_PROD"
+        },
+        "vnetName":{
+            "value": "EU-PROD-VNET1"
+        },
+        "subnetName01":{
+            "value": "sub-nonprod-esais-springapp-01"
+        },
+        "subnetName02":{
+            "value": "sub-nonprod-esais-springapp-runtime-01"
+        }        
+    }
+  }

@@ -1,0 +1,21 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "environment": {
+            "value": "prod"
+        },
+        "project": {
+            "value": "iissharedconf"
+        },
+        "networkresourcegroup": {
+            "value": "RG_NETWORK_PROD"
+        },
+        "vnetName": {
+            "value": "EU-PROD-VNET"
+        },
+        "subnetNameStorage": {
+          "value": "sub-generic-privateendpoints-01"
+        }
+      }
+  }

@@ -1,0 +1,25 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "environment": {
+            "value": "qual"
+        },
+        "project": {
+            "value": "apns"
+        },
+        "administratorLogin": {
+            "value": "apns_admin"
+        },
+        "administratorLoginPassword": {
+            "value": "bnmt2022RV10$"
+        },
+        "sku": {
+            "value": "S1"
+        },
+        "tier": {
+            "value": "Standard"
+        }
+        
+    }
+}

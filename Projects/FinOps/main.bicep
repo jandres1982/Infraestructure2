@@ -1,61 +1,106 @@
-@description('Location.')
 param location string = resourceGroup().location
 
-@description('Parameters for App Serviceplan.')
-param appServicePlanName string
+@description('Network Params')
+param networkresourcegroup string
+param vnetName string
+param subnetNameStorage string
+param subnetNameApp string
+param subnetNameKeyvault string
+
+@description('App Param')
+param project string
+param version string 
 param sku string 
 param tier string
 param kind string
 
-@description('Parameters for Frontend Web App')
-param appFrontendName string
-param versionFrontend string 
+@description('Schindler Naming variables for Web Service')
+var appServicePlanName  = 'asp-${environment}-${project}-01'
+var appServiceAppName01 = 'app-${environment}-${project}-01'
+var appServiceAppName02 = 'app-${environment}-${project}-02'
 
-@description('Parameters for Backend Web App')
-param appBackendName string
-param versionBackend string 
+@description('Schindler Naming variables for KeyVault')
+param objectId string
+var keyvaultname = 'kv-${environment}-${project}-01'
 
-module appServices 'modules/appservices.bicep' = {
-  name: 'appServices'
-  params: {
-    location: location
-    appServicePlanName: appServicePlanName
-    sku: sku
-    tier: tier
-    kind: kind
-    appFrontendName: appFrontendName
-    versionFrontend: versionFrontend
-    appBackendName: appBackendName
-    versionBackend: versionBackend
-  }
-}
+@description('Schindler Naming variables for Function App Service')
+var storageAccountFunctionName = 'st${environment}${project}0002'
+var appServiceFunctionPlanName = 'asp-${environment}-${project}-02'
+var functionAppName = 'fa-${environment}-${project}-01'
 
-@description('Parameters for StorageAccount.')
-param StorageAccountName string 
+@description('Schindler Naming variables for Data Factory')
+var datafactoryname = 'adf-${environment}-${project}-01'
+
+@description('Storage Account Param Data Lake')
+var StorageAccountName = 'st${environment}${project}0001'
 param blobName string 
 
 @allowed([
   'prod'
-  'nonprod'
+  'test'
+  'dev'
+  'qual'
 ])
 param environment string
 var storageAccountSkuName = (environment == 'prod') ? 'Standard_ZRS' : 'Standard_LRS'
+
 module storageaccount 'modules/storageaccount.bicep' = {
+  
   name: 'storageaccount'
   params: {
     location: location
     StorageAccountName: StorageAccountName
     storageAccountSkuName: storageAccountSkuName
     blobName: blobName
+    networkresourcegroup: networkresourcegroup
+    vnetName: vnetName
+    subnetNameStorage: subnetNameStorage
   }
 }
 
-@description('Parameters for KeyVault')
-param keyvaultname string
+module appService 'modules/appservice.bicep' = {
+    name: 'appService'
+    params: {
+      location: location
+      appServiceAppName01: appServiceAppName01
+      appServiceAppName02: appServiceAppName02
+      appServicePlanName: appServicePlanName
+      sku: sku
+      tier: tier
+      version: version
+      kind: kind
+      networkresourcegroup: networkresourcegroup
+      vnetName: vnetName
+      subnetNameApp: subnetNameApp
+    }
+}
+
 module keyvault 'modules/keyvault.bicep' = {
   name: 'keyvault'
-  params:{
-    keyvaultname: keyvaultname
+  params: {
     location: location
-  }  
+    keyvaultname: keyvaultname
+    objectId: objectId
+    networkresourcegroup: networkresourcegroup
+    vnetName: vnetName
+    subnetNameKeyvault: subnetNameKeyvault
+    }
+}
+
+module funtionapp 'modules/functionapp.bicep' = {
+  name: 'functionApp'
+  params: {
+    location: location
+    storageAccountFunctionName: storageAccountFunctionName
+    appServiceFunctionPlanName: appServiceFunctionPlanName
+    functionAppName: functionAppName
+  }
+}
+
+module datafactory 'modules/datafactory.bicep' = {
+  name: 'datafactory'
+  params: {
+    location: location
+    datafactoryname: datafactoryname
+  }
 }

@@ -13,7 +13,7 @@ foreach ($sub in $subs)
     Write-Host "Collecting all Backup Recovery Vault information in $sub" -BackgroundColor DarkGreen
 
 Select-AzSubscription -Subscription "$sub"
-az account set --subscription "$sub"
+#az account set --subscription "$sub"
 
 #$Vault_List = (Get-AzRecoveryServicesVault).Name
 #foreach ($vault in $Vault_List) 
@@ -34,7 +34,7 @@ $vms = get-azvm | where-object {$_.Name -like "$kg*"}
 
          #Backup recovery Vault policy Information
 
-                $container = Get-AzRecoveryServicesBackupContainer -ContainerType AzureVM -VaultId $vmBackupVault.ID -FriendlyName $vm.Name -WarningAction SilentlyContinue -Status "Registered"
+                $container = Get-AzRecoveryServicesBackupContainer -ContainerType AzureVM -VaultId $vmBackupVault.ID -FriendlyName $vm.Name -WarningAction SilentlyContinue
                 $backupItem = Get-AzRecoveryServicesBackupItem -Container $container -WorkloadType AzureVM -VaultId $vmBackupVault.ID -WarningAction SilentlyContinue
 
      } #if ($recoveryVaultInfo.BackedUp -eq $true)
