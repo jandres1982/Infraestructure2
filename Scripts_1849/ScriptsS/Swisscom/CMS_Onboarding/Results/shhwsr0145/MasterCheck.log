@@ -1,0 +1,314 @@
+			---------------------------------------------------------
+			---------------------------------------------------------
+			MasterCheck.ps1 	(MasterScript for server checks)
+			Version: 			1.3
+			Script started on:	15.02.2016 14:07:09 from admbarmetmi
+			RootFolder:		C:\Admin
+			---------------------------------------------------------
+			---------------------------------------------------------
+			
+15.02.2016 14:07:14  	PowerShell version: 	2
+15.02.2016 14:07:14  	Parameter which this script has been started:
+15.02.2016 14:07:14  	Param ::: CheckTyp: 		precheck
+15.02.2016 14:07:14  	Param ::: Products: 		full
+			
+15.02.2016 14:07:14  	Check C:\Admin\CheckScripts\
+15.02.2016 14:07:14  	ScriptFolder exist --> OK
+15.02.2016 14:07:14  	Get the CheckScripts...
+15.02.2016 14:07:14  	Collect Informations...
+			
+15.02.2016 14:07:14  	CheckAdminAccess.ps1 Collected: True
+15.02.2016 14:07:14  	CheckAutologAdmin.ps1 Collected: True
+15.02.2016 14:07:14  	CheckBitLockerDriveEncryption.ps1 Collected: True
+15.02.2016 14:07:14  	CheckBITSService.ps1 Collected: True
+15.02.2016 14:07:14  	CheckBuitInAdminAccount.ps1 Collected: True
+15.02.2016 14:07:14  	CheckDeviceManager.ps1 Collected: True
+15.02.2016 14:07:14  	CheckDomJoin.ps1 Collected: True
+15.02.2016 14:07:14  	CheckExistingMalwareProtection.ps1 Collected: True
+15.02.2016 14:07:14  	CheckIISLogLocation.ps1 Collected: True
+15.02.2016 14:07:14  	CheckIISTaskScheduler.ps1 Collected: True
+15.02.2016 14:07:14  	CheckLizState.ps1 Collected: True
+15.02.2016 14:07:14  	CheckLocalAdminActive.ps1 Collected: True
+15.02.2016 14:07:14  	CheckMalwareProtectionInstalled.ps1 Collected: True
+15.02.2016 14:07:14  	CheckMonitoringInstalled.ps1 Collected: True
+15.02.2016 14:07:14  	CheckOSLanguage.ps1 Collected: True
+15.02.2016 14:07:14  	CheckPatchLevel.ps1 Collected: True
+15.02.2016 14:07:14  	CheckPuppetAgent.ps1 Collected: True
+15.02.2016 14:07:14  	CheckRDP.ps1 Collected: True
+15.02.2016 14:07:14  	CheckServices.ps1 Collected: True
+15.02.2016 14:07:14  	CheckSNMPWriteCommunity.ps1 Collected: True
+15.02.2016 14:07:14  	CheckSystemDrive.ps1 is corrupt!!!! Error: You cannot call a method on a null-valued expression..Exception.Message; 
+15.02.2016 14:07:14  	CheckWUService.ps1 Collected: True
+15.02.2016 14:07:14  	CheckWUServicePolicy.ps1 Collected: True
+15.02.2016 14:07:14  	MonAgentCheck.ps1 Collected: True
+15.02.2016 14:07:14  	OS-Version.ps1 Collected: True
+15.02.2016 14:07:14  	VmToolsCheck.ps1 Collected: True
+15.02.2016 14:07:14  	WindowsFirewall.ps1 Collected: True
+15.02.2016 14:07:14  	WindowsFirewallSMB.ps1 Collected: True
+			
+15.02.2016 14:07:14  	VmToolsCheck not executed --> wrong checktyp or wrong products assigned...
+15.02.2016 14:07:14  	Execute:	CheckIISLogLocation
+15.02.2016 14:07:47  			ID: CheckIISLogLocation
+15.02.2016 14:07:47  			Status: False 
+15.02.2016 14:07:47  			Area: App-ISS
+15.02.2016 14:07:47  			Short: Check IIS Log Location
+15.02.2016 14:07:47  			Check if IIS Log Location is not configured to System Drive
+15.02.2016 14:07:47  			Info:  --- 
+15.02.2016 14:07:47  			Error: </tbody></table><tr><td>                 <logFile directory="C:\AirWatch\Logs\IIS" />                 <logFile logFormat="W3C" directory="%SystemDrive%\inetpub\logs\LogFiles" /></td><td>                 <logFile directory="C:\AirWatch\Logs\IIS" />                 <logFile logFormat="W3C" directory="%SystemDrive%\inetpub\logs\LogFiles" /></td></tr><tr><td></td><td>                 <logFile directory="C:\AirWatch\Logs\IIS" />                 <logFile logFormat="W3C" directory="%SystemDrive%\inetpub\logs\LogFiles" /></td></tr>
+15.02.2016 14:07:47  	Done:	CheckIISLogLocation
+			
+15.02.2016 14:07:47  	CheckIISTaskScheduler not executed --> wrong checktyp or wrong products assigned...
+15.02.2016 14:07:47  	Execute:	CheckPuppetAgent
+15.02.2016 14:07:48  			ID: CheckPuppetAgent
+15.02.2016 14:07:48  			Status: True 
+15.02.2016 14:07:48  			Area: Cloud Managed Services
+15.02.2016 14:07:48  			Short: Check Puppet Agent
+15.02.2016 14:07:48  			Check if Puppet Agent is not running and not installed
+15.02.2016 14:07:48  			Info: Puppet Agent service not found.
+15.02.2016 14:07:48  			Error:  --- 
+15.02.2016 14:07:48  	Done:	CheckPuppetAgent
+			
+15.02.2016 14:07:48  	Execute:	CheckExistingMalwareProtection
+15.02.2016 14:08:26  			ID: CheckExistingMalwareProtection
+15.02.2016 14:08:26  			Status: False 
+15.02.2016 14:08:26  			Area: Malware
+15.02.2016 14:08:26  			Short: Anti-Virus
+15.02.2016 14:08:26  			Search installed AntiVirus software
+15.02.2016 14:08:26  			Info:  --- 
+15.02.2016 14:08:26  			Error: <p><b>Found in Registry HKLM:\Software\Microsoft\Windows\CurrentVersion\Uninstall\*</b></p>
+<table class="infotable">
+<thead><tr><th>Vendor:</th><th>Name:</th><th>Version:</th><th>Install date:</th></tr></thead>
+<tbody>
+<tr><td>Symantec Corporation</td><td>Symantec Endpoint Protection</td><td>12.1.6318.6100</td><td>11.09.2015</td></tr>
+</tbody></table></br>
+<p><b>Found in installed software</b></p>
+<table class="infotable">
+<thead><tr><th>Vendor:</th><th>Name:</th><th>Version:</th><th>Install date:</th></tr></thead>
+<tbody>
+<tr><td>Symantec Corporation</td><td>Symantec Endpoint Protection</td><td>12.1.6318.6100</td><td>11.09.2015</td></tr>
+</tbody></table></br>
+
+15.02.2016 14:08:26  	Done:	CheckExistingMalwareProtection
+			
+15.02.2016 14:08:26  	CheckMalwareProtectionInstalled not executed --> wrong checktyp or wrong products assigned...
+15.02.2016 14:08:26  	Execute:	CheckMonitoringInstalled
+15.02.2016 14:08:26  			ID: CheckMonitoringInstalled
+15.02.2016 14:08:26  			Status: True 
+15.02.2016 14:08:26  			Area: Monitoring
+15.02.2016 14:08:26  			Short: Check Monitoring Agent
+15.02.2016 14:08:26  			Check if service does not exist
+15.02.2016 14:08:26  			Info: 
+15.02.2016 14:08:26  			Error: ""Nxlog"" and ""NSClient++ (x64)"" services have not been found!
+15.02.2016 14:08:26  	Done:	CheckMonitoringInstalled
+			
+15.02.2016 14:08:26  	MonAgentCheck not executed --> wrong checktyp or wrong products assigned...
+15.02.2016 14:08:26  	Execute:	OS-Version
+15.02.2016 14:08:26  			ID: OS-Version
+15.02.2016 14:08:26  			Status: True 
+15.02.2016 14:08:26  			Area: Monitoring
+15.02.2016 14:08:26  			Short: Check the OS Version
+15.02.2016 14:08:26  			Check if the OS Version is Windows Server 2012R2 (6.3*) or 2008R2 (6.1*)
+15.02.2016 14:08:26  			Info: Current Operating System version is allowed: "Microsoft Windows Server 2008 R2 Standard "
+15.02.2016 14:08:26  			Error: 
+15.02.2016 14:08:26  	Done:	OS-Version
+			
+15.02.2016 14:08:26  	Execute:	WindowsFirewall
+15.02.2016 14:08:26  			ID: WindowsFirewall
+15.02.2016 14:08:26  			Status: False 
+15.02.2016 14:08:26  			Area: Netzwerk
+15.02.2016 14:08:26  			Short: Check if Windows Firewall is enabled
+15.02.2016 14:08:26  			Check if firwall is enabled on private/public/domain profile
+15.02.2016 14:08:26  			Info: 
+15.02.2016 14:08:26  			Error: Windows Firewall is not enabled on one or more profiles (0 = disabled / 1 = enabled):<table class="errortable"><thead><tr><th>Firewall Profile</th><th>Status</th></thead><tbody>		 <tr>
+		 <td>Domain Profile</td><td>0</td>
+		 </tr>
+		 <tr>
+		 <td>Private Profile</td><td>0</td>
+		 </tr>
+		 <tr>
+		 <td>Public Profile</td><td>0</td>
+		 </tr></tbody></table></br>
+15.02.2016 14:08:26  	Done:	WindowsFirewall
+			
+15.02.2016 14:08:26  	Execute:	WindowsFirewallSMB
+15.02.2016 14:08:29  			ID: WindowsFirewallSMB
+15.02.2016 14:08:29  			Status: True 
+15.02.2016 14:08:29  			Area: Netzwerk
+15.02.2016 14:08:29  			Short: Check SMB Firewall Rule
+15.02.2016 14:08:29  			Check if the firewall rule ""File and Printer Sharing (SMB-In)"" is enabled
+15.02.2016 14:08:29  			Info: Firewall Rule ""File and Printer Sharing (SMB-In)"" already enabled!
+15.02.2016 14:08:29  			Error: 
+15.02.2016 14:08:29  	Done:	WindowsFirewallSMB
+			
+15.02.2016 14:08:29  	Execute:	CheckBuitInAdminAccount
+15.02.2016 14:08:29  			ID: CheckBuitInAdminAccount
+15.02.2016 14:08:29  			Status: False 
+15.02.2016 14:08:29  			Area: OS/Credentials
+15.02.2016 14:08:29  			Short: Check Built-In Admin Account
+15.02.2016 14:08:29  			Checks if the Current Account under which the Script is Executed if it is the Original Microsoft Built-In Administrator Account
+15.02.2016 14:08:29  			Info: 
+15.02.2016 14:08:29  			Error: Current User: "admbarmetmi" is not the Original Microsoft Built-In Administrator Account '
+    Please use the the Built-In Administrator Account for further Actions
+15.02.2016 14:08:29  	Done:	CheckBuitInAdminAccount
+			
+15.02.2016 14:08:29  	Execute:	CheckLocalAdminActive
+15.02.2016 14:08:30  			ID: CheckLocalAdminActive
+15.02.2016 14:08:30  			Status: True 
+15.02.2016 14:08:30  			Area: OS/Credentials
+15.02.2016 14:08:30  			Short: Check if Local Admin is active
+15.02.2016 14:08:30  			Check if Built-In Local Admin Account is activ
+15.02.2016 14:08:30  			Info: <table class="infotable">
+<thead><tr><th>Propertie:</th><th>Value:</th></tr></thead>
+<tbody>
+<tr><td>Name:</td><td>Administrator</td></tr>
+<tr><td>SID:</td><td>S-1-5-21-4192578500-1336010904-2782020252-500</td></tr>
+<tr><td>State:</td><td>OK</td></tr>
+<tr><td>Disabled:</td><td>False</td></tr>
+<tr><td>Lockout:</td><td>False</td></tr>
+<tr><td>PasswordRequired:</td><td>True</td></tr>
+<tr><td>PasswordChangeable:</td><td>True</td></tr>
+</tbody></table></br>
+
+15.02.2016 14:08:30  			Error:  --- 
+15.02.2016 14:08:30  	Done:	CheckLocalAdminActive
+			
+15.02.2016 14:08:30  	Execute:	CheckAdminAccess
+15.02.2016 14:08:30  	!!! Failed to run Check !!! :	The term '.\CheckScripts\Tools\Carbon\Import-Carbon.ps1' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of the name, or if a path was included, verify that the path is correct and try again..Exception.Message;
+			
+15.02.2016 14:08:30  	Execute:	CheckAutologAdmin
+15.02.2016 14:08:30  			ID: CheckAutologAdmin
+15.02.2016 14:08:30  			Status: True 
+15.02.2016 14:08:30  			Area: OS/System
+15.02.2016 14:08:30  			Short: Check if AutoAdminLogon is disabled
+15.02.2016 14:08:30  			Check if the registry Key AutoAdminLogon is disabled
+15.02.2016 14:08:30  			Info: AutoAdminLogon key not found in registry, assuming that it is disabled!
+15.02.2016 14:08:30  			Error: 
+15.02.2016 14:08:30  	Done:	CheckAutologAdmin
+			
+15.02.2016 14:08:30  	Execute:	CheckBitLockerDriveEncryption
+15.02.2016 14:08:31  			ID: CheckBitLockerDriveEncryption
+15.02.2016 14:08:31  			Status: True 
+15.02.2016 14:08:31  			Area: OS/System
+15.02.2016 14:08:31  			Short: Checks BitLocker Drive Encryption
+15.02.2016 14:08:31  			BitLocker Drive Encryption must not be installed.
+15.02.2016 14:08:31  			Info: BitLocker Drive Encryption has not been found.
+15.02.2016 14:08:31  			Error: 
+15.02.2016 14:08:31  	Done:	CheckBitLockerDriveEncryption
+			
+15.02.2016 14:08:31  	Execute:	CheckDeviceManager
+15.02.2016 14:08:31  			ID: CheckDeviceManager
+15.02.2016 14:08:31  			Status: True 
+15.02.2016 14:08:31  			Area: OS/System
+15.02.2016 14:08:31  			Short: Check devicemanager for errors
+15.02.2016 14:08:31  			Check if there are any unknown devices or devices with the status ""Error"" in the devicemanager.
+15.02.2016 14:08:31  			Info: All devices seem to be OK
+15.02.2016 14:08:31  			Error: 
+15.02.2016 14:08:31  	Done:	CheckDeviceManager
+			
+15.02.2016 14:08:31  	CheckDomJoin not executed --> wrong checktyp or wrong products assigned...
+15.02.2016 14:08:31  	Execute:	CheckLizState
+15.02.2016 14:08:32  			ID: CheckLizState
+15.02.2016 14:08:32  			Status: True 
+15.02.2016 14:08:32  			Area: OS/System
+15.02.2016 14:08:32  			Short: Check license status of the machine
+15.02.2016 14:08:32  			Check wether the machine is activated or not.
+15.02.2016 14:08:32  			Info: Licensed
+15.02.2016 14:08:32  			Error:  --- 
+15.02.2016 14:08:32  	Done:	CheckLizState
+			
+15.02.2016 14:08:32  	Execute:	CheckOSLanguage
+15.02.2016 14:08:32  			ID: CheckOSLanguage
+15.02.2016 14:08:32  			Status: True 
+15.02.2016 14:08:32  			Area: OS/System
+15.02.2016 14:08:32  			Short: Check OS Language
+15.02.2016 14:08:32  			Check if OS Language is English_United_States (Locale ID 1033)
+15.02.2016 14:08:32  			Info: Current OS Language is English_United_States (1033)
+15.02.2016 14:08:32  			Error: 
+15.02.2016 14:08:32  	Done:	CheckOSLanguage
+			
+15.02.2016 14:08:32  	Execute:	CheckRDP
+15.02.2016 14:08:32  			ID: CheckRDP
+15.02.2016 14:08:32  			Status: True 
+15.02.2016 14:08:32  			Area: OS/System
+15.02.2016 14:08:32  			Short: Check if RDP is activated
+15.02.2016 14:08:32  			Check if RDP is set to ""Allow remote connections to this computer""
+15.02.2016 14:08:32  			Info: All Connections allowed
+15.02.2016 14:08:32  			Error: 
+15.02.2016 14:08:32  	Done:	CheckRDP
+			
+15.02.2016 14:08:32  	Execute:	CheckServices
+15.02.2016 14:08:36  			ID: CheckServices
+15.02.2016 14:08:36  			Status: False 
+15.02.2016 14:08:36  			Area: OS/System/Server Hardening
+15.02.2016 14:08:36  			Short: Checks if Server Hardening has been applied
+15.02.2016 14:08:36  			Server Hardening, Checks if Windows Services which are not required are Configured to be ""Disabled""
+15.02.2016 14:08:36  			Info: 
+15.02.2016 14:08:36  			Error: <table class="errortable"><thead><tr><th>Windows Service Display Name</th><th>Service Name</th><th>Expected Result</th><th>Current Configuration</th></tr></thead><tbody><tr><td>Windows Audio Endpoint Builder</td><td>AudioEndpointBuilder</td><td>Disabled</td><td>Manual</td></tr><tr><td>Windows Audio</td><td>Audiosrv</td><td>Disabled</td><td>Manual</td></tr><tr><td>Computer Browser</td><td>Browser</td><td>Disabled</td><td>Disabled</td></tr><tr><td>Windows Font Cache Service</td><td>FontCache</td><td>Disabled</td><td>Auto</td></tr><tr><td>IP Helper</td><td>iphlpsvc</td><td>Disabled</td><td>Auto</td></tr><tr><td>Net.Tcp Port Sharing Service</td><td>NetTcpPortSharing</td><td>Disabled</td><td>Manual</td></tr><tr><td>Routing and Remote Access</td><td>RemoteAccess</td><td>Disabled</td><td>Disabled</td></tr><tr><td>Smart Card</td><td>SCardSvr</td><td>Disabled</td><td>Manual</td></tr><tr><td>Secondary Logon</td><td>seclogon</td><td>Disabled</td><td>Manual</td></tr><tr><td>Internet Connection Sharing (ICS)</td><td>SharedAccess</td><td>Disabled</td><td>Disabled</td></tr><tr><td>Shell Hardware Detection</td><td>ShellHWDetection</td><td>Disabled</td><td>Auto</td></tr><tr><td>SSDP Discovery</td><td>SSDPSRV</td><td>Disabled</td><td>Disabled</td></tr><tr><td>Distributed Link Tracking Client</td><td>TrkWks</td><td>Disabled</td><td>Auto</td></tr><tr><td>UPnP Device Host</td><td>upnphost</td><td>Disabled</td><td>Disabled</td></tr><tr><td>Windows Color System</td><td>WcsPlugInService</td><td>Disabled</td><td>Manual</td></tr></tbody></table>Not all services are disabled!
+15.02.2016 14:08:36  	Done:	CheckServices
+			
+15.02.2016 14:08:36  	Execute:	CheckBITSService
+15.02.2016 14:08:36  			ID: CheckBITSService
+15.02.2016 14:08:36  			Status: True 
+15.02.2016 14:08:36  			Area: Patching
+15.02.2016 14:08:36  			Short: Check if BITS Service is not disabled
+15.02.2016 14:08:36  			Check if Background Intelligent Transfer Service is not disabled
+15.02.2016 14:08:36  			Info: Background Intelligent Transfer Service is NOT disabled.
+15.02.2016 14:08:36  			Error: 
+15.02.2016 14:08:36  	Done:	CheckBITSService
+			
+15.02.2016 14:08:36  	Execute:	CheckPatchLevel
+15.02.2016 14:08:53  			ID: CheckPatchLevel
+15.02.2016 14:08:53  			Status: True 
+15.02.2016 14:08:53  			Area: Patching
+15.02.2016 14:08:53  			Short: Check Patch Level of the machine
+15.02.2016 14:08:53  			Check when the last Patch has been applied and if this is within the Supported Time Range
+15.02.2016 14:08:53  			Info: <p>The last Hotfix has to be installed after:16. Januar 2016</p><br><p>Patchlevel OK. Last Installdate is:Sonntag 14.02.2016<br>Total 717 installed Updates found</p>
+15.02.2016 14:08:53  			Error:  --- 
+15.02.2016 14:08:53  	Done:	CheckPatchLevel
+			
+15.02.2016 14:08:53  	Execute:	CheckWUService
+15.02.2016 14:08:53  			ID: CheckWUService
+15.02.2016 14:08:53  			Status: True 
+15.02.2016 14:08:53  			Area: Patching
+15.02.2016 14:08:53  			Short: Check Windows Update Service
+15.02.2016 14:08:53  			Check if Windows Update Service is not disabled
+15.02.2016 14:08:53  			Info: Windows Update Service is NOT disabled.
+15.02.2016 14:08:53  			Error: 
+15.02.2016 14:08:53  	Done:	CheckWUService
+			
+15.02.2016 14:08:53  	Execute:	CheckWUServicePolicy
+15.02.2016 14:08:53  			ID: CheckWUServicePolicy
+15.02.2016 14:08:53  			Status: False 
+15.02.2016 14:08:53  			Area: Patching
+15.02.2016 14:08:53  			Short: Check Automatic Updates
+15.02.2016 14:08:53  			Check WSUS Policies via GPO 
+15.02.2016 14:08:53  			Info:  --- 
+15.02.2016 14:08:53  			Error: <p>GPO is configured to a different Windows Update Server.</br>Please move this Server to the defined OU for Onboarding.</br>Actual configured Server: http://shhscpwsusinternal.global.schindler.com:8530</p>
+15.02.2016 14:08:53  	Done:	CheckWUServicePolicy
+			
+15.02.2016 14:08:53  	Execute:	CheckSNMPWriteCommunity
+15.02.2016 14:08:53  			ID: CheckSNMPWriteCommunity
+15.02.2016 14:08:53  			Status: False 
+15.02.2016 14:08:53  			Area: Security / Server Hardening
+15.02.2016 14:08:53  			Short: Check SNMP ReadWrite community names
+15.02.2016 14:08:53  			Check if there are any ReadyWrite community names configured with accepted packets from other Hosts
+15.02.2016 14:08:53  			Info:  --- 
+15.02.2016 14:08:53  			Error: <p>The following accepted SNMP Write community has been configured: SchindlerRW, please remove prior to oncoarding</p>
+15.02.2016 14:08:53  	Done:	CheckSNMPWriteCommunity
+			
+			 ---------------------------------------------------------
+15.02.2016 14:08:53  	Finish, all check-scripts executed...
+15.02.2016 14:08:53  	Totally 22 CheckScript(s) executed
+15.02.2016 14:08:53  	7 check(s) failed
+			
+15.02.2016 14:08:53  	Write Html Header....
+15.02.2016 14:08:53  	Write Html CSS....
+15.02.2016 14:08:53  	Write Html TopInfos....
+15.02.2016 14:08:53  	Write Html checkresults....
+15.02.2016 14:08:53  	Write Html Footer....
+15.02.2016 14:08:53  	Create Html Report: C:\Admin\Logs\Report_PRECHECK_15022016140709_SHHWSR0145.GLOBAL.SCHINDLER.COM.html
+15.02.2016 14:08:53  	Html Report created
+			 ---------------------------------------------------------
+15.02.2016 14:08:53  	Run MasterCheck.ps1 Done...
+			 ---------------------------------------------------------
+			

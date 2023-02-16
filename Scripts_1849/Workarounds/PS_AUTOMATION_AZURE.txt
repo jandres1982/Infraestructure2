@@ -1,0 +1,1 @@
+Install-Module -Name AzureAutomationAuthoringToolkit -RequiredVersion 0.2.3.9 -Scope CurrentUser

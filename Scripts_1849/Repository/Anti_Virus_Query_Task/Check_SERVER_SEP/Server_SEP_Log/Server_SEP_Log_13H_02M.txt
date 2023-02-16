@@ -1,0 +1,182 @@
+﻿**********************
+Windows PowerShell transcript start
+Start time: 20191122130253
+Username: GLOBAL\admventoa1
+RunAs User: GLOBAL\admventoa1
+Machine: SHHWSR0958 (Microsoft Windows NT 6.3.9600.0)
+Host Application: C:\Windows\System32\WindowsPowerShell\v1.0\powershell_ise.exe
+Process ID: 5104
+PSVersion: 5.1.14407.1003
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.14407.1003
+BuildVersion: 10.0.14407.1003
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+Transcript started, output file is D:\Repository\Working\Antonio\Anti_Virus_Query_Task\Check_SERVER_SEP\Server_SEP_Log\Server_SEP_Log_13H_02M.txt
+##############################  secwsr1156 ###############################################
+
+
+secwsr1156 is not pingable
+##############################  schwsr0044 ###############################################
+
+
+schwsr0044 is not pingable
+##############################  secwsr7010 ###############################################
+
+
+secwsr7010 is not pingable
+##############################  carwsr0034 ###############################################
+
+
+carwsr0034 is not pingable
+##############################  secwsr1074 ###############################################
+
+
+secwsr1074 is not pingable
+##############################  carwsr0018 ###############################################
+
+
+carwsr0018 is not pingable
+##############################  carwsr0025 ###############################################
+
+
+carwsr0025 is not pingable
+##############################  milwsr0105 ###############################################
+
+
+milwsr0105 is not pingable
+##############################  jsgwsr0008 ###############################################
+
+
+jsgwsr0008 is not pingable
+##############################  carwsr0011 ###############################################
+
+
+carwsr0011 is not pingable
+##############################  secwsr1025 ###############################################
+
+
+secwsr1025 is not pingable
+##############################  deuwsr0023 ###############################################
+
+
+deuwsr0023 ping is good!
+deuwsr0023 SepMasterService found
+SEP version
+14.0.3876.1100
+WARNING: SEP needs to be updated check
+deuwsr0023 RDP OK
+
+
+##############################  indwsr0024 ###############################################
+
+
+indwsr0024 ping is good!
+indwsr0024 SepMasterService found
+SEP version
+14.0.3876.1100
+WARNING: SEP needs to be updated check
+indwsr0024 RDP OK
+
+
+##############################  jsgwsr0036 ###############################################
+
+
+jsgwsr0036 is not pingable
+##############################  indwsr0018 ###############################################
+
+
+indwsr0018 is not pingable
+##############################  indwsr0020 ###############################################
+
+
+indwsr0020 ping is good!
+indwsr0020 SepMasterService found
+[indwsr0020] Connecting to remote server indwsr0020 failed with the following error message : The WSMan service could 
+not launch a host process to process the given request.  Make sure the WSMan provider host server and proxy are 
+properly registered. For more information, see the about_Remote_Troubleshooting Help topic.
+    + CategoryInfo          : OpenError: (indwsr0020:String) [], PSRemotingTransportException
+    + FullyQualifiedErrorId : 2,PSSessionStateBroken
+[indwsr0020] Connecting to remote server indwsr0020 failed with the following error message : The WSMan service could not launch a host process to process the
+given request.  Make sure the WSMan provider host server and proxy are properly registered. For more information, see the about_Remote_Troubleshooting Help
+topic.
+    + CategoryInfo          : OpenError: (indwsr0020:String) [], PSRemotingTransportException
+    + FullyQualifiedErrorId : 2,PSSessionStateBroken
+SEP version
+Please check the SEP version
+indwsr0020 RDP OK
+
+
+##############################  deuwsr0031 ###############################################
+
+
+deuwsr0031 ping is good!
+deuwsr0031 SepMasterService found
+SEP version
+14.0.3876.1100
+WARNING: SEP needs to be updated check
+WARNING: Pending reboot needed, probably waiting to apply the new version
+deuwsr0031 RDP OK
+
+
+##############################  secwsr0175 ###############################################
+
+
+secwsr0175 is not pingable
+##############################  secwsr7007 ###############################################
+
+
+secwsr7007 ping is good!
+secwsr7007 SepMasterService found
+SEP version
+14.0.3876.1100
+WARNING: SEP needs to be updated check
+secwsr7007 RDP OK
+
+
+##############################  jsgwsr0002 ###############################################
+
+
+jsgwsr0002 is not pingable
+##############################  secwsr9996 ###############################################
+
+
+secwsr9996 is not pingable
+##############################  indwsr0060 ###############################################
+
+
+indwsr0060 ping is good!
+indwsr0060 SepMasterService found
+SEP version
+14.0.3876.1100
+WARNING: SEP needs to be updated check
+indwsr0060 RDP OK
+
+
+##############################  deuwsr7002 ###############################################
+
+
+deuwsr7002 is not pingable
+##############################  schwsr0078 ###############################################
+
+
+schwsr0078 is not pingable
+##############################  jnbwsr0033 ###############################################
+
+
+jnbwsr0033 is not pingable
+##############################  secwsr9997 ###############################################
+
+
+secwsr9997 ping is good!
+Please check secwsr9997 SepMasterService not found
+secwsr9997 RDP OK
+
+
+**********************
+Windows PowerShell transcript end
+End time: 20191122130508
+**********************

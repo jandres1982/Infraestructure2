@@ -1,0 +1,68 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "location": {
+            "value": "switzerlandnorth"
+        },
+        "networkInterfaceName3": {
+            "value": "schwsr0000669_z3"
+        },
+        "subnetName": {
+            "value": "sub-Infrastructure-IaaS-Subnet-01"
+        },
+        "virtualNetworkId": {
+            "value": "/subscriptions/4ecf3830-c880-4410-9c3b-21919c807bad/resourceGroups/rg-cis-prod-network-01/providers/Microsoft.Network/virtualNetworks/vnet-prod-sn-01"
+        },
+        "virtualMachineName": {
+            "value": "schwsr0000"
+        },
+        "virtualMachineName3": {
+            "value": "schwsr0000"
+        },
+        "virtualMachineComputerName3": {
+            "value": "schwsr0000"
+        },
+        "virtualMachineRG": {
+            "value": "rg-cis-prod-server-01"
+        },
+        "osDiskType": {
+            "value": "StandardSSD_LRS"
+        },
+        "osDiskDeleteOption": {
+            "value": "Detach"
+        },
+        "virtualMachineSize": {
+            "value": "Standard_D2s_v3"
+        },
+        "nicDeleteOption": {
+            "value": "Detach"
+        },
+        "adminUsername": {
+            "value": "ldmsosd"
+        },
+        "adminPassword": {
+            "reference": {
+                "keyVault": {
+                    "id": "/subscriptions/505ead1a-5a5f-4363-9b72-83eb2234a43d/resourceGroups/rg-shh-prod-devopsagents-01/providers/Microsoft.KeyVault/vaults/kv-prod-devopsagents-01"
+                },
+                "secretName": "localpw"
+            }
+        },
+        "patchMode": {
+            "value": "Manual"
+        },
+        "enableHotpatching": {
+            "value": false
+        },
+        "diagnosticsStorageAccountName": {
+            "value": "stproddiagnostic0001"
+        },
+        "diagnosticsStorageAccountId": {
+            "value": "/subscriptions/4ecf3830-c880-4410-9c3b-21919c807bad/resourceGroups/rg-cis-prod-storage-01/providers/Microsoft.Storage/storageAccounts/stproddiagnostic0001"
+        },
+        "zone": {
+            "value": "3"
+        }
+    }
+}

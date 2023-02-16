@@ -1,0 +1,94 @@
+/******************************************************************************
+*
+*				Schindler WPAD/PAC file
+*
+*******************************************************************************
+*
+*		For any enquiries please contact your local help desk
+*				or CSC (csc@schindler.com)
+*
+*******************************************************************************
+*
+*	Version history
+*
+*	20130903 - GTC - Initial for new MWG 7.x appliances
+*	20131106 - GTC - bypass for Symantec traffic
+*	20140918 - GTC - force ITSM to use MWG due to IE 11 issue
+*	20150115 - GTC - Added local KG support
+*	20150303 - GTC - Added fallback to DC webgateways for KG LBO
+*	20150309 - GTC - Added IND HQ and factory webgateways
+*	20150407 - GTC - Removed ITSM redirection
+*	20150630 - GTC - Excluded some IPv6 ranges from proxy assignment
+*	20150630 - GTC - Removed IPv6 exclusion
+*	20150720 - GTC - Added new exceptions for AUS VOIP - Changed some targets
+*	20150831 - GTC - Added exception for tstglobal.schindler.com
+*	20151012 - GTC - Added NZC SCN JNB AUS local breakouts
+*	20151013 - GTC - Added ESP-ZAR and ESP-MAA local breakouts
+*	20151021 - GTC - Removed exception for tstglobal.schindler.com
+*	20151209 - GTC - Added UKC BRA JPN local breakouts
+*	20151214 - GTC - Added MEX PAR local breakouts
+*	20160307 - GTC - Added new Local Breakouts - cleaned up the script file
+*	20161003 - GTC - CR 25484
+*	20170116 - GTC - CR 29928
+*	20170220 - GTC - CR 31637
+*	20170407 - GTC - IC 277122
+*	20170828 - GTC - CR 38658
+*	20180508 - admheaumola - CR50948 - Windows 10 Optimization
+*	20180615 - morenod3 - New proxy POA
+*	20180724 - admmasidlu - new wpad related to new circuit in SCN-DIZ
+*	20180828 - morenod3 - add scn2 proxy
+*	20190819 - morenod3 - UKC update
+*	20190910 - admheaumola - 20180508 - admheaumola - ITSM655751 - Create SCN-CT PAC file
+*	20190910 - admheaumola - 20180508 - admheaumola - ITSM655751 - Create SCN-CT PAC file
+*	20191011 - admheaumola - 666063 WPAD SLO BRU-DRO
+*	20191016 - admheaumola - SLO BRU-DRO PAC
+*	20210215 - test - test
+*	20210215 - ruizj5 - exception vcenterscs.global.schindler.com and itoper.local
+*	20210225 - ruizj5 - exeption itoper
+*	20210225 - ruizj5 - itoper exception
+*	20210225 - ruizj5 - itoper exception
+*	
+******************************************************************************/
+
+// Entry Point
+function FindProxyForURL(url, host) {
+
+//####### Workaround ########
+if (dnsDomainIs(host,"adometry.com")) { return "PROXY webgateway-test-eu.schindler.com:3128";}
+
+//####### Optimization 1 ########
+if (isPlainHostName(host)) { return "DIRECT"; }
+
+// S-Net networks should be directly accessed
+//####### Optimization 2 #########
+var resolved_ip = dnsResolve(host);
+if (isInNet(resolved_ip, "127.0.0.1", "255.255.255.255") ||
+    isInNet(resolved_ip, "136.238.0.0", "255.255.0.0") ||
+    isInNet(resolved_ip, "10.0.0.0", "255.0.0.0") ||
+    isInNet(resolved_ip, "195.65.184.0", "255.255.255.0") ||
+    isInNet(resolved_ip, "47.19.155.192", "255.255.255.192") ||
+    isInNet(resolved_ip, "134.159.113.0", "255.255.255.0")) {
+  return "DIRECT";
+}
+
+// Bypass Proxy exceptions
+if (dnsDomainIs(host,"evasys.de") ||
+    dnsDomainIs(host,"login.schindler.com") ||
+    dnsDomainIs(host,"nipt.telstra.com") ||
+    dnsDomainIs(host,"tipt.telstra.com") ||
+    dnsDomainIs(host,"combinenet.com") ||
+    dnsDomainIs(host,"vcenterscs.global.schindler.com") ||
+    dnsDomainIs(host,"itoper.local")) {
+  return "DIRECT";
+}
+
+// Internal Network Detection
+// Return Proxy - client is internal
+if (dnsResolve("shhscpmwgdetect.global.schindler.com")=="10.23.2.50") {
+  return "PROXY webgateway-eu.schindler.com:3128";
+}
+
+// Return direct - client is outside
+return "DIRECT";
+
+} // End of function

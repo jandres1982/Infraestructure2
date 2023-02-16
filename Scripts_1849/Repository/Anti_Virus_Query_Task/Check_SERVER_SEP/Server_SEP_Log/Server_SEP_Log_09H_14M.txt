@@ -1,0 +1,49 @@
+﻿**********************
+Windows PowerShell transcript start
+Start time: 20191126091402
+Username: GLOBAL\admventoa1
+RunAs User: GLOBAL\admventoa1
+Machine: SHHWSR0958 (Microsoft Windows NT 6.3.9600.0)
+Host Application: C:\Windows\System32\WindowsPowerShell\v1.0\powershell_ise.exe
+Process ID: 884
+PSVersion: 5.1.14407.1003
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.14407.1003
+BuildVersion: 10.0.14407.1003
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+Transcript started, output file is D:\Repository\Working\Antonio\Anti_Virus_Query_Task\Check_SERVER_SEP\Server_SEP_Log\Server_SEP_Log_09H_14M.txt
+##############################  zzzwsr1303 ###############################################
+
+
+zzzwsr1303 ping is good!
+Please check zzzwsr1303 SepMasterService not found
+PS>TerminatingError(New-Object): "Exception calling ".ctor" with "2" argument(s): "A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 10.15.1.11:3389""
+WARNING: No access using RDP
+
+
+##############################  zzzwsr0814 ###############################################
+
+
+zzzwsr0814 ping is good!
+Please check zzzwsr0814 SepMasterService not found
+PS>TerminatingError(New-Object): "Exception calling ".ctor" with "2" argument(s): "A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 10.15.1.19:3389""
+WARNING: No access using RDP
+
+
+##############################  zzzwsr0812 ###############################################
+
+
+zzzwsr0812 ping is good!
+Please check zzzwsr0812 SepMasterService not found
+PS>TerminatingError(New-Object): "Exception calling ".ctor" with "2" argument(s): "A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 10.15.1.16:3389""
+WARNING: No access using RDP
+
+
+**********************
+Windows PowerShell transcript end
+End time: 20191126091815
+**********************

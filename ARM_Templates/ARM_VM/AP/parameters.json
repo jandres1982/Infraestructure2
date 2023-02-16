@@ -5,58 +5,38 @@
         "location": {
             "value": "southeastasia"
         },
-        "networkInterfaceName": {
-            "value": "jsgwsr0080_nic"
+        "networkInterfaceName3": {
+            "value": "shhwsrxxxx251_z3"
         },
         "subnetName": {
-            "value": "sub-infrastructure-iaas-01"
+            "value": "sub-backend-iaas-01"
         },
         "virtualNetworkId": {
             "value": "/subscriptions/59c20947-4965-45c4-99f3-12be96106119/resourceGroups/rg-cis-prod-network-02/providers/Microsoft.Network/virtualNetworks/vnet-prod-asse-01"
         },
         "virtualMachineName": {
-            "value": "jsgwsr0080"
+            "value": "shhwsrxxxx"
+        },
+        "virtualMachineName3": {
+            "value": "shhwsrxxxx"
         },
         "virtualMachineComputerName": {
-            "value": "jsgwsr0080"
+            "value": "shhwsrxxxx"
         },
         "virtualMachineRG": {
-            "value": "rg-jsg-prod-server-01"
+            "value": "rg-cis-prod-storage-02"
         },
         "osDiskType": {
-            "value": "Premium_LRS"
+            "value": "StandardSSD_LRS"
         },
-        "dataDisks": {
-            "value": [
-                {
-                    "lun": 0,
-                    "createOption": "attach",
-                    "caching": "None",
-                    "writeAcceleratorEnabled": false,
-                    "id": null,
-                    "name": "jsgwsr0080_DataDisk_0",
-                    "storageAccountType": null,
-                    "diskSizeGB": null,
-                    "diskEncryptionSet": null
-                }
-            ]
-        },
-        "dataDiskResources": {
-            "value": [
-                {
-                    "name": "jsgwsr0080_DataDisk_0",
-                    "sku": "Premium_LRS",
-                    "properties": {
-                        "diskSizeGB": 4,
-                        "creationData": {
-                            "createOption": "empty"
-                        }
-                    }
-                }
-            ]
+        "osDiskDeleteOption": {
+            "value": "Detach"
         },
         "virtualMachineSize": {
-            "value": "Standard_D2s_v3"
+            "value": "Standard_D4s_v3"
+        },
+        "nicDeleteOption": {
+            "value": "Detach"
         },
         "adminUsername": {
             "value": "ldmsosd"
@@ -77,7 +57,7 @@
             "value": "/subscriptions/59c20947-4965-45c4-99f3-12be96106119/resourceGroups/rg-cis-prod-storage-02/providers/Microsoft.Storage/storageAccounts/stproddiagnostic0003"
         },
         "zone": {
-            "value": "1"
+            "value": "3"
         }
     }
 }

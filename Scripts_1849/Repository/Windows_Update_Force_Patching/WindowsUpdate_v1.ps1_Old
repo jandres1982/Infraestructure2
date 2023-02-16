@@ -1,0 +1,158 @@
+﻿<#power<# Creator: A
+NOTES
+  Version:        1.0
+  Author:         Antonio Vicente Vento Maggio
+  Creation Date:  23.May.2019
+  Purpose/Change: Initial Patching Menu for Windows 2008, 2012, 2016 and 2019
+  
+.EXAMPLE
+  1.- Fill the servers in ServerList.txt without FQDN
+  2.- Run the script WindowsUpdate_v1.ps1 and choose the right option (option 2 will always reboot the server).
+  3.- Always when finish press option 3 for cleaning files.
+  3.- Check the logs Folder
+#>
+#>
+#>
+$Title = "Windows Download and Patching"
+$Source = "D:\Repository\Working\Antonio\Windows_Update_Force_Patching\Source\WUinstall.exe"
+$Install = "D:\Repository\Working\Antonio\Windows_Update_Force_Patching\Source\Install_Reboot.cmd"
+$Check = "D:\Repository\Working\Antonio\Windows_Update_Force_Patching\Source\Check_Patches.cmd"
+$Servers = gc "D:\Repository\Working\Antonio\Windows_Update_Force_Patching\Server_List\ServerList.txt"
+$Destination = "C$\temp\"
+
+Remove-Item "D:\Repository\Working\Antonio\Windows_Update_Force_Patching\Logs\\*.*" | Where { ! $_.PSIsContainer }
+
+Function showmenu {
+    Clear-Host
+         
+
+Write-Host "================= $Title ================" 
+Write-Host "=                                                              ="
+Write-Host "=           1. Search Patches                                  =" 
+Write-Host "=           2. Search + Install and Reboot if needed           ="
+Write-Host "=           3. Clean Process                                   ="
+Write-Host "=           4. Exit                                            =" 
+Write-Host "=                                                              ="
+Write-Host "=                                                              ="
+Write-Host "================= by: Antonio V. Vento Maggio ==================" 
+
+Write-host ""
+
+    Write-Host "Logs can be found for each server on: Logs\Windows_Update_log_<Server_Name>.txt" -ForegroundColor Cyan
+    Write-Host "Please fill the Server List with the servers to be patched or checked" -ForegroundColor Green
+}
+
+showmenu
+Write-host ""
+while(($inp = Read-Host -Prompt "Select an option") -ne "4"){
+
+switch($inp){
+
+        1 {
+            Clear-Host
+            Write-Host "------------------------------";
+            Write-Host "Checking for patches";
+            
+                        foreach ($Server in $Servers) {
+
+            if ((Test-Path -Path \\$Server\$destination)) { #Comprobación de acceso
+
+            Copy-Item $Source -Destination \\$server\$destination -Recurse #Copia del script
+            echo "Log for $Server at $date Checking Patches" >> "D:\Repository\Working\Antonio\Windows_Update_Force_Patching\Logs\Windows_Update_log_$Server.txt"
+            #Copy-Item $Install -Destination \\$server\$destination -Recurse
+            #cd "c:\admin\tools\Sysinternals"
+            $cmd = "D:\Repository\Working\Antonio\Windows_Update_Force_Patching\Source\PsExec64.exe \\$server -s cmd /c c:\temp\wuinstall /search /download"
+            start powershell.exe "cmd.exe /c $cmd >>  D:\Repository\Working\Antonio\Windows_Update_Force_Patching\Logs\Windows_Update_log_$Server.txt"
+            #echo $cmd | cmd.exe
+            #start-process "c:\admin\tools\Sysinternals\PSEXEC64.exe \\$server -s cmd /c c:\temp\wuinstall /reboot"
+             
+            
+            
+            #invoke-command -ComputerName $Server -ScriptBlock {C:\Windows\System32\cmd.exe c:\TEMP\Install_Reboot.cmd} |tee "D:\Repository\Working\Antonio\Windows_Update_Force_Patching\Logs\Windows_Update_log_$Server.txt"
+            $date = Get-date
+            
+
+            Write-Host "------------------------------";
+
+
+            }
+            else
+            {write-host "$Server can't be reached"
+            }
+
+            }
+
+            pause;
+            break
+        }
+        2 {
+
+                Clear-Host
+            Write-Host "------------------------------";
+            Write-Host "Checking and Installing + Reboot";
+                        foreach ($Server in $Servers) {
+
+            if ((Test-Path -Path \\$Server\$destination)) { #Comprobación de acceso
+
+            Copy-Item $Source -Destination \\$server\$destination -Recurse #Copia del script
+            echo "Log for $Server at $date on installing and Reboot Patches" >> "D:\Repository\Working\Antonio\Windows_Update_Force_Patching\Logs\Windows_Update_log_$Server.txt"
+            #Copy-Item $Install -Destination \\$server\$destination -Recurse
+            #cd "c:\admin\tools\Sysinternals"
+            $cmd = "D:\Repository\Working\Antonio\Windows_Update_Force_Patching\Source\PsExec64.exe \\$server -s cmd /c c:\temp\wuinstall /install /reboot"
+            start powershell.exe "cmd.exe /c $cmd >>  D:\Repository\Working\Antonio\Windows_Update_Force_Patching\Logs\Windows_Update_log_$Server.txt"
+            #echo $cmd | cmd.exe
+            #start-process "c:\admin\tools\Sysinternals\PSEXEC64.exe \\$server -s cmd /c c:\temp\wuinstall /reboot"
+             
+            
+            
+            #invoke-command -ComputerName $Server -ScriptBlock {C:\Windows\System32\cmd.exe c:\TEMP\Install_Reboot.cmd} |tee "D:\Repository\Working\Antonio\Windows_Update_Force_Patching\Logs\Windows_Update_log_$Server.txt"
+            $date = Get-date
+            
+
+            Write-Host "------------------------------";
+
+
+            }
+            else
+            {write-host "$Server can't be reached"
+            }
+
+            }
+            pause;
+            break
+        }
+
+
+            
+        3 {
+
+                   Clear-Host
+            Write-Host "------------------------------";
+            Write-Host "Cleaning Process";
+            
+            foreach ($Server in $Servers) {
+
+            if ((Test-Path -Path \\$Server\$destination)) { #Comprobación de acceso
+
+            Remove-item "\\$server\$destination\wuinstall.exe" -ErrorAction SilentlyContinue
+
+            Write-Host "-----Cleaning Complete-----";
+
+
+            }
+            else
+            {write-host "$Server can't be reached"
+            }
+
+            }
+            pause;
+            break
+            }
+
+        4 {"Exit" ; break}
+        default {Write-Host -ForegroundColor red -BackgroundColor white "Invalid option. Please select another option";pause}
+       
+    }
+
+showmenu
+}

@@ -1,0 +1,1 @@
+﻿$server_list = gc "

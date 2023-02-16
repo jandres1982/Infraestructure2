@@ -1,0 +1,2 @@
+msiexec.exe /quiet /norestart /x "c:\provision\SolarWind\Solarwinds_2172\SolarWinds-Agent.msi"
+msiexec.exe /i "c:\provision\SolarWind\Solarwinds_2172\SolarWinds-Agent.msi" TRANSFORMS="c:\provision\SolarWind\Solarwinds_2172\SolarWinds-Agent.mst" /quiet /norestart

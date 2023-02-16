@@ -3,7 +3,7 @@
     "contentVersion": "1.0.0.0",
     "parameters": {
         "name": {
-            "value": "log-prod-ondemand-01"
+            "value": "log-prod-ondemandassesment-01"
         },
         "location": {
             "value": "northeurope"

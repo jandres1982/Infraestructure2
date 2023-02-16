@@ -1,0 +1,3 @@
+rem robocopy \\deuwsr4001.global.schindler.com\data$\groups \\shhdna0010\DEU$\WES\data\groups /MIR /ZB /COPYALL /MT:100 /R:1 /W:0 /V /log:D:\Alb\COPY\Log\robGROUPS.log /TEE
+rem robocopy \\deuwsr4001.global.schindler.com\data$\pools \\shhdna0010\DEU$\WES\data\pools /MIR /ZB /COPYALL /MT:100 /R:1 /W:0 /V /log:D:\Alb\COPY\Log\robPOOLS.log /TEE
+robocopy \\deuwsr4001.global.schindler.com\data$\pools\OO \\shhdna0010\DEU$\WES\data\pools\OO /MIR /ZB /COPYALL /XD \\deuwsr4001.global.schindler.com\data$\pools\OO\Anlagen /MT:100 /R:1 /W:0 /V /log:D:\Alb\COPY\Log\robPOOLS_less00.log /TEE

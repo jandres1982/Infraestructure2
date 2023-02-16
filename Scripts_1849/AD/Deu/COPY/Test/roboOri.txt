@@ -1,0 +1,1 @@
+robocopy G:\trabajo\ \\shhdna0010\ESP$\Maa /MIR /COPYALL /MOT:60 /RH:2100-0700 /R:1 /W:0 /V /log:c:\copy\rob.log /TEE

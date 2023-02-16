@@ -1,0 +1,4 @@
+since PowerShell v3 was not installed yet on this server, we used tstshhwsr0012 temporarily instead.
+(The comminication is not bound to AD, so it makes no difference from where you use the cmdlets
+to administer the ILO)
+Tools are used to change the password of the ILO login (testet with netmon, runs over a secure connection)

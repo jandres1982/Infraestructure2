@@ -1,0 +1,68 @@
+﻿**********************
+Windows PowerShell transcript start
+Start time: 20200109153053
+Username: GLOBAL\admventoa1
+RunAs User: GLOBAL\admventoa1
+Configuration Name: 
+Machine: SHHWSR1849 (Microsoft Windows NT 10.0.17763.0)
+Host Application: C:\Windows\system32\WindowsPowerShell\v1.0\PowerShell_ISE.exe
+Process ID: 2212
+PSVersion: 5.1.17763.771
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.17763.771
+BuildVersion: 10.0.17763.771
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+Transcript started, output file is D:\Repository\Working\Antonio\Anti_Virus_Query_Task\Check_SERVER_SEP\Server_SEP_Log\Server_SEP_Log_15H_30M.txt
+##############################  secwsr9996 ###############################################
+
+
+secwsr9996 is not pingable
+##############################  secwsr9997 ###############################################
+
+
+secwsr9997 is not pingable
+##############################  secwsr1025 ###############################################
+
+
+secwsr1025 is not pingable
+##############################  deuwsr7002 ###############################################
+
+
+deuwsr7002 ping is good!
+deuwsr7002 SepMasterService found
+SEP version
+14.2.4814.1101
+ALL RIGHT! Version: 14.2.4814.1101
+deuwsr7002 RDP OK
+
+
+##############################  secwsr7010 ###############################################
+
+
+secwsr7010 is not pingable
+##############################  indwsr0018 ###############################################
+
+
+indwsr0018 is not pingable
+##############################  schwsr0078 ###############################################
+
+
+schwsr0078 is not pingable
+##############################  schwsr0044 ###############################################
+
+
+schwsr0044 is not pingable
+##############################  saowsr0069 ###############################################
+
+
+saowsr0069 ping is good!
+PS>TerminatingError(): "The pipeline has been stopped."
+>> TerminatingError(): "The pipeline has been stopped."
+**********************
+Windows PowerShell transcript end
+End time: 20200109153205
+**********************

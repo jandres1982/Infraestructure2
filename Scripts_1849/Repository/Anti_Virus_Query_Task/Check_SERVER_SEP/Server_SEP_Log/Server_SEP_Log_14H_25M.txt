@@ -1,0 +1,45 @@
+﻿**********************
+Windows PowerShell transcript start
+Start time: 20191122142504
+Username: GLOBAL\admventoa1
+RunAs User: GLOBAL\admventoa1
+Machine: SHHWSR0958 (Microsoft Windows NT 6.3.9600.0)
+Host Application: C:\Windows\System32\WindowsPowerShell\v1.0\powershell_ise.exe
+Process ID: 1460
+PSVersion: 5.1.14407.1003
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.14407.1003
+BuildVersion: 10.0.14407.1003
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+Transcript started, output file is D:\Repository\Working\Antonio\Anti_Virus_Query_Task\Check_SERVER_SEP\Server_SEP_Log\Server_SEP_Log_14H_25M.txt
+##############################  secwsr1156 ###############################################
+
+
+secwsr1156 is not pingable
+##############################  schwsr0044 ###############################################
+
+
+schwsr0044 is not pingable
+##############################  secwsr7010 ###############################################
+
+
+secwsr7010 is not pingable
+##############################  carwsr0034 ###############################################
+
+
+carwsr0034 ping is good!
+carwsr0034 SepMasterService found
+PS>TerminatingError(): "The pipeline has been stopped."
+>> TerminatingError(): "The pipeline has been stopped."
+PS C:\Windows\system32> Enter-PSSession carwsr0034
+PS C:\Windows\system32> TerminatingError(): "The pipeline has been stopped."
+>> TerminatingError(): "The pipeline has been stopped."
+PS C:\Windows\system32> Enter-PSSession scnwsr0004
+**********************
+Windows PowerShell transcript end
+End time: 20191122143212
+**********************

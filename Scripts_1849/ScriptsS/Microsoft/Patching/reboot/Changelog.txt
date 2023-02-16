@@ -1,0 +1,18 @@
+Script created by Patrick Mangold @ DC-SCC
+No changes to be documented till release 1 which comes with a short manual with all functions (should be available in Notes patchdocument)
+Release 1 finished name: reboot_logic_final_v5_1  17.9.2013
+Release 5_2 by Patrick Mangold:
+-Paths of the log- and sourcefiles are now relative to the location of the script
+-Removed old servers, with the status out of operation from script
+-Added more screenoutput for user for a better understanding which action the script is currently performing without the need to check the logfile every time
+
+Release 5_3
+-Now working with GLOBAL Servers on SHHWSR0025
+-Now supporting Powershell v.2 instead of only v.3
+-Improved "Stop Services" for v.2
+
+This script can be used for all servers, if they are specified with FQDN and the GLOBAL ADM Account which was specified needs to have Admin rights on them over SID
+
+Release 5_4
+-Now able to move logfiles to new subfolder with datestamp
+-Now able to delete a specified directory (eg. cleanup tasks)

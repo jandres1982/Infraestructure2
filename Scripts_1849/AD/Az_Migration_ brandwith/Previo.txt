@@ -1,0 +1,3 @@
+Crear la Politica de QoS
+
+New-NetQosPolicy -Name "ThrottleReplication" -AppPathNameMatchCondition "GatewayWindowsService.exe" -ThrottleRateActionBitsPerSecond 1MB

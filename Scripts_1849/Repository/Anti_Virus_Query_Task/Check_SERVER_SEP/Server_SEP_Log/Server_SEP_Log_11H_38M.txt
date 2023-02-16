@@ -1,0 +1,1144 @@
+﻿**********************
+Windows PowerShell transcript start
+Start time: 20191122113812
+Username: GLOBAL\admventoa1
+RunAs User: GLOBAL\admventoa1
+Machine: SHHWSR0958 (Microsoft Windows NT 6.3.9600.0)
+Host Application: C:\Windows\System32\WindowsPowerShell\v1.0\powershell_ise.exe
+Process ID: 5104
+PSVersion: 5.1.14407.1003
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.14407.1003
+BuildVersion: 10.0.14407.1003
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+Transcript started, output file is D:\Repository\Working\Antonio\Anti_Virus_Query_Task\Check_SERVER_SEP\Server_SEP_Log\Server_SEP_Log_11H_38M.txt
+##############################  ASMWSR0103 ###############################################
+
+
+ASMWSR0103 ping is good!
+ASMWSR0103 SepMasterService found
+SEP version
+14.0.3876.1100
+WARNING: SEP needs to be updated check
+WARNING: Pending reboot needed, probably waiting to apply the new version
+ASMWSR0103 RDP OK
+
+
+##############################  PARWSR9101 ###############################################
+
+
+PARWSR9101 ping is good!
+PARWSR9101 SepMasterService found
+SEP version
+14.0.3876.1100
+WARNING: SEP needs to be updated check
+PARWSR9101 RDP OK
+
+
+##############################  INDWSR0024 ###############################################
+
+
+INDWSR0024 ping is good!
+INDWSR0024 SepMasterService found
+SEP version
+14.0.3876.1100
+WARNING: SEP needs to be updated check
+INDWSR0024 RDP OK
+
+
+##############################  INDWSR0020 ###############################################
+
+
+INDWSR0020 ping is good!
+INDWSR0020 SepMasterService found
+[INDWSR0020] Connecting to remote server INDWSR0020 failed with the following error message : The WSMan service could 
+not launch a host process to process the given request.  Make sure the WSMan provider host server and proxy are 
+properly registered. For more information, see the about_Remote_Troubleshooting Help topic.
+    + CategoryInfo          : OpenError: (INDWSR0020:String) [], PSRemotingTransportException
+    + FullyQualifiedErrorId : 2,PSSessionStateBroken
+[INDWSR0020] Connecting to remote server INDWSR0020 failed with the following error message : The WSMan service could not launch a host process to process the
+given request.  Make sure the WSMan provider host server and proxy are properly registered. For more information, see the about_Remote_Troubleshooting Help
+topic.
+    + CategoryInfo          : OpenError: (INDWSR0020:String) [], PSRemotingTransportException
+    + FullyQualifiedErrorId : 2,PSSessionStateBroken
+SEP version
+Please check the SEP version
+INDWSR0020 RDP OK
+
+
+##############################  DEUWSR0023 ###############################################
+
+
+DEUWSR0023 ping is good!
+DEUWSR0023 SepMasterService found
+SEP version
+14.0.3876.1100
+WARNING: SEP needs to be updated check
+DEUWSR0023 RDP OK
+
+
+##############################  DEUWSR0031 ###############################################
+
+
+DEUWSR0031 ping is good!
+DEUWSR0031 SepMasterService found
+SEP version
+14.0.3876.1100
+WARNING: SEP needs to be updated check
+DEUWSR0031 RDP OK
+
+
+##############################  SHHWSR1857 ###############################################
+
+
+SHHWSR1857 is a DMZ or TSTGLOBAL Server
+##############################  SHHWSRCX1541 ###############################################
+
+
+SHHWSRCX1541 is not pingable
+##############################  SHHWSRCX1542 ###############################################
+
+
+SHHWSRCX1542 is not pingable
+##############################  SHHWSRCX1560 ###############################################
+
+
+SHHWSRCX1560 ping is good!
+SHHWSRCX1560 SepMasterService found
+SEP version
+14.2.1031.0100
+Please check the SEP version
+SHHWSRCX1560 RDP OK
+
+
+##############################  SHHWSRCX1561 ###############################################
+
+
+SHHWSRCX1561 ping is good!
+SHHWSRCX1561 SepMasterService found
+SEP version
+14.2.1031.0100
+Please check the SEP version
+SHHWSRCX1561 RDP OK
+
+
+##############################  SHHWSRCX1570 ###############################################
+
+
+SHHWSRCX1570 ping is good!
+SHHWSRCX1570 SepMasterService found
+SEP version
+14.2.1031.0100
+Please check the SEP version
+SHHWSRCX1570 RDP OK
+
+
+##############################  SHHWSRCX2050 ###############################################
+
+
+SHHWSRCX2050 ping is good!
+SHHWSRCX2050 SepMasterService found
+SEP version
+14.2.1031.0100
+Please check the SEP version
+SHHWSRCX2050 RDP OK
+
+
+##############################  SHHWSRCX1031 ###############################################
+
+
+SHHWSRCX1031 is not pingable
+##############################  SHHWSRCX2051 ###############################################
+
+
+SHHWSRCX2051 ping is good!
+SHHWSRCX2051 SepMasterService found
+SEP version
+14.2.1031.0100
+Please check the SEP version
+SHHWSRCX2051 RDP OK
+
+
+##############################  SHHWSRCX2052 ###############################################
+
+
+SHHWSRCX2052 ping is good!
+SHHWSRCX2052 SepMasterService found
+SEP version
+14.2.1031.0100
+Please check the SEP version
+SHHWSRCX2052 RDP OK
+
+
+##############################  SHHWSRCX2053 ###############################################
+
+
+SHHWSRCX2053 ping is good!
+SHHWSRCX2053 SepMasterService found
+SEP version
+14.2.1031.0100
+Please check the SEP version
+SHHWSRCX2053 RDP OK
+
+
+##############################  SHHWSRCX2054 ###############################################
+
+
+SHHWSRCX2054 ping is good!
+SHHWSRCX2054 SepMasterService found
+SEP version
+14.2.1031.0100
+Please check the SEP version
+SHHWSRCX2054 RDP OK
+
+
+##############################  SHHWSRCX2055 ###############################################
+
+
+SHHWSRCX2055 ping is good!
+SHHWSRCX2055 SepMasterService found
+SEP version
+14.2.1031.0100
+Please check the SEP version
+SHHWSRCX2055 RDP OK
+
+
+##############################  SHHWSRCX2056 ###############################################
+
+
+SHHWSRCX2056 ping is good!
+SHHWSRCX2056 SepMasterService found
+SEP version
+14.2.1031.0100
+Please check the SEP version
+SHHWSRCX2056 RDP OK
+
+
+##############################  SHHWSRCX2057 ###############################################
+
+
+SHHWSRCX2057 ping is good!
+SHHWSRCX2057 SepMasterService found
+SEP version
+14.2.1031.0100
+Please check the SEP version
+SHHWSRCX2057 RDP OK
+
+
+##############################  SHHWSRCX2058 ###############################################
+
+
+SHHWSRCX2058 ping is good!
+SHHWSRCX2058 SepMasterService found
+SEP version
+14.2.1031.0100
+Please check the SEP version
+SHHWSRCX2058 RDP OK
+
+
+##############################  SHHWSRCX1571 ###############################################
+
+
+SHHWSRCX1571 ping is good!
+SHHWSRCX1571 SepMasterService found
+SEP version
+14.2.1031.0100
+Please check the SEP version
+SHHWSRCX1571 RDP OK
+
+
+##############################  SHHWSRCX0148 ###############################################
+
+
+SHHWSRCX0148 ping is good!
+SHHWSRCX0148 SepMasterService found
+SEP version
+14.2.4814.1101
+ALL RIGHT! Version: 14.2.4814.1101
+SHHWSRCX0148 RDP OK
+
+
+##############################  SHHWSRCX0139 ###############################################
+
+
+SHHWSRCX0139 is not pingable
+##############################  SHHWSRCX0146 ###############################################
+
+
+SHHWSRCX0146 ping is good!
+SHHWSRCX0146 SepMasterService found
+SEP version
+14.2.4814.1101
+ALL RIGHT! Version: 14.2.4814.1101
+SHHWSRCX0146 RDP OK
+
+
+##############################  SEDWSR0105 ###############################################
+
+
+SEDWSR0105 ping is good!
+SEDWSR0105 SepMasterService found
+SEP version
+14.0.3876.1100
+WARNING: SEP needs to be updated check
+WARNING: Pending reboot needed, probably waiting to apply the new version
+SEDWSR0105 RDP OK
+
+
+##############################  SEDWSR0107 ###############################################
+
+
+SEDWSR0107 ping is good!
+Please check SEDWSR0107 SepMasterService not found
+WARNING: Pending reboot needed, probably waiting to apply the new version
+SEDWSR0107 RDP OK
+
+
+##############################  SEDWSR0108 ###############################################
+
+
+SEDWSR0108 ping is good!
+Please check SEDWSR0108 SepMasterService not found
+WARNING: Pending reboot needed, probably waiting to apply the new version
+SEDWSR0108 RDP OK
+
+
+##############################  SHHWSR0023 ###############################################
+
+
+SHHWSR0023 is not pingable
+##############################  SHHWSR0032 ###############################################
+
+
+SHHWSR0032 is not pingable
+##############################  SHHWSR0158 ###############################################
+
+
+SHHWSR0158 is not pingable
+##############################  SHHWSR0414 ###############################################
+
+
+SHHWSR0414 is not pingable
+##############################  SHHWSRCX0147 ###############################################
+
+
+SHHWSRCX0147 ping is good!
+SHHWSRCX0147 SepMasterService found
+SEP version
+14.2.4814.1101
+ALL RIGHT! Version: 14.2.4814.1101
+SHHWSRCX0147 RDP OK
+
+
+##############################  SHHWSR1027 ###############################################
+
+
+SHHWSR1027 is not pingable
+##############################  SHHWSR1221 ###############################################
+
+
+SHHWSR1221 is not pingable
+##############################  SHHWSR1223 ###############################################
+
+
+SHHWSR1223 is not pingable
+##############################  SHHWSR1235 ###############################################
+
+
+SHHWSR1235 is a DMZ or TSTGLOBAL Server
+##############################  SHHWSR1858 ###############################################
+
+
+SHHWSR1858 ping is good!
+SHHWSR1858 SepMasterService found
+SEP version
+14.0.3876.1100
+WARNING: SEP needs to be updated check
+WARNING: Pending reboot needed, probably waiting to apply the new version
+SHHWSR1858 RDP OK
+
+
+##############################  SHHWSRCX0131 ###############################################
+
+
+SHHWSRCX0131 is not pingable
+##############################  SHHWSRCX0132 ###############################################
+
+
+SHHWSRCX0132 is not pingable
+##############################  SHHWSRCX0145 ###############################################
+
+
+SHHWSRCX0145 ping is good!
+SHHWSRCX0145 SepMasterService found
+SEP version
+14.2.4814.1101
+ALL RIGHT! Version: 14.2.4814.1101
+SHHWSRCX0145 RDP OK
+
+
+##############################  SHHWSR1028 ###############################################
+
+
+SHHWSR1028 ping is good!
+SHHWSR1028 SepMasterService found
+SEP version
+14.0.3876.1100
+WARNING: SEP needs to be updated check
+WARNING: Pending reboot needed, probably waiting to apply the new version
+SHHWSR1028 RDP OK
+
+
+##############################  SHHWSRCX2059 ###############################################
+
+
+SHHWSRCX2059 ping is good!
+SHHWSRCX2059 SepMasterService found
+SEP version
+14.2.1031.0100
+Please check the SEP version
+SHHWSRCX2059 RDP OK
+
+
+##############################  SHHWSRCX2061 ###############################################
+
+
+SHHWSRCX2061 ping is good!
+SHHWSRCX2061 SepMasterService found
+SEP version
+14.2.1031.0100
+Please check the SEP version
+SHHWSRCX2061 RDP OK
+
+
+##############################  SEDWSR0102 ###############################################
+
+
+SEDWSR0102 ping is good!
+SEDWSR0102 SepMasterService found
+SEP version
+14.2.4814.1101
+ALL RIGHT! Version: 14.2.4814.1101
+SEDWSR0102 RDP OK
+
+
+##############################  SHHWSRCX2159 ###############################################
+
+
+SHHWSRCX2159 is not pingable
+##############################  SHHWSRCX2160 ###############################################
+
+
+SHHWSRCX2160 is not pingable
+##############################  SHHWSRCX2161 ###############################################
+
+
+SHHWSRCX2161 is not pingable
+##############################  SHHWSRCX2162 ###############################################
+
+
+SHHWSRCX2162 is not pingable
+##############################  SHHWSRCX2163 ###############################################
+
+
+SHHWSRCX2163 is not pingable
+##############################  SHHWSRCX2240 ###############################################
+
+
+SHHWSRCX2240 ping is good!
+SHHWSRCX2240 SepMasterService found
+SEP version
+14.2.1031.0100
+Please check the SEP version
+SHHWSRCX2240 RDP OK
+
+
+##############################  SHHWSRCX2241 ###############################################
+
+
+SHHWSRCX2241 ping is good!
+SHHWSRCX2241 SepMasterService found
+SEP version
+14.2.1031.0100
+Please check the SEP version
+SHHWSRCX2241 RDP OK
+
+
+##############################  SHHWSRCX2158 ###############################################
+
+
+SHHWSRCX2158 is not pingable
+##############################  SHHWSRCX2242 ###############################################
+
+
+SHHWSRCX2242 ping is good!
+SHHWSRCX2242 SepMasterService found
+SEP version
+14.2.1031.0100
+Please check the SEP version
+SHHWSRCX2242 RDP OK
+
+
+##############################  SHHWSRCX2244 ###############################################
+
+
+SHHWSRCX2244 ping is good!
+SHHWSRCX2244 SepMasterService found
+SEP version
+14.2.1031.0100
+Please check the SEP version
+SHHWSRCX2244 RDP OK
+
+
+##############################  SLOWSR0003 ###############################################
+
+
+SLOWSR0003 is not pingable
+##############################  SSEWSR0001 ###############################################
+
+
+SSEWSR0001 is not pingable
+##############################  SSEWSR0003 ###############################################
+
+
+SSEWSR0003 is not pingable
+##############################  WIN-HP3E6KNRFMF ###############################################
+
+
+WIN-HP3E6KNRFMF is not pingable
+##############################  ZZZWSR1132 ###############################################
+
+
+ZZZWSR1132 is not pingable
+##############################  ZZZWSR1230 ###############################################
+
+
+ZZZWSR1230 is not pingable
+##############################  SHHWSRCX2243 ###############################################
+
+
+SHHWSRCX2243 ping is good!
+SHHWSRCX2243 SepMasterService found
+SEP version
+14.2.1031.0100
+Please check the SEP version
+SHHWSRCX2243 RDP OK
+
+
+##############################  SHHWSRCX2060 ###############################################
+
+
+SHHWSRCX2060 ping is good!
+SHHWSRCX2060 SepMasterService found
+SEP version
+14.2.1031.0100
+Please check the SEP version
+SHHWSRCX2060 RDP OK
+
+
+##############################  SHHWSRCX2157 ###############################################
+
+
+SHHWSRCX2157 is not pingable
+##############################  SHHWSRCX2155 ###############################################
+
+
+SHHWSRCX2155 is not pingable
+##############################  SHHWSRCX2062 ###############################################
+
+
+SHHWSRCX2062 ping is good!
+SHHWSRCX2062 SepMasterService found
+SEP version
+14.2.1031.0100
+Please check the SEP version
+SHHWSRCX2062 RDP OK
+
+
+##############################  SHHWSRCX2063 ###############################################
+
+
+SHHWSRCX2063 ping is good!
+SHHWSRCX2063 SepMasterService found
+SEP version
+14.2.1031.0100
+Please check the SEP version
+SHHWSRCX2063 RDP OK
+
+
+##############################  SHHWSRCX2064 ###############################################
+
+
+SHHWSRCX2064 ping is good!
+SHHWSRCX2064 SepMasterService found
+SEP version
+14.2.1031.0100
+Please check the SEP version
+SHHWSRCX2064 RDP OK
+
+
+##############################  SHHWSRCX2065 ###############################################
+
+
+SHHWSRCX2065 ping is good!
+SHHWSRCX2065 SepMasterService found
+SEP version
+14.2.1031.0100
+Please check the SEP version
+SHHWSRCX2065 RDP OK
+
+
+##############################  SHHWSRCX2066 ###############################################
+
+
+SHHWSRCX2066 ping is good!
+SHHWSRCX2066 SepMasterService found
+SEP version
+14.2.1031.0100
+Please check the SEP version
+SHHWSRCX2066 RDP OK
+
+
+##############################  SHHWSRCX2067 ###############################################
+
+
+SHHWSRCX2067 ping is good!
+SHHWSRCX2067 SepMasterService found
+SEP version
+14.2.1031.0100
+Please check the SEP version
+SHHWSRCX2067 RDP OK
+
+
+##############################  SHHWSRCX2131 ###############################################
+
+
+SHHWSRCX2131 is not pingable
+##############################  SHHWSRCX2156 ###############################################
+
+
+SHHWSRCX2156 is not pingable
+##############################  SHHWSRCX2132 ###############################################
+
+
+SHHWSRCX2132 is not pingable
+##############################  SHHWSRCX2134 ###############################################
+
+
+SHHWSRCX2134 is not pingable
+##############################  SHHWSRCX2135 ###############################################
+
+
+SHHWSRCX2135 is not pingable
+##############################  SHHWSRCX2150 ###############################################
+
+
+SHHWSRCX2150 is not pingable
+##############################  SHHWSRCX2151 ###############################################
+
+
+SHHWSRCX2151 is not pingable
+##############################  SHHWSRCX2152 ###############################################
+
+
+SHHWSRCX2152 is not pingable
+##############################  SHHWSRCX2153 ###############################################
+
+
+SHHWSRCX2153 is not pingable
+##############################  SHHWSRCX2154 ###############################################
+
+
+SHHWSRCX2154 is not pingable
+##############################  SHHWSRCX2133 ###############################################
+
+
+SHHWSRCX2133 is not pingable
+##############################  SEDWSR0027 ###############################################
+
+
+SEDWSR0027 ping is good!
+Please check SEDWSR0027 SepMasterService not found
+WARNING: Pending reboot needed, probably waiting to apply the new version
+SEDWSR0027 RDP OK
+
+
+##############################  SEDWSR0014 ###############################################
+
+
+SEDWSR0014 ping is good!
+SEDWSR0014 SepMasterService found
+SEP version
+14.2.4814.1101
+ALL RIGHT! Version: 14.2.4814.1101
+SEDWSR0014 RDP OK
+
+
+##############################  SEDWSR0013 ###############################################
+
+
+SEDWSR0013 ping is good!
+SEDWSR0013 SepMasterService found
+SEP version
+14.0.3876.1100
+WARNING: SEP needs to be updated check
+WARNING: Pending reboot needed, probably waiting to apply the new version
+SEDWSR0013 RDP OK
+
+
+##############################  JNBWSR0021 ###############################################
+
+
+JNBWSR0021 is not pingable
+##############################  JSGWSR0002 ###############################################
+
+
+JSGWSR0002 is not pingable
+##############################  JSGWSR0007 ###############################################
+
+
+JSGWSR0007 is not pingable
+##############################  JSGWSR0008 ###############################################
+
+
+JSGWSR0008 is not pingable
+##############################  JSGWSR0013 ###############################################
+
+
+JSGWSR0013 is not pingable
+##############################  JSGWSR0015 ###############################################
+
+
+JSGWSR0015 is not pingable
+##############################  JSGWSR0027 ###############################################
+
+
+JSGWSR0027 is not pingable
+##############################  JNBWSR0006 ###############################################
+
+
+JNBWSR0006 is not pingable
+##############################  JSGWSR0036 ###############################################
+
+
+JSGWSR0036 is not pingable
+##############################  LIMWSR0016 ###############################################
+
+
+LIMWSR0016 is not pingable
+##############################  MEXWSR0117 ###############################################
+
+
+MEXWSR0117 is not pingable
+##############################  MEXWSR0120 ###############################################
+
+
+MEXWSR0120 ping is good!
+MEXWSR0120 SepMasterService found
+SEP version
+14.0.3876.1100
+WARNING: SEP needs to be updated check
+WARNING: Pending reboot needed, probably waiting to apply the new version
+MEXWSR0120 RDP OK
+
+
+##############################  MILWSR0004 ###############################################
+
+
+MILWSR0004 is not pingable
+##############################  MILWSR0105 ###############################################
+
+
+MILWSR0105 is not pingable
+##############################  PARWSR9015 ###############################################
+
+
+PARWSR9015 is not pingable
+##############################  REBWSR0006 ###############################################
+
+
+REBWSR0006 is not pingable
+##############################  LIMWSR0005 ###############################################
+
+
+LIMWSR0005 is not pingable
+##############################  ZZZWSR1236 ###############################################
+
+
+ZZZWSR1236 is not pingable
+##############################  JKTWSR1001 ###############################################
+
+
+JKTWSR1001 is not pingable
+##############################  ISTWSR0008 ###############################################
+
+
+ISTWSR0008 is not pingable
+##############################  CAIWSR0004 ###############################################
+
+
+CAIWSR0004 is not pingable
+##############################  CARWSR1050 ###############################################
+
+
+CARWSR1050 is not pingable
+##############################  DESWSR0003 ###############################################
+
+
+DESWSR0003 is not pingable
+##############################  DESWSR0009 ###############################################
+
+
+DESWSR0009 is not pingable
+##############################  DEUWSR0008 ###############################################
+
+
+DEUWSR0008 is not pingable
+##############################  DEUWSR0043 ###############################################
+
+
+DEUWSR0043 is not pingable
+##############################  DEUWSR7002 ###############################################
+
+
+DEUWSR7002 is not pingable
+##############################  JEDWSR0004 ###############################################
+
+
+JEDWSR0004 is not pingable
+##############################  DSWWSR0001 ###############################################
+
+
+DSWWSR0001 is not pingable
+##############################  DSWWSR0105 ###############################################
+
+
+DSWWSR0105 is not pingable
+##############################  INDW0001 ###############################################
+
+
+INDW0001 is not pingable
+##############################  INDWSR0012 ###############################################
+
+
+INDWSR0012 ping is good!
+INDWSR0012 SepMasterService found
+SEP version
+14.0.3876.1100
+WARNING: SEP needs to be updated check
+WARNING: Pending reboot needed, probably waiting to apply the new version
+INDWSR0012 RDP OK
+
+
+##############################  INDWSR0018 ###############################################
+
+
+INDWSR0018 is not pingable
+##############################  INDWSR0048 ###############################################
+
+
+INDWSR0048 is not pingable
+##############################  INDWSR0049 ###############################################
+
+
+INDWSR0049 is not pingable
+##############################  INDWSR0060 ###############################################
+
+
+INDWSR0060 is not pingable
+##############################  DSWWSR0003 ###############################################
+
+
+DSWWSR0003 is not pingable
+##############################  SAOWSR0001 ###############################################
+
+
+SAOWSR0001 is not pingable
+##############################  REBWSR0009 ###############################################
+
+
+REBWSR0009 is not pingable
+##############################  SECWSR1155 ###############################################
+
+
+SECWSR1155 is not pingable
+##############################  SECWSR1113 ###############################################
+
+
+SECWSR1113 is not pingable
+##############################  SAOWSR0093 ###############################################
+
+
+SAOWSR0093 is not pingable
+##############################  SECWSR1156 ###############################################
+
+
+SECWSR1156 is not pingable
+##############################  SECWSR1518 ###############################################
+
+
+SECWSR1518 ping is good!
+Please check SECWSR1518 SepMasterService not found
+SECWSR1518 RDP OK
+
+
+##############################  SECWSR1521 ###############################################
+
+
+SECWSR1521 is not pingable
+##############################  SECWSR7006 ###############################################
+
+
+SECWSR7006 is not pingable
+##############################  SECWSR7008 ###############################################
+
+
+SECWSR7008 is not pingable
+##############################  SECWSR7010 ###############################################
+
+
+SECWSR7010 is not pingable
+##############################  SECWSR8006 ###############################################
+
+
+SECWSR8006 is not pingable
+##############################  SECWSR8019 ###############################################
+
+
+SECWSR8019 is not pingable
+##############################  SECWSR8206 ###############################################
+
+
+SECWSR8206 is not pingable
+##############################  SECWSR9996 ###############################################
+
+
+SECWSR9996 is not pingable
+##############################  SECWSR9997 ###############################################
+
+
+SECWSR9997 ping is good!
+Please check SECWSR9997 SepMasterService not found
+SECWSR9997 RDP OK
+
+
+##############################  SEDWSR0006 ###############################################
+
+
+SEDWSR0006 ping is good!
+SEDWSR0006 SepMasterService found
+SEP version
+14.0.3876.1100
+WARNING: SEP needs to be updated check
+WARNING: Pending reboot needed, probably waiting to apply the new version
+SEDWSR0006 RDP OK
+
+
+##############################  SEDWSR0012 ###############################################
+
+
+SEDWSR0012 ping is good!
+SEDWSR0012 SepMasterService found
+SEP version
+14.0.3876.1100
+WARNING: SEP needs to be updated check
+WARNING: Pending reboot needed, probably waiting to apply the new version
+SEDWSR0012 RDP OK
+
+
+##############################  SECWSR1078 ###############################################
+
+
+SECWSR1078 is not pingable
+##############################  SECWSR1077 ###############################################
+
+
+SECWSR1077 is not pingable
+##############################  ZZZWSR1237 ###############################################
+
+
+ZZZWSR1237 is not pingable
+##############################  SECWSR1075 ###############################################
+
+
+SECWSR1075 is not pingable
+##############################  SAOWSR0112 ###############################################
+
+
+SAOWSR0112 is not pingable
+##############################  SAOWSR0183 ###############################################
+
+
+SAOWSR0183 is not pingable
+##############################  SCHWSR0005 ###############################################
+
+
+SCHWSR0005 is not pingable
+##############################  SCHWSR0006 ###############################################
+
+
+SCHWSR0006 is not pingable
+##############################  SCHWSR0044 ###############################################
+
+
+SCHWSR0044 is not pingable
+##############################  SECWSR1076 ###############################################
+
+
+SECWSR1076 is not pingable
+##############################  SECWM090 ###############################################
+
+
+SECWM090 is not pingable
+##############################  SECWSR0175 ###############################################
+
+
+SECWSR0175 is not pingable
+##############################  SCHWSR0078 ###############################################
+
+
+SCHWSR0078 is not pingable
+##############################  SECWSR0203 ###############################################
+
+
+SECWSR0203 is not pingable
+##############################  SECWSR0215 ###############################################
+
+
+SECWSR0215 is not pingable
+##############################  SECWSR1025 ###############################################
+
+
+SECWSR1025 is not pingable
+##############################  SECWSR1038 ###############################################
+
+
+SECWSR1038 is not pingable
+##############################  SECWSR1039 ###############################################
+
+
+SECWSR1039 is not pingable
+##############################  SECWSR1052 ###############################################
+
+
+SECWSR1052 is not pingable
+##############################  SECWSR0176 ###############################################
+
+
+SECWSR0176 is not pingable
+##############################  DOHWSR0003 ###############################################
+
+
+DOHWSR0003 ping is good!
+DOHWSR0003 SepMasterService found
+SEP version
+14.0.3876.1100
+WARNING: SEP needs to be updated check
+WARNING: Pending reboot needed, probably waiting to apply the new version
+DOHWSR0003 RDP OK
+
+
+##############################  SECWSR7002 ###############################################
+
+
+SECWSR7002 ping is good!
+SECWSR7002 SepMasterService found
+SEP version
+14.0.3876.1100
+WARNING: SEP needs to be updated check
+WARNING: Pending reboot needed, probably waiting to apply the new version
+SECWSR7002 RDP OK
+
+
+##############################  SHHWSR0235 ###############################################
+
+
+SHHWSR0235 ping is good!
+SHHWSR0235 SepMasterService found
+SEP version
+14.0.3876.1100
+WARNING: SEP needs to be updated check
+WARNING: Pending reboot needed, probably waiting to apply the new version
+SHHWSR0235 RDP OK
+
+
+##############################  SHHWSR0153 ###############################################
+
+
+SHHWSR0153 ping is good!
+SHHWSR0153 SepMasterService found
+SEP version
+14.0.3876.1100
+WARNING: SEP needs to be updated check
+WARNING: Pending reboot needed, probably waiting to apply the new version
+SHHWSR0153 RDP OK
+
+
+##############################  SHHWSR0074 ###############################################
+
+
+SHHWSR0074 ping is good!
+SHHWSR0074 SepMasterService found
+SEP version
+14.0.3876.1100
+WARNING: SEP needs to be updated check
+WARNING: Pending reboot needed, probably waiting to apply the new version
+SHHWSR0074 RDP OK
+
+
+##############################  PARWSR0033 ###############################################
+
+
+PARWSR0033 ping is good!
+PARWSR0033 SepMasterService found
+SEP version
+14.0.3876.1100
+WARNING: SEP needs to be updated check
+WARNING: Pending reboot needed, probably waiting to apply the new version
+PARWSR0033 RDP OK
+
+
+##############################  UKRWSR0101 ###############################################
+
+
+UKRWSR0101 ping is good!
+UKRWSR0101 SepMasterService found
+SEP version
+14.0.3876.1100
+WARNING: SEP needs to be updated check
+WARNING: Pending reboot needed, probably waiting to apply the new version
+UKRWSR0101 RDP OK
+
+
+##############################  WIFWSR0018 ###############################################
+
+
+WIFWSR0018 ping is good!
+WIFWSR0018 SepMasterService found
+SEP version
+14.0.3876.1100
+WARNING: SEP needs to be updated check
+WARNING: Pending reboot needed, probably waiting to apply the new version
+WIFWSR0018 RDP OK
+
+
+##############################  SAOWSR0078 ###############################################
+
+
+SAOWSR0078 ping is good!
+SAOWSR0078 SepMasterService found
+SEP version
+14.0.3876.1100
+WARNING: SEP needs to be updated check
+WARNING: Pending reboot needed, probably waiting to apply the new version
+SAOWSR0078 RDP OK
+
+
+**********************
+Windows PowerShell transcript end
+End time: 20191122114920
+**********************

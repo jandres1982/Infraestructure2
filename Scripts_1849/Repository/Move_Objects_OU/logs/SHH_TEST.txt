@@ -1,0 +1,776 @@
+=
+no 001
+=
+no 001
+=
+no 001
+Get-ADComputer : Cannot find an object with identity: 'shhwsr0012  ' under: 'DC=global,DC=schindler,DC=com'.
+At D:\Repository\Working\Antonio\Move_Objects_OU\Move_Objects_OU_KG_SHH.ps1:8 char:15
++ $Current_OU = Get-ADComputer -identity $server -Property * | Select-S ...
++               ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (shhwsr0012  :ADComputer) [Get-ADComputer], ADIdentityNotFoundException
+    + FullyQualifiedErrorId : ActiveDirectoryCmdlet:Microsoft.ActiveDirectory.Management.ADIdentityNotFoundException,Microsoft.ActiveDi 
+   rectory.Management.Commands.GetADComputer
+ 
+=
+no 001
+Get-ADComputer : Cannot find an object with identity: 'shhwsr0021  ' under: 'DC=global,DC=schindler,DC=com'.
+At D:\Repository\Working\Antonio\Move_Objects_OU\Move_Objects_OU_KG_SHH.ps1:8 char:15
++ $Current_OU = Get-ADComputer -identity $server -Property * | Select-S ...
++               ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (shhwsr0021  :ADComputer) [Get-ADComputer], ADIdentityNotFoundException
+    + FullyQualifiedErrorId : ActiveDirectoryCmdlet:Microsoft.ActiveDirectory.Management.ADIdentityNotFoundException,Microsoft.ActiveDi 
+   rectory.Management.Commands.GetADComputer
+ 
+=
+no 001
+-------------------------------------- Server OU movement --------------------------------------------
+shhwsr0025 is in the CN=SHHWSR0025,OU=SHH,OU=0000,OU=001,OU=Servers,OU=NBI12,DC=global,DC=schindler,DC=com
+The server shhwsr0025 is in the new OU = CN=shhwsr0025,OU=000,OU=Servers,OU=NBI12,DC=global,DC=schindler,DC=com
+-------------------------------------- Server Moved --------------------------------------------------
+-------------------------------------- Server OU movement --------------------------------------------
+shhwsr0038 is in the CN=SHHWSR0038,OU=SHH,OU=0000,OU=001,OU=Servers,OU=NBI12,DC=global,DC=schindler,DC=com
+The server shhwsr0038 is in the new OU = CN=shhwsr0038,OU=000,OU=Servers,OU=NBI12,DC=global,DC=schindler,DC=com
+-------------------------------------- Server Moved --------------------------------------------------
+-------------------------------------- Server OU movement --------------------------------------------
+shhwsr0039 is in the CN=SHHWSR0039,OU=SHH,OU=0000,OU=001,OU=Servers,OU=NBI12,DC=global,DC=schindler,DC=com
+The server shhwsr0039 is in the new OU = CN=shhwsr0039,OU=000,OU=Servers,OU=NBI12,DC=global,DC=schindler,DC=com
+-------------------------------------- Server Moved --------------------------------------------------
+-------------------------------------- Server OU movement --------------------------------------------
+shhwsr0040 is in the CN=SHHWSR0040,OU=SHH,OU=0000,OU=001,OU=Servers,OU=NBI12,DC=global,DC=schindler,DC=com
+The server shhwsr0040 is in the new OU = CN=shhwsr0040,OU=000,OU=Servers,OU=NBI12,DC=global,DC=schindler,DC=com
+-------------------------------------- Server Moved --------------------------------------------------
+-------------------------------------- Server OU movement --------------------------------------------
+shhwsr0041 is in the CN=SHHWSR0041,OU=SHH,OU=0000,OU=001,OU=Servers,OU=NBI12,DC=global,DC=schindler,DC=com
+The server shhwsr0041 is in the new OU = CN=shhwsr0041,OU=000,OU=Servers,OU=NBI12,DC=global,DC=schindler,DC=com
+-------------------------------------- Server Moved --------------------------------------------------
+-------------------------------------- Server OU movement --------------------------------------------
+shhwsr0042 is in the CN=SHHWSR0042,OU=SHH,OU=0000,OU=001,OU=Servers,OU=NBI12,DC=global,DC=schindler,DC=com
+The server shhwsr0042 is in the new OU = CN=shhwsr0042,OU=000,OU=Servers,OU=NBI12,DC=global,DC=schindler,DC=com
+-------------------------------------- Server Moved --------------------------------------------------
+-------------------------------------- Server OU movement --------------------------------------------
+shhwsr0053 is in the CN=SHHWSR0053,OU=SHH,OU=0000,OU=001,OU=Servers,OU=NBI12,DC=global,DC=schindler,DC=com
+The server shhwsr0053 is in the new OU = CN=shhwsr0053,OU=000,OU=Servers,OU=NBI12,DC=global,DC=schindler,DC=com
+-------------------------------------- Server Moved --------------------------------------------------
+-------------------------------------- Server OU movement --------------------------------------------
+shhwsr0054 is in the CN=SHHWSR0054,OU=SHH,OU=0000,OU=001,OU=Servers,OU=NBI12,DC=global,DC=schindler,DC=com
+The server shhwsr0054 is in the new OU = CN=shhwsr0054,OU=000,OU=Servers,OU=NBI12,DC=global,DC=schindler,DC=com
+-------------------------------------- Server Moved --------------------------------------------------
+-------------------------------------- Server OU movement --------------------------------------------
+shhwsr0055 is in the CN=SHHWSR0055,OU=SHH,OU=0000,OU=001,OU=Servers,OU=NBI12,DC=global,DC=schindler,DC=com
+The server shhwsr0055 is in the new OU = CN=shhwsr0055,OU=000,OU=Servers,OU=NBI12,DC=global,DC=schindler,DC=com
+-------------------------------------- Server Moved --------------------------------------------------
+-------------------------------------- Server OU movement --------------------------------------------
+shhwsr0060 is in the CN=SHHWSR0060,OU=SHH,OU=0000,OU=001,OU=Servers,OU=NBI12,DC=global,DC=schindler,DC=com
+The server shhwsr0060 is in the new OU = CN=shhwsr0060,OU=000,OU=Servers,OU=NBI12,DC=global,DC=schindler,DC=com
+-------------------------------------- Server Moved --------------------------------------------------
+-------------------------------------- Server OU movement --------------------------------------------
+shhwsr0061 is in the CN=SHHWSR0061,OU=SHH,OU=0000,OU=001,OU=Servers,OU=NBI12,DC=global,DC=schindler,DC=com
+The server shhwsr0061 is in the new OU = CN=shhwsr0061,OU=000,OU=Servers,OU=NBI12,DC=global,DC=schindler,DC=com
+-------------------------------------- Server Moved --------------------------------------------------
+-------------------------------------- Server OU movement --------------------------------------------
+shhwsr0066 is in the CN=SHHWSR0066,OU=SHH,OU=0000,OU=001,OU=Servers,OU=NBI12,DC=global,DC=schindler,DC=com
+The server shhwsr0066 is in the new OU = CN=shhwsr0066,OU=000,OU=Servers,OU=NBI12,DC=global,DC=schindler,DC=com
+-------------------------------------- Server Moved --------------------------------------------------
+Get-ADComputer : Cannot find an object with identity: 'shhwsr0069' under: 'DC=global,DC=schindler,DC=com'.
+At D:\Repository\Working\Antonio\Move_Objects_OU\Move_Objects_OU_KG_SHH.ps1:8 char:15
++ $Current_OU = Get-ADComputer -identity $server -Property * | Select-S ...
++               ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (shhwsr0069:ADComputer) [Get-ADComputer], ADIdentityNotFoundException
+    + FullyQualifiedErrorId : ActiveDirectoryCmdlet:Microsoft.ActiveDirectory.Management.ADIdentityNotFoundException,Microsoft.ActiveDi 
+   rectory.Management.Commands.GetADComputer
+ 
+-------------------------------------- Server OU movement --------------------------------------------
+shhwsr0069 is in the CN=SHHWSR0066,OU=SHH,OU=0000,OU=001,OU=Servers,OU=NBI12,DC=global,DC=schindler,DC=com
+Move-ADObject : Directory object not found
+At D:\Repository\Working\Antonio\Move_Objects_OU\Move_Objects_OU_KG_SHH.ps1:15 char:1
++ Move-ADObject -Identity "CN=$Server,OU=SHH,OU=0000,OU=001,OU=Servers, ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (CN=shhwsr0069,O...chindler,DC=com:ADObject) [Move-ADObject], ADIdentityNotFoundException
+    + FullyQualifiedErrorId : ActiveDirectoryCmdlet:Microsoft.ActiveDirectory.Management.ADIdentityNotFoundException,Microsoft.ActiveDi 
+   rectory.Management.Commands.MoveADObject
+ 
+Get-ADComputer : Cannot find an object with identity: 'shhwsr0069' under: 'DC=global,DC=schindler,DC=com'.
+At D:\Repository\Working\Antonio\Move_Objects_OU\Move_Objects_OU_KG_SHH.ps1:16 char:11
++ $New_OU = Get-ADComputer -identity $server -Property * | Select-Strin ...
++           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (shhwsr0069:ADComputer) [Get-ADComputer], ADIdentityNotFoundException
+    + FullyQualifiedErrorId : ActiveDirectoryCmdlet:Microsoft.ActiveDirectory.Management.ADIdentityNotFoundException,Microsoft.ActiveDi 
+   rectory.Management.Commands.GetADComputer
+ 
+The server shhwsr0069 is in the new OU = CN=shhwsr0066,OU=000,OU=Servers,OU=NBI12,DC=global,DC=schindler,DC=com
+-------------------------------------- Server Moved --------------------------------------------------
+-------------------------------------- Server OU movement --------------------------------------------
+shhwsr0072 is in the CN=SHHWSR0072,OU=SHH,OU=0000,OU=001,OU=Servers,OU=NBI12,DC=global,DC=schindler,DC=com
+The server shhwsr0072 is in the new OU = CN=shhwsr0072,OU=000,OU=Servers,OU=NBI12,DC=global,DC=schindler,DC=com
+-------------------------------------- Server Moved --------------------------------------------------
+-------------------------------------- Server OU movement --------------------------------------------
+shhwsr0073 is in the CN=SHHWSR0073,OU=SHH,OU=0000,OU=001,OU=Servers,OU=NBI12,DC=global,DC=schindler,DC=com
+The server shhwsr0073 is in the new OU = CN=shhwsr0073,OU=000,OU=Servers,OU=NBI12,DC=global,DC=schindler,DC=com
+-------------------------------------- Server Moved --------------------------------------------------
+-------------------------------------- Server OU movement --------------------------------------------
+shhwsr0075 is in the CN=SHHWSR0075,OU=SHH,OU=0000,OU=001,OU=Servers,OU=NBI12,DC=global,DC=schindler,DC=com
+The server shhwsr0075 is in the new OU = CN=shhwsr0075,OU=000,OU=Servers,OU=NBI12,DC=global,DC=schindler,DC=com
+-------------------------------------- Server Moved --------------------------------------------------
+-------------------------------------- Server OU movement --------------------------------------------
+shhwsr0115 is in the CN=SHHWSR0115,OU=SHH,OU=0000,OU=001,OU=Servers,OU=NBI12,DC=global,DC=schindler,DC=com
+The server shhwsr0115 is in the new OU = CN=shhwsr0115,OU=000,OU=Servers,OU=NBI12,DC=global,DC=schindler,DC=com
+-------------------------------------- Server Moved --------------------------------------------------
+-------------------------------------- Server OU movement --------------------------------------------
+shhwsr0116 is in the CN=SHHWSR0116,OU=SHH,OU=0000,OU=001,OU=Servers,OU=NBI12,DC=global,DC=schindler,DC=com
+The server shhwsr0116 is in the new OU = CN=shhwsr0116,OU=000,OU=Servers,OU=NBI12,DC=global,DC=schindler,DC=com
+-------------------------------------- Server Moved --------------------------------------------------
+-------------------------------------- Server OU movement --------------------------------------------
+shhwsr0117 is in the CN=SHHWSR0117,OU=SHH,OU=0000,OU=001,OU=Servers,OU=NBI12,DC=global,DC=schindler,DC=com
+The server shhwsr0117 is in the new OU = CN=shhwsr0117,OU=000,OU=Servers,OU=NBI12,DC=global,DC=schindler,DC=com
+-------------------------------------- Server Moved --------------------------------------------------
+-------------------------------------- Server OU movement --------------------------------------------
+shhwsr0118 is in the CN=SHHWSR0118,OU=SHH,OU=0000,OU=001,OU=Servers,OU=NBI12,DC=global,DC=schindler,DC=com
+The server shhwsr0118 is in the new OU = CN=shhwsr0118,OU=000,OU=Servers,OU=NBI12,DC=global,DC=schindler,DC=com
+-------------------------------------- Server Moved --------------------------------------------------
+-------------------------------------- Server OU movement --------------------------------------------
+shhwsr0119 is in the CN=SHHWSR0119,OU=SHH,OU=0000,OU=001,OU=Servers,OU=NBI12,DC=global,DC=schindler,DC=com
+The server shhwsr0119 is in the new OU = CN=shhwsr0119,OU=000,OU=Servers,OU=NBI12,DC=global,DC=schindler,DC=com
+-------------------------------------- Server Moved --------------------------------------------------
+-------------------------------------- Server OU movement --------------------------------------------
+shhwsr0124 is in the CN=SHHWSR0124,OU=SHH,OU=0000,OU=001,OU=Servers,OU=NBI12,DC=global,DC=schindler,DC=com
+The server shhwsr0124 is in the new OU = CN=shhwsr0124,OU=000,OU=Servers,OU=NBI12,DC=global,DC=schindler,DC=com
+-------------------------------------- Server Moved --------------------------------------------------
+-------------------------------------- Server OU movement --------------------------------------------
+shhwsr0132 is in the CN=SHHWSR0132,OU=SHH,OU=0000,OU=001,OU=Servers,OU=NBI12,DC=global,DC=schindler,DC=com
+The server shhwsr0132 is in the new OU = CN=shhwsr0132,OU=000,OU=Servers,OU=NBI12,DC=global,DC=schindler,DC=com
+-------------------------------------- Server Moved --------------------------------------------------
+-------------------------------------- Server OU movement --------------------------------------------
+shhwsr0133 is in the CN=SHHWSR0133,OU=SHH,OU=0000,OU=001,OU=Servers,OU=NBI12,DC=global,DC=schindler,DC=com
+The server shhwsr0133 is in the new OU = CN=shhwsr0133,OU=000,OU=Servers,OU=NBI12,DC=global,DC=schindler,DC=com
+-------------------------------------- Server Moved --------------------------------------------------
+-------------------------------------- Server OU movement --------------------------------------------
+shhwsr0134 is in the CN=SHHWSR0134,OU=SHH,OU=0000,OU=001,OU=Servers,OU=NBI12,DC=global,DC=schindler,DC=com
+The server shhwsr0134 is in the new OU = CN=shhwsr0134,OU=000,OU=Servers,OU=NBI12,DC=global,DC=schindler,DC=com
+-------------------------------------- Server Moved --------------------------------------------------
+=
+no 001
+-------------------------------------- Server OU movement --------------------------------------------
+shhwsr0139 is in the CN=SHHWSR0139,OU=SHH,OU=0000,OU=001,OU=Servers,OU=NBI12,DC=global,DC=schindler,DC=com
+The server shhwsr0139 is in the new OU = CN=shhwsr0139,OU=000,OU=Servers,OU=NBI12,DC=global,DC=schindler,DC=com
+-------------------------------------- Server Moved --------------------------------------------------
+-------------------------------------- Server OU movement --------------------------------------------
+shhwsr0140 is in the CN=SHHWSR0140,OU=SHH,OU=0000,OU=001,OU=Servers,OU=NBI12,DC=global,DC=schindler,DC=com
+The server shhwsr0140 is in the new OU = CN=shhwsr0140,OU=000,OU=Servers,OU=NBI12,DC=global,DC=schindler,DC=com
+-------------------------------------- Server Moved --------------------------------------------------
+-------------------------------------- Server OU movement --------------------------------------------
+shhwsr0159 is in the CN=SHHWSR0159,OU=SHH,OU=0000,OU=001,OU=Servers,OU=NBI12,DC=global,DC=schindler,DC=com
+The server shhwsr0159 is in the new OU = CN=shhwsr0159,OU=000,OU=Servers,OU=NBI12,DC=global,DC=schindler,DC=com
+-------------------------------------- Server Moved --------------------------------------------------
+-------------------------------------- Server OU movement --------------------------------------------
+shhwsr0176 is in the CN=SHHWSR0176,OU=SHH,OU=0000,OU=001,OU=Servers,OU=NBI12,DC=global,DC=schindler,DC=com
+The server shhwsr0176 is in the new OU = CN=shhwsr0176,OU=000,OU=Servers,OU=NBI12,DC=global,DC=schindler,DC=com
+-------------------------------------- Server Moved --------------------------------------------------
+-------------------------------------- Server OU movement --------------------------------------------
+shhwsr0178 is in the CN=SHHWSR0178,OU=SHH,OU=0000,OU=001,OU=Servers,OU=NBI12,DC=global,DC=schindler,DC=com
+The server shhwsr0178 is in the new OU = CN=shhwsr0178,OU=000,OU=Servers,OU=NBI12,DC=global,DC=schindler,DC=com
+-------------------------------------- Server Moved --------------------------------------------------
+-------------------------------------- Server OU movement --------------------------------------------
+shhwsr0195 is in the CN=SHHWSR0195,OU=SHH,OU=0000,OU=001,OU=Servers,OU=NBI12,DC=global,DC=schindler,DC=com
+The server shhwsr0195 is in the new OU = CN=shhwsr0195,OU=000,OU=Servers,OU=NBI12,DC=global,DC=schindler,DC=com
+-------------------------------------- Server Moved --------------------------------------------------
+=
+no 001
+=
+no 001
+-------------------------------------- Server OU movement --------------------------------------------
+shhwsr0208 is in the CN=SHHWSR0208,OU=SHH,OU=0000,OU=001,OU=Servers,OU=NBI12,DC=global,DC=schindler,DC=com
+The server shhwsr0208 is in the new OU = CN=shhwsr0208,OU=000,OU=Servers,OU=NBI12,DC=global,DC=schindler,DC=com
+-------------------------------------- Server Moved --------------------------------------------------
+-------------------------------------- Server OU movement --------------------------------------------
+shhwsr0220 is in the CN=SHHWSR0220,OU=SHH,OU=0000,OU=001,OU=Servers,OU=NBI12,DC=global,DC=schindler,DC=com
+The server shhwsr0220 is in the new OU = CN=shhwsr0220,OU=000,OU=Servers,OU=NBI12,DC=global,DC=schindler,DC=com
+-------------------------------------- Server Moved --------------------------------------------------
+-------------------------------------- Server OU movement --------------------------------------------
+shhwsr0221 is in the CN=SHHWSR0221,OU=SHH,OU=0000,OU=001,OU=Servers,OU=NBI12,DC=global,DC=schindler,DC=com
+The server shhwsr0221 is in the new OU = CN=shhwsr0221,OU=000,OU=Servers,OU=NBI12,DC=global,DC=schindler,DC=com
+-------------------------------------- Server Moved --------------------------------------------------
+=
+no 001
+-------------------------------------- Server OU movement --------------------------------------------
+shhwsr0231 is in the CN=SHHWSR0231,OU=SHH,OU=0000,OU=001,OU=Servers,OU=NBI12,DC=global,DC=schindler,DC=com
+The server shhwsr0231 is in the new OU = CN=shhwsr0231,OU=000,OU=Servers,OU=NBI12,DC=global,DC=schindler,DC=com
+-------------------------------------- Server Moved --------------------------------------------------
+-------------------------------------- Server OU movement --------------------------------------------
+shhwsr0234 is in the CN=SHHWSR0234,OU=SHH,OU=0000,OU=001,OU=Servers,OU=NBI12,DC=global,DC=schindler,DC=com
+The server shhwsr0234 is in the new OU = CN=shhwsr0234,OU=000,OU=Servers,OU=NBI12,DC=global,DC=schindler,DC=com
+-------------------------------------- Server Moved --------------------------------------------------
+-------------------------------------- Server OU movement --------------------------------------------
+shhwsr0236 is in the CN=SHHWSR0236,OU=SHH,OU=0000,OU=001,OU=Servers,OU=NBI12,DC=global,DC=schindler,DC=com
+The server shhwsr0236 is in the new OU = CN=shhwsr0236,OU=000,OU=Servers,OU=NBI12,DC=global,DC=schindler,DC=com
+-------------------------------------- Server Moved --------------------------------------------------
+-------------------------------------- Server OU movement --------------------------------------------
+shhwsr0237 is in the CN=SHHWSR0237,OU=SHH,OU=0000,OU=001,OU=Servers,OU=NBI12,DC=global,DC=schindler,DC=com
+The server shhwsr0237 is in the new OU = CN=shhwsr0237,OU=000,OU=Servers,OU=NBI12,DC=global,DC=schindler,DC=com
+-------------------------------------- Server Moved --------------------------------------------------
+-------------------------------------- Server OU movement --------------------------------------------
+shhwsr0238 is in the CN=SHHWSR0238,OU=SHH,OU=0000,OU=001,OU=Servers,OU=NBI12,DC=global,DC=schindler,DC=com
+The server shhwsr0238 is in the new OU = CN=shhwsr0238,OU=000,OU=Servers,OU=NBI12,DC=global,DC=schindler,DC=com
+-------------------------------------- Server Moved --------------------------------------------------
+-------------------------------------- Server OU movement --------------------------------------------
+shhwsr0247 is in the CN=SHHWSR0247,OU=SHH,OU=0000,OU=001,OU=Servers,OU=NBI12,DC=global,DC=schindler,DC=com
+The server shhwsr0247 is in the new OU = CN=shhwsr0247,OU=000,OU=Servers,OU=NBI12,DC=global,DC=schindler,DC=com
+-------------------------------------- Server Moved --------------------------------------------------
+-------------------------------------- Server OU movement --------------------------------------------
+shhwsr0249 is in the CN=SHHWSR0249,OU=SHH,OU=0000,OU=001,OU=Servers,OU=NBI12,DC=global,DC=schindler,DC=com
+The server shhwsr0249 is in the new OU = CN=shhwsr0249,OU=000,OU=Servers,OU=NBI12,DC=global,DC=schindler,DC=com
+-------------------------------------- Server Moved --------------------------------------------------
+-------------------------------------- Server OU movement --------------------------------------------
+shhwsr0280 is in the CN=SHHWSR0280,OU=SHH,OU=0000,OU=001,OU=Servers,OU=NBI12,DC=global,DC=schindler,DC=com
+The server shhwsr0280 is in the new OU = CN=shhwsr0280,OU=000,OU=Servers,OU=NBI12,DC=global,DC=schindler,DC=com
+-------------------------------------- Server Moved --------------------------------------------------
+-------------------------------------- Server OU movement --------------------------------------------
+shhwsr0281 is in the CN=SHHWSR0281,OU=SHH,OU=0000,OU=001,OU=Servers,OU=NBI12,DC=global,DC=schindler,DC=com
+The server shhwsr0281 is in the new OU = CN=shhwsr0281,OU=000,OU=Servers,OU=NBI12,DC=global,DC=schindler,DC=com
+-------------------------------------- Server Moved --------------------------------------------------
+-------------------------------------- Server OU movement --------------------------------------------
+shhwsr0286 is in the CN=SHHWSR0286,OU=SHH,OU=0000,OU=001,OU=Servers,OU=NBI12,DC=global,DC=schindler,DC=com
+The server shhwsr0286 is in the new OU = CN=shhwsr0286,OU=000,OU=Servers,OU=NBI12,DC=global,DC=schindler,DC=com
+-------------------------------------- Server Moved --------------------------------------------------
+=
+no 001
+=
+no 001
+=
+no 001
+=
+no 001
+-------------------------------------- Server OU movement --------------------------------------------
+shhwsr0320 is in the CN=SHHWSR0320,OU=SHH,OU=0000,OU=001,OU=Servers,OU=NBI12,DC=global,DC=schindler,DC=com
+The server shhwsr0320 is in the new OU = CN=shhwsr0320,OU=000,OU=Servers,OU=NBI12,DC=global,DC=schindler,DC=com
+-------------------------------------- Server Moved --------------------------------------------------
+-------------------------------------- Server OU movement --------------------------------------------
+shhwsr0332 is in the CN=SHHWSR0332,OU=SHH,OU=0000,OU=001,OU=Servers,OU=NBI12,DC=global,DC=schindler,DC=com
+The server shhwsr0332 is in the new OU = CN=shhwsr0332,OU=000,OU=Servers,OU=NBI12,DC=global,DC=schindler,DC=com
+-------------------------------------- Server Moved --------------------------------------------------
+-------------------------------------- Server OU movement --------------------------------------------
+shhwsr0338 is in the CN=SHHWSR0338,OU=SHH,OU=0000,OU=001,OU=Servers,OU=NBI12,DC=global,DC=schindler,DC=com
+The server shhwsr0338 is in the new OU = CN=shhwsr0338,OU=000,OU=Servers,OU=NBI12,DC=global,DC=schindler,DC=com
+-------------------------------------- Server Moved --------------------------------------------------
+-------------------------------------- Server OU movement --------------------------------------------
+shhwsr0372 is in the CN=SHHWSR0372,OU=SHH,OU=0000,OU=001,OU=Servers,OU=NBI12,DC=global,DC=schindler,DC=com
+The server shhwsr0372 is in the new OU = CN=shhwsr0372,OU=000,OU=Servers,OU=NBI12,DC=global,DC=schindler,DC=com
+-------------------------------------- Server Moved --------------------------------------------------
+-------------------------------------- Server OU movement --------------------------------------------
+shhwsr0373 is in the CN=SHHWSR0373,OU=SHH,OU=0000,OU=001,OU=Servers,OU=NBI12,DC=global,DC=schindler,DC=com
+The server shhwsr0373 is in the new OU = CN=shhwsr0373,OU=000,OU=Servers,OU=NBI12,DC=global,DC=schindler,DC=com
+-------------------------------------- Server Moved --------------------------------------------------
+-------------------------------------- Server OU movement --------------------------------------------
+shhwsr0379 is in the CN=SHHWSR0379,OU=SHH,OU=0000,OU=001,OU=Servers,OU=NBI12,DC=global,DC=schindler,DC=com
+The server shhwsr0379 is in the new OU = CN=shhwsr0379,OU=000,OU=Servers,OU=NBI12,DC=global,DC=schindler,DC=com
+-------------------------------------- Server Moved --------------------------------------------------
+-------------------------------------- Server OU movement --------------------------------------------
+shhwsr0380 is in the CN=SHHWSR0380,OU=SHH,OU=0000,OU=001,OU=Servers,OU=NBI12,DC=global,DC=schindler,DC=com
+The server shhwsr0380 is in the new OU = CN=shhwsr0380,OU=000,OU=Servers,OU=NBI12,DC=global,DC=schindler,DC=com
+-------------------------------------- Server Moved --------------------------------------------------
+-------------------------------------- Server OU movement --------------------------------------------
+shhwsr0381 is in the CN=SHHWSR0381,OU=SHH,OU=0000,OU=001,OU=Servers,OU=NBI12,DC=global,DC=schindler,DC=com
+The server shhwsr0381 is in the new OU = CN=shhwsr0381,OU=000,OU=Servers,OU=NBI12,DC=global,DC=schindler,DC=com
+-------------------------------------- Server Moved --------------------------------------------------
+-------------------------------------- Server OU movement --------------------------------------------
+shhwsr0382 is in the CN=SHHWSR0382,OU=SHH,OU=0000,OU=001,OU=Servers,OU=NBI12,DC=global,DC=schindler,DC=com
+The server shhwsr0382 is in the new OU = CN=shhwsr0382,OU=000,OU=Servers,OU=NBI12,DC=global,DC=schindler,DC=com
+-------------------------------------- Server Moved --------------------------------------------------
+-------------------------------------- Server OU movement --------------------------------------------
+shhwsr0384 is in the CN=SHHWSR0384,OU=SHH,OU=0000,OU=001,OU=Servers,OU=NBI12,DC=global,DC=schindler,DC=com
+The server shhwsr0384 is in the new OU = CN=shhwsr0384,OU=000,OU=Servers,OU=NBI12,DC=global,DC=schindler,DC=com
+-------------------------------------- Server Moved --------------------------------------------------
+-------------------------------------- Server OU movement --------------------------------------------
+shhwsr0391 is in the CN=SHHWSR0391,OU=SHH,OU=0000,OU=001,OU=Servers,OU=NBI12,DC=global,DC=schindler,DC=com
+The server shhwsr0391 is in the new OU = CN=shhwsr0391,OU=000,OU=Servers,OU=NBI12,DC=global,DC=schindler,DC=com
+-------------------------------------- Server Moved --------------------------------------------------
+-------------------------------------- Server OU movement --------------------------------------------
+shhwsr0403 is in the CN=SHHWSR0403,OU=SHH,OU=0000,OU=001,OU=Servers,OU=NBI12,DC=global,DC=schindler,DC=com
+The server shhwsr0403 is in the new OU = CN=shhwsr0403,OU=000,OU=Servers,OU=NBI12,DC=global,DC=schindler,DC=com
+-------------------------------------- Server Moved --------------------------------------------------
+-------------------------------------- Server OU movement --------------------------------------------
+shhwsr0418 is in the CN=SHHWSR0418,OU=SHH,OU=0000,OU=001,OU=Servers,OU=NBI12,DC=global,DC=schindler,DC=com
+The server shhwsr0418 is in the new OU = CN=shhwsr0418,OU=000,OU=Servers,OU=NBI12,DC=global,DC=schindler,DC=com
+-------------------------------------- Server Moved --------------------------------------------------
+=
+no 001
+-------------------------------------- Server OU movement --------------------------------------------
+shhwsr0482 is in the CN=SHHWSR0482,OU=SHH,OU=0000,OU=001,OU=Servers,OU=NBI12,DC=global,DC=schindler,DC=com
+The server shhwsr0482 is in the new OU = CN=shhwsr0482,OU=000,OU=Servers,OU=NBI12,DC=global,DC=schindler,DC=com
+-------------------------------------- Server Moved --------------------------------------------------
+-------------------------------------- Server OU movement --------------------------------------------
+shhwsr0484 is in the CN=SHHWSR0484,OU=SHH,OU=0000,OU=001,OU=Servers,OU=NBI12,DC=global,DC=schindler,DC=com
+The server shhwsr0484 is in the new OU = CN=shhwsr0484,OU=000,OU=Servers,OU=NBI12,DC=global,DC=schindler,DC=com
+-------------------------------------- Server Moved --------------------------------------------------
+-------------------------------------- Server OU movement --------------------------------------------
+shhwsr0488 is in the CN=SHHWSR0488,OU=SHH,OU=0000,OU=001,OU=Servers,OU=NBI12,DC=global,DC=schindler,DC=com
+The server shhwsr0488 is in the new OU = CN=shhwsr0488,OU=000,OU=Servers,OU=NBI12,DC=global,DC=schindler,DC=com
+-------------------------------------- Server Moved --------------------------------------------------
+-------------------------------------- Server OU movement --------------------------------------------
+shhwsr0492 is in the CN=SHHWSR0492,OU=SHH,OU=0000,OU=001,OU=Servers,OU=NBI12,DC=global,DC=schindler,DC=com
+The server shhwsr0492 is in the new OU = CN=shhwsr0492,OU=000,OU=Servers,OU=NBI12,DC=global,DC=schindler,DC=com
+-------------------------------------- Server Moved --------------------------------------------------
+=
+no 001
+=
+no 001
+-------------------------------------- Server OU movement --------------------------------------------
+shhwsr0516 is in the CN=SHHWSR0516,OU=SHH,OU=0000,OU=001,OU=Servers,OU=NBI12,DC=global,DC=schindler,DC=com
+The server shhwsr0516 is in the new OU = CN=shhwsr0516,OU=000,OU=Servers,OU=NBI12,DC=global,DC=schindler,DC=com
+-------------------------------------- Server Moved --------------------------------------------------
+-------------------------------------- Server OU movement --------------------------------------------
+shhwsr0526 is in the CN=SHHWSR0526,OU=SHH,OU=0000,OU=001,OU=Servers,OU=NBI12,DC=global,DC=schindler,DC=com
+The server shhwsr0526 is in the new OU = CN=shhwsr0526,OU=000,OU=Servers,OU=NBI12,DC=global,DC=schindler,DC=com
+-------------------------------------- Server Moved --------------------------------------------------
+=
+no 001
+-------------------------------------- Server OU movement --------------------------------------------
+shhwsr0570 is in the CN=SHHWSR0570,OU=SHH,OU=0000,OU=001,OU=Servers,OU=NBI12,DC=global,DC=schindler,DC=com
+The server shhwsr0570 is in the new OU = CN=shhwsr0570,OU=000,OU=Servers,OU=NBI12,DC=global,DC=schindler,DC=com
+-------------------------------------- Server Moved --------------------------------------------------
+-------------------------------------- Server OU movement --------------------------------------------
+shhwsr0571 is in the CN=SHHWSR0571,OU=SHH,OU=0000,OU=001,OU=Servers,OU=NBI12,DC=global,DC=schindler,DC=com
+The server shhwsr0571 is in the new OU = CN=shhwsr0571,OU=000,OU=Servers,OU=NBI12,DC=global,DC=schindler,DC=com
+-------------------------------------- Server Moved --------------------------------------------------
+-------------------------------------- Server OU movement --------------------------------------------
+shhwsr0609 is in the CN=SHHWSR0609,OU=SHH,OU=0000,OU=001,OU=Servers,OU=NBI12,DC=global,DC=schindler,DC=com
+The server shhwsr0609 is in the new OU = CN=shhwsr0609,OU=000,OU=Servers,OU=NBI12,DC=global,DC=schindler,DC=com
+-------------------------------------- Server Moved --------------------------------------------------
+-------------------------------------- Server OU movement --------------------------------------------
+shhwsr0624 is in the CN=SHHWSR0624,OU=SHH,OU=0000,OU=001,OU=Servers,OU=NBI12,DC=global,DC=schindler,DC=com
+The server shhwsr0624 is in the new OU = CN=shhwsr0624,OU=000,OU=Servers,OU=NBI12,DC=global,DC=schindler,DC=com
+-------------------------------------- Server Moved --------------------------------------------------
+-------------------------------------- Server OU movement --------------------------------------------
+shhwsr0639 is in the CN=SHHWSR0639,OU=SHH,OU=0000,OU=001,OU=Servers,OU=NBI12,DC=global,DC=schindler,DC=com
+The server shhwsr0639 is in the new OU = CN=shhwsr0639,OU=000,OU=Servers,OU=NBI12,DC=global,DC=schindler,DC=com
+-------------------------------------- Server Moved --------------------------------------------------
+-------------------------------------- Server OU movement --------------------------------------------
+shhwsr0651 is in the CN=SHHWSR0651,OU=SHH,OU=0000,OU=001,OU=Servers,OU=NBI12,DC=global,DC=schindler,DC=com
+The server shhwsr0651 is in the new OU = CN=shhwsr0651,OU=000,OU=Servers,OU=NBI12,DC=global,DC=schindler,DC=com
+-------------------------------------- Server Moved --------------------------------------------------
+-------------------------------------- Server OU movement --------------------------------------------
+shhwsr0652 is in the CN=SHHWSR0652,OU=SHH,OU=0000,OU=001,OU=Servers,OU=NBI12,DC=global,DC=schindler,DC=com
+The server shhwsr0652 is in the new OU = CN=shhwsr0652,OU=000,OU=Servers,OU=NBI12,DC=global,DC=schindler,DC=com
+-------------------------------------- Server Moved --------------------------------------------------
+-------------------------------------- Server OU movement --------------------------------------------
+shhwsr0654 is in the CN=SHHWSR0654,OU=SHH,OU=0000,OU=001,OU=Servers,OU=NBI12,DC=global,DC=schindler,DC=com
+The server shhwsr0654 is in the new OU = CN=shhwsr0654,OU=000,OU=Servers,OU=NBI12,DC=global,DC=schindler,DC=com
+-------------------------------------- Server Moved --------------------------------------------------
+-------------------------------------- Server OU movement --------------------------------------------
+shhwsr0662 is in the CN=SHHWSR0662,OU=SHH,OU=0000,OU=001,OU=Servers,OU=NBI12,DC=global,DC=schindler,DC=com
+The server shhwsr0662 is in the new OU = CN=shhwsr0662,OU=000,OU=Servers,OU=NBI12,DC=global,DC=schindler,DC=com
+-------------------------------------- Server Moved --------------------------------------------------
+-------------------------------------- Server OU movement --------------------------------------------
+shhwsr0663 is in the CN=SHHWSR0663,OU=SHH,OU=0000,OU=001,OU=Servers,OU=NBI12,DC=global,DC=schindler,DC=com
+The server shhwsr0663 is in the new OU = CN=shhwsr0663,OU=000,OU=Servers,OU=NBI12,DC=global,DC=schindler,DC=com
+-------------------------------------- Server Moved --------------------------------------------------
+-------------------------------------- Server OU movement --------------------------------------------
+shhwsr0664 is in the CN=SHHWSR0664,OU=SHH,OU=0000,OU=001,OU=Servers,OU=NBI12,DC=global,DC=schindler,DC=com
+The server shhwsr0664 is in the new OU = CN=shhwsr0664,OU=000,OU=Servers,OU=NBI12,DC=global,DC=schindler,DC=com
+-------------------------------------- Server Moved --------------------------------------------------
+-------------------------------------- Server OU movement --------------------------------------------
+shhwsr0665 is in the CN=SHHWSR0665,OU=SHH,OU=0000,OU=001,OU=Servers,OU=NBI12,DC=global,DC=schindler,DC=com
+The server shhwsr0665 is in the new OU = CN=shhwsr0665,OU=000,OU=Servers,OU=NBI12,DC=global,DC=schindler,DC=com
+-------------------------------------- Server Moved --------------------------------------------------
+-------------------------------------- Server OU movement --------------------------------------------
+shhwsr0666 is in the CN=SHHWSR0666,OU=SHH,OU=0000,OU=001,OU=Servers,OU=NBI12,DC=global,DC=schindler,DC=com
+The server shhwsr0666 is in the new OU = CN=shhwsr0666,OU=000,OU=Servers,OU=NBI12,DC=global,DC=schindler,DC=com
+-------------------------------------- Server Moved --------------------------------------------------
+-------------------------------------- Server OU movement --------------------------------------------
+shhwsr0667 is in the CN=SHHWSR0667,OU=SHH,OU=0000,OU=001,OU=Servers,OU=NBI12,DC=global,DC=schindler,DC=com
+The server shhwsr0667 is in the new OU = CN=shhwsr0667,OU=000,OU=Servers,OU=NBI12,DC=global,DC=schindler,DC=com
+-------------------------------------- Server Moved --------------------------------------------------
+-------------------------------------- Server OU movement --------------------------------------------
+shhwsr0673 is in the CN=SHHWSR0673,OU=SHH,OU=0000,OU=001,OU=Servers,OU=NBI12,DC=global,DC=schindler,DC=com
+The server shhwsr0673 is in the new OU = CN=shhwsr0673,OU=000,OU=Servers,OU=NBI12,DC=global,DC=schindler,DC=com
+-------------------------------------- Server Moved --------------------------------------------------
+-------------------------------------- Server OU movement --------------------------------------------
+shhwsr0674 is in the CN=SHHWSR0674,OU=SHH,OU=0000,OU=001,OU=Servers,OU=NBI12,DC=global,DC=schindler,DC=com
+The server shhwsr0674 is in the new OU = CN=shhwsr0674,OU=000,OU=Servers,OU=NBI12,DC=global,DC=schindler,DC=com
+-------------------------------------- Server Moved --------------------------------------------------
+-------------------------------------- Server OU movement --------------------------------------------
+shhwsr0675 is in the CN=SHHWSR0675,OU=SHH,OU=0000,OU=001,OU=Servers,OU=NBI12,DC=global,DC=schindler,DC=com
+The server shhwsr0675 is in the new OU = CN=shhwsr0675,OU=000,OU=Servers,OU=NBI12,DC=global,DC=schindler,DC=com
+-------------------------------------- Server Moved --------------------------------------------------
+-------------------------------------- Server OU movement --------------------------------------------
+shhwsr0677 is in the CN=SHHWSR0677,OU=SHH,OU=0000,OU=001,OU=Servers,OU=NBI12,DC=global,DC=schindler,DC=com
+The server shhwsr0677 is in the new OU = CN=shhwsr0677,OU=000,OU=Servers,OU=NBI12,DC=global,DC=schindler,DC=com
+-------------------------------------- Server Moved --------------------------------------------------
+-------------------------------------- Server OU movement --------------------------------------------
+shhwsr0680 is in the CN=SHHWSR0680,OU=SHH,OU=0000,OU=001,OU=Servers,OU=NBI12,DC=global,DC=schindler,DC=com
+The server shhwsr0680 is in the new OU = CN=shhwsr0680,OU=000,OU=Servers,OU=NBI12,DC=global,DC=schindler,DC=com
+-------------------------------------- Server Moved --------------------------------------------------
+-------------------------------------- Server OU movement --------------------------------------------
+shhwsr0681 is in the CN=SHHWSR0681,OU=SHH,OU=0000,OU=001,OU=Servers,OU=NBI12,DC=global,DC=schindler,DC=com
+The server shhwsr0681 is in the new OU = CN=shhwsr0681,OU=000,OU=Servers,OU=NBI12,DC=global,DC=schindler,DC=com
+-------------------------------------- Server Moved --------------------------------------------------
+-------------------------------------- Server OU movement --------------------------------------------
+shhwsr0682 is in the CN=SHHWSR0682,OU=SHH,OU=0000,OU=001,OU=Servers,OU=NBI12,DC=global,DC=schindler,DC=com
+The server shhwsr0682 is in the new OU = CN=shhwsr0682,OU=000,OU=Servers,OU=NBI12,DC=global,DC=schindler,DC=com
+-------------------------------------- Server Moved --------------------------------------------------
+-------------------------------------- Server OU movement --------------------------------------------
+shhwsr0684 is in the CN=SHHWSR0684,OU=SHH,OU=0000,OU=001,OU=Servers,OU=NBI12,DC=global,DC=schindler,DC=com
+The server shhwsr0684 is in the new OU = CN=shhwsr0684,OU=000,OU=Servers,OU=NBI12,DC=global,DC=schindler,DC=com
+-------------------------------------- Server Moved --------------------------------------------------
+-------------------------------------- Server OU movement --------------------------------------------
+shhwsr0686 is in the CN=SHHWSR0686,OU=SHH,OU=0000,OU=001,OU=Servers,OU=NBI12,DC=global,DC=schindler,DC=com
+The server shhwsr0686 is in the new OU = CN=shhwsr0686,OU=000,OU=Servers,OU=NBI12,DC=global,DC=schindler,DC=com
+-------------------------------------- Server Moved --------------------------------------------------
+-------------------------------------- Server OU movement --------------------------------------------
+shhwsr0695 is in the CN=SHHWSR0695,OU=SHH,OU=0000,OU=001,OU=Servers,OU=NBI12,DC=global,DC=schindler,DC=com
+The server shhwsr0695 is in the new OU = CN=shhwsr0695,OU=000,OU=Servers,OU=NBI12,DC=global,DC=schindler,DC=com
+-------------------------------------- Server Moved --------------------------------------------------
+-------------------------------------- Server OU movement --------------------------------------------
+shhwsr0704 is in the CN=SHHWSR0704,OU=SHH,OU=0000,OU=001,OU=Servers,OU=NBI12,DC=global,DC=schindler,DC=com
+The server shhwsr0704 is in the new OU = CN=shhwsr0704,OU=000,OU=Servers,OU=NBI12,DC=global,DC=schindler,DC=com
+-------------------------------------- Server Moved --------------------------------------------------
+-------------------------------------- Server OU movement --------------------------------------------
+shhwsr0705 is in the CN=SHHWSR0705,OU=SHH,OU=0000,OU=001,OU=Servers,OU=NBI12,DC=global,DC=schindler,DC=com
+The server shhwsr0705 is in the new OU = CN=shhwsr0705,OU=000,OU=Servers,OU=NBI12,DC=global,DC=schindler,DC=com
+-------------------------------------- Server Moved --------------------------------------------------
+-------------------------------------- Server OU movement --------------------------------------------
+shhwsr0706 is in the CN=SHHWSR0706,OU=SHH,OU=0000,OU=001,OU=Servers,OU=NBI12,DC=global,DC=schindler,DC=com
+The server shhwsr0706 is in the new OU = CN=shhwsr0706,OU=000,OU=Servers,OU=NBI12,DC=global,DC=schindler,DC=com
+-------------------------------------- Server Moved --------------------------------------------------
+-------------------------------------- Server OU movement --------------------------------------------
+shhwsr0709 is in the CN=SHHWSR0709,OU=SHH,OU=0000,OU=001,OU=Servers,OU=NBI12,DC=global,DC=schindler,DC=com
+The server shhwsr0709 is in the new OU = CN=shhwsr0709,OU=000,OU=Servers,OU=NBI12,DC=global,DC=schindler,DC=com
+-------------------------------------- Server Moved --------------------------------------------------
+-------------------------------------- Server OU movement --------------------------------------------
+shhwsr0710 is in the CN=SHHWSR0710,OU=SHH,OU=0000,OU=001,OU=Servers,OU=NBI12,DC=global,DC=schindler,DC=com
+The server shhwsr0710 is in the new OU = CN=shhwsr0710,OU=000,OU=Servers,OU=NBI12,DC=global,DC=schindler,DC=com
+-------------------------------------- Server Moved --------------------------------------------------
+-------------------------------------- Server OU movement --------------------------------------------
+shhwsr0711 is in the CN=SHHWSR0711,OU=SHH,OU=0000,OU=001,OU=Servers,OU=NBI12,DC=global,DC=schindler,DC=com
+The server shhwsr0711 is in the new OU = CN=shhwsr0711,OU=000,OU=Servers,OU=NBI12,DC=global,DC=schindler,DC=com
+-------------------------------------- Server Moved --------------------------------------------------
+-------------------------------------- Server OU movement --------------------------------------------
+shhwsr0714 is in the CN=SHHWSR0714,OU=SHH,OU=0000,OU=001,OU=Servers,OU=NBI12,DC=global,DC=schindler,DC=com
+The server shhwsr0714 is in the new OU = CN=shhwsr0714,OU=000,OU=Servers,OU=NBI12,DC=global,DC=schindler,DC=com
+-------------------------------------- Server Moved --------------------------------------------------
+-------------------------------------- Server OU movement --------------------------------------------
+shhwsr0735 is in the CN=SHHWSR0735,OU=SHH,OU=0000,OU=001,OU=Servers,OU=NBI12,DC=global,DC=schindler,DC=com
+The server shhwsr0735 is in the new OU = CN=shhwsr0735,OU=000,OU=Servers,OU=NBI12,DC=global,DC=schindler,DC=com
+-------------------------------------- Server Moved --------------------------------------------------
+-------------------------------------- Server OU movement --------------------------------------------
+shhwsr0739 is in the CN=SHHWSR0739,OU=SHH,OU=0000,OU=001,OU=Servers,OU=NBI12,DC=global,DC=schindler,DC=com
+The server shhwsr0739 is in the new OU = CN=shhwsr0739,OU=000,OU=Servers,OU=NBI12,DC=global,DC=schindler,DC=com
+-------------------------------------- Server Moved --------------------------------------------------
+-------------------------------------- Server OU movement --------------------------------------------
+shhwsr0748 is in the CN=SHHWSR0748,OU=SHH,OU=0007,OU=001,OU=Servers,OU=NBI12,DC=global,DC=schindler,DC=com
+Move-ADObject : Directory object not found
+At D:\Repository\Working\Antonio\Move_Objects_OU\Move_Objects_OU_KG_SHH.ps1:15 char:1
++ Move-ADObject -Identity "CN=$Server,OU=SHH,OU=0000,OU=001,OU=Servers, ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (CN=shhwsr0748,O...chindler,DC=com:ADObject) [Move-ADObject], ADIdentityNotFoundException
+    + FullyQualifiedErrorId : ActiveDirectoryCmdlet:Microsoft.ActiveDirectory.Management.ADIdentityNotFoundException,Microsoft.ActiveDi 
+   rectory.Management.Commands.MoveADObject
+ 
+The server shhwsr0748 is in the new OU = CN=SHHWSR0748,OU=SHH,OU=0007,OU=001,OU=Servers,OU=NBI12,DC=global,DC=schindler,DC=com
+-------------------------------------- Server Moved --------------------------------------------------
+-------------------------------------- Server OU movement --------------------------------------------
+shhwsr0757 is in the CN=SHHWSR0757,OU=SHH,OU=0007,OU=001,OU=Servers,OU=NBI12,DC=global,DC=schindler,DC=com
+Move-ADObject : Directory object not found
+At D:\Repository\Working\Antonio\Move_Objects_OU\Move_Objects_OU_KG_SHH.ps1:15 char:1
++ Move-ADObject -Identity "CN=$Server,OU=SHH,OU=0000,OU=001,OU=Servers, ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (CN=shhwsr0757,O...chindler,DC=com:ADObject) [Move-ADObject], ADIdentityNotFoundException
+    + FullyQualifiedErrorId : ActiveDirectoryCmdlet:Microsoft.ActiveDirectory.Management.ADIdentityNotFoundException,Microsoft.ActiveDi 
+   rectory.Management.Commands.MoveADObject
+ 
+The server shhwsr0757 is in the new OU = CN=SHHWSR0757,OU=SHH,OU=0007,OU=001,OU=Servers,OU=NBI12,DC=global,DC=schindler,DC=com
+-------------------------------------- Server Moved --------------------------------------------------
+-------------------------------------- Server OU movement --------------------------------------------
+shhwsr0758 is in the CN=SHHWSR0758,OU=SHH,OU=0007,OU=001,OU=Servers,OU=NBI12,DC=global,DC=schindler,DC=com
+Move-ADObject : Directory object not found
+At D:\Repository\Working\Antonio\Move_Objects_OU\Move_Objects_OU_KG_SHH.ps1:15 char:1
++ Move-ADObject -Identity "CN=$Server,OU=SHH,OU=0000,OU=001,OU=Servers, ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (CN=shhwsr0758,O...chindler,DC=com:ADObject) [Move-ADObject], ADIdentityNotFoundException
+    + FullyQualifiedErrorId : ActiveDirectoryCmdlet:Microsoft.ActiveDirectory.Management.ADIdentityNotFoundException,Microsoft.ActiveDi 
+   rectory.Management.Commands.MoveADObject
+ 
+The server shhwsr0758 is in the new OU = CN=SHHWSR0758,OU=SHH,OU=0007,OU=001,OU=Servers,OU=NBI12,DC=global,DC=schindler,DC=com
+-------------------------------------- Server Moved --------------------------------------------------
+-------------------------------------- Server OU movement --------------------------------------------
+shhwsr0759 is in the CN=SHHWSR0759,OU=SHH,OU=0007,OU=001,OU=Servers,OU=NBI12,DC=global,DC=schindler,DC=com
+Move-ADObject : Directory object not found
+At D:\Repository\Working\Antonio\Move_Objects_OU\Move_Objects_OU_KG_SHH.ps1:15 char:1
++ Move-ADObject -Identity "CN=$Server,OU=SHH,OU=0000,OU=001,OU=Servers, ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (CN=shhwsr0759,O...chindler,DC=com:ADObject) [Move-ADObject], ADIdentityNotFoundException
+    + FullyQualifiedErrorId : ActiveDirectoryCmdlet:Microsoft.ActiveDirectory.Management.ADIdentityNotFoundException,Microsoft.ActiveDi 
+   rectory.Management.Commands.MoveADObject
+ 
+The server shhwsr0759 is in the new OU = CN=SHHWSR0759,OU=SHH,OU=0007,OU=001,OU=Servers,OU=NBI12,DC=global,DC=schindler,DC=com
+-------------------------------------- Server Moved --------------------------------------------------
+-------------------------------------- Server OU movement --------------------------------------------
+shhwsr0760 is in the CN=SHHWSR0760,OU=SHH,OU=0007,OU=001,OU=Servers,OU=NBI12,DC=global,DC=schindler,DC=com
+Move-ADObject : Directory object not found
+At D:\Repository\Working\Antonio\Move_Objects_OU\Move_Objects_OU_KG_SHH.ps1:15 char:1
++ Move-ADObject -Identity "CN=$Server,OU=SHH,OU=0000,OU=001,OU=Servers, ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (CN=shhwsr0760,O...chindler,DC=com:ADObject) [Move-ADObject], ADIdentityNotFoundException
+    + FullyQualifiedErrorId : ActiveDirectoryCmdlet:Microsoft.ActiveDirectory.Management.ADIdentityNotFoundException,Microsoft.ActiveDi 
+   rectory.Management.Commands.MoveADObject
+ 
+The server shhwsr0760 is in the new OU = CN=SHHWSR0760,OU=SHH,OU=0007,OU=001,OU=Servers,OU=NBI12,DC=global,DC=schindler,DC=com
+-------------------------------------- Server Moved --------------------------------------------------
+-------------------------------------- Server OU movement --------------------------------------------
+shhwsr0761 is in the CN=SHHWSR0761,OU=SHH,OU=0007,OU=001,OU=Servers,OU=NBI12,DC=global,DC=schindler,DC=com
+Move-ADObject : Directory object not found
+At D:\Repository\Working\Antonio\Move_Objects_OU\Move_Objects_OU_KG_SHH.ps1:15 char:1
++ Move-ADObject -Identity "CN=$Server,OU=SHH,OU=0000,OU=001,OU=Servers, ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (CN=shhwsr0761,O...chindler,DC=com:ADObject) [Move-ADObject], ADIdentityNotFoundException
+    + FullyQualifiedErrorId : ActiveDirectoryCmdlet:Microsoft.ActiveDirectory.Management.ADIdentityNotFoundException,Microsoft.ActiveDi 
+   rectory.Management.Commands.MoveADObject
+ 
+The server shhwsr0761 is in the new OU = CN=SHHWSR0761,OU=SHH,OU=0007,OU=001,OU=Servers,OU=NBI12,DC=global,DC=schindler,DC=com
+-------------------------------------- Server Moved --------------------------------------------------
+-------------------------------------- Server OU movement --------------------------------------------
+shhwsr0762 is in the CN=SHHWSR0762,OU=SHH,OU=0007,OU=001,OU=Servers,OU=NBI12,DC=global,DC=schindler,DC=com
+Move-ADObject : Directory object not found
+At D:\Repository\Working\Antonio\Move_Objects_OU\Move_Objects_OU_KG_SHH.ps1:15 char:1
++ Move-ADObject -Identity "CN=$Server,OU=SHH,OU=0000,OU=001,OU=Servers, ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (CN=shhwsr0762,O...chindler,DC=com:ADObject) [Move-ADObject], ADIdentityNotFoundException
+    + FullyQualifiedErrorId : ActiveDirectoryCmdlet:Microsoft.ActiveDirectory.Management.ADIdentityNotFoundException,Microsoft.ActiveDi 
+   rectory.Management.Commands.MoveADObject
+ 
+The server shhwsr0762 is in the new OU = CN=SHHWSR0762,OU=SHH,OU=0007,OU=001,OU=Servers,OU=NBI12,DC=global,DC=schindler,DC=com
+-------------------------------------- Server Moved --------------------------------------------------
+-------------------------------------- Server OU movement --------------------------------------------
+shhwsr0765 is in the CN=SHHWSR0765,OU=SHH,OU=0007,OU=001,OU=Servers,OU=NBI12,DC=global,DC=schindler,DC=com
+Move-ADObject : Directory object not found
+At D:\Repository\Working\Antonio\Move_Objects_OU\Move_Objects_OU_KG_SHH.ps1:15 char:1
++ Move-ADObject -Identity "CN=$Server,OU=SHH,OU=0000,OU=001,OU=Servers, ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (CN=shhwsr0765,O...chindler,DC=com:ADObject) [Move-ADObject], ADIdentityNotFoundException
+    + FullyQualifiedErrorId : ActiveDirectoryCmdlet:Microsoft.ActiveDirectory.Management.ADIdentityNotFoundException,Microsoft.ActiveDi 
+   rectory.Management.Commands.MoveADObject
+ 
+The server shhwsr0765 is in the new OU = CN=SHHWSR0765,OU=SHH,OU=0007,OU=001,OU=Servers,OU=NBI12,DC=global,DC=schindler,DC=com
+-------------------------------------- Server Moved --------------------------------------------------
+-------------------------------------- Server OU movement --------------------------------------------
+shhwsr0767 is in the CN=SHHWSR0767,OU=SHH,OU=0000,OU=001,OU=Servers,OU=NBI12,DC=global,DC=schindler,DC=com
+The server shhwsr0767 is in the new OU = CN=shhwsr0767,OU=000,OU=Servers,OU=NBI12,DC=global,DC=schindler,DC=com
+-------------------------------------- Server Moved --------------------------------------------------
+-------------------------------------- Server OU movement --------------------------------------------
+shhwsr0772 is in the CN=SHHWSR0772,OU=SHH,OU=0000,OU=001,OU=Servers,OU=NBI12,DC=global,DC=schindler,DC=com
+The server shhwsr0772 is in the new OU = CN=shhwsr0772,OU=000,OU=Servers,OU=NBI12,DC=global,DC=schindler,DC=com
+-------------------------------------- Server Moved --------------------------------------------------
+-------------------------------------- Server OU movement --------------------------------------------
+shhwsr0791 is in the CN=SHHWSR0791,OU=SHH,OU=0000,OU=001,OU=Servers,OU=NBI12,DC=global,DC=schindler,DC=com
+The server shhwsr0791 is in the new OU = CN=shhwsr0791,OU=000,OU=Servers,OU=NBI12,DC=global,DC=schindler,DC=com
+-------------------------------------- Server Moved --------------------------------------------------
+-------------------------------------- Server OU movement --------------------------------------------
+shhwsr0792 is in the CN=SHHWSR0792,OU=SHH,OU=0000,OU=001,OU=Servers,OU=NBI12,DC=global,DC=schindler,DC=com
+The server shhwsr0792 is in the new OU = CN=shhwsr0792,OU=000,OU=Servers,OU=NBI12,DC=global,DC=schindler,DC=com
+-------------------------------------- Server Moved --------------------------------------------------
+-------------------------------------- Server OU movement --------------------------------------------
+shhwsr0858 is in the CN=SHHWSR0858,OU=SHH,OU=0000,OU=001,OU=Servers,OU=NBI12,DC=global,DC=schindler,DC=com
+The server shhwsr0858 is in the new OU = CN=shhwsr0858,OU=000,OU=Servers,OU=NBI12,DC=global,DC=schindler,DC=com
+-------------------------------------- Server Moved --------------------------------------------------
+-------------------------------------- Server OU movement --------------------------------------------
+shhwsr0862 is in the CN=SHHWSR0862,OU=SHH,OU=0000,OU=001,OU=Servers,OU=NBI12,DC=global,DC=schindler,DC=com
+The server shhwsr0862 is in the new OU = CN=shhwsr0862,OU=000,OU=Servers,OU=NBI12,DC=global,DC=schindler,DC=com
+-------------------------------------- Server Moved --------------------------------------------------
+-------------------------------------- Server OU movement --------------------------------------------
+shhwsr0868 is in the CN=SHHWSR0868,OU=SHH,OU=0000,OU=001,OU=Servers,OU=NBI12,DC=global,DC=schindler,DC=com
+The server shhwsr0868 is in the new OU = CN=shhwsr0868,OU=000,OU=Servers,OU=NBI12,DC=global,DC=schindler,DC=com
+-------------------------------------- Server Moved --------------------------------------------------
+-------------------------------------- Server OU movement --------------------------------------------
+shhwsr0873 is in the CN=SHHWSR0873,OU=SHH,OU=0000,OU=001,OU=Servers,OU=NBI12,DC=global,DC=schindler,DC=com
+The server shhwsr0873 is in the new OU = CN=shhwsr0873,OU=000,OU=Servers,OU=NBI12,DC=global,DC=schindler,DC=com
+-------------------------------------- Server Moved --------------------------------------------------
+-------------------------------------- Server OU movement --------------------------------------------
+shhwsr0878 is in the CN=SHHWSR0878,OU=SHH,OU=0000,OU=001,OU=Servers,OU=NBI12,DC=global,DC=schindler,DC=com
+The server shhwsr0878 is in the new OU = CN=shhwsr0878,OU=000,OU=Servers,OU=NBI12,DC=global,DC=schindler,DC=com
+-------------------------------------- Server Moved --------------------------------------------------
+-------------------------------------- Server OU movement --------------------------------------------
+shhwsr0892 is in the CN=SHHWSR0892,OU=SHH,OU=0007,OU=001,OU=Servers,OU=NBI12,DC=global,DC=schindler,DC=com
+Move-ADObject : Directory object not found
+At D:\Repository\Working\Antonio\Move_Objects_OU\Move_Objects_OU_KG_SHH.ps1:15 char:1
++ Move-ADObject -Identity "CN=$Server,OU=SHH,OU=0000,OU=001,OU=Servers, ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (CN=shhwsr0892,O...chindler,DC=com:ADObject) [Move-ADObject], ADIdentityNotFoundException
+    + FullyQualifiedErrorId : ActiveDirectoryCmdlet:Microsoft.ActiveDirectory.Management.ADIdentityNotFoundException,Microsoft.ActiveDi 
+   rectory.Management.Commands.MoveADObject
+ 
+The server shhwsr0892 is in the new OU = CN=SHHWSR0892,OU=SHH,OU=0007,OU=001,OU=Servers,OU=NBI12,DC=global,DC=schindler,DC=com
+-------------------------------------- Server Moved --------------------------------------------------
+-------------------------------------- Server OU movement --------------------------------------------
+shhwsr0897 is in the CN=SHHWSR0897,OU=SHH,OU=0000,OU=001,OU=Servers,OU=NBI12,DC=global,DC=schindler,DC=com
+The server shhwsr0897 is in the new OU = CN=shhwsr0897,OU=000,OU=Servers,OU=NBI12,DC=global,DC=schindler,DC=com
+-------------------------------------- Server Moved --------------------------------------------------
+-------------------------------------- Server OU movement --------------------------------------------
+shhwsr0899 is in the CN=SHHWSR0899,OU=SHH,OU=0000,OU=001,OU=Servers,OU=NBI12,DC=global,DC=schindler,DC=com
+The server shhwsr0899 is in the new OU = CN=shhwsr0899,OU=000,OU=Servers,OU=NBI12,DC=global,DC=schindler,DC=com
+-------------------------------------- Server Moved --------------------------------------------------
+-------------------------------------- Server OU movement --------------------------------------------
+shhwsr0912 is in the CN=SHHWSR0912,OU=SHH,OU=0000,OU=001,OU=Servers,OU=NBI12,DC=global,DC=schindler,DC=com
+The server shhwsr0912 is in the new OU = CN=shhwsr0912,OU=000,OU=Servers,OU=NBI12,DC=global,DC=schindler,DC=com
+-------------------------------------- Server Moved --------------------------------------------------
+-------------------------------------- Server OU movement --------------------------------------------
+shhwsr0933 is in the CN=SHHWSR0933,OU=SHH,OU=0007,OU=001,OU=Servers,OU=NBI12,DC=global,DC=schindler,DC=com
+Move-ADObject : Directory object not found
+At D:\Repository\Working\Antonio\Move_Objects_OU\Move_Objects_OU_KG_SHH.ps1:15 char:1
++ Move-ADObject -Identity "CN=$Server,OU=SHH,OU=0000,OU=001,OU=Servers, ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (CN=shhwsr0933,O...chindler,DC=com:ADObject) [Move-ADObject], ADIdentityNotFoundException
+    + FullyQualifiedErrorId : ActiveDirectoryCmdlet:Microsoft.ActiveDirectory.Management.ADIdentityNotFoundException,Microsoft.ActiveDi 
+   rectory.Management.Commands.MoveADObject
+ 
+The server shhwsr0933 is in the new OU = CN=SHHWSR0933,OU=SHH,OU=0007,OU=001,OU=Servers,OU=NBI12,DC=global,DC=schindler,DC=com
+-------------------------------------- Server Moved --------------------------------------------------
+-------------------------------------- Server OU movement --------------------------------------------
+shhwsr0934 is in the CN=SHHWSR0934,OU=SHH,OU=0007,OU=001,OU=Servers,OU=NBI12,DC=global,DC=schindler,DC=com
+Move-ADObject : Directory object not found
+At D:\Repository\Working\Antonio\Move_Objects_OU\Move_Objects_OU_KG_SHH.ps1:15 char:1
++ Move-ADObject -Identity "CN=$Server,OU=SHH,OU=0000,OU=001,OU=Servers, ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (CN=shhwsr0934,O...chindler,DC=com:ADObject) [Move-ADObject], ADIdentityNotFoundException
+    + FullyQualifiedErrorId : ActiveDirectoryCmdlet:Microsoft.ActiveDirectory.Management.ADIdentityNotFoundException,Microsoft.ActiveDi 
+   rectory.Management.Commands.MoveADObject
+ 
+The server shhwsr0934 is in the new OU = CN=SHHWSR0934,OU=SHH,OU=0007,OU=001,OU=Servers,OU=NBI12,DC=global,DC=schindler,DC=com
+-------------------------------------- Server Moved --------------------------------------------------
+-------------------------------------- Server OU movement --------------------------------------------
+shhwsr0935 is in the CN=SHHWSR0935,OU=SHH,OU=0007,OU=001,OU=Servers,OU=NBI12,DC=global,DC=schindler,DC=com
+Move-ADObject : Directory object not found
+At D:\Repository\Working\Antonio\Move_Objects_OU\Move_Objects_OU_KG_SHH.ps1:15 char:1
++ Move-ADObject -Identity "CN=$Server,OU=SHH,OU=0000,OU=001,OU=Servers, ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (CN=shhwsr0935,O...chindler,DC=com:ADObject) [Move-ADObject], ADIdentityNotFoundException
+    + FullyQualifiedErrorId : ActiveDirectoryCmdlet:Microsoft.ActiveDirectory.Management.ADIdentityNotFoundException,Microsoft.ActiveDi 
+   rectory.Management.Commands.MoveADObject
+ 
+The server shhwsr0935 is in the new OU = CN=SHHWSR0935,OU=SHH,OU=0007,OU=001,OU=Servers,OU=NBI12,DC=global,DC=schindler,DC=com
+-------------------------------------- Server Moved --------------------------------------------------
+-------------------------------------- Server OU movement --------------------------------------------
+shhwsr0936 is in the CN=SHHWSR0936,OU=SHH,OU=0007,OU=001,OU=Servers,OU=NBI12,DC=global,DC=schindler,DC=com
+Move-ADObject : Directory object not found
+At D:\Repository\Working\Antonio\Move_Objects_OU\Move_Objects_OU_KG_SHH.ps1:15 char:1
++ Move-ADObject -Identity "CN=$Server,OU=SHH,OU=0000,OU=001,OU=Servers, ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (CN=shhwsr0936,O...chindler,DC=com:ADObject) [Move-ADObject], ADIdentityNotFoundException
+    + FullyQualifiedErrorId : ActiveDirectoryCmdlet:Microsoft.ActiveDirectory.Management.ADIdentityNotFoundException,Microsoft.ActiveDi 
+   rectory.Management.Commands.MoveADObject
+ 
+The server shhwsr0936 is in the new OU = CN=SHHWSR0936,OU=SHH,OU=0007,OU=001,OU=Servers,OU=NBI12,DC=global,DC=schindler,DC=com
+-------------------------------------- Server Moved --------------------------------------------------
+-------------------------------------- Server OU movement --------------------------------------------
+shhwsr0937 is in the CN=SHHWSR0937,OU=SHH,OU=0007,OU=001,OU=Servers,OU=NBI12,DC=global,DC=schindler,DC=com
+Move-ADObject : Directory object not found
+At D:\Repository\Working\Antonio\Move_Objects_OU\Move_Objects_OU_KG_SHH.ps1:15 char:1
++ Move-ADObject -Identity "CN=$Server,OU=SHH,OU=0000,OU=001,OU=Servers, ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (CN=shhwsr0937,O...chindler,DC=com:ADObject) [Move-ADObject], ADIdentityNotFoundException
+    + FullyQualifiedErrorId : ActiveDirectoryCmdlet:Microsoft.ActiveDirectory.Management.ADIdentityNotFoundException,Microsoft.ActiveDi 
+   rectory.Management.Commands.MoveADObject
+ 
+The server shhwsr0937 is in the new OU = CN=SHHWSR0937,OU=SHH,OU=0007,OU=001,OU=Servers,OU=NBI12,DC=global,DC=schindler,DC=com
+-------------------------------------- Server Moved --------------------------------------------------
+-------------------------------------- Server OU movement --------------------------------------------
+shhwsr0940 is in the CN=SHHWSR0940,OU=SHH,OU=0007,OU=001,OU=Servers,OU=NBI12,DC=global,DC=schindler,DC=com
+Move-ADObject : Directory object not found
+At D:\Repository\Working\Antonio\Move_Objects_OU\Move_Objects_OU_KG_SHH.ps1:15 char:1
++ Move-ADObject -Identity "CN=$Server,OU=SHH,OU=0000,OU=001,OU=Servers, ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (CN=shhwsr0940,O...chindler,DC=com:ADObject) [Move-ADObject], ADIdentityNotFoundException
+    + FullyQualifiedErrorId : ActiveDirectoryCmdlet:Microsoft.ActiveDirectory.Management.ADIdentityNotFoundException,Microsoft.ActiveDi 
+   rectory.Management.Commands.MoveADObject
+ 
+The server shhwsr0940 is in the new OU = CN=SHHWSR0940,OU=SHH,OU=0007,OU=001,OU=Servers,OU=NBI12,DC=global,DC=schindler,DC=com
+-------------------------------------- Server Moved --------------------------------------------------
+-------------------------------------- Server OU movement --------------------------------------------
+shhwsr0975 is in the CN=SHHWSR0975,OU=SHH,OU=0000,OU=001,OU=Servers,OU=NBI12,DC=global,DC=schindler,DC=com
+The server shhwsr0975 is in the new OU = CN=shhwsr0975,OU=000,OU=Servers,OU=NBI12,DC=global,DC=schindler,DC=com
+-------------------------------------- Server Moved --------------------------------------------------
+-------------------------------------- Server OU movement --------------------------------------------
+shhwsr0980 is in the CN=SHHWSR0980,OU=SHH,OU=0007,OU=001,OU=Servers,OU=NBI12,DC=global,DC=schindler,DC=com
+Move-ADObject : Directory object not found
+At D:\Repository\Working\Antonio\Move_Objects_OU\Move_Objects_OU_KG_SHH.ps1:15 char:1
++ Move-ADObject -Identity "CN=$Server,OU=SHH,OU=0000,OU=001,OU=Servers, ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (CN=shhwsr0980,O...chindler,DC=com:ADObject) [Move-ADObject], ADIdentityNotFoundException
+    + FullyQualifiedErrorId : ActiveDirectoryCmdlet:Microsoft.ActiveDirectory.Management.ADIdentityNotFoundException,Microsoft.ActiveDi 
+   rectory.Management.Commands.MoveADObject
+ 
+The server shhwsr0980 is in the new OU = CN=SHHWSR0980,OU=SHH,OU=0007,OU=001,OU=Servers,OU=NBI12,DC=global,DC=schindler,DC=com
+-------------------------------------- Server Moved --------------------------------------------------
+-------------------------------------- Server OU movement --------------------------------------------
+shhwsr1009 is in the CN=SHHWSR1009,OU=SHH,OU=0000,OU=001,OU=Servers,OU=NBI12,DC=global,DC=schindler,DC=com
+The server shhwsr1009 is in the new OU = CN=shhwsr1009,OU=000,OU=Servers,OU=NBI12,DC=global,DC=schindler,DC=com
+-------------------------------------- Server Moved --------------------------------------------------
+-------------------------------------- Server OU movement --------------------------------------------
+shhwsr1010 is in the CN=SHHWSR1010,OU=SHH,OU=0000,OU=001,OU=Servers,OU=NBI12,DC=global,DC=schindler,DC=com
+The server shhwsr1010 is in the new OU = CN=shhwsr1010,OU=000,OU=Servers,OU=NBI12,DC=global,DC=schindler,DC=com
+-------------------------------------- Server Moved --------------------------------------------------
+-------------------------------------- Server OU movement --------------------------------------------
+shhwsr1011 is in the CN=SHHWSR1011,OU=SHH,OU=0000,OU=001,OU=Servers,OU=NBI12,DC=global,DC=schindler,DC=com
+The server shhwsr1011 is in the new OU = CN=shhwsr1011,OU=000,OU=Servers,OU=NBI12,DC=global,DC=schindler,DC=com
+-------------------------------------- Server Moved --------------------------------------------------
+-------------------------------------- Server OU movement --------------------------------------------
+shhwsr1031 is in the CN=SHHWSR1031,OU=SHH,OU=0000,OU=001,OU=Servers,OU=NBI12,DC=global,DC=schindler,DC=com
+The server shhwsr1031 is in the new OU = CN=shhwsr1031,OU=000,OU=Servers,OU=NBI12,DC=global,DC=schindler,DC=com
+-------------------------------------- Server Moved --------------------------------------------------
+-------------------------------------- Server OU movement --------------------------------------------
+shhwsr1032 is in the CN=SHHWSR1032,OU=SHH,OU=0000,OU=001,OU=Servers,OU=NBI12,DC=global,DC=schindler,DC=com
+The server shhwsr1032 is in the new OU = CN=shhwsr1032,OU=000,OU=Servers,OU=NBI12,DC=global,DC=schindler,DC=com
+-------------------------------------- Server Moved --------------------------------------------------
+-------------------------------------- Server OU movement --------------------------------------------
+shhwsr1126 is in the CN=SHHWSR1126,OU=SHH,OU=0000,OU=001,OU=Servers,OU=NBI12,DC=global,DC=schindler,DC=com
+The server shhwsr1126 is in the new OU = CN=shhwsr1126,OU=000,OU=Servers,OU=NBI12,DC=global,DC=schindler,DC=com
+-------------------------------------- Server Moved --------------------------------------------------
+-------------------------------------- Server OU movement --------------------------------------------
+shhwsr1127 is in the CN=SHHWSR1127,OU=SHH,OU=0000,OU=001,OU=Servers,OU=NBI12,DC=global,DC=schindler,DC=com
+The server shhwsr1127 is in the new OU = CN=shhwsr1127,OU=000,OU=Servers,OU=NBI12,DC=global,DC=schindler,DC=com
+-------------------------------------- Server Moved --------------------------------------------------
+-------------------------------------- Server OU movement --------------------------------------------
+shhwsr1128 is in the CN=SHHWSR1128,OU=SHH,OU=0000,OU=001,OU=Servers,OU=NBI12,DC=global,DC=schindler,DC=com
+The server shhwsr1128 is in the new OU = CN=shhwsr1128,OU=000,OU=Servers,OU=NBI12,DC=global,DC=schindler,DC=com
+-------------------------------------- Server Moved --------------------------------------------------
+-------------------------------------- Server OU movement --------------------------------------------
+shhwsr1129 is in the CN=SHHWSR1129,OU=SHH,OU=0000,OU=001,OU=Servers,OU=NBI12,DC=global,DC=schindler,DC=com
+The server shhwsr1129 is in the new OU = CN=shhwsr1129,OU=000,OU=Servers,OU=NBI12,DC=global,DC=schindler,DC=com
+-------------------------------------- Server Moved --------------------------------------------------
+-------------------------------------- Server OU movement --------------------------------------------
+shhwsr1148 is in the CN=SHHWSR1148,OU=SHH,OU=0000,OU=001,OU=Servers,OU=NBI12,DC=global,DC=schindler,DC=com
+The server shhwsr1148 is in the new OU = CN=shhwsr1148,OU=000,OU=Servers,OU=NBI12,DC=global,DC=schindler,DC=com
+-------------------------------------- Server Moved --------------------------------------------------
+-------------------------------------- Server OU movement --------------------------------------------
+shhwsr1226 is in the CN=SHHWSR1226,OU=SHH,OU=0000,OU=001,OU=Servers,OU=NBI12,DC=global,DC=schindler,DC=com
+The server shhwsr1226 is in the new OU = CN=shhwsr1226,OU=000,OU=Servers,OU=NBI12,DC=global,DC=schindler,DC=com
+-------------------------------------- Server Moved --------------------------------------------------
+-------------------------------------- Server OU movement --------------------------------------------
+shhwsr1233 is in the CN=SHHWSR1233,OU=SHH,OU=0000,OU=001,OU=Servers,OU=NBI12,DC=global,DC=schindler,DC=com
+The server shhwsr1233 is in the new OU = CN=shhwsr1233,OU=000,OU=Servers,OU=NBI12,DC=global,DC=schindler,DC=com
+-------------------------------------- Server Moved --------------------------------------------------
+-------------------------------------- Server OU movement --------------------------------------------
+shhwsr1477 is in the CN=SHHWSR1477,OU=SHH,OU=0000,OU=001,OU=Servers,OU=NBI12,DC=global,DC=schindler,DC=com
+The server shhwsr1477 is in the new OU = CN=shhwsr1477,OU=000,OU=Servers,OU=NBI12,DC=global,DC=schindler,DC=com
+-------------------------------------- Server Moved --------------------------------------------------
+-------------------------------------- Server OU movement --------------------------------------------
+shhwsr1479 is in the CN=SHHWSR1479,OU=SHH,OU=0000,OU=001,OU=Servers,OU=NBI12,DC=global,DC=schindler,DC=com
+The server shhwsr1479 is in the new OU = CN=shhwsr1479,OU=000,OU=Servers,OU=NBI12,DC=global,DC=schindler,DC=com
+-------------------------------------- Server Moved --------------------------------------------------
+-------------------------------------- Server OU movement --------------------------------------------
+shhwsr1503 is in the CN=SHHWSR1503,OU=SHH,OU=0000,OU=001,OU=Servers,OU=NBI12,DC=global,DC=schindler,DC=com
+The server shhwsr1503 is in the new OU = CN=shhwsr1503,OU=000,OU=Servers,OU=NBI12,DC=global,DC=schindler,DC=com
+-------------------------------------- Server Moved --------------------------------------------------
+-------------------------------------- Server OU movement --------------------------------------------
+shhwsr1504 is in the CN=SHHWSR1504,OU=SHH,OU=0000,OU=001,OU=Servers,OU=NBI12,DC=global,DC=schindler,DC=com
+The server shhwsr1504 is in the new OU = CN=shhwsr1504,OU=000,OU=Servers,OU=NBI12,DC=global,DC=schindler,DC=com
+-------------------------------------- Server Moved --------------------------------------------------
+-------------------------------------- Server OU movement --------------------------------------------
+shhwsr1505 is in the CN=SHHWSR1505,OU=SHH,OU=0000,OU=001,OU=Servers,OU=NBI12,DC=global,DC=schindler,DC=com
+The server shhwsr1505 is in the new OU = CN=shhwsr1505,OU=000,OU=Servers,OU=NBI12,DC=global,DC=schindler,DC=com
+-------------------------------------- Server Moved --------------------------------------------------
+-------------------------------------- Server OU movement --------------------------------------------
+shhwsr1506 is in the CN=SHHWSR1506,OU=SHH,OU=0000,OU=001,OU=Servers,OU=NBI12,DC=global,DC=schindler,DC=com
+The server shhwsr1506 is in the new OU = CN=shhwsr1506,OU=000,OU=Servers,OU=NBI12,DC=global,DC=schindler,DC=com
+-------------------------------------- Server Moved --------------------------------------------------
+
+PS C:\Windows\system32> 

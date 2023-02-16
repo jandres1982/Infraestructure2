@@ -1,0 +1,223 @@
+﻿**********************
+Windows PowerShell transcript start
+Start time: 20200109153205
+Username: GLOBAL\admventoa1
+RunAs User: GLOBAL\admventoa1
+Configuration Name: 
+Machine: SHHWSR1849 (Microsoft Windows NT 10.0.17763.0)
+Host Application: C:\Windows\system32\WindowsPowerShell\v1.0\PowerShell_ISE.exe
+Process ID: 2212
+PSVersion: 5.1.17763.771
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.17763.771
+BuildVersion: 10.0.17763.771
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+Transcript started, output file is D:\Repository\Working\Antonio\Anti_Virus_Query_Task\Check_SERVER_SEP\Server_SEP_Log\Server_SEP_Log_15H_32M.txt
+##############################  aszwsr0028 ###############################################
+
+
+aszwsr0028 is not pingable
+##############################  aszwsr0029 ###############################################
+
+
+aszwsr0029 is not pingable
+##############################  indwsr0024 ###############################################
+
+
+indwsr0024 ping is good!
+indwsr0024 SepMasterService found
+SEP version
+14.0.3876.1100
+WARNING: SEP needs to be updated check
+indwsr0024 RDP OK
+
+
+##############################  jsgwsr0002 ###############################################
+
+
+jsgwsr0002 is not pingable
+##############################  jsgwsr0036 ###############################################
+
+
+jsgwsr0036 is not pingable
+##############################  MILW0133 ###############################################
+
+
+MILW0133 is not pingable
+##############################  MILWCOMV1 ###############################################
+
+
+MILWCOMV1 is not pingable
+##############################  MILWCOMV2 ###############################################
+
+
+MILWCOMV2 is not pingable
+##############################  SAOWSR0183 ###############################################
+
+
+SAOWSR0183 is not pingable
+##############################  SAOWSR0254 ###############################################
+
+
+SAOWSR0254 is not pingable
+##############################  schwsr0057 ###############################################
+
+
+schwsr0057 is not pingable
+##############################  schwsr0058 ###############################################
+
+
+schwsr0058 is not pingable
+##############################  secwsr0175 ###############################################
+
+
+secwsr0175 is not pingable
+##############################  SECWSR0176 ###############################################
+
+
+SECWSR0176 is not pingable
+##############################  SECWSR1052 ###############################################
+
+
+SECWSR1052 is not pingable
+##############################  secwsr1074 ###############################################
+
+
+secwsr1074 is not pingable
+##############################  SECWSR1076 ###############################################
+
+
+SECWSR1076 is not pingable
+##############################  SECWSR1077 ###############################################
+
+
+SECWSR1077 is not pingable
+##############################  SECWSR1078 ###############################################
+
+
+SECWSR1078 is not pingable
+##############################  SECWSR1155 ###############################################
+
+
+SECWSR1155 is not pingable
+##############################  secwsr1156 ###############################################
+
+
+secwsr1156 is not pingable
+##############################  SECWSR8006 ###############################################
+
+
+SECWSR8006 is not pingable
+##############################  SECWSR8206 ###############################################
+
+
+SECWSR8206 is not pingable
+##############################  shhwsr1857 ###############################################
+
+
+shhwsr1857 is a DMZ or TSTGLOBAL Server
+##############################  WIN-9LH7J5RFH8O ###############################################
+
+
+WIN-9LH7J5RFH8O is not pingable
+##############################  DESWSR0001 ###############################################
+
+
+DESWSR0001 ping is good!
+DESWSR0001 SepMasterService found
+SEP version
+14.0.3876.1100
+WARNING: SEP needs to be updated check
+DESWSR0001 RDP OK
+
+
+##############################  LIMWSR0005 ###############################################
+
+
+LIMWSR0005 is not pingable
+##############################  SAOWSR3003 ###############################################
+
+
+SAOWSR3003 ping is good!
+SAOWSR3003 SepMasterService found
+SEP version
+14.0.3876.1100
+WARNING: SEP needs to be updated check
+SAOWSR3003 RDP OK
+
+
+##############################  SECWSR1038 ###############################################
+
+
+SECWSR1038 ping is good!
+SECWSR1038 SepMasterService found
+SEP version
+14.0.3876.1100
+WARNING: SEP needs to be updated check
+SECWSR1038 RDP OK
+
+
+##############################  secwsr1039 ###############################################
+
+
+secwsr1039 ping is good!
+secwsr1039 SepMasterService found
+SEP version
+14.0.3876.1100
+WARNING: SEP needs to be updated check
+secwsr1039 RDP OK
+
+
+##############################  SECWSR1113 ###############################################
+
+
+SECWSR1113 ping is good!
+SECWSR1113 SepMasterService found
+SEP version
+14.0.3876.1100
+WARNING: SEP needs to be updated check
+SECWSR1113 RDP OK
+
+
+##############################  SECWSR1146 ###############################################
+
+
+SECWSR1146 ping is good!
+SECWSR1146 SepMasterService found
+SEP version
+14.0.3876.1100
+WARNING: SEP needs to be updated check
+SECWSR1146 RDP OK
+
+
+##############################  SECWSR8014 ###############################################
+
+
+SECWSR8014 ping is good!
+SECWSR8014 SepMasterService found
+SEP version
+14.0.3876.1100
+WARNING: SEP needs to be updated check
+SECWSR8014 RDP OK
+
+
+##############################  shhwsr1889 ###############################################
+
+
+shhwsr1889 is not pingable
+##############################  jnbwh005 ###############################################
+
+
+jnbwh005 is not pingable
+##############################  jnbwh013 ###############################################
+
+
+jnbwh013 is not pingable
+**********************
+Windows PowerShell transcript end
+End time: 20200109153456
+**********************

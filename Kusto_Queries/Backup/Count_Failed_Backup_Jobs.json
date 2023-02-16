@@ -1,0 +1,38 @@
+Count of Failed Backup Jobs
+recoveryservicesresources
+| where properties['lastBackupStatus'] == "Failed"
+| where properties.backupManagementType == "AzureIaasVM"
+| summarize count(name)
+
+Count of Completed Backup Jobs
+recoveryservicesresources
+| where properties['lastBackupStatus'] == "Completed"
+| where properties.backupManagementType == "AzureIaasVM"   
+| summarize count(name)
+
+Failed Backup VMS showing only the Friendly Name
+recoveryservicesresources
+| where properties['lastBackupStatus'] == "Failed"
+| where properties.backupManagementType == "AzureIaasVM"
+| extend friendlyName = properties.friendlyName
+| project friendlyName
+
+Backup policy for each VM
+RecoveryServicesResources
+| where type == "microsoft.recoveryservices/vaults/backupfabrics/protectioncontainers/protecteditems"
+| where properties.backupManagementType == "AzureIaasVM"
+| extend friendlyName = properties.friendlyName
+| extend policyName = properties.policyName
+| project friendlyName,policyName
+
+
+Kusto queries Backup documentation: https://docs.microsoft.com/en-us/azure/backup/query-backups-using-azure-resource-graph
+
+
+#Working
+RecoveryServicesResources
+| where type == "microsoft.recoveryservices/vaults/backupfabrics/protectioncontainers/protecteditems"
+
+
+Metrics:
+https://medium.com/globant/monitoring-azure-vms-using-grafana-6b6636582bdd

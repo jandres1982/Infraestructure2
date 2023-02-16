@@ -1,0 +1,3 @@
+"ServerName","Processor","Model","Manufacturer","PhysicalCores","CPU_L2CacheSize","CPU_L3CacheSize","Sockets","LogicalCores","OS_Name","OS_Version","TotalPhysical_Memory_GB","TotalVirtual_Memory_MB","TotalVisable_Memory_MB"
+"TSTSHHWSR1248","Intel(R) Xeon(R) CPU E5-2695 v3 @ 2.30GHz","Intel64 Family 6 Model 63 Stepping 2","GenuineIntel","1","0","0","CPU #000","1","Microsoft Windows Server 2008 R2 Enterprise ","6.1.7601","4","8","4"
+"TSTSHHWSR1248","Intel(R) Xeon(R) CPU E5-2695 v3 @ 2.30GHz","Intel64 Family 6 Model 63 Stepping 2","GenuineIntel","1","0","0","CPU #001","1","Microsoft Windows Server 2008 R2 Enterprise ","6.1.7601","4","8","4"

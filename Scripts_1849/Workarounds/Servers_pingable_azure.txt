@@ -1,0 +1,293 @@
+##############################  SHHWSR1790 ###############################################
+
+
+SHHWSR1790 is not pingable
+C$\temp\ folder is not reachable
+No Zabbix Agent found in SHHWSR1790
+SHHWSR1790 has not SEP Installed, please check
+
+
+##############################  SHHWSR1791 ###############################################
+
+
+SHHWSR1791 is not pingable
+C$\temp\ folder is not reachable
+No Zabbix Agent found in SHHWSR1791
+SHHWSR1791 has not SEP Installed, please check
+
+
+##############################  SHHWSR1792 ###############################################
+
+
+SHHWSR1792 is not pingable
+C$\temp\ folder is not reachable
+No Zabbix Agent found in SHHWSR1792
+SHHWSR1792 has not SEP Installed, please check
+
+
+##############################  SHHWSR1793 ###############################################
+
+
+SHHWSR1793 is not pingable
+C$\temp\ folder is not reachable
+No Zabbix Agent found in SHHWSR1793
+SHHWSR1793 has not SEP Installed, please check
+
+
+##############################  SHHWSR1798 ###############################################
+
+
+SHHWSR1798 is not pingable
+C$\temp\ folder is not reachable
+No Zabbix Agent found in SHHWSR1798
+SHHWSR1798 has not SEP Installed, please check
+
+
+##############################  SHHWSR1803 ###############################################
+
+
+SHHWSR1803 is not pingable
+C$\temp\ folder is not reachable
+No Zabbix Agent found in SHHWSR1803
+SHHWSR1803 has not SEP Installed, please check
+
+
+##############################  SHHWSR1804 ###############################################
+
+
+SHHWSR1804 is not pingable
+C$\temp\ folder is not reachable
+No Zabbix Agent found in SHHWSR1804
+SHHWSR1804 has not SEP Installed, please check
+
+
+##############################  SHHWSR1805 ###############################################
+
+
+SHHWSR1805 is not pingable
+C$\temp\ folder is not reachable
+No Zabbix Agent found in SHHWSR1805
+SHHWSR1805 has not SEP Installed, please check
+
+
+##############################  SHHWSR1806 ###############################################
+
+
+SHHWSR1806 is not pingable
+C$\temp\ folder is not reachable
+No Zabbix Agent found in SHHWSR1806
+SHHWSR1806 has not SEP Installed, please check
+
+
+##############################  shhwsr1853 ###############################################
+
+
+shhwsr1853 is not pingable
+C$\temp\ folder is not reachable
+No Zabbix Agent found in shhwsr1853
+shhwsr1853 has not SEP Installed, please check
+
+
+##############################  SHHWSR1867 ###############################################
+
+
+SHHWSR1867 is not pingable
+C$\temp\ folder is not reachable
+No Zabbix Agent found in SHHWSR1867
+SHHWSR1867 has not SEP Installed, please check
+
+
+##############################  shhwsr1889 ###############################################
+
+
+shhwsr1889 is not pingable
+C$\temp\ folder is not reachable
+No Zabbix Agent found in shhwsr1889
+shhwsr1889 has not SEP Installed, please check
+
+
+##############################  shhwsr1893 ###############################################
+
+
+shhwsr1893 is not pingable
+C$\temp\ folder is not reachable
+No Zabbix Agent found in shhwsr1893
+shhwsr1893 has not SEP Installed, please check
+
+
+##############################  shhwsr1898 ###############################################
+
+
+shhwsr1898 is not pingable
+C$\temp\ folder is not reachable
+No Zabbix Agent found in shhwsr1898
+shhwsr1898 has not SEP Installed, please check
+
+
+##############################  shhwsr1976 ###############################################
+
+
+shhwsr1976 is not pingable
+C$\temp\ folder is not reachable
+No Zabbix Agent found in shhwsr1976
+shhwsr1976 has not SEP Installed, please check
+
+
+##############################  SHHWSR1998 ###############################################
+
+
+SHHWSR1998 is not pingable
+C$\temp\ folder is not reachable
+No Zabbix Agent found in SHHWSR1998
+SHHWSR1998 has not SEP Installed, please check
+
+
+##############################  SHHWSR1999 ###############################################
+
+
+SHHWSR1999 ping is good!
+C$\temp\ folder is reachable SHHWSR1999
+SHHWSR1999, has Zabbix Service
+Server SHHWSR1999 have SEP Installed
+
+
+##############################  JSGWSR0061 ###############################################
+
+
+JSGWSR0061 ping is good!
+C$\temp\ folder is reachable JSGWSR0061
+JSGWSR0061, has Zabbix Service
+Server JSGWSR0061 have SEP Installed
+
+
+##############################  JSGWSR0062 ###############################################
+
+
+JSGWSR0062 ping is good!
+C$\temp\ folder is reachable JSGWSR0062
+No Zabbix Agent found in JSGWSR0062
+Server JSGWSR0062 have SEP Installed
+
+
+##############################  JSGWSR0063 ###############################################
+
+
+JSGWSR0063 ping is good!
+C$\temp\ folder is reachable JSGWSR0063
+No Zabbix Agent found in JSGWSR0063
+Server JSGWSR0063 have SEP Installed
+
+
+##############################  SHHWSRDC1030 ###############################################
+
+
+SHHWSRDC1030 is not pingable
+C$\temp\ folder is not reachable
+No Zabbix Agent found in SHHWSRDC1030
+SHHWSRDC1030 has not SEP Installed, please check
+
+
+##############################  SHHWSR2010 ###############################################
+
+
+SHHWSR2010 ping is good!
+C$\temp\ folder is reachable SHHWSR2010
+No Zabbix Agent found in SHHWSR2010
+Server SHHWSR2010 have SEP Installed
+
+
+##############################  SHHWSR2011 ###############################################
+
+
+SHHWSR2011 ping is good!
+C$\temp\ folder is reachable SHHWSR2011
+No Zabbix Agent found in SHHWSR2011
+Server SHHWSR2011 have SEP Installed
+
+
+##############################  SHHWSR2012 ###############################################
+
+
+SHHWSR2012 is not pingable
+C$\temp\ folder is not reachable
+No Zabbix Agent found in SHHWSR2012
+SHHWSR2012 has not SEP Installed, please check
+
+
+##############################  SHHWSR2013 ###############################################
+
+
+SHHWSR2013 ping is good!
+C$\temp\ folder is reachable SHHWSR2013
+No Zabbix Agent found in SHHWSR2013
+SHHWSR2013 has not SEP Installed, please check
+
+
+##############################  SHHWSR2019 ###############################################
+
+
+SHHWSR2019 ping is good!
+C$\temp\ folder is reachable SHHWSR2019
+No Zabbix Agent found in SHHWSR2019
+SHHWSR2019 has not SEP Installed, please check
+
+
+##############################  SHHWSR2022 ###############################################
+
+
+SHHWSR2022 ping is good!
+C$\temp\ folder is reachable SHHWSR2022
+SHHWSR2022, has Zabbix Service
+Server SHHWSR2022 have SEP Installed
+
+
+##############################  shhwsr2023 ###############################################
+
+
+shhwsr2023 is not pingable
+C$\temp\ folder is not reachable
+No Zabbix Agent found in shhwsr2023
+shhwsr2023 has not SEP Installed, please check
+
+
+##############################  jsgwsr0062 ###############################################
+
+
+jsgwsr0062 ping is good!
+C$\temp\ folder is reachable jsgwsr0062
+No Zabbix Agent found in jsgwsr0062
+Server jsgwsr0062 have SEP Installed
+
+
+##############################  jsgwsr0063 ###############################################
+
+
+jsgwsr0063 ping is good!
+C$\temp\ folder is reachable jsgwsr0063
+No Zabbix Agent found in jsgwsr0063
+Server jsgwsr0063 have SEP Installed
+
+
+##############################  SHHWSR2024 ###############################################
+
+
+SHHWSR2024 ping is good!
+C$\temp\ folder is reachable SHHWSR2024
+No Zabbix Agent found in SHHWSR2024
+Server SHHWSR2024 have SEP Installed
+
+
+
+
+
+SHHWSR2020
+SHHWSR2021
+SHHWSR1569
+SHHWSR1570
+SHHWSR1901
+SHHWSR1577
+SHHWSR1579
+SHHWSR1582
+SHHWSR1578
+SHHWSR1580
+SHHWSR1581

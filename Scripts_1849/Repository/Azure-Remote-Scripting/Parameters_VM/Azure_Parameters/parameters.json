@@ -1,0 +1,42 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "location": {
+            "value": "westeurope"
+        },
+        "networkInterfaceName": {
+            "value": "zzzwsr0040959"
+        },
+        "subnetName": {
+            "value": "default"
+        },
+        "virtualNetworkId": {
+            "value": "/subscriptions/a2ccfabb-588d-45c9-b72a-0a4a6b79a5cc/resourceGroups/SDG-TEST/providers/Microsoft.Network/virtualNetworks/SDG-TEST-NET"
+        },
+        "virtualMachineName": {
+            "value": "ZZZWSR0040"
+        },
+        "virtualMachineRG": {
+            "value": "SDG-TEST"
+        },
+        "osDiskType": {
+            "value": "Premium_LRS"
+        },
+        "virtualMachineSize": {
+            "value": "Standard_B2s"
+        },
+        "adminUsername": {
+            "value": "LDMSOSD"
+        },
+        "adminPassword": {
+            "value": "Newsetup123456789"
+        },
+        "diagnosticsStorageAccountName": {
+            "value": "schindlerstoragetest"
+        },
+        "diagnosticsStorageAccountId": {
+            "value": "/subscriptions/a2ccfabb-588d-45c9-b72a-0a4a6b79a5cc/resourceGroups/SDG-TEST/providers/Microsoft.Storage/storageAccounts/schindlerstoragetest"
+        }
+    }
+}

@@ -1,0 +1,1719 @@
+﻿**********************
+Windows PowerShell transcript start
+Start time: 20191127103548
+Username: GLOBAL\admventoa1
+RunAs User: GLOBAL\admventoa1
+Machine: SHHWSR0958 (Microsoft Windows NT 6.3.9600.0)
+Host Application: C:\Windows\System32\WindowsPowerShell\v1.0\powershell_ise.exe
+Process ID: 5968
+PSVersion: 5.1.14407.1003
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.14407.1003
+BuildVersion: 10.0.14407.1003
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+Transcript started, output file is D:\Repository\Working\Antonio\Anti_Virus_Query_Task\Check_SERVER_SEP\Server_SEP_Log\Server_SEP_Log_10H_35M.txt
+##############################  secwsr9996 ###############################################
+
+
+secwsr9996 is not pingable
+##############################  secwsr9997 ###############################################
+
+
+secwsr9997 is not pingable
+##############################  secwsr1025 ###############################################
+
+
+secwsr1025 is not pingable
+##############################  deuwsr7002 ###############################################
+
+
+deuwsr7002 ping is good!
+deuwsr7002 SepMasterService found
+SEP version
+14.0.3876.1100
+WARNING: SEP needs to be updated check
+WARNING: Pending reboot needed, probably waiting to apply the new version
+deuwsr7002 RDP OK
+
+
+##############################  secwsr7010 ###############################################
+
+
+secwsr7010 is not pingable
+##############################  indwsr0018 ###############################################
+
+
+indwsr0018 is not pingable
+##############################  schwsr0078 ###############################################
+
+
+schwsr0078 is not pingable
+##############################  schwsr0044 ###############################################
+
+
+schwsr0044 is not pingable
+##############################  saowsr0069 ###############################################
+
+
+saowsr0069 ping is good!
+saowsr0069 SepMasterService found
+SEP version
+14.0.3876.1100
+WARNING: SEP needs to be updated check
+WARNING: Pending reboot needed, probably waiting to apply the new version
+saowsr0069 RDP OK
+
+
+##############################  jsgwsr0008 ###############################################
+
+
+jsgwsr0008 is not pingable
+##############################  milwsr0105 ###############################################
+
+
+milwsr0105 is not pingable
+##############################  jnbwsr0033 ###############################################
+
+
+jnbwsr0033 ping is good!
+jnbwsr0033 SepMasterService found
+SEP version
+14.2.4814.1101
+ALL RIGHT! Version: 14.2.4814.1101
+jnbwsr0033 RDP OK
+
+
+##############################  jsgwsr0031 ###############################################
+
+
+jsgwsr0031 is not pingable
+##############################  shhwsr0547 ###############################################
+
+
+shhwsr0547 is not pingable
+##############################  skowsr0011 ###############################################
+
+
+skowsr0011 is not pingable
+##############################  indwsr0020 ###############################################
+
+
+indwsr0020 ping is good!
+indwsr0020 SepMasterService found
+SEP version
+14.2.4814.1101
+ALL RIGHT! Version: 14.2.4814.1101
+indwsr0020 RDP OK
+
+
+##############################  tlvwsr0002 ###############################################
+
+
+tlvwsr0002 ping is good!
+Please check tlvwsr0002 SepMasterService not found
+tlvwsr0002 RDP OK
+
+
+##############################  saowsr3012 ###############################################
+
+
+saowsr3012 ping is good!
+saowsr3012 SepMasterService found
+SEP version
+14.2.4814.1101
+ALL RIGHT! Version: 14.2.4814.1101
+saowsr3012 RDP OK
+
+
+##############################  asmwsr0103 ###############################################
+
+
+asmwsr0103 ping is good!
+asmwsr0103 SepMasterService found
+SEP version
+14.0.3876.1100
+WARNING: SEP needs to be updated check
+WARNING: Pending reboot needed, probably waiting to apply the new version
+asmwsr0103 RDP OK
+
+
+##############################  ukrwsr0101 ###############################################
+
+
+ukrwsr0101 ping is good!
+ukrwsr0101 SepMasterService found
+SEP version
+14.2.4814.1101
+ALL RIGHT! Version: 14.2.4814.1101
+ukrwsr0101 RDP OK
+
+
+##############################  ukcwsr0004 ###############################################
+
+
+ukcwsr0004 ping is good!
+ukcwsr0004 SepMasterService found
+SEP version
+14.2.4814.1101
+ALL RIGHT! Version: 14.2.4814.1101
+ukcwsr0004 RDP OK
+
+
+##############################  parwsr0033 ###############################################
+
+
+parwsr0033 ping is good!
+parwsr0033 SepMasterService found
+SEP version
+14.2.4814.1101
+ALL RIGHT! Version: 14.2.4814.1101
+parwsr0033 RDP OK
+
+
+##############################  ukcwsr0108 ###############################################
+
+
+ukcwsr0108 is not pingable
+##############################  ukcwsr0008 ###############################################
+
+
+ukcwsr0008 ping is good!
+ukcwsr0008 SepMasterService found
+SEP version
+14.2.4814.1101
+ALL RIGHT! Version: 14.2.4814.1101
+ukcwsr0008 RDP OK
+
+
+##############################  ukcwsr0003 ###############################################
+
+
+ukcwsr0003 ping is good!
+ukcwsr0003 SepMasterService found
+SEP version
+14.2.4814.1101
+ALL RIGHT! Version: 14.2.4814.1101
+ukcwsr0003 RDP OK
+
+
+##############################  ukcwsr0006 ###############################################
+
+
+ukcwsr0006 ping is good!
+ukcwsr0006 SepMasterService found
+SEP version
+14.2.4814.1101
+ALL RIGHT! Version: 14.2.4814.1101
+ukcwsr0006 RDP OK
+
+
+##############################  ukcwsr0007 ###############################################
+
+
+ukcwsr0007 ping is good!
+ukcwsr0007 SepMasterService found
+SEP version
+14.2.4814.1101
+ALL RIGHT! Version: 14.2.4814.1101
+ukcwsr0007 RDP OK
+
+
+##############################  deswsrdc0001 ###############################################
+
+
+deswsrdc0001 ping is good!
+deswsrdc0001 SepMasterService found
+[deswsrdc0001] Connecting to remote server deswsrdc0001 failed with the following error message : Access is denied. For 
+more information, see the about_Remote_Troubleshooting Help topic.
+    + CategoryInfo          : OpenError: (deswsrdc0001:String) [], PSRemotingTransportException
+    + FullyQualifiedErrorId : AccessDenied,PSSessionStateBroken
+[deswsrdc0001] Connecting to remote server deswsrdc0001 failed with the following error message : Access is denied. For more information, see the
+about_Remote_Troubleshooting Help topic.
+    + CategoryInfo          : OpenError: (deswsrdc0001:String) [], PSRemotingTransportException
+    + FullyQualifiedErrorId : AccessDenied,PSSessionStateBroken
+SEP version
+Please check the SEP version
+deswsrdc0001 RDP OK
+
+
+##############################  secwsr0166 ###############################################
+
+
+secwsr0166 ping is good!
+secwsr0166 SepMasterService found
+SEP version
+14.2.4814.1101
+ALL RIGHT! Version: 14.2.4814.1101
+secwsr0166 RDP OK
+
+
+##############################  secwsr7002 ###############################################
+
+
+secwsr7002 ping is good!
+secwsr7002 SepMasterService found
+SEP version
+14.2.4814.1101
+ALL RIGHT! Version: 14.2.4814.1101
+secwsr7002 RDP OK
+
+
+##############################  saowsr3002 ###############################################
+
+
+saowsr3002 ping is good!
+saowsr3002 SepMasterService found
+SEP version
+14.2.4814.1101
+ALL RIGHT! Version: 14.2.4814.1101
+saowsr3002 RDP OK
+
+
+##############################  mexwsr0120 ###############################################
+
+
+mexwsr0120 is not pingable
+##############################  deuwsr4002 ###############################################
+
+
+deuwsr4002 is not pingable
+##############################  shhwsr1527 ###############################################
+
+
+shhwsr1527 ping is good!
+shhwsr1527 SepMasterService found
+SEP version
+14.0.3876.1100
+WARNING: SEP needs to be updated check
+WARNING: Pending reboot needed, probably waiting to apply the new version
+shhwsr1527 RDP OK
+
+
+##############################  saowsr0107 ###############################################
+
+
+saowsr0107 ping is good!
+saowsr0107 SepMasterService found
+SEP version
+14.0.3876.1100
+WARNING: SEP needs to be updated check
+WARNING: Pending reboot needed, probably waiting to apply the new version
+saowsr0107 RDP OK
+
+
+##############################  saowsr0087 ###############################################
+
+
+saowsr0087 is not pingable
+##############################  shhwsr1556 ###############################################
+
+
+shhwsr1556 ping is good!
+shhwsr1556 SepMasterService found
+[shhwsr1556] Connecting to remote server shhwsr1556 failed with the following error message : WinRM cannot process the 
+request. The following error with errorcode 0x80090322 occurred while using Kerberos authentication: An unknown 
+security error occurred.  
+ Possible causes are:
+  -The user name or password specified are invalid.
+  -Kerberos is used when no authentication method and no user name are specified.
+  -Kerberos accepts domain user names, but not local user names.
+  -The Service Principal Name (SPN) for the remote computer name and port does not exist.
+  -The client and remote computers are in different domains and there is no trust between the two domains.
+ After checking for the above issues, try the following:
+  -Check the Event Viewer for events related to authentication.
+  -Change the authentication method; add the destination computer to the WinRM TrustedHosts configuration setting or 
+use HTTPS transport.
+ Note that computers in the TrustedHosts list might not be authenticated.
+   -For more information about WinRM configuration, run the following command: winrm help config. For more information, 
+see the about_Remote_Troubleshooting Help topic.
+    + CategoryInfo          : OpenError: (shhwsr1556:String) [], PSRemotingTransportException
+    + FullyQualifiedErrorId : -2144108387,PSSessionStateBroken
+[shhwsr1556] Connecting to remote server shhwsr1556 failed with the following error message : WinRM cannot process the request. The following error with
+errorcode 0x80090322 occurred while using Kerberos authentication: An unknown security error occurred.
+ Possible causes are:
+  -The user name or password specified are invalid.
+  -Kerberos is used when no authentication method and no user name are specified.
+  -Kerberos accepts domain user names, but not local user names.
+  -The Service Principal Name (SPN) for the remote computer name and port does not exist.
+  -The client and remote computers are in different domains and there is no trust between the two domains.
+ After checking for the above issues, try the following:
+  -Check the Event Viewer for events related to authentication.
+  -Change the authentication method; add the destination computer to the WinRM TrustedHosts configuration setting or use HTTPS transport.
+ Note that computers in the TrustedHosts list might not be authenticated.
+   -For more information about WinRM configuration, run the following command: winrm help config. For more information, see the about_Remote_Troubleshooting
+Help topic.
+    + CategoryInfo          : OpenError: (shhwsr1556:String) [], PSRemotingTransportException
+    + FullyQualifiedErrorId : -2144108387,PSSessionStateBroken
+SEP version
+Please check the SEP version
+shhwsr1556 RDP OK
+
+
+##############################  saowsr3008 ###############################################
+
+
+saowsr3008 ping is good!
+saowsr3008 SepMasterService found
+SEP version
+14.0.3876.1100
+WARNING: SEP needs to be updated check
+WARNING: Pending reboot needed, probably waiting to apply the new version
+saowsr3008 RDP OK
+
+
+##############################  zzzwsr1303 ###############################################
+
+
+zzzwsr1303 ping is good!
+Please check zzzwsr1303 SepMasterService not found
+PS C:\Windows\system32> TerminatingError(New-Object): "Exception calling ".ctor" with "2" argument(s): "A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 10.15.1.11:3389""
+WARNING: No access using RDP
+
+
+##############################  indwsr0030 ###############################################
+
+
+indwsr0030 ping is good!
+indwsr0030 SepMasterService found
+[indwsr0030] Connecting to remote server indwsr0030 failed with the following error message : The WSMan service could 
+not launch a host process to process the given request.  Make sure the WSMan provider host server and proxy are 
+properly registered. For more information, see the about_Remote_Troubleshooting Help topic.
+    + CategoryInfo          : OpenError: (indwsr0030:String) [], PSRemotingTransportException
+    + FullyQualifiedErrorId : 2,PSSessionStateBroken
+[indwsr0030] Connecting to remote server indwsr0030 failed with the following error message : The WSMan service could not launch a host process to process the
+given request.  Make sure the WSMan provider host server and proxy are properly registered. For more information, see the about_Remote_Troubleshooting Help
+topic.
+    + CategoryInfo          : OpenError: (indwsr0030:String) [], PSRemotingTransportException
+    + FullyQualifiedErrorId : 2,PSSessionStateBroken
+SEP version
+Please check the SEP version
+indwsr0030 RDP OK
+
+
+##############################  shhwsr1559 ###############################################
+
+
+shhwsr1559 ping is good!
+shhwsr1559 SepMasterService found
+SEP version
+14.0.3876.1100
+WARNING: SEP needs to be updated check
+WARNING: Pending reboot needed, probably waiting to apply the new version
+shhwsr1559 RDP OK
+
+
+##############################  secwsr1008 ###############################################
+
+
+secwsr1008 ping is good!
+secwsr1008 SepMasterService found
+SEP version
+14.0.3876.1100
+WARNING: SEP needs to be updated check
+WARNING: Pending reboot needed, probably waiting to apply the new version
+secwsr1008 RDP OK
+
+
+##############################  deuwsr0042 ###############################################
+
+
+deuwsr0042 ping is good!
+deuwsr0042 SepMasterService found
+SEP version
+14.0.3876.1100
+WARNING: SEP needs to be updated check
+WARNING: Pending reboot needed, probably waiting to apply the new version
+deuwsr0042 RDP OK
+
+
+##############################  locwsr1022 ###############################################
+
+
+locwsr1022 ping is good!
+locwsr1022 SepMasterService found
+SEP version
+14.0.3876.1100
+WARNING: SEP needs to be updated check
+WARNING: Pending reboot needed, probably waiting to apply the new version
+locwsr1022 RDP OK
+
+
+##############################  deuwsr0103 ###############################################
+
+
+deuwsr0103 ping is good!
+deuwsr0103 SepMasterService found
+SEP version
+14.0.3876.1100
+WARNING: SEP needs to be updated check
+WARNING: Pending reboot needed, probably waiting to apply the new version
+deuwsr0103 RDP OK
+
+
+##############################  saowsr0080 ###############################################
+
+
+saowsr0080 ping is good!
+saowsr0080 SepMasterService found
+SEP version
+14.0.3876.1100
+WARNING: SEP needs to be updated check
+WARNING: Pending reboot needed, probably waiting to apply the new version
+saowsr0080 RDP OK
+
+
+##############################  milwsr0143 ###############################################
+
+
+milwsr0143 ping is good!
+milwsr0143 SepMasterService found
+SEP version
+14.0.3876.1100
+WARNING: SEP needs to be updated check
+WARNING: Pending reboot needed, probably waiting to apply the new version
+milwsr0143 RDP OK
+
+
+##############################  shhwsr1542 ###############################################
+
+
+shhwsr1542 ping is good!
+shhwsr1542 SepMasterService found
+SEP version
+14.0.3876.1100
+WARNING: SEP needs to be updated check
+WARNING: Pending reboot needed, probably waiting to apply the new version
+shhwsr1542 RDP OK
+
+
+##############################  shhwsr0970 ###############################################
+
+
+shhwsr0970 ping is good!
+shhwsr0970 SepMasterService found
+SEP version
+14.0.3876.1100
+WARNING: SEP needs to be updated check
+WARNING: Pending reboot needed, probably waiting to apply the new version
+shhwsr0970 RDP OK
+
+
+##############################  saowsr0044 ###############################################
+
+
+saowsr0044 ping is good!
+saowsr0044 SepMasterService found
+SEP version
+14.0.3876.1100
+WARNING: SEP needs to be updated check
+WARNING: Pending reboot needed, probably waiting to apply the new version
+saowsr0044 RDP OK
+
+
+##############################  saowsr1041 ###############################################
+
+
+saowsr1041 ping is good!
+saowsr1041 SepMasterService found
+SEP version
+14.0.3876.1100
+WARNING: SEP needs to be updated check
+WARNING: Pending reboot needed, probably waiting to apply the new version
+saowsr1041 RDP OK
+
+
+##############################  shhwsr1486 ###############################################
+
+
+shhwsr1486 ping is good!
+shhwsr1486 SepMasterService found
+SEP version
+14.0.3876.1100
+WARNING: SEP needs to be updated check
+WARNING: Pending reboot needed, probably waiting to apply the new version
+shhwsr1486 RDP OK
+
+
+##############################  secwsr0064 ###############################################
+
+
+secwsr0064 ping is good!
+secwsr0064 SepMasterService found
+SEP version
+14.0.3876.1100
+WARNING: SEP needs to be updated check
+WARNING: Pending reboot needed, probably waiting to apply the new version
+secwsr0064 RDP OK
+
+
+##############################  deuwsr0041 ###############################################
+
+
+deuwsr0041 ping is good!
+deuwsr0041 SepMasterService found
+SEP version
+14.0.3876.1100
+WARNING: SEP needs to be updated check
+WARNING: Pending reboot needed, probably waiting to apply the new version
+deuwsr0041 RDP OK
+
+
+##############################  limwsr0002 ###############################################
+
+
+limwsr0002 ping is good!
+limwsr0002 SepMasterService found
+SEP version
+14.0.3876.1100
+WARNING: SEP needs to be updated check
+WARNING: Pending reboot needed, probably waiting to apply the new version
+limwsr0002 RDP OK
+
+
+##############################  shhwsr1545 ###############################################
+
+
+shhwsr1545 ping is good!
+shhwsr1545 SepMasterService found
+SEP version
+14.0.3876.1100
+WARNING: SEP needs to be updated check
+WARNING: Pending reboot needed, probably waiting to apply the new version
+shhwsr1545 RDP OK
+
+
+##############################  shhwsr1535 ###############################################
+
+
+shhwsr1535 ping is good!
+shhwsr1535 SepMasterService found
+SEP version
+14.0.3876.1100
+WARNING: SEP needs to be updated check
+WARNING: Pending reboot needed, probably waiting to apply the new version
+shhwsr1535 RDP OK
+
+
+##############################  porwsr0013 ###############################################
+
+
+porwsr0013 ping is good!
+porwsr0013 SepMasterService found
+SEP version
+14.0.3876.1100
+WARNING: SEP needs to be updated check
+WARNING: Pending reboot needed, probably waiting to apply the new version
+porwsr0013 RDP OK
+
+
+##############################  shhwsr1546 ###############################################
+
+
+shhwsr1546 ping is good!
+shhwsr1546 SepMasterService found
+SEP version
+14.0.3876.1100
+WARNING: SEP needs to be updated check
+WARNING: Pending reboot needed, probably waiting to apply the new version
+shhwsr1546 RDP OK
+
+
+##############################  shhwsr1549 ###############################################
+
+
+shhwsr1549 ping is good!
+shhwsr1549 SepMasterService found
+SEP version
+14.0.3876.1100
+WARNING: SEP needs to be updated check
+WARNING: Pending reboot needed, probably waiting to apply the new version
+shhwsr1549 RDP OK
+
+
+##############################  shhwsr1540 ###############################################
+
+
+shhwsr1540 ping is good!
+shhwsr1540 SepMasterService found
+SEP version
+14.0.3876.1100
+WARNING: SEP needs to be updated check
+WARNING: Pending reboot needed, probably waiting to apply the new version
+shhwsr1540 RDP OK
+
+
+##############################  saowsr0039 ###############################################
+
+
+saowsr0039 ping is good!
+saowsr0039 SepMasterService found
+SEP version
+14.0.3876.1100
+WARNING: SEP needs to be updated check
+WARNING: Pending reboot needed, probably waiting to apply the new version
+saowsr0039 RDP OK
+
+
+##############################  saowsr0117 ###############################################
+
+
+saowsr0117 ping is good!
+saowsr0117 SepMasterService found
+SEP version
+14.0.3876.1100
+WARNING: SEP needs to be updated check
+WARNING: Pending reboot needed, probably waiting to apply the new version
+saowsr0117 RDP OK
+
+
+##############################  shhwsr1547 ###############################################
+
+
+shhwsr1547 ping is good!
+shhwsr1547 SepMasterService found
+SEP version
+14.0.3876.1100
+WARNING: SEP needs to be updated check
+WARNING: Pending reboot needed, probably waiting to apply the new version
+shhwsr1547 RDP OK
+
+
+##############################  shhwsr1537 ###############################################
+
+
+shhwsr1537 ping is good!
+shhwsr1537 SepMasterService found
+SEP version
+14.0.3876.1100
+WARNING: SEP needs to be updated check
+WARNING: Pending reboot needed, probably waiting to apply the new version
+shhwsr1537 RDP OK
+
+
+##############################  shhwsr1529 ###############################################
+
+
+shhwsr1529 ping is good!
+shhwsr1529 SepMasterService found
+SEP version
+14.0.3876.1100
+WARNING: SEP needs to be updated check
+WARNING: Pending reboot needed, probably waiting to apply the new version
+shhwsr1529 RDP OK
+
+
+##############################  milwsr0139 ###############################################
+
+
+milwsr0139 ping is good!
+milwsr0139 SepMasterService found
+SEP version
+14.0.3876.1100
+WARNING: SEP needs to be updated check
+WARNING: Pending reboot needed, probably waiting to apply the new version
+milwsr0139 RDP OK
+
+
+##############################  shhwsr1543 ###############################################
+
+
+shhwsr1543 ping is good!
+shhwsr1543 SepMasterService found
+SEP version
+14.0.3876.1100
+WARNING: SEP needs to be updated check
+WARNING: Pending reboot needed, probably waiting to apply the new version
+shhwsr1543 RDP OK
+
+
+##############################  indwsr0024 ###############################################
+
+
+indwsr0024 ping is good!
+indwsr0024 SepMasterService found
+SEP version
+14.0.3876.1100
+WARNING: SEP needs to be updated check
+indwsr0024 RDP OK
+
+
+##############################  shhwsr1528 ###############################################
+
+
+shhwsr1528 ping is good!
+shhwsr1528 SepMasterService found
+SEP version
+14.0.3876.1100
+WARNING: SEP needs to be updated check
+WARNING: Pending reboot needed, probably waiting to apply the new version
+shhwsr1528 RDP OK
+
+
+##############################  deuwsr0045 ###############################################
+
+
+deuwsr0045 ping is good!
+deuwsr0045 SepMasterService found
+SEP version
+14.2.4814.1101
+ALL RIGHT! Version: 14.2.4814.1101
+deuwsr0045 RDP OK
+
+
+##############################  shhwsr0982 ###############################################
+
+
+shhwsr0982 ping is good!
+shhwsr0982 SepMasterService found
+SEP version
+14.0.3876.1100
+WARNING: SEP needs to be updated check
+WARNING: Pending reboot needed, probably waiting to apply the new version
+shhwsr0982 RDP OK
+
+
+##############################  shhwsr1530 ###############################################
+
+
+shhwsr1530 ping is good!
+shhwsr1530 SepMasterService found
+SEP version
+14.0.3876.1100
+WARNING: SEP needs to be updated check
+WARNING: Pending reboot needed, probably waiting to apply the new version
+shhwsr1530 RDP OK
+
+
+##############################  shhwsr1541 ###############################################
+
+
+shhwsr1541 ping is good!
+shhwsr1541 SepMasterService found
+SEP version
+14.0.3876.1100
+WARNING: SEP needs to be updated check
+WARNING: Pending reboot needed, probably waiting to apply the new version
+shhwsr1541 RDP OK
+
+
+##############################  shhwsr1489 ###############################################
+
+
+shhwsr1489 ping is good!
+shhwsr1489 SepMasterService found
+SEP version
+14.0.3876.1100
+WARNING: SEP needs to be updated check
+WARNING: Pending reboot needed, probably waiting to apply the new version
+shhwsr1489 RDP OK
+
+
+##############################  saowsr0041 ###############################################
+
+
+saowsr0041 ping is good!
+saowsr0041 SepMasterService found
+SEP version
+14.0.3876.1100
+WARNING: SEP needs to be updated check
+WARNING: Pending reboot needed, probably waiting to apply the new version
+saowsr0041 RDP OK
+
+
+##############################  saowsr0046 ###############################################
+
+
+saowsr0046 ping is good!
+saowsr0046 SepMasterService found
+SEP version
+14.0.3876.1100
+WARNING: SEP needs to be updated check
+WARNING: Pending reboot needed, probably waiting to apply the new version
+saowsr0046 RDP OK
+
+
+##############################  secwsr0067 ###############################################
+
+
+secwsr0067 ping is good!
+secwsr0067 SepMasterService found
+SEP version
+14.0.3876.1100
+WARNING: SEP needs to be updated check
+WARNING: Pending reboot needed, probably waiting to apply the new version
+secwsr0067 RDP OK
+
+
+##############################  shhwsr1548 ###############################################
+
+
+shhwsr1548 ping is good!
+shhwsr1548 SepMasterService found
+SEP version
+14.0.3876.1100
+WARNING: SEP needs to be updated check
+WARNING: Pending reboot needed, probably waiting to apply the new version
+shhwsr1548 RDP OK
+
+
+##############################  shhwsr1544 ###############################################
+
+
+shhwsr1544 ping is good!
+shhwsr1544 SepMasterService found
+SEP version
+14.0.3876.1100
+WARNING: SEP needs to be updated check
+WARNING: Pending reboot needed, probably waiting to apply the new version
+shhwsr1544 RDP OK
+
+
+##############################  saowsr2044 ###############################################
+
+
+saowsr2044 ping is good!
+saowsr2044 SepMasterService found
+SEP version
+14.0.3876.1100
+WARNING: SEP needs to be updated check
+WARNING: Pending reboot needed, probably waiting to apply the new version
+saowsr2044 RDP OK
+
+
+##############################  secwsr1074 ###############################################
+
+
+secwsr1074 is not pingable
+##############################  secwsr1156 ###############################################
+
+
+secwsr1156 is not pingable
+##############################  shhwsr0983 ###############################################
+
+
+shhwsr0983 ping is good!
+shhwsr0983 SepMasterService found
+SEP version
+14.0.3876.1100
+WARNING: SEP needs to be updated check
+WARNING: Pending reboot needed, probably waiting to apply the new version
+shhwsr0983 RDP OK
+
+
+##############################  milwsr0009 ###############################################
+
+
+milwsr0009 ping is good!
+milwsr0009 SepMasterService found
+SEP version
+14.0.3876.1100
+WARNING: SEP needs to be updated check
+WARNING: Pending reboot needed, probably waiting to apply the new version
+milwsr0009 RDP OK
+
+
+##############################  deuwsr0112 ###############################################
+
+
+deuwsr0112 ping is good!
+deuwsr0112 SepMasterService found
+SEP version
+14.0.3876.1100
+WARNING: SEP needs to be updated check
+WARNING: Pending reboot needed, probably waiting to apply the new version
+deuwsr0112 RDP OK
+
+
+##############################  saowsr0075 ###############################################
+
+
+saowsr0075 ping is good!
+saowsr0075 SepMasterService found
+SEP version
+14.0.3752.1000
+Please check the SEP version
+WARNING: Pending reboot needed, probably waiting to apply the new version
+saowsr0075 RDP OK
+
+
+##############################  saowsr0048 ###############################################
+
+
+saowsr0048 ping is good!
+saowsr0048 SepMasterService found
+SEP version
+14.0.3876.1100
+WARNING: SEP needs to be updated check
+WARNING: Pending reboot needed, probably waiting to apply the new version
+saowsr0048 RDP OK
+
+
+##############################  saowsr0002 ###############################################
+
+
+saowsr0002 ping is good!
+saowsr0002 SepMasterService found
+SEP version
+14.2.4814.1101
+ALL RIGHT! Version: 14.2.4814.1101
+saowsr0002 RDP OK
+
+
+##############################  saowsr0129 ###############################################
+
+
+saowsr0129 ping is good!
+saowsr0129 SepMasterService found
+SEP version
+14.2.4814.1101
+ALL RIGHT! Version: 14.2.4814.1101
+saowsr0129 RDP OK
+
+
+##############################  shhwsr1558 ###############################################
+
+
+shhwsr1558 ping is good!
+shhwsr1558 SepMasterService found
+SEP version
+14.0.3876.1100
+WARNING: SEP needs to be updated check
+WARNING: Pending reboot needed, probably waiting to apply the new version
+shhwsr1558 RDP OK
+
+
+##############################  jsgwsr0002 ###############################################
+
+
+jsgwsr0002 ping is good!
+jsgwsr0002 SepMasterService found
+SEP version
+14.0.3876.1100
+WARNING: SEP needs to be updated check
+jsgwsr0002 RDP OK
+
+
+##############################  locwsr1019 ###############################################
+
+
+locwsr1019 ping is good!
+locwsr1019 SepMasterService found
+SEP version
+14.0.3876.1100
+WARNING: SEP needs to be updated check
+WARNING: Pending reboot needed, probably waiting to apply the new version
+locwsr1019 RDP OK
+
+
+##############################  saowsr0091 ###############################################
+
+
+saowsr0091 ping is good!
+saowsr0091 SepMasterService found
+SEP version
+14.0.3876.1100
+WARNING: SEP needs to be updated check
+WARNING: Pending reboot needed, probably waiting to apply the new version
+saowsr0091 RDP OK
+
+
+##############################  shhwsr1531 ###############################################
+
+
+shhwsr1531 ping is good!
+shhwsr1531 SepMasterService found
+SEP version
+14.0.3876.1100
+WARNING: SEP needs to be updated check
+WARNING: Pending reboot needed, probably waiting to apply the new version
+shhwsr1531 RDP OK
+
+
+##############################  tstshhwsr0303 ###############################################
+
+
+tstshhwsr0303 is a DMZ or TSTGLOBAL Server
+##############################  cphwsr0001 ###############################################
+
+
+cphwsr0001 ping is good!
+cphwsr0001 SepMasterService found
+SEP version
+14.0.3876.1100
+WARNING: SEP needs to be updated check
+WARNING: Pending reboot needed, probably waiting to apply the new version
+cphwsr0001 RDP OK
+
+
+##############################  shhwsrdc1001 ###############################################
+
+
+shhwsrdc1001 ping is good!
+Please check shhwsrdc1001 SepMasterService not found
+shhwsrdc1001 RDP OK
+
+
+##############################  shhwsrdc1007 ###############################################
+
+
+shhwsrdc1007 ping is good!
+Please check shhwsrdc1007 SepMasterService not found
+shhwsrdc1007 RDP OK
+
+
+##############################  saowsr3101 ###############################################
+
+
+saowsr3101 ping is good!
+saowsr3101 SepMasterService found
+SEP version
+14.2.4814.1101
+ALL RIGHT! Version: 14.2.4814.1101
+saowsr3101 RDP OK
+
+
+##############################  deuwsr0110 ###############################################
+
+
+deuwsr0110 ping is good!
+deuwsr0110 SepMasterService found
+SEP version
+14.0.3876.1100
+WARNING: SEP needs to be updated check
+WARNING: Pending reboot needed, probably waiting to apply the new version
+deuwsr0110 RDP OK
+
+
+##############################  shhwsr1526 ###############################################
+
+
+shhwsr1526 ping is good!
+shhwsr1526 SepMasterService found
+SEP version
+14.0.3876.1100
+WARNING: SEP needs to be updated check
+WARNING: Pending reboot needed, probably waiting to apply the new version
+shhwsr1526 RDP OK
+
+
+##############################  schwsr0074 ###############################################
+
+
+schwsr0074 ping is good!
+schwsr0074 SepMasterService found
+SEP version
+14.0.3876.1100
+WARNING: SEP needs to be updated check
+WARNING: Pending reboot needed, probably waiting to apply the new version
+schwsr0074 RDP OK
+
+
+##############################  shhwsr1561 ###############################################
+
+
+shhwsr1561 ping is good!
+shhwsr1561 SepMasterService found
+SEP version
+14.0.3876.1100
+WARNING: SEP needs to be updated check
+WARNING: Pending reboot needed, probably waiting to apply the new version
+shhwsr1561 RDP OK
+
+
+##############################  milwsr0141 ###############################################
+
+
+milwsr0141 ping is good!
+milwsr0141 SepMasterService found
+SEP version
+14.0.3876.1100
+WARNING: SEP needs to be updated check
+WARNING: Pending reboot needed, probably waiting to apply the new version
+milwsr0141 RDP OK
+
+
+##############################  shhwsr0242 ###############################################
+
+
+shhwsr0242 ping is good!
+shhwsr0242 SepMasterService found
+SEP version
+14.2.4814.1101
+ALL RIGHT! Version: 14.2.4814.1101
+shhwsr0242 RDP OK
+
+
+##############################  shhwsr0981 ###############################################
+
+
+shhwsr0981 ping is good!
+shhwsr0981 SepMasterService found
+SEP version
+14.0.3876.1100
+WARNING: SEP needs to be updated check
+WARNING: Pending reboot needed, probably waiting to apply the new version
+shhwsr0981 RDP OK
+
+
+##############################  shhwsr1538 ###############################################
+
+
+shhwsr1538 ping is good!
+shhwsr1538 SepMasterService found
+SEP version
+14.0.3876.1100
+WARNING: SEP needs to be updated check
+WARNING: Pending reboot needed, probably waiting to apply the new version
+shhwsr1538 RDP OK
+
+
+##############################  shhwsr0676 ###############################################
+
+
+shhwsr0676 is not pingable
+##############################  shhwsr1536 ###############################################
+
+
+shhwsr1536 ping is good!
+shhwsr1536 SepMasterService found
+SEP version
+14.0.3876.1100
+WARNING: SEP needs to be updated check
+WARNING: Pending reboot needed, probably waiting to apply the new version
+shhwsr1536 RDP OK
+
+
+##############################  auswsr0009 ###############################################
+
+
+auswsr0009 ping is good!
+auswsr0009 SepMasterService found
+SEP version
+14.2.4814.1101
+ALL RIGHT! Version: 14.2.4814.1101
+auswsr0009 RDP OK
+
+
+##############################  deuwsr0124 ###############################################
+
+
+deuwsr0124 ping is good!
+deuwsr0124 SepMasterService found
+SEP version
+14.0.3876.1100
+WARNING: SEP needs to be updated check
+WARNING: Pending reboot needed, probably waiting to apply the new version
+deuwsr0124 RDP OK
+
+
+##############################  saowsr0020 ###############################################
+
+
+saowsr0020 ping is good!
+saowsr0020 SepMasterService found
+SEP version
+14.0.3876.1100
+WARNING: SEP needs to be updated check
+WARNING: Pending reboot needed, probably waiting to apply the new version
+saowsr0020 RDP OK
+
+
+##############################  auswsr0008 ###############################################
+
+
+auswsr0008 is not pingable
+##############################  deuwsr0005 ###############################################
+
+
+deuwsr0005 ping is good!
+deuwsr0005 SepMasterService found
+SEP version
+14.0.3876.1100
+WARNING: SEP needs to be updated check
+WARNING: Pending reboot needed, probably waiting to apply the new version
+deuwsr0005 RDP OK
+
+
+##############################  shhwsr1485 ###############################################
+
+
+shhwsr1485 ping is good!
+shhwsr1485 SepMasterService found
+SEP version
+14.0.3876.1100
+WARNING: SEP needs to be updated check
+WARNING: Pending reboot needed, probably waiting to apply the new version
+shhwsr1485 RDP OK
+
+
+##############################  saowsr0051 ###############################################
+
+
+saowsr0051 ping is good!
+saowsr0051 SepMasterService found
+SEP version
+14.0.3876.1100
+WARNING: SEP needs to be updated check
+WARNING: Pending reboot needed, probably waiting to apply the new version
+saowsr0051 RDP OK
+
+
+##############################  secwsr1528 ###############################################
+
+
+secwsr1528 ping is good!
+secwsr1528 SepMasterService found
+SEP version
+14.0.3876.1100
+WARNING: SEP needs to be updated check
+WARNING: Pending reboot needed, probably waiting to apply the new version
+secwsr1528 RDP OK
+
+
+##############################  saowsr0185 ###############################################
+
+
+saowsr0185 is not pingable
+##############################  milwsr0025 ###############################################
+
+
+milwsr0025 ping is good!
+milwsr0025 SepMasterService found
+SEP version
+14.0.3876.1100
+WARNING: SEP needs to be updated check
+WARNING: Pending reboot needed, probably waiting to apply the new version
+milwsr0025 RDP OK
+
+
+##############################  deuwsr0101 ###############################################
+
+
+deuwsr0101 ping is good!
+deuwsr0101 SepMasterService found
+SEP version
+14.0.3876.1100
+WARNING: SEP needs to be updated check
+WARNING: Pending reboot needed, probably waiting to apply the new version
+deuwsr0101 RDP OK
+
+
+##############################  zzzwsr0814 ###############################################
+
+
+zzzwsr0814 ping is good!
+Please check zzzwsr0814 SepMasterService not found
+PS C:\Windows\system32> TerminatingError(New-Object): "Exception calling ".ctor" with "2" argument(s): "A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 10.15.1.19:3389""
+WARNING: No access using RDP
+
+
+##############################  shhwsr1560 ###############################################
+
+
+shhwsr1560 ping is good!
+shhwsr1560 SepMasterService found
+SEP version
+14.0.3876.1100
+WARNING: SEP needs to be updated check
+WARNING: Pending reboot needed, probably waiting to apply the new version
+shhwsr1560 RDP OK
+
+
+##############################  secwsr0175 ###############################################
+
+
+secwsr0175 is not pingable
+##############################  shhwsr1785 ###############################################
+
+
+shhwsr1785 ping is good!
+shhwsr1785 SepMasterService found
+SEP version
+14.2.4814.1101
+ALL RIGHT! Version: 14.2.4814.1101
+shhwsr1785 RDP OK
+
+
+##############################  shhwsr1557 ###############################################
+
+
+shhwsr1557 ping is good!
+shhwsr1557 SepMasterService found
+SEP version
+14.0.3876.1100
+WARNING: SEP needs to be updated check
+WARNING: Pending reboot needed, probably waiting to apply the new version
+shhwsr1557 RDP OK
+
+
+##############################  vnmwsr0003 ###############################################
+
+
+vnmwsr0003 ping is good!
+vnmwsr0003 SepMasterService found
+SEP version
+14.0.3876.1100
+WARNING: SEP needs to be updated check
+WARNING: Pending reboot needed, probably waiting to apply the new version
+vnmwsr0003 RDP OK
+
+
+##############################  zzzwsr0812 ###############################################
+
+
+zzzwsr0812 ping is good!
+Please check zzzwsr0812 SepMasterService not found
+PS C:\Windows\system32> TerminatingError(New-Object): "Exception calling ".ctor" with "2" argument(s): "A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 10.15.1.16:3389""
+WARNING: No access using RDP
+
+
+##############################  secwsr0128 ###############################################
+
+
+secwsr0128 ping is good!
+secwsr0128 SepMasterService found
+SEP version
+14.0.3876.1100
+WARNING: SEP needs to be updated check
+WARNING: Pending reboot needed, probably waiting to apply the new version
+secwsr0128 RDP OK
+
+
+##############################  secwsr0121 ###############################################
+
+
+secwsr0121 ping is good!
+secwsr0121 SepMasterService found
+SEP version
+14.0.3876.1100
+WARNING: SEP needs to be updated check
+WARNING: Pending reboot needed, probably waiting to apply the new version
+secwsr0121 RDP OK
+
+
+##############################  saowsr0006 ###############################################
+
+
+saowsr0006 ping is good!
+saowsr0006 SepMasterService found
+SEP version
+14.2.4814.1101
+ALL RIGHT! Version: 14.2.4814.1101
+saowsr0006 RDP OK
+
+
+##############################  lebwsr0002 ###############################################
+
+
+lebwsr0002 is not pingable
+##############################  scnwsr0004 ###############################################
+
+
+scnwsr0004 ping is good!
+Please check scnwsr0004 SepMasterService not found
+WARNING: Pending reboot needed, probably waiting to apply the new version
+scnwsr0004 RDP OK
+
+
+##############################  tstshhwsr0305 ###############################################
+
+
+tstshhwsr0305 is a DMZ or TSTGLOBAL Server
+##############################  shhwsrdc0001 ###############################################
+
+
+shhwsrdc0001 is not pingable
+##############################  tstshhwsr0304 ###############################################
+
+
+tstshhwsr0304 is a DMZ or TSTGLOBAL Server
+##############################  milwsr0142 ###############################################
+
+
+milwsr0142 ping is good!
+milwsr0142 SepMasterService found
+SEP version
+14.0.3876.1100
+WARNING: SEP needs to be updated check
+WARNING: Pending reboot needed, probably waiting to apply the new version
+milwsr0142 RDP OK
+
+
+##############################  secwsr0116 ###############################################
+
+
+secwsr0116 ping is good!
+secwsr0116 SepMasterService found
+SEP version
+14.0.3876.1100
+WARNING: SEP needs to be updated check
+WARNING: Pending reboot needed, probably waiting to apply the new version
+secwsr0116 RDP OK
+
+
+##############################  jsgwsr0036 ###############################################
+
+
+jsgwsr0036 is not pingable
+##############################  saowsr0096 ###############################################
+
+
+saowsr0096 ping is good!
+saowsr0096 SepMasterService found
+SEP version
+14.0.3876.1100
+WARNING: SEP needs to be updated check
+WARNING: Pending reboot needed, probably waiting to apply the new version
+saowsr0096 RDP OK
+
+
+##############################  aszwsr0028 ###############################################
+
+
+aszwsr0028 is not pingable
+##############################  aszwsr0029 ###############################################
+
+
+aszwsr0029 is not pingable
+##############################  CRDW0002 ###############################################
+
+
+CRDW0002 is not pingable
+##############################  HAGWSR0102 ###############################################
+
+
+HAGWSR0102 ping is good!
+HAGWSR0102 SepMasterService found
+SEP version
+14.0.3876.1100
+WARNING: SEP needs to be updated check
+WARNING: Pending reboot needed, probably waiting to apply the new version
+HAGWSR0102 RDP OK
+
+
+##############################  MILW0133 ###############################################
+
+
+MILW0133 is not pingable
+##############################  MILWCOMV1 ###############################################
+
+
+MILWCOMV1 is not pingable
+##############################  MILWCOMV2 ###############################################
+
+
+MILWCOMV2 is not pingable
+##############################  PARWSR9101 ###############################################
+
+
+PARWSR9101 ping is good!
+PARWSR9101 SepMasterService found
+SEP version
+14.0.3876.1100
+WARNING: SEP needs to be updated check
+WARNING: Pending reboot needed, probably waiting to apply the new version
+PARWSR9101 RDP OK
+
+
+##############################  SAOWSR0095 ###############################################
+
+
+SAOWSR0095 ping is good!
+SAOWSR0095 SepMasterService found
+SEP version
+14.0.3876.1100
+WARNING: SEP needs to be updated check
+WARNING: Pending reboot needed, probably waiting to apply the new version
+SAOWSR0095 RDP OK
+
+
+##############################  SAOWSR1074 ###############################################
+
+
+SAOWSR1074 ping is good!
+SAOWSR1074 SepMasterService found
+SEP version
+14.0.3876.1100
+WARNING: SEP needs to be updated check
+WARNING: Pending reboot needed, probably waiting to apply the new version
+SAOWSR1074 RDP OK
+
+
+##############################  SAOWSR1107 ###############################################
+
+
+SAOWSR1107 ping is good!
+SAOWSR1107 SepMasterService found
+SEP version
+14.0.3876.1100
+WARNING: SEP needs to be updated check
+WARNING: Pending reboot needed, probably waiting to apply the new version
+SAOWSR1107 RDP OK
+
+
+##############################  SAOWSR1117 ###############################################
+
+
+SAOWSR1117 ping is good!
+SAOWSR1117 SepMasterService found
+SEP version
+14.0.3876.1100
+WARNING: SEP needs to be updated check
+WARNING: Pending reboot needed, probably waiting to apply the new version
+SAOWSR1117 RDP OK
+
+
+##############################  SAOWSR0183 ###############################################
+
+
+SAOWSR0183 is not pingable
+##############################  SAOWSR0254 ###############################################
+
+
+SAOWSR0254 is not pingable
+##############################  SCNWSR4001 ###############################################
+
+
+SCNWSR4001 ping is good!
+Please check SCNWSR4001 SepMasterService not found
+PS C:\Windows\system32> TerminatingError(New-Object): "Exception calling ".ctor" with "2" argument(s): "A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 10.69.158.10:3389""
+WARNING: No access using RDP
+
+
+##############################  SCNWSR0155 ###############################################
+
+
+SCNWSR0155 ping is good!
+SCNWSR0155 SepMasterService found
+SEP version
+14.0.3876.1100
+WARNING: SEP needs to be updated check
+WARNING: Pending reboot needed, probably waiting to apply the new version
+SCNWSR0155 RDP OK
+
+
+##############################  SECWSR1052 ###############################################
+
+
+SECWSR1052 is not pingable
+##############################  SECWSR1075 ###############################################
+
+
+SECWSR1075 is not pingable
+##############################  SECWSR1076 ###############################################
+
+
+SECWSR1076 is not pingable
+##############################  SECWSR1077 ###############################################
+
+
+SECWSR1077 is not pingable
+##############################  SECWSR1078 ###############################################
+
+
+SECWSR1078 is not pingable
+##############################  SECWSR1155 ###############################################
+
+
+SECWSR1155 is not pingable
+##############################  SECWSR8006 ###############################################
+
+
+SECWSR8006 is not pingable
+##############################  SECWSR8206 ###############################################
+
+
+SECWSR8206 is not pingable
+##############################  SECWSR0176 ###############################################
+
+
+SECWSR0176 is not pingable
+##############################  SHHWSR0008 ###############################################
+
+
+SHHWSR0008 ping is good!
+SHHWSR0008 SepMasterService found
+SEP version
+14.2.1031.0100
+Please check the SEP version
+WARNING: Pending reboot needed, probably waiting to apply the new version
+SHHWSR0008 RDP OK
+
+
+##############################  SHHWSR0269 ###############################################
+
+
+SHHWSR0269 ping is good!
+SHHWSR0269 SepMasterService found
+SEP version
+14.0.3876.1100
+WARNING: SEP needs to be updated check
+WARNING: Pending reboot needed, probably waiting to apply the new version
+SHHWSR0269 RDP OK
+
+
+##############################  schwsr0057 ###############################################
+
+
+schwsr0057 is not pingable
+##############################  schwsr0058 ###############################################
+
+
+schwsr0058 is not pingable
+##############################  SHHWSR1123 ###############################################
+
+
+SHHWSR1123 ping is good!
+SHHWSR1123 SepMasterService found
+SEP version
+14.0.3876.1100
+WARNING: SEP needs to be updated check
+WARNING: Pending reboot needed, probably waiting to apply the new version
+SHHWSR1123 RDP OK
+
+
+##############################  SHHWSR1172 ###############################################
+
+
+SHHWSR1172 ping is good!
+SHHWSR1172 SepMasterService found
+[SHHWSR1172] Connecting to remote server SHHWSR1172 failed with the following error message : WinRM cannot complete the 
+operation. Verify that the specified computer name is valid, that the computer is accessible over the network, and that 
+a firewall exception for the WinRM service is enabled and allows access from this computer. By default, the WinRM 
+firewall exception for public profiles limits access to remote computers within the same local subnet. For more 
+information, see the about_Remote_Troubleshooting Help topic.
+    + CategoryInfo          : OpenError: (SHHWSR1172:String) [], PSRemotingTransportException
+    + FullyQualifiedErrorId : WinRMOperationTimeout,PSSessionStateBroken
+[SHHWSR1172] Connecting to remote server SHHWSR1172 failed with the following error message : WinRM cannot complete the operation. Verify that the specified
+computer name is valid, that the computer is accessible over the network, and that a firewall exception for the WinRM service is enabled and allows access from
+this computer. By default, the WinRM firewall exception for public profiles limits access to remote computers within the same local subnet. For more
+information, see the about_Remote_Troubleshooting Help topic.
+    + CategoryInfo          : OpenError: (SHHWSR1172:String) [], PSRemotingTransportException
+    + FullyQualifiedErrorId : WinRMOperationTimeout,PSSessionStateBroken
+SEP version
+Please check the SEP version
+PS C:\Windows\system32> TerminatingError(New-Object): "Exception calling ".ctor" with "2" argument(s): "A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 10.15.2.31:3389""
+WARNING: No access using RDP
+
+
+##############################  shhwsr1795 ###############################################
+
+
+shhwsr1795 ping is good!
+Please check shhwsr1795 SepMasterService not found
+PS C:\Windows\system32> TerminatingError(New-Object): "Exception calling ".ctor" with "2" argument(s): "A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 10.10.52.21:3389""
+WARNING: No access using RDP
+
+
+##############################  WIN-9LH7J5RFH8O ###############################################
+
+
+WIN-9LH7J5RFH8O is not pingable
+**********************
+Windows PowerShell transcript end
+End time: 20191127110525
+**********************
