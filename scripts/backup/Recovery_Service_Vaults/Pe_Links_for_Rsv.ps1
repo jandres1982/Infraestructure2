@@ -1,4 +1,5 @@
-$subs = @("s-sis-eu-nonprod-01","s-sis-eu-prod-01","s-sis-am-prod-01","s-sis-am-nonprod-01","s-sis-ap-prod-01","s-sis-ch-prod-01","s-sis-ch-nonprod-01")
+$date = $(get-date -format yyyy-MM-ddTHH-mm)
+$subscription = @("s-sis-eu-nonprod-01","s-sis-eu-prod-01","s-sis-am-prod-01","s-sis-am-nonprod-01","s-sis-ap-prod-01","s-sis-ch-prod-01","s-sis-ch-nonprod-01")
 $Script_Path = "D:\Repository\Working\Antonio\Pe_Links_for_Rsv\"
 #test add some lines in D:\Repository\Working\Antonio\Pe_Links_for_Rsv\Subscriptions\s-sis-eu-nonprod-01\rsv-nonprod-euno-lrsbackup-02\pe\pe-backup-nonprod-0001.txt
 
@@ -6,8 +7,8 @@ Function Send_Email
 {
 $PSEmailServer = "smtp.eu.schindler.com"
 $From = "scc-support-zar.es@schindler.com"
+#$to = "gdl_usr_7aabcc1e-97e6-4283-9271-c04245556940@cloud.schindler.com","gda_usr_dcff050b-8326-48c9-8bf9-61f8de7e89f0@schindler.com"
 $to = "antoniovicente.vento@schindler.com"
-#$to = "antoniovicente.vento@schindler.com","javier.roy@schindler.com","alfonso.marques@schindler.com","javier.cabezudo@schindler.com"
 #$to = "gda_usr_dcff050b-8326-48c9-8bf9-61f8de7e89f0@schindler.com"
 $Subject = "Check $pe_name change on $rsv"
 $Body = @"
@@ -91,26 +92,25 @@ Foreach ($sub in $Subscription)
               }
           }
 
-      Select-AzSubscription -Subscription $sub
+      $Login = Connect-AzAccount -AccessToken $ArmToken -Subscription $sub -AccountId $content.client_id
       $Rsv_list = Get-AzRecoveryServicesVault |Where-Object {$_.Name -match "rsv-*"}
       $Rsv_name = $Rsv_list.name
       $Rg_name = $Rsv_list.ResourceGroupName
       
       foreach ($rsv in $Rsv_name) 
           {
-              Write-host "Working on $rsv" -ForegroundColor Green
-              Move-Item -Path "$Script_Path\Subscriptions\$sub\$rsv\pe\*" -Destination "$Script_Path\Subscriptions\$sub\$rsv\pe_old\" -Force -ErrorAction SilentlyContinue
-              New-Item -ItemType Directory -Path "$Script_Path\Subscriptions\$sub\$rsv" -Name "pe" -ErrorAction SilentlyContinue
-              New-Item -ItemType Directory -Path "$Script_Path\Subscriptions\$sub\$rsv" -Name "pe_old" -ErrorAction SilentlyContinue
-              New-Item -ItemType Directory -Path "$Script_Path\Subscriptions\$sub\$rsv" -Name "logs" -ErrorAction SilentlyContinue
-              $rg = $(Get-AzRecoveryServicesVault -Name $rsv).ResourceGroupName
-              $pe = Get-AzPrivateEndpointConnection -ResourceGroupName $rg -PrivateLinkResourceType "Microsoft.RecoveryServices/vaults" -ServiceName $rsv
-              if($pe)
+           Write-host "Working on $rsv" -ForegroundColor Green
+           Move-Item -Path "$Script_Path\Subscriptions\$sub\$rsv\pe\*" -Destination "$Script_Path\Subscriptions\$sub\$rsv\pe_old\" -Force -ErrorAction SilentlyContinue
+           New-Item -ItemType Directory -Path "$Script_Path\Subscriptions\$sub\$rsv" -Name "pe" -ErrorAction SilentlyContinue
+           New-Item -ItemType Directory -Path "$Script_Path\Subscriptions\$sub\$rsv" -Name "pe_old" -ErrorAction SilentlyContinue
+           New-Item -ItemType Directory -Path "$Script_Path\Subscriptions\$sub\$rsv" -Name "logs" -ErrorAction SilentlyContinue
+           $rg = $(Get-AzRecoveryServicesVault -Name $rsv).ResourceGroupName
+           $pe = Get-AzPrivateEndpointConnection -ResourceGroupName $rg -PrivateLinkResourceType "Microsoft.RecoveryServices/vaults" -ServiceName $rsv
+           if($pe)
               {
               $pe_name = $pe.PrivateEndpoint.Id.split("/")[8]
               Write-host "Working on $pe_name" -ForegroundColor Green
               Ms_Pe_Link_File -subscription $Sub -VaultPrivateEndpointName $pe_name -VaultPrivateEndpointRGName $rg -DNSRecordListFile "$Script_Path\Subscriptions\$sub\$rsv\Pe\$pe_name.txt"
-              
               #Compare
                 If (test-path "$Script_Path\Subscriptions\$sub\$rsv\pe_old\$pe_name.txt")
                 {#starting to compare
@@ -124,10 +124,29 @@ Foreach ($sub in $Subscription)
                       }
                 }else
                     {Write-Output "Nothing to compare check on $rsv, $pe_name old link was not found" >> "$Script_Path\logs\rsv_error.txt"}
+               #### end compare
 
               }else
                   {
                   Write-Output "$rsv | Not private Endpoint Found" >> "$Script_Path\Subscriptions\$sub\$rsv\logs\logs.txt"}
+
+               #Find not resolve links
+           $pes = gc "$Script_Path\Subscriptions\$sub\$rsv\Pe\$pe_name.txt"
+           foreach ($pe in $pes)
+           {
+           $Private_Endpoint = $pe.split("")[0] + "." + $pe.split("")[3]
+           $result = Resolve-DnsName $Private_Endpoint -ErrorAction SilentlyContinue
+           If ($result)
+           {Write-Host "$pe resolve" -ForegroundColor Green}
+           else
+               {Write-Output "$pe cannot resolve"
+               $Private_Endpoint = $pe.split("")[6] + " " + $Private_Endpoint
+               Write-Output "$Private_Endpoint" >> "D:\Repository\Working\Antonio\Pe_Links_for_Rsv\Pe_Not_Resolve\Pe_links_not_resolve_$date.txt"}
+           
+           }
+
+
+
           }
       
 }
