@@ -23,17 +23,20 @@ Write-Output "date: $date"
 Write-Output "email: $email"
 Write-Output "Type: $Type"
 
+#Check date (TO DO)
+
+
 Function Send_Email
 {
 $PSEmailServer = "smtp.eu.schindler.com"
 $From = "scc-support-zar.es@schindler.com"
 $to = "$Requester"
-$Subject = "Snapshot should be scheduled for $vm"
+$Subject = "Snapshot Should be Scheduled for $vm"
 $Body = @"
-Please check shhwsr1849 to verify the task is created.
+Please check DevOps Server Agent to verify the task is created.
 Machine: $vm
 Subscription_ID: $sub
-eMAIL:$email
+e-mail:$email
 "@
 Send-MailMessage -From $From -To $To -Subject $Subject -Body $Body
 }
