@@ -1,3 +1,4 @@
+Select-AzSubscription -Subscription "$sub"
 New-Item -Path ".\MMA_Json" -ItemType "Directory" -Force
 $vm = $args[0]
 $rg = $args[1]
