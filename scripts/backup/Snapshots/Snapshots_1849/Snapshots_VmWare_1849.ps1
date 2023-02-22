@@ -13,7 +13,7 @@ Write-Output "vm: $vm"
 Write-Output "date: $date"
 Write-Output "email: $email"
 
-$Nubes1 = "vcenterscs"
+#$Nubes1 = "vcenterscs"
 $Nubes4 = "vcenternubes4"
 
 Import-Module vmware.vimautomation.core
@@ -118,15 +118,16 @@ Function Power_On ($vm,[datetime]$date,$email,$Request,$vcenter)
 
 Set-PowerCLIConfiguration -Scope User -ParticipateInCEIP $false -Confirm:$false
 #Connect-VIServer -Server $Vcenter -User $NubesRoAcc -Password $NubesRoPw -force
-$Check_Nubes1 = Check_VM -VCenter $nubes1 -vm $vm | Select-String "True"
-Disconnect-VIServer -Server $Nubes1 -confirm:$false
+#$Check_Nubes1 = Check_VM -VCenter $nubes1 -vm $vm | Select-String "True"
+$Check_Nubes4 = Check_VM -VCenter $nubes4 -vm $vm | Select-String "True"
+Disconnect-VIServer -Server $Nubes4 -confirm:$false
 
-If ($Check_Nubes1)
-    {$VCenter = $Nubes1}
+If ($Check_Nubes4)
+    {$VCenter = $Nubes4}
         else
             {
-            $VCenter = $Nubes4
-            write-output "VM cannot be located in VCenter Nubes1, changing to Nubes4" > "D:\Snapshots\logs\VmWare_Snap_Check_$VM.txt"
+            #$VCenter = $Nubes1
+            write-output "VM cannot be located in VCenter Nubes4, please check the server" > "D:\Snapshots\logs\VmWare_Snap_Check_$VM.txt"
             }
 
 
