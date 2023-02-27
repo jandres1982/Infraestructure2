@@ -1,4 +1,5 @@
 #$snap_count = $snap.count
+$subs = @("s-sis-eu-nonprod-01","s-sis-eu-prod-01","s-sis-am-prod-01","s-sis-am-nonprod-01","s-sis-ap-prod-01","s-sis-ch-prod-01","s-sis-ch-nonprod-01")
 $date = $(get-date -format yyyy-MM-ddTHH-mm)
 $SnapshotReport = [System.Collections.ArrayList]::new()
 
