@@ -1,6 +1,5 @@
-#$snap_count = $snap.count
 $subs = @("s-sis-eu-nonprod-01","s-sis-eu-prod-01","s-sis-am-prod-01","s-sis-am-nonprod-01","s-sis-ap-prod-01","s-sis-ch-prod-01","s-sis-ch-nonprod-01")
-$date = $(get-date -format yyyy-MM-ddTHH-mm)
+$date = $date = $(get-date -format yyyy-MM-ddTHH-mm)
 $SnapshotReport = [System.Collections.ArrayList]::new()
 
 Foreach ($sub in $subs)
@@ -12,12 +11,26 @@ Foreach ($sub in $subs)
     
     foreach ($snap in $snaps)
         {
+
+         [datetime]$today = Get-Date  
+         [datetime]$today_less = $today.AddDays(-7)
+         [datetime]$snapdate = $snap.Tags.date
+         #[datetime]$snapdate = $snaps[0].Tags.date
+         if ($snapdate -lt $today_less)
+         {
+         $Alert = "MORE THAN 7 DAYS CHECK"
+         }else
+            {
+            $Alert = "OK"
+            }
+
         [void]$SnapshotReport.Add([PSCustomObject]@{
              Snapshot = $snap.Name
              Sub = $Sub
              Requestor = $snap.Tags.requester
              Date = $snap.Tags.date
              Location = $snap.Location
+             Remove = $Alert
          }) #[void]$vmBackupReport.Add([PSCustomObject]@{
         }     
 }
