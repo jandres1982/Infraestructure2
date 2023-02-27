@@ -1,5 +1,5 @@
 #$snap_count = $snap.count
-$date = $date = $(get-date -format yyyy-MM-ddTHH-mm)
+$date = $(get-date -format yyyy-MM-ddTHH-mm)
 $SnapshotReport = [System.Collections.ArrayList]::new()
 
 Foreach ($sub in $subs)
