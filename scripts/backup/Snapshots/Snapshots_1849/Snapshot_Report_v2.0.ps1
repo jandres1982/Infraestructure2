@@ -38,9 +38,13 @@ Foreach ($sub in $subs)
 $report = 'Snapshot_'+"Report"+'_'+"$date"+'.csv'
 $SnapshotReport | Export-Csv $report -NoTypeInformation | Select-Object -Skip 1 | Set-Content $Report
 
+$emails = $SnapshotReport.Requestor | select -unique
+
+Foreach ($email in $emails)
+{
 $PSEmailServer = "smtp.eu.schindler.com"
 $From = "scc-support-zar.es@schindler.com"
-$to = "gda_usr_dcff050b-8326-48c9-8bf9-61f8de7e89f0@schindler.com","gdl_usr_7aabcc1e-97e6-4283-9271-c04245556940@cloud.schindler.com"
+$to = $email
 #$to = "antoniovicente.vento@schindler.com"
 $Subject = "Snapshots to Remove in Azure - Check Ownership"
 #$Filename = Get-ChildItem $Path -Name "Att*" | select -Last 1
@@ -53,3 +57,4 @@ Please find attached the current Snapshots in Azure.
 #https://htmled.it/
 
 Send-MailMessage -From $From -To $To -Subject $Subject -Body $Body -Attachments $Attachment
+}
