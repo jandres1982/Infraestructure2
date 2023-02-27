@@ -5,7 +5,7 @@ $(Get-AzDisk | Where-Object {$_.Diskstate -eq "Unattached"}).Name >> "Unattached
 
 $PSEmailServer = "smtp.eu.schindler.com"
 $From = "scc-support-zar.es@schindler.com"
-$to = "carlos.velle@schindler.com", "nahum.sancho@schindler.com"
+$to = "jose.bonilla@schindler.com", "alberto.martinez@schindler.com"
 
 $Subject = "Unattached Disks"
 $Attachment = "Unattached_Disk_Report_$date.txt"
