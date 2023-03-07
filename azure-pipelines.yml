@@ -7,7 +7,8 @@ trigger:
 - main
 
 pool:
-  vmImage: 'ubuntu-latest'
+  name: SIS-IOC-Azure
+  demands: environment -equals docker
 
 steps:
 - script: echo Hello, world!
