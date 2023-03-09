@@ -1,25 +1,54 @@
 $sub = "s-sis-eu-nonprod-01"
 $csv = import-csv "C:\Users\ventoa1\OneDrive - Schindler\Azure_Devops\Infraestructure\scripts\Size\vms.csv"
-select-azSubscription $sub
+Select-AzSubscription $sub
 
-foreach ($item in $csv)
-{
+
+Function LogWrite {
+    Param ([string]$logstring)
+    Add-content $Logfile -value $logstring
+}
+
+#Main
+$Current_time = Get-date -Format dd-MM-yyyy-hh-mm
+$Logfile = "C:\Size\Size-Change-$sub-$Current_time.txt"
+LogWrite "$Current_time :Starting Azure VM Size Standard Script"
+
+foreach ($item in $csv) {
     #Checking Variables
     $Server = $item.vm
-    $ResourceGroup = $item.rg
     $Size = $item.size
-    Write-host "$Server"
-    Write-host "$ResourceGroup"
-    Write-host "$Size"
 
     #Doing the change
-    $Server = Get-AzVM -Name $Server -status
-    $Server.HardwareProfile.VmSize = $size
-    Update-AzVM -VM $Server -ResourceGroupName $ResourceGroup
-    
-    #Writing the log
-    $New_Size = (Get-AzVM -Name $Server.name -status).HardwareProfile.VmSize
-    [string]$vm = $Server.name
-    Write-Output "$sub;$vm;$New_Size" >> .\AzVmSize.log
-
+    $VmProfile = Get-AzVM -Name $Server -status -ErrorAction SilentlyContinue
+    if ($VmProfile) {
+        $Rg = $VmProfile.ResourceGroupName
+        $CurrentSize = $VmProfile.HardwareProfile.VmSize
+            
+        if ($CurrentSize -ne $Size) {
+            #Setting the new size
+            $VmProfile.HardwareProfile.VmSize = $Size
+            $Update_Vm = Update-AzVM -VM $VmProfile -ResourceGroupName $Rg -ErrorAction SilentlyContinue
+            #Writing the log
+            $New_Size = (Get-AzVM -Name $VmProfile.name -status).HardwareProfile.VmSize
+            [string]$vm = $VmProfile.name
+            if ($Update_Vm) {
+                LogWrite "$sub;$Rg;$vm;$New_Size"
+                Write-host "$Server - $Rg - New Size: $size" -ForegroundColor green
+            }
+            else {
+                LogWrite "$sub;$Rg;$vm;ERROR"
+                Write-host "$Server - $Rg - New Size: ERROR" -ForegroundColor yellow
+                Write-Warning "Please check $Logfile for the VM's that couldn't be changed"
+            }
+        }
+        else {
+            LogWrite "$sub;$Rg;$vm;$Size"
+            Write-host "$Server - $Rg - New Size: $size" -ForegroundColor green
+        }
+                
+    }
+    else {
+        LogWrite "NoSubFound;NoRgFound;$Server;VMnotFound"
+        Write-Warning "Please check $Logfile for the VM's that couldn't be changed"
+    } 
 }

@@ -1,3 +1,4 @@
-vm,rg,size
-zzzwsr0010,rg-cis-test-server-01,Standard_E8ds_v
-zzzwsr0010,rg-cis-test-server-01,Standard_E4ds_v5
+vm,size
+zzzwsr0012,Standard_E4ds_v5
+zzzwsr0010,Standard_E4ds_v5
+zzzwsr0011,Standard_E4ds_v
