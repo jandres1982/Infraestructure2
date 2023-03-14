@@ -1,5 +1,5 @@
-$sub = "s-sis-eu-nonprod-01"
-$csv = import-csv "C:\Users\ventoa1\OneDrive - Schindler\Azure_Devops\Infraestructure\scripts\Size\vms.csv"
+$sub = "s-sis-ch-nonprod-01"
+$csv = import-csv "vms.csv"
 Select-AzSubscription $sub
 
 
@@ -10,7 +10,7 @@ Function LogWrite {
 
 #Main
 $Current_time = Get-date -Format dd-MM-yyyy-hh-mm
-$Logfile = "C:\Size\Size-Change-$sub-$Current_time.txt"
+$Logfile = "Size-Change-$sub-$Current_time.txt"
 LogWrite "$Current_time :Starting Azure VM Size Standard Script"
 
 foreach ($item in $csv) {
