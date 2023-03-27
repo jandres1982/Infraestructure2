@@ -1,4 +1,4 @@
-$sub = "s-sis-ch-nonprod-01"
+$sub = "s-sis-eu-nonprod-01"
 $csv = import-csv "vms.csv"
 Select-AzSubscription $sub
 
