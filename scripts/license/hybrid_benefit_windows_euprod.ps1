@@ -22,8 +22,6 @@ if (get-azvm -Name "*$vmName*")
     Update-AzVM -ResourceGroupName $rg -vm $vm
     Write-host "$vmName should have been assigned to Windows Server license type:"
     $vm.LicenseType
-    break
-
     }else
     {
     Write-host "$vmName is not found in $sub"
