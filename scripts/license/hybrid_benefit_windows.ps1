@@ -11,9 +11,6 @@ foreach ($vmName in $Servers)
 #$subs = @("s-sis-eu-nonprod-01")
 #$subs = @("s-sis-eu-nonprod-01","s-sis-ap-prod-01","s-sis-eu-prod-01","s-sis-am-prod-01","s-sis-am-nonprod-01")
 #$subs = @("s-sis-eu-nonprod-01")
-foreach ($sub in $subs)
-{
-
 
 # Choose between Standard_LRS, StandardSSD_LRS and Premium_LRS based on your scenario
 
@@ -32,7 +29,4 @@ if (get-azvm -Name "*$vmName*")
     {
     Write-host "$vmName is not found in $sub"
     }
-}
-
-
 }
