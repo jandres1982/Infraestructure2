@@ -3,6 +3,7 @@ param($subs)
 #param([string]$vm)
 #$vm = "shhwsr2242"
 $Servers = Get-Content -Path "Server_List_Hybrid_Benefit_EuProd.txt"
+Select-AzSubscription -Subscription $sub
 
 foreach ($vmName in $Servers)
 {
@@ -12,7 +13,6 @@ foreach ($vmName in $Servers)
 #$subs = @("s-sis-eu-nonprod-01")
 foreach ($sub in $subs)
 {
-    Select-AzSubscription -Subscription $sub
 
 # Choose between Standard_LRS, StandardSSD_LRS and Premium_LRS based on your scenario
 
