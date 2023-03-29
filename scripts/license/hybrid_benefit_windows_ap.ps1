@@ -2,7 +2,7 @@ param($subs)
 #$subs = @("s-sis-eu-nonprod-01","s-sis-ap-prod-01","s-sis-eu-prod-01","s-sis-am-prod-01","s-sis-am-nonprod-01")
 #param([string]$vm)
 #$vm = "shhwsr2242"
-$Servers = Get-Content -Path "Server_List_Hybrid_Benefit.txt"
+$Servers = Get-Content -Path "Server_List_Hybrid_Benefit_Ap.txt"
 Select-AzSubscription -Subscription $subs
 
 foreach ($vmName in $Servers)
