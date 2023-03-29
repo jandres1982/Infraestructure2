@@ -1,4 +1,3 @@
-vm-prod-domain-controller-shhwsrdc1017
 vm-prod-domain-controller-shhwsrdc1018
 vm-prod-File-Server-mynwsr0001
 vm-prod-File-Server-slswsr0005
