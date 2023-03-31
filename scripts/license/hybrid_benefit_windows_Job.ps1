@@ -1,6 +1,6 @@
 param($subs)
-$subs = "s-sis-ap-prod-01"
-$Servers = Get-Content -Path "Server_List_Hybrid_Benefit_Ap.txt"
+$subs = "s-sis-am-prod-01"
+$Servers = Get-Content -Path "Server_List_Hybrid_Benefit_AM.txt"
 Select-AzSubscription -Subscription $subs
 
 foreach ($vmName in $Servers)
