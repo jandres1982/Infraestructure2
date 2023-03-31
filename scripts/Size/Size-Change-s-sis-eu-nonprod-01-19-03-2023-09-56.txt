@@ -1,3 +1,0 @@
-19-03-2023-09-56 :Starting Azure VM Size Standard Script
-NoSubFound;NoRgFound;;VMnotFound
-NoSubFound;NoRgFound;;VMnotFound
