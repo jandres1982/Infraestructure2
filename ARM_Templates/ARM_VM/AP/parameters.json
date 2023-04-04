@@ -57,7 +57,7 @@
             "value": "/subscriptions/59c20947-4965-45c4-99f3-12be96106119/resourceGroups/rg-cis-prod-storage-02/providers/Microsoft.Storage/storageAccounts/stproddiagnostic0003"
         },
         "zone": {
-            "value": "3"
+            "value": "1"
         }
     }
 }
