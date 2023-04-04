@@ -5,7 +5,7 @@
         "location": {
             "type": "string"
         },
-        "networkInterfaceName3": {
+        "networkInterfaceName1": {
             "type": "string"
         },
         "subnetName": {
@@ -17,7 +17,7 @@
         "virtualMachineName": {
             "type": "string"
         },
-        "virtualMachineName3": {
+        "virtualMachineName1": {
             "type": "string"
         },
         "virtualMachineComputerName": {
