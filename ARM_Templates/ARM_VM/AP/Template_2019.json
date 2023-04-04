@@ -67,7 +67,7 @@
     },
     "resources": [
         {
-            "name": "[parameters('networkInterfaceName3')]",
+            "name": "[parameters('networkInterfaceName1')]",
             "type": "Microsoft.Network/networkInterfaces",
             "apiVersion": "2021-03-01",
             "location": "[parameters('location')]",
@@ -87,12 +87,12 @@
             }
         },
         {
-            "name": "[parameters('virtualMachineName3')]",
+            "name": "[parameters('virtualMachineName1')]",
             "type": "Microsoft.Compute/virtualMachines",
             "apiVersion": "2021-07-01",
             "location": "[parameters('location')]",
             "dependsOn": [
-                "[concat('Microsoft.Network/networkInterfaces/', parameters('networkInterfaceName3'))]"
+                "[concat('Microsoft.Network/networkInterfaces/', parameters('networkInterfaceName1'))]"
             ],
             "properties": {
                 "hardwareProfile": {
@@ -113,7 +113,7 @@
                 "networkProfile": {
                     "networkInterfaces": [
                         {
-                            "id": "[resourceId('Microsoft.Network/networkInterfaces', parameters('networkInterfaceName3'))]",
+                            "id": "[resourceId('Microsoft.Network/networkInterfaces', parameters('networkInterfaceName1'))]",
                             "properties": {
                                 "deleteOption": "[parameters('nicDeleteOption')]"
                             }
