@@ -1,4 +1,0 @@
-rg-shh-prod-schindlercom-01
-rg-shh-prod-epo-01
-rg-hag-prod-fileserver-01
-rg-ch-test-sonarqube-01
