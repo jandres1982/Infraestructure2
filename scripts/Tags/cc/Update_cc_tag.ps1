@@ -18,13 +18,13 @@ foreach ($rg in $rgs)
                 $cc = $cc_new[$i]
                 $mergedTags = @{"costcenter"="$cc"}
                 $rg_name = Get-AzResourceGroup -Name $rg
-                Update-AzTag -ResourceId $rg_name.ResourceId -Tag $mergedTags -Operation Merge   
+                Update-AzTag -ResourceId $rg_name.ResourceId -Tag $mergedTags -Operation Merge -ErrorAction SilentlyContinue
             #Working in the resources inside the RG
                 $resources = Get-AzResource -ResourceGroupName $rg
                 $rid = $resources.ResourceId
                     foreach ($resource_id in $rid)
                         {
-                        Update-AzTag -ResourceId $resource_id -Tag $mergedTags -Operation Merge
+                        Update-AzTag -ResourceId $resource_id -Tag $mergedTags -Operation Merge -ErrorAction SilentlyContinue
                         }
             }else
                     {          
