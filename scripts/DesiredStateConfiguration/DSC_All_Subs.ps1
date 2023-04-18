@@ -10,7 +10,7 @@ foreach ($sub in $subs)
 
 #Select-AzSubscription -Subscription "$sub"
 Set-AzContext -Subscription "$sub"
-az account set --subscription "$sub"
+#az account set --subscription "$sub"
 
 
 #$(get-azvm).name | where-object {$_ -like '*wsr*'} > .\servers_list_$sub.txt
