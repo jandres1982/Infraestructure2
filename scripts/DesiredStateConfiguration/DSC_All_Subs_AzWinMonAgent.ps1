@@ -21,15 +21,16 @@ foreach ($sub in $subs) {
         [int]$Per_1 = $null #Per_variables
 
         foreach ($vm in $Servers) {
-
+                Write-host "We are in VM $vm"
                 $VmProfile = get-azvm -Name $vm
                 $rg = $VmProfile.ResourceGroupName
                 $location = $VmProfile.Location
 
                 ##################### Checking VM's Status #################################
-                $VmStatus = get-azvm -Name $vm -ResourceGroupName $rg -Status
+                #$VmStatus = get-azvm -Name $vm -ResourceGroupName $rg -Status
+                $Status = $vmStatus.statuses[1].DisplayStatus
 
-                If ($VmStatus.Statuses.displaystatus | where-object { $_ -eq "VM running" }) {
+                If ($Status -eq "VM running") {
 
                         ######################### Check MicrosoftMonitoringAgent extension is enable in the VM 
                         $extension = $VmStatus.Extensions.name
