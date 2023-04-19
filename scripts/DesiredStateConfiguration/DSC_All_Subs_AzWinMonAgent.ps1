@@ -27,12 +27,13 @@ foreach ($sub in $subs) {
                 $location = $VmProfile.Location
 
                 ##################### Checking VM's Status #################################
-                #$VmStatus = get-azvm -Name $vm -ResourceGroupName $rg -Status
-                $Status = $VmStatus.Statuses.displaystatus | where-object { $_ -eq "VM running" }
+                $VmStatus = get-azvm -Name $vm -ResourceGroupName $rg -Status
+                $Status = $VmStatus.Statuses.displaystatus | where-object {$_ -eq "VM running"}
 
                 If ($Status -eq "VM running") {
 
                         ######################### Check MicrosoftMonitoringAgent extension is enable in the VM 
+                        
                         $extension = $VmStatus.Extensions.name
                         $AzWinMonAgent = $extension | Select-String "AzureMonitorWindowsAgent"
                         if ($AzWinMonAgent) {
