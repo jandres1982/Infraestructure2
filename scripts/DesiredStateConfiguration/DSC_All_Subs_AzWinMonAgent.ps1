@@ -23,12 +23,12 @@ foreach ($sub in $subs) {
         foreach ($vm in $Servers) {
                 Write-host "We are in VM $vm"
                 $VmProfile = get-azvm -Name $vm
-                $rg = $VmProfile.ResourceGroupName
+                $"rg = $VmProfile.ResourceGroupName"
                 $location = $VmProfile.Location
 
                 ##################### Checking VM's Status #################################
                 #$VmStatus = get-azvm -Name $vm -ResourceGroupName $rg -Status
-                $Status = $vmStatus.statuses[1].DisplayStatus
+                $Status = $vmStatus.statuses[1].DisplayStatus | Select-String "VM running"
 
                 If ($Status -eq "VM running") {
 
