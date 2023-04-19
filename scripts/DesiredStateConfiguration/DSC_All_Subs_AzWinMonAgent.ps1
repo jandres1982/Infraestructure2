@@ -28,7 +28,7 @@ foreach ($sub in $subs) {
 
                 ##################### Checking VM's Status #################################
                 #$VmStatus = get-azvm -Name $vm -ResourceGroupName $rg -Status
-                $Status = $vmStatus.statuses[1].DisplayStatus | Select-String "VM running"
+                $Status = $VmStatus.Statuses.displaystatus | where-object { $_ -eq "VM running" }
 
                 If ($Status -eq "VM running") {
 
