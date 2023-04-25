@@ -14,9 +14,6 @@ param adminUsername string = 'ldmsosd'
 @secure()
 param adminPassword string = 'Newsetup1234'
 
-@description('Image Id')
-param imageid string = '/subscriptions/505ead1a-5a5f-4363-9b72-83eb2234a43d/resourceGroups/rg-gis-prod-imagegallery-01/providers/Microsoft.Compute/galleries/ig_gis_win_prod/images/img-prod-2019datacenter-19052021-01/versions/0.0.1'
-
 @description('The name of the storage account.')
 param storageAccountName string = 'stnonproddiagnostic0001'
 
@@ -24,6 +21,19 @@ param storageAccountName string = 'stnonproddiagnostic0001'
 '2'
 '3'])
 param zone string = '1'
+
+@allowed([
+  '2016'
+  '2019'
+  '2022'
+])
+param osversion string
+
+var os2022 = '/subscriptions/505ead1a-5a5f-4363-9b72-83eb2234a43d/resourceGroups/rg-gis-prod-imagegallery-01/providers/Microsoft.Compute/galleries/ig_gis_win_prod/images/img-prod-2022datacenter-16032023-01/versions/0.0.1'
+var os20162019 = '/subscriptions/505ead1a-5a5f-4363-9b72-83eb2234a43d/resourceGroups/rg-gis-prod-imagegallery-01/providers/Microsoft.Compute/galleries/ig_gis_win_prod/images/img-prod-${osversion}datacenter-19052021-01/versions/0.0.1'
+
+//@description('Image Id')
+//var imageid = '/subscriptions/505ead1a-5a5f-4363-9b72-83eb2234a43d/resourceGroups/rg-gis-prod-imagegallery-01/providers/Microsoft.Compute/galleries/ig_gis_win_prod/images/img-prod-${osversion}datacenter-19052021-01/versions/0.0.1'
 
 @description('Location for all resources.')
 param location string = resourceGroup().location
@@ -83,8 +93,8 @@ resource virtualMachine 'Microsoft.Compute/virtualMachines@2021-03-01' = {
     }
     storageProfile: {
       imageReference: {
-        id: imageid
-      }
+        id: ((osversion == '2022') ? os2022 : os20162019)
+    }
       osDisk: {
         name: '${vmname}-OsDisk'
         caching: 'ReadWrite'
