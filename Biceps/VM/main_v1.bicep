@@ -1,11 +1,11 @@
-//'s-sis-ap-prod-01'
-//'s-sis-am-nonprod-01'
-//'s-sis-am-prod-01'
-//'s-sis-ch-nonprod-01'
-//'s-sis-ch-prod-01'
 @allowed([
   's-sis-eu-nonprod-01'
   's-sis-eu-prod-01'
+  's-sis-ap-prod-01'
+  's-sis-am-nonprod-01'
+  's-sis-am-prod-01'
+  's-sis-ch-nonprod-01'
+  's-sis-ch-prod-01'
 ])
 param sub string
 
@@ -30,6 +30,56 @@ var subenvmap = {
     scope:'rg-cis-prod-storage-01'
     }
 }
+'s-sis-ap-prod-01': {
+  vnet: {
+    name:'vnet-prod-asse-01'
+    scope:'rg-cis-prod-network-02'
+  }
+  storage: {
+  name:'stproddiagnostic0003'
+  scope:'rg-cis-prod-storage-02'
+  }
+}
+'s-sis-am-nonprod-01': {
+  vnet: {
+    name:'vnet-nonprod-use2-01'
+    scope:'rg-cis-nonprod-network-01'
+  }
+  storage: {
+  name:'stnonproddiagnostic0002'
+  scope:'rg-cis-nonprod-storage-01'
+  }
+}
+'s-sis-am-prod-01': {
+  vnet: {
+    name:'vnet-prod-use2-01'
+    scope:'rg-cis-prod-network-01'
+  }
+  storage: {
+  name:'stproddiagnostic0004'
+  scope:'rg-cis-prod-storage-01'
+  }
+}
+'s-sis-ch-nonprod-01': {
+  vnet: {
+    name:'vnet-nonprod-sn-01'
+    scope:'rg-cis-prod-network-01'
+  }
+  storage: {
+  name:'stnonproddiagnostic0003'
+  scope:'rg-cis-nonprod-storage-01'
+  }
+}
+'s-sis-ch-prod-01': {
+  vnet: {
+    name:'vnet-prod-sn-01'
+    scope:'rg-cis-prod-network-01'
+  }
+  storage: {
+  name:'stproddiagnostic0001'
+  scope:'rg-cis-prod-storage-01'
+  }
+}
 }
 
 @description('Size of VM')
@@ -39,7 +89,7 @@ param vmSize string = 'Standard_D2ds_v5'
 //param vnet string = 'EU-NONPROD-VNET'
 
 @description('Existing Subnet')
-param existingSubnetName string = 'Infrastructure-IaaS-Subnet_1'
+param existingSubnetName string = 'sub-Infrastructure-IaaS-Subnet-01'
 
 @description('The name of the administrator of the new VM.')
 param adminUsername string = 'ldmsosd'
@@ -56,7 +106,7 @@ param adminPassword string = 'Newsetup1234'
   '2'
   '3'
 ])
-param zone string = ''
+param zone string
 
 @allowed([
   '2016'
@@ -73,6 +123,9 @@ var os20162019 = '/subscriptions/505ead1a-5a5f-4363-9b72-83eb2234a43d/resourceGr
 
 @description('Location for all resources.')
 param location string = resourceGroup().location
+
+@description('Ip address')
+param ip string
 
 @description('VM name')
 param vmname string = 'zzzwsr0005'
@@ -102,7 +155,8 @@ resource nic 'Microsoft.Network/networkInterfaces@2021-02-01' = {
       {
         name: 'ipconfig1'
         properties: {
-          privateIPAllocationMethod: 'Dynamic'
+          privateIPAllocationMethod: 'Static'
+          privateIPAddress: ip
           subnet: {
             id: existingSubnet.id
           }
@@ -112,12 +166,69 @@ resource nic 'Microsoft.Network/networkInterfaces@2021-02-01' = {
   }
 }
 
-resource virtualMachine 'Microsoft.Compute/virtualMachines@2021-03-01' = {
+
+
+resource virtualMachineZone 'Microsoft.Compute/virtualMachines@2021-03-01' = if (sub == 's-sis-eu-prod-01' || sub == 's-sis-am-prod-01' || sub == 's-sis-ch-prod-01' || sub == 's-sis-ap-prod-01') {
   name: vmname
   location: location
-  zones: [
+  zones:[
     zone
   ]
+  properties: {
+    hardwareProfile: {
+      vmSize: vmSize
+    }
+    osProfile: {
+      computerName: vmname
+      adminUsername: adminUsername
+      adminPassword: adminPassword
+    }
+    storageProfile: {
+      imageReference: {
+        id: ((osversion == '2022') ? os2022 : os20162019)
+    }
+      osDisk: {
+        name: '${vmname}-OsDisk'
+        caching: 'ReadWrite'
+        createOption: 'FromImage'
+        osType: 'Windows'
+        managedDisk:{
+          storageAccountType:'StandardSSD_LRS'
+        }
+      }
+      dataDisks: [
+        {
+          name: '${vmname}-DataDisk'
+          caching: 'None'
+          createOption: 'Empty'
+          diskSizeGB: 5
+          lun: 0
+          managedDisk:{
+            storageAccountType:'StandardSSD_LRS'
+          }
+        }
+      ]
+    }
+    networkProfile: {
+      networkInterfaces: [
+        {
+          id: nic.id
+        }
+      ]
+    }
+    diagnosticsProfile: {
+      bootDiagnostics: {
+        enabled: true
+        storageUri: storageAccount.properties.primaryEndpoints.blob
+      }
+    }
+  }
+}
+
+
+resource virtualMachineNoZone 'Microsoft.Compute/virtualMachines@2021-03-01' = if (sub == 's-sis-eu-nonprod-01' || sub == 's-sis-am-nonprod-01' || sub == 's-sis-ch-nonprod-01') {
+  name: vmname
+  location: location
   properties: {
     hardwareProfile: {
       vmSize: vmSize
