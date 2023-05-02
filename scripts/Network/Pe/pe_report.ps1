@@ -7,12 +7,14 @@ Foreach ($sub in $subscription) {
     Select-AzSubscription -subscription "$sub"
     $pe = Get-AzPrivateEndpoint
     Foreach ($PeName in $pe) {
-        #[string]$PeFqdn = $pe[$i].CustomDnsConfigs.Fqdn
-        #[string]$PeIpAddress = $pe[$i].CustomDnsConfigs[0].IpAddresses
+        [string]$PeFqdn = $pe[$i].CustomDnsConfigs.Fqdn
+        [string]$PeIpAddress = $pe[$i].CustomDnsConfigs[0].IpAddresses
         [void]$PeReport.Add([PSCustomObject]@{
                 Name = $pe[$i].name
                 Rg = $pe[$i].ResourceGroupName
                 Sub = $sub
+                ip = $PeIpAddress
+                fqdn = $PeFqdn
                 Location = $pe[$i].location
                 SubnetName = $pe[$i].Subnet.id.split("/")[10]
                 VnetName = $pe[$i].Subnet.id.split("/")[8]
