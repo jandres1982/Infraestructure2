@@ -21,7 +21,8 @@ Select-AzSubscription -Subscription "$sub"
 #$subs = @("s-sis-eu-nonprod-01","s-sis-eu-prod-01","s-sis-am-prod-01","s-sis-am-nonprod-01","s-sis-ap-prod-01")
 $date = $(get-date -format yyyy-MM-ddTHH-mm)
 $backupVaults = Get-AzRecoveryServicesVault
-$vms = get-azvm | where-object {$_.Name -like "$kg*"}
+# = get-azvm | where-object {$_.Name -like "$kg*"}
+ $vms = get-azvm | where-object {($_.tags.applicationowner -eq "adrian.galliker@schindler.com") -or ($_.tags.applicationowner -eq "sandip.kute@schindler.com") -or ($_.tags.applicationowner -eq "alain.baumeler@schindler.com") -or ($_.tags.applicationowner -eq "ruben.castro.martinez@schindler.com" -or $_.tags.applicationowner -eq "ranjith.ramachandran@schindler.com") -or ($_.tags.applicationowner -eq "robert.platt@schindler.com")}
 
  foreach ($vm in $vms) 
  {
