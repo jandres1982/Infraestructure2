@@ -15,7 +15,7 @@ Would you mind to check the recommendations and reduce cost.
 
 Recommendation for the VM: $Recomendation
 
-Cost Saving after appliying the recommendation in EUR: $CostSave
+Cost Saving after appliying the recommendation in USD: $CostSave
 
 Thanks,
 
