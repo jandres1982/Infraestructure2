@@ -94,13 +94,16 @@ var subenvmap = {
 }
 
 @description('Size of VM')
-param vmSize string = 'Standard_D2ds_v5'
+param vmSize string
+
+@description('Data Size')
+param datasize int
 
 //@description('Existing VNET')
 //param vnet string = 'EU-NONPROD-VNET'
 
 @description('Existing Subnet')
-param existingSubnetName string = 'sub-Infrastructure-IaaS-Subnet-01'
+param existingSubnetName string
 
 @description('The name of the administrator of the new VM.')
 param adminUsername string = 'ldmsosd'
@@ -122,15 +125,13 @@ param zone string
 @allowed([
   '2016'
   '2019'
-  '2022'
 ])
 param osversion string
 
-var os2022 = '/subscriptions/505ead1a-5a5f-4363-9b72-83eb2234a43d/resourceGroups/rg-gis-prod-imagegallery-01/providers/Microsoft.Compute/galleries/ig_gis_win_prod/images/img-prod-2022datacenter-16032023-01/versions/0.0.1'
-var os20162019 = '/subscriptions/505ead1a-5a5f-4363-9b72-83eb2234a43d/resourceGroups/rg-gis-prod-imagegallery-01/providers/Microsoft.Compute/galleries/ig_gis_win_prod/images/img-prod-${osversion}datacenter-19052021-01/versions/0.0.1'
-
 //@description('Image Id')
 //var imageid = '/subscriptions/505ead1a-5a5f-4363-9b72-83eb2234a43d/resourceGroups/rg-gis-prod-imagegallery-01/providers/Microsoft.Compute/galleries/ig_gis_win_prod/images/img-prod-${osversion}datacenter-19052021-01/versions/0.0.1'
+//var os2022 = '/subscriptions/505ead1a-5a5f-4363-9b72-83eb2234a43d/resourceGroups/rg-gis-prod-imagegallery-01/providers/Microsoft.Compute/galleries/ig_gis_win_prod/images/img-prod-2022datacenter-16032023-01/versions/0.0.1'
+//var os20162019 = '/subscriptions/505ead1a-5a5f-4363-9b72-83eb2234a43d/resourceGroups/rg-gis-prod-imagegallery-01/providers/Microsoft.Compute/galleries/ig_gis_win_prod/images/img-prod-${osversion}datacenter-19052021-01/versions/0.0.1'
 
 @description('Location for all resources.')
 param location string = resourceGroup().location
@@ -139,7 +140,7 @@ param location string = resourceGroup().location
 param ip string
 
 @description('VM name')
-param vmname string = 'zzzwsr0005'
+param vmname string = 'zzzwsr0015'
 
 var nicName = '${vmname}-nic'
 
@@ -179,7 +180,7 @@ resource nic 'Microsoft.Network/networkInterfaces@2021-02-01' = {
 
 
 
-resource virtualMachineZone 'Microsoft.Compute/virtualMachines@2021-03-01' = if (sub == 's-sis-eu-prod-01' || sub == 's-sis-am-prod-01' || sub == 's-sis-ch-prod-01' || sub == 's-sis-ap-prod-01') {
+resource virtualMachineZone 'Microsoft.Compute/virtualMachines@2021-03-01' = if (sub == 's-sis-cn-prod-01') {
   name: vmname
   location: location
   zones:[
@@ -196,7 +197,11 @@ resource virtualMachineZone 'Microsoft.Compute/virtualMachines@2021-03-01' = if 
     }
     storageProfile: {
       imageReference: {
-        id: ((osversion == '2022') ? os2022 : os20162019)
+          publisher: 'MicrosoftWindowsServer'
+          offer: 'WindowsServer'
+          sku: '${osversion}-datacenter'
+          version: 'latest'
+          //sku: ((osversion == '2022') ? os2022 : os20162019)
     }
       osDisk: {
         name: '${vmname}-OsDisk'
@@ -212,62 +217,7 @@ resource virtualMachineZone 'Microsoft.Compute/virtualMachines@2021-03-01' = if 
           name: '${vmname}-DataDisk'
           caching: 'None'
           createOption: 'Empty'
-          diskSizeGB: 5
-          lun: 0
-          managedDisk:{
-            storageAccountType:'StandardSSD_LRS'
-          }
-        }
-      ]
-    }
-    networkProfile: {
-      networkInterfaces: [
-        {
-          id: nic.id
-        }
-      ]
-    }
-    diagnosticsProfile: {
-      bootDiagnostics: {
-        enabled: true
-        storageUri: storageAccount.properties.primaryEndpoints.blob
-      }
-    }
-  }
-}
-
-
-resource virtualMachineNoZone 'Microsoft.Compute/virtualMachines@2021-03-01' = if (sub == 's-sis-eu-nonprod-01' || sub == 's-sis-am-nonprod-01' || sub == 's-sis-ch-nonprod-01') {
-  name: vmname
-  location: location
-  properties: {
-    hardwareProfile: {
-      vmSize: vmSize
-    }
-    osProfile: {
-      computerName: vmname
-      adminUsername: adminUsername
-      adminPassword: adminPassword
-    }
-    storageProfile: {
-      imageReference: {
-        id: ((osversion == '2022') ? os2022 : os20162019)
-    }
-      osDisk: {
-        name: '${vmname}-OsDisk'
-        caching: 'ReadWrite'
-        createOption: 'FromImage'
-        osType: 'Windows'
-        managedDisk:{
-          storageAccountType:'StandardSSD_LRS'
-        }
-      }
-      dataDisks: [
-        {
-          name: '${vmname}-DataDisk'
-          caching: 'None'
-          createOption: 'Empty'
-          diskSizeGB: 5
+          diskSizeGB: datasize
           lun: 0
           managedDisk:{
             storageAccountType:'StandardSSD_LRS'
