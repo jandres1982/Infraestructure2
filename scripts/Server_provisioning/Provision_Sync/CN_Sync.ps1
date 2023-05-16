@@ -1,7 +1,7 @@
 ﻿$source = "d:\provision"
 $target = "\\10.76.4.197\servers\provision"
 $log = "c:\temp\provision_sync_CN.txt"
-$connectTestResult = Test-NetConnection -ComputerName stprodgeneric0004.file.core.chinacloudapi.cn -Port 445
+$connectTestResult = Test-NetConnection -ComputerName 10.76.4.197 -Port 445
 if ($connectTestResult.TcpTestSucceeded) {
     # Save the password so the drive will persist on reboot
     cmd.exe /C "cmdkey /add:`"10.76.4.197`" /user:`"localhost\stprodgeneric0004`" /pass:`"8Aas3V56zftrXBI/TyYCIPhlCA6b9g7Idx+EpPNLqP5JCvNsnbZKZuETik+GjRC42bjj+DXhPKaN+ASt1fCDuQ==`""
