@@ -151,7 +151,7 @@ param location string = resourceGroup().location
 param ip string
 
 @description('VM name')
-param vmname string = 'zzzwsr0015'
+param vmname string
 
 var nicName = '${vmname}-nic'
 
@@ -191,7 +191,7 @@ resource nic 'Microsoft.Network/networkInterfaces@2021-02-01' = {
 
 
 
-resource virtualMachineZone 'Microsoft.Compute/virtualMachines@2021-03-01' = if (sub == 's-sis-cn-prod-01') {
+resource virtualMachineZone 'Microsoft.Compute/virtualMachines@2021-03-01' = {
   name: vmname
   location: location
   zones:[
