@@ -1,9 +1,10 @@
 #$subs = Get-AzSubscription | Where-Object {($_.Name -match "s-sis-eu-prod-01") -or ($_.Name -match "s-sis-eu-nonprod-01")}
 
 $subs=Get-AzSubscription | Where-Object {$_.Name -match "s-sis-[aec][upmh]*"}
-#$subs= "s-sis-eu-nonprod-01"
+#$subs= "s-sis-ch-prod-01"
 $date = $(get-date -format yyyy-MM-ddTHH-mm)
 $kg = "CRD"
+$Rgs = Get-Content -Path "CRD_RGs.txt"
 ###################################################################
 
 $vmBackupReport = [System.Collections.ArrayList]::new()
@@ -14,18 +15,24 @@ foreach ($sub in $subs)
     Write-Host "Collecting all Backup Recovery Vault information in $sub" -BackgroundColor DarkGreen
 
 Select-AzSubscription -Subscription "$sub"
-#az account set --subscription "$sub"
 
-#$Vault_List = (Get-AzRecoveryServicesVault).Name
-#foreach ($vault in $Vault_List) 
-#{ 
-#$subs = @("s-sis-eu-nonprod-01","s-sis-eu-prod-01","s-sis-am-prod-01","s-sis-am-nonprod-01","s-sis-ap-prod-01")
 $date = $(get-date -format yyyy-MM-ddTHH-mm)
+
 $backupVaults = Get-AzRecoveryServicesVault
 # = get-azvm | where-object {$_.Name -like "$kg*"}
-$vms = get-azvm | where-object {($_.tags.applicationowner -eq "adrian.galliker@schindler.com") -or ($_.tags.applicationowner -eq "sandip.kute@schindler.com") -or ($_.tags.applicationowner -eq "alain.baumeler@schindler.com") -or ($_.tags.applicationowner -eq "ruben.castro.martinez@schindler.com" -or $_.tags.applicationowner -eq "ranjith.ramachandran@schindler.com") -or ($_.tags.applicationowner -eq "robert.platt@schindler.com")}
+#$vms = get-azvm | where-object {($_.tags.applicationowner -eq "adrian.galliker@schindler.com") -or ($_.tags.applicationowner -eq "sandip.kute@schindler.com") -or ($_.tags.applicationowner -eq "alain.baumeler@schindler.com") -or ($_.tags.applicationowner -eq "ruben.castro.martinez@schindler.com" -or $_.tags.applicationowner -eq "ranjith.ramachandran@schindler.com") -or ($_.tags.applicationowner -eq "robert.platt@schindler.com")}
 
- foreach ($vm in $vms) 
+foreach ($rg in $Rgs)
+{
+    $RgExist = Get-Azresource -ResourceGroupName $rg
+    If ($RgExist)
+    {
+        
+       $vms = get-azvm -resourcegroup $rg
+       Write-host "working on $rg"
+    }
+
+foreach ($vm in $vms) 
  {
      $recoveryVaultInfo = Get-AzRecoveryServicesBackupStatus -Name $vm.Name -ResourceGroupName $vm.ResourceGroupName -Type 'AzureVM' -WarningAction SilentlyContinue
      if ($recoveryVaultInfo.BackedUp -eq $true)
@@ -67,7 +74,8 @@ $vms = get-azvm | where-object {($_.tags.applicationowner -eq "adrian.galliker@s
          RecoveryVault_Location = $vmBackupVault.Location
          RecoveryVault_SubscriptionId = $vmBackupVault.ID
      }) #[void]$vmBackupReport.Add([PSCustomObject]@{
- } #foreach ($vm in $vms) 
+ } #foreach ($vm in $vms)
+} 
 }
 #}
 
@@ -77,7 +85,7 @@ $vmBackupReport | Export-Csv $report -NoTypeInformation | Select-Object -Skip 1 
 
 $PSEmailServer = "smtp.eu.schindler.com"
 $From = "scc-support-zar.es@schindler.com"
-$to = "alfonso.marques@schindler.com","antoniovicente.vento@schindler.com","adrian.galliker@schindler.com","joelle.sommerhalder@schindler.com"
+$to = "antoniovicente.vento@schindler.com"
 
 
 $Subject = "Backup Report $kg Servers"
