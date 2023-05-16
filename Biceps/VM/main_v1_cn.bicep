@@ -7,6 +7,7 @@
   's-sis-ch-nonprod-01'
   's-sis-ch-prod-01'
   's-sis-cn-prod-01'
+  's-sis-cn-nonprod-rmp'
 ])
 param sub string
 
@@ -89,6 +90,16 @@ var subenvmap = {
   storage: {
   name:'stproddiagnostic0006'
   scope:'rg-cis-prod-storage-01'
+  }
+}
+'s-sis-cn-nonprod-rmp': {
+  vnet: {
+    name:'vnet-gdo-nonprod-rmp-default'
+    scope:'rg-gdo-nonprod-rmp-shared'
+  }
+  storage: {
+  name:'strmpdiagnostic01'
+  scope:'rg-nonprod-rmp-backup'
   }
 }
 }
