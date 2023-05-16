@@ -45,7 +45,7 @@
             "value": "ldmsosd"
         },
         "adminPassword": {
-            "value": null
+            "value": "Newsetup1234"
         },
         "patchMode": {
             "value": "Manual"
