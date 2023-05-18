@@ -24,7 +24,7 @@ $backupVaults = Get-AzRecoveryServicesVault
 
 foreach ($rg in $Rgs)
 {
-    $RgExist = Get-Azresource -ResourceGroupName $rg
+    $RgExist = Get-Azresource -ResourceGroupName $rg -ErrorAction SilentlyContinue
     If ($RgExist)
     {
         
