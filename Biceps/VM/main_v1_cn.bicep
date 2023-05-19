@@ -102,6 +102,16 @@ var subenvmap = {
   scope:'rg-nonprod-rmp-backup'
   }
 }
+'s-sis-cn-prod-rmp': {
+  vnet: {
+    name:'vnet-gdo-prod-rmp-default'
+    scope:'rg-gdo-prod-rmp-shared'
+  }
+  storage: {
+  name:'/subscriptions/4f83e086-d4f2-4c65-9407-839cc921fb20/resourceGroups/rg-nonprod-rmp-backup/providers/Microsoft.Storage/storageAccounts/strmpdiagnostic01'
+  scope:'/subscriptions/4f83e086-d4f2-4c65-9407-839cc921fb20/resourceGroups/rg-nonprod-rmp-backup'
+  }
+}
 }
 
 @description('Size of VM')
