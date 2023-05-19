@@ -109,8 +109,8 @@ var subenvmap = {
     scope:'rg-gdo-prod-rmp-shared'
   }
   storage: {
-  name:'/subscriptions/4f83e086-d4f2-4c65-9407-839cc921fb20/resourceGroups/rg-nonprod-rmp-backup/providers/Microsoft.Storage/storageAccounts/strmpdiagnostic01'
-  scope:'/subscriptions/4f83e086-d4f2-4c65-9407-839cc921fb20/resourceGroups/rg-nonprod-rmp-backup'
+  name:'strmpdiagnostic02'
+  scope:'rg-cis-prod-storage-01'
   }
 }
 }
