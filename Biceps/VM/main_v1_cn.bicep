@@ -8,6 +8,7 @@
   's-sis-ch-prod-01'
   's-sis-cn-prod-01'
   's-sis-cn-nonprod-rmp'
+  's-sis-cn-prod-rmp'
 ])
 param sub string
 
