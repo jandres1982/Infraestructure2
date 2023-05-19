@@ -110,7 +110,7 @@ var subenvmap = {
   }
   storage: {
   name:'strmpdiagnostic02'
-  scope:'rg-cis-prod-storage-01'
+  scope:'rg-prod-rmp-storage'
   }
 }
 }
