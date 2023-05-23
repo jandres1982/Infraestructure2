@@ -60,12 +60,14 @@ provisiontask
 
 login
 $deviceid= $myWS1.AddComputerEx("SCHINDLER", "COMPUTER", "1.1.1.1", "1.1.1.1","ABCDEF0123", "SN12345678")
-$deviceid
+$deviceid # 123456
 $query= $myWS1.SetMachineData("{514BA67B-122C-5846-9C4E-7C1CEE8197EA}", '"computer"."Status"', "New Value with PW")
 $query= $myWS1.CreateProvisioningTask("_tesetmbsdk", $deviceid, "", "")
 $id = $query.TaskID
 $query= $myWS1.StartTaskNow("$id")
 
- 
+$GUID = function (generate-newGUID)
+--- DB ---> computer table, set the parameter on the asset (GUID)
+
 
 $query= $myWS1.SetMachineData("{514BA67B-122C-5846-9C4E-7C1CEE8197EA}", '"computer"."Status"', "New Value with PW")
