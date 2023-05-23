@@ -1,7 +1,8 @@
 #$subs = Get-AzSubscription | Where-Object {($_.Name -match "s-sis-eu-prod-01") -or ($_.Name -match "s-sis-eu-nonprod-01")}
 
 $subs=Get-AzSubscription | Where-Object {$_.Name -match "s-sis-[aec][upmh]*"}
-#$subs= "s-sis-ch-prod-01"
+
+#$subs= "s-sis-ch-nonprod-01"
 $date = $(get-date -format yyyy-MM-ddTHH-mm)
 $kg = "CRD"
 $Rgs = Get-Content -Path "CRD_RGs.txt"
@@ -30,7 +31,7 @@ foreach ($rg in $Rgs)
         
        $vms = get-azvm -resourcegroup $rg
        Write-host "working on $rg"
-    }
+    
 
 foreach ($vm in $vms) 
  {
@@ -55,7 +56,7 @@ foreach ($vm in $vms)
          $backupItem =  $null
      } #else if ($recoveryVaultInfo.BackedUp -eq $true)
 
-
+    
       [void]$vmBackupReport.Add([PSCustomObject]@{
          VM_Name = $vm.Name
          VM_Location = $vm.Location
@@ -75,6 +76,7 @@ foreach ($vm in $vms)
          RecoveryVault_SubscriptionId = $vmBackupVault.ID
      }) #[void]$vmBackupReport.Add([PSCustomObject]@{
  } #foreach ($vm in $vms)
+}
 } 
 }
 #}
