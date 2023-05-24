@@ -18,3 +18,7 @@ cmd.exe /c "C:\Program Files\Qualys\QualysAgent\Uninstall.exe" Uninstall=True Fo
 #Install New Qualys Agent
 
 cmd.exe /c "d:\provision\Schindler\QualysCloudAgent_5.0\5.1.0.18\Binaries\Install.cmd"
+
+#Clean Qualys package
+
+Remove-Item -Path 'D:\provision\Schindler\QualysCloudAgent_5.0' -Recurse -Force
