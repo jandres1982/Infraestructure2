@@ -1,4 +1,4 @@
-param([string]$Server,
+param([string]$vm,
 [string]$mac)
 
 $server = "zzzwsr0004"
