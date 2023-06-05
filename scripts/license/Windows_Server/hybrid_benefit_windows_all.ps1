@@ -1,9 +1,10 @@
-$subs = @("s-sis-ch-prod-01","s-sis-ch-nonprod-01","s-sis-eu-nonprod-01","s-sis-eu-prod-01","s-sis-ap-prod-01","s-sis-am-prod-01","s-sis-am-nonprod-01")
-
+#$subs = @("s-sis-ch-prod-01","s-sis-ch-nonprod-01","s-sis-eu-nonprod-01","s-sis-eu-prod-01","s-sis-ap-prod-01","s-sis-am-prod-01","s-sis-am-nonprod-01")
+$subs=Get-AzSubscription | Where-Object {$_.Name -match "s-sis-[aec][upmh]*"}
 foreach ($sub in $subs)
 {
 Write-Output "Working on $Sub"
 Select-AzSubscription -Subscription $sub
+
 $servers = Get-AzVM | Where-Object {$_.Name -like "*wsr*"}
 
 foreach ($vmName in $Servers.name)
