@@ -3,7 +3,7 @@ $subs = @("s-sis-ch-prod-01","s-sis-ch-nonprod-01","s-sis-eu-nonprod-01","s-sis-
 foreach ($sub in $subs)
 {
 Write-Output "Working on $Sub"
-Select-AzSubscription -Subscription $subs
+Select-AzSubscription -Subscription $sub
 $servers = Get-AzVM | Where-Object {$_.Name -like "*wsr*"}
 
 foreach ($vmName in $Servers.name)
