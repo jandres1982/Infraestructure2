@@ -29,8 +29,7 @@ $diskObject  | Export-Csv $report -NoTypeInformation | Select-Object -Skip 1 | S
 
 $PSEmailServer = "smtp.eu.schindler.com"
 $From = "scc-support-zar.es@schindler.com"
-$to = "nahum.sancho@schindler.com"
-
+$to = "nahum.sancho@schindler.com","antoniovicente.vento@schindler.com"
 $Subject = "Unattached Report"
 $Attachment = $report
 $Body = @"
