@@ -15,9 +15,10 @@ $IpList = $values.ipRules.ipAddressOrRange
 
 #$ipranges = gc "ipranges.txt"
 
-$stacc = "dlsprodcs01"
-$rg = "rg-gis-prod-ssot"
-$sub = "s-sis-eu-prod-01"
+$stacc = "dlsqualcs01"
+$rg = "rg-gis-qual-ssot-01"
+$sub = "s-sis-eu-nonprod-01"
+$iplist = get-content .\LogicAppsPublicIps.txt
 
 Set-AzContext -Subscription $sub
 foreach ($iprange in $IpList) {
