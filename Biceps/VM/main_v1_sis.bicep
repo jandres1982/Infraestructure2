@@ -96,6 +96,9 @@ var subenvmap = {
 @description('Size of VM')
 param vmSize string = 'Standard_D2ds_v5'
 
+@description('Data Size')
+param datasize int
+
 //@description('Existing VNET')
 //param vnet string = 'EU-NONPROD-VNET'
 
@@ -212,7 +215,7 @@ resource virtualMachine 'Microsoft.Compute/virtualMachines@2021-03-01' = {
           name: '${vmname}-DataDisk'
           caching: 'None'
           createOption: 'Empty'
-          diskSizeGB: 5
+          diskSizeGB: datasize
           lun: 0
           managedDisk:{
             storageAccountType:'StandardSSD_LRS'
