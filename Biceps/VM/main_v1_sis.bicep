@@ -94,7 +94,7 @@ var subenvmap = {
 }
 
 @description('Size of VM')
-param vmSize string = 'Standard_D2ds_v5'
+param vmSize string
 
 @description('Data Size')
 param datasize int
