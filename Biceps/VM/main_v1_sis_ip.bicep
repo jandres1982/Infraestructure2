@@ -161,7 +161,7 @@ resource storageAccount 'Microsoft.Storage/storageAccounts@2021-04-01' existing 
   scope: resourceGroup(subenvmap[sub].storage.scope)
 }
 
-resource nic 'Microsoft.Network/networkInterfaces@2021-02-01' = if (!empty(ip)) {
+resource nicStatic 'Microsoft.Network/networkInterfaces@2021-02-01' = if (!empty(ip)) {
   name: nicName
   location: location
   properties: {
@@ -180,7 +180,7 @@ resource nic 'Microsoft.Network/networkInterfaces@2021-02-01' = if (!empty(ip)) 
   }
 }
 
-resource nic 'Microsoft.Network/networkInterfaces@2021-02-01' = if (empty(ip)) {
+resource nicDynamic 'Microsoft.Network/networkInterfaces@2021-02-01' = if (empty(ip)) {
   name: nicName
   location: location
   properties: {
@@ -241,10 +241,10 @@ resource virtualMachine 'Microsoft.Compute/virtualMachines@2021-03-01' = {
         }
       ]
     }
-    networkProfile: {
+    networkProfile: { 
       networkInterfaces: [
         {
-          id: nic.id
+          id: ((empty(ip)) ? nicDynamic.id : nicStatic.id)
         }
       ]
     }
