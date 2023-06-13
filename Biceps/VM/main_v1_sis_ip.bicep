@@ -180,7 +180,7 @@ resource nicStatic 'Microsoft.Network/networkInterfaces@2021-02-01' = if (!empty
   }
 }
 
-resource nicDynamic 'Microsoft.Network/networkInterfaces@2021-02-01' = if (empty(ip)) {
+resource nicDynamic 'Microsoft.Network/networkInterfaces@2021-02-01' = if (ip == null) {
   name: nicName
   location: location
   properties: {
