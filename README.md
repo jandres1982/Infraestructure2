@@ -1,6 +1,6 @@
 # Azure Area Repository
 
-<img align="right" alt="Coding" width="400" src="https://cdnl.iconscout.com/lottie/premium/preview-watermark/software-engineer-launching-code-6369144-5304700.mp4">
+<img align="right" alt="Coding" width="400" src="https://liveimages.algoworks.com/new-algoworks/wp-content/uploads/2022/06/16052457/DevOps-Steps-1-min.gif">
 
 ## Content
 
