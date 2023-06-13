@@ -122,6 +122,8 @@ param adminPassword string = 'Newsetup1234'
 ])
 param zone string
 
+param ipset bool = true
+
 @allowed([
   '2016'
   '2019'
@@ -161,6 +163,7 @@ resource storageAccount 'Microsoft.Storage/storageAccounts@2021-04-01' existing 
   scope: resourceGroup(subenvmap[sub].storage.scope)
 }
 
+
 resource nic 'Microsoft.Network/networkInterfaces@2021-02-01' = {
   name: nicName
   location: location
@@ -169,8 +172,8 @@ resource nic 'Microsoft.Network/networkInterfaces@2021-02-01' = {
       {
         name: 'ipconfig1'
         properties: {
-          privateIPAllocationMethod: 'Static'
-          privateIPAddress: ip
+          privateIPAllocationMethod: (ipset ? 'Static' : 'Dynamic')
+          privateIPAddress: (ipset ? ip :'')
           subnet: {
             id: existingSubnet.id
           }
@@ -179,7 +182,6 @@ resource nic 'Microsoft.Network/networkInterfaces@2021-02-01' = {
     ]
   }
 }
-
 
 
 resource virtualMachine 'Microsoft.Compute/virtualMachines@2021-03-01' = {
@@ -223,7 +225,7 @@ resource virtualMachine 'Microsoft.Compute/virtualMachines@2021-03-01' = {
         }
       ]
     }
-    networkProfile: {
+    networkProfile: { 
       networkInterfaces: [
         {
           id: nic.id
