@@ -103,7 +103,7 @@ param datasize int
 //param vnet string = 'EU-NONPROD-VNET'
 
 @description('Existing Subnet')
-param existingSubnetName string = 'sub-Infrastructure-IaaS-Subnet-01'
+param existingSubnetName string
 
 @description('The name of the administrator of the new VM.')
 param adminUsername string = 'ldmsosd'
@@ -122,7 +122,7 @@ param adminPassword string = 'Newsetup1234'
 ])
 param zone string
 
-param ipset bool = true
+param ipset bool
 
 @allowed([
   '2016'
@@ -144,7 +144,7 @@ param location string = resourceGroup().location
 param ip string
 
 @description('VM name')
-param vmname string = 'zzzwsr0005'
+param vmname string
 
 var nicName = '${vmname}-nic'
 
