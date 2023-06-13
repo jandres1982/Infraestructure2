@@ -278,6 +278,10 @@ resource recoveryServicesVault 'Microsoft.RecoveryServices/vaults@2020-02-02' ex
     scope: resourceGroup(subenvmap[sub].backup.scope)
   }
 
+  output rsv string = recoveryServicesVault.id
+  output rsvname string = recoveryServicesVault.name
+  
+
   resource vaultName_backupFabric_protectionContainer_protectedItem 'Microsoft.RecoveryServices/vaults/backupFabrics/protectionContainers/protectedItems@2020-02-02' = {
     name: '${subenvmap[sub].backup.name}/${backupFabric}/${protectionContainer}/${protectedItem}'
     properties: {
