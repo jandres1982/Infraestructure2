@@ -122,6 +122,8 @@ param adminPassword string = 'Newsetup1234'
 ])
 param zone string
 
+param ipset bool = true
+
 @allowed([
   '2016'
   '2019'
@@ -162,7 +164,7 @@ resource storageAccount 'Microsoft.Storage/storageAccounts@2021-04-01' existing 
 }
 
 
-resource nicDynamic 'Microsoft.Network/networkInterfaces@2021-02-01' = if (ip == 'null') {
+resource nic 'Microsoft.Network/networkInterfaces@2021-02-01' = {
   name: nicName
   location: location
   properties: {
@@ -170,27 +172,8 @@ resource nicDynamic 'Microsoft.Network/networkInterfaces@2021-02-01' = if (ip ==
       {
         name: 'ipconfig1'
         properties: {
-          privateIPAllocationMethod: 'Dynamic'
-          subnet: {
-            id: existingSubnet.id
-          }
-        }
-      }
-    ]
-  }
-}
-
-
-resource nicStatic 'Microsoft.Network/networkInterfaces@2021-02-01' = if (ip != 'null') {
-  name: nicName
-  location: location
-  properties: {
-    ipConfigurations: [
-      {
-        name: 'ipconfig1'
-        properties: {
-          privateIPAllocationMethod: 'Static'
-          privateIPAddress: ip
+          privateIPAllocationMethod: (ipset ? 'Static' : 'Dynamic')
+          privateIPAddress: (ipset ? ip :'')
           subnet: {
             id: existingSubnet.id
           }
@@ -245,7 +228,7 @@ resource virtualMachine 'Microsoft.Compute/virtualMachines@2021-03-01' = {
     networkProfile: { 
       networkInterfaces: [
         {
-          id: ((empty(ip)) ? nicDynamic.id : nicStatic.id)
+          id: nic.id
         }
       ]
     }
