@@ -1,0 +1,5 @@
+https://jsonplaceholder.typicode.com/
+https://developer.microsoft.com/en-us/graph/graph-explorer
+https://developer.mozilla.org/en-US/docs/Web/HTTP/Status
+https://www.odata.org/
+https://learn.microsoft.com/en-us/dynamics365/customer-insights/odata-examples

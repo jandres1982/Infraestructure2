@@ -12,7 +12,6 @@ foreach ($sub in $subs)
     Write-Host "Collecting all Backup Recovery Vault information in $sub" -BackgroundColor DarkGreen
 
 Select-AzSubscription -Subscription "$sub"
-az account set --subscription "$sub"
 
 #$Vault_List = (Get-AzRecoveryServicesVault).Name
 #foreach ($vault in $Vault_List) 

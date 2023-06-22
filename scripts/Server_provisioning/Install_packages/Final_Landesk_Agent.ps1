@@ -1,1 +1,1 @@
-cmd.exe /c "c:\provision\Landesk_Agents\OPS_SSA2020V2_NO_C++_with_status.exe"
+cmd.exe /c "c:\provision\Landesk_Agents\SSA_2022_SU2_V3.exe"

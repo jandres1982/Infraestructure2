@@ -5,7 +5,7 @@
         "location": {
             "value": "southeastasia"
         },
-        "networkInterfaceName3": {
+        "networkInterfaceName1": {
             "value": "shhwsrxxxx251_z3"
         },
         "subnetName": {
@@ -17,7 +17,7 @@
         "virtualMachineName": {
             "value": "shhwsrxxxx"
         },
-        "virtualMachineName3": {
+        "virtualMachineName1": {
             "value": "shhwsrxxxx"
         },
         "virtualMachineComputerName": {
@@ -57,7 +57,7 @@
             "value": "/subscriptions/59c20947-4965-45c4-99f3-12be96106119/resourceGroups/rg-cis-prod-storage-02/providers/Microsoft.Storage/storageAccounts/stproddiagnostic0003"
         },
         "zone": {
-            "value": "3"
+            "value": "1"
         }
     }
 }

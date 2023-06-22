@@ -1,6 +1,8 @@
+param([string]$vm,[string]$rg,[string]$sub)
+Select-AzSubscription -Subscription "$sub"
 New-Item -Path ".\MMA_Json" -ItemType "Directory" -Force
-$vm = $args[0]
-$rg = $args[1]
+#$vm = $args[0]
+#$rg = $args[1]
 $Parameters_Base = ".\parameters-ch.json"
 $Template = ".\template.json"
 $json = Get-Content $Parameters_Base -raw | convertfrom-json

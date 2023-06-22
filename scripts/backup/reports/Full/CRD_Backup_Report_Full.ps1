@@ -1,4 +1,5 @@
 #$subs = Get-AzSubscription | Where-Object {($_.Name -match "s-sis-eu-prod-01") -or ($_.Name -match "s-sis-eu-nonprod-01")}
+
 $subs=Get-AzSubscription | Where-Object {$_.Name -match "s-sis-[aec][upmh]*"}
 #$subs= "s-sis-eu-nonprod-01"
 $date = $(get-date -format yyyy-MM-ddTHH-mm)
@@ -21,7 +22,8 @@ Select-AzSubscription -Subscription "$sub"
 #$subs = @("s-sis-eu-nonprod-01","s-sis-eu-prod-01","s-sis-am-prod-01","s-sis-am-nonprod-01","s-sis-ap-prod-01")
 $date = $(get-date -format yyyy-MM-ddTHH-mm)
 $backupVaults = Get-AzRecoveryServicesVault
-$vms = get-azvm | where-object {$_.Name -like "$kg*"}
+# = get-azvm | where-object {$_.Name -like "$kg*"}
+$vms = get-azvm | where-object {($_.tags.applicationowner -eq "adrian.galliker@schindler.com") -or ($_.tags.applicationowner -eq "sandip.kute@schindler.com") -or ($_.tags.applicationowner -eq "alain.baumeler@schindler.com") -or ($_.tags.applicationowner -eq "ruben.castro.martinez@schindler.com" -or $_.tags.applicationowner -eq "ranjith.ramachandran@schindler.com") -or ($_.tags.applicationowner -eq "robert.platt@schindler.com")}
 
  foreach ($vm in $vms) 
  {
@@ -75,7 +77,7 @@ $vmBackupReport | Export-Csv $report -NoTypeInformation | Select-Object -Skip 1 
 
 $PSEmailServer = "smtp.eu.schindler.com"
 $From = "scc-support-zar.es@schindler.com"
-$to = "alfonso.marques@schindler.com","antoniovicente.vento@schindler.com"
+$to = "alfonso.marques@schindler.com","antoniovicente.vento@schindler.com","adrian.galliker@schindler.com","joelle.sommerhalder@schindler.com"
 
 
 $Subject = "Backup Report $kg Servers"
