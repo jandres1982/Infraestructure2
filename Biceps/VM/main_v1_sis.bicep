@@ -146,7 +146,7 @@ param ip string
 @description('VM name')
 param vmname string
 
-var nicName = '${vmname}-nic'
+var nicName = '${vmname}_01'
 
 resource existingVirtualNetwork 'Microsoft.Network/virtualNetworks@2021-02-01' existing = {
   name: subenvmap[sub].vnet.name

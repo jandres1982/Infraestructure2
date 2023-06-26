@@ -113,6 +113,7 @@ var subenvmap = {
 
 @description('Backup Parameters')
 param backupFabric string = 'Azure'
+param virtualMachineRG string = resourceGroup().name
 
 var protectionContainer = 'iaasvmcontainer;iaasvmcontainerv2;${resourceGroup(subenvmap[sub].backup.scope)};${vmname}'
 var protectedItem = 'vm;iaasvmcontainerv2;${resourceGroup().name};${vmname}'
@@ -287,6 +288,6 @@ resource recoveryServicesVault 'Microsoft.RecoveryServices/vaults@2020-02-02' ex
     properties: {
       protectedItemType: 'Microsoft.Compute/virtualMachines'
       policyId: '${recoveryServicesVault.id}/backupPolicies/${policy}'
-      sourceResourceId: virtualMachine.id
+      sourceResourceId: (virtualMachineRG,'Microsoft.Compute/virtualMachines',virtualMachine)
     }
   }
