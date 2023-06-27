@@ -3,8 +3,8 @@ Function Set-WSUS
 Write-Output 'Windows Registry Editor Version 5.00
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate]
 "ElevateNonAdmins"=dword:00000000
-"WUServer"="http://shhwsr2307.global.schindler.com:8530"
-"WUStatusServer"="http://shhwsr2307.global.schindler.com:8530"
+"WUServer"="http://shhscpwsuskgint.global.schindler.com:8530"
+"WUStatusServer"="http://shhscpwsuskgint.global.schindler.com:8530"
 "UpdateServiceUrlAlternate"=""
 "TargetGroupEnabled"=dword:00000001
 "TargetGroup"="SERVERS-PROD"
