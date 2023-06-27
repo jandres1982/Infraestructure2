@@ -106,11 +106,11 @@ param datasize int
 param existingSubnetName string
 
 @description('The name of the administrator of the new VM.')
-param adminUsername string = 'ldmsosd'
+param adminUsername string
 
 @description('The password for the administrator account of the new VM.')
 @secure()
-param adminPassword string = 'Newsetup1234'
+param adminPassword string
 
 //@description('The name of the storage account.')
 //param storageAccountName string = 'stnonproddiagnostic0001'
