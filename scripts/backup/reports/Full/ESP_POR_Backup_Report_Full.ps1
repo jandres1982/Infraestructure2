@@ -1,6 +1,6 @@
 #$subs = Get-AzSubscription | Where-Object {($_.Name -match "s-sis-eu-prod-01") -or ($_.Name -match "s-sis-eu-nonprod-01")}
 $subs = Get-AzSubscription | Where-Object { $_.Name -match "s-sis-[aec][upmh]*" }
-#$subs= "s-sis-eu-nonprod-01"
+#$subs= "s-sis-eu-prod-01"
 $date = $(get-date -format yyyy-MM-ddTHH-mm)
 $kg = "ESP_POR"
 ###################################################################
@@ -21,6 +21,7 @@ foreach ($sub in $subs) {
     $date = $(get-date -format yyyy-MM-ddTHH-mm)
     $backupVaults = Get-AzRecoveryServicesVault
     $vms = get-azvm | where-object { $_.Name -like "[ep][os][rp]wsr*" }
+    #$vms = get-azvm | where-object { $_.Name -eq "porwsr0014" }
 
     foreach ($vm in $vms) {
         $recoveryVaultInfo = Get-AzRecoveryServicesBackupStatus -Name $vm.Name -ResourceGroupName $vm.ResourceGroupName -Type 'AzureVM' -WarningAction SilentlyContinue
@@ -38,7 +39,7 @@ foreach ($sub in $subs) {
             {
             $backupItem = Get-AzRecoveryServicesBackupItem -Container $container -WorkloadType AzureVM -VaultId $vmBackupVault.ID -WarningAction SilentlyContinue
             }
-            $backupItem = Get-AzRecoveryServicesBackupItem -Container $container -WorkloadType AzureVM -VaultId $vmBackupVault.ID -WarningAction SilentlyContinue
+            #$backupItem = Get-AzRecoveryServicesBackupItem -Container $container -WorkloadType AzureVM -VaultId $vmBackupVault.ID -WarningAction SilentlyContinue
 
         } #if ($recoveryVaultInfo.BackedUp -eq $true)
         else {
