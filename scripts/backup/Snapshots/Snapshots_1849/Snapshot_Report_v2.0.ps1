@@ -38,7 +38,7 @@ Foreach ($sub in $subs)
 $report = 'Snapshot_'+"Report"+'_'+"$date"+'.csv'
 $SnapshotReport | Export-Csv $report -NoTypeInformation | Select-Object -Skip 1 | Set-Content $Report
 
-$emails = $SnapshotReport.Requestor | select -unique
+$emails = $SnapshotReport.Requestor | Select-Object -unique
 
 Foreach ($email in $emails)
 {
