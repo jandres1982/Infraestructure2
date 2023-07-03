@@ -7,7 +7,7 @@ Function Send-Mail {
     $Body = @"
 Dear team,
 
-The Azure resource VM in the list was found to be using more resources than needed generating extra costs.
+The Azure Resource VM in the list was found to be using more resources than needed generating extra costs.
 
 In this report the VMs use less than 10% CPU in 14 days.
 
@@ -49,16 +49,23 @@ foreach ($vm in $advisor) {
 $VmCostReport = 'VmCostReport' + "$date" + '.csv'
 $VmCostReduction | Export-Csv $VmCostReport -NoTypeInformation | Select-Object -Skip 1 | Set-Content $VmCostReport
 $attachment = $VmCostReport
-$To = "antonio.vicentevento@schindler.com"
-Send-mail -to $to -attachment $attachment
+#$To = "antonio.vicentevento@schindler.com","alfonso.marques@schindler.com"
+#Send-mail -to $to -attachment $attachment
 
 ### Send to owners:  ###################
 $VmCostReportGroup = Import-csv -Delimiter "," -LiteralPath $VmCostReport | group-object AppOwner
-$attachment = "Report_$to.csv"
+
 Foreach ($AppOwner in $VmCostReportGroup) {
-    [string]$to = $AppOwner.Group.AppOwner[0]
-    $AppOwner.Group | Export-Csv "Report_$to.csv" -NoTypeInformation | Select-Object -Skip 1 | Set-Content 
-    Write-Host "$to"
+    if ($AppOwner.Group.AppOwner.Count -eq 1) {
+        [string]$to = $AppOwner.Group.AppOwner
+        $AppOwner.Group | Export-Csv "Report_$to.csv" -NoTypeInformation | Select-Object -Skip 1 | Set-Content 
+    }
+    else {
+        [string]$to = $AppOwner.Group.AppOwner[0]
+        $AppOwner.Group | Export-Csv "Report_$to.csv" -NoTypeInformation | Select-Object -Skip 1 | Set-Content 
+    }
+    $attachment = "Report_$to.csv"
+    Write-Output "$attachment"
     #Send-Mail -to $to -attachment $Attachment
     #Only Apply When Advise need to be sent to all owners.
 }
