@@ -1,9 +1,8 @@
-#$sub = "s-sis-eu-nonprod-01"
-#$Backup_rg = "rg-cis-nonprod-backup-01"
-#$Vault = "rsv-nonprod-euno-lrsbackup-01"
-#$policy = "vm-medium-01am-01"
-#$vm = "zzzwsr0026"
-param([string]$Sub, [string]$BackupPolicy, [string]$vm)
+$sub = "s-sis-eu-prod-01"
+$vm = "shhwsr2660"
+$BackupPolicy = "vm-short-01am-01"
+
+param([string]$Sub,[string]$BackupPolicy,[string]$vm)
 
 switch ($sub) {
     "s-sis-eu-prod-01" {
