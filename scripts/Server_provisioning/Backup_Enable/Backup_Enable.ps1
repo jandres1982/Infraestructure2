@@ -3,8 +3,83 @@
 #$Vault = "rsv-nonprod-euno-lrsbackup-01"
 #$policy = "vm-medium-01am-01"
 #$vm = "zzzwsr0026"
-#Select-AzSubscription -Subscription $(sub)
-$vault = Get-AzRecoveryServicesVault -ResourceGroupName $(Backup_rg) -Name $(Vault)
-$policy = Get-AzRecoveryServicesBackupProtectionPolicy -VaultId $Vault.ID -Name $(policy)
-$vm = Get-AzVM -Name $(vm)
-Enable-AzRecoveryServicesBackupProtection -VaultId $vault.ID -Policy $policy -name $VM.Name -ResourceGroupName $vm.ResourceGroupName
+param([string]$Sub, [string]$BackupPolicy, [string]$vm)
+
+switch ($sub) {
+    "s-sis-eu-prod-01" {
+        $rsv = "rsv-prod-euno-zrsbackup-01"
+        $backupRg = "rg-cis-prod-backup-01"
+        Select-AzSubscription -Subscription $sub
+        $vault = Get-AzRecoveryServicesVault -ResourceGroupName $backupRg -Name $rsv
+        $policy = Get-AzRecoveryServicesBackupProtectionPolicy -VaultId $vault.id -Name $BackupPolicy
+        $vmProfile = Get-AzVM -Name $vm
+        Enable-AzRecoveryServicesBackupProtection -VaultId $vault.ID -Policy $policy -name $vmProfile.Name -ResourceGroupName $vmProfile.ResourceGroupName
+
+    }
+
+    "s-sis-eu-nonprod-01" {
+        $rsv = "rsv-nonprod-euno-zrsbackup-01"
+        $backupRg = "rg-cis-nonprod-backup-01"
+        Select-AzSubscription -Subscription $sub
+        $vault = Get-AzRecoveryServicesVault -ResourceGroupName $backupRg -Name $rsv
+        $policy = Get-AzRecoveryServicesBackupProtectionPolicy -VaultId $vault.id -Name $BackupPolicy
+        $vmProfile = Get-AzVM -Name $vm
+        Enable-AzRecoveryServicesBackupProtection -VaultId $vault.ID -Policy $policy -name $vmProfile.Name -ResourceGroupName $vmProfile.ResourceGroupName
+
+    }
+
+    "s-sis-ap-prod-01" {
+        $rsv = "rsv-prod-asse-zrsbackup-01"
+        $backupRg = "rg-cis-prod-backup-01"
+        Select-AzSubscription -Subscription $sub
+        $vault = Get-AzRecoveryServicesVault -ResourceGroupName $backupRg -Name $rsv
+        $policy = Get-AzRecoveryServicesBackupProtectionPolicy -VaultId $vault.id -Name $BackupPolicy
+        $vmProfile = Get-AzVM -Name $vm
+        Enable-AzRecoveryServicesBackupProtection -VaultId $vault.ID -Policy $policy -name $vmProfile.Name -ResourceGroupName $vmProfile.ResourceGroupName
+
+    }
+
+    "s-sis-am-prod-01" {
+        $rsv = "rsv-prod-use2-zrsbackup-01"
+        $backupRg = "rg-cis-prod-backup-01"
+        Select-AzSubscription -Subscription $sub
+        $vault = Get-AzRecoveryServicesVault -ResourceGroupName $backupRg -Name $rsv
+        $policy = Get-AzRecoveryServicesBackupProtectionPolicy -VaultId $vault.id -Name $BackupPolicy
+        $vmProfile = Get-AzVM -Name $vm
+        Enable-AzRecoveryServicesBackupProtection -VaultId $vault.ID -Policy $policy -name $vmProfile.Name -ResourceGroupName $vmProfile.ResourceGroupName
+
+    }
+
+    "s-sis-am-nonprod-01" {
+        $rsv = "rsv-nonprod-use2-zrsbackup-01"
+        $backupRg = "rg-cis-nonprod-backup-01"
+        Select-AzSubscription -Subscription $sub
+        $vault = Get-AzRecoveryServicesVault -ResourceGroupName $backupRg -Name $rsv
+        $policy = Get-AzRecoveryServicesBackupProtectionPolicy -VaultId $vault.id -Name $BackupPolicy
+        $vmProfile = Get-AzVM -Name $vm
+        Enable-AzRecoveryServicesBackupProtection -VaultId $vault.ID -Policy $policy -name $vmProfile.Name -ResourceGroupName $vmProfile.ResourceGroupName
+
+    }
+
+    "s-sis-ch-nonprod-01" {
+        $rsv = "rsv-nonprod-chno-zrsbackup-01"
+        $backupRg = "rg-cis-nonprod-backup-01"
+        Select-AzSubscription -Subscription $sub
+        $vault = Get-AzRecoveryServicesVault -ResourceGroupName $backupRg -Name $rsv
+        $policy = Get-AzRecoveryServicesBackupProtectionPolicy -VaultId $vault.id -Name $BackupPolicy
+        $vmProfile = Get-AzVM -Name $vm
+        Enable-AzRecoveryServicesBackupProtection -VaultId $vault.ID -Policy $policy -name $vmProfile.Name -ResourceGroupName $vmProfile.ResourceGroupName
+
+    }
+
+    "s-sis-ch-prod-01" {
+        $rsv = "rsv-prod-chno-zrsbackup-01"
+        $backupRg = "rg-cis-prod-backup-01"
+        Select-AzSubscription -Subscription $sub
+        $vault = Get-AzRecoveryServicesVault -ResourceGroupName $backupRg -Name $rsv
+        $policy = Get-AzRecoveryServicesBackupProtectionPolicy -VaultId $vault.id -Name $BackupPolicy
+        $vmProfile = Get-AzVM -Name $vm
+        Enable-AzRecoveryServicesBackupProtection -VaultId $vault.ID -Policy $policy -name $vmProfile.Name -ResourceGroupName $vmProfile.ResourceGroupName
+ 
+    }
+}
