@@ -9,8 +9,10 @@ $function = "$KG Windows Server $function"
 #$user = $(Get-AzKeyVaultSecret -VaultName 'kv-prod-devopsagents-01' -Name 'JoinUser' -AsPlainText)
 #$user = 
 echo "this is join user: $joinuser"
-echo "this is join pw: $joinpw.SecretValue"
-$cred = New-Object System.Management.Automation.PSCredential -ArgumentList ($joinuser, $joinpw)
+echo "this is join pw: $joinpw"
+$joinpw = $joinpw | ConvertTo-SecureString
+echo "this is join pw converted to secure string: $joinpw"
+$cred = New-Object System.Management.Automation.PSCredential -ArgumentList ($joinuser,$joinpw)
 
 New-ADComputer -Name $vm -Path "OU=EU,OU=Servers,OU=NBI12,DC=global,DC=schindler,DC=com" -PasswordNotRequired $false -Description $Function -Credential $cred
 write-host "$vm and $Function"
