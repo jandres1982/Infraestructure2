@@ -1,4 +1,4 @@
-param([string]$vm,[string]$function)
+param([string]$vm,[string]$function,[string]$joinuser)
 $vm = $vm.ToUpper()
 $KG = $vm.Substring(0,3)
 $function = "$KG Windows Server $function"
