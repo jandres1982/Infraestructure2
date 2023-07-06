@@ -8,6 +8,8 @@ $function = "$KG Windows Server $function"
 
 #$user = $(Get-AzKeyVaultSecret -VaultName 'kv-prod-devopsagents-01' -Name 'JoinUser' -AsPlainText)
 #$user = 
+Write-Output "$joinuser"
+Write-Output "$joinpw"
 $cred = New-Object System.Management.Automation.PSCredential -ArgumentList ($joinuser, $joinpw)
 
 New-ADComputer -Name $vm -Path "OU=EU,OU=Servers,OU=NBI12,DC=global,DC=schindler,DC=com" -PasswordNotRequired $false -Description $Function -Credential $cred
