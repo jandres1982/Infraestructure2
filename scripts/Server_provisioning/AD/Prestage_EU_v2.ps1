@@ -3,8 +3,8 @@ $vm = $vm.ToUpper()
 $KG = $vm.Substring(0,3)
 $function = "$KG Windows Server $function"
 
-$pw = $(Get-AzKeyVaultSecret -VaultName 'kv-prod-devopsagents-01' -Name 'JoinPw').SecretValue
-$pw = $joinpw.SecretValue
+#$pw = $(Get-AzKeyVaultSecret -VaultName 'kv-prod-devopsagents-01' -Name 'JoinPw').SecretValue
+#$pw = $joinpw.SecretValue
 
 #$user = $(Get-AzKeyVaultSecret -VaultName 'kv-prod-devopsagents-01' -Name 'JoinUser' -AsPlainText)
 #$user = 
