@@ -10,7 +10,7 @@ $function = "$KG Windows Server $function"
 #$user = 
 echo "this is join user: $joinuser"
 echo "this is join pw: $joinpw"
-$joinpw = $joinpw | ConvertTo-SecureString
+$joinpw = $joinpw | ConvertTo-SecureString -AsPlainText -Force
 echo "this is join pw converted to secure string: $joinpw"
 $cred = New-Object System.Management.Automation.PSCredential -ArgumentList ($joinuser,$joinpw)
 
