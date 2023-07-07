@@ -1,4 +1,4 @@
-param([string]$sub,[string]$BackupPolicy,[string]$vm)
+param([string]$sub, [string]$BackupPolicy, [string]$vm)
 
 switch ($sub) {
     "s-sis-eu-prod-01" {
@@ -6,6 +6,9 @@ switch ($sub) {
         $backupRg = "rg-cis-prod-backup-01"
         Select-AzSubscription -Subscription $sub
         $vault = Get-AzRecoveryServicesVault -ResourceGroupName $backupRg -Name $rsv
+        if ($BackupPolicy -eq "vm-short-01am-01") {
+            $BackupPolicy = "vm-short-01am-02"
+        }
         $policy = Get-AzRecoveryServicesBackupProtectionPolicy -VaultId $vault.id -Name $BackupPolicy
         $vmProfile = Get-AzVM -Name $vm
         Enable-AzRecoveryServicesBackupProtection -VaultId $vault.ID -Policy $policy -name $vmProfile.Name -ResourceGroupName $vmProfile.ResourceGroupName
