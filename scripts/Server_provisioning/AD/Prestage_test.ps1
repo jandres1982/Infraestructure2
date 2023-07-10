@@ -1,4 +1,4 @@
-param([string]$vm,[string]$function,[string]$sub,[string]$domain,$joinuser,$joinpw,$joinuserdmz,$joinpwdmz,$joinusertst,$joinpwtst)
+param([string]$vm,[string]$function,[string]$sub,[string]$domain,$joinuser,$joinpw,$joinuserdmz,$joinpwdmz1,$joinusertst,$joinpwtst)
 Write-Output "$domain"
 
 if ($domain -eq "global") {
