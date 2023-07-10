@@ -1,4 +1,4 @@
-param([string]$vm, [string]$function,[string]$sub,$joinuser,$joinpw,$joinuserdmz,$joinpwdmz,$joinusertst,$joinpwtst,[string]$domain)
+param([string]$vm,[string]$function,[string]$sub,[string]$domain,$joinuser,$joinpw,$joinuserdmz,$joinpwdmz,$joinusertst,$joinpwtst)
 
 if ($domain -eq "global") {
     $password = $joinpw | ConvertTo-SecureString -AsPlainText -Force
