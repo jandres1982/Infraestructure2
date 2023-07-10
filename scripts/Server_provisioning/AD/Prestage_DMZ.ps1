@@ -1,10 +1,10 @@
-param([string]$vm,[string]$function,[string]$joinuserdmz,[string]$joinpwdmz1)
+param([string]$vm,[string]$function,[string]$joinuserdmz,$joinpwdmz1)
 
 write-host "$joinuserdmz"
 write-host "$joinpwdmz1"
 
 $joinpwdmz1 = $joinpwdmz1 | ConvertTo-SecureString -AsPlainText -Force
-$cred = New-Object System.Management.Automation.PSCredential -ArgumentList ($joinuserdmz, $joinpwdmz)
+$cred = New-Object System.Management.Automation.PSCredential -ArgumentList ($joinuserdmz, $joinpwdmz1)
 $vm = $vm.ToUpper()
 $KG = $vm.Substring(0,3)
 $function = "$KG Windows Server $function"
