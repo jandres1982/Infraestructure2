@@ -1,6 +1,6 @@
 param([string]$vm,[string]$function,[string]$joinusertst,$joinpwtst)
 
-$joinpwdmz = $joinpwdmz | ConvertTo-SecureString -AsPlainText -Force
+$joinpwtst = $joinpwtst | ConvertTo-SecureString -AsPlainText -Force
 $cred = New-Object System.Management.Automation.PSCredential -ArgumentList ($joinusertst, $joinpwtst)
 $vm = $vm.ToUpper()
 $KG = $vm.Substring(0,3)
