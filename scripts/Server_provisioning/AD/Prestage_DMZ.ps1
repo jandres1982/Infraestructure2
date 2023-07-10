@@ -1,8 +1,7 @@
 param([string]$vm,[string]$function,[string]$joinuserdmz,$joinpwdmz)
 
-$password = $joinpwdmz | ConvertTo-SecureString -AsPlainText -Force
-# =  | ConvertTo-SecureString -AsPlainText -Force
-$cred = New-Object System.Management.Automation.PSCredential -ArgumentList ($joinuserdmz, $password)
+$joinpwdmz = $joinpwdmz | ConvertTo-SecureString -AsPlainText -Force
+$cred = New-Object System.Management.Automation.PSCredential -ArgumentList ($joinuserdmz, $joinpwdmz)
 $vm = $vm.ToUpper()
 $KG = $vm.Substring(0,3)
 $function = "$KG Windows Server $function"
