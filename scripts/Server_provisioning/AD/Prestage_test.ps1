@@ -62,8 +62,8 @@ if ($domain -eq "dmz") {
     $parameters = @{
         ComputerName = $ScriptingServer
         Credential   = $cred
-        ScriptBlock  = {param($vm, $path_dmz, $function, $cred) New-ADComputer -Name $vm -Path $path_dmz -PasswordNotRequired $false -Description $function -credential $cred }
-        ArgumentList = $vm, $function, $cred
+        ScriptBlock  = {param($vm, $path_dmz,$function,$cred) New-ADComputer -Name $vm -Path $path_dmz -PasswordNotRequired $false -Description $function -credential $cred}
+        ArgumentList = $vm, $path_dmz, $function, $cred
     }
     Invoke-Command @parameters
     write-host "$vm and $Function"
@@ -81,7 +81,7 @@ if ($domain -eq "tstglobal") {
         ComputerName = $ScriptingServer
         Credential   = $cred
         ScriptBlock  = {param($vm, $path_tst, $function, $cred) New-ADComputer -Name $vm -Path $path_tst -PasswordNotRequired $false -Description $function -credential $cred }
-        ArgumentList = $vm, $function, $cred
+        ArgumentList = $vm, $path_tst, $function, $cred
     }
     Invoke-Command @parameters
     write-host "$vm and $Function"
