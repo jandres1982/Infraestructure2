@@ -61,7 +61,7 @@ if ($domain -eq "tstglobal") {
     write-host "$vm and $Function"
 }
 
-if ($domain -ne "global" -and $domain -ne "dmz" -and $domain -ne $tstglobal) {
+if ($domain -ne "global" -or $domain -ne "dmz" -or $domain -ne $tstglobal) {
     Write-Error "Write a correct Schindler Domain:
     Example: global, dmz or tstglobal"
 } else {
