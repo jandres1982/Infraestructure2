@@ -62,7 +62,7 @@ if ($domain -eq "dmz") {
     $parameters = @{
         ComputerName = $ScriptingServer
         Credential   = $cred
-        ScriptBlock  = {param($vm, $path_dmz,$function,$cred) New-ADComputer -Name $vm -Path $path_dmz -PasswordNotRequired $false -Description $function -credential $cred}
+        ScriptBlock  = { param($vm, $path_dmz, $function, $cred) New-ADComputer -Name $vm -Path $path_dmz -PasswordNotRequired $false -Description $function -credential $cred }
         ArgumentList = $vm, $path_dmz, $function, $cred
     }
     Invoke-Command @parameters
@@ -80,18 +80,22 @@ if ($domain -eq "tstglobal") {
     $parameters = @{
         ComputerName = $ScriptingServer
         Credential   = $cred
-        ScriptBlock  = {param($vm, $path_tst, $function, $cred) New-ADComputer -Name $vm -Path $path_tst -PasswordNotRequired $false -Description $function -credential $cred }
+        ScriptBlock  = { param($vm, $path_tst, $function, $cred) New-ADComputer -Name $vm -Path $path_tst -PasswordNotRequired $false -Description $function -credential $cred }
         ArgumentList = $vm, $path_tst, $function, $cred
     }
     Invoke-Command @parameters
     write-host "$vm and $Function"
 }
 
-if ($domain -eq "global" -or $domain -eq "dmz" -or $domain -eq "tstglobal") {
-
-    Write-Output "$domain.schindler.com has been selected"
+if ($domain -eq "global" -or $domain -eq "tstglobal") {
+    Write-Output $domain".schindler.com has been selected"
 }
 else {
-    Write-Error "Write a correct Schindler Domain:
-    Example: global, dmz or tstglobal"
+    if ($domain -eq "dmz") {
+        Write-Output $domain"2.schindler.com has been selected"
+    }
+    else {
+        Write-Error "Write a correct Schindler Domain:
+        Example: global, dmz or tstglobal"
+    }
 }
