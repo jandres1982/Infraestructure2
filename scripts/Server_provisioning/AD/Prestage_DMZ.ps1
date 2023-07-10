@@ -1,4 +1,4 @@
-param([string]$vm,[string]$function,[string]$joinuserdmz,$joinpwdmz)
+param([string]$vm,[string]$function,[string]$joinuserdmz,$joinpwdmz1)
 
 write-host "$joinuserdmz"
 write-host "$joinpwdmz"
