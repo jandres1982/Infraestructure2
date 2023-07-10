@@ -1,6 +1,9 @@
 param([string]$vm, [string]$function, [string]$sub, [string]$domain, $joinuser, $joinpw, $joinuserdmz, $joinpwdmz1, $joinusertst, $joinpwtst)
 Write-Output "$domain"
 Write-Output "$sub"
+$path = ""
+$path_tst = ""
+$path_dmz = ""
 
 switch ($sub) {
     "s-sis-eu-prod-01" {
@@ -46,7 +49,6 @@ if ($domain -eq "global") {
     $vm = $vm.ToUpper()
     $KG = $vm.Substring(0, 3)
     $function = "$KG Windows Server $function"
-    $path = ""
     New-ADComputer -Name $vm -Path $path -PasswordNotRequired $false -Description $Function -ErrorAction SilentlyContinue -Credential $cred
     write-host "$vm and $Function"
 }
