@@ -87,7 +87,7 @@ if ($domain -eq "tstglobal") {
     write-host "$vm and $Function"
 }
 
-if ($domain -eq "global" -or $domain -eq "dmz" -or $domain -eq $tstglobal) {
+if ($domain -eq "global" -or $domain -eq "dmz" -or $domain -eq "tstglobal") {
 
     Write-Output "$domain.schindler.com has been selected"
 }
