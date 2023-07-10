@@ -39,6 +39,7 @@ if ($domain -eq "dmz") {
         ArgumentList = $vm, $function, $cred
     }
     Invoke-Command @parameters
+    write-host "$vm and $Function"
 }
 
 if ($domain -eq "tstglobal") {
@@ -56,6 +57,7 @@ if ($domain -eq "tstglobal") {
         ArgumentList = $vm, $function, $cred
     }
     Invoke-Command @parameters
+    write-host "$vm and $Function"
 }
 
 if ($domain -ne "global" -and $domain -ne "dmz" -and $domain -ne $tstglobal) {
