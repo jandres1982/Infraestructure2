@@ -1,5 +1,6 @@
 param([string]$vm, [string]$function, [string]$sub, [string]$domain, $joinuser, $joinpw, $joinuserdmz, $joinpwdmz1, $joinusertst, $joinpwtst)
 Write-Output "$domain"
+Write-Output "$sub"
 
 switch ($sub) {
     "s-sis-eu-prod-01" {
@@ -61,7 +62,7 @@ if ($domain -eq "dmz") {
     $parameters = @{
         ComputerName = $ScriptingServer
         Credential   = $cred
-        ScriptBlock  = {param($vm, $function, $cred) New-ADComputer -Name $vm -Path $path_dmz -PasswordNotRequired $false -Description $function -credential $cred }
+        ScriptBlock  = {param($vm, $path_dmz, $function, $cred) New-ADComputer -Name $vm -Path $path_dmz -PasswordNotRequired $false -Description $function -credential $cred }
         ArgumentList = $vm, $function, $cred
     }
     Invoke-Command @parameters
@@ -79,7 +80,7 @@ if ($domain -eq "tstglobal") {
     $parameters = @{
         ComputerName = $ScriptingServer
         Credential   = $cred
-        ScriptBlock  = {param($vm, $function, $cred) New-ADComputer -Name $vm -Path $path_tst -PasswordNotRequired $false -Description $function -credential $cred }
+        ScriptBlock  = {param($vm, $path_tst, $function, $cred) New-ADComputer -Name $vm -Path $path_tst -PasswordNotRequired $false -Description $function -credential $cred }
         ArgumentList = $vm, $function, $cred
     }
     Invoke-Command @parameters
