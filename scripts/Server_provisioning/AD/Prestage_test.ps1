@@ -1,4 +1,4 @@
-param([string]$vm,[string]$function,[string]$sub,[string]$domain,$joinuser,$joinpw,$joinuserdmz,$joinpwdmz1,$joinusertst,$joinpwtst)
+param([string]$vm, [string]$function, [string]$sub, [string]$domain, $joinuser, $joinpw, $joinuserdmz, $joinpwdmz1, $joinusertst, $joinpwtst)
 Write-Output "$domain"
 
 if ($domain -eq "global") {
@@ -61,9 +61,11 @@ if ($domain -eq "tstglobal") {
     write-host "$vm and $Function"
 }
 
-if ($domain -ne "global" -or $domain -ne "dmz" -or $domain -ne $tstglobal) {
+if ($domain -eq "global" -or $domain -eq "dmz" -or $domain -eq $tstglobal) {
+
+    Write-Output "$domain.schindler.com has been selected"
+}
+else {
     Write-Error "Write a correct Schindler Domain:
     Example: global, dmz or tstglobal"
-} else {
-    Write-Output "$domain.schindler.com has been selected"
 }
