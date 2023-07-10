@@ -1,5 +1,8 @@
 param([string]$vm,[string]$function,[string]$joinuserdmz,$joinpwdmz)
 
+write-host "$joinuserdmz"
+write-host "$joinpwdmz"
+
 $joinpwdmz = $joinpwdmz | ConvertTo-SecureString -AsPlainText -Force
 $cred = New-Object System.Management.Automation.PSCredential -ArgumentList ($joinuserdmz, $joinpwdmz)
 $vm = $vm.ToUpper()
