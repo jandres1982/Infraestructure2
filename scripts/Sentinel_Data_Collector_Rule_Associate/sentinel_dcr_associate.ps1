@@ -5,7 +5,7 @@ $subs = @("s-sis-eu-nonprod-01","s-sis-am-nonprod-01","s-sis-ch-nonprod-01","s-s
 foreach ($sub in $subs)
 {
     Set-AzContext -Subscription $sub
-    $vms = Get-AzVm
+    $vms = Get-AzVm | Where-Object {$_.StorageProfile.osDisk.osType -eq 'Windows'}
     foreach ($vm in $vms)
     {
         New-AzDataCollectionRuleAssociation -TargetResourceId $vm.Id -AssociationName "dcrAssoc" -RuleId $dcr
