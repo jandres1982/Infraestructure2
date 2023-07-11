@@ -161,6 +161,6 @@ $WUauclt = "c:\windows\system32\WUauclt.exe"
 Install-WindowsUpdates -RebootIfRequired -Confirm
 
 # Update WSUS Server
-Write-Verbose 'Update WSUS Server'
-cmd.exe /c "$WUauclt /detectnow"
-cmd.exe /c "$WUauclt /reportnow"
+#Write-Verbose 'Update WSUS Server'
+#cmd.exe /c "$WUauclt /detectnow"
+#cmd.exe /c "$WUauclt /reportnow"
