@@ -162,5 +162,5 @@ Install-WindowsUpdates -RebootIfRequired -Confirm
 
 # Update WSUS Server
 Write-Verbose 'Update WSUS Server'
-Invoke-Expression "$WUauclt /detectnow"
-Invoke-Expression "$WUauclt /reportnow"
+cmd.exe /c "$WUauclt /detectnow"
+cmd.exe /c "$WUauclt /reportnow"
