@@ -109,7 +109,7 @@ function Install-WindowsUpdates {
                 foreach ($Update in $SearchResult.Updates) {
                     $UpdateTitle = $Update.Title
                     if ($Update.IsDownloaded) {
-                        Write-Verbose "Successfully downloaded & ready to install : ($UpdateTitle)"
+                        Write-Verbose "Successfully downloaded ready to install : ($UpdateTitle)"
                         $UpdatesToInstall.Add($Update) |Out-Null        
                         if ($Update.InstallationBehavior.RebootBehavior -gt 0) {
                             $rebootMayBeRequired = $true
