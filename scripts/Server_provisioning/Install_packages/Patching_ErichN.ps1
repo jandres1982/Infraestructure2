@@ -259,7 +259,7 @@ $Computername = gc env:computername
 $WUauclt = (gc env:Systemroot) + "\system32\WUauclt.exe"
 
 # Start WindowsUpdates patch installation if patch window is open
-Install-WindowsUpdates -RebootIfRequired   
+Install-WindowsUpdates -RebootIfRequired -Confirm
 
 # Update WSUS Server
 Write-Verbose 'Update WSUS Server'
