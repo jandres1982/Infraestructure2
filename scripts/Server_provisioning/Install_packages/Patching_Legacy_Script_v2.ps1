@@ -151,3 +151,5 @@ function Install-WindowsUpdates {
         } 
     }
 }
+
+Install-WindowsUpdates -RebootIfRequired -Confirm
