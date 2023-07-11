@@ -1,7 +1,7 @@
 param([string]$sub)
 switch ($sub) {
     "s-sis-eu-prod-01" {
-        $Proxy = "http://slsnwg1000.global.schindler.com:3128"
+        $Proxy = "http://shhnwg1000.global.schindler.com:3128"
         $registryPath = "HKLM:\Software\qualys\Proxy"
         $Name = "URL"
         $value = $Proxy
@@ -10,7 +10,7 @@ switch ($sub) {
         Restart-Service -Name QualysAgent -Force
     }
     "s-sis-eu-nonprod-01" {
-        $Proxy = "http://slsnwg1000.global.schindler.com:3128"
+        $Proxy = "http://shhnwg1000.global.schindler.com:3128"
         $registryPath = "HKLM:\Software\qualys\Proxy"
         $Name = "URL"
         $value = $Proxy
@@ -30,7 +30,7 @@ switch ($sub) {
     }
 
     "s-sis-ch-prod-01" {
-        $Proxy = "http://slsnwg1000.global.schindler.com:3128"
+        $Proxy = "http://shhnwg1000.global.schindler.com:3128"
         $registryPath = "HKLM:\Software\qualys\Proxy"
         $Name = "URL"
         $value = $Proxy
@@ -39,7 +39,7 @@ switch ($sub) {
         Restart-Service -Name QualysAgent -Force
     }
     "s-sis-ch-nonprod-01" {
-        $Proxy = "http://slsnwg1000.global.schindler.com:3128"
+        $Proxy = "http://shhnwg1000.global.schindler.com:3128"
         $registryPath = "HKLM:\Software\qualys\Proxy"
         $Name = "URL"
         $value = $Proxy
