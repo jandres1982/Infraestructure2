@@ -31,12 +31,12 @@ foreach ($sub in $subs) {
             Write-Output "$wafPolicyName $RuleSetType $ruleSetVersion"
             $i++
             [void]$wafPolicyReport.Add([PSCustomObject]@{
-                    WAF            = $wafPolicyName
-                    WAF_RG         = $wafRg
-                    WAF_Location   = $waf.Location
-                    WAF_Sub        = $sub
+                    WAF        = $wafPolicyName
+                    RG         = $wafRg
+                    Location   = $waf.Location
+                    Sub        = $sub
                     RuleSetType    = $RuleSetType
-                    ruleSetVersion = $ruleSetVersion
+                    ruleSetVersion = $RuleSetVersion
                 })
         }
     }
