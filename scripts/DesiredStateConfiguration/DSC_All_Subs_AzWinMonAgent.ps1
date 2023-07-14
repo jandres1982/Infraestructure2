@@ -3,8 +3,8 @@
 #, "s-sis-eu-prod-01", "s-sis-am-prod-01", "s-sis-am-nonprod-01", "s-sis-ap-prod-01", "s-sis-ch-prod-01", "s-sis-ch-nonprod-01")
 $subs = "s-sis-eu-nonprod-01"
 ###################################################################
-Install-Module Az.ConnectedMachine
-Import-Module Az.ConnectedMachine
+#Install-Module Az.ConnectedMachine
+#Import-Module Az.ConnectedMachine
 
 foreach ($sub in $subs) {
 
