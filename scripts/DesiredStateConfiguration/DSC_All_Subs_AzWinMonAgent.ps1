@@ -1,9 +1,11 @@
 #################################################################### 
-
-$subs = @("s-sis-eu-nonprod-01","s-sis-am-nonprod-01","s-sis-ch-nonprod-01","s-sis-ch-prod-01","s-sis-ap-prod-01")
+$subs = "s-sis-eu-nonprod-01"
+#$subs = @("s-sis-eu-nonprod-01","s-sis-am-nonprod-01","s-sis-ch-nonprod-01","s-sis-ch-prod-01","s-sis-ap-prod-01")
 #, "s-sis-eu-prod-01", "s-sis-am-prod-01", "s-sis-am-nonprod-01", "s-sis-ap-prod-01", "s-sis-ch-prod-01", "s-sis-ch-nonprod-01")
 
 ###################################################################
+Install-Module Az.ConnectedMachine
+Import-Module Az.ConnectedMachine
 
 foreach ($sub in $subs) {
 
@@ -37,7 +39,9 @@ foreach ($sub in $subs) {
                         $extension = $VmStatus.Extensions.name
                         $AzWinMonAgent = $extension | Select-String "AzureMonitorWindowsAgent"
                         if ($AzWinMonAgent) {
-                                Write-host "$AzWinMonAgent extension already exist"   
+                                Write-host "$AzWinMonAgent extension already exist"
+                                Get-AzVMExtension -VMName $vm -ResourceGroupName $rg | Where-Object { $_.Publisher -eq "Microsoft.Azure.Monitor" -and $_.EnableAutomaticUpgrade -eq $null} | Set-AzVMExtension -EnableAutomaticUpgrade $True
+                                Get-AzVMExtension -VMName $vm -ResourceGroupName $rg | Where-Object { $_.Publisher -eq "Microsoft.Azure.Monitor" -and $_.EnableAutomaticUpgrade -eq $false} | Set-AzVMExtension -EnableAutomaticUpgrade $True
                         }
                         else {
                                 Set-AzVMExtension -Name AzureMonitorWindowsAgent -ExtensionType AzureMonitorWindowsAgent -Publisher Microsoft.Azure.Monitor -ResourceGroupName $rg -VMName $vm -Location $location -TypeHandlerVersion "1.14" -EnableAutomaticUpgrade $true
