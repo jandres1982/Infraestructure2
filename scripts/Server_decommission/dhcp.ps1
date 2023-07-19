@@ -64,3 +64,27 @@ foreach ($servidor in $servidores) {
 
 
 Write-Host "Extracción de scopes DHCP completada."
+
+
+$dhcp = Get-DhcpServerInDC
+
+foreach ($server in $dhcp.dnsname)
+{
+
+if (Test-WSMan -ComputerName $server -ErrorAction SilentlyContinue -Authentication Kerberos)
+
+{
+
+$server >> Dhcp.txt
+
+}
+
+}
+
+$dhcpServer = Get-Content -Path Dhcp.txt
+
+
+#foreach
+$dhcpServer = "shhwsr1632"
+
+Get-DhcpServerv4Scope -ComputerName $dhcpServer
