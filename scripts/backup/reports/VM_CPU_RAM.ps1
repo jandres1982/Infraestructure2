@@ -1,5 +1,5 @@
 #$subs = @("s-sis-eu-nonprod-01","s-sis-eu-prod-01","s-sis-am-prod-01","s-sis-am-nonprod-01","s-sis-ap-prod-01","s-sis-ch-prod-01","s-sis-ch-nonprod-01")
-$subs =  Get-AzSubscription 
+$subs =  Get-AzSubscription
 $date = $(get-date -format yyyy-MM-ddTHH-mm)
 #$subs = Get-AzSubscription -SubscriptionName "s-sis-eu-nonprod-01"
 
@@ -22,7 +22,7 @@ foreach ($vm in $vms) {
     $SizeName = $size.Name
     $NumberOfCores = $size.NumberOfCores
     $MemoryInMB = $size.MemoryInMB / 1024
-    Write-Host "$vmName |$SizeName|$NumberOfCore| $MemoryInMB"
+    Write-Host "$vmName |$SizeName|$NumberOfCores| $MemoryInMB"
 
     [void]$VmCPU_Report.Add([PSCustomObject]@{
     vmName = $Vmname
