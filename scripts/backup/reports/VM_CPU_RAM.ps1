@@ -17,15 +17,18 @@ $vms = Get-AzVM
 # Loop through the VMs and display CPU and RAM details
 foreach ($vm in $vms) {
     $vmName = $vm.Name
+    $os = $vm.StorageProfile.osDisk.osType
     $size = $vm.HardwareProfile.VmSize
     $size = get-azvmsize -Location $vm.location |where-object {$_.Name -eq $size}
     $SizeName = $size.Name
     $NumberOfCores = $size.NumberOfCores
     $MemoryInMB = $size.MemoryInMB / 1024
+    
     Write-Host "$vmName |$SizeName|$NumberOfCores| $MemoryInMB"
 
     [void]$VmCPU_Report.Add([PSCustomObject]@{
     vmName = $Vmname
+    os = $os
     sub = $sub
     SizeName = $SizeName
     NumberOfCores = $NumberOfCores
