@@ -1,15 +1,45 @@
-# Define organization base url, PAT and API version variables
-$org = "devsdb"
-$project= "SIS-Azure_OP-Automation"
-$pat = "2iorsurunvakcaqqjdevtggtm23gabou4llrbkm5y4awwvm35ljq"
-$id = "1734"
-$token = [System.Convert]::ToBase64String([System.Text.Encoding]::ASCII.GetBytes(":$($pat)"))
-$url = "https://dev.azure.com/$org/$project/_apis/pipelines/$id/runs?api-version=7.0"
+# Replace these variables with your actual values
+$organizationUrl = "https://dev.azure.com/devsdb"
+$projectName = "SIS-Azure_OP-Automation"
+$personalAccessToken = "2iorsurunvakcaqqjdevtggtm23gabou4llrbkm5y4awwvm35ljq"
+$pipelineId = "1734"
+$varname1 = "vm"
+$varvalue1 = "zzzwsr0999"
+$varname2 = "mac"
+$varvalue2 = "zzzwsr0999"
+$varname3 = "osversion"
+$varvalue3 = "2019"
+$varname4 = "function"
+$varvalue4 = "test server devops api"
 
-$json = @’
-{
-“self”: { "refName":"main"},
+
+# Define the API endpoint
+$apiUrl = "$organizationUrl/$projectName/_apis/pipelines/$pipelineId/runs?api-version=6.0-preview.1"
+
+# Create a JSON payload for the request with variables
+$variables = @{
+    variables = @{
+                ($varname1) = @{
+            value = $varvalue1
+        }
+                ($varname2) = @{
+            value = $varvalue2
+        }
+                ($varname3) = @{
+            value = $varvalue3
+        }
+                ($varname4) = @{
+            value = $varvalue4
+        }
+    }
 }
-‘@
 
-$response = Invoke-RestMethod -Uri $url -Headers @{Authorization = “Basic $token”} -Method Post -Body $JSON -ContentType application/json
+$payload = ConvertTo-Json $variables
+
+# Make the API request to trigger the pipeline run with variables
+$response = Invoke-RestMethod -Uri $apiUrl -Method Post -Headers @{
+    Authorization = "Basic " + [Convert]::ToBase64String([Text.Encoding]::ASCII.GetBytes(":$personalAccessToken"))
+} -ContentType "application/json" -Body $payload
+
+# Output the response
+$response
