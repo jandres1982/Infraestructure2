@@ -1,5 +1,6 @@
 $subs = Get-AzSubscription | Where-Object { $_.Name -match "s-sis-[aec][upmh]*" }
 Write-host "$vm"
+[int]$i = "0"
 foreach ($sub in $subs) {
   Select-AzSubscription -Subscription "$sub"
  
@@ -11,5 +12,13 @@ foreach ($sub in $subs) {
   }else
   {
     Write-Host "$vm was not found"
+    $i++
+    Write-host "$i"
+    [int]$subcount =$subs.count
+    if ($i -eq $subcount)
+    {
+        Write-error "$i Subs checked and server was not found"
+        Break
+    }
   }
 }
