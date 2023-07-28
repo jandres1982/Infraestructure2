@@ -1,3 +1,4 @@
+param([string]$vm)
 $subs = Get-AzSubscription | Where-Object { $_.Name -match "s-sis-[aec][upmh]*" }
 Write-host "$vm"
 [int]$i = "0"
