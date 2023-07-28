@@ -18,7 +18,7 @@ foreach ($sub in $subs) {
     [int]$subcount =$subs.count
     if ($i -eq $subcount)
     {
-        Write-error "$i Subs checked and server was not found"
+        Write-error "$i Subs checked and server $vm was not found"
         Break
     }
   }
