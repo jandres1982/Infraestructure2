@@ -4,28 +4,26 @@ $projectName = "SIS-Azure_OP-Automation"
 $personalAccessToken = "2iorsurunvakcaqqjdevtggtm23gabou4llrbkm5y4awwvm35ljq"
 $pipelineId = "1764"
 $varname1 = "vm"
-$varvalue1 = ""
+$varvalue1 = "zzzwsr0012"
 $varname2 = "domain"
-$varvalue2 = ""
+$varvalue2 = "global"
 $varname3 = "sub"
-$varvalue3 = ""
+$varvalue3 = "s-sis-eu-nonprod-01"
 $varname4 = "vmSize"
-$varvalue4 = ""
+$varvalue4 = "Standard_DS1_v2"
 $varname5 = "datasize"
-$varvalue5 = ""
-$varname6 = "existingSubnetName"
-$varvalue6 = ""
+$varvalue5 = "5"
+$varname6 = "subnetName"
+$varvalue6 = "test"
 $varname7 = "zone"
-$varvalue7 = ""
+$varvalue7 = "1"
 $varname8 = "osversion"
-$varvalue8 = ""
-$varname8 = "ip"
-$varvalue8 = ""
+$varvalue8 = "2019"
+$varname9 = "ip"
+$varvalue9 = ""
 
 # Define the API endpoint
 $apiUrl = "$organizationUrl/$projectName/_apis/pipelines/$pipelineId/runs?api-version=6.0-preview.1"
-
-sub=$(sub) vmSize=$(vmsize) datasize=$(drive_d_size_GB) vmname=$(vm) existingSubnetName=$(subnetName) zone=$(zone) osversion=$(OSversion) ip=$(ip)
 
 # Create a JSON payload for the request with variables
 $variables = @{
@@ -56,6 +54,9 @@ $variables = @{
         }
         ($varname8) = @{
             value = $varvalue8
+        }
+        ($varname9) = @{
+            value = $varvalue9
         }
     }
 }
