@@ -46,13 +46,10 @@ $variables = @{
                 ($varname6) = @{
             value = $varvalue6
         }
-        ($varname6) = @{
-            value = $varvalue6
-        }
-                ($varname7) = @{
+        ($varname7) = @{
             value = $varvalue7
         }
-        ($varname8) = @{
+                ($varname8) = @{
             value = $varvalue8
         }
         ($varname9) = @{
