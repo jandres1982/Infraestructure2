@@ -11,7 +11,7 @@ $varname3 = "sub"
 $varvalue3 = "s-sis-eu-nonprod-01"
 $varname4 = "vmSize"
 $varvalue4 = "Standard_DS1_v2"
-$varname5 = "datasize"
+$varname5 = "drive_d_size_GB"
 $varvalue5 = "5"
 $varname6 = "subnetName"
 $varvalue6 = "test"
@@ -21,6 +21,8 @@ $varname8 = "osversion"
 $varvalue8 = "2019"
 $varname9 = "ip"
 $varvalue9 = ""
+$varname10 = "rg"
+$varvalue10 = "rg-cis-test-server-01"
 
 # Define the API endpoint
 $apiUrl = "$organizationUrl/$projectName/_apis/pipelines/$pipelineId/runs?api-version=6.0-preview.1"
@@ -54,6 +56,9 @@ $variables = @{
         }
         ($varname9) = @{
             value = $varvalue9
+        }
+        ($varname10) = @{
+            value = $varvalue10
         }
     }
 }
