@@ -1,5 +1,9 @@
 param([string]$sub, [string]$BackupPolicy, [string]$vm)
 
+$sub = "s-sis-eu-nonprod-01"
+$BackupPolicy = "vm-short-01am-01"
+$vm = "zzzwsr0021"
+
 switch ($sub) {
     "s-sis-eu-prod-01" {
         $rsv = "rsv-prod-euno-zrsbackup-01"
@@ -11,8 +15,16 @@ switch ($sub) {
         }
         $policy = Get-AzRecoveryServicesBackupProtectionPolicy -VaultId $vault.id -Name $BackupPolicy
         $vmProfile = Get-AzVM -Name $vm
-        Enable-AzRecoveryServicesBackupProtection -VaultId $vault.ID -Policy $policy -name $vmProfile.Name -ResourceGroupName $vmProfile.ResourceGroupName
-
+        #Check VM is already protected
+        $vault = Get-AzRecoveryServicesVault -ResourceGroupName $backupRg -Name $rsv
+        $container = Get-AzRecoveryServicesBackupContainer -ContainerType AzureVM -VaultId $vault.ID -FriendlyName $vmProfile.Name -WarningAction SilentlyContinue
+        
+        If ($container.FriendlyName -eq "$vm") {
+            Write-Output "VM: $vm already Protected"
+        }
+        else {
+            Enable-AzRecoveryServicesBackupProtection -VaultId $vault.ID -Policy $policy -name $vmProfile.Name -ResourceGroupName $vmProfile.ResourceGroupName
+        }
     }
 
     "s-sis-eu-nonprod-01" {
@@ -22,8 +34,16 @@ switch ($sub) {
         $vault = Get-AzRecoveryServicesVault -ResourceGroupName $backupRg -Name $rsv
         $policy = Get-AzRecoveryServicesBackupProtectionPolicy -VaultId $vault.id -Name $BackupPolicy
         $vmProfile = Get-AzVM -Name $vm
-        Enable-AzRecoveryServicesBackupProtection -VaultId $vault.ID -Policy $policy -name $vmProfile.Name -ResourceGroupName $vmProfile.ResourceGroupName
-
+        #Check VM is already protected
+        $vault = Get-AzRecoveryServicesVault -ResourceGroupName $backupRg -Name $rsv
+        $container = Get-AzRecoveryServicesBackupContainer -ContainerType AzureVM -VaultId $vault.ID -FriendlyName $vmProfile.Name -WarningAction SilentlyContinue
+        
+        If ($container.FriendlyName -eq "$vm") {
+            Write-Output "VM: $vm already Protected"
+        }
+        else {
+            Enable-AzRecoveryServicesBackupProtection -VaultId $vault.ID -Policy $policy -name $vmProfile.Name -ResourceGroupName $vmProfile.ResourceGroupName
+        }
     }
 
     "s-sis-ap-prod-01" {
@@ -33,8 +53,16 @@ switch ($sub) {
         $vault = Get-AzRecoveryServicesVault -ResourceGroupName $backupRg -Name $rsv
         $policy = Get-AzRecoveryServicesBackupProtectionPolicy -VaultId $vault.id -Name $BackupPolicy
         $vmProfile = Get-AzVM -Name $vm
-        Enable-AzRecoveryServicesBackupProtection -VaultId $vault.ID -Policy $policy -name $vmProfile.Name -ResourceGroupName $vmProfile.ResourceGroupName
-
+        #Check VM is already protected
+        $vault = Get-AzRecoveryServicesVault -ResourceGroupName $backupRg -Name $rsv
+        $container = Get-AzRecoveryServicesBackupContainer -ContainerType AzureVM -VaultId $vault.ID -FriendlyName $vmProfile.Name -WarningAction SilentlyContinue
+            
+        If ($container.FriendlyName -eq "$vm") {
+            Write-Output "VM: $vm already Protected"
+        }
+        else {
+            Enable-AzRecoveryServicesBackupProtection -VaultId $vault.ID -Policy $policy -name $vmProfile.Name -ResourceGroupName $vmProfile.ResourceGroupName
+        }
     }
 
     "s-sis-am-prod-01" {
@@ -44,8 +72,16 @@ switch ($sub) {
         $vault = Get-AzRecoveryServicesVault -ResourceGroupName $backupRg -Name $rsv
         $policy = Get-AzRecoveryServicesBackupProtectionPolicy -VaultId $vault.id -Name $BackupPolicy
         $vmProfile = Get-AzVM -Name $vm
-        Enable-AzRecoveryServicesBackupProtection -VaultId $vault.ID -Policy $policy -name $vmProfile.Name -ResourceGroupName $vmProfile.ResourceGroupName
-
+        #Check VM is already protected
+        $vault = Get-AzRecoveryServicesVault -ResourceGroupName $backupRg -Name $rsv
+        $container = Get-AzRecoveryServicesBackupContainer -ContainerType AzureVM -VaultId $vault.ID -FriendlyName $vmProfile.Name -WarningAction SilentlyContinue
+         
+        If ($container.FriendlyName -eq "$vm") {
+            Write-Output "VM: $vm already Protected"
+        }
+        else {
+            Enable-AzRecoveryServicesBackupProtection -VaultId $vault.ID -Policy $policy -name $vmProfile.Name -ResourceGroupName $vmProfile.ResourceGroupName
+        }
     }
 
     "s-sis-am-nonprod-01" {
@@ -55,8 +91,16 @@ switch ($sub) {
         $vault = Get-AzRecoveryServicesVault -ResourceGroupName $backupRg -Name $rsv
         $policy = Get-AzRecoveryServicesBackupProtectionPolicy -VaultId $vault.id -Name $BackupPolicy
         $vmProfile = Get-AzVM -Name $vm
-        Enable-AzRecoveryServicesBackupProtection -VaultId $vault.ID -Policy $policy -name $vmProfile.Name -ResourceGroupName $vmProfile.ResourceGroupName
-
+        #Check VM is already protected
+        $vault = Get-AzRecoveryServicesVault -ResourceGroupName $backupRg -Name $rsv
+        $container = Get-AzRecoveryServicesBackupContainer -ContainerType AzureVM -VaultId $vault.ID -FriendlyName $vmProfile.Name -WarningAction SilentlyContinue
+          
+        If ($container.FriendlyName -eq "$vm") {
+            Write-Output "VM: $vm already Protected"
+        }
+        else {
+            Enable-AzRecoveryServicesBackupProtection -VaultId $vault.ID -Policy $policy -name $vmProfile.Name -ResourceGroupName $vmProfile.ResourceGroupName
+        }
     }
 
     "s-sis-ch-nonprod-01" {
@@ -66,8 +110,16 @@ switch ($sub) {
         $vault = Get-AzRecoveryServicesVault -ResourceGroupName $backupRg -Name $rsv
         $policy = Get-AzRecoveryServicesBackupProtectionPolicy -VaultId $vault.id -Name $BackupPolicy
         $vmProfile = Get-AzVM -Name $vm
-        Enable-AzRecoveryServicesBackupProtection -VaultId $vault.ID -Policy $policy -name $vmProfile.Name -ResourceGroupName $vmProfile.ResourceGroupName
-
+        #Check VM is already protected
+        $vault = Get-AzRecoveryServicesVault -ResourceGroupName $backupRg -Name $rsv
+        $container = Get-AzRecoveryServicesBackupContainer -ContainerType AzureVM -VaultId $vault.ID -FriendlyName $vmProfile.Name -WarningAction SilentlyContinue
+         
+        If ($container.FriendlyName -eq "$vm") {
+            Write-Output "VM: $vm already Protected"
+        }
+        else {
+            Enable-AzRecoveryServicesBackupProtection -VaultId $vault.ID -Policy $policy -name $vmProfile.Name -ResourceGroupName $vmProfile.ResourceGroupName
+        }
     }
 
     "s-sis-ch-prod-01" {
@@ -77,7 +129,15 @@ switch ($sub) {
         $vault = Get-AzRecoveryServicesVault -ResourceGroupName $backupRg -Name $rsv
         $policy = Get-AzRecoveryServicesBackupProtectionPolicy -VaultId $vault.id -Name $BackupPolicy
         $vmProfile = Get-AzVM -Name $vm
-        Enable-AzRecoveryServicesBackupProtection -VaultId $vault.ID -Policy $policy -name $vmProfile.Name -ResourceGroupName $vmProfile.ResourceGroupName
- 
+        #Check VM is already protected
+        $vault = Get-AzRecoveryServicesVault -ResourceGroupName $backupRg -Name $rsv
+        $container = Get-AzRecoveryServicesBackupContainer -ContainerType AzureVM -VaultId $vault.ID -FriendlyName $vmProfile.Name -WarningAction SilentlyContinue
+          
+        If ($container.FriendlyName -eq "$vm") {
+            Write-Output "VM: $vm already Protected"
+        }
+        else {
+            Enable-AzRecoveryServicesBackupProtection -VaultId $vault.ID -Policy $policy -name $vmProfile.Name -ResourceGroupName $vmProfile.ResourceGroupName
+        }
     }
 }
